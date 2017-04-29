@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Gavin</author>
+      <authoring_tool>OpenCOLLADA2013 x64</authoring_tool>
+      <comments>
+			ColladaMaya export options: 
+			bakeTransforms=1;relativePaths=0;copyTextures=1;exportTriangles=1;exportCgfxFileReferences=0;
+			isSampling=1;curveConstrainSampling=0;removeStaticCurves=0;exportPolygonMeshes=1;exportLights=0;
+			exportCameras=0;exportJointsAndSkin=0;exportAnimations=0;exportInvisibleNodes=0;exportDefaultCameras=0;
+			exportTexCoords=1;exportNormals=1;exportNormalsPerVertex=1;exportVertexColors=0;exportVertexColorsPerVertex=0;
+			exportTexTangents=0;exportTangents=0;exportReferencedMaterials=0;exportMaterialsOnly=0;
+			exportXRefs=1;dereferenceXRefs=1;exportCameraAsLookat=0;cameraXFov=0;cameraYFov=1;doublePrecision=0
+		</comments>
+      <source_data>file:///C:/dev/engine/dig/WaxDemo/GameData/Game.Archive/Models/dice.mb</source_data>
+    </contributor>
+    <created>2015-04-14T16:12:11</created>
+    <modified>2015-04-14T16:12:11</modified>
+    <unit name="centimeter" meter="0.01"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_materials>
+    <material id="lambert1" name="lambert1">
+      <instance_effect url="#lambert1-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert1-fx">
+      <profile_COMMON>
+        <newparam sid="file2-surface">
+          <surface type="2D">
+            <init_from>file2</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="file2-sampler">
+          <sampler2D>
+            <source>file2-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="file2-sampler" texcoord="TEX0">
+                <extra>
+                  <technique profile="OpenCOLLADAMaya">
+                    <blend_mode>NONE</blend_mode>
+                    <coverageU sid="coverageU">1</coverageU>
+                    <coverageV sid="coverageV">1</coverageV>
+                    <fast sid="fast">0</fast>
+                    <mirrorU sid="mirrorU">0</mirrorU>
+                    <mirrorV sid="mirrorV">0</mirrorV>
+                    <noiseU sid="noiseU">0</noiseU>
+                    <noiseV sid="noiseV">0</noiseV>
+                    <offsetU sid="offsetU">0</offsetU>
+                    <offsetV sid="offsetV">0</offsetV>
+                    <repeatU sid="repeatU">1</repeatU>
+                    <repeatV sid="repeatV">1</repeatV>
+                    <rotateFrame sid="rotateFrame">0</rotateFrame>
+                    <rotateUV sid="rotateUV">0</rotateUV>
+                    <stagger sid="stagger">0</stagger>
+                    <translateFrameU sid="translateFrameU">0</translateFrameU>
+                    <translateFrameV sid="translateFrameV">0</translateFrameV>
+                    <wrapU sid="wrapU">1</wrapU>
+                    <wrapV sid="wrapV">1</wrapV>
+                  </technique>
+                </extra>
+              </texture>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color sid="transparent">0 0 0 1</color>
+            </transparent>
+            <transparency>
+              <float>1</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="file2" name="file2">
+      <init_from>file:///cube.png</init_from>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <dgnode_type>kFile</dgnode_type>
+          <image_sequence>0</image_sequence>
+          <originalMayaNodeId>file2</originalMayaNodeId>
+        </technique>
+      </extra>
+    </image>
+  </library_images>
+  <library_geometries>
+    <geometry id="cubeShape" name="cubeShape">
+      <mesh>
+        <source id="cubeShape-positions" name="cubeShape-positions">
+          <float_array id="cubeShape-positions-array" count="24">-0.5 0.5 -0.5 0.5 0.5 -0.5 0.5 0.5 0.5 -0.5 0.5 0.5 -0.5 -0.5 -0.5 0.5 -0.5 -0.5 0.5 -0.5 0.5 -0.5 -0.5 0.5</float_array>
+          <technique_common>
+            <accessor source="#cubeShape-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="cubeShape-normals" name="cubeShape-normals">
+          <float_array id="cubeShape-normals-array" count="72">0 1 0 0 1 0 0 1 0 0 1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 1 0 0 1 0 0 1 0 0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 1 -1 0 0 -1 0 0 -1 0 0 -1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#cubeShape-normals-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="cubeShape-DiffuseUV" name="cubeShape-Diffuse UV">
+          <float_array id="cubeShape-DiffuseUV-array" count="48">
+          	0.25 0.75 0.5 0.75 0.5 1 0.25 1 0.5 0.75 0.25 0.75 0.25 0.5 0.5 0.5 0.75 0.25 0.5 0.25 0.5 0 0.75 0 0.5 0.25 0.25 0.25 0.25 0 0.5 0 0.25 0.25 0 0.25 0 0 0.25 0 0.5 0.5 0.25 0.5 0.25 0.25 0.5 0.25</float_array>
+          <technique_common>
+            <accessor source="#cubeShape-DiffuseUV-array" count="24" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="cubeShape-vertices" name="cubeShape-vertices">
+          <input semantic="POSITION" source="#cubeShape-positions"/>
+        </vertices>
+        <triangles material="initialShadingGroup" count="12">
+          <input semantic="VERTEX" source="#cubeShape-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#cubeShape-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#cubeShape-DiffuseUV" offset="2" set="0"/>
+          <p>3 0 0 2 1 1 0 3 3 0 3 3 2 1 1 1 2 2 0 4 4 1 5 5 4 7 7 4 7 7 1 5 5 5 6 6 1 8 8 2 9 9 5 11 11 5 11 11 2 9 9 6 10 10 2 12 12 3 13 13 6 15 15 6 15 15 3 13 13 7 14 14 3 16 16 0 17 17 7 19 19 7 19 19 0 17 17 4 18 18 4 20 20 5 21 21 7 23 23 7 23 23 5 21 21 6 22 22</p>
+        </triangles>
+      </mesh>
+      <extra>
+        <technique profile="OpenCOLLADAMaya">
+          <originalMayaNodeId>cubeShape</originalMayaNodeId>
+          <double_sided>1</double_sided>
+        </technique>
+      </extra>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="VisualSceneNode" name="dice">
+      <node id="cube" name="cube" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#cubeShape">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="initialShadingGroup" target="#lambert1">
+                <bind_vertex_input semantic="TEX0" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <extra>
+          <technique profile="OpenCOLLADAMaya">
+            <originalMayaNodeId>cube</originalMayaNodeId>
+          </technique>
+        </extra>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#VisualSceneNode"/>
+  </scene>
+</COLLADA>

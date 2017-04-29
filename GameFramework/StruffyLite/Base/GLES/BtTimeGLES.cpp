@@ -1,0 +1,57 @@
+////////////////////////////////////////////////////////////////////////////////
+// BtTimeGLES.cpp
+
+#include "BtTimeGLES.h"
+#include <sys/time.h>
+#include <stdio.h>
+#include <unistd.h>
+
+struct timeval start, end;
+long mtime, seconds, useconds;
+
+////////////////////////////////////////////////////////////////////////////////
+// Init
+
+void BtTimeGLES::Init()
+{
+    gettimeofday(&start, NULL);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// GetElapsedTimeInSeconds
+
+BtFloat BtTimeGLES::GetElapsedTimeInSeconds()
+{
+    gettimeofday(&end, NULL);
+    
+    seconds  = end.tv_sec  - start.tv_sec;
+    useconds = end.tv_usec - start.tv_usec;
+    
+    mtime = ((seconds) * 1000 + useconds/1000.0) + 0.5;
+    
+	return mtime / 1000.0f;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Day
+
+BtU32 BtTimeGLES::Day()
+{
+	return 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Month
+
+BtU32 BtTimeGLES::Month()
+{
+	return 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Year
+
+BtU32 BtTimeGLES::Year()
+{
+    return 0;
+}

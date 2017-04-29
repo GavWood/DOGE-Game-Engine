@@ -1,0 +1,56 @@
+////////////////////////////////////////////////////////////////////////////////
+// ShCamera
+
+// Includes
+#include "ShCamera.h"
+#include "RsUtil.h"
+
+////////////////////////////////////////////////////////////////////////////////
+// statics
+
+//static
+
+// Public functions
+BtQueue<ShCameraAction, 128> ShCamera::m_actions;
+
+////////////////////////////////////////////////////////////////////////////////
+// PushAction
+
+//static
+void ShCamera::PushAction( ShCameraActionType action )
+{
+    ShCameraAction cameraAction;
+    cameraAction.m_action = action;
+    cameraAction.m_pMemory = BtNull;
+    m_actions.Push( cameraAction );
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// PushAction
+
+//static
+void ShCamera::PushAction( ShCameraAction cameraAction )
+{
+    m_actions.Push( cameraAction );
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// GetNumItems
+
+//static
+BtU32 ShCamera::GetNumItems()
+{
+    return m_actions.GetItemCount();
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// PopAction
+
+//static
+ShCameraAction ShCamera::PopAction()
+{
+    ShCameraAction action;
+    action = m_actions.Pop();
+    return action;
+}
+

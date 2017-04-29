@@ -1,0 +1,29 @@
+﻿  window.c
+window.c(934): warning C4047: 'return': 'int' differs in levels of indirection from 'HWND'
+  win32_window.c
+win32\win32_window.c(1774): warning C4101: 'ClipWindowRect': unreferenced local variable
+  win32_time.c
+  win32_thread.c
+  win32_joystick.c
+  win32_init.c
+win32\win32_init.c(237): warning C4996: 'GetVersionExA': was declared deprecated
+  C:\Program Files (x86)\Windows Kits\8.1\Include\um\sysinfoapi.h(433): note: see declaration of 'GetVersionExA'
+  win32_glext.c
+  win32_fullscreen.c
+  win32_enable.c
+  win32_dllmain.c
+  time.c
+  thread.c
+  tga.c
+  stream.c
+  joystick.c
+  input.c
+  init.c
+  image.c
+  glext.c
+  fullscreen.c
+  Generating Code...
+  Compiling...
+  enable.c
+  Generating Code...
+  GLFW.vcxproj -> C:\github\GameFramework\GameFramework_Tutorials\Murmuration\Murmuration1GL\Debug\GLFW.lib
