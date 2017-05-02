@@ -23,6 +23,8 @@
 #include "MtMath.h"
 #include "MtAABB.h"
 #include "ErrorLog.h"
+#include "HlKeyboard.h"
+#include "FsFile.h"
 #include <stdio.h>
 #include <vector>
 
@@ -35,7 +37,9 @@
 // Pre-requisits
 const BtFloat WorldSize = 128;
 
-const BtU32 MaxBoids = 256.0f;// 2048.0f;
+//const BtU32 MaxBoids = 256.0f;
+const BtU32 MaxBoids = 2048.0f;	// Release build only
+
 BtS32 NumBoids = MaxBoids;
 
 const BtU32 MaxPredators = 4;
@@ -44,10 +48,15 @@ BtS32 NumPredators = MaxPredators;
 MtAABB aabb;
 const BtU32 MaxVerts = MaxBoids + MaxPredators;
 RsVertex3 myVertex[MaxVerts * 3];
-MtVector3 v3Centre( 0, 0, 0 );
 const BtU32 MaxNeighbours = 7;
 
 // ------------------------------ Variables --------------------------------
+
+// Centre of flock calculated with an AABB sphere
+MtVector3 g_v3Centre(0, 0, 0);
+BtBool g_isSpotting = BtFalse;
+
+// ------------------------------ Initial Setup ----------------------------
 BtFloat SeparationFactor = 0;
 BtFloat NeighbourAlignFactor = 0;
 BtFloat CohesionFactor = 0;
@@ -55,9 +64,7 @@ BtFloat CohesionFactor = 0;
 BtFloat StarlingWingSpan = 0.37f * 4;					// 37 to 42cm
 BtFloat KestrelWingSpan = 0.82f * 4;					// 65 to 82cm
 
-BtFloat dt = 1.0f / 60.0f;
 BtFloat LocalTargetFactor = 0;						// unused for now
-BtFloat GlobalTargetFactor = 0;
 
 BtFloat MinSpeed = 0.0f;
 BtFloat MaxSpeed = 18.0f;
@@ -88,9 +95,9 @@ void SbMurmuration::Setup( BaArchive *pArchive )
 
 	// Some good stable low factors
 	SeparationFactor = 0.05f;
-	NeighbourAlignFactor = 0.1f;
-	CohesionFactor = 0.2f;
-	GlobalTargetFactor = 0.015f;
+	NeighbourAlignFactor = 0.3f;
+	CohesionFactor = 0.3f;
+	LocalTargetFactor = 0.2f;
 	MinSpeed = 15.0f;
 
 	PredatorAvoidedFactor = 10.0f;
@@ -106,7 +113,6 @@ void SbMurmuration::Reset()
 	RdRandom::SetSeed(0);
 
 	m_isPaused = BtFalse;
-	m_v3Target = MtVector3(0, 0, 0);
 
 	for(BtU32 i = 0; i < MaxPredators; i++)
 	{
@@ -119,24 +125,20 @@ void SbMurmuration::Reset()
 		MtVector3 v3Position(x, y, z);
 		kestrel.v3Pos = v3Position;
 		kestrel.v3Vel = MtVector3(0, 0, 0);
-
-		// Give the kestrels a dark red colour
-//		kestrel.colour = RsColour(0.3f, 0.1f, 0.05f, 0.8f ).asWord();
-		kestrel.colour = RsColour::RedColour().asWord();
 	}
 
 	for (BtU32 i = 0; i < MaxBoids; i++)
 	{
 		SbStarling &starling = g_flock[i];
-
-		BtFloat r = RdRandom::GetFloat(0.01f, 0.10f);
-		BtFloat g = RdRandom::GetFloat(0.01f, 0.10f);
-		BtFloat b = RdRandom::GetFloat(0.01f, 0.10f);
-
-		// Give the starlings a random dark colour
-		starling.colour = RsColour(r, g, b, 1.0f).asWord();
 		starling.v3Target = MtVector3(0, 0, 0);
 		starling.v3Vel = MtVector3(0, 0, 0);
+		starling.decisionCount = RdRandom::GetNumber(0.0f, 10.0f);
+
+		// Give them a target
+		BtFloat x = RdRandom::GetFloat(-WorldSize, WorldSize);
+		BtFloat y = RdRandom::GetFloat(-WorldSize, WorldSize);
+		BtFloat z = RdRandom::GetFloat(-WorldSize, WorldSize);
+		starling.v3Target = MtVector3(x, y, z);
 	}
 
 	if (1)
@@ -149,6 +151,57 @@ void SbMurmuration::Reset()
 			BtFloat z = RdRandom::GetFloat(-WorldSize, WorldSize);
 			starling.v3Pos = MtVector3(x, y, z);
 		}
+	}
+
+	// Load the boids from the file
+	FsFile file;
+	BtChar filename[64];
+	sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "boids.txt");
+	file.Open(filename, FsMode_Read);
+	if (file.IsOpen())
+	{
+		BtU32 maxSize = sizeof(SbStarling) * NumBoids;
+		if (file.GetSize() == maxSize)
+		{
+			for (BtU32 i = 0; i < NumBoids; i++)
+			{
+				SbStarling &starling = g_flock[i];
+				file.Read(starling);
+			}
+		}
+		file.Close();
+	}
+	sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "predators.txt");
+	file.Open(filename, FsMode_Read);
+	if (file.IsOpen())
+	{
+		BtU32 maxSize = sizeof(SbKestrel) * NumPredators;
+		if (file.GetSize() == maxSize )
+		{
+			for (BtU32 i = 0; i < NumPredators; i++)
+			{
+				SbKestrel &kestrel = g_predators[i];
+				file.Read(kestrel);
+			}
+			file.Close();
+		}
+	}
+
+	// Give the kestrels a dark red colour
+	for (BtU32 i = 0; i < MaxPredators; i++)
+	{
+		SbKestrel &kestrel = g_predators[i];
+		kestrel.colour = RsColour(0.3f, 0.1f, 0.05f, 0.5f).asWord();
+	}
+
+	// Give the starlings a random dark colour
+	for (BtU32 i = 0; i < MaxBoids; i++)
+	{
+		SbStarling &starling = g_flock[i];
+		BtFloat r = RdRandom::GetFloat(0.01f, 0.20f);
+		BtFloat g = RdRandom::GetFloat(0.01f, 0.20f);
+		BtFloat b = RdRandom::GetFloat(0.01f, 0.20f);
+		starling.colour = RsColour(r, g, b, 0.5f).asWord();
 	}
 }
 
@@ -172,9 +225,39 @@ void SbMurmuration::UpdateFactors()
 
 void SbMurmuration::Update()
 {
+	BtFloat dt = BtTime::GetTick();
+
+	if (UiKeyboard::pInstance()->IsPressed(SaveCameraKey))
+	{
+		FsFile file;
+		BtChar filename[64];
+		sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "boids.txt");
+		file.Open(filename, FsMode_Write);
+		if (file.IsOpen())
+		{
+			for (BtU32 i = 0; i < NumBoids; i++)
+			{
+				SbStarling &starling = g_flock[i];
+				file.Write( starling );
+			}
+			file.Close();
+		}
+		sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "predators.txt");
+		file.Open(filename, FsMode_Write);
+		if (file.IsOpen())
+		{
+			for (BtU32 i = 0; i < NumPredators; i++)
+			{
+				SbKestrel &kestrel = g_predators[i];
+				file.Write(kestrel);
+			}
+			file.Close();
+		}
+	}
+
 	BtFloat small = 0;
 
-	BtFloat maxFactor = 1.0f;
+	BtFloat maxFactor = 20.0f;
 	BtFloat maxBigFactor = 2.0f;
 	BtFloat maxSpeed = MtKnotsToMetersPerSecond(60.0f);
 	BtFloat maxDist = WorldSize;
@@ -184,6 +267,8 @@ void SbMurmuration::Update()
 	HlDebug::AddInteger(0, "Num boids", &NumBoids, readOnly, 1, MaxBoids, 1);
 	HlDebug::AddInteger(0, "Num predators", &NumPredators, readOnly, 10, 4, 1);
 	
+	HlDebug::AddBool(0, "Is spotting", &g_isSpotting, readOnly);
+	
 	HlDebug::AddFloat(0, "Min speed", &MinSpeed, readOnly, HLUnits_Knots, small, maxSpeed);
 	HlDebug::AddFloat(0, "Max speed", &MaxSpeed, readOnly, HLUnits_Knots, small, maxSpeed);
 
@@ -192,7 +277,6 @@ void SbMurmuration::Update()
 	HlDebug::AddFloat(0, "Predator avoided factor", &PredatorAvoidedFactor, readOnly, HLUnits_StandardIndex, small, maxBigFactor);
 	HlDebug::AddFloat(0, "Predator attracted factor", &PredatorAttractedFactor, readOnly, HLUnits_StandardIndex, small, maxBigFactor);
 	HlDebug::AddFloat(0, "Local target factor", &LocalTargetFactor, readOnly, HLUnits_StandardIndex, small, maxFactor);
-	HlDebug::AddFloat(0, "Starling global target factor", &GlobalTargetFactor, readOnly, HLUnits_StandardIndex,	 small, maxFactor);
 	HlDebug::AddFloat(0, "Cohesion", &CohesionFactor, readOnly, HLUnits_StandardIndex,					 small, maxFactor);
 	HlDebug::AddFloat(0, "Separation factor", &SeparationFactor, readOnly, HLUnits_StandardIndex,		 small, maxFactor);
 	HlDebug::AddFloat(0, "Alignment factor", &NeighbourAlignFactor, readOnly, HLUnits_StandardIndex,	 small, maxFactor);
@@ -218,16 +302,13 @@ void SbMurmuration::Update()
 	}
 
 	// Set the centre
-	v3Centre = aabb.Center();
+	g_v3Centre = aabb.Center();
 
 	// If we are paused exit
 	if( m_isPaused == BtTrue )
 	{
 		return;
 	}
-
-	// Bring the global target gradually to the centre of the world
-	m_v3Target = MtVector3(0, 0, 0);
 
 	// Make a KD tree
 	doKDTree( g_flock, NumBoids );
@@ -269,12 +350,18 @@ void SbMurmuration::Update()
 		if( kestrel.shortestDistance < PredatorAvoidDistance * PredatorAvoidDistance)
 		{
 			MtVector3 v3Distance = kestrel.pStarling->v3Pos - kestrel.v3Pos;
-			kestrel.v3Vel += v3Distance.GetNormalise() * PredatorAttractedFactor;
+			if (v3Distance.GetLength())
+			{
+				kestrel.v3Vel += v3Distance.GetNormalise() * PredatorAttractedFactor;
+			}
 		}
 		else
 		{
-			MtVector3 v3Distance = m_v3Target - kestrel.v3Pos;
-			kestrel.v3Vel += v3Distance.GetNormalise() * PredatorAttractedFactor;
+			MtVector3 v3Distance = g_v3Centre - kestrel.v3Pos;
+			if (v3Distance.GetLength())
+			{
+				kestrel.v3Vel += v3Distance.GetNormalise() * PredatorAttractedFactor;
+			}
 		}
 
 		// Integrate the position
@@ -296,6 +383,21 @@ void SbMurmuration::Update()
 	for( BtS32 i=0; i<NumBoids; i++ )
 	{
 		SbStarling &bird = g_flock[i];
+		bird.decisionCount -= BtTime::GetTick();
+
+		if (bird.decisionCount < 0)
+		{
+			bird.decisionCount = RdRandom::GetNumber(5.0f, 10.0f);
+
+			BtFloat x = RdRandom::GetFloat(-WorldSize, WorldSize);
+			BtFloat y = RdRandom::GetFloat(-WorldSize, WorldSize);
+			BtFloat z = RdRandom::GetFloat(-WorldSize, WorldSize);
+
+			bird.v3Target = MtVector3(x, y, z);
+
+			int a = 0;
+			a++;
+		}
 
 		BtU32 numNeighbours = bird.neighbours.GetNumItems();
 		if( numNeighbours )
@@ -324,19 +426,28 @@ void SbMurmuration::Update()
 			// Separate the birds
 			{
 				MtVector3 v3Delta = closestNeighbour->v3Pos - bird.v3Pos;
-				bird.v3Vel -= v3Delta.GetNormalise() * bird.separation;
+				if (v3Delta.GetLength())
+				{
+					bird.v3Vel -= v3Delta.GetNormalise() * bird.separation;
+				}
 			}
 
 			// Cohese the birds
 			{
 				MtVector3 v3Delta = v3AveragePosition - bird.v3Pos;
-				bird.v3Vel += v3Delta.GetNormalise() * bird.cohesion;
+				if (v3Delta.GetLength())
+				{
+					bird.v3Vel += v3Delta.GetNormalise() * bird.cohesion;
+				}
 			}
 
 			// Align the birds
 			{
 				MtVector3 v3Delta = v3AverageVelocity - bird.v3Vel;
-				bird.v3Vel += v3Delta.GetNormalise() * bird.alignment;
+				if (v3Delta.GetLength() > MinSpeed * 0.1f )
+				{
+					bird.v3Vel += v3Delta.GetNormalise() * bird.alignment;
+				}
 			}
 		}
 		
@@ -351,18 +462,10 @@ void SbMurmuration::Update()
 			// Calculate the distance to the origin
 			MtVector3 v3Delta = starling.v3Target - starling.v3Pos;
 
-			// Update the velocity to the target
-			starling.v3Vel += v3Delta.GetNormalise() * LocalTargetFactor;
-		}
-
-		{
-			// Calculate the distance to the origin
-			MtVector3 v3Delta = m_v3Target - starling.v3Pos;
-
 			if (v3Delta.GetLength() > 0)
 			{
 				// Update the velocity to the target
-				starling.v3Vel += v3Delta.GetNormalise() * GlobalTargetFactor;
+				starling.v3Vel += v3Delta.GetNormalise() * LocalTargetFactor;
 			}
 		}
 
@@ -382,8 +485,6 @@ void SbMurmuration::Update()
 			starling.v3Vel = starling.v3Vel.Normalise() * MaxSpeed;
 		}
 	}
-
-	m_v3Target = v3Centre;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -454,6 +555,24 @@ void SbMurmuration::Render( RsCamera *pCamera )
 			myVertex[i + 1].m_v2UV = MtVector2(0, 1);
 			myVertex[i + 2].m_v2UV = MtVector2(1, 0);
 		}
+
+		if (g_isSpotting)
+		{
+			SbStarling &Starling = g_flock[0];
+
+			MtVector3 &v3Position = Starling.v3Pos;
+
+			BtU32 spotColour = RsColour::RedColour().asWord();
+
+			// Render the spotted starling
+			myVertex[0].m_v3Position = v3Position;
+			myVertex[1].m_v3Position = v3Position + (m3Orientation.Col0() * StarlingWingSpan * 2);
+			myVertex[2].m_v3Position = v3Position + (m3Orientation.Col1() * StarlingWingSpan * 2);
+			myVertex[0].m_colour = spotColour;
+			myVertex[1].m_colour = spotColour;
+			myVertex[2].m_colour = spotColour;
+		}
+		
 		m_pBird3->Render(RsPT_TriangleList, myVertex, tri, MaxSortOrders - 1, BtFalse);
 	}
 
@@ -493,7 +612,7 @@ void SbMurmuration::Render( RsCamera *pCamera )
 		HlDebug::Render();
 
 		MtMatrix4 m4Transform;
-		m4Transform.SetTranslation(m_v3Target);
+		m4Transform.SetTranslation(g_v3Centre);
 		HlDraw::RenderCross(m4Transform, KestrelWingSpan * 2.0f, MaxSortOrders - 1);
 
 		//sprintf(text, "FPS %.0f", RsUtil::GetFPS());

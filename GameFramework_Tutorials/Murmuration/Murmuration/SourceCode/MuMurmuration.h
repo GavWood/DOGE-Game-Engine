@@ -30,7 +30,7 @@ struct SbKestrel
 
 struct SbStarling
 {
-	BtU32 index;
+	BtFloat decisionCount;
 
 	MtVector3 v3Pos;
 	MtVector3 v3Vel;
@@ -72,8 +72,6 @@ private:
 	// Private members
 	RsMaterial					   *m_pWhite3;
 	RsMaterial					   *m_pBird3;
-
-	MtVector3						m_v3Target;
 
 	RsShader					   *m_pShader;
 	BtBool							m_isPaused;
