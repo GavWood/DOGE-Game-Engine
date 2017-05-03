@@ -37,8 +37,8 @@
 // Pre-requisits
 const BtFloat WorldSize = 128;
 
-//const BtU32 MaxBoids = 256.0f;
-const BtU32 MaxBoids = 2048.0f;	// Release build only
+const BtU32 MaxBoids = 256.0f;
+//const BtU32 MaxBoids = 2048.0f;	// Release build only
 
 BtS32 NumBoids = MaxBoids;
 
@@ -265,7 +265,7 @@ void SbMurmuration::Update()
 	BtBool readOnly = BtFalse;
 	HlDebug::Reset();
 	HlDebug::AddInteger(0, "Num boids", &NumBoids, readOnly, 1, MaxBoids, 1);
-	HlDebug::AddInteger(0, "Num predators", &NumPredators, readOnly, 10, 4, 1);
+	HlDebug::AddInteger(0, "Num predators", &NumPredators, readOnly, 1, 4, 1);
 	
 	HlDebug::AddBool(0, "Is spotting", &g_isSpotting, readOnly);
 	
