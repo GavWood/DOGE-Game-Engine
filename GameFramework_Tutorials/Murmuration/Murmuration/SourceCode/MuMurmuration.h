@@ -16,8 +16,27 @@ class RsCamera;
 // Forward prototype for structures
 struct SbStarling;
 
+struct SbConfig
+{
+	BtFloat								 SeparationFactor;
+	BtFloat								 NeighbourAlignFactor;
+	BtFloat								 CohesionFactor;
+
+	BtFloat								 StarlingWingSpan;						// 37 to 42cm
+	BtFloat								 PereguineWingSpan;						// 65 to 82cm
+
+	BtFloat								 LocalTargetFactor;						// unused for now
+
+	BtFloat								 MinSpeed;
+	BtFloat								 MaxSpeed;
+
+	BtFloat								 PredatorAvoidedFactor;
+	BtFloat								 PredatorAvoidDistance;
+	BtFloat								 PredatorAttractedFactor;
+};
+
 // Main structures
-struct SbKestrel
+struct SbPereguine
 {
 	MtVector3 v3Pos;
 	MtVector3 v3Vel;
@@ -75,4 +94,6 @@ private:
 
 	RsShader					   *m_pShader;
 	BtBool							m_isPaused;
+
+	SbConfig						m_config;
 };
