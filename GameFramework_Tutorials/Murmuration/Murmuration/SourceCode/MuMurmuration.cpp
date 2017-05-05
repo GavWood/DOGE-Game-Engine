@@ -36,14 +36,8 @@
 
 // Pre-requisits
 const BtFloat WorldSize = 128;
-
-const BtU32 MaxBoids = 256.0f;
-//const BtU32 MaxBoids = 2048.0f;	// Release build only
-
-BtS32 NumBoids = MaxBoids;
-
-const BtU32 MaxPredators = 1;
-BtS32 NumPredators = MaxPredators;
+const BtU32 MaxBoids = 2048.0f;
+const BtU32 MaxPredators = 2;
 
 MtAABB aabb;
 const BtU32 MaxVerts = MaxBoids + MaxPredators;
@@ -91,6 +85,8 @@ void SbMurmuration::Setup( BaArchive *pArchive )
 
 	m_config.StarlingWingSpan = 0.37f;					// 37 to 42cm
 	m_config.PereguineWingSpan = 1.2f;					// 74 to 120cm
+	m_config.m_numBoids = 256.0f;
+	m_config.NumPredators = 1;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -144,14 +140,24 @@ void SbMurmuration::Reset()
 	// Load the boids from the file
 	FsFile file;
 	BtChar filename[64];
+	sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "config.txt");
+	file.Open(filename, FsMode_Read);
+	if (file.IsOpen())
+	{
+		if (file.GetSize() == sizeof(SbConfig) )
+		{
+			file.Read(m_config);
+		}
+		file.Close();
+	}
 	sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "boids.txt");
 	file.Open(filename, FsMode_Read);
 	if (file.IsOpen())
 	{
-		BtU32 maxSize = sizeof(SbStarling) * NumBoids;
+		BtU32 maxSize = sizeof(SbStarling) * m_config.m_numBoids;
 		if (file.GetSize() == maxSize)
 		{
-			for (BtU32 i = 0; i < NumBoids; i++)
+			for (BtU32 i = 0; i < m_config.m_numBoids; i++)
 			{
 				SbStarling &starling = g_flock[i];
 				file.Read(starling);
@@ -163,10 +169,10 @@ void SbMurmuration::Reset()
 	file.Open(filename, FsMode_Read);
 	if (file.IsOpen())
 	{
-		BtU32 maxSize = sizeof(SbPereguine) * NumPredators;
+		BtU32 maxSize = sizeof(SbPereguine) * m_config.NumPredators;
 		if (file.GetSize() == maxSize )
 		{
-			for (BtU32 i = 0; i < NumPredators; i++)
+			for (BtU32 i = 0; i < m_config.NumPredators; i++)
 			{
 				SbPereguine &kestrel = g_predators[i];
 				file.Read(kestrel);
@@ -198,7 +204,7 @@ void SbMurmuration::Reset()
 
 void SbMurmuration::UpdateFactors()
 {
-	for (BtS32 i = 0; i < NumBoids; i++)
+	for (BtS32 i = 0; i < m_config.m_numBoids; i++)
 	{
 		SbStarling &Starling = g_flock[i];
 		Starling.cohesion = m_config.CohesionFactor;//  *RdRandom::GetFloat(0.8f, 1.0f);
@@ -219,11 +225,18 @@ void SbMurmuration::Update()
 	{
 		FsFile file;
 		BtChar filename[64];
+		sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "config.txt");
+		file.Open(filename, FsMode_Write);
+		if (file.IsOpen())
+		{
+			file.Write(m_config);
+			file.Close();
+		}
 		sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "boids.txt");
 		file.Open(filename, FsMode_Write);
 		if (file.IsOpen())
 		{
-			for (BtU32 i = 0; i < NumBoids; i++)
+			for (BtU32 i = 0; i < m_config.m_numBoids; i++)
 			{
 				SbStarling &starling = g_flock[i];
 				file.Write( starling );
@@ -234,7 +247,7 @@ void SbMurmuration::Update()
 		file.Open(filename, FsMode_Write);
 		if (file.IsOpen())
 		{
-			for (BtU32 i = 0; i < NumPredators; i++)
+			for (BtU32 i = 0; i < m_config.NumPredators; i++)
 			{
 				SbPereguine &kestrel = g_predators[i];
 				file.Write(kestrel);
@@ -252,8 +265,8 @@ void SbMurmuration::Update()
 
 	BtBool readOnly = BtFalse;
 	HlDebug::Reset();
-	HlDebug::AddInteger(0, "Num boids", &NumBoids, readOnly, 1, MaxBoids, 1);
-	HlDebug::AddInteger(0, "Num predators", &NumPredators, readOnly, 0, 2, 1);
+	HlDebug::AddUInt(0, "Num boids", &m_config.m_numBoids, readOnly, 1, MaxBoids, 1);
+	HlDebug::AddInteger(0, "Num predators", &m_config.NumPredators, readOnly, 0, 2, 1);
 	
 	HlDebug::AddBool(0, "Is spotting", &g_isSpotting, readOnly);
 	
@@ -283,7 +296,7 @@ void SbMurmuration::Update()
 
 	// Calculate the ABB for our flock
 	MtAABB aabb = MtAABB( g_flock[0].v3Pos );
-	for( BtS32 i=1; i<NumBoids; i++ )
+	for( BtS32 i=1; i<m_config.m_numBoids; i++ )
 	{
 		// Expand the AABB
 		aabb.ExpandBy( g_flock[i].v3Pos );
@@ -299,17 +312,17 @@ void SbMurmuration::Update()
 	}
 
 	// Make a KD tree
-	doKDTree( g_flock, NumBoids );
+	doKDTree( g_flock, m_config.m_numBoids );
 
 	// Make the starlings avoid the predators
-	for(BtS32 i = 0; i < NumPredators; i++)
+	for(BtS32 i = 0; i < m_config.NumPredators; i++)
 	{
 		SbPereguine &kestrel = g_predators[i];
 
 		kestrel.shortestDistance = (kestrel.v3Pos - g_flock[0].v3Pos).GetLengthSquared();
 		kestrel.pStarling = &g_flock[0];
 
-		for(BtS32 j = 0; j < NumBoids; j++)
+		for(BtS32 j = 0; j < m_config.m_numBoids; j++)
 		{
 			SbStarling &starling = g_flock[j];
 
@@ -331,7 +344,7 @@ void SbMurmuration::Update()
 	}
 
 	// Predator attract
-	for(BtS32 i = 0; i < NumPredators; i++)
+	for(BtS32 i = 0; i < m_config.NumPredators; i++)
 	{
 		SbPereguine &kestrel = g_predators[i];
 
@@ -373,7 +386,7 @@ void SbMurmuration::Update()
 	}
 
 	// Main flocking calculations
-	for( BtS32 i=0; i<NumBoids; i++ )
+	for( BtS32 i=0; i<m_config.m_numBoids; i++ )
 	{
 		SbStarling &bird = g_flock[i];
 		bird.decisionCount -= BtTime::GetTick();
@@ -449,7 +462,7 @@ void SbMurmuration::Update()
 	}
 
 	// Update the birds velocity and position
-	for( BtS32 i=0; i<NumBoids; i++ )
+	for( BtS32 i=0; i<m_config.m_numBoids; i++ )
 	{
 		SbStarling &starling = g_flock[i];
 
@@ -534,9 +547,9 @@ void SbMurmuration::Render( RsCamera *pCamera )
 
 	// Draw the birds
 	BtU32 tri = 0;
-	if( NumBoids )
+	if( m_config.m_numBoids )
 	{
-		for( BtU32 i=0; i<NumBoids; i++ )
+		for( BtU32 i=0; i<m_config.m_numBoids; i++ )
 		{
 			SbStarling &Starling = g_flock[i];
 
@@ -586,11 +599,11 @@ void SbMurmuration::Render( RsCamera *pCamera )
 	// Draw the predators
 	RsVertex3 *pVertex = &myVertex[tri];
 
-	if(NumPredators)
+	if(m_config.NumPredators)
 	{
 		const BtFloat KestrelHalfWingSpan = m_config.PereguineWingSpan;
 
-		for(BtS32 i = 0; i < NumPredators; i++)
+		for(BtS32 i = 0; i < m_config.NumPredators; i++)
 		{
 			SbPereguine &kestrel = g_predators[i];
 
@@ -611,7 +624,7 @@ void SbMurmuration::Render( RsCamera *pCamera )
 			myVertex[i + 1].m_v2UV = MtVector2(0, 1);
 			myVertex[i + 2].m_v2UV = MtVector2(1, 0);
 		}
-		m_pBird3->Render(RsPT_TriangleList, pVertex, NumPredators * 3, MaxSortOrders - 1, BtFalse);
+		m_pBird3->Render(RsPT_TriangleList, pVertex, m_config.NumPredators * 3, MaxSortOrders - 1, BtFalse);
 	}
 
 	if( ApConfig::IsDebug() )

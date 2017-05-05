@@ -18,21 +18,24 @@ struct SbStarling;
 
 struct SbConfig
 {
-	BtFloat								 SeparationFactor;
-	BtFloat								 NeighbourAlignFactor;
-	BtFloat								 CohesionFactor;
+	BtFloat								SeparationFactor;
+	BtFloat								NeighbourAlignFactor;
+	BtFloat								CohesionFactor;
 
-	BtFloat								 StarlingWingSpan;						// 37 to 42cm
-	BtFloat								 PereguineWingSpan;						// 65 to 82cm
+	BtFloat								StarlingWingSpan;						// 37 to 42cm
+	BtFloat								PereguineWingSpan;						// 65 to 82cm
 
-	BtFloat								 LocalTargetFactor;						// unused for now
+	BtFloat								LocalTargetFactor;						// unused for now
 
-	BtFloat								 MinSpeed;
-	BtFloat								 MaxSpeed;
+	BtFloat								MinSpeed;
+	BtFloat								MaxSpeed;
 
-	BtFloat								 PredatorAvoidedFactor;
-	BtFloat								 PredatorAvoidDistance;
-	BtFloat								 PredatorAttractedFactor;
+	BtFloat								PredatorAvoidedFactor;
+	BtFloat								PredatorAvoidDistance;
+	BtFloat								PredatorAttractedFactor;
+
+	BtU32								m_numBoids;
+	BtS32								NumPredators;
 };
 
 // Main structures
