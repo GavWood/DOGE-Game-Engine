@@ -9,8 +9,8 @@ However, there are better ones elsewhere e.g. Unity Asset Store.
 Further details can be found in the Wiki.
 
 ## Wiki
-The https://github.com/GavWood/tutorials/wiki "Wiki") describes:
-This is [an example](http://example.com/ "Title") 
+
+This Wiki (https://github.com/GavWood/tutorials/wiki) includes:
 
 **Murmurations**
 
