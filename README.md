@@ -14,8 +14,10 @@ Murmurations are the patterns made when hundreds of thousands of starlings come 
 
 https://github.com/GavWood/tutorials/wiki/Murmurations
 
-[work in progress]
+
 **3D Scene**
 
 
 This demo renders a 3D scene featuring a skinned and lit model fish, particle effects and skybox.
+
+Todo: Debug rendering for frustum, bones and AABB box for both particle effects and mesh.
