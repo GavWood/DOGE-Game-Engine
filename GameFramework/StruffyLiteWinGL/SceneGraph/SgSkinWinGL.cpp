@@ -106,9 +106,6 @@ void SgSkinWinGL::Render( SgSkinRenderable* pRenderable )
 		(void)pBlendShape;
 	}
 
-	// Set the the shader from the material
-	pShader->SetMaterial( pMaterial );
-
 	// Cache the current render target
 	RsRenderTarget* pRenderTarget = pRenderable->m_pRenderTarget;
 
@@ -132,6 +129,10 @@ void SgSkinWinGL::Render( SgSkinRenderable* pRenderable )
 
 	// Set the technique
 	pShader->SetTechnique( "RsShaderZLTS" );
+
+	// Set the the shader from the material
+	pShader->SetMaterial(pMaterial);
+
 	pShader->SetMatrix( RsHandles_WorldViewScreen, m4WorldViewScreen );
 	pShader->SetMatrix( RsHandles_WorldViewInverseTranspose, m4WorldView.GetInverse().GetTranspose() );
 	pShader->SetMatrix( RsHandles_ViewInverseTranspose, m4View.GetInverse().GetTranspose() );

@@ -109,6 +109,9 @@ void RsRenderTargetWinGL::Render()
 		// Set the clear colour
 		glClearColor( m_clearColour.Red(), m_clearColour.Green(), m_clearColour.Blue(), m_clearColour.Alpha() );
 
+		// Set the depth mask to ensure we clear the z buffer
+		glDepthMask(GL_TRUE);
+
 		// Clear the color buffer
 		//glClear(GL_COLOR_BUFFER_BIT);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

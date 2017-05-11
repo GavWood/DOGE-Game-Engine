@@ -573,7 +573,7 @@ void RsTextureWinGL::Render( RsTextureRenderable *pRenderable )
 	pShader->SetTechnique( "RsShaderT2" );
 	pShader->SetMatrix( RsHandles_WorldViewScreen, m4WorldViewScreen );
 
-	for( BtU32 i=0; i<7; i++ )
+	for( BtU32 i=0; i<8; i++ )
 	{
 		glDisableVertexAttribArray( i );
 	}

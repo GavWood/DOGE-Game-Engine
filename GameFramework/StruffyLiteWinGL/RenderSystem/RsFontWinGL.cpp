@@ -11,7 +11,6 @@
 #include "BaFileData.h"
 #include "BtString.h"
 #include "MtVector2.h"
-#include "glfw.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // FixPointers
@@ -458,7 +457,7 @@ void RsFontWin32GL::Render( RsFontRenderable *pRenderable )
 	pShader->SetTechnique( "RsShaderT2" );
 	pShader->SetMatrix( RsHandles_WorldViewScreen, m4WorldViewScreen );
 
-	for( BtU32 i=0; i<7; i++ )
+	for( BtU32 i=0; i<8; i++ )
 	{
 		glDisableVertexAttribArray( i );
 	}

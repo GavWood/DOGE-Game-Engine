@@ -207,13 +207,7 @@ inline BtFloat MtASin(BtFloat fAngle)
 //////////////////////////////////////////////////////////////////////////////
 // MtDotProductTest
 
-inline void MtDotProductTest()
-{
-	float dp1 = MtVector3( 0, 0, 1 ).DotProduct( MtVector3( 0, 0,  1 ) );
-	float dp2 = MtVector3( 0, 0, 1 ).DotProduct( MtVector3( 0, 0, -1 ) );
-	(void)dp1;
-	(void)dp2;
-}
+void MtDotProductTest();
 
 //////////////////////////////////////////////////////////////////////////////
 // MtPow

@@ -14,7 +14,7 @@
 
 void RdRandom::SetRandomSeed()
 {
-//	srand( (unsigned int)time(NULL) );
+	srand( (unsigned int)time(NULL) );
 }
 
 ////////////////////////////////////////////////////////////////////////////////

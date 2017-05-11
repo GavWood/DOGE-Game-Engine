@@ -57,7 +57,7 @@ void RsVertexBufferWinGL::CreateOnDevice()
 void RsVertexBufferWinGL::SetStream()
 {
 	// http://www.opengl.org/wiki/Vertex_Buffer_Object
-	for( BtU32 i=0; i<7; i++ )
+	for( BtU32 i=0; i<8; i++ )
 	{
 		glDisableVertexAttribArray( i );
 	}

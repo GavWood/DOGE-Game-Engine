@@ -27,7 +27,7 @@ public:
 	void							CreateOnDevice();
 	void							Reset();
 	void							Update( SgSkin* pSkin );
-	void							Pause( BtBool bPause );
+	void							SetPaused( BtBool bPause );
 	void							Remove();
 
 	// Accessors
@@ -53,6 +53,6 @@ private:
 	BtFloat							m_time;
 	BtBool							m_bSetup;
 	BtBool							m_bEnded;
-	BtBool							m_bPaused;
+	BtBool							m_isPaused;
 	BtBool							m_isDuplicate;
 };

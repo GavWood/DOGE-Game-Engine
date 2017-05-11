@@ -94,12 +94,12 @@ void SgAnimatorWinGL::Reset()
 {
 	m_time = 0;
 	m_bEnded  = BtFalse;
-	m_bPaused = BtFalse;
+	m_isPaused = BtFalse;
 }
 
-void SgAnimatorWinGL::Pause( BtBool bPause )
+void SgAnimatorWinGL::SetPaused( BtBool bPause )
 {
-	m_bPaused = bPause;
+	m_isPaused = bPause;
 }
 
 BtBool SgAnimatorWinGL::IsEnded() const
@@ -109,7 +109,7 @@ BtBool SgAnimatorWinGL::IsEnded() const
 
 BtBool SgAnimatorWinGL::IsPaused() const
 {
-	return m_bPaused;
+	return m_isPaused;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -117,7 +117,7 @@ BtBool SgAnimatorWinGL::IsPaused() const
 
 BtFloat SgAnimatorWinGL::GetDuration()
 {
-	return (BtFloat)m_pFileData->m_duration;
+	return m_pFileData->m_duration;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -165,7 +165,7 @@ BtFloat SgAnimatorWinGL::GetFrameRate()
 
 void SgAnimatorWinGL::Update( SgSkin* pSkin )
 {
-	if( m_bPaused == BtTrue )
+	if( m_isPaused == BtTrue )
 	{
 		return;
 	}
@@ -173,7 +173,7 @@ void SgAnimatorWinGL::Update( SgSkin* pSkin )
 	// Cache the windows skin
 	SgSkinWinGL *pSkinWinGL = (SgSkinWinGL*)pSkin;
 
-	BtU32 frame = (BtU32)( m_time );
+	BtU32 frame = (BtU32)( m_time / GetFrameRate() );
 
 	// Is this frame valid
 	if( frame < m_pFileData->m_maxFrames )

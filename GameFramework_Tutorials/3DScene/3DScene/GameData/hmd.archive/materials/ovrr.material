@@ -1,0 +1,6 @@
+Lit False
+Texture0 ovrr.png
+Sprite yes
+ZWrite no
+Lit no
+transparent yes

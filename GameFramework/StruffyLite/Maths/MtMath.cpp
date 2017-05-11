@@ -2,6 +2,19 @@
 #include "BtTypes.h"
 #include "MtMath.h"
 
+//////////////////////////////////////////////////////////////////////////////
+// MtDotProductTest
+
+void MtDotProductTest()
+{
+	float dp1 = MtVector3(0, 0, 1).DotProduct(MtVector3(0, 0,  1));
+	float dp2 = MtVector3(0, 0, 1).DotProduct(MtVector3(0, 0, -1));
+	float dp3 = MtVector3(0, 0, 1).DotProduct(MtVector3(0, 1,  0));
+	(void)dp1; //  1
+	(void)dp2; // -1
+	(void)dp3; //  0
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // MtProjectPoint
 
