@@ -9,7 +9,7 @@ However, there are better ones elsewhere e.g. Unity Asset Store.
 Further details can be found in the Wiki.
 
 ## Wiki
-The following Wikis are available:
+The https://github.com/GavWood/tutorials/wiki "Wiki") describes:
 
 **Murmurations**
 
