@@ -10,7 +10,7 @@ Further details can be found in the Wiki.
 
 ## Wiki
 
-This Wiki (https://github.com/GavWood/tutorials/wiki) includes:
+The [Wiki](https://github.com/GavWood/tutorials/wiki) includes:
 
 **Murmurations**
 
