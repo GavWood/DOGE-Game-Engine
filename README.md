@@ -1,8 +1,10 @@
 Visit the [Wiki](https://github.com/GavWood/tutorials/wiki) for information on this project.
 
+
 Code is largely published under the MIT license - see below. Other code is licensed according to the original software e.g. see zlib and its license.
 
 The fish model and animations included in the 3D scene demo are licensed under an attribution non-commercial license only.
+
 
 
 
