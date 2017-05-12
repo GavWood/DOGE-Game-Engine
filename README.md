@@ -7,7 +7,7 @@ The fish model and animations included in the 3D scene demo are licensed under a
 
 
 
-
+** MIT License **
 
 Copyright 2017 Gavin Wood
 
