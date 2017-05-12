@@ -1,28 +1,16 @@
-# Tutorials
+Visit the [Wiki](https://github.com/GavWood/tutorials/wiki) for information on this project.
 
-This GitHub project provides a set of tests/examples for the game framework.
+Code is largely published under the MIT license - see below. Other code is licensed according to the original software e.g. see zlib and its license.
 
-The Game Framework code itself is the MIT permissive free software license.
-Model fish asset and its textures are published under cc attribution noncommercial.
-However, there are better ones elsewhere e.g. Unity Asset Store.
-
-Further details can be found in the Wiki.
-
-## Wiki
-
-The [Wiki](https://github.com/GavWood/tutorials/wiki) includes:
-
-**Murmurations**
+The fish model and animations included in the 3D scene demo are licensed under an attribution non-commercial license only.
 
 
-Murmurations are the patterns made when hundreds of thousands of starlings come together in huge flying masses. This project attempts to simulate this phenomena.
-
-https://github.com/GavWood/tutorials/wiki/Murmurations
 
 
-**3D Scene**
+Copyright 2017 Gavin Wood
 
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-This demo renders a 3D scene featuring a skinned and lit model fish, particle effects and skybox.
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-Todo: Debug rendering for frustum, bones and AABB box for both particle effects and mesh.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
