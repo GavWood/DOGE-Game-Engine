@@ -89,6 +89,7 @@
   <ItemGroup>
     <ClCompile Include="Base\Win32\BtThread.cpp" />
     <ClCompile Include="Base\Win32\BtTimeDX11.cpp" />
+    <ClCompile Include="BinaryArchive\BaArchive.cpp" />
     <ClCompile Include="Maths\MtAABB.cpp" />
     <ClCompile Include="Maths\MtLine.cpp" />
     <ClCompile Include="Maths\MtMath.cpp" />

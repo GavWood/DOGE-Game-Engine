@@ -133,6 +133,9 @@
     <ClCompile Include="SceneGraph\SgRigidBodyImpl.cpp">
       <Filter>SceneGraph</Filter>
     </ClCompile>
+    <ClCompile Include="BinaryArchive\BaArchive.cpp">
+      <Filter>Archive</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="includes\ApConfig.h">

@@ -7,6 +7,7 @@
 #include "ApConfig.h"
 #include "BtTime.h"
 #include "ShTouch.h"
+#include <GL/glew.h>
 #include "glfw.h"
 #include "ErrorLog.h"
 #include "RsUtil.h"
@@ -142,6 +143,13 @@ void Game::Create(GaProject *pProject)
 	int width, height;
 	GetDesktopResolution(width, height);
 	glfwSetWindowPos((width / 2) - (RsUtil::GetWidth() / 2), (height / 2) - (RsUtil::GetHeight() / 2));
+
+	GLenum nGlewError = glewInit();
+	if (nGlewError != GLEW_OK)
+	{
+		printf("%s - Error initializing GLEW! %s\n", __FUNCTION__, glewGetErrorString(nGlewError));
+		exit(EXIT_FAILURE);
+	}
 
 	// Cache the window handle
 	int handle = glfwGetWindowParam( -1 );

@@ -1,12 +1,13 @@
 ﻿////////////////////////////////////////////////////////////////////////////////
 /// RsVertexBufferWinGL.cpp
 
-#include "glee.h"
+#include <GL/glew.h>
 #include "BtBase.h"
 #include "BaArchive.h"
 #include "BtMemory.h"
 #include "RsVertexBufferWinGL.h"
 #include "RsVertex.h"
+#include "RsUtil.h"
 #include "glfw.h"
 
 RsVertexBufferWinGL VertexBuffer;

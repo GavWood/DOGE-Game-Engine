@@ -2,7 +2,7 @@
 // RsTextureWinGL.cpp
 
 // Includes
-#include "GLee.h"
+#include <GL/glew.h>
 #include "RsTextureWinGL.h"
 #include "BtMemory.h"
 #include "BtPrint.h"

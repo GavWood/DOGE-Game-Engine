@@ -16,6 +16,7 @@
 #include "ApConfig.h"
 #include "DyCollisionMesh.h"
 #include "DyCollisionAnalytical.h"
+#include "ErrorLog.h"
 #include <stdio.h>
 
 ////////////////////////////////////////////////////////////////////////////////

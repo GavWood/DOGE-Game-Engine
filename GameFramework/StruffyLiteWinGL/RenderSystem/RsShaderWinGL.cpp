@@ -2,7 +2,7 @@
 // RsShaderWinGL.cpp
 
 // Includes
-#include "GLee.h"
+#include <GL/glew.h>
 #include "BaArchive.h"
 #include "BtMemory.h"
 #include "BtString.h"

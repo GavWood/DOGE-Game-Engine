@@ -108,8 +108,8 @@
     <ProjectReference Include="..\..\..\GameFramework\StruffyLite\StruffyLite.vcxproj">
       <Project>{83eb3ca3-b332-4b24-9099-677248fe9c21}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\GameFramework_ThirdParty\glee\glee.vcxproj">
-      <Project>{2e33ff8a-ad0c-4a47-ab41-64159768100d}</Project>
+    <ProjectReference Include="..\..\..\GameFramework_ThirdParty\FFT\fft.vcxproj">
+      <Project>{0207d683-2d6a-4d5d-a2ed-ca46322acf83}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\..\GameFramework_ThirdParty\glfw\GLFW.vcxproj">
       <Project>{788c3228-0080-4851-8e39-8a25be3b7d50}</Project>

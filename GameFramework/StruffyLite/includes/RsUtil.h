@@ -9,6 +9,8 @@
 #include "RsCaps.h"
 #include "RsRenderTarget.h"
 
+#define GL_BUFFER_OFFSET(i)((char *)NULL + (i))
+
 enum RsOrientation
 {
 	RsOrientation_Portrait,

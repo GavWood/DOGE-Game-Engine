@@ -1,9 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 /// RsVertexBufferWinGL.h
 
-#ifndef __RsVertexBufferWinGL_h__
-#define __RsVertexBufferWinGL_h__
-
+#pragma once
 #include "BaFileData.h"
 #include "BaResource.h"
 #include "BaArchive.h"
@@ -33,5 +31,3 @@ private:
 	BaVertexBufferFileData*			m_pFileData;
 	BtU8*							m_pData;
 };
-
-#endif // __RsVertexBufferWinGL_h__

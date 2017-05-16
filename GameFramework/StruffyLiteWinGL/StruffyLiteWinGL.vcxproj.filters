@@ -21,9 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BinaryArchive\BaArchive.cpp">
-      <Filter>BinaryArchive</Filter>
-    </ClCompile>
     <ClCompile Include="RenderSystem\RsCapsWinGL.cpp">
       <Filter>RenderSystem</Filter>
     </ClCompile>
@@ -96,8 +93,8 @@
     <ClCompile Include="Sound\SdSoundCaptureAL.cpp">
       <Filter>Sound</Filter>
     </ClCompile>
-    <ClCompile Include="Sound\fft.cpp">
-      <Filter>Sound</Filter>
+    <ClCompile Include="BinaryArchive\BaArchiveWinGL.cpp">
+      <Filter>BinaryArchive</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -171,9 +168,6 @@
       <Filter>RenderSystem</Filter>
     </ClInclude>
     <ClInclude Include="Sound\SdSoundCaptureAL.h">
-      <Filter>Sound</Filter>
-    </ClInclude>
-    <ClInclude Include="Sound\fft.h">
       <Filter>Sound</Filter>
     </ClInclude>
   </ItemGroup>

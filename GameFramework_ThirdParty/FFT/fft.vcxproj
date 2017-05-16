@@ -15,13 +15,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GLee.c" />
+    <ClCompile Include="fft.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GLee.h" />
+    <ClInclude Include="fft.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{2E33FF8A-AD0C-4A47-AB41-64159768100D}</ProjectGuid>
+    <ProjectGuid>{0207D683-2D6A-4D5D-A2ED-CA46322ACF83}</ProjectGuid>
     <RootNamespace>JSON</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -63,9 +63,6 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalOptions>-DWIN32_LEAN_AND_MEAN %(AdditionalOptions)</AdditionalOptions>
-      <PrecompiledHeaderFile />
-      <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

@@ -23,6 +23,7 @@
 #include "SgBone.h"
 #include "HlModel.h"
 #include "SbWorld.h"
+#include "SgSkin.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Setup
@@ -42,7 +43,7 @@ void SbModel::Setup( BaArchive *pGameArchive, BaArchive *pAnimArchive )
 
 	m_time = 0;
 }
-
+	
 ////////////////////////////////////////////////////////////////////////////////
 // Update
 
@@ -64,7 +65,9 @@ void SbModel::Update()
 		m4Scale.SetScale( MtVector3(scale, scale, scale) );
 		m_pFish->SetLocalTransform(m4Transform);
 		MtMatrix4 m4Transform;
-		m4Transform.SetTranslation(MtVector3(0, 0, 0 ));
+		static BtFloat z = 0;
+		//z += 0.1f * BtTime::GetTick();
+		m4Transform.SetTranslation(MtVector3(0, 0, z ));
 		m_pFish->SetLocalTransform(m4Scale * m4Transform);
 		m_pFish->Update();
 	}
@@ -112,6 +115,19 @@ void SbModel::Render()
 	if (m_pFish )
 	{
 		m_pFish->Render();
+
+		if (ApConfig::IsDebug())
+		{
+			// Render the bones
+			HlModel::RenderBones(m_pFish);
+
+			// Render the aabb - this is not currently changed by the bones
+			MtAABB aabb = m_pFish->pSkin()->AABB();
+
+			// Render its AABB box
+			MtMatrix4 m4Transform = m_pFish->GetWorldTransform();
+			HlDraw::RenderAABB( aabb, m4Transform, RsColour::GreenColour(), MaxSortOrders - 1);
+		}
 	}
 	if (m_pCube)
 	{

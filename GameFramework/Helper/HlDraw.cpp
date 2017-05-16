@@ -433,17 +433,17 @@ void HlDraw::RenderRotatedQuad(const MtVector2 &v2Position, MtVector2 v2Dimensio
 ////////////////////////////////////////////////////////////////////////////////
 // RenderAABB
 
-void HlDraw::RenderAABB( MtVector3 v3HalfDimension, MtMatrix4 m4Transform, RsColour colour, BtU32 sortOrder )
+void HlDraw::RenderAABB( const MtAABB &aabb, MtMatrix4 m4Transform, RsColour colour, BtU32 sortOrder )
 {
 	MtVector3 v3Pos[8];
-	v3Pos[0] = MtVector3(-v3HalfDimension.x, -v3HalfDimension.y, -v3HalfDimension.z ); // 0 000
-	v3Pos[1] = MtVector3(-v3HalfDimension.x, -v3HalfDimension.y,  v3HalfDimension.z ); // 1 001
-	v3Pos[2] = MtVector3(-v3HalfDimension.x,  v3HalfDimension.y, -v3HalfDimension.z ); // 2 010
-	v3Pos[3] = MtVector3(-v3HalfDimension.x,  v3HalfDimension.y,  v3HalfDimension.z ); // 3 011
-	v3Pos[4] = MtVector3( v3HalfDimension.x, -v3HalfDimension.y, -v3HalfDimension.z ); // 4 100
-	v3Pos[5] = MtVector3( v3HalfDimension.x, -v3HalfDimension.y,  v3HalfDimension.z ); // 5 101
-	v3Pos[6] = MtVector3( v3HalfDimension.x,  v3HalfDimension.y, -v3HalfDimension.z ); // 6 110
-	v3Pos[7] = MtVector3( v3HalfDimension.x,  v3HalfDimension.y,  v3HalfDimension.z ); // 7 111
+	v3Pos[0] = MtVector3( aabb.Min().x, aabb.Min().y, aabb.Min().z ); // 0 000
+	v3Pos[1] = MtVector3( aabb.Min().x, aabb.Min().y, aabb.Max().z ); // 1 001
+	v3Pos[2] = MtVector3( aabb.Min().x, aabb.Max().y, aabb.Min().z ); // 2 010
+	v3Pos[3] = MtVector3( aabb.Min().x, aabb.Max().y, aabb.Max().z ); // 3 011
+	v3Pos[4] = MtVector3( aabb.Max().x, aabb.Min().y, aabb.Min().z ); // 4 100
+	v3Pos[5] = MtVector3( aabb.Max().x, aabb.Min().y, aabb.Max().z ); // 5 101
+	v3Pos[6] = MtVector3( aabb.Max().x, aabb.Max().y, aabb.Min().z ); // 6 110
+	v3Pos[7] = MtVector3( aabb.Max().x, aabb.Max().y, aabb.Max().z ); // 7 111
 	for( BtU32 i=0; i<8; i++ )
 	{
 		v3Pos[i] *= m4Transform;

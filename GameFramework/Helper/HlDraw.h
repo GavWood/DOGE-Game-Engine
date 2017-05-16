@@ -38,7 +38,7 @@ public:
 	static void							RenderCG( const MtVector3 &v3Position, BtFloat width = 0.5f, BtU32 sortOrder = MaxSortOrders - 1);
 	static void							RenderQuad( const MtVector2 &v2Position, MtVector2 v2Dimension, RsColour colour, BtU32 sortOrder = MaxSortOrders - 1);
 	static void							RenderRotatedQuad(const MtVector2 &v2Position, MtVector2 v2Dimension, BtFloat angle, RsColour colour, BtU32 sortOrder = MaxSortOrders - 1);
-	static void							RenderAABB( MtVector3 v3HalfDimension, MtMatrix4 m4Transform, RsColour colour, BtU32 sortOrder = MaxSortOrders - 1);
+	static void							RenderAABB( const MtAABB &aabb, MtMatrix4 m4Transform, RsColour colour, BtU32 sortOrder = MaxSortOrders - 1);
 
 	// Accessors
 

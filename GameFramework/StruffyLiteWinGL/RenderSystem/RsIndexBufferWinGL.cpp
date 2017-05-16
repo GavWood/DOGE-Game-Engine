@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 /// RsIndexBufferWinGL.cpp
 
-#include "GLee.h"
+#include <GL/glew.h>
 #include "BaFileData.h"
 #include "BaArchive.h"
 #include "BtMemory.h"

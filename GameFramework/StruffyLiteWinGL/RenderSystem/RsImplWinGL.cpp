@@ -2,7 +2,7 @@
 // RsImplWin32GL.cpp
 
 // Includes
-#include "GLee.h"
+#include <GL/glew.h>
 #include "ApConfig.h"
 #include "BtString.h"
 #include "RsImplWinGL.h"

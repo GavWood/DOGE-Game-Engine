@@ -2,7 +2,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 /// SgMeshWin32GL.cpp
 
-#include "GLee.h"
+#include <GL/glew.h>
 #include "BtMemory.h"
 #include "BtString.h"
 #include "SgNodeWinGL.h"

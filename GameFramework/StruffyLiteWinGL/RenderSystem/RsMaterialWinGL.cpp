@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 /// RsMaterialWinGL.cpp
 
-#include "GLee.h"
+#include <GL/glew.h>
 #include "BtBase.h"
 #include "BaResource.h"
 #include "BaFileData.h"

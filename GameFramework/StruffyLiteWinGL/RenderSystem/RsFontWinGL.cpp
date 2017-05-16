@@ -2,7 +2,7 @@
 // RsFontWin32GL
 
 // Includes
-#include "GLee.h"
+#include <GL/glew.h>
 #include "RsUtil.h"
 #include "RsFontWinGL.h"
 #include "RsShaderWinGL.h"

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // RsRenderTargetWin32GL.cpp
 
-#include "GLee.h"
+#include <GL/glew.h>
 #include "RsRenderTargetWinGL.h"
 #include "RsImpl.h"
 #include "RsFontWinGL.h"
