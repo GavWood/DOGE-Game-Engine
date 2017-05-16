@@ -85,7 +85,15 @@ void SbMurmuration::Setup( BaArchive *pArchive )
 
 	m_config.StarlingWingSpan = 0.37f;					// 37 to 42cm
 	m_config.PereguineWingSpan = 1.2f;					// 74 to 120cm
-	m_config.m_numBoids = 256.0f;
+
+	if (ApConfig::IsDebugBuild())
+	{
+		m_config.m_numBoids = 256;
+	}
+	else
+	{
+		m_config.m_numBoids = 2048;
+	}
 	m_config.NumPredators = 1;
 }
 
