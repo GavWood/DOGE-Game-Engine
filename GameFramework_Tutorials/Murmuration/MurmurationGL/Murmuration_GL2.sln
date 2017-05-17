@@ -39,6 +39,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MurmurationGL", "Murmuratio
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fft", "..\..\..\GameFramework_ThirdParty\FFT\fft.vcxproj", "{0207D683-2D6A-4D5D-A2ED-CA46322ACF83}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ThirdParty", "ThirdParty", "{A5CE3794-B723-4286-8EDC-CFCD57BF2E70}"
+	ProjectSection(SolutionItems) = preProject
+		..\ThirdParty\kdtree\nanoflann.hpp = ..\ThirdParty\kdtree\nanoflann.hpp
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -315,5 +320,6 @@ Global
 		{F07C200D-1AFA-42FF-9DDD-28308B3DC6F7} = {4BB10322-0923-411C-B853-6D4D8B964F66}
 		{2900C335-7428-417C-BD18-F78CDED9885F} = {4BB10322-0923-411C-B853-6D4D8B964F66}
 		{0207D683-2D6A-4D5D-A2ED-CA46322ACF83} = {63297598-F98A-43D2-A9BC-03D8BC2E1A7D}
+		{A5CE3794-B723-4286-8EDC-CFCD57BF2E70} = {4BB10322-0923-411C-B853-6D4D8B964F66}
 	EndGlobalSection
 EndGlobal

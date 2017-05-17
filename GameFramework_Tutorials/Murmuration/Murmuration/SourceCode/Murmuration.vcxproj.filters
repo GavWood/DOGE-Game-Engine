@@ -19,9 +19,6 @@
     <ClCompile Include="MuMurmuration.cpp">
       <Filter>Murmuration</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\GameFramework_ThirdParty\kdtree\pointcloud_example.cpp">
-      <Filter>KDTree</Filter>
-    </ClCompile>
     <ClCompile Include="kdtree_wrapper.cpp">
       <Filter>KDTree</Filter>
     </ClCompile>
@@ -47,9 +44,6 @@
     </ClInclude>
     <ClInclude Include="MuMurmuration.h">
       <Filter>Murmuration</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\GameFramework_ThirdParty\kdtree\nanoflann.hpp">
-      <Filter>KDTree</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
