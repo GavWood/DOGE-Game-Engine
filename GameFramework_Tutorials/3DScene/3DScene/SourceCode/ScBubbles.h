@@ -6,12 +6,13 @@
 #include "BtTypes.h"
 #include "BaArchive.h"
 #include "MtVector2.h"
-#include "SbCamera.h"
 #include "SdSound.h"
 #include "BtCollection.h"
 #include "RsColour.h"
-#include "SbParticle.h"
 #include "RsVertex.h"
+
+#include "ScCamera.h"
+#include "ScParticle.h"
 
 class RsTexture;
 class RsShader;
@@ -23,7 +24,7 @@ const BtU32 MaxBubbles = 128;
 const BtU32 MaxBubbleVerts = MaxBubbles * 6;
 
 // Class definition
-class SbBubbles
+class ScBubbles
 {
 public:
 

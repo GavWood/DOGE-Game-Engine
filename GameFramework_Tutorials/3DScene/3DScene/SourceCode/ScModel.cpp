@@ -3,7 +3,6 @@
 
 // Includes
 #include "BaArchive.h"
-#include "SbModel.h"
 #include "MtVector2.h"
 #include "RsCamera.h"
 #include "RsColour.h"
@@ -22,13 +21,15 @@
 #include "ApConfig.h"
 #include "SgBone.h"
 #include "HlModel.h"
-#include "SbWorld.h"
 #include "SgSkin.h"
+
+#include "ScModel.h"
+#include "ScWorld.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Setup
 
-void SbModel::Setup( BaArchive *pGameArchive, BaArchive *pAnimArchive )
+void ScModel::Setup( BaArchive *pGameArchive, BaArchive *pAnimArchive )
 {
 	// Cache our model
 	m_pFish = pGameArchive->GetNode( "render_model" );
@@ -47,7 +48,7 @@ void SbModel::Setup( BaArchive *pGameArchive, BaArchive *pAnimArchive )
 ////////////////////////////////////////////////////////////////////////////////
 // Update
 
-void SbModel::Update()
+void ScModel::Update()
 {
 	MtMatrix4 m4Transform;
 	m4Transform.SetIdentity();
@@ -99,7 +100,7 @@ void SbModel::Update()
 ////////////////////////////////////////////////////////////////////////////////
 // Render
 
-void SbModel::Render()
+void ScModel::Render()
 {
 	// Set the light direction
 	MtVector3 v3LightDirection( -1, -1, 0 );

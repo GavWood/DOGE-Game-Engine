@@ -4,16 +4,17 @@
 #include "ApConfig.h"
 #include "BtTime.h"
 #include "MtMatrix3.h"
-#include "SbCamera.h"
 #include "ShTouch.h"
 #include "UiKeyboard.h"
 #include "RsUtil.h"
 #include "ShHMD.h"
 #include "FsFile.h"
-#include "SbMain.h"
 #include "HlKeyboard.h"
 #include "ShIMU.h"
 #include <stdio.h>
+
+#include "ScMain.h"
+#include "ScCamera.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Init

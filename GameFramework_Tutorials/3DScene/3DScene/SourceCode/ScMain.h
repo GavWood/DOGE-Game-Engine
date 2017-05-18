@@ -7,25 +7,26 @@
 #include "BaArchive.h"
 #include "MtVector3.h"
 #include "RsVertex.h"
-#include "SbCamera.h"
 #include "SdSound.h"
-#include "SbRenderSkybox.h"
-#include "SbModel.h"
 #include "GaProject.h"
 #include "SdSound.h"
 #include "Game.h"
 #include "HlJoysticks.h"
-#include "SbBubbles.h"
-#include "SbFrustum.h"
 
-class SbMain;
+#include "ScCamera.h"
+#include "ScBubbles.h"
+#include "ScFrustum.h"
+#include "ScRenderSkybox.h"
+#include "ScModel.h"
+
+class ScMain;
 class RsTexture;
 class RsShader;
 class RsMaterial;
 class SgNode;
 
 // Class definition
-class SbMain : public GaProject
+class ScMain : public GaProject
 {
 public:
 
@@ -86,24 +87,24 @@ private:
 	RsMaterial					   *m_pGUIRenderTarget;
 
 	// Test classes
-	SbModel							m_model;
-	SbRenderSkybox					m_skybox;
-	SbBubbles						m_bubbles;
-	SbFrustum						m_frustum;
+	ScModel							m_model;
+	ScRenderSkybox					m_skybox;
+	ScBubbles						m_bubbles;
+	ScFrustum						m_frustum;
 	RsVertex3						m_v3Vertex[6];
 };
 
-inline void SbMain::SetClosing()
+inline void ScMain::SetClosing()
 {
 	m_isClosing = BtTrue;
 }
 
-inline BtBool SbMain::IsClosed()
+inline BtBool ScMain::IsClosed()
 {
 	return m_isClosed;
 }
 
-inline BtBool SbMain::IsClosing()
+inline BtBool ScMain::IsClosing()
 {
 	return m_isClosing;
 }

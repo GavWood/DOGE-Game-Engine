@@ -4,17 +4,18 @@
 // Includes
 #include <stdio.h>
 #include "SgNode.h"
-#include "SbRenderSkybox.h"
 #include "RsVertex.h"
 #include "RsMaterial.h"
 #include "RsShader.h"
 #include "RsRenderTarget.h"
-#include "SbWorld.h"
+
+#include "ScWorld.h"
+#include "ScRenderSkybox.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Setup
  
-void SbRenderSkybox::Setup( BaArchive *pArchive )
+void ScRenderSkybox::Setup( BaArchive *pArchive )
 {
 	m_pBackMaterial  = pArchive->GetMaterial( "back" );
 	m_pFrontMaterial = pArchive->GetMaterial( "front" );
@@ -35,7 +36,7 @@ void SbRenderSkybox::Setup( BaArchive *pArchive )
 ////////////////////////////////////////////////////////////////////////////////
 // Rotate
 
-void SbRenderSkybox::Rotate( RsVertex3* pVertex )
+void ScRenderSkybox::Rotate( RsVertex3* pVertex )
 {
 	for( BtU32 i=0; i<4; i++)
 	{
@@ -48,7 +49,7 @@ void SbRenderSkybox::Rotate( RsVertex3* pVertex )
 ////////////////////////////////////////////////////////////////////////////////
 // Update
 
-void SbRenderSkybox::Update( MtVector3 v3Translate )
+void ScRenderSkybox::Update( MtVector3 v3Translate )
 {
 	m_v3Translation = -v3Translate;
 }
@@ -56,7 +57,7 @@ void SbRenderSkybox::Update( MtVector3 v3Translate )
 ////////////////////////////////////////////////////////////////////////////////
 // Render
 
-void SbRenderSkybox::Render()
+void ScRenderSkybox::Render()
 {
 	RsVertex3 pVertex[4];
 	BtFloat width = 512.0f / 2;

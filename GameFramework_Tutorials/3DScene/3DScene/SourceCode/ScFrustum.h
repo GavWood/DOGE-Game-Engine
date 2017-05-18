@@ -12,7 +12,7 @@
 #include "RsMaterial.h"
 
 // Class definition
-class SbFrustum
+class ScFrustum
 {
 public:
 

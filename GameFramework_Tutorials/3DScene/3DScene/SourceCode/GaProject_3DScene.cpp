@@ -2,9 +2,9 @@
 // GaProject_Tutorial1.cpp
 
 // Includes
-#include "SbMain.h"
+#include "ScMain.h"
 
-SbMain project;
+ScMain project;
 
 ////////////////////////////////////////////////////////////////////////////////
 // main

@@ -15,7 +15,7 @@ struct RsVertex3;
 struct MuMVC;
 
 // Class definition
-class SbRenderSkybox
+class ScRenderSkybox
 {
 public:
 

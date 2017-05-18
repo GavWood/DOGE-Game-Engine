@@ -11,21 +11,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SbBubbles.cpp" />
-    <ClCompile Include="SbCamera.cpp" />
-    <ClCompile Include="SbFrustum.cpp" />
-    <ClCompile Include="SbMain.cpp" />
-    <ClCompile Include="SbModel.cpp" />
-    <ClCompile Include="SbRenderSkybox.cpp" />
+    <ClCompile Include="GaProject_3DScene.cpp" />
+    <ClCompile Include="ScBubbles.cpp" />
+    <ClCompile Include="ScCamera.cpp" />
+    <ClCompile Include="ScFrustum.cpp" />
+    <ClCompile Include="ScMain.cpp" />
+    <ClCompile Include="ScModel.cpp" />
+    <ClCompile Include="ScRenderSkybox.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SbBubbles.h" />
-    <ClInclude Include="SbCamera.h" />
-    <ClInclude Include="SbFrustum.h" />
-    <ClInclude Include="SbMain.h" />
-    <ClInclude Include="SbModel.h" />
-    <ClInclude Include="SbRenderSkybox.h" />
-    <ClInclude Include="SbWorld.h" />
+    <ClInclude Include="ScBubbles.h" />
+    <ClInclude Include="ScCamera.h" />
+    <ClInclude Include="ScFrustum.h" />
+    <ClInclude Include="ScMain.h" />
+    <ClInclude Include="ScModel.h" />
+    <ClInclude Include="ScParticle.h" />
+    <ClInclude Include="ScRenderSkybox.h" />
+    <ClInclude Include="ScWorld.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\GameData\Game.Archive\Shaders\projectedTexture.frag">

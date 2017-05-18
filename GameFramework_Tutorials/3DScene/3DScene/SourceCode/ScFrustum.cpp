@@ -2,7 +2,7 @@
 // SbFrustum.cpp
 
 // Includes
-#include "SbFrustum.h"
+#include "ScFrustum.h"
 #include "RsRenderTarget.h"
 #include "ApConfig.h"
 #include "HlDraw.h"
@@ -10,7 +10,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Setup
 
-void SbFrustum::Setup( BaArchive *pArchive )
+void ScFrustum::Setup( BaArchive *pArchive )
 {
 	m_pWhite3 = pArchive->GetMaterial( "white3" );
 }
@@ -18,7 +18,7 @@ void SbFrustum::Setup( BaArchive *pArchive )
 ////////////////////////////////////////////////////////////////////////////////
 // Update
 
-void SbFrustum::Update( const MtMatrix3 &m3Rotation, const MtVector3& v3Position, BtFloat completeFieldOfViewInRadians, BtFloat aspect )
+void ScFrustum::Update( const MtMatrix3 &m3Rotation, const MtVector3& v3Position, BtFloat completeFieldOfViewInRadians, BtFloat aspect )
 {
 	BtFloat halfFieldOfView = completeFieldOfViewInRadians * 0.5f;
 
@@ -44,7 +44,7 @@ void SbFrustum::Update( const MtMatrix3 &m3Rotation, const MtVector3& v3Position
 ////////////////////////////////////////////////////////////////////////////////
 // Render
 
-void SbFrustum::Render()
+void ScFrustum::Render()
 {
 	if (ApConfig::IsDebug())
 	{
@@ -65,7 +65,7 @@ void SbFrustum::Render()
 ////////////////////////////////////////////////////////////////////////////////
 // GetVertex
 
-MtVector3 *SbFrustum::GetVertex()
+MtVector3 *ScFrustum::GetVertex()
 {
 	return m_rect;
 }

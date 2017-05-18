@@ -3,11 +3,9 @@
 
 // Includes
 #include <stdio.h>
-#include "SbMain.h"
 #include "ApConfig.h"
 #include "RsUtil.h"
 #include "RsShader.h"
-#include "SbCamera.h"
 #include "HlMaterial.h"
 #include "HlFont.h"
 #include "HlDraw.h"
@@ -22,12 +20,15 @@
 #include "SgNode.h"
 #include "HlModel.h"
 
+#include "ScMain.h"
+#include "ScCamera.h"
+
 static BtBool isFrustumStill = BtFalse;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Init
 
-void SbMain::Init()
+void ScMain::Init()
 {
 	m_isClosing = BtFalse;
 	m_isClosed  = BtFalse;
@@ -58,7 +59,7 @@ void SbMain::Init()
 ////////////////////////////////////////////////////////////////////////////////
 // Create
 
-void SbMain::Create()
+void ScMain::Create()
 {
 	m_gameArchive.Load( "game" );
 	m_animArchive.Load("anim");
@@ -99,7 +100,7 @@ void SbMain::Create()
 ////////////////////////////////////////////////////////////////////////////////
 // Reset
 
-void SbMain::Reset()
+void ScMain::Reset()
 {
 	MtVector2 v2Dimension = RsUtil::GetDimension();
 
@@ -120,7 +121,7 @@ void SbMain::Reset()
 ////////////////////////////////////////////////////////////////////////////////
 // UpdateTest
 
-void SbMain::UpdateTest()
+void ScMain::UpdateTest()
 {
 	HlDebug::Reset();
 
@@ -160,7 +161,7 @@ void SbMain::UpdateTest()
 ////////////////////////////////////////////////////////////////////////////////
 // Update
 
-void SbMain::Update()
+void ScMain::Update()
 {
 	// Are we closing
 	if( m_isClosing == BtTrue )
@@ -189,7 +190,7 @@ void SbMain::Update()
 //////////////////////////////////////////////////////////////////
 // SetupRender
 
-void SbMain::SetupRender()
+void ScMain::SetupRender()
 {
 	// Apply the shader
 	m_pShader->Apply();
@@ -217,7 +218,7 @@ void SbMain::SetupRender()
 //////////////////////////////////////////////////////////////////
 // SetupRenderToTexture
 
-void SbMain::SetupRenderToTexture( RsTexture *pTexture, RsCamera camera )
+void ScMain::SetupRenderToTexture( RsTexture *pTexture, RsCamera camera )
 {
 	// Apply the shader
 	m_pShader->Apply();
@@ -247,7 +248,7 @@ void SbMain::SetupRenderToTexture( RsTexture *pTexture, RsCamera camera )
 ////////////////////////////////////////////////////////////////////////////////
 // RestoreRenderTarget
 
-void SbMain::RestoreRenderTarget()
+void ScMain::RestoreRenderTarget()
 {
 	// Make a new render target
 	RsRenderTarget *pRenderTarget = RsUtil::GetNewRenderTarget();
@@ -271,7 +272,7 @@ void SbMain::RestoreRenderTarget()
 ////////////////////////////////////////////////////////////////////////////////
 // Render2DInto3D
 
-void SbMain::Render2DInto3D( RsCamera &camera )
+void ScMain::Render2DInto3D( RsCamera &camera )
 {
 	// This code perfectly frames a billboard in front of the camera
 	BtFloat completeFieldOfView = camera.GetFieldOfView();
@@ -337,14 +338,14 @@ void SbMain::Render2DInto3D( RsCamera &camera )
 ////////////////////////////////////////////////////////////////////////////////
 // Render2DScene
 
-void SbMain::Render2DScene()
+void ScMain::Render2DScene()
 {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // Render3DScene
 
-void SbMain::Render3DScene()
+void ScMain::Render3DScene()
 {
 	m_skybox.Render();
 	m_bubbles.Render();
@@ -360,7 +361,7 @@ void SbMain::Render3DScene()
 ////////////////////////////////////////////////////////////////////////////////
 // RenderTests
 
-void SbMain::RenderTests()
+void ScMain::RenderTests()
 {
 	m_camera.Render();
 
@@ -390,7 +391,7 @@ void SbMain::RenderTests()
 ////////////////////////////////////////////////////////////////////////////////
 // Render
 
-void SbMain::Render()
+void ScMain::Render()
 {
 	if( m_isClosing == BtTrue )
 	{
@@ -409,14 +410,14 @@ void SbMain::Render()
 ////////////////////////////////////////////////////////////////////////////////
 // PreRender
 
-void SbMain::PreRender()
+void ScMain::PreRender()
 {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // PostRender
 
-void SbMain::PostRender()
+void ScMain::PostRender()
 {
 	// Render the mouse
 	//m_renderMouse.Render();
@@ -425,6 +426,6 @@ void SbMain::PostRender()
 ////////////////////////////////////////////////////////////////////////////////
 // Destroy
 
-void SbMain::Destroy()
+void ScMain::Destroy()
 {
 }

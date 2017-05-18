@@ -12,7 +12,7 @@ class BaArchive;
 class SgAnimator;
 
 // Class definition
-class SbModel
+class ScModel
 {
 public:
 

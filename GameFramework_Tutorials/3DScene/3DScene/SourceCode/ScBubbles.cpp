@@ -3,7 +3,7 @@
 
 // Includes
 #include <stdio.h>
-#include "SbBubbles.h"
+#include "ScBubbles.h"
 #include "BtTime.h"
 #include "ApConfig.h"
 #include "RsFont.h"
@@ -17,13 +17,14 @@
 #include "UiKeyboard.h"
 #include "RdRandom.h"
 #include "RsUtil.h"
-#include "SbWorld.h"
 #include "HlDraw.h"
+
+#include "ScWorld.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Create
 
-void SbBubbles::Setup( BaArchive *pArchive )
+void ScBubbles::Setup( BaArchive *pArchive )
 {
 	m_pParticle = pArchive->GetMaterial( "bubbles" );
 	m_pShader = pArchive->GetShader("shader");
@@ -40,7 +41,7 @@ void SbBubbles::Setup( BaArchive *pArchive )
 ////////////////////////////////////////////////////////////////////////////////
 // Reset
 
-void SbBubbles::Reset()
+void ScBubbles::Reset()
 {
 	m_emitterCount = 0;
 }
@@ -48,7 +49,7 @@ void SbBubbles::Reset()
 ////////////////////////////////////////////////////////////////////////////////
 // SetPosition
 
-void SbBubbles::SetPosition( MtVector3 v3Position )
+void ScBubbles::SetPosition( MtVector3 v3Position )
 {
 	m_v3Position = v3Position;
 }
@@ -56,7 +57,7 @@ void SbBubbles::SetPosition( MtVector3 v3Position )
 ///////////////////////////////////////////////////////////////////////////////
 // Update
 
-void SbBubbles::Update()
+void ScBubbles::Update()
 {
 	BtFloat lifeSpan = 3.0f;
 	BtFloat currentTime = BtTime::GetElapsedTimeInSeconds();
@@ -135,7 +136,7 @@ void SbBubbles::Update()
 ////////////////////////////////////////////////////////////////////////////////
 // Render
 
-void SbBubbles::Render()
+void ScBubbles::Render()
 {
 	m_pShader->Apply();
 
