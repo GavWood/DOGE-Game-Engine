@@ -9,7 +9,6 @@
 #include "BtMemory.h"
 #include "RsVertex.h"
 #include "RsShader.h"
-#include "glfw.h"
 
 #include "RsMaterialWinGL.h"
 #include "RsTextureWinGL.h"
@@ -96,7 +95,13 @@ void RsMaterialWinGL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
 		// Fix up the texture
 		m_pFileData->m_pTexture[iTexture] = (RsTexture*) pArchive->GetResource( m_pFileData->m_nTexture[iTexture] );
 	}
-	glGenVertexArrays(1, &m_vertexArray);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// CreateOnDevice
+
+void RsMaterialWinGL::CreateOnDevice()
+{
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -473,7 +478,7 @@ void RsMaterialWinGL::Render( const MtVector2& v2Position,
 void RsMaterialWinGL::Render(RsMaterialRenderable *pRenderable)
 {
 	int error = glGetError();
-
+	
 	// Cache the current render target
 	RsRenderTarget *pRenderTarget = pRenderable->m_pRenderTarget;
 
@@ -502,29 +507,21 @@ void RsMaterialWinGL::Render(RsMaterialRenderable *pRenderable)
 	MtMatrix4 m4WorldViewScreen = m4World * m4Projection;
 
 	MtMatrix4 m4WorldView = m4World * m4View;
-	pShader->SetCamera(camera);
-	pShader->SetTechnique(m_pFileData->m_techniqueName);
-	pShader->SetMatrix(RsHandles_WorldViewScreen, m4WorldViewScreen);
-	pShader->SetMatrix(RsHandles_WorldViewInverseTranspose, m4WorldView.GetInverse().GetTranspose());
-	pShader->SetMatrix(RsHandles_ViewInverseTranspose, m4View.GetInverse().GetTranspose());
-	pShader->SetMatrix(RsHandles_World, m4World);
-	pShader->SetMatrix(RsHandles_WorldViewScreen, m4WorldViewScreen);
-	pShader->SetMaterial(this);
-
-	for (BtU32 i = 0; i < 7; i++)
-	{
-		glDisableVertexAttribArray(i);
-	}
-	error = glGetError();
-
-	// Set vertex arrays
-	BtU32 stride = sizeof(RsVertex3);
+	pShader->SetCamera( camera );
+	pShader->SetTechnique( m_pFileData->m_techniqueName );
+	pShader->SetMatrix( RsHandles_WorldViewScreen, m4WorldViewScreen );
+	pShader->SetMatrix( RsHandles_WorldViewInverseTranspose, m4WorldView.GetInverse().GetTranspose() );
+	pShader->SetMatrix( RsHandles_ViewInverseTranspose, m4View.GetInverse().GetTranspose() );
+	pShader->SetMatrix( RsHandles_World, m4World );
+	pShader->SetMatrix( RsHandles_WorldViewScreen, m4WorldViewScreen );
+	pShader->SetMaterial( this );
 
 	// Cache the vertex buffer
 	BtU32 vertexBuffer = RsImplWinGL::GetVertexBuffer();
+	BtU32 vertexArray = RsImplWinGL::GetVertexArray();
 
-	// Get the size
-	BtU32 dataSize = pPrimitives->m_numVertex * stride;
+	// bind the vertex array
+	glBindVertexArray(vertexArray);
 
 	// bind VBO in order to use
 	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
@@ -532,43 +529,51 @@ void RsMaterialWinGL::Render(RsMaterialRenderable *pRenderable)
 	error = glGetError();
 	(void)error;
 
+	for (BtU32 i = 0; i < 8; i++)
+	{
+		glDisableVertexAttribArray( i );
+	}
+	error = glGetError();
+
+	// Set vertex arrays
+	BtU32 stride = sizeof(RsVertex3);
+
+	// Get the size
+	BtU32 dataSize = pPrimitives->m_numVertex * stride;
+
+	uintptr_t offset = 0;
+	
+	glEnableVertexAttribArray( 0 );
+	error = RsImplWinGL::CheckError();
+
+	glVertexAttribPointer( 0, 3, GL_FLOAT, GL_FALSE, stride, (const void*)offset );
+	error = RsImplWinGL::CheckError();
+	offset += sizeof( MtVector3 );
+
+	glEnableVertexAttribArray( 1 );
+	glVertexAttribPointer( 1, 3, GL_FLOAT, GL_FALSE, stride, (const void*)offset );
+	error = glGetError();
+	offset += sizeof( MtVector3 );
+
+	glEnableVertexAttribArray( 4 );
+	glVertexAttribPointer( 4, 4, GL_UNSIGNED_BYTE, GL_TRUE, stride, (const void*)offset );
+	error = glGetError();
+	offset += sizeof( BtU32 );
+
+	glEnableVertexAttribArray( 5);
+	glVertexAttribPointer( 5, 2, GL_FLOAT, GL_FALSE, stride, (const void*)offset );
+	error = glGetError();
+	offset += sizeof( MtVector2 );
+
 	// upload data to VBO
 	glBufferData(GL_ARRAY_BUFFER, dataSize, pRenderable->m_pVertex, GL_DYNAMIC_DRAW);
 	error = glGetError();
 	(void)error;
 
-	glBindVertexArray(m_vertexArray);
+	pShader->Draw( pRenderable->m_primitive );
 	error = glGetError();
-
-	uintptr_t offset = 0;
-
-	glEnableVertexAttribArray(0);
-	error = glGetError();
-
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, stride, (const void*)offset);
-	error = glGetError();
-	offset += sizeof(MtVector3);
-
-	glEnableVertexAttribArray(1);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, stride, (const void*)offset);
-	error = glGetError();
-	offset += sizeof(MtVector3);
-
-	glEnableVertexAttribArray(4);
-	glVertexAttribPointer(4, 4, GL_UNSIGNED_BYTE, GL_TRUE, stride, (const void*)offset);
-	error = glGetError();
-	offset += sizeof(BtU32);
-
-	glEnableVertexAttribArray(5);
-	glVertexAttribPointer(5, 2, GL_FLOAT, GL_FALSE, stride, (const void*)offset);
-	error = glGetError();
-	offset += sizeof(MtVector2);
 
 	glBindVertexArray(0);
-
-	// Draw the primitives
-	glBindVertexArray(m_vertexArray);
-	pShader->Draw(pRenderable->m_primitive);
-	error = glGetError();
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
-

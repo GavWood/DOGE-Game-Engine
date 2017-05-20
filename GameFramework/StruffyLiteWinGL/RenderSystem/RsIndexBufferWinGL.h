@@ -2,10 +2,10 @@
 /// RsIndexBufferWinGL.h
 
 #pragma once
+#include <GL/glew.h>
 #include "BaArchive.h"
 #include "BaResource.h"
 #include "BaFileData.h"
-#include "glfw.h"
 
 // Class Declaration
 class RsIndexBufferWinGL : public BaResource

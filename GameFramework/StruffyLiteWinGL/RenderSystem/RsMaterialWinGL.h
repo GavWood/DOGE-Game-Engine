@@ -19,6 +19,7 @@ public:
 	RsMaterial*				GetDuplicate() const;
 
 	void					FixPointers( BtU8 *pFileData, BaArchive *pArchive );
+	void					CreateOnDevice();
 
 	void					Render( const MtVector2& v2Position,
 									const RsColour& colour,
@@ -66,7 +67,6 @@ private:
 	friend class SgMaterialsWinGL;
 
 	BaMaterialFileData*		m_pFileData;
-	BtU32					m_vertexArray;
 };
 
 ////////////////////////////////////////////////////////////////////////////////

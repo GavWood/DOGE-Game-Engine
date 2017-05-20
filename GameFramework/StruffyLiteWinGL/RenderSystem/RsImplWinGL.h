@@ -1,15 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 // RsImplWin32GL.h
 
-#ifndef __RsImplWin32GL_h__
-#define __RsImplWin32GL_h__
-
+#pragma once
 #include "BtTypes.h"
 #include "BtLinkedList.h"
 #include "RsImpl.h"
 #include "RsRenderTargetWinGL.h"
 
 const BtU32 MaxRenderTargets = 1024;
+#define GL_BUFFER_OFFSET(i)((char *)NULL + (i))
 
 // Class declaration
 class RsImplWinGL : public RsImpl
@@ -33,6 +32,8 @@ public:
 	void												RenderTriangleFan( const MtVector2 *pVertex, BtU32 numVertex, const RsColour &colour, BtU32 sortOrder ) {};
 
 	void												SetDimension( const MtVector2 &v2Dimension );
+	
+	static int											CheckError();
 
 	// Renderables
 	RsFontRenderable								   *AddFont();
@@ -49,8 +50,9 @@ public:
 
 	// Accessors
 	RsCaps											   *GetCaps();
-	static BtU32									   GetVertexBuffer();
-										
+	static BtU32									    GetVertexBuffer();
+	static BtU32									    GetVertexArray();
+
 private:
 
 	// Private functions
@@ -61,6 +63,5 @@ private:
 	BtArray<RsRenderTargetWinGL, MaxRenderTargets>		m_renderTargets;
 	BtArray< RsPrimitiveWinGL, 4096>					m_primitives;
 	static BtU32										m_vertexBuffer;
+	static BtU32										m_vertexArray;
 };
-
-#endif // __RsImplWin32GL_h__

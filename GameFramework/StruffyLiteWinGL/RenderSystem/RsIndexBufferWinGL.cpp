@@ -7,6 +7,7 @@
 #include "BtMemory.h"
 #include "BtBase.h"
 #include "RsIndexBufferWinGL.h"
+#include "RsImplWinGL.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // RsIndexBufferWinGL
@@ -47,9 +48,6 @@ void RsIndexBufferWinGL::CreateOnDevice()
 	// bind VBO in order to use
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBuffer);
 
-	// Validate the number of indices
-	//BtAssert( m_pFileData->m_nIndices < 65535 );
-
 	BtU32 dataSize = m_pFileData->m_nIndices * m_indexSize;
 
 	// upload data to VBO
@@ -73,6 +71,9 @@ void RsIndexBufferWinGL::SetIndices()
 {
 	// Bind the index buffer
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBuffer);
+	
+	int error = RsImplWinGL::CheckError();
+	(void)error;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -10,7 +10,6 @@
 #include "RsUtil.h"
 #include "BtMemory.h"
 #include "BtPrint.h"
-#include "glfw.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // FixPointers
@@ -23,8 +22,6 @@ void RsSpriteWinGL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
 
 	// Set the file data
 	m_pFileData->m_pTexture = (RsTexture*)pArchive->GetResource( m_pFileData->m_nTexture );
-
-	m_pFileData->m_pTexture->SetClamped(BtTrue);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -100,13 +97,11 @@ void RsSpriteWinGL::Render( BtBool isFlipX, const MtVector2& v2CurrentPosition, 
 	BtFloat maxU = ( sprite.m_fX + sprite.m_width ) * fScalarX;
 	BtFloat maxV = ( sprite.m_fY + sprite.m_height ) * fScalarY;
 
-	/*
-	minU += fScalarX / 2;
-	minV += fScalarY / 2;
+	minU += fScalarX;
+	minV += fScalarY;
 
-	maxU -= fScalarX / 2;
-	maxV -= fScalarY / 2;
-	*/
+	maxU -= fScalarX;
+	maxV -= fScalarY;
 
 	// Setup the dimension
 	MtVector3 v3HalfDimension( v2Dimension.x * 0.5f, v2Dimension.y * 0.5f, 0 );
@@ -190,10 +185,6 @@ void RsSpriteWinGL::Render( BtBool isFlipX, const MtVector2& v2CurrentPosition, 
 		// Flip the y
 		pQuad[ i ].m_v3Position.y = Height - pQuad[ i ].m_v3Position.y;
 
-		// Scale from 0..1 to 0..2
-//		pQuad[i].m_v3Position.x -= 0.5f;
-//		pQuad[i].m_v3Position.y -= 0.5f;
-
 		// Scale from 0..width to 0..1
 		pQuad[ i ].m_v3Position.x *= scaleWidth;
 		pQuad[ i ].m_v3Position.y *= scaleHeight;
@@ -262,7 +253,7 @@ void RsSpriteWinGL::Render( RsSpriteRenderable *pRenderable )
 	RsTextureWinGL* pTexture = (RsTextureWinGL*)m_pFileData->m_pTexture;
 
 	// Set the texture
-	pTexture->SetTexture(0);
+	pTexture->SetTexture();
 
 	RsPrimitiveWinGL* pPrimitives = (RsPrimitiveWinGL*) pRenderable->m_primitive;
 
@@ -271,13 +262,17 @@ void RsSpriteWinGL::Render( RsSpriteRenderable *pRenderable )
 
 	// Cache the vertex buffer
 	BtU32 vertexBuffer = RsImplWinGL::GetVertexBuffer();
+	BtU32 vertexArray  = RsImplWinGL::GetVertexArray();
+
+	// bind the vertex array
+	glBindVertexArray(vertexArray);
+
+	// bind VBO in order to use
+	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer );
 
 	// Get the size
 	BtU32 dataSize = pPrimitives->m_numVertex * stride;
 
-	// bind VBO in order to use
-	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer );
-	
 	GLenum error;
 	error = glGetError();
 	(void)error;

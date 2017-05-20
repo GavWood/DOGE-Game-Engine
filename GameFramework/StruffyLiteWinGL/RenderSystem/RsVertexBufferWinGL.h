@@ -6,7 +6,7 @@
 #include "BaResource.h"
 #include "BaArchive.h"
 #include "BtTypes.h"
-#include "glfw.h"
+#include <GL/glew.h>
 
 // Class Declaration
 class RsVertexBufferWinGL : public BaResource
@@ -30,4 +30,5 @@ private:
 	GLuint							m_vertexBuffer;
 	BaVertexBufferFileData*			m_pFileData;
 	BtU8*							m_pData;
+	GLuint							m_vertexArray;
 };

@@ -12,6 +12,8 @@
 #include "SgSkinWinGL.h"
 #include <new>
 
+BtU32 RsRenderTargetWinGL::m_frameBufferId = 0;
+
 ////////////////////////////////////////////////////////////////////////////////
 // Reset
 
@@ -82,10 +84,10 @@ void RsRenderTargetWinGL::Add( BtU32 sortOrder, SgSkinRenderable *pSkinRenderabl
 
 void RsRenderTargetWinGL::Render()
 {
-	// Clear the render target so we don't use it in the deferred rendering pass
-	m_pCurrentRenderTarget = BtNull;
+	int error = glGetError();
 
-	glBindFramebuffer(GL_FRAMEBUFFER, 0 );
+	// Clear the render target so we don't use it in the deferred rendering pass
+	m_pCurrentRenderTarget = BtNull;	
 
 	if( m_pTexture != BtNull )
 	{
@@ -94,7 +96,13 @@ void RsRenderTargetWinGL::Render()
 		if( pTexture->m_pFileData->m_flags & RsTF_RenderTarget )
 		{
 			glBindFramebuffer(GL_FRAMEBUFFER, pTexture->m_frameBufferObject );
+			error = glGetError();
 		}
+	}
+	else
+	{
+		glBindFramebuffer(GL_FRAMEBUFFER, m_frameBufferId );
+		error = glGetError();
 	}
 
 	// Cache the viewport
@@ -102,6 +110,7 @@ void RsRenderTargetWinGL::Render()
 
 	// Set the viewport
 	glViewport( currentViewport.m_x, currentViewport.m_y, currentViewport.m_width, currentViewport.m_height );
+	error = glGetError();
 
 	// Clear the viewport
 	if( IsCleared() == BtTrue )
@@ -110,10 +119,7 @@ void RsRenderTargetWinGL::Render()
 		glClearColor( m_clearColour.Red(), m_clearColour.Green(), m_clearColour.Blue(), m_clearColour.Alpha() );
 
 		// Set the depth mask to ensure we clear the z buffer
-		glDepthMask(GL_TRUE);
-
-		// Clear the color buffer
-		//glClear(GL_COLOR_BUFFER_BIT);
+		glDepthMask(GL_TRUE);		// Clear the color buffer
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 	else

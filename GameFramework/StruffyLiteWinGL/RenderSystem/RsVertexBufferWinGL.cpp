@@ -7,8 +7,7 @@
 #include "BtMemory.h"
 #include "RsVertexBufferWinGL.h"
 #include "RsVertex.h"
-#include "RsUtil.h"
-#include "glfw.h"
+#include "RsImplWinGL.h"
 
 RsVertexBufferWinGL VertexBuffer;
 
@@ -50,6 +49,8 @@ void RsVertexBufferWinGL::CreateOnDevice()
 
 	// Unbind vertex buffer
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+	glGenVertexArrays(1, &m_vertexArray);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -57,14 +58,20 @@ void RsVertexBufferWinGL::CreateOnDevice()
 
 void RsVertexBufferWinGL::SetStream()
 {
+	int error = RsImplWinGL::CheckError();
+
+	glBindVertexArray(m_vertexArray);
+
 	// http://www.opengl.org/wiki/Vertex_Buffer_Object
 	for( BtU32 i=0; i<8; i++ )
 	{
 		glDisableVertexAttribArray( i );
 	}
+	error = RsImplWinGL::CheckError();
 
 	// Bind the vertex buffer
 	glBindBuffer(GL_ARRAY_BUFFER, m_vertexBuffer);         // for vertex coordinates
+	error = RsImplWinGL::CheckError();
 
 	BtU32 offset = 0;
 	BtU32 stride = m_pFileData->m_nStride;
@@ -79,6 +86,8 @@ void RsVertexBufferWinGL::SetStream()
 
 		offset += sizeof( MtVector3 );
 		++index;
+
+		error = RsImplWinGL::CheckError();
 	}
 
 	if ( vertexType & VT_Normal )

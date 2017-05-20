@@ -37,6 +37,8 @@ public:
 	void									Add( BtU32 sortOrder, SgSkinRenderable *pNodeRenderable );
 	void									Render();
 
+	static void							    SetFrameBufferId(BtU32 index) { m_frameBufferId = index; }
+
 protected:
 
 	BtLinkedList<RsFontRenderable>			m_fonts[MaxSortOrders];
@@ -45,4 +47,5 @@ protected:
 	BtLinkedList<SgMeshRenderable>			m_nodes[MaxSortOrders];
 	BtLinkedList<SgSkinRenderable>			m_skinNodes[MaxSortOrders];
 	BtLinkedList<RsSpriteRenderable>		m_sprites[MaxSortOrders];
+	static BtU32							m_frameBufferId;
 };

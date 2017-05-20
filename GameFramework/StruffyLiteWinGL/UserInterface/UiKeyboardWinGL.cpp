@@ -5,74 +5,6 @@
 #include "BtMemory.h"
 #include "UiKeyboardWinGL.h"
 #include "ErrorLog.h"
-#include "glfw.h"
-
-const BtU32 glfwKeys[] = { (BtU32)GLFW_KEY_ESC,
-						   (BtU32)GLFW_KEY_ENTER,
-						   (BtU32)'A',
-						   (BtU32)'B',
-						   (BtU32)'C',
-						   (BtU32)'D',
-						   (BtU32)'E',
-						   (BtU32)'F',
-						   (BtU32)'G',
-						   (BtU32)'H',
-						   (BtU32)'I',
-						   (BtU32)'J',
-						   (BtU32)'K',
-						   (BtU32)'L',
-						   (BtU32)'M',
-						   (BtU32)'N',
-						   (BtU32)'O',
-						   (BtU32)'P',
-						   (BtU32)'Q',
-						   (BtU32)'R',
-						   (BtU32)'S',
-						   (BtU32)'T',
-						   (BtU32)'U',
-						   (BtU32)'V',
-						   (BtU32)'W',
-						   (BtU32)'X',
-						   (BtU32)'Y',
-						   (BtU32)'Z',
-						   (BtU32)'0',
-						   (BtU32)'1',
-						   (BtU32)'2',
-						   (BtU32)'3',
-						   (BtU32)'4',
-						   (BtU32)'5',
-						   (BtU32)'6',
-						   (BtU32)'7',
-						   (BtU32)'8',
-						   (BtU32)'9',
-						   (BtU32)GLFW_KEY_SPACE,
-						   (BtU32)GLFW_KEY_LSHIFT,
-						   (BtU32)GLFW_KEY_RSHIFT,
-						   (BtU32)39,
-						   (BtU32)47,
-						   (BtU32)GLFW_KEY_LALT,
-						   (BtU32)GLFW_KEY_F1,
-						   (BtU32)GLFW_KEY_F2,
-						   (BtU32)GLFW_KEY_F3,
-						   (BtU32)GLFW_KEY_F4,
-						   (BtU32)GLFW_KEY_F5,
-						   (BtU32)GLFW_KEY_F6,
-						   (BtU32)GLFW_KEY_F7,
-						   (BtU32)GLFW_KEY_F8,
-						   (BtU32)GLFW_KEY_F9,
-						   (BtU32)GLFW_KEY_F10,
-						   (BtU32)GLFW_KEY_F11,
-						   (BtU32)GLFW_KEY_F12,
-						   (BtU32)',',
-						   (BtU32)'.',
-						   (BtU32)295,
-						   (BtU32)284,
-						   (BtU32)283,
-						   (BtU32)285,
-						   (BtU32)286,
-							(BtU32)'=',
-							(BtU32)'-',
-						};
 
 const BtU32 struffKeys[] = { (BtU32)UiKeyCode_ESCAPE,
 							 (BtU32)UiKeyCode_RETURN,
@@ -153,50 +85,88 @@ UiKeyboardWinGL::UiKeyboardWinGL()
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// GetNumKeys
+
+BtU32 UiKeyboardWinGL::GetNumKeys()
+{
+	return sizeof(struffKeys) / sizeof(BtU32);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// GetKeyCode
+
+BtU32 UiKeyboardWinGL::GetKeyCode( BtU32 index )
+{
+	return struffKeys[index];
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// SetPressed
+
+void UiKeyboardWinGL::SetPressed(int myKey)
+{
+	m_isKeyPressed[myKey] = BtTrue;
+
+	if (m_isKeyPressed[UiKeyCode_DOWN])
+	{
+		int a = 0;
+		a++;
+	}
+	if (m_isKeyPressed[UiKeyCode_UP])
+	{
+		int a = 0;
+		a ++;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// SetReleased
+
+void UiKeyboardWinGL::SetReleased(int myKey)
+{
+	m_isKeyPressed[myKey] = BtFalse;
+}
+
+////////////////////////////////////////////////////////////////////////////////
 // Update
 
 void UiKeyboardWinGL::Update()
 {
-	BtU32 numKeys  = sizeof(glfwKeys) / sizeof(BtU32);
-	BtU32 numKeys2 = sizeof(struffKeys) / sizeof(BtU32);
-	BtAssert( numKeys == numKeys2 );
-
-	for( BtU32 i=0; i<numKeys; i++ )
+	if (m_isKeyPressed[UiKeyCode_F1])
 	{
-		BtU32 glfwKey = glfwKeys[i];
-		BtU32 myKey = struffKeys[i];
-
-		BtBool isKeyPressed = BtFalse;
-
-		if( glfwGetKey( glfwKey ) == GLFW_PRESS )
-		{
-			isKeyPressed = BtTrue;
-		}
-
-		// Was it released
-		m_nKeyUp[myKey] = !isKeyPressed && m_nKeyDown[myKey];
-
-		// Is it a new key press?
-		m_nKeyNewDown[myKey] = isKeyPressed && !m_nKeyDown[myKey];
-
-		// Set this key as pressed
-		m_nKeyDown[myKey] = isKeyPressed;
+		int a = 0;
+		a++;
 	}
-
-	if( m_nKeyNewDown[UiKeyCode_F4] )
+	if (m_isKeyPressed[UiKeyCode_W])
 	{
-		int a=0;
+		int a = 0;
+		a++;
+	}
+	if (m_isKeyPressed[UiKeyCode_DOWN])
+	{
+		int a = 0;
 		a++;
 	}
 
-	for( BtU32 i=0; i<512; i++ )
+	for (BtU32 i = 0; i < 256; i++)
 	{
-		// For capturing unknown key codes
-		if( glfwGetKey( i ) == GLFW_PRESS )
+		// Was the key pressed?
+		BtBool isKeyPressed = m_isKeyPressed[i];	
+
+		// Was it released
+		m_nKeyUp[i] = !isKeyPressed && m_nKeyDown[i];
+
+		// Is it a new key press?
+		m_nKeyNewDown[i] = isKeyPressed && !m_nKeyDown[i];
+
+		if (m_nKeyNewDown[i])
 		{
-			int a=0;
+			int a = 0;
 			a++;
 		}
+
+		// Set this key as pressed
+		m_nKeyDown[i] = isKeyPressed;
 	}
 }
 
@@ -226,7 +196,7 @@ BtBool UiKeyboardWinGL::IsPressed( UiKeyCode key )
 
 BtBool UiKeyboardWinGL::IsPressed()
 {
-	BtU32 numKeys = sizeof(glfwKeys) / sizeof(BtU32);
+	BtU32 numKeys = sizeof(struffKeys) / sizeof(BtU32);
 	
 	for (BtU32 i = 0; i < numKeys; i++)
 	{

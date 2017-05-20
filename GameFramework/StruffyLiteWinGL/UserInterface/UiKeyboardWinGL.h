@@ -22,6 +22,14 @@ class UiKeyboardWinGL : public UiKeyboard
 		BtBool					IsReleased( UiKeyCode code );
 		BtBool					IsPressed();
 
+		void					SetPressed(int code);
+		void					SetReleased(int code);
+
+		static BtU32			GetNumKeys();
+		static BtU32		    GetKeyCode( BtU32 index);
+
+		BtBool					m_isKeyPressed[512];
+
 	private:
 
 		BtBool					m_nLastKeyDown[512];

@@ -47,58 +47,6 @@ MtVector2 RsTextureWinGL::GetOriginalDimension() const
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// checkError
-
-GLenum RsTextureWinGL::checkError( const BtChar* action )
-{
-	GLenum error = glGetError();
-
-	switch( error )
-	{
-	case GL_NO_ERROR:
-		break;
-
-	case GL_INVALID_ENUM:
-		{
-			BtPrint( "%s GL_INVALID_ENUM when creating texture %s\r\n", action, GetTitle() );
-			break;
-		}
-	case GL_INVALID_VALUE:
-		{
-			BtPrint( "%s GL_INVALID_VALUE when creating texture %s\r\n", action, GetTitle() );
-			break;
-		}
-	case GL_INVALID_OPERATION:
-		{
-			BtPrint( "%s GL_INVALID_OPERATION when creating texture %s\r\n", action, GetTitle() );
-			break;
-		}
-	case GL_STACK_OVERFLOW:
-		{
-			BtPrint( "%s GL_STACK_OVERFLOW when creating texture %s\r\n", action, GetTitle() );
-			break;
-		}
-	case GL_STACK_UNDERFLOW:
-		{
-			BtPrint( "%s GL_STACK_UNDERFLOW when creating texture %s\r\n", action, GetTitle() );
-			break;
-		}
-	case GL_OUT_OF_MEMORY:
-		{
-			BtPrint( "%s GL_OUT_OF_MEMORY when creating texture %s\r\n", action, GetTitle() );
-			break;
-		}
-
-	default:
-		{
-			BtPrint( "Unknown error when creating texture %s\r\n", action, GetTitle() );
-			break;
-		}
-	}
-	return error;
-}
-
-////////////////////////////////////////////////////////////////////////////////
 // FixPointers
 
 //virtual
@@ -119,39 +67,33 @@ BtU32 RsTextureWinGL::GetTextureHandle()
 ////////////////////////////////////////////////////////////////////////////////
 // SetTexture
 
-void RsTextureWinGL::SetTexture( BtU32 textureIndex )
+void RsTextureWinGL::SetTexture()
 {
     GLenum error;
+	glGetError();
     
-	int test = GL_TEXTURE1;
-	(void)(test);
-	int textureSamplerStage = GL_TEXTURE0 + textureIndex;
-	glActiveTexture(textureSamplerStage);
-	error = glGetError();
-
-	//glEnable(GL_TEXTURE_2D);
-
 	glBindTexture(GL_TEXTURE_2D, m_texture );
     error = glGetError();
 
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
     if( m_pFileData->m_flags & RsTF_ClampU )
     {
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE );
+		glTextureParameteri( m_texture, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE );
+		error = glGetError();
 	}
 	if (m_pFileData->m_flags & RsTF_ClampV)
 	{
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE );
-    }
+		glTextureParameteri( m_texture, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE );
+		error = glGetError();
+	}
 	if (m_pFileData->m_flags & RsTF_WrapU)
 	{
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
+		glTextureParameteri( m_texture, GL_TEXTURE_WRAP_S, GL_REPEAT );
+		error = glGetError();
 	}
 	if (m_pFileData->m_flags & RsTF_WrapV)
 	{
-		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
+		glTextureParameteri( m_texture, GL_TEXTURE_WRAP_T, GL_REPEAT );
+		error = glGetError();
 	}
 }
 
@@ -194,6 +136,8 @@ void RsTextureWinGL::SetWrapped(BtBool isEnabled)
 
 void RsTextureWinGL::CreateOnDevice()
 {
+	int error;
+
 	// Find the mipmap data
 	BtU8* pMemory = (BtU8*)( m_pFileData );
 
@@ -224,6 +168,8 @@ void RsTextureWinGL::CreateOnDevice()
 	}
 	else
 	{
+		glGetError();
+
 		BtU32 iMipmapLevel=0; // iMipmapLevel<m_pFileData->m_nMipMaps; iMipmapLevel++ )
 
 		// Cache each mipmap
@@ -237,7 +183,8 @@ void RsTextureWinGL::CreateOnDevice()
 
 		(void)textureSize;
 
-		glEnable( GL_TEXTURE_2D );
+		//glEnable( GL_TEXTURE_2D );
+		//error = glGetError();
 
 		// Load the texture
 		GLenum format = (GLenum)0;
@@ -271,10 +218,15 @@ void RsTextureWinGL::CreateOnDevice()
 		mipMap = m_pMipmaps[0];
 
 		glGenTextures(1, &m_texture);
+		error = glGetError();
+		
 		glBindTexture(GL_TEXTURE_2D, m_texture);
-		glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+		error = glGetError();
 
-		int error = glGetError();
+		glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+		error = glGetError();
+
+		error = glGetError();
 		{
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
@@ -336,7 +288,7 @@ void RsTextureWinGL::CreateOnDevice()
 				pTextureMemory );		  			//picture datas
 			//glGenerateMipmap(GL_TEXTURE_2D);
 
-			checkError( "glTexImage2D" );
+			//checkError( "glTexImage2D" );
 		}
 	}
 	glBindTexture( GL_TEXTURE_2D, 0 );
@@ -392,9 +344,9 @@ RsColour RsTextureWinGL::GetPixel( BtU32 x, BtU32 y, BtU8& red, BtU8& green, BtU
 		BtU8* pAddress = mipMap.m_pTextureMemory + (x * 4) + (y * mipMap.m_nPitch);
 
 		alpha = *(pAddress + 3);
-		red   = *(pAddress + 2);
+		red = *(pAddress + 2);
 		green = *(pAddress + 1);
-		blue  = *(pAddress + 0);
+		blue = *(pAddress + 0);
 	}
 	else
 	{
@@ -573,7 +525,7 @@ void RsTextureWinGL::Render( RsTextureRenderable *pRenderable )
 	pShader->SetTechnique( "RsShaderT2" );
 	pShader->SetMatrix( RsHandles_WorldViewScreen, m4WorldViewScreen );
 
-	for( BtU32 i=0; i<8; i++ )
+	for( BtU32 i=0; i<7; i++ )
 	{
 		glDisableVertexAttribArray( i );
 	}
@@ -582,7 +534,7 @@ void RsTextureWinGL::Render( RsTextureRenderable *pRenderable )
 	RsTextureWinGL* pTexture = (RsTextureWinGL*)pRenderable->m_pTexture;
 
 	// Set the texture
-	pTexture->SetTexture(0);
+	pTexture->SetTexture();
 
 	// Set vertex arrays
 	BtU32 stride = sizeof(RsVertex3);
@@ -656,8 +608,10 @@ BtU8 *RsTextureWinGL::ReadMemory()
 void RsTextureWinGL::WriteMemory( BtU8* pMemory, BtU32 size )
 {
 	// Cache the mipmap
+	// Cache each mipmap
 	LBaMipMapFileData& mipMap = m_pMipmaps[0];
-
+	memcpy(mipMap.m_pTextureMemory, pMemory, size);
+	
 	//BtAssert(mipMap.m_nWidth * mipMap.m_nHeight * 4 == size);
 
 	glBindTexture(GL_TEXTURE_2D, m_texture);

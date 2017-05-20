@@ -70,6 +70,8 @@ public:
 
 private:
 
+	void								Commit();
+
 	BaShaderFileData*					m_pFileData;
 
 	BtS32								m_program[8];

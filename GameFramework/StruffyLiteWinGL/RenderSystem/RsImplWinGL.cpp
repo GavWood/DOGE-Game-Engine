@@ -15,6 +15,7 @@ RsCapsWinGL capsWinGL;
 
 //static
 BtU32 RsImplWinGL::m_vertexBuffer = 0;
+BtU32 RsImplWinGL::m_vertexArray  = 0;
 
 ////////////////////////////////////////////////////////////////////////////////
 // GetCaps
@@ -44,6 +45,7 @@ void RsImplWinGL::Create()
 
 void RsImplWinGL::CreateOnDevice()
 {
+	glGenVertexArrays(1, &m_vertexArray);
 	glGenBuffers(1, &m_vertexBuffer);
 }
 
@@ -56,11 +58,20 @@ BtU32 RsImplWinGL::GetVertexBuffer()
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// GetVertexArray
+
+BtU32 RsImplWinGL::GetVertexArray()
+{
+	return m_vertexArray;
+}
+
+////////////////////////////////////////////////////////////////////////////////
 // RemoveFromDevice
 
 void RsImplWinGL::RemoveFromDevice()
 {
 	glDeleteBuffers(1, &m_vertexBuffer);
+	glDeleteVertexArrays(1, &m_vertexArray);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -217,6 +228,10 @@ void RsImplWinGL::Render()
 
 	glDisable(GL_ALPHA_TEST);  
 
+	glDepthMask(GL_TRUE);
+	BtU32 cullFace = GL_CW;
+	glFrontFace(cullFace);
+
 	// Cache the number of render targets
 	BtU32 numRenderTargets = m_renderTargets.GetNumItems();
 
@@ -232,4 +247,57 @@ void RsImplWinGL::Render()
 	EndScene();
 
 	ResetRenderables();
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// checkError
+
+int RsImplWinGL::CheckError()
+{
+	GLenum error = glGetError();
+
+	switch (error)
+	{
+		case GL_NO_ERROR:
+			break;
+
+		case GL_INVALID_ENUM:
+		{
+			BtPrint("%s GL_INVALID_ENUM when creating texture\r\n");
+			break;
+		}
+		case GL_INVALID_VALUE:
+		{
+			BtPrint("%s GL_INVALID_VALUE when creating texture\r\n");
+			break;
+		}
+		case GL_INVALID_OPERATION:
+		{
+			BtPrint("%s GL_INVALID_OPERATION when creating texture\r\n");
+			break;
+		}
+		case GL_STACK_OVERFLOW:
+		{
+			BtPrint("%s GL_STACK_OVERFLOW when creating texture\r\n");
+			break;
+		}
+		case GL_STACK_UNDERFLOW:
+		{
+			BtPrint("%s GL_STACK_UNDERFLOW when creating texture %s\r\n");
+			break;
+		}
+		case GL_OUT_OF_MEMORY:
+		{
+			BtPrint("%s GL_OUT_OF_MEMORY when creating texture\r\n");
+			break;
+		}
+
+		default:
+		{
+			BtPrint("Unknown error when creating texture\r\n");
+			break;
+		}
+	}
+	return error;
 }

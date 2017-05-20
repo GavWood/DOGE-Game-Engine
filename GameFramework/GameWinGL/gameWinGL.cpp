@@ -22,6 +22,7 @@
 #include "ShJoystick.h"
 #include "ShKeyboard.h"
 #include "FsFile.h"
+#include "UiKeyboardWinGL.h"
 
 //#pragma comment(lib, "XInput.lib") // Library containing necessary 360
 
@@ -63,6 +64,106 @@ void GetDesktopResolution(int& horizontal, int& vertical)
 	vertical = desktop.bottom;
 }
 
+const BtU32 glfwKeys[] = { (BtU32)GLFW_KEY_ESC,
+(BtU32)GLFW_KEY_ENTER,
+(BtU32)'A',
+(BtU32)'B',
+(BtU32)'C',
+(BtU32)'D',
+(BtU32)'E',
+(BtU32)'F',
+(BtU32)'G',
+(BtU32)'H',
+(BtU32)'I',
+(BtU32)'J',
+(BtU32)'K',
+(BtU32)'L',
+(BtU32)'M',
+(BtU32)'N',
+(BtU32)'O',
+(BtU32)'P',
+(BtU32)'Q',
+(BtU32)'R',
+(BtU32)'S',
+(BtU32)'T',
+(BtU32)'U',
+(BtU32)'V',
+(BtU32)'W',
+(BtU32)'X',
+(BtU32)'Y',
+(BtU32)'Z',
+(BtU32)'0',
+(BtU32)'1',
+(BtU32)'2',
+(BtU32)'3',
+(BtU32)'4',
+(BtU32)'5',
+(BtU32)'6',
+(BtU32)'7',
+(BtU32)'8',
+(BtU32)'9',
+(BtU32)GLFW_KEY_SPACE,
+(BtU32)GLFW_KEY_LSHIFT,
+(BtU32)GLFW_KEY_RSHIFT,
+(BtU32)39,
+(BtU32)47,
+(BtU32)GLFW_KEY_LALT,
+(BtU32)GLFW_KEY_F1,
+(BtU32)GLFW_KEY_F2,
+(BtU32)GLFW_KEY_F3,
+(BtU32)GLFW_KEY_F4,
+(BtU32)GLFW_KEY_F5,
+(BtU32)GLFW_KEY_F6,
+(BtU32)GLFW_KEY_F7,
+(BtU32)GLFW_KEY_F8,
+(BtU32)GLFW_KEY_F9,
+(BtU32)GLFW_KEY_F10,
+(BtU32)GLFW_KEY_F11,
+(BtU32)GLFW_KEY_F12,
+(BtU32)',',
+(BtU32)'.',
+(BtU32)295,
+(BtU32)284,
+(BtU32)283,
+(BtU32)285,
+(BtU32)286,
+(BtU32)'=',
+(BtU32)'-',
+};
+
+static void key_callback(int keyCode, int action)
+{
+	UiKeyboardWinGL *pKeyboard = (UiKeyboardWinGL*)UiKeyboard::pInstance();
+
+	// For capturing unknown key codes
+	if( ( action == GLFW_PRESS) || (action == GLFW_RELEASE) )
+	{	
+		BtU32 numKeys = sizeof(glfwKeys) / sizeof(BtU32);
+		for (int myKeyArrayIndex = 0; myKeyArrayIndex < numKeys; myKeyArrayIndex++)
+		{
+			BtU32 glfwKeyInMyArray = glfwKeys[myKeyArrayIndex];
+
+			if (keyCode == glfwKeyInMyArray)
+			{
+				BtU32 numStruffKeys = UiKeyboardWinGL::GetNumKeys();
+
+				BtAssert(numStruffKeys == numKeys);
+
+				// Key at this index has been pressed
+				BtU32 struffKeyCode = UiKeyboardWinGL::GetKeyCode(myKeyArrayIndex);
+
+				if (glfwGetKey(keyCode) == GLFW_PRESS)
+				{
+					pKeyboard->SetPressed(struffKeyCode);
+				}
+				if (glfwGetKey(keyCode) == GLFW_RELEASE)
+				{
+					pKeyboard->SetReleased(struffKeyCode);
+				}
+			}
+		}
+	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Create
@@ -201,6 +302,8 @@ void Game::Create(GaProject *pProject)
 
 	// Hide the cursor
 	glfwDisable(GLFW_MOUSE_CURSOR);
+
+	glfwSetKeyCallback( key_callback );
 
 	project->Create();
 	project->Reset();

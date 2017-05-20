@@ -8,7 +8,6 @@
 #include "BtString.h"
 #include "MtVector2.h"
 #include "RsVertex.h"
-#include "glfw.h"
 #include "cJSON.h"
 #include "BtTime.h"
 #include "RsImplWinGL.h"

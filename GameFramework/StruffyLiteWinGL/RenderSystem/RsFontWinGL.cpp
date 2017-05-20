@@ -28,7 +28,7 @@ void RsFontWin32GL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
 		m_pTextures[iTexture] = (RsTextureWinGL*) pArchive->GetResource( m_pFileData->m_nTextures[iTexture] );
 	}
 
-	BtBool isTTF = (BtBool)m_pFileData->m_isTTFFont;
+	BtU32 isTTF = (BtU32)m_pFileData->m_isTTFFont;
 	BtChar *title = this->m_pTitle;
 	(void)isTTF;
 	(void)title;
@@ -38,7 +38,6 @@ void RsFontWin32GL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
 
 ////////////////////////////////////////////////////////////////////////////////
 // SetNewLineRatio
-
 void RsFontWin32GL::SetNewLineRatio( BtFloat ratio )
 {
 	m_ratio = ratio;
@@ -184,6 +183,9 @@ void RsFontWin32GL::Render( const MtVector2& v2Position,
 	{
 		// Set the colour
 		pQuad[i].m_colour = rgbColour;
+
+		pQuad[i].m_v3Position.x -= 0.5f;
+		pQuad[i].m_v3Position.y -= 0.5f;
 
 		// Flip the y
 		pQuad[i].m_v3Position.y = height - pQuad[i].m_v3Position.y;
@@ -360,6 +362,9 @@ MtVector2 RsFontWin32GL::Render( const MtVector2& v2StartPosition,
 			// Flip the y
 			pQuad[ i ].m_v3Position.y = Height - pQuad[ i ].m_v3Position.y;
 
+			pQuad[ i ].m_v3Position.x -= 0.5f;
+			pQuad[ i ].m_v3Position.y -= 0.5f;
+
 			// Scale from 0..width to 0..1
 			pQuad[ i ].m_v3Position.x *= fScaleWidth;
 			pQuad[ i ].m_v3Position.y *= fScaleHeight;
@@ -457,19 +462,26 @@ void RsFontWin32GL::Render( RsFontRenderable *pRenderable )
 	pShader->SetTechnique( "RsShaderT2" );
 	pShader->SetMatrix( RsHandles_WorldViewScreen, m4WorldViewScreen );
 
-	for( BtU32 i=0; i<8; i++ )
+	// Cache the vertex buffer
+	BtU32 vertexBuffer = RsImplWinGL::GetVertexBuffer();
+	BtU32 vertexArray = RsImplWinGL::GetVertexArray();
+
+	// bind the vertex array
+	glBindVertexArray(vertexArray);
+
+	// bind VBO in order to use
+	glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
+
+	for( BtU32 i=0; i<7; i++ )
 	{
 		glDisableVertexAttribArray( i );
 	}
 
 	// Set the texture
-	pTexture->SetTexture(0);
+	pTexture->SetTexture();
 
 	// Set vertex arrays
 	BtU32 stride = sizeof(RsVertex3);
-
-	// Cache the vertex buffer
-	BtU32 vertexBuffer = RsImplWinGL::GetVertexBuffer();
 
 	// Get the size
 	BtU32 dataSize = pPrimitives->m_numVertex * stride;
@@ -517,4 +529,8 @@ void RsFontWin32GL::Render( RsFontRenderable *pRenderable )
 
 	// Draw the primitives
 	pShader->Draw( pRenderable->m_primitive );
+
+	glBindVertexArray(0);
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }

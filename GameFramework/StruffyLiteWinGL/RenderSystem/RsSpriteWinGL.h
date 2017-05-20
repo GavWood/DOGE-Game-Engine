@@ -1,8 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // RsSpriteWin32GL.h
 
-#ifndef __RsSpriteWin32GL_h__
-#define __RsSpriteWin32GL_h__
+#pragma once
 
 // Includes
 #include "BaResource.h"
@@ -36,5 +35,3 @@ private:
 
 	LBaSpriteFileData*		m_pFileData;
 };
-
-#endif // __RsSpriteWin32GL_h__

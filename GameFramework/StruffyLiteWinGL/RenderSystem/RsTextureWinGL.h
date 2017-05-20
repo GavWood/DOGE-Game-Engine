@@ -8,7 +8,7 @@
 #include "RsTexture.h"
 #include "RsColour.h"
 #include "MtVector2.h"
-#include "glfw.h"
+#include <GL/glew.h>
 
 struct RsTextureRenderable;
 
@@ -39,7 +39,7 @@ public:
 	void					SetClamped(BtBool isEnabled);
 	void					SetWrapped(BtBool isEnabled);
 
-	void					SetTexture( BtU32 texture );
+	void					SetTexture();
 
 	RsColour				GetPixel( BtU32 x, BtU32 y, BtU8& red, BtU8& green, BtU8& blue, BtU8 &alpha );
 
