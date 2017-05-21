@@ -31,7 +31,7 @@ MtVector2 HlScreenSize::Refactor( const MtVector2 &v2OriginalScreenSize,
 	BtFloat x = (BtFloat)RsUtil::GetWidth()  / v2OriginalScreenSize.x;
 	BtFloat y = (BtFloat)RsUtil::GetHeight() / v2OriginalScreenSize.y;
 
-	MtVector2 v2NewDimension = MtVector2(v2Coord.x * x, v2Coord.y * y);
+	MtVector2 v2NewDimension = MtVector2( MtFloor(v2Coord.x * x), MtFloor(v2Coord.y * y) );
 
 	return v2NewDimension;
 }
@@ -46,7 +46,7 @@ MtVector2 HlScreenSize::Refactor( const MtVector2 &v2OriginalScreenSize,
 	BtFloat x = (BtFloat)v2CurrentScreenDimension.x / v2OriginalScreenSize.x;
 	BtFloat y = (BtFloat)v2CurrentScreenDimension.y / v2OriginalScreenSize.y;
 
-	MtVector2 v2NewDimension = MtVector2( v2Coord.x * x, v2Coord.y * y);
+	MtVector2 v2NewDimension = MtVector2( MtFloor(v2Coord.x * x), MtFloor(v2Coord.y * y) );
 
 	return v2NewDimension;
 }

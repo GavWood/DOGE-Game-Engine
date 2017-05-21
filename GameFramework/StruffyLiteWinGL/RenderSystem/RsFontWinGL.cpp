@@ -362,9 +362,6 @@ MtVector2 RsFontWin32GL::Render( const MtVector2& v2StartPosition,
 			// Flip the y
 			pQuad[ i ].m_v3Position.y = Height - pQuad[ i ].m_v3Position.y;
 
-			pQuad[ i ].m_v3Position.x -= 0.5f;
-			pQuad[ i ].m_v3Position.y -= 0.5f;
-
 			// Scale from 0..width to 0..1
 			pQuad[ i ].m_v3Position.x *= fScaleWidth;
 			pQuad[ i ].m_v3Position.y *= fScaleHeight;

@@ -97,12 +97,6 @@ void RsSpriteWinGL::Render( BtBool isFlipX, const MtVector2& v2CurrentPosition, 
 	BtFloat maxU = ( sprite.m_fX + sprite.m_width ) * fScalarX;
 	BtFloat maxV = ( sprite.m_fY + sprite.m_height ) * fScalarY;
 
-	minU += fScalarX;
-	minV += fScalarY;
-
-	maxU -= fScalarX;
-	maxV -= fScalarY;
-
 	// Setup the dimension
 	MtVector3 v3HalfDimension( v2Dimension.x * 0.5f, v2Dimension.y * 0.5f, 0 );
 	MtVector3 v3RotatedDimension[4];
@@ -196,6 +190,7 @@ void RsSpriteWinGL::Render( BtBool isFlipX, const MtVector2& v2CurrentPosition, 
 		// Translate from 0..2 to -1..1
 		pQuad[ i ].m_v3Position.x -= 1.0f;
 		pQuad[ i ].m_v3Position.y -= 1.0f;
+
 	}
 
 	// Setup the primitive
