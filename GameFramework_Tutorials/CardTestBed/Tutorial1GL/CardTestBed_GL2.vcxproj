@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2900C335-7428-417C-BD18-F78CDED9885F}</ProjectGuid>
+    <RootNamespace>Games</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>CardTestBedGL</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\GameFrameWork\includes\;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Base;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Maths;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\BinaryArchive;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\RenderSystem;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\RandomNumbers;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Sound;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\SceneGrap;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Application;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Includes;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Dynamics;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\UserInterface;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Base\Win32;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\SceneGraph\Win32;$(SolutionDir)\..\..\..\GameFrameWork\Game;$(SolutionDir)\..\..\..\GameFrameWork\Helper;$(SolutionDir)\..\..\..\GameFrameWork\Shared;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\GLFW\include;$(SolutionDir)\..\..\..\GavinWood_Tutorials\TutorialRoot\Tutorial1\SourceCode;$(SolutionDir)\..\..\..\GameFrameWork\Dynamics;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\stb;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\opencv;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions);_WINDOWS;StruffyLiteWinGL</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies);opengl32.lib;glu32.lib;gdi32.lib;winmm.lib</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;C:\glfw\support\msvc90\glfw-2.7.bin.WIN32\lib-msvc90\debug;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\OpenAL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\GameFrameWork\includes\;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Base;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Maths;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\BinaryArchive;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\RenderSystem;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\RandomNumbers;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Sound;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\SceneGrap;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Application;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Includes;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Dynamics;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\UserInterface;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Base\Win32;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\SceneGraph\Win32;$(SolutionDir)\..\..\..\GameFrameWork\Game;$(SolutionDir)\..\..\..\GameFrameWork\Helper;$(SolutionDir)\..\..\..\GameFrameWork\Shared;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\GLFW\include;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\stb;$(SolutionDir)\..\..\..\GameFramework_Tutorials\Tutorial1\SourceCode;$(SolutionDir)\..\..\..\GameFrameWork\Dynamics;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies);opengl32.lib;glu32.lib;gdi32.lib;openal32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;C:\glfw\support\msvc90\glfw-2.7.bin.WIN32\lib-msvc90\debug;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\OpenAL;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\GameFramework\GameWinGL\GameWinGL.vcxproj">
+      <Project>{1bc33b2e-5e35-4755-902f-8cfecfb6dfe1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework\Helper\Helper.vcxproj">
+      <Project>{6a4946a8-5b80-4501-8165-96f3d0b5e8c0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework\Multiplayer\Multiplayer.vcxproj">
+      <Project>{c6d51628-9e61-427b-a3c3-e9468029f55d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework\Shared\Shared.vcxproj">
+      <Project>{07b16539-9c37-4bd7-bfb1-2a8ad06c6f4e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework\StruffyLiteWinGL\StruffyLiteWinGL.vcxproj">
+      <Project>{2ce27105-5ef8-40eb-892c-3a8e883a3b93}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework\StruffyLite\StruffyLite.vcxproj">
+      <Project>{83eb3ca3-b332-4b24-9099-677248fe9c21}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework_ThirdParty\enet\enet.vcxproj">
+      <Project>{7472da5d-95df-4043-90a4-bf7143cea717}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework_ThirdParty\FFT\fft.vcxproj">
+      <Project>{0207d683-2d6a-4d5d-a2ed-ca46322acf83}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework_ThirdParty\glfw\GLFW.vcxproj">
+      <Project>{788c3228-0080-4851-8e39-8a25be3b7d50}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework_ThirdParty\JSON\JSON\JSON.vcxproj">
+      <Project>{6c9d89e7-72ac-4092-8e1b-69cd107c3183}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework_ThirdParty\ManyMouse\ManyMouse.vcxproj">
+      <Project>{e06d5f74-2307-4018-9bdf-4375b7a65efb}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework_ThirdParty\TinyXML\TinyXML.vcxproj">
+      <Project>{9212baec-5389-4f93-916e-6de13cd4922a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework_ThirdParty\ZLib\Zlib\Zlib.vcxproj">
+      <Project>{71bcb9c3-b2fa-4eb1-8734-ce236658b26b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Tutorial1\SourceCode\CardTestBed.vcxproj">
+      <Project>{f07c200d-1afa-42ff-9ddd-28308b3dc6f7}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Tutorial1\BatchFiles\OpenGameData.bat">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\Tutorial1\BatchFiles\Pack.bat">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Tutorial1\SourceCode\GaProject_Tutorial1.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
