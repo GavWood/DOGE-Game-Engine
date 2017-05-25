@@ -95,9 +95,9 @@ void SgAnimatorWinGL::Reset()
 	m_bPaused = BtFalse;
 }
 
-void SgAnimatorWinGL::Pause( BtBool bPause )
+void SgAnimatorWinGL::SetPaused( BtBool isPause )
 {
-	m_bPaused = bPause;
+	m_bPaused = isPause;
 }
 
 BtBool SgAnimatorWinGL::IsEnded() const

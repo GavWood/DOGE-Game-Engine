@@ -46,7 +46,6 @@ void SbGamePacket::SendReliable()
 {
 	m_header.m_hashcode = BtCRC::GenerateHashCode((const BtU8*)m_data, m_length);
 	m_current = 0;
-	BtU32 headerSize = sizeof(SbGamePacketHeader);
 	MpPeerToPeer::SendReliable( this, sizeof(SbGamePacketHeader) + m_length );
 }
 
@@ -68,7 +67,6 @@ void SbGamePacket::SendFragment()
 	BtAssert(m_length < 576);
 	m_header.m_hashcode = BtCRC::GenerateHashCode((const BtU8*)m_data, m_length);
 	m_current = 0;
-	BtU32 headerSize = sizeof(SbGamePacketHeader);
 	MpPeerToPeer::SendFragment(this, sizeof(SbGamePacketHeader) + m_length );
 }
 

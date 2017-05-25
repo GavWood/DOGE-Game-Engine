@@ -22,7 +22,8 @@ public:
     static void                     Main();
 	static BtFloat				   *GetFFT( BtU32 &samples );
 	static BtFloat					GetPitch();
-    
+    static BtBool					IsRecordAvailable();
+
 private:
     
     static BtBool                   m_isFFT;

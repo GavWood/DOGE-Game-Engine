@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B81D0121ED77EEA0013067D /* CgCard7.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B81D0101ED77EEA0013067D /* CgCard7.cpp */; };
+		7B81D0161ED7891A0013067D /* card7.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B81D0151ED7891A0013067D /* card7.iPhonez */; };
 		7BF217501C09D7A7004E4743 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF2174F1C09D7A7004E4743 /* CoreMedia.framework */; };
 		7BF34B5D1C0601300048F1DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF34B5C1C0601300048F1DF /* main.m */; };
 		7BF34B671C0601300048F1DF /* GameViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BF34B661C0601300048F1DF /* GameViewController.mm */; };
@@ -60,7 +62,6 @@
 		7BF8466C1E71DFC0005D5C0D /* HlTrueType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF844DC1E71DFC0005D5C0D /* HlTrueType.cpp */; };
 		7BF8466D1E71DFC0005D5C0D /* HlUserData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF844DE1E71DFC0005D5C0D /* HlUserData.cpp */; };
 		7BF8466E1E71DFC0005D5C0D /* HlView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF844E01E71DFC0005D5C0D /* HlView.cpp */; };
-		7BF8466F1E71DFC0005D5C0D /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7BF844E21E71DFC0005D5C0D /* license.txt */; };
 		7BF846711E71DFC1005D5C0D /* PeerToPeer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF844E51E71DFC0005D5C0D /* PeerToPeer.cpp */; };
 		7BF846721E71DFC1005D5C0D /* ShAchievement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF844E81E71DFC0005D5C0D /* ShAchievement.cpp */; };
 		7BF846751E71DFC1005D5C0D /* ShCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF844EC1E71DFC0005D5C0D /* ShCamera.cpp */; };
@@ -81,8 +82,6 @@
 		7BF846841E71DFC1005D5C0D /* LBtMemory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8450A1E71DFC0005D5C0D /* LBtMemory.cpp */; };
 		7BF846851E71DFC1005D5C0D /* LBtString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8450B1E71DFC0005D5C0D /* LBtString.cpp */; };
 		7BF846861E71DFC1005D5C0D /* LBtTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8450C1E71DFC0005D5C0D /* LBtTime.cpp */; };
-		7BF846871E71DFC1005D5C0D /* BtThread.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8450E1E71DFC0005D5C0D /* BtThread.cpp */; };
-		7BF846881E71DFC1005D5C0D /* BtTimeDX11.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8450F1E71DFC0005D5C0D /* BtTimeDX11.cpp */; };
 		7BF846891E71DFC1005D5C0D /* BaResource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845131E71DFC0005D5C0D /* BaResource.cpp */; };
 		7BF8468A1E71DFC1005D5C0D /* LBaUserData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845151E71DFC0005D5C0D /* LBaUserData.cpp */; };
 		7BF8468B1E71DFC1005D5C0D /* DyCollisionAnalytical.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845171E71DFC0005D5C0D /* DyCollisionAnalytical.cpp */; };
@@ -116,8 +115,6 @@
 		7BF846A71E71DFC1005D5C0D /* SgBlendShapeImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845811E71DFC0005D5C0D /* SgBlendShapeImpl.cpp */; };
 		7BF846A81E71DFC1005D5C0D /* SgLightImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845851E71DFC0005D5C0D /* SgLightImpl.cpp */; };
 		7BF846A91E71DFC1005D5C0D /* SgRigidBodyImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845871E71DFC0005D5C0D /* SgRigidBodyImpl.cpp */; };
-		7BF846AA1E71DFC1005D5C0D /* StruffyLite.vcxproj in Resources */ = {isa = PBXBuildFile; fileRef = 7BF845891E71DFC0005D5C0D /* StruffyLite.vcxproj */; };
-		7BF846AB1E71DFC1005D5C0D /* StruffyLite.vcxproj.filters in Resources */ = {isa = PBXBuildFile; fileRef = 7BF8458A1E71DFC0005D5C0D /* StruffyLite.vcxproj.filters */; };
 		7BF846AC1E71DFC1005D5C0D /* Ui360.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8458C1E71DFC0005D5C0D /* Ui360.cpp */; };
 		7BF846AD1E71DFC1005D5C0D /* UiKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8458D1E71DFC0005D5C0D /* UiKeyboard.cpp */; };
 		7BF846AE1E71DFC1005D5C0D /* BaArchive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845901E71DFC0005D5C0D /* BaArchive.cpp */; };
@@ -195,6 +192,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B81D0101ED77EEA0013067D /* CgCard7.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CgCard7.cpp; sourceTree = "<group>"; };
+		7B81D0111ED77EEA0013067D /* CgCard7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CgCard7.h; sourceTree = "<group>"; };
+		7B81D0151ED7891A0013067D /* card7.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = card7.iPhonez; sourceTree = "<group>"; };
 		7BF2174F1C09D7A7004E4743 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7BF34B581C0601300048F1DF /* Tutorial1App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tutorial1App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF34B5C1C0601300048F1DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -288,7 +288,6 @@
 		7BF844DF1E71DFC0005D5C0D /* HlUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HlUserData.h; sourceTree = "<group>"; };
 		7BF844E01E71DFC0005D5C0D /* HlView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HlView.cpp; sourceTree = "<group>"; };
 		7BF844E11E71DFC0005D5C0D /* HlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HlView.h; sourceTree = "<group>"; };
-		7BF844E21E71DFC0005D5C0D /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		7BF844E51E71DFC0005D5C0D /* PeerToPeer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PeerToPeer.cpp; sourceTree = "<group>"; };
 		7BF844E61E71DFC0005D5C0D /* PeerToPeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerToPeer.h; sourceTree = "<group>"; };
 		7BF844E81E71DFC0005D5C0D /* ShAchievement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShAchievement.cpp; sourceTree = "<group>"; };
@@ -322,9 +321,6 @@
 		7BF8450A1E71DFC0005D5C0D /* LBtMemory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LBtMemory.cpp; sourceTree = "<group>"; };
 		7BF8450B1E71DFC0005D5C0D /* LBtString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LBtString.cpp; sourceTree = "<group>"; };
 		7BF8450C1E71DFC0005D5C0D /* LBtTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LBtTime.cpp; sourceTree = "<group>"; };
-		7BF8450E1E71DFC0005D5C0D /* BtThread.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BtThread.cpp; sourceTree = "<group>"; };
-		7BF8450F1E71DFC0005D5C0D /* BtTimeDX11.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BtTimeDX11.cpp; sourceTree = "<group>"; };
-		7BF845101E71DFC0005D5C0D /* BtTimeDX11.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtTimeDX11.h; sourceTree = "<group>"; };
 		7BF845121E71DFC0005D5C0D /* BaFileData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaFileData.h; sourceTree = "<group>"; };
 		7BF845131E71DFC0005D5C0D /* BaResource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaResource.cpp; sourceTree = "<group>"; };
 		7BF845141E71DFC0005D5C0D /* BtCompressedFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtCompressedFile.h; sourceTree = "<group>"; };
@@ -436,8 +432,6 @@
 		7BF845861E71DFC0005D5C0D /* SgLightImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SgLightImpl.h; sourceTree = "<group>"; };
 		7BF845871E71DFC0005D5C0D /* SgRigidBodyImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SgRigidBodyImpl.cpp; sourceTree = "<group>"; };
 		7BF845881E71DFC0005D5C0D /* SgRigidBodyImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SgRigidBodyImpl.h; sourceTree = "<group>"; };
-		7BF845891E71DFC0005D5C0D /* StruffyLite.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = StruffyLite.vcxproj; sourceTree = "<group>"; };
-		7BF8458A1E71DFC0005D5C0D /* StruffyLite.vcxproj.filters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = StruffyLite.vcxproj.filters; sourceTree = "<group>"; };
 		7BF8458C1E71DFC0005D5C0D /* Ui360.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ui360.cpp; sourceTree = "<group>"; };
 		7BF8458D1E71DFC0005D5C0D /* UiKeyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UiKeyboard.cpp; sourceTree = "<group>"; };
 		7BF845901E71DFC0005D5C0D /* BaArchive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaArchive.cpp; sourceTree = "<group>"; };
@@ -657,12 +651,13 @@
 		7BF843E81E71DF9D005D5C0D /* Release */ = {
 			isa = PBXGroup;
 			children = (
-				7BF6FC3B1E8683D100B16F41 /* card5.iPhonez */,
-				7BF6FC3C1E8683D100B16F41 /* card6.iPhonez */,
 				7BF843EA1E71DF9D005D5C0D /* card1.iPhonez */,
 				7BF843EC1E71DF9D005D5C0D /* card2.iPhonez */,
 				7BF843EE1E71DF9D005D5C0D /* card3.iPhonez */,
 				7BF843F01E71DF9D005D5C0D /* card4.iPhonez */,
+				7BF6FC3B1E8683D100B16F41 /* card5.iPhonez */,
+				7BF6FC3C1E8683D100B16F41 /* card6.iPhonez */,
+				7B81D0151ED7891A0013067D /* card7.iPhonez */,
 				7BF843F21E71DF9D005D5C0D /* game.iPhonez */,
 				7BF843F41E71DF9D005D5C0D /* utility.iPhonez */,
 			);
@@ -684,6 +679,8 @@
 				7BF844021E71DF9D005D5C0D /* CgCard5.h */,
 				7BF844031E71DF9D005D5C0D /* CgCard6.cpp */,
 				7BF844041E71DF9D005D5C0D /* CgCard6.h */,
+				7B81D0101ED77EEA0013067D /* CgCard7.cpp */,
+				7B81D0111ED77EEA0013067D /* CgCard7.h */,
 				7BF844061E71DF9D005D5C0D /* SbCamera.cpp */,
 				7BF844071E71DF9D005D5C0D /* SbCamera.h */,
 				7BF844081E71DF9D005D5C0D /* SbMain.cpp */,
@@ -711,7 +708,6 @@
 		7BF844941E71DFC0005D5C0D /* GameFramework */ = {
 			isa = PBXGroup;
 			children = (
-				7BF844E21E71DFC0005D5C0D /* license.txt */,
 				7BF851911E71E2E2005D5C0D /* Game */,
 				7BF844BE1E71DFC0005D5C0D /* Helper */,
 				7BF844E31E71DFC0005D5C0D /* Multiplayer */,
@@ -814,8 +810,6 @@
 				7BF845731E71DFC0005D5C0D /* RandomNumbers */,
 				7BF845751E71DFC0005D5C0D /* RenderSystem */,
 				7BF845801E71DFC0005D5C0D /* SceneGraph */,
-				7BF845891E71DFC0005D5C0D /* StruffyLite.vcxproj */,
-				7BF8458A1E71DFC0005D5C0D /* StruffyLite.vcxproj.filters */,
 				7BF8458B1E71DFC0005D5C0D /* UserInterface */,
 			);
 			path = StruffyLite;
@@ -839,7 +833,6 @@
 				7BF8450A1E71DFC0005D5C0D /* LBtMemory.cpp */,
 				7BF8450B1E71DFC0005D5C0D /* LBtString.cpp */,
 				7BF8450C1E71DFC0005D5C0D /* LBtTime.cpp */,
-				7BF8450D1E71DFC0005D5C0D /* Win32 */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -851,16 +844,6 @@
 				7BF845081E71DFC0005D5C0D /* BtTimeGLES.h */,
 			);
 			path = GLES;
-			sourceTree = "<group>";
-		};
-		7BF8450D1E71DFC0005D5C0D /* Win32 */ = {
-			isa = PBXGroup;
-			children = (
-				7BF8450E1E71DFC0005D5C0D /* BtThread.cpp */,
-				7BF8450F1E71DFC0005D5C0D /* BtTimeDX11.cpp */,
-				7BF845101E71DFC0005D5C0D /* BtTimeDX11.h */,
-			);
-			path = Win32;
 			sourceTree = "<group>";
 		};
 		7BF845111E71DFC0005D5C0D /* BinaryArchive */ = {
@@ -1466,21 +1449,19 @@
 				7BF8517B1E71E088005D5C0D /* stb.vcxproj in Resources */,
 				7BF844801E71DF9D005D5C0D /* utility.iPhonez in Resources */,
 				7BF8447E1E71DF9D005D5C0D /* game.iPhonez in Resources */,
-				7BF8466F1E71DFC0005D5C0D /* license.txt in Resources */,
 				7BF844781E71DF9D005D5C0D /* card2.iPhonez in Resources */,
 				7BF8447C1E71DF9D005D5C0D /* card4.iPhonez in Resources */,
 				7BF6FC3D1E8683D100B16F41 /* card5.iPhonez in Resources */,
 				7BF8517C1E71E088005D5C0D /* TinyXML.vcxproj in Resources */,
 				7BF34B6C1C0601300048F1DF /* Assets.xcassets in Resources */,
 				7BF8518A1E71E089005D5C0D /* Zlib.vcxproj.filters in Resources */,
-				7BF846AA1E71DFC1005D5C0D /* StruffyLite.vcxproj in Resources */,
 				7BF851891E71E089005D5C0D /* Zlib.vcxproj in Resources */,
-				7BF846AB1E71DFC1005D5C0D /* StruffyLite.vcxproj.filters in Resources */,
 				7BF34B6F1C0601300048F1DF /* LaunchScreen.storyboard in Resources */,
 				7BF8441C1E71DF9D005D5C0D /* Publish.bat in Resources */,
 				7BF851591E71E088005D5C0D /* JSON.vcxproj.filters in Resources */,
 				7BF844761E71DF9D005D5C0D /* card1.iPhonez in Resources */,
 				7BF8441A1E71DF9D005D5C0D /* OpenGameData.bat in Resources */,
+				7B81D0161ED7891A0013067D /* card7.iPhonez in Resources */,
 				7BF8518B1E71E089005D5C0D /* Zlib.vcxproj.user in Resources */,
 				7BF851581E71E088005D5C0D /* JSON.vcxproj in Resources */,
 				7BF850B11E71E088005D5C0D /* fft.vcxproj in Resources */,
@@ -1523,9 +1504,9 @@
 				7BF846A21E71DFC1005D5C0D /* RsImpl.cpp in Sources */,
 				7BF846711E71DFC1005D5C0D /* PeerToPeer.cpp in Sources */,
 				7BF846B01E71DFC1005D5C0D /* RsColourGLES.cpp in Sources */,
-				7BF846881E71DFC1005D5C0D /* BtTimeDX11.cpp in Sources */,
 				7BF8515B1E71E088005D5C0D /* lodepng.cpp in Sources */,
 				7BF844871E71DF9D005D5C0D /* CgCard4.cpp in Sources */,
+				7B81D0121ED77EEA0013067D /* CgCard7.cpp in Sources */,
 				7BF8466B1E71DFC0005D5C0D /* HlTimer.cpp in Sources */,
 				7BF851821E71E089005D5C0D /* gzio.c in Sources */,
 				7BF851841E71E089005D5C0D /* inffast.c in Sources */,
@@ -1613,7 +1594,6 @@
 				7BF8468A1E71DFC1005D5C0D /* LBaUserData.cpp in Sources */,
 				7BF846A31E71DFC1005D5C0D /* RsRenderTarget.cpp in Sources */,
 				7BF846791E71DFC1005D5C0D /* ShKeyboard.cpp in Sources */,
-				7BF846871E71DFC1005D5C0D /* BtThread.cpp in Sources */,
 				7BF846C41E71DFC1005D5C0D /* SdSoundWinGL.cpp in Sources */,
 				7BF846601E71DFC0005D5C0D /* HlArchive.cpp in Sources */,
 				7BF8466A1E71DFC0005D5C0D /* HlScreenSize.cpp in Sources */,

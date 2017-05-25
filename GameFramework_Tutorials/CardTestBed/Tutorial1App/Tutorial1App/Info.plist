@@ -46,5 +46,7 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>This App needs a camera for AR</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This App needs the microphone to sample amplitude and frequency</string>
 </dict>
 </plist>

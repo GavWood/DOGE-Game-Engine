@@ -27,7 +27,7 @@ public:
 	void							CreateOnDevice();
 	void							Reset();
 	void							Update( SgSkin* pSkin );
-	void							Pause( BtBool bPause );
+	void							SetPaused( BtBool bPause );
 	void							Remove();
 
 	// Accessors

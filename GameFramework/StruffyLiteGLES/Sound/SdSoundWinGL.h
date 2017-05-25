@@ -9,8 +9,8 @@
 #include "BaFileData.h"
 #include "SdSound.h"
 
-#include "al/al.h"
-#include "al/alc.h"
+#include "al.h"
+#include "alc.h"
 
 class BaArchive;
 class SdSample;

@@ -11,8 +11,8 @@
 #include <pthread.h>
 #include "SdSoundCaptureAL.h"
 #include "BtTypes.h"
-#include "al/al.h"
-#include "al/alc.h"
+#include "al.h"
+#include "alc.h"
 #include "ErrorLog.h"
 #include "MtMath.h"
 #include "SdSound.h"
@@ -208,6 +208,16 @@ BtFloat SdSoundCaptureAL::GetPitch()
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// IsRecordAvailable
+
+//static
+BtBool SdSound::IsRecordAvailable()
+{
+    return BtTrue;                              // iOS devices can always record - but we need to link this with
+}                                               // a user closing the dialog that asks if "mic" is ok
+
+////////
+////////////////////////////////////////////////////////////////////////
 // GetVolume
 
 //static
