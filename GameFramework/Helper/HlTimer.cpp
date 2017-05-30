@@ -8,6 +8,15 @@
 #include "ApConfig.h"
 
 ////////////////////////////////////////////////////////////////////////////////
+// Constructor
+
+HlTimer::HlTimer()
+{
+	m_start = 0;
+	m_duration = 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////
 // IsReady
 
 //static
@@ -15,7 +24,7 @@ BtBool HlTimer::IsReady()
 {
 	BtFloat currentTime = BtTime::GetElapsedTimeInSeconds();
 
-	if (currentTime > m_start + m_duration)
+	if( m_duration && (currentTime > m_start + m_duration) )
 	{
 		return BtTrue;
 	}

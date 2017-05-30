@@ -259,12 +259,10 @@ MpPeer MpPeerToPeer::GetHost( BtU32 index )
 MpPeer MpPeerToPeer::GetHost()
 {
 #ifdef WIN32
-	ENetAddress client = udpNetwork.GetHost();
-
-	// Add the new peer?
-	MpPeer peer;
-	peer.m_address = client.host;
-	peer.m_port = client.port;
+	ENetAddress host = udpNetwork.GetHost();
+	m_host.m_address = host.host;
+	m_host.m_port = host.port;
+	return m_host;
 #else
 #endif
 	// Return the peer at this position

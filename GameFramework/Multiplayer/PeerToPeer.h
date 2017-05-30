@@ -28,6 +28,13 @@ enum MpEventType
 
 struct MpPeer
 {
+	bool operator == (const MpPeer&& rhs)const
+	{
+		if( (m_address == rhs.m_address) && (m_port == rhs.m_port) )
+			return true;
+		return false;
+	}
+
 	BtU32										m_address;
 	BtU32										m_port;
 	BtU64										m_startTime;
