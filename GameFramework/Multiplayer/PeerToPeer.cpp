@@ -259,13 +259,13 @@ MpPeer MpPeerToPeer::GetHost( BtU32 index )
 MpPeer MpPeerToPeer::GetHost()
 {
 #ifdef WIN32
-	ENetAddress client = udpNetwork.GetHost();
-
-	// Add the new peer?
-	MpPeer peer;
-	peer.m_address = client.host;
-	peer.m_port = client.port;
+	ENetAddress host = udpNetwork.GetHost();
+	m_host.m_address = host.host;
+	m_host.m_port = host.port;
+	return m_host;
 #else
+    int a=0;
+    a++;
 #endif
 	// Return the peer at this position
 	return m_host;
@@ -407,6 +407,16 @@ void MpPeerToPeer::AddPeer(MpPeer peer)
     // Fill in the time we started
     peer.m_startTime = m_timeStarted;
     m_peers.insert(peer);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// DeletePeer
+
+//static
+void MpPeerToPeer::DeletePeer(MpPeer peer)
+{
+    // Fill in the time we started
+    m_peers.erase(peer);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

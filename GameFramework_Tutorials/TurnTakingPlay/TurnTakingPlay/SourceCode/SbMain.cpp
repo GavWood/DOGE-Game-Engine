@@ -22,7 +22,6 @@
 #include "HlDebug.h"
 #include "SgNode.h"
 #include "HlModel.h"
-#include "corona.h"
 
 #include <map>
 #include <iterator>
@@ -41,9 +40,9 @@ struct SbPlayerState
 		m_isTurn = BtFalse;
 	}
 
-	BtBool						m_isTurn;
-	enum class GameState		m_currentState;
-	enum class GameState		m_nextState;
+	BtBool				m_isTurn;
+	enum GameState		m_currentState;
+	enum GameState		m_nextState;
 	
 	static GameState GetDefaultState()
 	{
@@ -261,15 +260,6 @@ void SbMain::UpdateTests()
 
 	// Get what everyone else is doing
 	PullNetworkChanges();
-
-	// This is where the state machine gets executed
-	int a = 0;
-	a++;
-	switch( g_gameState.m_currentState )
-	{
-	case GameState::GameState_Ace:
-		break;
-	}
 
 	// Look for key presses
 	if (UiKeyboard::pInstance()->IsPressed(UiKeyCode_ESCAPE))

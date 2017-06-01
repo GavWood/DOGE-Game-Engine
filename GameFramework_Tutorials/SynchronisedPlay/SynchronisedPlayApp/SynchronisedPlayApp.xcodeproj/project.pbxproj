@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B239FDD1EDDFA8400FD400B /* CgCard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B239FD41EDDFA8400FD400B /* CgCard.cpp */; };
+		7B239FDF1EDDFA8400FD400B /* SbCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B239FD71EDDFA8400FD400B /* SbCamera.cpp */; };
+		7B239FE01EDDFA8400FD400B /* SbMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B239FD91EDDFA8400FD400B /* SbMain.cpp */; };
+		7B239FE11EDDFA8400FD400B /* SbPeers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B239FDB1EDDFA8400FD400B /* SbPeers.cpp */; };
+		7B239FE81EDDFA9F00FD400B /* card.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B239FE21EDDFA9F00FD400B /* card.iPhonez */; };
+		7B239FE91EDDFA9F00FD400B /* card1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B239FE31EDDFA9F00FD400B /* card1.png */; };
+		7B239FEA1EDDFA9F00FD400B /* card2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B239FE41EDDFA9F00FD400B /* card2.png */; };
+		7B239FEB1EDDFA9F00FD400B /* card3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B239FE51EDDFA9F00FD400B /* card3.png */; };
+		7B239FEC1EDDFA9F00FD400B /* card4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B239FE61EDDFA9F00FD400B /* card4.png */; };
+		7B239FED1EDDFA9F00FD400B /* utility.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B239FE71EDDFA9F00FD400B /* utility.iPhonez */; };
 		7BF217501C09D7A7004E4743 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF2174F1C09D7A7004E4743 /* CoreMedia.framework */; };
 		7BF34B5D1C0601300048F1DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF34B5C1C0601300048F1DF /* main.m */; };
 		7BF34B671C0601300048F1DF /* GameViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BF34B661C0601300048F1DF /* GameViewController.mm */; };
@@ -34,7 +44,6 @@
 		7BF8466C1E71DFC0005D5C0D /* HlTrueType.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF844DC1E71DFC0005D5C0D /* HlTrueType.cpp */; };
 		7BF8466D1E71DFC0005D5C0D /* HlUserData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF844DE1E71DFC0005D5C0D /* HlUserData.cpp */; };
 		7BF8466E1E71DFC0005D5C0D /* HlView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF844E01E71DFC0005D5C0D /* HlView.cpp */; };
-		7BF8466F1E71DFC0005D5C0D /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7BF844E21E71DFC0005D5C0D /* license.txt */; };
 		7BF846711E71DFC1005D5C0D /* PeerToPeer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF844E51E71DFC0005D5C0D /* PeerToPeer.cpp */; };
 		7BF846721E71DFC1005D5C0D /* ShAchievement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF844E81E71DFC0005D5C0D /* ShAchievement.cpp */; };
 		7BF846751E71DFC1005D5C0D /* ShCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF844EC1E71DFC0005D5C0D /* ShCamera.cpp */; };
@@ -149,19 +158,6 @@
 		7BF8518C1E71E089005D5C0D /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BF84DCC1E71E086005D5C0D /* zutil.c */; };
 		7BF8518F1E71E12A005D5C0D /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF8518E1E71E12A005D5C0D /* MultipeerConnectivity.framework */; };
 		7BF851951E720321005D5C0D /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BF851941E720321005D5C0D /* AppDelegate.mm */; };
-		7BF9C9041E86AC55001D546C /* card1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF9C8BA1E86AC55001D546C /* card1.png */; };
-		7BF9C9051E86AC55001D546C /* card2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF9C8BB1E86AC55001D546C /* card2.png */; };
-		7BF9C9061E86AC55001D546C /* card3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF9C8BC1E86AC55001D546C /* card3.png */; };
-		7BF9C9071E86AC55001D546C /* card4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BF9C8BD1E86AC55001D546C /* card4.png */; };
-		7BF9C9081E86AC55001D546C /* utility.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7BF9C8BE1E86AC55001D546C /* utility.iPhonez */; };
-		7BF9C90B1E86AC55001D546C /* CgCard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C8C21E86AC55001D546C /* CgCard.cpp */; };
-		7BF9C90D1E86AC55001D546C /* SbCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C8C51E86AC55001D546C /* SbCamera.cpp */; };
-		7BF9C90E1E86AC55001D546C /* SbMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C8C71E86AC55001D546C /* SbMain.cpp */; };
-		7BF9C90F1E86AC55001D546C /* SbModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C8C91E86AC55001D546C /* SbModel.cpp */; };
-		7BF9C9101E86AC55001D546C /* SbPeers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C8CD1E86AC55001D546C /* SbPeers.cpp */; };
-		7BF9C9111E86AC55001D546C /* SbPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C8CF1E86AC55001D546C /* SbPlayer.cpp */; };
-		7BF9C9121E86AC55001D546C /* SbSound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C8D11E86AC55001D546C /* SbSound.cpp */; };
-		7BF9C9131E86AC55001D546C /* SbSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C8D31E86AC55001D546C /* SbSprite.cpp */; };
 		7BF9C99D1E86AE53001D546C /* Convert.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C9171E86AE53001D546C /* Convert.cpp */; };
 		7BF9C99E1E86AE53001D546C /* Corona.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C9181E86AE53001D546C /* Corona.cpp */; };
 		7BF9C9A11E86AE53001D546C /* Debug.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C91C1E86AE53001D546C /* Debug.cpp */; };
@@ -264,7 +260,6 @@
 		7BF9CA031E86AE53001D546C /* SavePNG.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C9951E86AE53001D546C /* SavePNG.cpp */; };
 		7BF9CA041E86AE53001D546C /* SaveTGA.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C9961E86AE53001D546C /* SaveTGA.cpp */; };
 		7BF9CA051E86AE53001D546C /* stdafx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF9C9981E86AE53001D546C /* stdafx.cpp */; };
-		7BFBAF121E87F08C008CC7B0 /* card.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7BFBAF111E87F08C008CC7B0 /* card.iPhonez */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,6 +280,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B239FD41EDDFA8400FD400B /* CgCard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CgCard.cpp; sourceTree = "<group>"; };
+		7B239FD51EDDFA8400FD400B /* CgCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CgCard.h; sourceTree = "<group>"; };
+		7B239FD71EDDFA8400FD400B /* SbCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SbCamera.cpp; sourceTree = "<group>"; };
+		7B239FD81EDDFA8400FD400B /* SbCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbCamera.h; sourceTree = "<group>"; };
+		7B239FD91EDDFA8400FD400B /* SbMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SbMain.cpp; sourceTree = "<group>"; };
+		7B239FDA1EDDFA8400FD400B /* SbMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbMain.h; sourceTree = "<group>"; };
+		7B239FDB1EDDFA8400FD400B /* SbPeers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SbPeers.cpp; sourceTree = "<group>"; };
+		7B239FDC1EDDFA8400FD400B /* SbPeers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbPeers.h; sourceTree = "<group>"; };
+		7B239FE21EDDFA9F00FD400B /* card.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = card.iPhonez; sourceTree = "<group>"; };
+		7B239FE31EDDFA9F00FD400B /* card1.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = card1.png; sourceTree = "<group>"; };
+		7B239FE41EDDFA9F00FD400B /* card2.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = card2.png; sourceTree = "<group>"; };
+		7B239FE51EDDFA9F00FD400B /* card3.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = card3.png; sourceTree = "<group>"; };
+		7B239FE61EDDFA9F00FD400B /* card4.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = card4.png; sourceTree = "<group>"; };
+		7B239FE71EDDFA9F00FD400B /* utility.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = utility.iPhonez; sourceTree = "<group>"; };
 		7BF2174F1C09D7A7004E4743 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7BF34B581C0601300048F1DF /* SynchronisedPlayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SynchronisedPlayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF34B5C1C0601300048F1DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -335,7 +344,6 @@
 		7BF844DF1E71DFC0005D5C0D /* HlUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HlUserData.h; sourceTree = "<group>"; };
 		7BF844E01E71DFC0005D5C0D /* HlView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HlView.cpp; sourceTree = "<group>"; };
 		7BF844E11E71DFC0005D5C0D /* HlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HlView.h; sourceTree = "<group>"; };
-		7BF844E21E71DFC0005D5C0D /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		7BF844E51E71DFC0005D5C0D /* PeerToPeer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PeerToPeer.cpp; sourceTree = "<group>"; };
 		7BF844E61E71DFC0005D5C0D /* PeerToPeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeerToPeer.h; sourceTree = "<group>"; };
 		7BF844E81E71DFC0005D5C0D /* ShAchievement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShAchievement.cpp; sourceTree = "<group>"; };
@@ -600,30 +608,6 @@
 		7BF851921E71E2E2005D5C0D /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		7BF851931E71E2E2005D5C0D /* GaProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaProject.h; sourceTree = "<group>"; };
 		7BF851941E720321005D5C0D /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
-		7BF9C8BA1E86AC55001D546C /* card1.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = card1.png; sourceTree = "<group>"; };
-		7BF9C8BB1E86AC55001D546C /* card2.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = card2.png; sourceTree = "<group>"; };
-		7BF9C8BC1E86AC55001D546C /* card3.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = card3.png; sourceTree = "<group>"; };
-		7BF9C8BD1E86AC55001D546C /* card4.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = card4.png; sourceTree = "<group>"; };
-		7BF9C8BE1E86AC55001D546C /* utility.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = utility.iPhonez; sourceTree = "<group>"; };
-		7BF9C8C21E86AC55001D546C /* CgCard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CgCard.cpp; sourceTree = "<group>"; };
-		7BF9C8C31E86AC55001D546C /* CgCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CgCard.h; sourceTree = "<group>"; };
-		7BF9C8C51E86AC55001D546C /* SbCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SbCamera.cpp; sourceTree = "<group>"; };
-		7BF9C8C61E86AC55001D546C /* SbCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbCamera.h; sourceTree = "<group>"; };
-		7BF9C8C71E86AC55001D546C /* SbMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SbMain.cpp; sourceTree = "<group>"; };
-		7BF9C8C81E86AC55001D546C /* SbMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbMain.h; sourceTree = "<group>"; };
-		7BF9C8C91E86AC55001D546C /* SbModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SbModel.cpp; sourceTree = "<group>"; };
-		7BF9C8CA1E86AC55001D546C /* SbModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbModel.h; sourceTree = "<group>"; };
-		7BF9C8CB1E86AC55001D546C /* SbNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbNetwork.h; sourceTree = "<group>"; };
-		7BF9C8CC1E86AC55001D546C /* SbParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbParticle.h; sourceTree = "<group>"; };
-		7BF9C8CD1E86AC55001D546C /* SbPeers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SbPeers.cpp; sourceTree = "<group>"; };
-		7BF9C8CE1E86AC55001D546C /* SbPeers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbPeers.h; sourceTree = "<group>"; };
-		7BF9C8CF1E86AC55001D546C /* SbPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SbPlayer.cpp; sourceTree = "<group>"; };
-		7BF9C8D01E86AC55001D546C /* SbPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbPlayer.h; sourceTree = "<group>"; };
-		7BF9C8D11E86AC55001D546C /* SbSound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SbSound.cpp; sourceTree = "<group>"; };
-		7BF9C8D21E86AC55001D546C /* SbSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbSound.h; sourceTree = "<group>"; };
-		7BF9C8D31E86AC55001D546C /* SbSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SbSprite.cpp; sourceTree = "<group>"; };
-		7BF9C8D41E86AC55001D546C /* SbSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbSprite.h; sourceTree = "<group>"; };
-		7BF9C8D51E86AC55001D546C /* SbWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbWorld.h; sourceTree = "<group>"; };
 		7BF9C9171E86AE53001D546C /* Convert.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Convert.cpp; sourceTree = "<group>"; };
 		7BF9C9181E86AE53001D546C /* Corona.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Corona.cpp; sourceTree = "<group>"; };
 		7BF9C9191E86AE53001D546C /* corona.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = corona.h; sourceTree = "<group>"; };
@@ -752,7 +736,6 @@
 		7BF9C99A1E86AE53001D546C /* targetver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = targetver.h; sourceTree = "<group>"; };
 		7BF9C99B1E86AE53001D546C /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		7BF9C99C1E86AE53001D546C /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
-		7BFBAF111E87F08C008CC7B0 /* card.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = card.iPhonez; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -837,7 +820,6 @@
 		7BF844941E71DFC0005D5C0D /* GameFramework */ = {
 			isa = PBXGroup;
 			children = (
-				7BF844E21E71DFC0005D5C0D /* license.txt */,
 				7BF851911E71E2E2005D5C0D /* Game */,
 				7BF844BE1E71DFC0005D5C0D /* Helper */,
 				7BF844E31E71DFC0005D5C0D /* Multiplayer */,
@@ -1494,12 +1476,12 @@
 		7BF9C8B51E86AC55001D546C /* Release */ = {
 			isa = PBXGroup;
 			children = (
-				7BFBAF111E87F08C008CC7B0 /* card.iPhonez */,
-				7BF9C8BA1E86AC55001D546C /* card1.png */,
-				7BF9C8BB1E86AC55001D546C /* card2.png */,
-				7BF9C8BC1E86AC55001D546C /* card3.png */,
-				7BF9C8BD1E86AC55001D546C /* card4.png */,
-				7BF9C8BE1E86AC55001D546C /* utility.iPhonez */,
+				7B239FE21EDDFA9F00FD400B /* card.iPhonez */,
+				7B239FE31EDDFA9F00FD400B /* card1.png */,
+				7B239FE41EDDFA9F00FD400B /* card2.png */,
+				7B239FE51EDDFA9F00FD400B /* card3.png */,
+				7B239FE61EDDFA9F00FD400B /* card4.png */,
+				7B239FE71EDDFA9F00FD400B /* utility.iPhonez */,
 			);
 			path = Release;
 			sourceTree = "<group>";
@@ -1507,25 +1489,14 @@
 		7BF9C8C01E86AC55001D546C /* SourceCode */ = {
 			isa = PBXGroup;
 			children = (
-				7BF9C8C21E86AC55001D546C /* CgCard.cpp */,
-				7BF9C8C31E86AC55001D546C /* CgCard.h */,
-				7BF9C8C51E86AC55001D546C /* SbCamera.cpp */,
-				7BF9C8C61E86AC55001D546C /* SbCamera.h */,
-				7BF9C8C71E86AC55001D546C /* SbMain.cpp */,
-				7BF9C8C81E86AC55001D546C /* SbMain.h */,
-				7BF9C8C91E86AC55001D546C /* SbModel.cpp */,
-				7BF9C8CA1E86AC55001D546C /* SbModel.h */,
-				7BF9C8CB1E86AC55001D546C /* SbNetwork.h */,
-				7BF9C8CC1E86AC55001D546C /* SbParticle.h */,
-				7BF9C8CD1E86AC55001D546C /* SbPeers.cpp */,
-				7BF9C8CE1E86AC55001D546C /* SbPeers.h */,
-				7BF9C8CF1E86AC55001D546C /* SbPlayer.cpp */,
-				7BF9C8D01E86AC55001D546C /* SbPlayer.h */,
-				7BF9C8D11E86AC55001D546C /* SbSound.cpp */,
-				7BF9C8D21E86AC55001D546C /* SbSound.h */,
-				7BF9C8D31E86AC55001D546C /* SbSprite.cpp */,
-				7BF9C8D41E86AC55001D546C /* SbSprite.h */,
-				7BF9C8D51E86AC55001D546C /* SbWorld.h */,
+				7B239FD41EDDFA8400FD400B /* CgCard.cpp */,
+				7B239FD51EDDFA8400FD400B /* CgCard.h */,
+				7B239FD71EDDFA8400FD400B /* SbCamera.cpp */,
+				7B239FD81EDDFA8400FD400B /* SbCamera.h */,
+				7B239FD91EDDFA8400FD400B /* SbMain.cpp */,
+				7B239FDA1EDDFA8400FD400B /* SbMain.h */,
+				7B239FDB1EDDFA8400FD400B /* SbPeers.cpp */,
+				7B239FDC1EDDFA8400FD400B /* SbPeers.h */,
 			);
 			path = SourceCode;
 			sourceTree = "<group>";
@@ -1793,44 +1764,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BF9C9051E86AC55001D546C /* card2.png in Resources */,
 				7BF8515C1E71E088005D5C0D /* LodePNG.vcxproj in Resources */,
 				7BF9C9DA1E86AE53001D546C /* ANNOUNCE in Resources */,
 				7BF34B6A1C0601300048F1DF /* Main.storyboard in Resources */,
 				7BF8515A1E71E088005D5C0D /* JSON.vcxproj.user in Resources */,
-				7BF9C9061E86AC55001D546C /* card3.png in Resources */,
+				7B239FEC1EDDFA9F00FD400B /* card4.png in Resources */,
+				7B239FEB1EDDFA9F00FD400B /* card3.png in Resources */,
 				7BF9C9FA1E86AE53001D546C /* SConscript in Resources */,
 				7BF8517B1E71E088005D5C0D /* stb.vcxproj in Resources */,
-				7BF9C9071E86AC55001D546C /* card4.png in Resources */,
 				7BF9C9F41E86AE53001D546C /* TODO in Resources */,
 				7BF9C9D31E86AE53001D546C /* libjpeg.doc in Resources */,
 				7BF9C9DB1E86AE53001D546C /* CHANGES in Resources */,
-				7BF8466F1E71DFC0005D5C0D /* license.txt in Resources */,
 				7BF8517C1E71E088005D5C0D /* TinyXML.vcxproj in Resources */,
 				7BF9C9DF1E86AE53001D546C /* libpng.txt in Resources */,
 				7BF9C9E01E86AE53001D546C /* LICENSE in Resources */,
 				7BF9C9A31E86AE53001D546C /* filelist.doc in Resources */,
 				7BF34B6C1C0601300048F1DF /* Assets.xcassets in Resources */,
 				7BF8518A1E71E089005D5C0D /* Zlib.vcxproj.filters in Resources */,
+				7B239FED1EDDFA9F00FD400B /* utility.iPhonez in Resources */,
+				7B239FEA1EDDFA9F00FD400B /* card2.png in Resources */,
 				7BF9C9DD1E86AE53001D546C /* INSTALL in Resources */,
 				7BF9C9D51E86AE53001D546C /* README in Resources */,
 				7BF846AA1E71DFC1005D5C0D /* StruffyLite.vcxproj in Resources */,
 				7BF9C9C11E86AE53001D546C /* jdosaobj.doc in Resources */,
-				7BF9C9041E86AC55001D546C /* card1.png in Resources */,
 				7BF9C9D71E86AE53001D546C /* structure.doc in Resources */,
+				7B239FE81EDDFA9F00FD400B /* card.iPhonez in Resources */,
 				7BF851891E71E089005D5C0D /* Zlib.vcxproj in Resources */,
 				7BF9C9D61E86AE53001D546C /* readme.dos in Resources */,
 				7BF846AB1E71DFC1005D5C0D /* StruffyLite.vcxproj.filters in Resources */,
+				7B239FE91EDDFA9F00FD400B /* card1.png in Resources */,
 				7BF9CA021E86AE53001D546C /* ReadMe.txt in Resources */,
 				7BF9C9D91E86AE53001D546C /* wizard.doc in Resources */,
 				7BF34B6F1C0601300048F1DF /* LaunchScreen.storyboard in Resources */,
-				7BFBAF121E87F08C008CC7B0 /* card.iPhonez in Resources */,
 				7BF9C9F91E86AE53001D546C /* Makefile.am in Resources */,
 				7BF851591E71E088005D5C0D /* JSON.vcxproj.filters in Resources */,
 				7BF8518B1E71E089005D5C0D /* Zlib.vcxproj.user in Resources */,
 				7BF9C9DE1E86AE53001D546C /* KNOWNBUG in Resources */,
 				7BF851581E71E088005D5C0D /* JSON.vcxproj in Resources */,
-				7BF9C9081E86AC55001D546C /* utility.iPhonez in Resources */,
 				7BF9C9D81E86AE53001D546C /* usage.doc in Resources */,
 				7BF9C9D41E86AE53001D546C /* makvms.opt in Resources */,
 				7BF850B11E71E088005D5C0D /* fft.vcxproj in Resources */,
@@ -1867,6 +1837,7 @@
 				7BF8469E1E71DFC1005D5C0D /* LRdRandom.cpp in Sources */,
 				7BF8469B1E71DFC1005D5C0D /* MtVector2.cpp in Sources */,
 				7BF846971E71DFC1005D5C0D /* MtQuaternion.cpp in Sources */,
+				7B239FDF1EDDFA8400FD400B /* SbCamera.cpp in Sources */,
 				7BF846911E71DFC1005D5C0D /* MtMath.cpp in Sources */,
 				7BF846A21E71DFC1005D5C0D /* RsImpl.cpp in Sources */,
 				7BF846711E71DFC1005D5C0D /* PeerToPeer.cpp in Sources */,
@@ -1886,12 +1857,10 @@
 				7BF846821E71DFC1005D5C0D /* BtTimeGLES.cpp in Sources */,
 				7BF846BE1E71DFC1005D5C0D /* SgMaterialsGLES.cpp in Sources */,
 				7BF9C9FF1E86AE53001D546C /* OpenPCX.cpp in Sources */,
-				7BF9C90D1E86AC55001D546C /* SbCamera.cpp in Sources */,
 				7BF846921E71DFC1005D5C0D /* MtMatrix3.cpp in Sources */,
 				7BF9C9C01E86AE53001D546C /* jdmerge.c in Sources */,
 				7BF846C71E71DFC1005D5C0D /* UiKeyboardWinGL.cpp in Sources */,
 				7BF9C9AF1E86AE53001D546C /* jcparam.c in Sources */,
-				7BF9C9101E86AC55001D546C /* SbPeers.cpp in Sources */,
 				7BF9C9B11E86AE53001D546C /* jcprepct.c in Sources */,
 				7BF846951E71DFC1005D5C0D /* MtPoint.cpp in Sources */,
 				7BF846B51E71DFC1005D5C0D /* RsMaterialGLES.cpp in Sources */,
@@ -1900,7 +1869,6 @@
 				7BF9C9BC1E86AE53001D546C /* jdinput.c in Sources */,
 				7BF9C9C21E86AE53001D546C /* jdphuff.c in Sources */,
 				7BF851571E71E088005D5C0D /* cJSON.c in Sources */,
-				7BF9C90E1E86AC55001D546C /* SbMain.cpp in Sources */,
 				7BF9C9C31E86AE53001D546C /* jdpostct.c in Sources */,
 				7BF9C9A11E86AE53001D546C /* Debug.cpp in Sources */,
 				7BF846721E71DFC1005D5C0D /* ShAchievement.cpp in Sources */,
@@ -1928,7 +1896,6 @@
 				7BF8467F1E71DFC1005D5C0D /* ApConfig.cpp in Sources */,
 				7BF8517D1E71E089005D5C0D /* tinyxml2.cpp in Sources */,
 				7BF9C9E91E86AE53001D546C /* pngrtran.c in Sources */,
-				7BF9C9131E86AC55001D546C /* SbSprite.cpp in Sources */,
 				7BF851791E71E088005D5C0D /* SessionController.mm in Sources */,
 				7BF846751E71DFC1005D5C0D /* ShCamera.cpp in Sources */,
 				7BF9CA041E86AE53001D546C /* SaveTGA.cpp in Sources */,
@@ -1940,13 +1907,11 @@
 				7BF9C9ED1E86AE53001D546C /* pngtrans.c in Sources */,
 				7BF8466C1E71DFC0005D5C0D /* HlTrueType.cpp in Sources */,
 				7BF9C9A41E86AE53001D546C /* jcapimin.c in Sources */,
-				7BF9C9121E86AC55001D546C /* SbSound.cpp in Sources */,
 				7BF846B11E71DFC1005D5C0D /* RsFlashGLES.cpp in Sources */,
 				7BF9C9E11E86AE53001D546C /* png.c in Sources */,
 				7BF846961E71DFC1005D5C0D /* MtQuad.cpp in Sources */,
 				7BF846A01E71DFC1005D5C0D /* RsColour.cpp in Sources */,
 				7BF9C9B81E86AE53001D546C /* jdcoefct.c in Sources */,
-				7BF9C90B1E86AC55001D546C /* CgCard.cpp in Sources */,
 				7BF846A61E71DFC1005D5C0D /* RsUtil.cpp in Sources */,
 				7BF851951E720321005D5C0D /* AppDelegate.mm in Sources */,
 				7BF9C9AD1E86AE53001D546C /* jcmaster.c in Sources */,
@@ -1989,7 +1954,6 @@
 				7BF9C9D21E86AE53001D546C /* jutils.c in Sources */,
 				7BF9C9FD1E86AE53001D546C /* OpenGIF.cpp in Sources */,
 				7BF9C9B71E86AE53001D546C /* jdatasrc.c in Sources */,
-				7BF9C90F1E86AC55001D546C /* SbModel.cpp in Sources */,
 				7BF9C9B61E86AE53001D546C /* jdatadst.c in Sources */,
 				7BF846981E71DFC1005D5C0D /* MtRay.cpp in Sources */,
 				7BF846841E71DFC1005D5C0D /* LBtMemory.cpp in Sources */,
@@ -2004,7 +1968,6 @@
 				7BF846861E71DFC1005D5C0D /* LBtTime.cpp in Sources */,
 				7BF846C31E71DFC1005D5C0D /* SdSoundCaptureAL.cpp in Sources */,
 				7BF9C9D01E86AE53001D546C /* jquant1.c in Sources */,
-				7BF9C9111E86AC55001D546C /* SbPlayer.cpp in Sources */,
 				7BF9C9E31E86AE53001D546C /* pnggccrd.c in Sources */,
 				7BF846BF1E71DFC1005D5C0D /* SgMeshGLES.cpp in Sources */,
 				7BF9C9CB1E86AE53001D546C /* jidctfst.c in Sources */,
@@ -2033,6 +1996,7 @@
 				7BF8466A1E71DFC0005D5C0D /* HlScreenSize.cpp in Sources */,
 				7BF8468E1E71DFC1005D5C0D /* FsFile.cpp in Sources */,
 				7BF9C9F71E86AE53001D546C /* gif_err.c in Sources */,
+				7B239FE11EDDFA8400FD400B /* SbPeers.cpp in Sources */,
 				7BF8467C1E71DFC1005D5C0D /* ShRecorder.cpp in Sources */,
 				7BF9C9FC1E86AE53001D546C /* OpenBMP.cpp in Sources */,
 				7BF9C9B91E86AE53001D546C /* jdcolor.c in Sources */,
@@ -2047,6 +2011,7 @@
 				7BF9C9CA1E86AE53001D546C /* jidctflt.c in Sources */,
 				7BF8465F1E71DFC0005D5C0D /* HlAnimation.cpp in Sources */,
 				7BF846891E71DFC1005D5C0D /* BaResource.cpp in Sources */,
+				7B239FDD1EDDFA8400FD400B /* CgCard.cpp in Sources */,
 				7BF8468F1E71DFC1005D5C0D /* MtAABB.cpp in Sources */,
 				7BF9C9C51E86AE53001D546C /* jdtrans.c in Sources */,
 				7BF846831E71DFC1005D5C0D /* LBtCompressedFile.cpp in Sources */,
@@ -2066,6 +2031,7 @@
 				7BF846851E71DFC1005D5C0D /* LBtString.cpp in Sources */,
 				7BF8517E1E71E089005D5C0D /* adler32.c in Sources */,
 				7BF9C9CE1E86AE53001D546C /* jmemmgr.c in Sources */,
+				7B239FE01EDDFA8400FD400B /* SbMain.cpp in Sources */,
 				7BF846A81E71DFC1005D5C0D /* SgLightImpl.cpp in Sources */,
 				7BF846931E71DFC1005D5C0D /* MtMatrix4.cpp in Sources */,
 			);

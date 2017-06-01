@@ -19,8 +19,8 @@
 #include "BaArchive.h"
 #include "RsSprite.h"
 #include "ShTouch.h"
-#include "corona.h"
 #include "RsTexture.h"
+#include "lodepng.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Setup
@@ -74,37 +74,36 @@ void CgCard::Update()
 
 void CgCard::LoadCard(BtU32 index)
 {
-	if (m_pBackgroundMaterial)
-	{
-		BtChar szFilename[256];
-        sprintf(szFilename, "%s%scard%d.png", ApConfig::GetResourcePath(),
-                ApConfig::GetDelimitter(), index + 1); // because cards start at ace=1
-		corona::Image* pImage = corona::OpenImage(szFilename, corona::PF_B8G8R8A8);
+    if (m_pBackgroundMaterial)
+    {
+        BtU32 cardIndex = index % 4;
         
-        if( pImage == BtNull )
-        {
-            printf("%s", szFilename );
-        }
-
-		if (pImage != BtNull)
-		{
-			BtU8 *pMemory = (BtU8*)pImage->getPixels();
-
-			// Cache the texture from the background material
-			RsTexture *pTexture = m_pBackgroundMaterial->GetTexture(0);
-
-			BtU32 textureSize = pTexture->GetOriginalWidth() * 4 *
-				pTexture->GetOriginalHeight();
-
-			pTexture->WriteMemory(pMemory, textureSize);
-
-			// Delete the image
-			delete pImage;
-
-			int a = 0;
-			a++;
-		}
-	}
+        BtChar szFilename[256];
+        sprintf(szFilename, "%s%scard%d.png", ApConfig::GetResourcePath(),
+                ApConfig::GetDelimitter(), cardIndex + 1); // because cards start at ace=1
+        
+        // Load file and decode image.
+        std::vector<unsigned char> pImage;
+        unsigned width, height;
+        unsigned error = lodepng::decode(pImage, width, height, szFilename);
+        (void)error;
+        
+        BtU8 *pMemory = (BtU8*)&pImage[0];
+        
+        // Cache the texture from the background material
+        RsTexture *pTexture = m_pBackgroundMaterial->GetTexture(0);
+        
+        BtU32 textureSize = pTexture->GetOriginalWidth() * 4 *
+        pTexture->GetOriginalHeight();
+        
+        pTexture->WriteMemory(pMemory, textureSize);
+        
+        // Delete the image
+        //delete pImage;
+        
+        int a = 0;
+        a++;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -112,6 +111,12 @@ void CgCard::LoadCard(BtU32 index)
 
 void CgCard::Render()
 {
-	BtChar text[256];
-	HlView::Render();	
+	HlView::Render();
+
+    BtChar text[256];
+    sprintf(text, "Turn Taking Play: Debug card number %d\nNumber of players %d",
+            SbMain::GetState(),
+            MpPeerToPeer::GetNumPeers() + 1 // (number of players = number of peers + 1)
+            );
+    HlFont::RenderHeavy(MtVector2(0, 0), text, MaxSortOrders - 1);
 }

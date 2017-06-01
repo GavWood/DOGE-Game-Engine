@@ -28,6 +28,20 @@ enum MpEventType
 
 struct MpPeer
 {
+	bool operator == (const MpPeer&& rhs)const
+	{
+        #ifdef WIN32
+		if( (m_address == rhs.m_address) && (m_port == rhs.m_port) )
+			return true;
+        #else
+        if( strcmp( m_networkName, rhs.m_networkName ) == 0 )
+        {
+            return true;
+        }
+        #endif
+		return false;
+	}
+
 	BtU32										m_address;
 	BtU32										m_port;
 	BtU64										m_startTime;
@@ -47,10 +61,17 @@ struct MpPeerComp
 {
 	bool operator() (const MpPeer& lhs, const MpPeer& rhs) const
 	{
+#ifdef WIN32
 		if (lhs.m_address < rhs.m_address )
 			return true;
 		if (lhs.m_port < rhs.m_port)
 			return true;
+#else
+        if( strcmp( lhs.m_networkName, rhs.m_networkName ) < 0 )
+        {
+            return true;
+        }
+#endif
 		return false;
 	}
 };
@@ -89,6 +110,7 @@ public:
 	static void                                 AddEvent(MpEvent event);
 	static void                                 ClearPeers();
     static void                                 AddPeer(MpPeer peer);
+    static void                                 DeletePeer(MpPeer peer);
     static void                                 SetHost(MpPeer peer);
 
 	// Send queue

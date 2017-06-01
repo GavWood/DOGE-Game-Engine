@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-// CgCard4.cpp
+// CgCard.cpp
 
 // Includes
 #include "BaArchive.h"
@@ -19,8 +19,10 @@
 #include "BaArchive.h"
 #include "RsSprite.h"
 #include "ShTouch.h"
-#include "corona.h"
+//#include "corona.h"
 #include "RsTexture.h"
+#include <vector>
+#include "LodePNG.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Setup
@@ -73,34 +75,33 @@ void CgCard::LoadCard(BtU32 index)
 {
 	if (m_pBackgroundMaterial)
 	{
+        BtU32 cardIndex = index % 4;
+        
 		BtChar szFilename[256];
         sprintf(szFilename, "%s%scard%d.png", ApConfig::GetResourcePath(),
-                ApConfig::GetDelimitter(), index + 1); // because cards start at ace=1
-		corona::Image* pImage = corona::OpenImage(szFilename, corona::PF_B8G8R8A8);
-        
-        if( pImage == BtNull )
-        {
-            printf("%s", szFilename );
-        }
+                ApConfig::GetDelimitter(), cardIndex + 1); // because cards start at ace=1
 
-		if (pImage != BtNull)
-		{
-			BtU8 *pMemory = (BtU8*)pImage->getPixels();
+													   // Load file and decode image.
+		std::vector<unsigned char> pImage;
+		unsigned width, height;
+		unsigned error = lodepng::decode(pImage, width, height, szFilename);
+        (void)error;
+		
+		BtU8 *pMemory = (BtU8*)&pImage[0];
 
-			// Cache the texture from the background material
-			RsTexture *pTexture = m_pBackgroundMaterial->GetTexture(0);
+		// Cache the texture from the background material
+		RsTexture *pTexture = m_pBackgroundMaterial->GetTexture(0);
 
-			BtU32 textureSize = pTexture->GetOriginalWidth() * 4 *
-				pTexture->GetOriginalHeight();
+		BtU32 textureSize = pTexture->GetOriginalWidth() * 4 *
+			pTexture->GetOriginalHeight();
 
-			pTexture->WriteMemory(pMemory, textureSize);
+		pTexture->WriteMemory(pMemory, textureSize);
 
-			// Delete the image
-			delete pImage;
+		// Delete the image
+		//delete pImage;
 
-			int a = 0;
-			a++;
-		}
+		int a = 0;
+		a++;
 	}
 }
 
@@ -109,12 +110,10 @@ void CgCard::LoadCard(BtU32 index)
 
 void CgCard::Render()
 {
-	BtChar text[256];
-	HlView::Render();
-
-	sprintf(text, "Debug card number %d", SbMain::GetState() );
-
-	if (ApConfig::IsDebug())
+    HlView::Render();
+    
+    BtChar text[256];
+    if (ApConfig::IsDebug())
 	{
 		MtVector2 v2Dimension = HlFont::GetDimension(text);
 		MtVector2 v2Position = RsUtil::GetDimension() / 2.0f;
@@ -138,4 +137,10 @@ void CgCard::Render()
 		RsColour colour(1.0f, 1.0f, 1.0f, 0.1f);
 		m_pSprite->Render(BtFalse, m_v2Position, 1, 0, colour, MaxSortOrders - 1);
 	}
+
+    sprintf(text, "Synchronised Play: Debug card number %d\nNumber of players %d",
+            SbMain::GetState(),
+            MpPeerToPeer::GetNumPeers() + 1 // (number of players = number of peers + 1)
+            );
+    HlFont::RenderHeavy(MtVector2(0, 0), text, MaxSortOrders - 1);
 }

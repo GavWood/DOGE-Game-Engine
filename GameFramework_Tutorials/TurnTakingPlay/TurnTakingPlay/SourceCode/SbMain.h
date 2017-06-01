@@ -20,7 +20,7 @@ class RsShader;
 class RsMaterial;
 class SgNode;
 
-enum class GameState
+enum GameState
 {
 	GameState_Ace,
 	GameState_TwoOfClubs,

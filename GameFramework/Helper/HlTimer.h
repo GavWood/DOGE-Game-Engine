@@ -16,6 +16,8 @@ class HlTimer
 public:
 
 	// Public functions
+	HlTimer();
+
 	void							ResetTimer( BtFloat duration = 0 );
 	BtFloat							GetElapsedTime();
 	BtFloat						    GetStartTime();

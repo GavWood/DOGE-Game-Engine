@@ -22,13 +22,13 @@
 #include "HlDebug.h"
 #include "SgNode.h"
 #include "HlModel.h"
-#include "corona.h"
+#include "lodepng.h"
 
 #include <map>
 #include <iterator>
 
-enum class GameState m_currentState;
-enum class GameState m_nextState;
+enum GameState m_currentState;
+enum GameState m_nextState;
 
 struct SbOtherPlayerState
 {
@@ -39,17 +39,14 @@ struct SbOtherPlayerState
 GameState& operator++(GameState &c)
 {
 	int iv = static_cast<int>(c);
-	if (iv < static_cast<int>( GameState::GameState_MAX ))
-	{
-		iv++;
-	}
+    iv++;
 	c = static_cast<GameState>(iv);
 	return c;
 }
 
 // Special behavior for GameState++
-GameState operator++(GameState &c, int) {
-	GameState result = c;
+GameState operator++(GameState &c, int)
+{
 	++c;
 	return c;
 }
@@ -187,16 +184,13 @@ void SbMain::PullNetworkChanges()
 
 	// Loop through it and find out what the highest recorded state is
 	GameState currentState = GameState::GameState_ShowCard0;
-	while (it != networkAllStates.end())
+    for( it = networkAllStates.begin(); it != networkAllStates.end(); it++ )
 	{
 		// Get another player state
 		SbOtherPlayerState playerState = it->second;
 
 		// Is it higher than the one we've seen
 		currentState = MtMax(currentState, playerState.m_state);
-
-		// Increment the pointer
-		it++;
 	}
 
 	if( currentState != m_nextState )
@@ -248,15 +242,6 @@ void SbMain::UpdateTests()
 	// Set the next state
 	m_currentState = m_nextState;
 
-	// This is where the state machine gets executed
-	int a = 0;
-	a++;
-	switch (m_currentState)
-	{
-	case GameState::GameState_ShowCard0:
-		break;
-	}
-
 	// Look for key presses
 	if (UiKeyboard::pInstance()->IsPressed(UiKeyCode_ESCAPE))
 	{
@@ -265,22 +250,6 @@ void SbMain::UpdateTests()
 	if(UiKeyboard::pInstance()->IsPressed(DebugKey))
 	{
 		ApConfig::SetDebug(!ApConfig::IsDebug());
-	}
-	if (UiKeyboard::pInstance()->IsPressed(UiKeyCode_1))
-	{
-		SbMain::SetNextState( GameState::GameState_ShowCard0 );
-	}
-	if (UiKeyboard::pInstance()->IsPressed(UiKeyCode_2))
-	{
-		SbMain::SetNextState( GameState::GameState_ShowCard1 );
-	}
-	if (UiKeyboard::pInstance()->IsPressed(UiKeyCode_3))
-	{
-		SbMain::SetNextState( GameState::GameState_ShowCard2 );
-	}
-	if (UiKeyboard::pInstance()->IsPressed(UiKeyCode_4))
-	{
-		SbMain::SetNextState( GameState::GameState_ShowCard3 );
 	}
 	if (UiKeyboard::pInstance()->IsPressed(CloseGameKey))
 	{

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameWinGL", "..\..\..\GameFramework\GameWinGL\GameWinGL.vcxproj", "{1BC33B2E-5E35-4755-902F-8CFECFB6DFE1}"
 EndProject
@@ -45,6 +45,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SynchronisedPlay", "..\SynchronisedPlay\SourceCode\SynchronisedPlay.vcxproj", "{F07C200D-1AFA-42FF-9DDD-28308B3DC6F7}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Corona", "..\..\..\GameFramework_ThirdParty\Corona\Corona.vcxproj", "{A4BF679B-BEC9-43BB-B6AE-BDAF39F0AA6A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LodePNG", "..\..\..\GameFramework_ThirdParty\LodePNG\LodePNG.vcxproj", "{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -357,6 +359,24 @@ Global
 		{A4BF679B-BEC9-43BB-B6AE-BDAF39F0AA6A}.x86|Win32.Build.0 = Release|Win32
 		{A4BF679B-BEC9-43BB-B6AE-BDAF39F0AA6A}.x86|x64.ActiveCfg = Release|Win32
 		{A4BF679B-BEC9-43BB-B6AE-BDAF39F0AA6A}.x86|x64.Build.0 = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.Debug|Win32.Build.0 = Debug|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.Debug|x64.ActiveCfg = Debug|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.Release|Win32.ActiveCfg = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.Release|Win32.Build.0 = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.Release|x64.ActiveCfg = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.Test|Win32.ActiveCfg = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.Test|Win32.Build.0 = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.Test|x64.ActiveCfg = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.Test|x64.Build.0 = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.x64|Win32.ActiveCfg = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.x64|Win32.Build.0 = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.x64|x64.ActiveCfg = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.x64|x64.Build.0 = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.x86|Win32.ActiveCfg = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.x86|Win32.Build.0 = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.x86|x64.ActiveCfg = Release|Win32
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB}.x86|x64.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -379,5 +399,6 @@ Global
 		{2900C335-7428-417C-BD18-F78CDED9885F} = {4BB10322-0923-411C-B853-6D4D8B964F66}
 		{F07C200D-1AFA-42FF-9DDD-28308B3DC6F7} = {4BB10322-0923-411C-B853-6D4D8B964F66}
 		{A4BF679B-BEC9-43BB-B6AE-BDAF39F0AA6A} = {63297598-F98A-43D2-A9BC-03D8BC2E1A7D}
+		{ABCE0029-2C06-4D66-AB33-D3F97D2DB3DB} = {63297598-F98A-43D2-A9BC-03D8BC2E1A7D}
 	EndGlobalSection
 EndGlobal

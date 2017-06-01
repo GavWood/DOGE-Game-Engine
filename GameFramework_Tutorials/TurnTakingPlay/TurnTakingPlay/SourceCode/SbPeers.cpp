@@ -13,6 +13,7 @@
 #include "HlKeyboard.h"
 #include "SbPeers.h"
 #include "BtCrc.h"
+#include "ErrorLog.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // GetType
@@ -67,7 +68,6 @@ void SbGamePacket::SendFragment()
 	BtAssert(m_length < 576);
 	m_header.m_hashcode = BtCRC::GenerateHashCode((const BtU8*)m_data, m_length);
 	m_current = 0;
-	BtU32 headerSize = sizeof(SbGamePacketHeader);
 	MpPeerToPeer::SendFragment(this, sizeof(SbGamePacketHeader) + m_length );
 }
 
@@ -94,6 +94,8 @@ void SbPeers::UpdateDebug()
 		if (networkEvent.m_eventType == MpEventType_ClientConnected)
 		{
 			strcpy(m_status, "connected");
+            
+            ErrorLog::Printf( "Peer '%s' connected", networkEvent.m_peer.m_networkName );
 		}
 		else if (networkEvent.m_eventType == MpEventType_ClientDisconnected)
 		{

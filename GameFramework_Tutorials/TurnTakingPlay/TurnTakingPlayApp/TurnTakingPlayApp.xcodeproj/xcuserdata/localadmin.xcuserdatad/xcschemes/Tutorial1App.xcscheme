@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7BF34B571C0601300048F1DF"
-               BuildableName = "SynchronisedPlayApp.app"
-               BlueprintName = "SynchronisedPlayApp"
-               ReferencedContainer = "container:SynchronisedPlayApp.xcodeproj">
+               BuildableName = "TurnTakingPlayApp.app"
+               BlueprintName = "TurnTakingPlayApp"
+               ReferencedContainer = "container:TurnTakingPlayApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7BF34B741C0601300048F1DF"
-               BuildableName = "SynchronisedPlayAppTests.xctest"
-               BlueprintName = "SynchronisedPlayAppTests"
-               ReferencedContainer = "container:SynchronisedPlayApp.xcodeproj">
+               BuildableName = "TurnTakingPlayAppTests.xctest"
+               BlueprintName = "TurnTakingPlayAppTests"
+               ReferencedContainer = "container:TurnTakingPlayApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7BF34B7F1C0601300048F1DF"
-               BuildableName = "SynchronisedPlayAppUITests.xctest"
-               BlueprintName = "SynchronisedPlayAppUITests"
-               ReferencedContainer = "container:SynchronisedPlayApp.xcodeproj">
+               BuildableName = "TurnTakingPlayAppUITests.xctest"
+               BlueprintName = "TurnTakingPlayAppUITests"
+               ReferencedContainer = "container:TurnTakingPlayApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7BF34B571C0601300048F1DF"
-            BuildableName = "SynchronisedPlayApp.app"
-            BlueprintName = "SynchronisedPlayApp"
-            ReferencedContainer = "container:SynchronisedPlayApp.xcodeproj">
+            BuildableName = "TurnTakingPlayApp.app"
+            BlueprintName = "TurnTakingPlayApp"
+            ReferencedContainer = "container:TurnTakingPlayApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7BF34B571C0601300048F1DF"
-            BuildableName = "SynchronisedPlayApp.app"
-            BlueprintName = "SynchronisedPlayApp"
-            ReferencedContainer = "container:SynchronisedPlayApp.xcodeproj">
+            BuildableName = "TurnTakingPlayApp.app"
+            BlueprintName = "TurnTakingPlayApp"
+            ReferencedContainer = "container:TurnTakingPlayApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7BF34B571C0601300048F1DF"
-            BuildableName = "SynchronisedPlayApp.app"
-            BlueprintName = "SynchronisedPlayApp"
-            ReferencedContainer = "container:SynchronisedPlayApp.xcodeproj">
+            BuildableName = "TurnTakingPlayApp.app"
+            BlueprintName = "TurnTakingPlayApp"
+            ReferencedContainer = "container:TurnTakingPlayApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
