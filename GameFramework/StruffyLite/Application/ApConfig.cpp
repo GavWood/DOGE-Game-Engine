@@ -281,6 +281,7 @@ void ApConfig::CheckResourcePath( const BtChar *name )
 	}
 	else
 	{
+		//system("dir > \\temp\\temp.txt");
 		BtStrCopy( m_resourcePath, 256, "" );
 	}
 }

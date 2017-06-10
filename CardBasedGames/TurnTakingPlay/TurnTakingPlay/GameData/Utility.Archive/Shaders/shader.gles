@@ -1,0 +1,14 @@
+shaderPassThrough.vert
+shaderPassThrough.frag
+shaderLit.vert
+shaderLit.frag 
+shaderTextured.vert
+shaderTextured.frag
+shaderLitTextured.vert
+shaderLitTextured.frag
+shaderSkin.vert
+shaderSkin.frag
+projectedTexture.vert
+projectedTexture.frag
+shadow.vert
+shadow.frag
