@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-// SgLightDX11.h
+// SgLightImpl.h
 
 #pragma once
 #include "SgLight.h"
@@ -8,11 +8,11 @@
 struct BaSgLightFileData;
 
 // Class Declaration
-class SgLightDX11 : public SgLight
+class SgLightImpl : public SgLight
 {
 public:
 
-	SgLightDX11();
+	SgLightImpl();
 	
 	void						FixPointers( BtU8* pMemory );
 

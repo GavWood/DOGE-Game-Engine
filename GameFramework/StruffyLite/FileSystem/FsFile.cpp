@@ -13,6 +13,13 @@
 #include "BtString.h"
 #include "BtBase.h"
 
+#ifdef WIN32
+#include <direct.h>
+#else
+#include <unistd.h>
+#include <sys/stat.h>
+#endif
+
 ////////////////////////////////////////////////////////////////////////////////
 // Constructor
 
@@ -20,6 +27,31 @@ FsFile::FsFile()
 {
 	m_fileHandle = BtNull;
 	m_bOpened = BtFalse;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// CreateFolder
+
+BtBool FsFile::CreateFolder(const BtChar *filename)
+{
+#ifdef WIN32
+	_mkdir(filename);
+#else
+    mkdir(filename, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+#endif
+	return BtFalse;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// GetFileSeparator
+
+BtChar FsFile::GetFileSeparator()
+{
+#ifdef WIN32
+    return '\\';
+#else
+    return '/';
+#endif
 }
 
 ////////////////////////////////////////////////////////////////////////////////

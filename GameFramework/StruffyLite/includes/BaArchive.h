@@ -19,7 +19,7 @@ enum BaResourceType
 	BaRT_Strings = 1,
 	BaRT_Texture = 2,
 	BaRT_Sprite = 3,
-	BaRT_Mask = 4,
+	//BaRT_Mask = 4,
 	BaRT_Font = 5,
 	BaRT_Shader = 6,
 	BaRT_Input = 7,
@@ -52,8 +52,20 @@ struct BaArchiveHeader
 struct BaResourceHeader
 {
 	BtChar						m_szTitle[LMaxResourceName];
-	BaResourceType				m_type;
-	
+	BaResourceType				m_type;	
+
+	BtU32						m_nodeType;
+	BtU32						m_pad0;
+
+	BtU32						m_pad1;
+	BtU32						m_pad2;
+
+	union
+	{
+		BaResource		 	   *m_pResource;
+		BtU64					m_instancePosition;
+	};
+
 	BtU32						m_nInstanceOffset;
 	BtU32						m_nInstanceAlignment;
 
@@ -65,9 +77,6 @@ struct BaResourceHeader
 
 	BtU32						m_nResourceID;
 	BtU32						m_resourceFlags;
-
-	BtU32						m_align1;
-	BtU32						m_align2;
 };
 
 class RsFont;
@@ -114,8 +123,8 @@ public:
 	static void					CheckResources();
 
 	// Accessors
-	BtU8					   *GetResource( BaResourceType eType, const BtChar* szTitle ) const;
-	BtU8					   *GetResource( BtU32 nResourceID ) const;
+	BaResource				   *GetResource( BaResourceType eType, const BtChar* szTitle ) const;
+	BaResource			       *GetResource( BtU32 nResourceID ) const;
 	BtChar					   *GetFilename() { return m_filename; }
 
 
@@ -139,15 +148,23 @@ public:
 private:
 
 	void						LoadFile( const BtChar* archiveName );
+	
+	void						GetInstanceSizes();
+
+	BtU32						GetInstanceSize( BaResourceHeader *pResourceHeader );
+
 	void						CreateResources();
-	void						CreateResourceInstance( BaResourceType resourceType, BtU8 *pMemory );
+	void						CreateResourceInstance(BaResourceType resourceType, BtU8 *pMemory);
+	
 	void						FixPointers();
 	void						ValidateResources();
 
 	BaArchiveNode				m_archiveNode;
 	static BtLinkedList<BaArchiveNode>	m_archives;
 
-	BtU8*						m_pMemory;
+	BtU8*						m_pArchiveMemory;
+	BtU8*						m_pInstanceMemory;
+
 	BtLinkedList<BaDuplicate>	m_duplicates;
 	BtChar						m_filename[256];
 	BtBool						m_isLoaded;

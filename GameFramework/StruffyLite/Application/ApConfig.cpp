@@ -195,19 +195,6 @@ ApPlatform ApConfig::GetPlatform()
 	return m_platform;
 }
 
-//static
-const BtChar *ApConfig::GetDelimitter()
-{
-	if( ApConfig::GetDevice() == ApDevice_WIN )
-	{
-		return "\\";
-	}
-	else
-	{
-		return "/";
-	}
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 // GetPlatformName
 
@@ -281,7 +268,6 @@ void ApConfig::CheckResourcePath( const BtChar *name )
 	}
 	else
 	{
-		//system("dir > \\temp\\temp.txt");
 		BtStrCopy( m_resourcePath, 256, "" );
 	}
 }

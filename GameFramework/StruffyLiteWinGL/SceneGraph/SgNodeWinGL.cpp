@@ -5,9 +5,9 @@
 #include "BtString.h"
 #include "SgNodeWinGL.h"
 #include "RsMaterial.h"
-#include "RsMaterialWinGL.h"
 #include "RsCamera.h"
 #include "RsTextureWinGL.h"
+#include "MtMath.h"
 
 #include "SgMaterialsWinGL.h"
 #include "SgCameraImpl.h"
@@ -33,6 +33,26 @@ SgNodeWinGL::SgNodeWinGL()
 	m_pMesh = BtNull;
 	m_pSkin = BtNull;
 	m_pBlendShape = BtNull;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// GetInstanceSize
+
+BtU32 SgNodeWinGL::GetInstanceSize(BaResourceHeader *pResourceHeader)
+{
+	BtU32 instance = sizeof(SgNodeWinGL);
+
+	BtU32 specificInstanceSize = 0;
+
+	specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgMeshWinGL));
+	specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgSkinWinGL));
+	specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgCollisionWinGL));
+	specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgBoneWinGL));
+	//specificInstanceSize = MtMax(specificInstanceSize, 0));// sizeof(SgCameraWin32));
+	specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgBlendShapeImpl));
+	//specificInstanceSize = MtMax(specificInstanceSize, 0));// sizeof(SgLightWin32));
+	specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgMaterialsWinGL));
+	return instance + specificInstanceSize;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

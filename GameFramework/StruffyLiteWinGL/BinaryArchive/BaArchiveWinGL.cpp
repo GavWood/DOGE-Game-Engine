@@ -34,6 +34,82 @@
 #include <stdio.h>
 
 ////////////////////////////////////////////////////////////////////////////////
+// GetInstanceSize
+
+BtU32 BaArchive::GetInstanceSize(BaResourceHeader *pResourceHeader)
+{
+	BaResourceType resourceType = pResourceHeader->m_type;
+
+	switch (resourceType)
+	{
+	case BaRT_CollisionMesh:
+		return sizeof(DyCollisionMesh);
+		break;
+
+	case BaRT_CollisionAnalytical:
+		return sizeof(DyCollisionAnalytical);
+		break;
+
+	case BaRT_VertexBuffer:
+		return sizeof(RsVertexBufferWinGL);
+		break;
+
+	case BaRT_IndexBuffer:
+		return sizeof(RsIndexBufferWinGL);
+		break;
+
+	case BaRT_Material:
+		return sizeof(RsMaterialWinGL);
+		break;
+
+	case BaRT_UserData:
+		return sizeof(BaUserData);
+		break;
+
+	case BaRT_Sprite:
+		return sizeof(RsSpriteWinGL);
+		break;
+
+	case BaRT_Font:
+		return sizeof(RsFontWin32GL);
+		break;
+
+	case BaRT_Texture:
+		return sizeof(RsTextureWinGL);
+		break;
+
+	case BaRT_Sound:
+		return sizeof(SdSoundWinGL);
+		break;
+
+	case BaRT_Scene:
+		return sizeof(RsSceneWinGL);
+		break;
+
+	case BaRT_SgNode:
+		return SgNodeWinGL::GetInstanceSize(pResourceHeader);
+		break;
+
+	case BaRT_Animator:
+		return sizeof(SgAnimatorWinGL);
+		break;
+
+	case BaRT_Shader:
+		return sizeof(RsShaderWinGL);
+		break;
+
+	case BaRT_Flash:
+		return sizeof(RsFlashWinGL);
+		break;
+
+	default:
+		return sizeof(BaResource);
+		break;
+	}
+	return 0;
+}
+
+////////////////////////////////////////////////////////////////////////////////
 // CreateResourceInstance
 
 void BaArchive::CreateResourceInstance( BaResourceType resourceType, BtU8 *pMemory )

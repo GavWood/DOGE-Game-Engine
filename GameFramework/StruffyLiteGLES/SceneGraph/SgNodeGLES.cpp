@@ -9,6 +9,8 @@
 #include "RsCamera.h"
 #include "RsTextureGLES.h"
 
+#include "BaArchive.h"
+
 #include "SgMaterialsGLES.h"
 #include "SgCameraImpl.h"
 #include "SgLightImpl.h"
@@ -21,6 +23,7 @@
 
 #include "SgMeshGLES.h"
 #include "SgSkinGLES.h"
+#include "SgBoneGLES.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Constructor
@@ -40,6 +43,55 @@ SgNodeWinGL::SgNodeWinGL()
 
 void SgNodeWinGL::Destroy()
 {
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// GetInstanceSize
+
+BtU32 SgNodeWinGL::GetInstanceSize(BaResourceHeader *pResourceHeader)
+{
+    SgType sceneType = (SgType)0;// pResourceHeader->m_type;
+    
+    BtU32 instanceSize = sizeof(SgNodeWinGL);
+    
+    if (sceneType & SgType_Mesh)
+    {
+        instanceSize += sizeof(SgMeshWinGL);
+    }
+    if (sceneType & SgType_Skin)
+    {
+        instanceSize += sizeof(SgSkinWin32GL);
+    }
+    if (sceneType & SgType_RigidBody)
+    {
+        instanceSize += sizeof(SgRigidBodyImpl);
+    }
+    if (sceneType & SgType_Collision)
+    {
+        instanceSize += sizeof(SgCollisionWinGL);
+    }
+    if (sceneType & SgType_Bone)
+    {
+        instanceSize += sizeof(SgBoneWin32);
+    }
+    if (sceneType & SgType_Camera)
+    {
+        instanceSize += 0; // sizeof(SgCameraWin32);
+    }
+    if (sceneType & SgType_BlendShape)
+    {
+        instanceSize += sizeof(SgBlendShapeImpl);
+    }
+    if (sceneType & SgType_Light)
+    {
+        instanceSize += 0; // sizeof(SgLightWin32);
+    }
+    if (sceneType & SgType_Materials)
+    {
+        instanceSize += sizeof(SgMaterialsWinGL);
+    }
+    instanceSize += 2048;
+    return instanceSize;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

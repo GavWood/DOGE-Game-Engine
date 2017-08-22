@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="BatchFiles">
+      <UniqueIdentifier>{6d7eb231-569c-4ab5-9fc3-329e531c3527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode">
+      <UniqueIdentifier>{50f27d76-38b0-4681-bee0-b6dbb68a793f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\Exporter">
+      <UniqueIdentifier>{6a9833f2-52a5-4dec-a3fd-37cee20bb8b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\Sound">
+      <UniqueIdentifier>{fe4a269e-5e4f-4d5c-8b68-ac0944b07675}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\FileSystem">
+      <UniqueIdentifier>{0458fff6-a314-46a5-bfaf-6176abba12d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\Metasequoia">
+      <UniqueIdentifier>{05a06769-c997-4bf7-8391-49378bde9acb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\Includes">
+      <UniqueIdentifier>{7f59d8be-4c3c-4d8d-9a8c-1ec479be2152}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\Packer">
+      <UniqueIdentifier>{7bf57a08-626b-470c-802e-d78f39913d4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\Texture">
+      <UniqueIdentifier>{e9fff6ff-bdf2-4887-9371-579ba497a6e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\FileSystem\Win32">
+      <UniqueIdentifier>{401af7c8-e12d-4b82-95fb-b169617c4eec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\Main">
+      <UniqueIdentifier>{eef4fdc7-de60-44d5-9ccb-17b1cee1a7eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\Rendering">
+      <UniqueIdentifier>{50aa9833-80cc-4438-aefa-507a8164d690}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{be844323-8b08-4cc1-9904-d53d9ad92e5b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\BatchFiles\StruffyPackerAndPause.bat">
+      <Filter>BatchFiles</Filter>
+    </None>
+    <None Include="..\BatchFiles\UpdatePacker.bat">
+      <Filter>BatchFiles</Filter>
+    </None>
+    <None Include="..\BatchFiles\OpenFolder.bat">
+      <Filter>BatchFiles</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\StruffyPacker\SourceCode\BtSingleton.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\PaTopState.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\UtFilename.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\UtTokeniser.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExCollisionAnalytical.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExCollisionMesh.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExExporter.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExJointWeightPair.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExMaterial.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExMaterialBlock.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExMaterialList.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExMatrix.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExResource.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExRigidBody.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExScene.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExSchedule.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExSgAnimation.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExSgBlendShape.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExSgBone.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExSgCamera.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExSgCollision.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExSgLight.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExSgMesh.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExSgNode.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExSgSkin.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExShader.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExSound.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExSprites.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExStandardShader.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExStrings.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExStrip.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExTexture.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExTextureList.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExUserData.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExVertex.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExVertexBuffer.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExVertexJointWeightPairs.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Sound\SndIff.h">
+      <Filter>SourceCode\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\BaaConvert\BCdxf.h">
+      <Filter>SourceCode\Metasequoia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\BaaConvert\BCMetasequoiaExport.h">
+      <Filter>SourceCode\Metasequoia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\BaaConvert\MCArray.h">
+      <Filter>SourceCode\Metasequoia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\BaaConvert\MCCollada.h">
+      <Filter>SourceCode\Metasequoia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\BaaConvert\MCMetasequoia.h">
+      <Filter>SourceCode\Metasequoia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\BaaConvert\MCTextFileReader.h">
+      <Filter>SourceCode\Metasequoia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\BaaConvert\MCVanilla.h">
+      <Filter>SourceCode\Metasequoia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Includes\PaFileDetails.h">
+      <Filter>SourceCode\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Includes\PaFilename.h">
+      <Filter>SourceCode\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Includes\PaMemoryResource.h">
+      <Filter>SourceCode\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Includes\PaPackerInterface.h">
+      <Filter>SourceCode\Includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Packer\PaArchive.h">
+      <Filter>SourceCode\Packer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Packer\PaArray.h">
+      <Filter>SourceCode\Packer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Packer\PaAsset.h">
+      <Filter>SourceCode\Packer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Packer\PaDependency.h">
+      <Filter>SourceCode\Packer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Packer\PaPacker.h">
+      <Filter>SourceCode\Packer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Packer\PaResource.h">
+      <Filter>SourceCode\Packer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Texture\TeTexture.h">
+      <Filter>SourceCode\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExFlash.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExFont.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Exporter\ExIndexBuffer.h">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\FileSystem\Win32\FsFindFile.h">
+      <Filter>SourceCode\FileSystem\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Packer\main.hpp">
+      <Filter>SourceCode\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\StruffyPacker\SourceCode\Rendering\PaRendering.h">
+      <Filter>SourceCode\Rendering</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\StruffyPacker\SourceCode\PaTopState.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\UtFilename.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\UtTokeniser.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExCollisionAnalytical.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExCollisionMesh.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExExporter.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExMaterial.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExMaterialList.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExResource.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExRigidBody.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExScene.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExSgAnimation.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExSgBlendShape.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExSgBone.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExSgCamera.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExSgCollision.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExSgLight.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExSgMesh.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExSgNode.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExSgSkin.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExShader.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExSound.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExSprites.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExStandardShader.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExStrings.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExStrip.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExTexture.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExTextureList.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExUserData.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExVertex.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExVertexBuffer.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExVertexJointWeightPairs.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Sound\SndIff.cpp">
+      <Filter>SourceCode\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\BaaConvert\BCdxf.cpp">
+      <Filter>SourceCode\Metasequoia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\BaaConvert\BCMetasequoiaExport.cpp">
+      <Filter>SourceCode\Metasequoia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\BaaConvert\MCCollada.cpp">
+      <Filter>SourceCode\Metasequoia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\BaaConvert\MCMetasequoia.cpp">
+      <Filter>SourceCode\Metasequoia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\BaaConvert\MCTextFileReader.cpp">
+      <Filter>SourceCode\Metasequoia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\BaaConvert\MCVanilla.cpp">
+      <Filter>SourceCode\Metasequoia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Includes\PaFileDetails.cpp">
+      <Filter>SourceCode\Includes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Packer\PaArchive.cpp">
+      <Filter>SourceCode\Packer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Packer\PaAsset.cpp">
+      <Filter>SourceCode\Packer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Packer\PaMemoryResource.cpp">
+      <Filter>SourceCode\Packer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Packer\PaPacker.cpp">
+      <Filter>SourceCode\Packer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Packer\PaResource.cpp">
+      <Filter>SourceCode\Packer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Texture\TeTexture.cpp">
+      <Filter>SourceCode\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExFlash.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExFont.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Exporter\ExIndexBuffer.cpp">
+      <Filter>SourceCode\Exporter</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\FileSystem\Win32\FsFindFile.cpp">
+      <Filter>SourceCode\FileSystem\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Packer\main.cpp">
+      <Filter>SourceCode\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\StruffyPacker\SourceCode\Rendering\PaRendering.cpp">
+      <Filter>SourceCode\Rendering</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\config.txt">
+      <Filter>Config</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

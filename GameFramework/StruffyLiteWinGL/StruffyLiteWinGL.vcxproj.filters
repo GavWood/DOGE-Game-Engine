@@ -170,5 +170,8 @@
     <ClInclude Include="Sound\SdSoundCaptureAL.h">
       <Filter>Sound</Filter>
     </ClInclude>
+    <ClInclude Include="RenderSystem\RsPlatform.h">
+      <Filter>RenderSystem</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

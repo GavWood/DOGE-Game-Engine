@@ -53,7 +53,7 @@ BtBool RsMaterialWinGL::GetZTest()
 RsMaterial* RsMaterialWinGL::GetDuplicate() const
 {
 	// Allocate the memory
-	BtU8* pMemory = BtMemory::Allocate( m_pFileData->m_nInstanceSize + m_pFileData->m_nFileDataSize );
+	BtU8* pMemory = BtMemory::Allocate( sizeof(RsMaterialWinGL) + m_pFileData->m_nFileDataSize );
 
 	// Create the class
 	RsMaterialWinGL* pMaterial = new( pMemory ) RsMaterialWinGL;

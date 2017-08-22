@@ -8,8 +8,6 @@
 #include "SgAnimator.h"
 #include "BaFileData.h"
 
-const BtU32 MaxAnimationNodes = 1024;
-
 class BaArchiveManager;
 class SgBone;
 class SgSkin;

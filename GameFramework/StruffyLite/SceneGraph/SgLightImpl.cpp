@@ -8,14 +8,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 // Constructor
 
-SgLightDX11::SgLightDX11()
+SgLightImpl::SgLightImpl()
 {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // FixPointers
 
-void SgLightDX11::FixPointers( BtU8* pMemory )
+void SgLightImpl::FixPointers( BtU8* pMemory )
 {
 	// Set the file data
 	m_pFileData = (BaSgLightFileData*) pMemory;
@@ -24,7 +24,7 @@ void SgLightDX11::FixPointers( BtU8* pMemory )
 ////////////////////////////////////////////////////////////////////////////////
 // IsCone
 
-BtBool SgLightDX11::IsCone() const
+BtBool SgLightImpl::IsCone() const
 {
 	if( m_pFileData->m_type == RsLT_Cone )
 	{
@@ -36,7 +36,7 @@ BtBool SgLightDX11::IsCone() const
 ////////////////////////////////////////////////////////////////////////////////
 // IsPoint
 
-BtBool SgLightDX11::IsPoint() const
+BtBool SgLightImpl::IsPoint() const
 {
 	if( m_pFileData->m_type == RsLT_Point )
 	{
@@ -48,7 +48,7 @@ BtBool SgLightDX11::IsPoint() const
 ////////////////////////////////////////////////////////////////////////////////
 // IsDirectional
 
-BtBool SgLightDX11::IsDirectional() const
+BtBool SgLightImpl::IsDirectional() const
 {
 	if( m_pFileData->m_type == RsLT_Direction )
 	{
@@ -60,7 +60,7 @@ BtBool SgLightDX11::IsDirectional() const
 ////////////////////////////////////////////////////////////////////////////////
 // pNode
 
-SgNode* SgLightDX11::pNode() const
+SgNode* SgLightImpl::pNode() const
 {
 	return m_pNode;
 }
@@ -68,7 +68,7 @@ SgNode* SgLightDX11::pNode() const
 ////////////////////////////////////////////////////////////////////////////////
 // GetColour
 
-RsColour& SgLightDX11::GetColour() const
+RsColour& SgLightImpl::GetColour() const
 {
 	return m_pFileData->m_colour;
 }
@@ -76,7 +76,7 @@ RsColour& SgLightDX11::GetColour() const
 ////////////////////////////////////////////////////////////////////////////////
 // SetColour
 
-void SgLightDX11::SetColour( const RsColour& colour )
+void SgLightImpl::SetColour( const RsColour& colour )
 {
 	m_pFileData->m_colour = colour;
 }
@@ -84,7 +84,7 @@ void SgLightDX11::SetColour( const RsColour& colour )
 ////////////////////////////////////////////////////////////////////////////////
 // GetEnabled
 
-BtBool SgLightDX11::GetEnabled() const
+BtBool SgLightImpl::GetEnabled() const
 {
 	if( m_pFileData->m_isLit )
 	{
@@ -96,7 +96,7 @@ BtBool SgLightDX11::GetEnabled() const
 ////////////////////////////////////////////////////////////////////////////////
 // GetInnerAngle
 
-BtFloat SgLightDX11::GetInnerAngle() const
+BtFloat SgLightImpl::GetInnerAngle() const
 {
 	return m_pFileData->m_fallOffAngle;
 }
@@ -104,7 +104,7 @@ BtFloat SgLightDX11::GetInnerAngle() const
 ////////////////////////////////////////////////////////////////////////////////
 // SetEnabled
 
-void SgLightDX11::SetEnabled( BtBool enabled )
+void SgLightImpl::SetEnabled( BtBool enabled )
 {
 	m_pFileData->m_isLit = enabled;
 }
@@ -112,7 +112,7 @@ void SgLightDX11::SetEnabled( BtBool enabled )
 ////////////////////////////////////////////////////////////////////////////////
 // SetEnabled
 
-BtFloat SgLightDX11::GetIntensity() const
+BtFloat SgLightImpl::GetIntensity() const
 {
 	return m_pFileData->m_intensity;
 }
@@ -120,7 +120,7 @@ BtFloat SgLightDX11::GetIntensity() const
 ////////////////////////////////////////////////////////////////////////////////
 // SetEnabled
 
-void SgLightDX11::SetIntensity( BtFloat intensity )
+void SgLightImpl::SetIntensity( BtFloat intensity )
 {
 	m_pFileData->m_intensity = intensity;
 }

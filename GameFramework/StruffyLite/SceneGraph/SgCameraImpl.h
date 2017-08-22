@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-// SgCameraDX11.h
+// SgCameraImpl.h
 
 #pragma once
 #include "SgCamera.h"
@@ -7,7 +7,7 @@
 #include "ErrorLog.h"
 
 // Class Declaration
-class SgCameraDX11 : public SgCamera
+class SgCameraImpl : public SgCamera
 {
 public:
 
@@ -29,7 +29,7 @@ private:
 ////////////////////////////////////////////////////////////////////////////////
 // FixPointers
 
-inline void SgCameraDX11::FixPointers( BtU8 *pFileData )
+inline void SgCameraImpl::FixPointers( BtU8 *pFileData )
 {
 	// Set the file data
 	m_pFileData = (BaSgCameraFileData*) pFileData;
@@ -38,7 +38,7 @@ inline void SgCameraDX11::FixPointers( BtU8 *pFileData )
 ////////////////////////////////////////////////////////////////////////////////
 // FarPlane
 
-inline BtFloat SgCameraDX11::FarPlane() const
+inline BtFloat SgCameraImpl::FarPlane() const
 {
 	return m_pFileData->m_fFarPlane;
 }
@@ -46,7 +46,7 @@ inline BtFloat SgCameraDX11::FarPlane() const
 ////////////////////////////////////////////////////////////////////////////////
 // NearPlane
 
-inline BtFloat SgCameraDX11::NearPlane() const
+inline BtFloat SgCameraImpl::NearPlane() const
 {
 	return m_pFileData->m_fNearPlane;
 }
@@ -54,7 +54,7 @@ inline BtFloat SgCameraDX11::NearPlane() const
 ////////////////////////////////////////////////////////////////////////////////
 // FieldOfView
 
-inline BtFloat SgCameraDX11::FieldOfView() const
+inline BtFloat SgCameraImpl::FieldOfView() const
 {
 	return m_pFileData->m_fFieldOfView;
 }

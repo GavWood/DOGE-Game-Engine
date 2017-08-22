@@ -7,6 +7,7 @@
 #include "RsVertexBufferGLES.h"
 #include "RsVertex.h"
 #include "RsGLES.h"
+#include "RsUtil.h"
 
 RsVertexBufferWinGL VertexBuffer;
 

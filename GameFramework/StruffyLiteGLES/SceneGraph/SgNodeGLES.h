@@ -12,10 +12,10 @@
 struct RcRenderable;
 
 // Scene node classes
+struct BaResourceHeader;
 class SgSkinWin32GL;
 class SgMeshWinGL;
 class SgMaterialsWinGL;
-
 class SgRigidBodyImpl;
 class SgBoneDX11;
 class SgCollisionWinGL;
@@ -33,6 +33,8 @@ public:
 
 	void						Destroy();
 	
+    static BtU32                GetInstanceSize(BaResourceHeader *pResourceHeader);
+    
 	const MtMatrix4&			GetLocalTransform();
 	void						SetLocalTransform( const MtMatrix4& Transform );
 	const MtMatrix4&			GetWorldTransform();

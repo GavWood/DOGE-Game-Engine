@@ -26,6 +26,12 @@ public:
 	// Constructor
 	FsFile();
 
+	// Make a folder
+	static BtBool						CreateFolder(const BtChar *filename);
+ 
+    // Get the OS specific file seperator
+    static BtChar                       GetFileSeparator();
+    
 	// Load a file into memory
 	static BtU32						LoadString( BtChar *pFilename, BtChar *contents );
 

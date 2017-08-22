@@ -119,6 +119,7 @@
     <ClCompile Include="RenderSystem\RsColour.cpp" />
     <ClCompile Include="RenderSystem\RsFrustum.cpp" />
     <ClCompile Include="RenderSystem\RsImpl.cpp" />
+    <ClCompile Include="RenderSystem\RsIndexBuffer.cpp" />
     <ClCompile Include="RenderSystem\RsRenderTarget.cpp" />
     <ClCompile Include="RenderSystem\RsResourceManager.cpp" />
     <ClCompile Include="RenderSystem\RsShader.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="includes\RsFlash.h" />
     <ClInclude Include="includes\RsFont.h" />
     <ClInclude Include="includes\RsFrustum.h" />
+    <ClInclude Include="includes\RsIndexBuffer.h" />
     <ClInclude Include="includes\RsMaterial.h" />
     <ClInclude Include="includes\RsPrimitive.h" />
     <ClInclude Include="includes\RsRenderTarget.h" />

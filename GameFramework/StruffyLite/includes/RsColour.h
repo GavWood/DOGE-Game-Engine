@@ -3,6 +3,9 @@
 
 #pragma once
 #include "BtTypes.h"
+#include "MtVector4.h"
+
+class RsColour;
 
 // Class Declaration
 class RsColour
@@ -15,9 +18,27 @@ public:
 	RsColour( BtFloat fRed, BtFloat fGreen, BtFloat fBlue );
 	RsColour( BtFloat fRed, BtFloat fGreen, BtFloat fBlue, BtFloat fAlpha );
 	RsColour( BtU8 red, BtU8 green, BtU8 blue, BtU8 alpha );
+    RsColour( const MtVector4& colour );
 
 	// Public structures
-
+    static const RsColour PinkColour()
+    {
+        return RsColour( 1.0f, 0.0f, 1.0f, 1.0f );
+    }
+    
+    /*
+    RsColour RsColour::BLACK  = RsColour( 0.0f, 0.0f, 0.0f, 1.0f );
+    RsColour RsColour::WHITE  = RsColour( 1.0f, 1.0f, 1.0f, 1.0f );
+    RsColour RsColour::DARKGREY  = RsColour( 0.1f, 0.1f, 0.1f, 1.0f );
+    RsColour RsColour::GREY   = RsColour( 0.5f, 0.5f, 0.5f, 1.0f );
+    RsColour RsColour::RED    = RsColour( 1.0f, 0.0f, 0.0f, 1.0f );
+    RsColour RsColour::GREEN  = RsColour( 0.0f, 1.0f, 0.0f, 1.0f );
+    RsColour RsColour::BLUE   = RsColour( 0.0f, 0.0f, 1.0f, 1.0f );
+    RsColour RsColour::YELLOW = RsColour( 1.0f, 1.0f, 0.0f, 1.0f );
+    RsColour RsColour::PINK   = RsColour( 1.0f, 0.0f, 1.0f, 1.0f );
+    RsColour RsColour::TRANSPARENT_BLACK = RsColour( 0.0f, 0.0f, 0.0f, 0.0f );
+    */
+    
 	static const RsColour WhiteColour()
 	{
 		return RsColour( 1.0f, 1.0f, 1.0f, 1.0f );
@@ -48,7 +69,7 @@ public:
 	}
 
 	// Operators
-	bool operator == ( const RsColour& ) const;
+  	bool operator == ( const RsColour& ) const;
 	bool operator != ( const RsColour& ) const;
 	RsColour& operator += ( const RsColour& );
 	RsColour operator + ( const RsColour& other ) const;

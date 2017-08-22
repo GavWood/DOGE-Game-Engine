@@ -41,8 +41,7 @@ public:
 	static const BtChar		   *GetResourcePath();                      // For package install area
     static const BtChar		   *GetExtension();
     static ApDevice             GetDevice();
-	static const BtChar        *GetDelimitter();
-   
+	
 	static BtBool				IsWin();
 	static BtBool				IsPhone();
 	static BtBool				IsAppleTV();

@@ -136,6 +136,9 @@
     <ClCompile Include="BinaryArchive\BaArchive.cpp">
       <Filter>Archive</Filter>
     </ClCompile>
+    <ClCompile Include="RenderSystem\RsIndexBuffer.cpp">
+      <Filter>RenderSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="includes\ApConfig.h">
@@ -353,6 +356,9 @@
     </ClInclude>
     <ClInclude Include="includes\SgSkin.h">
       <Filter>SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\RsIndexBuffer.h">
+      <Filter>RenderSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

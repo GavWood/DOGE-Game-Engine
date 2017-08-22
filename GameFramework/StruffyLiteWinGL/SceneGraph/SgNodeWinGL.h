@@ -30,6 +30,8 @@ public:
 	SgNodeWinGL();
 
 	void						Destroy();
+
+	static BtU32				GetInstanceSize(BaResourceHeader *pResourceHeader);
 	
 	const MtMatrix4&			GetLocalTransform();
 	void						SetLocalTransform( const MtMatrix4& Transform );
@@ -45,8 +47,6 @@ public:
 
 	void						AddChild( SgNode* pChildInst );
 	void						RemoveChild( SgNode* pChildInst );
-
-	// Accessors
 
 	// Hierarchy
 	BtU32						NodeType() const;

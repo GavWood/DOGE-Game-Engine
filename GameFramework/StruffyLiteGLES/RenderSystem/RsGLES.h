@@ -10,7 +10,6 @@
 #ifndef RsGL_h
 #define RsGL_h
 
-#define GL_BUFFER_OFFSET(i) (reinterpret_cast<void*>(i))
 #define MaxRenderTargets 16
 
 #endif

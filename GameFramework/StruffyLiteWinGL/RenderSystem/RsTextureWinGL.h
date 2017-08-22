@@ -8,7 +8,7 @@
 #include "RsTexture.h"
 #include "RsColour.h"
 #include "MtVector2.h"
-#include <GL/glew.h>
+#include "RsPlatform.h"
 
 struct RsTextureRenderable;
 

@@ -1,9 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // SgMaterialsWinGL.h
 
-#ifndef __SgMaterialsWinGL_h__
-#define __SgMaterialsWinGL_h__
-
+#pragma once
 #include "BtTypes.h"
 #include "BaFileData.h"
 #include "SgMaterial.h"
@@ -80,5 +78,3 @@ inline void SgMaterialsWinGL::SetMaterial( BtU32 iMaterial, RsMaterial* pMateria
 
 	m_pMaterialBlocks[iMaterial].m_pMaterial = pMaterial;
 }
-
-#endif // __SgMaterialsWinGL_h__
