@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B1D26CF1F4CEEA300A659E7 /* RsIndexBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B1D26CE1F4CEEA300A659E7 /* RsIndexBuffer.cpp */; };
 		7B1F29881EDE0EB100E52E6E /* card.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B1F29861EDE0EB100E52E6E /* card.iPhonez */; };
 		7B1F29891EDE0EB100E52E6E /* utility.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B1F29871EDE0EB100E52E6E /* utility.iPhonez */; };
 		7B23A01F1EDE0CBD00FD400B /* card1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B23A00B1EDE0CBD00FD400B /* card1.png */; };
@@ -17,6 +18,8 @@
 		7B23A0251EDE0CBD00FD400B /* SbCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B23A0131EDE0CBD00FD400B /* SbCamera.cpp */; };
 		7B23A0261EDE0CBD00FD400B /* SbMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B23A0151EDE0CBD00FD400B /* SbMain.cpp */; };
 		7B23A0271EDE0CBD00FD400B /* SbPeers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B23A0171EDE0CBD00FD400B /* SbPeers.cpp */; };
+		7B58D30D1F4CE8C20074695E /* BaArchive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B58D30C1F4CE8C20074695E /* BaArchive.cpp */; };
+		7B58D30F1F4CE9D90074695E /* BaArchiveWinGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B58D30E1F4CE9D90074695E /* BaArchiveWinGL.cpp */; };
 		7BD1E9C71EE0433900F50BFB /* glew32.dll in Resources */ = {isa = PBXBuildFile; fileRef = 7BD1E80B1EE0433900F50BFB /* glew32.dll */; };
 		7BD1E9C81EE0433900F50BFB /* glewinfo.exe in Resources */ = {isa = PBXBuildFile; fileRef = 7BD1E80C1EE0433900F50BFB /* glewinfo.exe */; };
 		7BD1E9C91EE0433900F50BFB /* visualinfo.exe in Resources */ = {isa = PBXBuildFile; fileRef = 7BD1E80D1EE0433900F50BFB /* visualinfo.exe */; };
@@ -162,11 +165,8 @@
 		7BF846A71E71DFC1005D5C0D /* SgBlendShapeImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845811E71DFC0005D5C0D /* SgBlendShapeImpl.cpp */; };
 		7BF846A81E71DFC1005D5C0D /* SgLightImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845851E71DFC0005D5C0D /* SgLightImpl.cpp */; };
 		7BF846A91E71DFC1005D5C0D /* SgRigidBodyImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845871E71DFC0005D5C0D /* SgRigidBodyImpl.cpp */; };
-		7BF846AA1E71DFC1005D5C0D /* StruffyLite.vcxproj in Resources */ = {isa = PBXBuildFile; fileRef = 7BF845891E71DFC0005D5C0D /* StruffyLite.vcxproj */; };
-		7BF846AB1E71DFC1005D5C0D /* StruffyLite.vcxproj.filters in Resources */ = {isa = PBXBuildFile; fileRef = 7BF8458A1E71DFC0005D5C0D /* StruffyLite.vcxproj.filters */; };
 		7BF846AC1E71DFC1005D5C0D /* Ui360.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8458C1E71DFC0005D5C0D /* Ui360.cpp */; };
 		7BF846AD1E71DFC1005D5C0D /* UiKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF8458D1E71DFC0005D5C0D /* UiKeyboard.cpp */; };
-		7BF846AE1E71DFC1005D5C0D /* BaArchive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845901E71DFC0005D5C0D /* BaArchive.cpp */; };
 		7BF846AF1E71DFC1005D5C0D /* RsCapsGLES.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845921E71DFC0005D5C0D /* RsCapsGLES.cpp */; };
 		7BF846B01E71DFC1005D5C0D /* RsColourGLES.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845941E71DFC0005D5C0D /* RsColourGLES.cpp */; };
 		7BF846B11E71DFC1005D5C0D /* RsFlashGLES.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF845951E71DFC0005D5C0D /* RsFlashGLES.cpp */; };
@@ -213,6 +213,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B1D26CE1F4CEEA300A659E7 /* RsIndexBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RsIndexBuffer.cpp; sourceTree = "<group>"; };
+		7B1D26D01F4CEEBA00A659E7 /* RsIndexBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RsIndexBuffer.h; sourceTree = "<group>"; };
+		7B1D26D11F4CEEC200A659E7 /* BtEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BtEnum.h; sourceTree = "<group>"; };
 		7B1F29861EDE0EB100E52E6E /* card.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = card.iPhonez; sourceTree = "<group>"; };
 		7B1F29871EDE0EB100E52E6E /* utility.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = utility.iPhonez; sourceTree = "<group>"; };
 		7B23A00B1EDE0CBD00FD400B /* card1.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = card1.png; sourceTree = "<group>"; };
@@ -227,6 +230,8 @@
 		7B23A0161EDE0CBD00FD400B /* SbMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbMain.h; sourceTree = "<group>"; };
 		7B23A0171EDE0CBD00FD400B /* SbPeers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SbPeers.cpp; sourceTree = "<group>"; };
 		7B23A0181EDE0CBD00FD400B /* SbPeers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbPeers.h; sourceTree = "<group>"; };
+		7B58D30C1F4CE8C20074695E /* BaArchive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaArchive.cpp; sourceTree = "<group>"; };
+		7B58D30E1F4CE9D90074695E /* BaArchiveWinGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaArchiveWinGL.cpp; sourceTree = "<group>"; };
 		7BD1E80B1EE0433900F50BFB /* glew32.dll */ = {isa = PBXFileReference; lastKnownFileType = file; path = glew32.dll; sourceTree = "<group>"; };
 		7BD1E80C1EE0433900F50BFB /* glewinfo.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = glewinfo.exe; sourceTree = "<group>"; };
 		7BD1E80D1EE0433900F50BFB /* visualinfo.exe */ = {isa = PBXFileReference; lastKnownFileType = file; path = visualinfo.exe; sourceTree = "<group>"; };
@@ -514,11 +519,8 @@
 		7BF845861E71DFC0005D5C0D /* SgLightImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SgLightImpl.h; sourceTree = "<group>"; };
 		7BF845871E71DFC0005D5C0D /* SgRigidBodyImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SgRigidBodyImpl.cpp; sourceTree = "<group>"; };
 		7BF845881E71DFC0005D5C0D /* SgRigidBodyImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SgRigidBodyImpl.h; sourceTree = "<group>"; };
-		7BF845891E71DFC0005D5C0D /* StruffyLite.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = StruffyLite.vcxproj; sourceTree = "<group>"; };
-		7BF8458A1E71DFC0005D5C0D /* StruffyLite.vcxproj.filters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = StruffyLite.vcxproj.filters; sourceTree = "<group>"; };
 		7BF8458C1E71DFC0005D5C0D /* Ui360.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ui360.cpp; sourceTree = "<group>"; };
 		7BF8458D1E71DFC0005D5C0D /* UiKeyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UiKeyboard.cpp; sourceTree = "<group>"; };
-		7BF845901E71DFC0005D5C0D /* BaArchive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaArchive.cpp; sourceTree = "<group>"; };
 		7BF845921E71DFC0005D5C0D /* RsCapsGLES.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RsCapsGLES.cpp; sourceTree = "<group>"; };
 		7BF845931E71DFC0005D5C0D /* RsCapsGLES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RsCapsGLES.h; sourceTree = "<group>"; };
 		7BF845941E71DFC0005D5C0D /* RsColourGLES.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RsColourGLES.cpp; sourceTree = "<group>"; };
@@ -1134,8 +1136,6 @@
 				7BF845731E71DFC0005D5C0D /* RandomNumbers */,
 				7BF845751E71DFC0005D5C0D /* RenderSystem */,
 				7BF845801E71DFC0005D5C0D /* SceneGraph */,
-				7BF845891E71DFC0005D5C0D /* StruffyLite.vcxproj */,
-				7BF8458A1E71DFC0005D5C0D /* StruffyLite.vcxproj.filters */,
 				7BF8458B1E71DFC0005D5C0D /* UserInterface */,
 			);
 			path = StruffyLite;
@@ -1186,6 +1186,7 @@
 		7BF845111E71DFC0005D5C0D /* BinaryArchive */ = {
 			isa = PBXGroup;
 			children = (
+				7B58D30C1F4CE8C20074695E /* BaArchive.cpp */,
 				7BF845121E71DFC0005D5C0D /* BaFileData.h */,
 				7BF845131E71DFC0005D5C0D /* BaResource.cpp */,
 				7BF845141E71DFC0005D5C0D /* BtCompressedFile.h */,
@@ -1224,6 +1225,8 @@
 		7BF8451F1E71DFC0005D5C0D /* includes */ = {
 			isa = PBXGroup;
 			children = (
+				7B1D26D11F4CEEC200A659E7 /* BtEnum.h */,
+				7B1D26D01F4CEEBA00A659E7 /* RsIndexBuffer.h */,
 				7BF845201E71DFC0005D5C0D /* ApConfig.h */,
 				7BF845211E71DFC0005D5C0D /* BaArchive.h */,
 				7BF845221E71DFC0005D5C0D /* BaDuplicate.h */,
@@ -1328,6 +1331,7 @@
 		7BF845751E71DFC0005D5C0D /* RenderSystem */ = {
 			isa = PBXGroup;
 			children = (
+				7B1D26CE1F4CEEA300A659E7 /* RsIndexBuffer.cpp */,
 				7BF845761E71DFC0005D5C0D /* RsCamera.cpp */,
 				7BF845771E71DFC0005D5C0D /* RsColour.cpp */,
 				7BF845781E71DFC0005D5C0D /* RsFrustum.cpp */,
@@ -1381,7 +1385,7 @@
 		7BF8458F1E71DFC0005D5C0D /* BinaryArchive */ = {
 			isa = PBXGroup;
 			children = (
-				7BF845901E71DFC0005D5C0D /* BaArchive.cpp */,
+				7B58D30E1F4CE9D90074695E /* BaArchiveWinGL.cpp */,
 			);
 			path = BinaryArchive;
 			sourceTree = "<group>";
@@ -1645,11 +1649,9 @@
 				7BD1E9C71EE0433900F50BFB /* glew32.dll in Resources */,
 				7BD1E9D61EE0433900F50BFB /* glew.txt in Resources */,
 				7BD1E9DF1EE0433900F50BFB /* ogl_sm.jpg in Resources */,
-				7BF846AA1E71DFC1005D5C0D /* StruffyLite.vcxproj in Resources */,
 				7BD1EA6F1EE0433900F50BFB /* LodePNG.vcxproj in Resources */,
 				7BD1E9DE1EE0433900F50BFB /* new.png in Resources */,
 				7BD1E9D21EE0433900F50BFB /* credits.html in Resources */,
-				7BF846AB1E71DFC1005D5C0D /* StruffyLite.vcxproj.filters in Resources */,
 				7BD1E9D41EE0433900F50BFB /* glew.html in Resources */,
 				7BF34B6F1C0601300048F1DF /* LaunchScreen.storyboard in Resources */,
 				7BD1E9CE1EE0433900F50BFB /* glew32mx.dll in Resources */,
@@ -1703,13 +1705,13 @@
 				7BF846821E71DFC1005D5C0D /* BtTimeGLES.cpp in Sources */,
 				7BF846BE1E71DFC1005D5C0D /* SgMaterialsGLES.cpp in Sources */,
 				7BF846921E71DFC1005D5C0D /* MtMatrix3.cpp in Sources */,
+				7B1D26CF1F4CEEA300A659E7 /* RsIndexBuffer.cpp in Sources */,
 				7BF846C71E71DFC1005D5C0D /* UiKeyboardWinGL.cpp in Sources */,
 				7BF846951E71DFC1005D5C0D /* MtPoint.cpp in Sources */,
 				7BF846B51E71DFC1005D5C0D /* RsMaterialGLES.cpp in Sources */,
 				7BF846611E71DFC0005D5C0D /* HlDebug.cpp in Sources */,
 				7BF846631E71DFC0005D5C0D /* HlEvents.cpp in Sources */,
 				7BF846721E71DFC1005D5C0D /* ShAchievement.cpp in Sources */,
-				7BF846AE1E71DFC1005D5C0D /* BaArchive.cpp in Sources */,
 				7BF846901E71DFC1005D5C0D /* MtLine.cpp in Sources */,
 				7BD1EA981EE043DB00F50BFB /* fft.cpp in Sources */,
 				7BF846C51E71DFC1005D5C0D /* Ui360WinGL.cpp in Sources */,
@@ -1719,6 +1721,7 @@
 				7BD1EA801EE0433900F50BFB /* compress.c in Sources */,
 				7BF8467E1E71DFC1005D5C0D /* ShVibration.cpp in Sources */,
 				7BF8467F1E71DFC1005D5C0D /* ApConfig.cpp in Sources */,
+				7B58D30F1F4CE9D90074695E /* BaArchiveWinGL.cpp in Sources */,
 				7BF846751E71DFC1005D5C0D /* ShCamera.cpp in Sources */,
 				7BD1EA7A1EE0433900F50BFB /* SessionController.mm in Sources */,
 				7BF846A71E71DFC1005D5C0D /* SgBlendShapeImpl.cpp in Sources */,
@@ -1786,6 +1789,7 @@
 				7B23A0271EDE0CBD00FD400B /* SbPeers.cpp in Sources */,
 				7BF8467C1E71DFC1005D5C0D /* ShRecorder.cpp in Sources */,
 				7BF8467B1E71DFC1005D5C0D /* ShNetwork.cpp in Sources */,
+				7B58D30D1F4CE8C20074695E /* BaArchive.cpp in Sources */,
 				7BD1EA6E1EE0433900F50BFB /* lodepng.cpp in Sources */,
 				7BF846621E71DFC0005D5C0D /* HlDraw.cpp in Sources */,
 				7BF8468B1E71DFC1005D5C0D /* DyCollisionAnalytical.cpp in Sources */,

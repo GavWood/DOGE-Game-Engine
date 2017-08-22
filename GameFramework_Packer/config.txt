@@ -1,4 +1,4 @@
-Platform=2
-CurrentProject=0
+Platform=1
+CurrentProject=1
 \github\tutorials\CardBasedGames\CardTestBed\Tutorial1                                     
-/Users/localadmin/Documents/GameFramework/CardBasedFramework_Tutorials/CardTestBed/Tutorial1/               
+/Users/localadmin/Documents/GitHub/Game-Framework/CardBasedGames/TurnTakingPlay/TurnTakingPlay/

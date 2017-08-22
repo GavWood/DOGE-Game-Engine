@@ -17,6 +17,7 @@
 		7B239FEB1EDDFA9F00FD400B /* card3.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B239FE51EDDFA9F00FD400B /* card3.png */; };
 		7B239FEC1EDDFA9F00FD400B /* card4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B239FE61EDDFA9F00FD400B /* card4.png */; };
 		7B239FED1EDDFA9F00FD400B /* utility.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B239FE71EDDFA9F00FD400B /* utility.iPhonez */; };
+		7B58D30B1F4CE87F0074695E /* lodepng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B58D3091F4CE87F0074695E /* lodepng.cpp */; };
 		7BF217501C09D7A7004E4743 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF2174F1C09D7A7004E4743 /* CoreMedia.framework */; };
 		7BF34B5D1C0601300048F1DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF34B5C1C0601300048F1DF /* main.m */; };
 		7BF34B671C0601300048F1DF /* GameViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BF34B661C0601300048F1DF /* GameViewController.mm */; };
@@ -134,8 +135,6 @@
 		7BF851581E71E088005D5C0D /* JSON.vcxproj in Resources */ = {isa = PBXBuildFile; fileRef = 7BF84D161E71E086005D5C0D /* JSON.vcxproj */; };
 		7BF851591E71E088005D5C0D /* JSON.vcxproj.filters in Resources */ = {isa = PBXBuildFile; fileRef = 7BF84D171E71E086005D5C0D /* JSON.vcxproj.filters */; };
 		7BF8515A1E71E088005D5C0D /* JSON.vcxproj.user in Resources */ = {isa = PBXBuildFile; fileRef = 7BF84D181E71E086005D5C0D /* JSON.vcxproj.user */; };
-		7BF8515B1E71E088005D5C0D /* lodepng.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF84D1B1E71E086005D5C0D /* lodepng.cpp */; };
-		7BF8515C1E71E088005D5C0D /* LodePNG.vcxproj in Resources */ = {isa = PBXBuildFile; fileRef = 7BF84D1D1E71E086005D5C0D /* LodePNG.vcxproj */; };
 		7BF851791E71E088005D5C0D /* SessionController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BF84DA61E71E086005D5C0D /* SessionController.mm */; };
 		7BF8517A1E71E088005D5C0D /* stb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BF84DA81E71E086005D5C0D /* stb.cpp */; };
 		7BF8517B1E71E088005D5C0D /* stb.vcxproj in Resources */ = {isa = PBXBuildFile; fileRef = 7BF84DAA1E71E086005D5C0D /* stb.vcxproj */; };
@@ -294,6 +293,8 @@
 		7B239FE51EDDFA9F00FD400B /* card3.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = card3.png; sourceTree = "<group>"; };
 		7B239FE61EDDFA9F00FD400B /* card4.png */ = {isa = PBXFileReference; explicitFileType = compiled; path = card4.png; sourceTree = "<group>"; };
 		7B239FE71EDDFA9F00FD400B /* utility.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = utility.iPhonez; sourceTree = "<group>"; };
+		7B58D3091F4CE87F0074695E /* lodepng.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lodepng.cpp; sourceTree = "<group>"; };
+		7B58D30A1F4CE87F0074695E /* lodepng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lodepng.h; sourceTree = "<group>"; };
 		7BF2174F1C09D7A7004E4743 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7BF34B581C0601300048F1DF /* SynchronisedPlayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SynchronisedPlayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF34B5C1C0601300048F1DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -560,9 +561,6 @@
 		7BF84D161E71E086005D5C0D /* JSON.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = JSON.vcxproj; sourceTree = "<group>"; };
 		7BF84D171E71E086005D5C0D /* JSON.vcxproj.filters */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = JSON.vcxproj.filters; sourceTree = "<group>"; };
 		7BF84D181E71E086005D5C0D /* JSON.vcxproj.user */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = JSON.vcxproj.user; sourceTree = "<group>"; };
-		7BF84D1B1E71E086005D5C0D /* lodepng.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lodepng.cpp; sourceTree = "<group>"; };
-		7BF84D1C1E71E086005D5C0D /* lodepng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lodepng.h; sourceTree = "<group>"; };
-		7BF84D1D1E71E086005D5C0D /* LodePNG.vcxproj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = LodePNG.vcxproj; sourceTree = "<group>"; };
 		7BF84D2A1E71E086005D5C0D /* al.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = al.h; sourceTree = "<group>"; };
 		7BF84D2B1E71E086005D5C0D /* alc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = alc.h; sourceTree = "<group>"; };
 		7BF84D2C1E71E086005D5C0D /* efx-creative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "efx-creative.h"; sourceTree = "<group>"; };
@@ -770,6 +768,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B58D3031F4CE8690074695E /* LodePNG */ = {
+			isa = PBXGroup;
+			children = (
+				7B58D3091F4CE87F0074695E /* lodepng.cpp */,
+				7B58D30A1F4CE87F0074695E /* lodepng.h */,
+			);
+			name = LodePNG;
+			path = "../../GitHub/Game-Framework/GameFramework_ThirdParty/LodePNG";
+			sourceTree = "<group>";
+		};
 		7BF34B4F1C0601300048F1DF = {
 			isa = PBXGroup;
 			children = (
@@ -1269,10 +1277,10 @@
 		7BF847001E71E083005D5C0D /* GameFramework_ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				7B58D3031F4CE8690074695E /* LodePNG */,
 				7BF9C9161E86AE53001D546C /* Corona */,
 				7BF84C371E71E085005D5C0D /* FFT */,
 				7BF84D111E71E086005D5C0D /* JSON */,
-				7BF84D1A1E71E086005D5C0D /* LodePNG */,
 				7BF84D291E71E086005D5C0D /* OpenAL */,
 				7BF84DA41E71E086005D5C0D /* SessionController */,
 				7BF84DA71E71E086005D5C0D /* stb */,
@@ -1327,16 +1335,6 @@
 			children = (
 			);
 			path = Release;
-			sourceTree = "<group>";
-		};
-		7BF84D1A1E71E086005D5C0D /* LodePNG */ = {
-			isa = PBXGroup;
-			children = (
-				7BF84D1B1E71E086005D5C0D /* lodepng.cpp */,
-				7BF84D1C1E71E086005D5C0D /* lodepng.h */,
-				7BF84D1D1E71E086005D5C0D /* LodePNG.vcxproj */,
-			);
-			path = LodePNG;
 			sourceTree = "<group>";
 		};
 		7BF84D291E71E086005D5C0D /* OpenAL */ = {
@@ -1764,7 +1762,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BF8515C1E71E088005D5C0D /* LodePNG.vcxproj in Resources */,
 				7BF9C9DA1E86AE53001D546C /* ANNOUNCE in Resources */,
 				7BF34B6A1C0601300048F1DF /* Main.storyboard in Resources */,
 				7BF8515A1E71E088005D5C0D /* JSON.vcxproj.user in Resources */,
@@ -1842,11 +1839,11 @@
 				7BF846A21E71DFC1005D5C0D /* RsImpl.cpp in Sources */,
 				7BF846711E71DFC1005D5C0D /* PeerToPeer.cpp in Sources */,
 				7BF9C9FB1E86AE53001D546C /* MemoryFile.cpp in Sources */,
+				7B58D30B1F4CE87F0074695E /* lodepng.cpp in Sources */,
 				7BF846B01E71DFC1005D5C0D /* RsColourGLES.cpp in Sources */,
 				7BF9C9CF1E86AE53001D546C /* jmemnobs.c in Sources */,
 				7BF846881E71DFC1005D5C0D /* BtTimeDX11.cpp in Sources */,
 				7BF9C9C71E86AE53001D546C /* jfdctflt.c in Sources */,
-				7BF8515B1E71E088005D5C0D /* lodepng.cpp in Sources */,
 				7BF9C9AC1E86AE53001D546C /* jcmarker.c in Sources */,
 				7BF8466B1E71DFC0005D5C0D /* HlTimer.cpp in Sources */,
 				7BF9C9CC1E86AE53001D546C /* jidctint.c in Sources */,
