@@ -29,3 +29,8 @@ CardBasedGames/TurnTakingPlay/TurnTakingPlay/Release/card.WinGLz
 CardBasedGames/TurnTakingPlay/TurnTakingPlay/Release/card.iPhonez
 CardBasedGames/TurnTakingPlay/TurnTakingPlay/Release/card.WinGLz
 CardBasedGames/TurnTakingPlay/TurnTakingPlay/Release/utility.WinGLz
+*.WinGLz
+CardBasedGames/TurnTakingPlay/TurnTakingPlay/Release/card.iPhonez
+CardBasedGames/TurnTakingPlay/TurnTakingPlay/Release/card.WinGLz
+CardBasedGames/TurnTakingPlay/TurnTakingPlay/Release/utility.iPhonez
+CardBasedGames/TurnTakingPlay/TurnTakingPlay/Release/utility.WinGLz
