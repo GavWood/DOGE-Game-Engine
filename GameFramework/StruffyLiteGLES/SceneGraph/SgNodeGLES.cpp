@@ -24,6 +24,7 @@
 #include "SgMeshGLES.h"
 #include "SgSkinGLES.h"
 #include "SgBoneGLES.h"
+#include "MtMath.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Constructor
@@ -50,48 +51,19 @@ void SgNodeWinGL::Destroy()
 
 BtU32 SgNodeWinGL::GetInstanceSize(BaResourceHeader *pResourceHeader)
 {
-    SgType sceneType = (SgType)0;// pResourceHeader->m_type;
+    BtU32 instance = sizeof(SgNodeWinGL);
     
-    BtU32 instanceSize = sizeof(SgNodeWinGL);
+    size_t specificInstanceSize = 0;
     
-    if (sceneType & SgType_Mesh)
-    {
-        instanceSize += sizeof(SgMeshWinGL);
-    }
-    if (sceneType & SgType_Skin)
-    {
-        instanceSize += sizeof(SgSkinWin32GL);
-    }
-    if (sceneType & SgType_RigidBody)
-    {
-        instanceSize += sizeof(SgRigidBodyImpl);
-    }
-    if (sceneType & SgType_Collision)
-    {
-        instanceSize += sizeof(SgCollisionWinGL);
-    }
-    if (sceneType & SgType_Bone)
-    {
-        instanceSize += sizeof(SgBoneWin32);
-    }
-    if (sceneType & SgType_Camera)
-    {
-        instanceSize += 0; // sizeof(SgCameraWin32);
-    }
-    if (sceneType & SgType_BlendShape)
-    {
-        instanceSize += sizeof(SgBlendShapeImpl);
-    }
-    if (sceneType & SgType_Light)
-    {
-        instanceSize += 0; // sizeof(SgLightWin32);
-    }
-    if (sceneType & SgType_Materials)
-    {
-        instanceSize += sizeof(SgMaterialsWinGL);
-    }
-    instanceSize += 2048;
-    return instanceSize;
+    specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgMeshWinGL));
+    specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgSkinWin32GL));
+    specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgCollisionWinGL));
+    specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgBoneDX11));
+    //specificInstanceSize = MtMax(specificInstanceSize, 0));// sizeof(SgCameraWin32));
+    specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgBlendShapeImpl));
+    //specificInstanceSize = MtMax(specificInstanceSize, 0));// sizeof(SgLightWin32));
+    specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgMaterialsWinGL));
+    return (BtU32)(instance + specificInstanceSize);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
