@@ -137,7 +137,7 @@ void RsMaterialWinGL::Render( RsPrimitiveType primitiveType, RsVertex3 *pVertex,
 	RsImplWinGL *pImpl = (RsImplWinGL*)RsImpl::pInstance();
 
 	// Setup the primitive
-	RsPrimitiveWinGL *pPrimitive = pImpl->AddPrimitive();
+	RsPrimitive *pPrimitive = pImpl->AddPrimitive();
 
 	pPrimitive->m_numVertex = vertexCount;
 	pPrimitive->m_nStartVertex = pImpl->GetCurrentVertex();		
@@ -194,7 +194,7 @@ void RsMaterialWinGL::Render( RsPrimitiveType primitiveType, RsVertex2 *pVertex,
 	RsImplWinGL *pImpl = (RsImplWinGL*)RsImpl::pInstance();
 
 	// Setup the primitive
-	RsPrimitiveWinGL *primitive = pImpl->AddPrimitive();
+	RsPrimitive *primitive = pImpl->AddPrimitive();
 
 	primitive->m_numVertex = vertexCount;
 	primitive->m_nStartVertex = pImpl->GetCurrentVertex();
@@ -402,7 +402,7 @@ void RsMaterialWinGL::Render( const MtVector2& v2Position,
 	}
     
 	// Setup the primitive
-	RsPrimitiveWinGL *pPrimitive = pImpl->AddPrimitive();
+	RsPrimitive *pPrimitive = pImpl->AddPrimitive();
 	pPrimitive->m_primitiveType = GL_TRIANGLE_STRIP;
 	pPrimitive->m_numVertex     = 4;
 	pPrimitive->m_nStartVertex  = pImpl->GetCurrentVertex();
@@ -435,7 +435,7 @@ void RsMaterialWinGL::Render( RsMaterialRenderable *pRenderable )
 	// Set the shader
 	RsShaderWinGL *pShader = (RsShaderWinGL*)pRenderable->m_pShader;
     
-	RsPrimitiveWinGL* pPrimitives = (RsPrimitiveWinGL*) pRenderable->m_primitive;
+	RsPrimitive* pPrimitives = (RsPrimitive*) pRenderable->m_primitive;
     
 	if( pPrimitives->m_primitiveType == 1 )
 	{

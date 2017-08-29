@@ -55,7 +55,7 @@ void SbMain::Init()
 	m_peers.Setup();
 	MpPeerToPeer::Create();
 
-	m_currentState = 6;
+	m_currentState = 5;
 	m_nextState = m_currentState;
 }
 

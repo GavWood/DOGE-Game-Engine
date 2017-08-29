@@ -36,7 +36,7 @@ public:
 	RsMaterialRenderable							   *AddMaterial();
 	RsSpriteRenderable								   *AddSprite();
 	SgMeshRenderable								   *AddMesh();
-	RsPrimitiveWinGL								   *AddPrimitive();
+	RsPrimitive                                        *AddPrimitive();
     SgSkinRenderable                                   *AddSkin();
 
 	// Vertex
@@ -57,7 +57,7 @@ private:
 
 	// Private members
 	BtArray<RsRenderTargetWinGL, MaxRenderTargets>		m_renderTargets;
-	BtArray< RsPrimitiveWinGL, 4096>					m_primitives;
+	BtArray< RsPrimitive, 4096>                         m_primitives;
     static BtU32                                        m_vertexBuffer;
 };
 

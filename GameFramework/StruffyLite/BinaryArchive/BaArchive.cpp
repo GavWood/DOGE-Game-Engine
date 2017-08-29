@@ -246,7 +246,7 @@ void BaArchive::FixPointers()
 				a++;
 			}
 
-			//BtAssert(pResource->resourceType() == pResourceHeader->m_type);
+			BtAssert(pResource->resourceType() == pResourceHeader->m_type);
 
 			switch (pResourceHeader->m_type)
 			{

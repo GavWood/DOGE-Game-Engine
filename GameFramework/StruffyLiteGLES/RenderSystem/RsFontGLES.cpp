@@ -190,7 +190,7 @@ void RsFontGLES::Render( const MtVector2& v2Position,
     }
     
     // Setup the primitive
-    RsPrimitiveWinGL *pPrimitive = pImpl->AddPrimitive();
+    RsPrimitive *pPrimitive = pImpl->AddPrimitive();
     pPrimitive->m_primitiveType = GL_TRIANGLE_STRIP;
     pPrimitive->m_numVertex = 4;
     pPrimitive->m_nStartVertex = pImpl->GetCurrentVertex();
@@ -377,7 +377,7 @@ MtVector2 RsFontGLES::Render( const MtVector2& v2StartPosition,
 	}
     
 	// Setup the primitive
-	RsPrimitiveWinGL *pPrimitive = pImpl->AddPrimitive();
+	RsPrimitive *pPrimitive = pImpl->AddPrimitive();
 	pPrimitive->m_primitiveType = GL_TRIANGLES;
 	pPrimitive->m_numVertex	    = currentVertex;
 	pPrimitive->m_nStartVertex  = pImpl->GetCurrentVertex();
@@ -433,7 +433,7 @@ void RsFontGLES::Render( RsFontRenderable *pFontRenderable )
 	// Apply the shader
 	pShader->SetTechnique( "RsShaderTG2" );
     
-	RsPrimitiveWinGL* pPrimitives = (RsPrimitiveWinGL*) pFontRenderable->m_primitive;
+	RsPrimitive* pPrimitives = (RsPrimitive*) pFontRenderable->m_primitive;
     
 	// Set vertex arrays
 	BtU32 stride = sizeof(RsVertex3);
