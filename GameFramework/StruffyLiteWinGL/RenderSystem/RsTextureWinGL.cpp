@@ -471,7 +471,7 @@ void RsTextureWinGL::Render( const MtVector2& v2Position,
 	}
 
 	// Setup the primitive
-	RsPrimitiveWinGL *pPrimitive = pImpl->AddPrimitive();
+	RsPrimitive *pPrimitive = pImpl->AddPrimitive();
 	pPrimitive->m_primitiveType = GL_TRIANGLE_STRIP;
 	pPrimitive->m_numVertex	    = 4;
 	pPrimitive->m_nStartVertex  = pImpl->GetCurrentVertex();
@@ -504,7 +504,7 @@ void RsTextureWinGL::Render( RsTextureRenderable *pRenderable )
 	// Set the shader
 	RsShaderWinGL *pShader = (RsShaderWinGL*)pRenderable->m_pShader;
 
-	RsPrimitiveWinGL* pPrimitives = (RsPrimitiveWinGL*) pRenderable->m_primitive;
+	RsPrimitive* pPrimitives = (RsPrimitive*) pRenderable->m_primitive;
 
 	if( pPrimitives->m_primitiveType == 1 )
 	{

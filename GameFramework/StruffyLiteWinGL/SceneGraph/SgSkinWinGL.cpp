@@ -174,7 +174,7 @@ void SgSkinWinGL::Render( SgSkinRenderable* pRenderable )
 		for( BtU32 nPrimitiveBlock=pRenderBlock->m_nStartPrimitiveBlock; nPrimitiveBlock<pRenderBlock->m_nEndPrimitiveBlock; nPrimitiveBlock++ )
 		{
 			// Cache each primitive block
-			RsIndexedPrimitiveWinGL* pPrimitiveBlock = pScene->pPrimitiveBlock( nPrimitiveBlock );
+			RsIndexedPrimitive* pPrimitiveBlock = pScene->pPrimitiveBlock( nPrimitiveBlock );
 
 			// Draw the primitives using the effect
 			pShader->Draw( pPrimitiveBlock );

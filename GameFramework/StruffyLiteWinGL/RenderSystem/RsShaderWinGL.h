@@ -10,7 +10,7 @@
 #include "RsTextureWinGL.h"
 #include "RsShader.h"
 #include "RsColour.h"
-#include "RsPrimitiveWinGL.h"
+#include "RsPrimitive.h"
 
 struct BaResourceHeader;
 

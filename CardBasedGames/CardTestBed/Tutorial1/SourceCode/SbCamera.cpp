@@ -224,32 +224,43 @@ void SbCamera::Update()
 
 void SbCamera::Render()
 {
-	if (!ApConfig::IsWin() && m_isIMU )
+	if (!ApConfig::IsWin() )
 	{
-		// Support a landscape quaternion
-		MtMatrix3 m_m3Rotation;
-		MtQuaternion quaternion = ShIMU::GetQuaternion(0);
-		quaternion.x = quaternion.x;
-		quaternion.y = quaternion.y;
-		quaternion.z = -quaternion.z;
+        if( m_isIMU )
+        {
+            // Support a landscape quaternion
+            MtMatrix3 m_m3Rotation;
+            MtQuaternion quaternion = ShIMU::GetQuaternion(0);
+            quaternion.x = quaternion.x;
+            quaternion.y = quaternion.y;
+            quaternion.z = -quaternion.z;
 
-		m_m3Rotation = MtMatrix3(quaternion);
-		//m_m3Rotation = m_m3Rotation.GetInverse();
+            m_m3Rotation = MtMatrix3(quaternion);
+            //m_m3Rotation = m_m3Rotation.GetInverse();
 
-		MtMatrix3 m3RotateY;
-		m3RotateY.SetRotationY(MtDegreesToRadians(90.0f));
+            MtMatrix3 m3RotateY;
+            m3RotateY.SetRotationY(MtDegreesToRadians(90.0f));
 
-		MtMatrix3 m3RotateZ;
-		m3RotateZ.SetRotationZ(MtDegreesToRadians(-90.0f));
+            MtMatrix3 m3RotateZ;
+            m3RotateZ.SetRotationZ(MtDegreesToRadians(-90.0f));
 
-		m_m3Rotation = m3RotateY * m_m3Rotation;
-		m_m3Rotation = m3RotateZ * m_m3Rotation;
-		m_m3Rotation = m_m3Rotation * m3RotateZ;
+            m_m3Rotation = m3RotateY * m_m3Rotation;
+            m_m3Rotation = m3RotateZ * m_m3Rotation;
+            m_m3Rotation = m_m3Rotation * m3RotateZ;
 
-		m_camera.SetRotation(m_m3Rotation);
+            m_camera.SetRotation(m_m3Rotation);
 
-		// Set the position
-		m_camera.SetPosition(m_cameraData.m_v3Position);
+            // Set the position
+            m_camera.SetPosition(m_cameraData.m_v3Position);
+        }
+        else
+        {
+            // Set the rotation
+            m_camera.SetRotation(m_cameraData.m_m3Rotation);
+            
+            // Set the position
+            m_camera.SetPosition(m_cameraData.m_v3Position);
+        }
 	}
 	else
 	{

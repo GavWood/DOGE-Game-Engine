@@ -204,7 +204,7 @@ void RsFontWin32GL::Render( const MtVector2& v2Position,
 	}
 
 	// Setup the primitive
-	RsPrimitiveWinGL *pPrimitive = pImpl->AddPrimitive();
+	RsPrimitive *pPrimitive = pImpl->AddPrimitive();
 	pPrimitive->m_primitiveType = GL_TRIANGLE_STRIP;
 	pPrimitive->m_numVertex = 4;
 	pPrimitive->m_nStartVertex = pImpl->GetCurrentVertex();
@@ -388,7 +388,7 @@ MtVector2 RsFontWin32GL::Render( const MtVector2& v2StartPosition,
 	}
 
 	// Setup the primitive
-	RsPrimitiveWinGL *pPrimitive = pImpl->AddPrimitive();
+	RsPrimitive *pPrimitive = pImpl->AddPrimitive();
 	pPrimitive->m_primitiveType = GL_TRIANGLES;
 	pPrimitive->m_numVertex	    = currentVertex;
 	pPrimitive->m_nStartVertex  = pImpl->GetCurrentVertex();
@@ -438,7 +438,7 @@ void RsFontWin32GL::Render( RsFontRenderable *pRenderable )
 	// Set the shader
 	RsShaderWinGL *pShader = (RsShaderWinGL*)pRenderable->m_pShader;
 
-	RsPrimitiveWinGL* pPrimitives = (RsPrimitiveWinGL*) pRenderable->m_primitive;
+	RsPrimitive* pPrimitives = (RsPrimitive*) pRenderable->m_primitive;
 
 	if( pPrimitives->m_primitiveType == 1 )
 	{

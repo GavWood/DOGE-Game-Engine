@@ -113,9 +113,6 @@
     <ClInclude Include="RenderSystem\RsMaterialWinGL.h">
       <Filter>RenderSystem</Filter>
     </ClInclude>
-    <ClInclude Include="RenderSystem\RsPrimitiveWinGL.h">
-      <Filter>RenderSystem</Filter>
-    </ClInclude>
     <ClInclude Include="RenderSystem\RsRenderTargetWinGL.h">
       <Filter>RenderSystem</Filter>
     </ClInclude>
