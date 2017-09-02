@@ -1,16 +1,21 @@
 precision mediump float;
 
 uniform sampler2D myTexture;
+uniform sampler2D myTexture2;
 
-varying vec4 myTex;
+varying vec2 myTex;
 varying vec4 myColour;
+varying vec4 lightAmbient;
+varying vec4 myShadowTex;
 
 void main(void)
 {
-	vec4 pixel_color = texture2DProj( myTexture, myTex );
-	
-	pixel_color.rgb = 0.0f;
-	pixel_color.a = pixel_color.a * 0.5;
+	vec4 colour = myColour;
 
-    gl_FragColor = pixel_color * myColour;
+	vec4 pixel_color1 = texture2D( myTexture, myTex );
+	vec4 pixel_color2 = texture2DProj( myTexture2, myShadowTex );				// non shadowed 0, 0, 0, 0, or shadowed 0, 0, 0, intensity
+
+	colour.xyz -= pixel_color2.a;
+
+    gl_FragColor = pixel_color1 * colour;
 }

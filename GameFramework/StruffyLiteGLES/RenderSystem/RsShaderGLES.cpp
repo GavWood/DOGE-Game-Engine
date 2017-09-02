@@ -28,7 +28,7 @@ void getError( int objectHandle )
 	{
 		GLchar* compiler_log = (GLchar*)malloc(blen);
 		glGetShaderInfoLog(objectHandle, blen, &slen, compiler_log);
-		ErrorLog::Fatal_Printf( "%s\n", compiler_log );
+		//ErrorLog::Fatal_Printf( "%s\n", compiler_log );
 		free (compiler_log);
 	}
 }

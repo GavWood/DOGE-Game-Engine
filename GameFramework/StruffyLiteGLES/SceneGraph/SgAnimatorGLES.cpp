@@ -194,7 +194,7 @@ void SgAnimatorWinGL::Update( SgSkin* pSkin )
             {
                 // Do it the fast way
                 SgNode* pNode = (SgNode*)transform.m_pNode;
-                pNode->SetLocalTransform(transform.m_m4Transform);
+                //pNode->SetLocalTransform(transform.m_m4Transform);
             }
             
             int a = 0;

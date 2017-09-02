@@ -7,12 +7,10 @@ attribute vec4 boneIndex;
 
 uniform vec4 s_lightAmbient;
 uniform vec4 s_lightDirection;
-uniform vec4 s_materialColour;
 uniform mat4 s_m4WorldViewScreen;
 uniform mat4 s_m4BoneMatrices[10];
 uniform mat4 s_m4WorldViewInverseTranspose;
 uniform mat4 s_m4ViewInverseTranspose;
-uniform mat4 s_m4World;
 
 varying vec2 myTex;
 varying vec4 myColour;
@@ -35,7 +33,7 @@ void main(void)
 	myTex = tex0.xy;
 
 	vec4 normal4  = s_m4WorldViewInverseTranspose * normal;
-	vec3 myNormal = normal4.xyz;
+	vec3 myNormal = normalize( normal4.xyz );
 
 	vec4 lightDir4  = s_m4ViewInverseTranspose * s_lightDirection;
 	vec3 lightDir   = lightDir4.xyz;

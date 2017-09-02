@@ -218,7 +218,7 @@ void SbCamera::Update()
 
 void SbCamera::Render()
 {
-	if (!ApConfig::IsWin())
+	if ( 0 )//!ApConfig::IsWin())
 	{
 		// Support a landscape quaternion
 		MtMatrix3 m_m3Rotation;

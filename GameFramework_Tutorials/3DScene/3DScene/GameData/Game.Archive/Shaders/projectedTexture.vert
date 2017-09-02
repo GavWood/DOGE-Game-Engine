@@ -11,20 +11,30 @@ uniform mat4 s_m4WorldViewInverseTranspose;
 uniform mat4 s_m4ViewInverseTranspose;
 uniform mat4 s_m4World;
 
-varying vec4 myTex;
+varying vec2 myTex;
 varying vec4 myColour;
-
-//  output.v4Pos    = mul( input.v4Position, s_m4WorldViewScreen );
-//	float4 v4NewPosition = mul( input.v4Position, s_m4World );
-//  output.v4TexPos = mul( v4NewPosition, s_m4ProjectionTexture );
+varying vec4 myShadowTex;
 
 void main(void)
 {
 	gl_Position = s_m4WorldViewScreen * position;
-
+	
 	vec4 v4NewPosition = s_m4World * position;
-	vec4 v4TexPos = s_m4ProjectionTexture * v4NewPosition;
+	myShadowTex = s_m4ProjectionTexture * v4NewPosition;
 
-	myColour = colour;
-	myTex =  v4TexPos;
+	myTex = tex0.xy;
+
+	vec4 normal4  = s_m4WorldViewInverseTranspose * normal;
+	vec3 myNormal = normalize( normal4.xyz );
+
+	vec4 lightDir4  = s_m4ViewInverseTranspose * s_lightDirection;
+	vec3 lightDir   = normalize( lightDir4.xyz );
+
+	// Calculate the incidence of the normal of the triangle to the light direction in camera space
+	float NdotL = max(dot(myNormal, lightDir), 0.0);
+	
+	// Compute the diffuse term
+	myColour = NdotL * colour;
+	myColour += s_lightAmbient;
+	myColour.a = colour.a;
 }

@@ -1,7 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 /// SgMeshWin32GL.h
 
-#pragma once
+#ifndef __SgMeshWin32GL_h__
+#define __SgMeshWin32GL_h__
+
 #include "SgMesh.h"
 #include "SgNodeGLES.h"
 #include "SgRigidBodyImpl.h"
@@ -9,6 +11,7 @@
 #include "ErrorLog.h"
 
 struct SgMeshRenderable;
+class RsShaderD3DEffectWin32;
 class ExTexture;
 
 // Class Declaration
@@ -55,3 +58,5 @@ inline const BtU32 SgMeshWinGL::GetNumMaterials() const
 {
 	return m_pFileData->m_nMaterials;
 }
+
+#endif // __SgMeshWin32GL_h__
