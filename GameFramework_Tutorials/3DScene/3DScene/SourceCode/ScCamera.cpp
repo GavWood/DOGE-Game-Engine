@@ -28,12 +28,17 @@ void SbCamera::Init( MtVector2 v2Dimension )
 	m_camera.SetDimension(MtVector2(width, height));
 	m_camera.SetPerspective( BtTrue );
 
-	m_cameraData.m_v3Position = MtVector3( 0, 0, 0 );
+	m_cameraData.m_v3Position = MtVector3( 1.5f, 0, 2.0f );
 	m_cameraData.m_m3Rotation.SetIdentity();
-
+    
+    MtMatrix3 m3Rotation;
+    m3Rotation.LookAt( m_cameraData.m_v3Position, MtVector3( 0, 0, 0 ), MtVector3( 0, 1, 0 ) );
+    m_cameraData.m_m3Rotation = m3Rotation;
+    
 	m_speed = 100.0f;
 	m_cameraData.m_pitch = 0;
 	m_cameraData.m_yaw = 0;
+  //  m_cameraData.m_v3Position = MtVector3( 0, 0, 4.0f );
 	m_isFlyCam = BtTrue;
 }
 
@@ -218,7 +223,7 @@ void SbCamera::Update()
 
 void SbCamera::Render()
 {
-	if ( 0 )//!ApConfig::IsWin())
+	if( !ApConfig::IsWin() && ShHMD::IsHMD() )
 	{
 		// Support a landscape quaternion
 		MtMatrix3 m_m3Rotation;

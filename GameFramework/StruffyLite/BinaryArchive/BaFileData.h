@@ -446,9 +446,8 @@ struct BaSgAnimationTransformFileData
 	union
 	{
 		SgNode*						m_pNode;
-		BtU32						m_nodeIndex;
+		BtU64						m_nodeIndex;
 	};
-	BtU32							m_pad;
 	MtMatrix4						m_m4Transform;
 };
 

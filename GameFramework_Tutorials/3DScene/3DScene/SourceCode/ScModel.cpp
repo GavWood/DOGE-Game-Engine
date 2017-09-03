@@ -86,8 +86,7 @@ void ScModel::Update()
 
 			BtFloat duration = m_pAnimator->GetDuration();
 
-			BtU32 frameIndex = (BtU32)m_time;
-			if (frameIndex >= duration)
+			if (m_time >= duration)
 			{
 				m_time = 0;
 			}
