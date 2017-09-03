@@ -55,7 +55,9 @@ void ScMain::Init()
 		a++;
 	}
 
+#ifdef WIN32
 	RsUtil::SetDimension(MtVector2(800.0f, 600.0f));
+#endif
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -112,7 +114,7 @@ void ScMain::Reset()
 	}
 
 	m_camera.Init( v2Dimension );
-	m_camera.SetPosition(MtVector3(0, 0, 0));
+	
 	m_camera.SetSpeed(10.0f);
 
 	m_bubbles.Reset();
