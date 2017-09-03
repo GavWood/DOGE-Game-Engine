@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameWinGL", "..\..\..\GameFramework\GameWinGL\GameWinGL.vcxproj", "{1BC33B2E-5E35-4755-902F-8CFECFB6DFE1}"
 EndProject
@@ -19,7 +19,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TinyXML", "..\..\..\GameFra
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GLFW", "..\..\..\GameFramework_ThirdParty\GLFW\GLFW.vcxproj", "{788C3228-0080-4851-8E39-8A25BE3B7D50}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GameFramework", "GameFramework", "{8EE8F839-9642-4271-898F-01A2ED95603E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GameFramework_GitHub", "GameFramework_GitHub", "{8EE8F839-9642-4271-898F-01A2ED95603E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ThirdParty", "ThirdParty", "{63297598-F98A-43D2-A9BC-03D8BC2E1A7D}"
 EndProject
