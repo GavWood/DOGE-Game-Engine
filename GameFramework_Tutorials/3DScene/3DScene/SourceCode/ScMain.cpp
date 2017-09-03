@@ -23,6 +23,7 @@
 #include "ScMain.h"
 #include "ScCamera.h"
 
+static BtBool UseHMD = BtFalse;
 static BtBool isFrustumStill = BtFalse;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -68,8 +69,12 @@ void ScMain::Create()
 	m_gameArchive.Load( "game" );
 	m_animArchive.Load("anim");
 	m_utilityArchive.Load("utility");
-    m_hmdArchive.Load("hmd");
-
+    
+    if( UseHMD )
+    {
+        m_hmdArchive.Load("hmd");
+    }
+    
 	m_pWhite2 = m_utilityArchive.GetMaterial( "white2" );
 	m_pWhite3 = m_utilityArchive.GetMaterial( "white3" );
 	m_pShader = m_gameArchive.GetShader( "shader" );
@@ -92,12 +97,15 @@ void ScMain::Create()
 	m_joysticks.Setup(pMaterial2, pMaterial3, pMaterial3notest );
 	//m_joysticks.Setup(pNode1, pNode2);
 
-	m_pLeftEye  = m_hmdArchive.GetMaterial("ovrl");
-	m_pRightEye = m_hmdArchive.GetMaterial("ovrr");
+    if( UseHMD )
+    {
+        m_pLeftEye  = m_hmdArchive.GetMaterial("ovrl");
+        m_pRightEye = m_hmdArchive.GetMaterial("ovrr");
 
-	ShHMD::SetMaterial(0, m_pLeftEye );
-	ShHMD::SetMaterial(1, m_pRightEye );
-
+        ShHMD::SetMaterial(0, m_pLeftEye );
+        ShHMD::SetMaterial(1, m_pRightEye );
+    }
+    
 	Reset();
 }
 
@@ -179,9 +187,12 @@ void ScMain::Update()
 		// Unload the archive
 		m_utilityArchive.Unload();
         
-		// Unload the oculus archive
-		m_hmdArchive.Unload();
-
+        if( UseHMD )
+        {
+            // Unload the oculus archive
+            m_hmdArchive.Unload();
+        }
+        
 		// Read to close
 		m_isClosed = BtTrue;
 	}

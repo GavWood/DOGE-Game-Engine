@@ -27,7 +27,7 @@
 void ScBubbles::Setup( BaArchive *pArchive )
 {
 	m_pParticle = pArchive->GetMaterial( "bubbles" );
-	m_pShader = pArchive->GetShader("shader");
+    m_pShader = pArchive->GetShader("shader");
 	m_v3Position = MtVector3( 0, 0, 0 );
 	m_v3Dimension = MtVector3(0, 0, 0);
 	m_emitterOn = BtFalse;
@@ -89,7 +89,7 @@ void ScBubbles::Update()
 		BtFloat sizeRandom = RdRandom::GetFloat( 0.06f, 0.01f );
 		pParticle->m_v2Dimension = sizeRandom;
 
-		pParticle->m_v3Velocity = MtVector3( 0, 2.0f, 0 );
+		pParticle->m_v3Velocity = MtVector3( 0, 0.2f, 0 );
 
 		BtU32 MaxFireTextures = 32;
 		pParticle->m_frame = RdRandom::GetNumber( 0, 65536 ) % MaxFireTextures;

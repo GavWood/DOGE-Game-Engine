@@ -314,6 +314,16 @@ void RsShaderWinGL::SetTechnique( const BtChar* pTechniqueName )
 		// Use The Program Object Instead Of Fixed Function OpenGL
 		m_currentProgram = RsShaderPassThrough;
 	}
+    else if( BtStrCompare( pTechniqueName, "RsShaderTG" ) == BtTrue )
+    {
+        glDisable( GL_CULL_FACE );
+        glDisable( GL_DEPTH_TEST );
+        glEnable( GL_BLEND );
+        glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) ;
+        
+        // Use The Program Object Instead Of Fixed Function OpenGL
+        m_currentProgram = RsShaderTextured;
+    }
 	else if( BtStrCompare( pTechniqueName, "RsShaderTG2" ) == BtTrue )
 	{
 		glDisable( GL_CULL_FACE );
