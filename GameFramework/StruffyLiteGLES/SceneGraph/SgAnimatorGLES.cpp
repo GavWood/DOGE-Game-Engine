@@ -115,7 +115,7 @@ BtBool SgAnimatorWinGL::IsPaused() const
 
 BtFloat SgAnimatorWinGL::GetFrameRate()
 {
-    return m_pFileData->m_frameRate;
+    return 1.0f / m_pFileData->m_frameRate;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -171,7 +171,7 @@ void SgAnimatorWinGL::Update( SgSkin* pSkin )
 	// Cache the windows skin
 	SgSkinWin32GL *pSkinWinGL = (SgSkinWin32GL*)pSkin;
 
-    BtU32 frame = (BtU32)( m_time );
+    BtU32 frame = (BtU32)( m_time / GetFrameRate() );
     
     // Is this frame valid
     if( frame < m_pFileData->m_maxFrames )
@@ -194,7 +194,7 @@ void SgAnimatorWinGL::Update( SgSkin* pSkin )
             {
                 // Do it the fast way
                 SgNode* pNode = (SgNode*)transform.m_pNode;
-                //pNode->SetLocalTransform(transform.m_m4Transform);
+                pNode->SetLocalTransform(transform.m_m4Transform);
             }
             
             int a = 0;
