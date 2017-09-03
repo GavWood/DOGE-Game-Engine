@@ -25,6 +25,7 @@
 		7B0D27BB1F5451E10076EF97 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D25DE1F5451E10076EF97 /* zutil.c */; };
 		7B0D27BD1F5452730076EF97 /* BaArchiveWinGL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D27BC1F5452730076EF97 /* BaArchiveWinGL.cpp */; };
 		7B0D27BF1F5452930076EF97 /* BaArchive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D27BE1F5452930076EF97 /* BaArchive.cpp */; };
+		7B111CC11F5C003B00E2C475 /* SgBoneGLES.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B111CC01F5C003B00E2C475 /* SgBoneGLES.cpp */; };
 		7B81D0121ED77EEA0013067D /* CgCard7.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B81D0101ED77EEA0013067D /* CgCard7.cpp */; };
 		7B81D0161ED7891A0013067D /* card7.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B81D0151ED7891A0013067D /* card7.iPhonez */; };
 		7BF217501C09D7A7004E4743 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF2174F1C09D7A7004E4743 /* CoreMedia.framework */; };
@@ -219,6 +220,7 @@
 		7B0D25DF1F5451E10076EF97 /* zutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zutil.h; sourceTree = "<group>"; };
 		7B0D27BC1F5452730076EF97 /* BaArchiveWinGL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaArchiveWinGL.cpp; sourceTree = "<group>"; };
 		7B0D27BE1F5452930076EF97 /* BaArchive.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaArchive.cpp; sourceTree = "<group>"; };
+		7B111CC01F5C003B00E2C475 /* SgBoneGLES.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SgBoneGLES.cpp; sourceTree = "<group>"; };
 		7B81D0101ED77EEA0013067D /* CgCard7.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CgCard7.cpp; sourceTree = "<group>"; };
 		7B81D0111ED77EEA0013067D /* CgCard7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CgCard7.h; sourceTree = "<group>"; };
 		7B81D0151ED7891A0013067D /* card7.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = card7.iPhonez; sourceTree = "<group>"; };
@@ -473,7 +475,6 @@
 		7BF8459D1E71DFC0005D5C0D /* RsIndexBufferGLES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RsIndexBufferGLES.h; sourceTree = "<group>"; };
 		7BF8459E1E71DFC0005D5C0D /* RsMaterialGLES.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RsMaterialGLES.cpp; sourceTree = "<group>"; };
 		7BF8459F1E71DFC0005D5C0D /* RsMaterialGLES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RsMaterialGLES.h; sourceTree = "<group>"; };
-		7BF845A01E71DFC0005D5C0D /* RsPrimitiveGLES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RsPrimitiveGLES.h; sourceTree = "<group>"; };
 		7BF845A11E71DFC0005D5C0D /* RsRenderTargetGLES.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RsRenderTargetGLES.cpp; sourceTree = "<group>"; };
 		7BF845A21E71DFC0005D5C0D /* RsRenderTargetGLES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RsRenderTargetGLES.h; sourceTree = "<group>"; };
 		7BF845A31E71DFC0005D5C0D /* RsSceneGLES.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RsSceneGLES.cpp; sourceTree = "<group>"; };
@@ -1178,7 +1179,6 @@
 				7BF8459D1E71DFC0005D5C0D /* RsIndexBufferGLES.h */,
 				7BF8459E1E71DFC0005D5C0D /* RsMaterialGLES.cpp */,
 				7BF8459F1E71DFC0005D5C0D /* RsMaterialGLES.h */,
-				7BF845A01E71DFC0005D5C0D /* RsPrimitiveGLES.h */,
 				7BF845A11E71DFC0005D5C0D /* RsRenderTargetGLES.cpp */,
 				7BF845A21E71DFC0005D5C0D /* RsRenderTargetGLES.h */,
 				7BF845A31E71DFC0005D5C0D /* RsSceneGLES.cpp */,
@@ -1198,9 +1198,10 @@
 		7BF845AD1E71DFC0005D5C0D /* SceneGraph */ = {
 			isa = PBXGroup;
 			children = (
+				7B111CC01F5C003B00E2C475 /* SgBoneGLES.cpp */,
+				7BF845B01E71DFC0005D5C0D /* SgBoneGLES.h */,
 				7BF845AE1E71DFC0005D5C0D /* SgAnimatorGLES.cpp */,
 				7BF845AF1E71DFC0005D5C0D /* SgAnimatorGLES.h */,
-				7BF845B01E71DFC0005D5C0D /* SgBoneGLES.h */,
 				7BF845B11E71DFC0005D5C0D /* SgCollisionGLES.cpp */,
 				7BF845B21E71DFC0005D5C0D /* SgCollisionGLES.h */,
 				7BF845B31E71DFC0005D5C0D /* SgMaterialsGLES.cpp */,
@@ -1544,6 +1545,7 @@
 				7BF846C01E71DFC1005D5C0D /* SgNodeGLES.cpp in Sources */,
 				7B0D27B31F5451E10076EF97 /* infback.c in Sources */,
 				7BF8466D1E71DFC0005D5C0D /* HlUserData.cpp in Sources */,
+				7B111CC11F5C003B00E2C475 /* SgBoneGLES.cpp in Sources */,
 				7B0D27B01F5451E10076EF97 /* crc32.c in Sources */,
 				7BF8468C1E71DFC1005D5C0D /* DyCollisionMesh.cpp in Sources */,
 				7BF846851E71DFC1005D5C0D /* LBtString.cpp in Sources */,

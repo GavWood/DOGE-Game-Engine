@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-// SgBoneGLESß.h
+// SgBoneGLES.h
 
 #pragma once
 
@@ -7,15 +7,15 @@
 #include "BaFileData.h"
 #include "ErrorLog.h"
 
-class SgNodeWinDX;
+class SgNodeWinGL;
 
 // Class Declaration
-class SgBoneWin32 : public SgBone
+class SgBoneGLES : public SgBone
 {
 public:
 
 	void FixPointers( BtU8* pMemory );
-	const MtMatrix4& InverseBindPose() const;
+	const MtMatrix4& GetInverseBindPose() const;
 
 private:
 
@@ -25,20 +25,3 @@ private:
 	SgNodeWinGL* m_pNode;
 	BaSgBoneFileData* m_pFileData;
 };
-
-////////////////////////////////////////////////////////////////////////////////
-// FixPointers
-
-inline void SgBoneWin32::FixPointers( BtU8* pMemory )
-{
-	// Set the file data
-	m_pFileData = (BaSgBoneFileData*) pMemory;
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// InverseBindPose
-
-inline const MtMatrix4& SgBoneWin32::InverseBindPose() const
-{
-	return m_pFileData->m_m4InverseBindPose;
-}

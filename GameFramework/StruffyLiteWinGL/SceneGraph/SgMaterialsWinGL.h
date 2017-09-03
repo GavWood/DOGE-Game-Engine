@@ -6,7 +6,7 @@
 #include "BaFileData.h"
 #include "SgMaterial.h"
 #include "ErrorLog.h"
-#include "RsMaterialWinGL.h"
+#include "RsMaterialGLES.h"
 
 class RsMaterial;
 class SgNode;
