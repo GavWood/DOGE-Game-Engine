@@ -17,7 +17,7 @@ class SgSkinWin32GL;
 class SgMeshWinGL;
 class SgMaterialsWinGL;
 class SgRigidBodyImpl;
-class SgBoneDX11;
+class SgBoneGLES;
 class SgCollisionWinGL;
 class SgCameraWin32;
 class SgBlendShapeImpl;
@@ -92,7 +92,7 @@ private:
 	SgSkinWin32GL*				m_pSkin;
 	SgRigidBodyImpl*			m_pRigidBody;
 	SgCollisionWinGL*			m_pCollision;
-	SgBoneDX11*				m_pBone;
+	SgBoneGLES*                 m_pBone;
 	SgCameraWin32*				m_pCamera;
 	SgBlendShapeImpl*			m_pBlendShape;
 	SgLightWin32*				m_pLight;

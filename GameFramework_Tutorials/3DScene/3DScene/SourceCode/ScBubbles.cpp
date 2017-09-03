@@ -60,7 +60,6 @@ void ScBubbles::SetPosition( MtVector3 v3Position )
 void ScBubbles::Update()
 {
 	BtFloat lifeSpan = 3.0f;
-	BtFloat currentTime = BtTime::GetElapsedTimeInSeconds();
 
 	if( m_emitterOn )
 	{
@@ -76,8 +75,6 @@ void ScBubbles::Update()
 		// Make a new particle
 		SbParticle *pParticle = m_particles.AddHead();
 
-		BtFloat width  = 0.1f;
-		BtFloat height = 0.1f;
 		MtVector3 v3Position = MtVector3(
 			RdRandom::GetFloat( -m_v3Dimension.x * 0.5f, m_v3Dimension.x * 0.5f ),
 			RdRandom::GetFloat( -m_v3Dimension.y * 0.5f, m_v3Dimension.y * 0.5f ),

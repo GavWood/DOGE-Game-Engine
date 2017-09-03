@@ -24,8 +24,8 @@
 #include "HlModel.h"
 #include "MtMath.h"
 
-BtU32 SbMain::m_nextState = 0;
-BtU32 SbMain::m_currentState = 0;
+BtU32 SbMain::m_nextState;
+BtU32 SbMain::m_currentState;
 const BtU32 MaxCard = 6;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -55,7 +55,7 @@ void SbMain::Init()
 	m_peers.Setup();
 	MpPeerToPeer::Create();
 
-	m_currentState = 0;
+	m_currentState = 5;
 	m_nextState = m_currentState;
 }
 

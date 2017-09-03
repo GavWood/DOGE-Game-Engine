@@ -198,7 +198,7 @@ SgSkinRenderable *RsImplWinGL::AddSkin()
 ////////////////////////////////////////////////////////////////////////////////
 // AddPrimitive
 
-RsPrimitive *RsImplWinGL::AddPrimitive()
+RsPrimitiveWinGL *RsImplWinGL::AddPrimitive()
 {
 	return m_primitives.Add();
 }

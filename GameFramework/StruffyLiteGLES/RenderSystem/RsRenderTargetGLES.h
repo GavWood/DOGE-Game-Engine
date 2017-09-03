@@ -10,7 +10,7 @@
 #include "RsTextureGLES.h"
 #include "RsShader.h"
 #include "RsMaterialGLES.h"
-#include "RsPrimitiveGLES.h"
+#include "RsPrimitive.h"
 
 struct RsVertex3;
 class RsFontWin32GL;

@@ -650,7 +650,7 @@ void RsShaderWinGL::Commit()
 
 void RsShaderWinGL::Draw( const RsPrimitive *pPrimitive )
 {
-	RsPrimitive* pPrimitives = (RsPrimitive*) pPrimitive;
+	RsPrimitiveWinGL* pPrimitives = (RsPrimitiveWinGL*) pPrimitive;
 
 	// Draw vertex
 	glDrawArrays( pPrimitives->m_primitiveType, 0, pPrimitives->m_numVertex );
@@ -736,7 +736,7 @@ void RsShaderWinGL::SetLights(BtU32 index)
 
 void RsShaderWinGL::Draw(const RsIndexedPrimitive *pPrimitive)
 {
-	RsIndexedPrimitive* pPrimitives = (RsIndexedPrimitive*)pPrimitive;
+	RsIndexedPrimitiveWinGL* pPrimitives = (RsIndexedPrimitiveWinGL*)pPrimitive;
 
 	GLenum primType = pPrimitives->m_primitiveType;
 

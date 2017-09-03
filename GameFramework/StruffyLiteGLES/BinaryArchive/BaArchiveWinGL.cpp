@@ -88,9 +88,7 @@ BtU32 BaArchive::GetInstanceSize(BaResourceHeader *pResourceHeader)
 		break;
 
 	case BaRT_SgNode:
-        {
-            int instanceSize = SgNodeWinGL::GetInstanceSize(pResourceHeader);
-        }
+		return SgNodeWinGL::GetInstanceSize(pResourceHeader);
         break;
 
 	case BaRT_Animator:

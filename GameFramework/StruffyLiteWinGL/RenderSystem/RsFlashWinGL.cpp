@@ -319,7 +319,7 @@ void RsFlashWinGL::Render( const MtVector2& v2StartPosition, BtU32 sortOrder )
 				}
 
 				// Setup the primitive
-				RsPrimitive *primitive = pImpl->AddPrimitive();
+				RsPrimitiveWinGL *primitive = pImpl->AddPrimitive();
 				primitive->m_primitiveType = GL_TRIANGLE_STRIP;
 				primitive->m_numVertex     = 4;
 				primitive->m_nStartVertex  = pImpl->GetCurrentVertex();

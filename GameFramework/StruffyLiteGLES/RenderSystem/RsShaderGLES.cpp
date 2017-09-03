@@ -28,7 +28,7 @@ void getError( int objectHandle )
 	{
 		GLchar* compiler_log = (GLchar*)malloc(blen);
 		glGetShaderInfoLog(objectHandle, blen, &slen, compiler_log);
-		ErrorLog::Fatal_Printf( "%s\n", compiler_log );
+		//ErrorLog::Fatal_Printf( "%s\n", compiler_log );
 		free (compiler_log);
 	}
 }
@@ -530,7 +530,7 @@ void RsShaderWinGL::Draw( const RsPrimitive *pPrimitive )
 {
 	Commit();
     
-	RsPrimitiveWinGL* pPrimitives = (RsPrimitiveWinGL*) pPrimitive;
+	RsPrimitive* pPrimitives = (RsPrimitive*) pPrimitive;
     
 	// Draw vertex
 	glDrawArrays( pPrimitives->m_primitiveType, 0, pPrimitives->m_numVertex );
@@ -543,7 +543,7 @@ void RsShaderWinGL::Draw( const RsIndexedPrimitive *pPrimitive )
 {
 	Commit();
     
-	RsIndexedPrimitiveWinGL* pPrimitives = (RsIndexedPrimitiveWinGL*) pPrimitive;
+	RsIndexedPrimitive* pPrimitives = (RsIndexedPrimitive*) pPrimitive;
     
 	GLenum primType = pPrimitives->m_primitiveType;
     

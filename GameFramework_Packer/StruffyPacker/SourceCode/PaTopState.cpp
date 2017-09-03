@@ -172,8 +172,12 @@ BtBool PaTopState::ReadConfig()
 {
 	FILE* f = NULL;
 	
+#ifdef WIN32
 	f = fopen( "config.txt", "rb" );
-
+#else
+    f = fopen( "/Users/localadmin/Documents/Game-Framework/GameFramework_Packer/config.txt", "rb" );
+#endif
+    
 	if( f == NULL )
 	{
 		BtStrCopy( m_szWorkingPath, 256, "." );

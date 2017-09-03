@@ -4,7 +4,7 @@
 // Includes
 #include "RsSpriteGLES.h"
 #include "RsTextureGLES.h"
-#include "RsPrimitiveGLES.h"
+#include "RsPrimitive.h"
 #include "RsImplGLES.h"
 #include "RsUtil.h"
 #include "BtMemory.h"
@@ -194,7 +194,7 @@ void RsSpriteWinGL::Render( BtBool isFlipX, const MtVector2& v2CurrentPosition, 
 	}
     
 	// Setup the primitive
-	RsPrimitiveWinGL *pPrimitive = pImpl->AddPrimitive();
+	RsPrimitive *pPrimitive = pImpl->AddPrimitive();
 	pPrimitive->m_primitiveType = GL_TRIANGLE_STRIP;
 	pPrimitive->m_numVertex     = 4;
 	pPrimitive->m_nStartVertex  = pImpl->GetCurrentVertex();
@@ -250,7 +250,7 @@ void RsSpriteWinGL::Render( RsSpriteRenderable *pRenderable )
 	// Set the texture
 	pTexture->SetTexture();
     
-	RsPrimitiveWinGL* pPrimitives = (RsPrimitiveWinGL*) pRenderable->m_primitive;
+	RsPrimitive* pPrimitives = (RsPrimitive*) pRenderable->m_primitive;
     
 	// Set vertex arrays
 	BtU32 stride = sizeof(RsVertex3);

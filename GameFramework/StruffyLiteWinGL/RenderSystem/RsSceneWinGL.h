@@ -7,7 +7,7 @@
 #include "BtBase.h"
 #include "BaResource.h"
 #include "BaFileData.h"
-#include "RsPrimitive.h"
+#include "RsPrimitiveWinGL.h"
 
 class DyCollisionMesh;
 class RsVertexBufferWinGL;
@@ -24,7 +24,7 @@ public:
 	void							CreateOnDevice();
 
 	BaRenderBlockFileData*			pRenderBlock( BtU32 nIndex );
-	RsIndexedPrimitive*		pPrimitiveBlock( BtU32 nIndex );
+	RsIndexedPrimitiveWinGL*		pPrimitiveBlock( BtU32 nIndex );
 	RsVertexBufferWinGL*			pVertexBuffer( BtU32 vertexType );
 	RsIndexBufferWinGL*				pIndexBuffer();
 	DyCollisionMesh*				pCollisionMesh();
@@ -34,7 +34,7 @@ private:
 
 	BaMaterialBlockFileData* 		m_pMaterialBlocks;
 	BaRenderBlockFileData*	 		m_pRenderBlocks;
-	RsIndexedPrimitive*		m_pPrimitives;
+	RsIndexedPrimitiveWinGL*		m_pPrimitives;
 	BaSceneFileData*				m_pFileData;
 };
 
@@ -51,7 +51,7 @@ inline BaRenderBlockFileData* RsSceneWinGL::pRenderBlock( BtU32 nIndex )
 ////////////////////////////////////////////////////////////////////////////////
 // pPrimitiveBlock
 
-inline RsIndexedPrimitive* RsSceneWinGL::pPrimitiveBlock( BtU32 nIndex )
+inline RsIndexedPrimitiveWinGL* RsSceneWinGL::pPrimitiveBlock( BtU32 nIndex )
 {
 	BtAssert( nIndex < m_pFileData->m_nPrimitives );
 

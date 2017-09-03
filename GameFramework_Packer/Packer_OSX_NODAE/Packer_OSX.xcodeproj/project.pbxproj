@@ -691,6 +691,13 @@
 			name = Utility;
 			sourceTree = "<group>";
 		};
+		7B2EC3021F5314C50057B1F3 /* GitHub  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "GitHub ";
+			sourceTree = "<group>";
+		};
 		7B332D011F3F46500042DAD5 /* glew */ = {
 			isa = PBXGroup;
 			children = (
@@ -1235,6 +1242,7 @@
 		7BE921781F21498900B75444 = {
 			isa = PBXGroup;
 			children = (
+				7B2EC3021F5314C50057B1F3 /* GitHub  */,
 				7B1BD9E91F3629CD00FFA9A9 /* GameFramework_Packer */,
 				7B951F781F30C84000468318 /* GameFramework */,
 				7BE926441F214B6E00B75444 /* GameFramework_ThirdParty */,

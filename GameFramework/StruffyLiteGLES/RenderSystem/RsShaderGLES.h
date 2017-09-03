@@ -9,7 +9,7 @@
 #include "RsTextureGLES.h"
 #include "RsShader.h"
 #include "RsColour.h"
-#include "RsPrimitiveGLES.h"
+#include "RsPrimitive.h"
 
 const BtU32 RsShaderPassThrough = 0;
 const BtU32 RsShaderLit = 1;

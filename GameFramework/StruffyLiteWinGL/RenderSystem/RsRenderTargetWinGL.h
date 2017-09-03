@@ -9,7 +9,7 @@
 #include "RsTextureWinGL.h"
 #include "RsShader.h"
 #include "RsMaterialWinGL.h"
-#include "RsPrimitive.h"
+#include "RsPrimitiveWinGL.h"
 
 struct RsVertex3;
 class RsFontWin32GL;

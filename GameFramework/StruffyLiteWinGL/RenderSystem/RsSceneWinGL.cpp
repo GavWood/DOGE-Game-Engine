@@ -20,8 +20,8 @@ void RsSceneWinGL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
 	m_pRenderBlocks = (BaRenderBlockFileData*) pFileData;
 	pFileData +=( sizeof( BaRenderBlockFileData ) * m_pFileData->m_nRenderBlocks );
 
-	m_pPrimitives = (RsIndexedPrimitive*) pFileData;
-	pFileData +=( sizeof( RsIndexedPrimitive ) * m_pFileData->m_nPrimitives );
+	m_pPrimitives = (RsIndexedPrimitiveWinGL*) pFileData;
+	pFileData +=( sizeof( RsIndexedPrimitiveWinGL ) * m_pFileData->m_nPrimitives );
 
 	for( BtU32 i=0; i<1024; i++ )
 	{

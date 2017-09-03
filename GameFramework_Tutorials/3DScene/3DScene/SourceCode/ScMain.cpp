@@ -42,9 +42,11 @@ void ScMain::Init()
 	RdRandom::SetRandomSeed();
 
 	// Load the game archive
+#ifdef WIN32
     ApConfig::SetResourcePath( "..\\3DScene\\release\\" );
-	ApConfig::CheckResourcePath( "game" );
-
+#endif
+    ApConfig::CheckResourcePath( "game" );
+    
 	int test = 1;
 	int one  = 1;
 	if( one && test )

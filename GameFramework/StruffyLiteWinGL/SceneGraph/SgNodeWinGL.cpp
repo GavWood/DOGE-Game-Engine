@@ -6,7 +6,7 @@
 #include "SgNodeWinGL.h"
 #include "RsMaterial.h"
 #include "RsCamera.h"
-#include "RsTextureWinGL.h"
+#include "RsTextureGLES.h"
 #include "MtMath.h"
 
 #include "SgMaterialsWinGL.h"
@@ -16,11 +16,11 @@
 #include "SgBlendShapeImpl.h"
 #include "SgCollisionWinGL.h"
 #include "SgRigidBodyImpl.h"
-#include "RsImplWinGL.h"
-#include "RsSceneWinGL.h"
-#include "SgBoneWinGL.h"
-#include "SgMeshWinGL.h"
-#include "SgSkinWinGL.h"
+#include "RsImplGLES.h"
+#include "RsSceneGLES.h"
+#include "SgBoneGLES.h"
+#include "SgMeshGLES.h"
+#include "SgSkinGLES.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Constructor
