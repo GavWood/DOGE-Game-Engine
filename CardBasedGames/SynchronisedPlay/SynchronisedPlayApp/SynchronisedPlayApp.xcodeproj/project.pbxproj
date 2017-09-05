@@ -515,6 +515,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B1B404E1F5E95EB00A82475 /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GitHub;
+			sourceTree = "<group>";
+		};
 		7B85A26F1F52E3CE00089511 /* SourceCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -649,6 +656,7 @@
 		7BF34B4F1C0601300048F1DF = {
 			isa = PBXGroup;
 			children = (
+				7B1B404E1F5E95EB00A82475 /* GitHub */,
 				7BF8518D1E71E12A005D5C0D /* Frameworks */,
 				7BD1E7451EE0433800F50BFB /* GameFramework_ThirdParty */,
 				7BF844941E71DFC0005D5C0D /* GameFramework */,
