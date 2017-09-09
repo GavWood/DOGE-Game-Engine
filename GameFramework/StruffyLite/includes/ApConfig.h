@@ -20,6 +20,7 @@ enum ApDevice
     ApDevice_iPhone,
     ApDevice_WIN,
     ApDevice_AppleTV,
+    ApDevice_OSX,
     ApDevice_Max,
 };
 

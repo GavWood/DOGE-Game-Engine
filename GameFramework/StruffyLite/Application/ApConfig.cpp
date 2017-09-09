@@ -48,8 +48,10 @@ void ApConfig::Init()
 {
 	m_isInitialised = BtTrue;
 
+    ApDevice device = ApConfig::GetDevice();
+    
 	// Load the game archive
-	if (ApConfig::GetDevice() == ApDevice_WIN)
+	if( device == ApDevice_WIN )
 	{
 		if (ApConfig::GetPlatform() == ApPlatform_DX11)
 		{
@@ -60,10 +62,14 @@ void ApConfig::Init()
 			ApConfig::SetExtension(".winglz");
 		}
 	}
-	else if (ApConfig::GetDevice() == ApDevice_iPhone)
+	else if( device == ApDevice_iPhone)
 	{
 		ApConfig::SetExtension(".iPhonez");
 	}
+    else if( device == ApDevice_OSX )
+    {
+        ApConfig::SetExtension(".OSXz");
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////

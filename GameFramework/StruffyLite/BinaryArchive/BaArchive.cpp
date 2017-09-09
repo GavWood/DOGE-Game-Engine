@@ -70,7 +70,8 @@ void BaArchive::LoadFile( const BtChar* archiveName )
 	BtStrCat(filename, 256, ApConfig::GetExtension());
 
 	FILE *f = fopen(filename, "rb");
-
+    
+    //printf( "Filename=%s", filename );
 	if (f)
 	{
 		fread((void*)&archiveHeader, 1, sizeof(archiveHeader), f);
@@ -292,8 +293,7 @@ void BaArchive::FixPointers()
 		// Move to the next resource
 		pResourceHeader++;	
 	}
-	
-	BtPrint( "Ended creating resources.\r\n" );	
+    // BtPrint( "Ended creating resources.\r\n" );
 }
 
 

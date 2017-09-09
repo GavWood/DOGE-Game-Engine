@@ -122,7 +122,6 @@ void ScMain::Reset()
 	}
 
 	m_camera.Init( v2Dimension );
-	
 	m_camera.SetSpeed(10.0f);
 
 	m_bubbles.Reset();

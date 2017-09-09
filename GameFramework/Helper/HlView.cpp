@@ -25,7 +25,11 @@
 #include "HlUserData.h"
 #include "HlDraw.h"
 #include "HlFont.h"
+
+#ifdef WIN32
 #include "Ui360.h"
+#endif
+
 #include "HlMaterial.h"
 
 // statics

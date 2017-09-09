@@ -36,6 +36,19 @@
 		7B111CED1F5C056B00E2C475 /* ScMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B111CD61F5C056B00E2C475 /* ScMain.cpp */; };
 		7B111CEE1F5C056B00E2C475 /* ScModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B111CD81F5C056B00E2C475 /* ScModel.cpp */; };
 		7B111CEF1F5C056B00E2C475 /* ScRenderSkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B111CDB1F5C056B00E2C475 /* ScRenderSkybox.cpp */; };
+		7B45A1141F642B05009ECFA2 /* shaderTextured.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A1071F642B05009ECFA2 /* shaderTextured.vert */; };
+		7B45A1151F642B05009ECFA2 /* shaderTextured.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A1081F642B05009ECFA2 /* shaderTextured.frag */; };
+		7B45A1161F642B05009ECFA2 /* shaderSkin.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A1091F642B05009ECFA2 /* shaderSkin.vert */; };
+		7B45A1171F642B05009ECFA2 /* shaderSkin.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A10A1F642B05009ECFA2 /* shaderSkin.frag */; };
+		7B45A1181F642B05009ECFA2 /* shaderPassThrough.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A10B1F642B05009ECFA2 /* shaderPassThrough.vert */; };
+		7B45A1191F642B05009ECFA2 /* shaderPassThrough.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A10C1F642B05009ECFA2 /* shaderPassThrough.frag */; };
+		7B45A11A1F642B05009ECFA2 /* shaderLitTextured.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A10D1F642B05009ECFA2 /* shaderLitTextured.vert */; };
+		7B45A11B1F642B05009ECFA2 /* shaderLitTextured.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A10E1F642B05009ECFA2 /* shaderLitTextured.frag */; };
+		7B45A11C1F642B05009ECFA2 /* shaderLit.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A10F1F642B05009ECFA2 /* shaderLit.vert */; };
+		7B45A11D1F642B05009ECFA2 /* shaderLit.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A1101F642B05009ECFA2 /* shaderLit.frag */; };
+		7B45A11E1F642B05009ECFA2 /* shader.gles in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A1111F642B05009ECFA2 /* shader.gles */; };
+		7B45A11F1F642B05009ECFA2 /* projectedTexture.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A1121F642B05009ECFA2 /* projectedTexture.vert */; };
+		7B45A1201F642B05009ECFA2 /* projectedTexture.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A1131F642B05009ECFA2 /* projectedTexture.frag */; };
 		7BF217501C09D7A7004E4743 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF2174F1C09D7A7004E4743 /* CoreMedia.framework */; };
 		7BF34B5D1C0601300048F1DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF34B5C1C0601300048F1DF /* main.m */; };
 		7BF34B671C0601300048F1DF /* GameViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BF34B661C0601300048F1DF /* GameViewController.mm */; };
@@ -221,6 +234,20 @@
 		7B111CDB1F5C056B00E2C475 /* ScRenderSkybox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScRenderSkybox.cpp; sourceTree = "<group>"; };
 		7B111CDC1F5C056B00E2C475 /* ScRenderSkybox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScRenderSkybox.h; sourceTree = "<group>"; };
 		7B111CDD1F5C056B00E2C475 /* ScWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScWorld.h; sourceTree = "<group>"; };
+		7B45A1041F642640009ECFA2 /* RsPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RsPlatform.h; sourceTree = "<group>"; };
+		7B45A1071F642B05009ECFA2 /* shaderTextured.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderTextured.vert; path = ../3DScene/GameData/Game.Archive/Shaders/shaderTextured.vert; sourceTree = "<group>"; };
+		7B45A1081F642B05009ECFA2 /* shaderTextured.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderTextured.frag; path = ../3DScene/GameData/Game.Archive/Shaders/shaderTextured.frag; sourceTree = "<group>"; };
+		7B45A1091F642B05009ECFA2 /* shaderSkin.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderSkin.vert; path = ../3DScene/GameData/Game.Archive/Shaders/shaderSkin.vert; sourceTree = "<group>"; };
+		7B45A10A1F642B05009ECFA2 /* shaderSkin.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderSkin.frag; path = ../3DScene/GameData/Game.Archive/Shaders/shaderSkin.frag; sourceTree = "<group>"; };
+		7B45A10B1F642B05009ECFA2 /* shaderPassThrough.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderPassThrough.vert; path = ../3DScene/GameData/Game.Archive/Shaders/shaderPassThrough.vert; sourceTree = "<group>"; };
+		7B45A10C1F642B05009ECFA2 /* shaderPassThrough.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderPassThrough.frag; path = ../3DScene/GameData/Game.Archive/Shaders/shaderPassThrough.frag; sourceTree = "<group>"; };
+		7B45A10D1F642B05009ECFA2 /* shaderLitTextured.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderLitTextured.vert; path = ../3DScene/GameData/Game.Archive/Shaders/shaderLitTextured.vert; sourceTree = "<group>"; };
+		7B45A10E1F642B05009ECFA2 /* shaderLitTextured.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderLitTextured.frag; path = ../3DScene/GameData/Game.Archive/Shaders/shaderLitTextured.frag; sourceTree = "<group>"; };
+		7B45A10F1F642B05009ECFA2 /* shaderLit.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderLit.vert; path = ../3DScene/GameData/Game.Archive/Shaders/shaderLit.vert; sourceTree = "<group>"; };
+		7B45A1101F642B05009ECFA2 /* shaderLit.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderLit.frag; path = ../3DScene/GameData/Game.Archive/Shaders/shaderLit.frag; sourceTree = "<group>"; };
+		7B45A1111F642B05009ECFA2 /* shader.gles */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = shader.gles; path = ../3DScene/GameData/Game.Archive/Shaders/shader.gles; sourceTree = "<group>"; };
+		7B45A1121F642B05009ECFA2 /* projectedTexture.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = projectedTexture.vert; path = ../3DScene/GameData/Game.Archive/Shaders/projectedTexture.vert; sourceTree = "<group>"; };
+		7B45A1131F642B05009ECFA2 /* projectedTexture.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = projectedTexture.frag; path = ../3DScene/GameData/Game.Archive/Shaders/projectedTexture.frag; sourceTree = "<group>"; };
 		7BF2174F1C09D7A7004E4743 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7BF34B581C0601300048F1DF /* 3DSceneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3DSceneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF34B5C1C0601300048F1DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -642,9 +669,45 @@
 			name = GitHub;
 			sourceTree = "<group>";
 		};
+		7B45A1011F642577009ECFA2 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				7B45A1041F642640009ECFA2 /* RsPlatform.h */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
+		7B45A1031F6425F2009ECFA2 /* GLES */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GLES;
+			sourceTree = "<group>";
+		};
+		7B45A1061F642AD8009ECFA2 /* GameData */ = {
+			isa = PBXGroup;
+			children = (
+				7B45A1071F642B05009ECFA2 /* shaderTextured.vert */,
+				7B45A1081F642B05009ECFA2 /* shaderTextured.frag */,
+				7B45A1091F642B05009ECFA2 /* shaderSkin.vert */,
+				7B45A10A1F642B05009ECFA2 /* shaderSkin.frag */,
+				7B45A10B1F642B05009ECFA2 /* shaderPassThrough.vert */,
+				7B45A10C1F642B05009ECFA2 /* shaderPassThrough.frag */,
+				7B45A10D1F642B05009ECFA2 /* shaderLitTextured.vert */,
+				7B45A10E1F642B05009ECFA2 /* shaderLitTextured.frag */,
+				7B45A10F1F642B05009ECFA2 /* shaderLit.vert */,
+				7B45A1101F642B05009ECFA2 /* shaderLit.frag */,
+				7B45A1111F642B05009ECFA2 /* shader.gles */,
+				7B45A1121F642B05009ECFA2 /* projectedTexture.vert */,
+				7B45A1131F642B05009ECFA2 /* projectedTexture.frag */,
+			);
+			name = GameData;
+			sourceTree = "<group>";
+		};
 		7BF34B4F1C0601300048F1DF = {
 			isa = PBXGroup;
 			children = (
+				7B45A1031F6425F2009ECFA2 /* GLES */,
 				7B1B404C1F5E95B900A82475 /* GitHub */,
 				7BF8518D1E71E12A005D5C0D /* Frameworks */,
 				7B0D23821F5451E00076EF97 /* GameFramework_ThirdParty */,
@@ -692,6 +755,7 @@
 		7BF843681E71DF9D005D5C0D /* 3DScene */ = {
 			isa = PBXGroup;
 			children = (
+				7B45A1061F642AD8009ECFA2 /* GameData */,
 				7B111CC21F5C056B00E2C475 /* Release */,
 				7B111CCC1F5C056B00E2C475 /* SourceCode */,
 			);
@@ -1025,6 +1089,7 @@
 		7BF8458E1E71DFC0005D5C0D /* StruffyLiteGLES */ = {
 			isa = PBXGroup;
 			children = (
+				7B45A1011F642577009ECFA2 /* Platform */,
 				7BF8458F1E71DFC0005D5C0D /* BinaryArchive */,
 				7BF845911E71DFC0005D5C0D /* RenderSystem */,
 				7BF845AD1E71DFC0005D5C0D /* SceneGraph */,
@@ -1262,12 +1327,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B45A1161F642B05009ECFA2 /* shaderSkin.vert in Resources */,
 				7B111CDE1F5C056B00E2C475 /* anim.iPhonez in Resources */,
+				7B45A1171F642B05009ECFA2 /* shaderSkin.frag in Resources */,
+				7B45A11E1F642B05009ECFA2 /* shader.gles in Resources */,
+				7B45A1201F642B05009ECFA2 /* projectedTexture.frag in Resources */,
+				7B45A1191F642B05009ECFA2 /* shaderPassThrough.frag in Resources */,
+				7B45A11A1F642B05009ECFA2 /* shaderLitTextured.vert in Resources */,
 				7BF34B6A1C0601300048F1DF /* Main.storyboard in Resources */,
+				7B45A1181F642B05009ECFA2 /* shaderPassThrough.vert in Resources */,
+				7B45A1151F642B05009ECFA2 /* shaderTextured.frag in Resources */,
 				7B111CE11F5C056B00E2C475 /* game.iPhonez in Resources */,
+				7B45A11B1F642B05009ECFA2 /* shaderLitTextured.frag in Resources */,
 				7BF34B6C1C0601300048F1DF /* Assets.xcassets in Resources */,
 				7BF34B6F1C0601300048F1DF /* LaunchScreen.storyboard in Resources */,
+				7B45A11F1F642B05009ECFA2 /* projectedTexture.vert in Resources */,
 				7B111CE51F5C056B00E2C475 /* utility.iPhonez in Resources */,
+				7B45A11C1F642B05009ECFA2 /* shaderLit.vert in Resources */,
+				7B45A11D1F642B05009ECFA2 /* shaderLit.frag in Resources */,
+				7B45A1141F642B05009ECFA2 /* shaderTextured.vert in Resources */,
 				7B111CE31F5C056B00E2C475 /* hmd.iPhonez in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

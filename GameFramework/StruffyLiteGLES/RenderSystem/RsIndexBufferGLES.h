@@ -7,6 +7,7 @@
 #include "BaResource.h"
 #include "BaFileData.h"
 #include "RsGLES.h"
+#include "RsPlatform.h"
 
 // Class Declaration
 class RsIndexBufferWinGL : public BaResource

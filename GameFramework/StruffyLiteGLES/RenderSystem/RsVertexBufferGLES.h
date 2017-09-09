@@ -9,6 +9,7 @@
 #include "BaArchive.h"
 #include "BtTypes.h"
 #include "RsGLES.h"
+#include "RsPlatform.h"
 
 // Class Declaration
 class RsVertexBufferWinGL : public BaResource

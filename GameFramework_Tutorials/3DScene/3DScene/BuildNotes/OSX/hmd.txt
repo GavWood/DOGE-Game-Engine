@@ -1,0 +1,8 @@
+0.32, ovrl, Material
+0.32, ovrr, Material
+0.05, ovrl, Texture
+0.05, ovrr, Texture
+
+Main memory total 0 KBytes
+Graphics total 0 KBytes
+Sound total 0 KBytes
