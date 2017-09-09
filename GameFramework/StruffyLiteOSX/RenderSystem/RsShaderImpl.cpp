@@ -11,25 +11,23 @@
 #include "RsImpl.h"
 #include "ErrorLog.h"
 #include <new>
+#include <vector>
+#include <string>
 #include "BaFileData.h"
 
 static BtU32 m_currentProgram = 0;
 
 void getError( int objectHandle )
 {
-	/*
-	GLint blen = 0;	
-	GLsizei slen = 0;
-
-	glGetShaderiv( objectHandle, GL_INFO_LOG_LENGTH , &blen);       
-	if (blen > 1)
+	GLint log_length = 0;
+	glGetShaderiv( objectHandle, GL_INFO_LOG_LENGTH , &log_length);
+	if (log_length > 1)
 	{
-		GLchar* compiler_log = (GLchar*)malloc(blen);
-		glGetInfoLog(objectHandle, blen, &slen, compiler_log);
-		ErrorLog::Fatal_Printf( "%s\n", compiler_log );
-		free (compiler_log);
+        std::vector<char> v(log_length);
+        glGetShaderInfoLog(objectHandle, log_length, NULL, v.data());
+        std::string s(begin(v), end(v));
+        ErrorLog::Printf( "%s", s.c_str() );
 	}
-	*/
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -78,7 +76,7 @@ void RsShaderWinGL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
         glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &status );
         if( status == 0 )
         {
-            ErrorLog::Printf( "Error compiling pixel shader %d = %s\n", shaderIndex, fragmentText );
+            ErrorLog::Printf( "Error compiling pixel shader %d =\n%s\n", shaderIndex, fragmentText );
             getError( fragmentShader );
         }
         //else

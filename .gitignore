@@ -76,3 +76,7 @@ CardBasedGames/CardTestBed/Tutorial1App/Tutorial1App.xcodeproj/project.xcworkspa
 *.xcuserstate
 CardBasedGames/CardTestBed/Tutorial1App/Tutorial1App.xcodeproj/project.xcworkspace/xcuserdata/localadmin.xcuserdatad/UserInterfaceState.xcuserstate
 *.xcuserstate
+*.OSXz
+*.OSX
+GameFramework_Tutorials/3DScene/3DScene/BuildFiles/AssetBuildList.OSX
+GameFramework_Tutorials/3DScene/3DScene/BuildFiles/game.OSX

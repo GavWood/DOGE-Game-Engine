@@ -1,3 +1,5 @@
+uniform sampler2D myTexture;
+
 varying vec2 myTex;
 varying vec4 myColour;
 
