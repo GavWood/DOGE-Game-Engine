@@ -1,0 +1,90 @@
+#Sconstruct for FeelingViewer for Linux
+#by Veronique Laforte, Feb. 7th 2007
+
+#Import modules needed to move files and print things.
+import os
+import glob
+import shutil
+import string
+
+ifdebug = ARGUMENTS.get('debug', 0) #Default is Retail.
+ifnumber = ARGUMENTS.get('target', 0) #Default is help.
+
+#Changing permissions... they are flying off at a nothing.
+os.system('chmod -R 766 Output')
+
+
+#A specific help section.
+Help("""
+==========================USER HELP=======================================
+Type 'scons debug=x target=1' to compile everything for Linux.
+    If debug=0, version of code compiled is retail.
+       debug=1, version of code compiled is debug.
+Add '-c' at the end of the command line with target 2 to clean up files. 
+==========================================================================""")
+
+#That's the default, users will see that if they write 'scons' without anything.
+if int(ifnumber) == 0:
+    print "=====================ATTENTION================================="
+    print "Please type 'scons -h' to see what to type in the command line."
+    print "===============================================================" 
+
+#To compile everything, with the debug and unicode flags from the user.
+elif int(ifnumber) == 1:
+    cdebug = int(ifdebug)
+    command1 = 'scons debug=' + str(cdebug) + ' target=100'
+    command2 = 'scons debug=' + str(cdebug) + ' target=2'
+#    command4 = 'scons target=99'
+    os.system(command1)
+    os.system(command2)
+#    os.system(command4)
+
+#FViewer Library
+elif int(ifnumber) == 2:
+    if int(ifdebug):
+        SConscript('FCExport/Sconscript', build_dir='Output/Debug/FCExport/Intermediate', duplicate=0)
+        SConscript('FCProcessImages/Sconscript', build_dir='Output/Debug/FCProcessImages/Intermediate', duplicate=0)
+        SConscript('FCProcessMeshes/Sconscript', build_dir='Output/Debug/FCProcessMeshes/Intermediate', duplicate=0)
+        SConscript('FCValidate/Sconscript', build_dir='Output/Debug/FCValidate/Intermediate', duplicate=0)
+    else:
+        SConscript('FCExport/Sconscript', build_dir='Output/Retail/FCExport/Intermediate', duplicate=0)
+        SConscript('FCProcessImages/Sconscript', build_dir='Output/Retail/FCProcessImages/Intermediate', duplicate=0)
+        SConscript('FCProcessMeshes/Sconscript', build_dir='Output/Retail/FCProcessMeshes/Intermediate', duplicate=0)
+        SConscript('FCValidate/Sconscript', build_dir='Output/Retail/FCValidate/Intermediate', duplicate=0)
+
+#Add post-processing here.
+#elif int(ifnumber) == 99:
+
+#Figure out directories for DEBUG vs. RETAIL versions of code, with unicode.
+elif int(ifnumber) == 100:
+    sinter = str('Intermediate')
+    sout = str('Output')
+    if int(ifdebug):
+        stype = str('Debug')
+    else:
+        stype = str('Retail')
+    print "Creating the output tree for FCTools."
+    if not os.path.exists(sout): os.mkdir(sout)
+    os.chdir(sout)
+    if not os.path.exists(stype): os.mkdir(stype)
+    os.chdir(stype)
+    if not os.path.exists("FCExport"): os.mkdir("FCExport")
+    os.chdir("FCExport")
+    if not os.path.exists(sinter): os.mkdir(sinter)
+    os.chdir("../")
+    if not os.path.exists("FCProcessImages"): os.mkdir("FCProcessImages")
+    os.chdir("FCProcessImages")
+    if not os.path.exists(sinter): os.mkdir(sinter)
+    os.chdir("../")
+    if not os.path.exists("FCProcessMeshes"): os.mkdir("FCProcessMeshes")
+    os.chdir("FCProcessMeshes")
+    if not os.path.exists(sinter): os.mkdir(sinter)
+    os.chdir("../")
+    if not os.path.exists("FCValidate"): os.mkdir("FCValidate")
+    os.chdir("FCValidate")
+    if not os.path.exists(sinter): os.mkdir(sinter)
+    os.chdir("../..")
+
+#In case target number is not in this list.
+else:
+    print "Target number un-recognized. Type 'scons -h' to know which targets are available."

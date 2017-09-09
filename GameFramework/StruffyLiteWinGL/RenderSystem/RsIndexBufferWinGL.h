@@ -2,7 +2,7 @@
 /// RsIndexBufferWinGL.h
 
 #pragma once
-#include <GL/glew.h>
+#include "RsPlatform.h"
 #include "BaArchive.h"
 #include "BaResource.h"
 #include "BaFileData.h"

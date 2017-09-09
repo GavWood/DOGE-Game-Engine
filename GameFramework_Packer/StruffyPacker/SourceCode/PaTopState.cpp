@@ -173,7 +173,7 @@ BtBool PaTopState::ReadConfig()
 	FILE* f = NULL;
 	
 #ifdef WIN32
-	f = fopen( "config.txt", "rb" );
+	f = fopen( "\\github\\tutorials\\GameFramework_Packer\\config.txt", "rb" );
 #else
     f = fopen( "/Users/localadmin/Documents/Game-Framework/GameFramework_Packer/config.txt", "rb" );
 #endif

@@ -1,5 +1,6 @@
-Platform=1
-CurrentProject=2
-\github\tutorials\CardBasedGames\CardTestBed\Tutorial1                                     
+Platform=2
+CurrentProject=1
+\github\tutorials\CardBasedGames\CardTestBed\Tutorial1         
+\github\tutorials\GameFramework_Tutorials\3DScene\3DScene\                         
 /Users/localadmin/Documents/Game-Framework/CardBasedGames/TurnTakingPlay/TurnTakingPlay/
 /Users/localadmin/Documents/Game-Framework/CardBasedGames/SynchronisedPlay/SynchronisedPlay/

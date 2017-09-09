@@ -1,7 +1,7 @@
 ﻿////////////////////////////////////////////////////////////////////////////////
 /// RsVertexBufferWinGL.cpp
 
-#include <GL/glew.h>
+#include "RsPlatform.h"
 #include "BtBase.h"
 #include "BaArchive.h"
 #include "BtMemory.h"

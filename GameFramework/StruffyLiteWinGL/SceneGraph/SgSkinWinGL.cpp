@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 /// SgSkinWin32GL.cpp
 
-#include <GL/glew.h>
+#include "RsPlatform.h"
 #include "BtMemory.h"
 #include "RsMaterial.h"
 #include "RsMaterialWinGL.h"

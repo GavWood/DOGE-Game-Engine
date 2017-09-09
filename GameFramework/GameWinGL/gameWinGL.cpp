@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-// Game.cpp
+// GameWinGL.cpp
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +7,7 @@
 #include "ApConfig.h"
 #include "BtTime.h"
 #include "ShTouch.h"
-#include <GL/glew.h>
+#include "RsPlatform.h"
 #include "glfw.h"
 #include "ErrorLog.h"
 #include "RsUtil.h"

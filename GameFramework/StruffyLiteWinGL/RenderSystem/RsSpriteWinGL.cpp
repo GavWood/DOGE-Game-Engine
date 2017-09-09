@@ -2,7 +2,7 @@
 // RsSpriteWin32GL.cpp
 
 // Includes
-#include <GL/glew.h>
+#include "RsPlatform.h"
 #include "RsSpriteWinGL.h"
 #include "RsTextureWinGL.h"
 #include "RsPrimitiveWinGL.h"

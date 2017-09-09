@@ -19,6 +19,9 @@
     <Filter Include="UserInterface">
       <UniqueIdentifier>{f390d657-e79e-4e3d-93c9-514f2b23e1fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{f8591703-ac7c-4b84-9c62-1b6f7278e549}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RenderSystem\RsCapsWinGL.cpp">
@@ -172,6 +175,9 @@
     </ClInclude>
     <ClInclude Include="RenderSystem\RsPlatform.h">
       <Filter>RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform\RsPlatform.h">
+      <Filter>Platform</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
