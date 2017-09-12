@@ -127,7 +127,6 @@
     <ClInclude Include="RenderSystem\RsImplWinGL.h" />
     <ClInclude Include="RenderSystem\RsIndexBufferWinGL.h" />
     <ClInclude Include="RenderSystem\RsMaterialWinGL.h" />
-    <ClInclude Include="RenderSystem\RsPlatform.h" />
     <ClInclude Include="RenderSystem\RsPrimitiveWinGL.h" />
     <ClInclude Include="RenderSystem\RsRenderTargetWinGL.h" />
     <ClInclude Include="RenderSystem\RsSceneWinGL.h" />
