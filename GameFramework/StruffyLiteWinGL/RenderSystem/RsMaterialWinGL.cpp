@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 /// RsMaterialWinGL.cpp
 
-#include <GL/glew.h>
+#include "RsPlatform.h"
 #include "BtBase.h"
 #include "BaResource.h"
 #include "BaFileData.h"
@@ -59,7 +59,7 @@ RsMaterial* RsMaterialWinGL::GetDuplicate() const
 	RsMaterialWinGL* pMaterial = new( pMemory ) RsMaterialWinGL;
 
 	// Advance pass the instance size
-	pMemory += m_pFileData->m_nInstanceSize;
+	pMemory += sizeof(RsMaterialWinGL);
 
 	// Copy the memory
 	BtMemory::Copy( pMemory, m_pFileData, sizeof( BaMaterialFileData ) );

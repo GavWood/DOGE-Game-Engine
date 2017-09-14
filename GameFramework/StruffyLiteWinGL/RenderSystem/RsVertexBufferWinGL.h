@@ -6,7 +6,7 @@
 #include "BaResource.h"
 #include "BaArchive.h"
 #include "BtTypes.h"
-#include <GL/glew.h>
+#include "RsPlatform.h"
 
 // Class Declaration
 class RsVertexBufferWinGL : public BaResource

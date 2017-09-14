@@ -393,9 +393,8 @@ struct BaSgNodeFileData
 {
 	BtU32							m_nodeType;
 	BtChar							m_name[MaxSceneNodeName];
-	BtU32							m_nChildren;
 
-	BtU32							m_nInstanceSize;
+	BtU32							m_nChildren;
 	BtU32							m_nFileDataSize;
 
 	union

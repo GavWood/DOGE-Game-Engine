@@ -98,14 +98,16 @@ SgNode* SgNodeWinGL::pFind( const BtChar* pName )
 // virtual
 SgNode* SgNodeWinGL::GetDuplicate()
 {
+	BtU32 instanceSize = GetInstanceSize(BtNull);
+
 	// Allocate the memory
-	BtU8* pMemory = BtMemory::Allocate( m_pFileData->m_nInstanceSize + m_pFileData->m_nFileDataSize );
+	BtU8* pMemory = BtMemory::Allocate( instanceSize + m_pFileData->m_nFileDataSize );
 
 	// Create an instance of the new node
 	SgNodeWinGL* pSgNode = new (pMemory) SgNodeWinGL;
 
 	// Find the new file data
-	BtU8* pNewFileData = pMemory + m_pFileData->m_nInstanceSize;
+	BtU8* pNewFileData = pMemory + instanceSize;
 
 	// Set the file data
 	pSgNode->m_pFileData = (BaSgNodeFileData*)pNewFileData;
