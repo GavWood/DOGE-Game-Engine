@@ -526,7 +526,6 @@ void ExSgNode::CopyAttributes()
 	}
 
 	// Copy the run time sizes
-	m_fileData.m_nInstanceSize = nInstanceSize;
 	m_fileData.m_nFileDataSize = nFileDataSize;
 
 	// Copy the transforms
