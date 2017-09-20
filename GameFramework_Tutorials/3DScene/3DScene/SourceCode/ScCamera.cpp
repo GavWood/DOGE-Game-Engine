@@ -95,7 +95,28 @@ void SbCamera::SetSpeed( BtFloat speed )
 
 void SbCamera::Update()
 {
-    if( ApConfig::IsWin() && !ShHMD::IsHMD() )
+    if( ApConfig::IsPhone() )
+    {
+        if (ShTouch::IsHeld(1))
+        {
+            BtBool onScreen = ShTouch::OnScreen(1);
+            if( onScreen )
+            {
+                for (BtU32 i = 0; i < MaxTouches; i += 2)
+                {
+                    // Rotate the camera
+                    MtVector2 v2MouseDirection = ShTouch::GetMovement(i);
+                    BtFloat speed = BtTime::GetTick() * 0.1f;
+                    MtMatrix3 m3Rotate;
+                    m3Rotate.SetRotationY(v2MouseDirection.x * -speed);
+                    m_cameraData.m_m3Rotation = m3Rotate * m_cameraData.m_m3Rotation;
+                    m3Rotate.SetRotationX(v2MouseDirection.y * speed);
+                    m_cameraData.m_m3Rotation = m_cameraData.m_m3Rotation * m3Rotate;
+                }
+            }
+        }
+    }
+    if( ApConfig::IsDesktop() )
     {
         static BtBool isLoaded = BtFalse;
         if( isLoaded == BtFalse )
@@ -112,121 +133,96 @@ void SbCamera::Update()
             }
             isLoaded = BtTrue;
         }
-    }
-    
-	if(UiKeyboard::pInstance()->IsPressed(UiKeyCode_F3))
-	{
-		m_isFlyCam = !m_isFlyCam;
-	}
-
-
-	for (BtU32 i = 1; i < MaxTouches; i += 2)
-	{
-		if (ShTouch::IsHeld(i) || m_isFlyCam)
-		{
-			BtFloat speed = BtTime::GetTick() * m_speed;
-
-			if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LSHIFT))
-			{
-				speed = speed * 10.0f;
-			}
-			if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_W))
-			{
-				MoveForward(speed);
-			}
-			if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_S))
-			{
-				MoveBackward(speed);
-			}
-			if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_D))
-			{
-				MoveRight(speed);
-			}
-			if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_A))
-			{
-				MoveLeft(speed);
-			}
-		}
-	}
-
-
-	if (ShTouch::IsHeld(1))
-	{
-		BtBool onScreen = ShTouch::OnScreen(1);
-		if( onScreen )
-		{
-			for (BtU32 i = 0; i < MaxTouches; i += 2)
-			{
-				// Rotate the camera
-				MtVector2 v2MouseDirection = ShTouch::GetMovement(i);
-				BtFloat speed = BtTime::GetTick() * 0.1f;
-				MtMatrix3 m3Rotate;
-				m3Rotate.SetRotationY(v2MouseDirection.x * -speed);
-				m_cameraData.m_m3Rotation = m3Rotate * m_cameraData.m_m3Rotation;
-				m3Rotate.SetRotationX(v2MouseDirection.y * speed);
-				m_cameraData.m_m3Rotation = m_cameraData.m_m3Rotation * m3Rotate;
-			}
-		}
-	}
-
-	static BtBool isCursorKeys = BtFalse;
-    static MtMatrix3 m3StartingRotation;
-
-	// Rotate the camera
-	BtFloat speed = BtTime::GetTick();
-
-    BtBool oldCursorKeysState = isCursorKeys;
-    
-	if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LSHIFT))
-	{
-		if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LEFT))
-		{
-			isCursorKeys = BtTrue;
-			m_cameraData.m_yaw += speed;
-		}
-		if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_RIGHT))
-		{
-			isCursorKeys = BtTrue;
-			m_cameraData.m_yaw -= speed;
-		}
-		if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_UP))
-		{
-			isCursorKeys = BtTrue;
-			m_cameraData.m_pitch -= speed;
-		}
-		if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_DOWN))
-		{
-			isCursorKeys = BtTrue;
-			m_cameraData.m_pitch += speed;
-		}
-	}
-
-	if (isCursorKeys)
-	{
-		MtMatrix3 m3RotateY;
-		m3RotateY.SetRotationX(m_cameraData.m_pitch);
-		MtMatrix3 m3RotateX;
-		m3RotateX.SetRotationY(m_cameraData.m_yaw);
-        
-        if( oldCursorKeysState != isCursorKeys )
+        if(UiKeyboard::pInstance()->IsPressed(UiKeyCode_F3))
         {
-            m3StartingRotation = m_cameraData.m_m3Rotation;
+            m_isFlyCam = !m_isFlyCam;
         }
-        m_cameraData.m_m3Rotation = m3StartingRotation * m3RotateX * m3RotateY;
-	}
+        for (BtU32 i = 1; i < MaxTouches; i += 2)
+        {
+            if (ShTouch::IsHeld(i) || m_isFlyCam)
+            {
+                BtFloat speed = BtTime::GetTick() * m_speed;
+                
+                if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LSHIFT))
+                {
+                    speed = speed * 10.0f;
+                }
+                if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_W))
+                {
+                    MoveForward(speed);
+                }
+                if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_S))
+                {
+                    MoveBackward(speed);
+                }
+                if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_D))
+                {
+                    MoveRight(speed);
+                }
+                if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_A))
+                {
+                    MoveLeft(speed);
+                }
+            }
+        }
 
-	if( UiKeyboard::pInstance()->IsPressed(SaveCameraKey) )
-	{
-		FsFile file;
-		BtChar filename[64];
-		sprintf( filename, "%s%s", ApConfig::GetResourcePath(), "camera.txt" );
-		file.Open( filename, FsMode_Write );
-		if( file.IsOpen() )
-		{
-			file.Write( m_cameraData );
-			file.Close();
-		}
-	}
+        static BtBool isCursorKeys = BtFalse;
+        static MtMatrix3 m3StartingRotation;
+
+        // Rotate the camera
+        BtFloat speed = BtTime::GetTick();
+
+        BtBool oldCursorKeysState = isCursorKeys;
+        
+        if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LSHIFT))
+        {
+            if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LEFT))
+            {
+                isCursorKeys = BtTrue;
+                m_cameraData.m_yaw += speed;
+            }
+            if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_RIGHT))
+            {
+                isCursorKeys = BtTrue;
+                m_cameraData.m_yaw -= speed;
+            }
+            if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_UP))
+            {
+                isCursorKeys = BtTrue;
+                m_cameraData.m_pitch -= speed;
+            }
+            if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_DOWN))
+            {
+                isCursorKeys = BtTrue;
+                m_cameraData.m_pitch += speed;
+            }
+        }
+        if (isCursorKeys)
+        {
+            MtMatrix3 m3RotateY;
+            m3RotateY.SetRotationX(m_cameraData.m_pitch);
+            MtMatrix3 m3RotateX;
+            m3RotateX.SetRotationY(m_cameraData.m_yaw);
+            
+            if( oldCursorKeysState != isCursorKeys )
+            {
+                m3StartingRotation = m_cameraData.m_m3Rotation;
+            }
+            m_cameraData.m_m3Rotation = m3StartingRotation * m3RotateX * m3RotateY;
+        }
+        if( UiKeyboard::pInstance()->IsPressed(SaveCameraKey) )
+        {
+            FsFile file;
+            BtChar filename[64];
+            sprintf( filename, "%s%s", ApConfig::GetResourcePath(), "camera.txt" );
+            file.Open( filename, FsMode_Write );
+            if( file.IsOpen() )
+            {
+                file.Write( m_cameraData );
+                file.Close();
+            }
+        }
+    }
 }
 
 void SbCamera::Render()

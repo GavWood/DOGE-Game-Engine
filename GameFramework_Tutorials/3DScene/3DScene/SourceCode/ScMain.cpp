@@ -41,7 +41,10 @@ void ScMain::Init()
 	//ApConfig::SetDebug( BtTrue );
 	ApConfig::SetDebug( BtFalse );
 	RdRandom::SetRandomSeed();
-
+    
+    BtBool isSimulator = ApConfig::IsSimulator();
+    (void)isSimulator;
+    
 	// Load the game archive
 #ifdef WIN32
     ApConfig::SetResourcePath( "..\\3DScene\\release\\" );
