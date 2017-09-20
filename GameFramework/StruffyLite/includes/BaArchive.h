@@ -46,7 +46,7 @@ struct BaArchiveHeader
 {
 	BtChar						m_szTitle[LMaxArchiveName];
 	BtU32						m_nNumResources;
-	BtU32						m_nDataAndInstanceSize;
+	BtU32						m_nDataSize;
 };
 
 struct BaResourceHeader

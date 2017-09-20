@@ -178,6 +178,8 @@ void ExMaterial::Export()
 
 				// Construct the texture filename
 				sprintf( filename, "%s%c%s", pPath(), FS, foundString );
+                
+                //printf( "%s", filename );
 
 				// Set the texture filename
 				pTexture->GetFilename( filename );

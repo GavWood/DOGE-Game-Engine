@@ -1,5 +1,5 @@
 Platform=2
-CurrentProject=1
+CurrentProject=4
 \github\tutorials\CardBasedGames\CardTestBed\Tutorial1         
 \github\tutorials\GameFramework_Tutorials\3DScene\3DScene\                         
 /Users/localadmin/Documents/Game-Framework/CardBasedGames/TurnTakingPlay/TurnTakingPlay/

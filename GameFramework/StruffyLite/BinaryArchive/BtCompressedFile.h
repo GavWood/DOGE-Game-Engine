@@ -13,7 +13,7 @@
 const BtU32 StreamingSize = 1024 * 128;
 
 // Class definition
-class LBtCompressedFile
+class BtCompressedFile
 {
 public:
 
