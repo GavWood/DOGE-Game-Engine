@@ -38,6 +38,7 @@
 #include "FCDTexture.h"
 #include "ExStandardShader.h"
 #include "UtFilename.h"
+#include "FsFile.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // ExStandardShader
@@ -57,6 +58,10 @@ ExStandardShader::ExStandardShader( BtChar* pPath,
 
 void ExStandardShader::Export( const FCDEffectProfile* pEffectProfile )
 {
+    BtChar FSString[32];
+    BtChar FS = FsFile::GetFileSeparator();
+    sprintf( FSString, "%c", FS );
+    
 	const FCDEffectStandard* pStandardProfile = (FCDEffectStandard*) pEffectProfile;
 
 	BtFloat opacity = pStandardProfile->GetOpacity();
@@ -194,7 +199,7 @@ void ExStandardShader::Export( const FCDEffectProfile* pEffectProfile )
 
 					BtChar newTextureFilename[MaxFilePath];
 					BtStrCopy( newTextureFilename, MaxFilePath, m_pPath );
-					BtStrCat( newTextureFilename, MaxFilePath, "\\" );
+					BtStrCat( newTextureFilename, MaxFilePath, FSString );
 					BtStrCat( newTextureFilename,  MaxFilePath, originalTextureFilename.GetTitle() );
 					BtStrCat( newTextureFilename, MaxFilePath, "." );
 					BtStrCat( newTextureFilename,  MaxFilePath, originalTextureFilename.GetExtension() );
@@ -260,7 +265,7 @@ void ExStandardShader::Export( const FCDEffectProfile* pEffectProfile )
 					const BtChar* pName = strrchr( TextureFilename, '\\' ) + 1;
 
 					BtChar SpecularFilename[MaxFilePath];
-					sprintf( SpecularFilename, "%s\\%s", m_pPath, pName );
+					sprintf( SpecularFilename, "%s%c%s", m_pPath, FS, pName );
 
 					pSpecularTexture = m_pTextureList->pFind( SpecularFilename );
 

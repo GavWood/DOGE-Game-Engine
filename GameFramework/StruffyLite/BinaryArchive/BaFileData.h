@@ -293,7 +293,6 @@ struct BaMaterialFileData
 	BtChar							m_name[64];
 	BtChar							m_techniqueName[64];
 
-	BtU32							m_nInstanceSize;
 	BtU32							m_nFileDataSize;
 
 	RsColour						m_diffuseColour;

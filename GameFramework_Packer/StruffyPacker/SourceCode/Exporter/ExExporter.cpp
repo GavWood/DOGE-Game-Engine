@@ -20,10 +20,7 @@
 #include "ErrorLog.h"
 #include "BaUserData.h"
 #include "PaTopState.h"
-
-#ifdef WIN32
 #include "ExScene.h"
-#endif
 
 ////////////////////////////////////////////////////////////////////////////////
 // Declarations
@@ -316,9 +313,7 @@ void ExExporter::compileResource( PaAsset* pAsset )
 		case BaRT_Scene:
 			{
 				ErrorLog::Printf( "Exporting scene" );
-#ifdef WIN32
 				pResource = new ExScene;
-#endif
 			}
 			break;
 

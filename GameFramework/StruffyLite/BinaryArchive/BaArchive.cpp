@@ -77,7 +77,11 @@ void BaArchive::LoadFile( const BtChar* archiveName )
 		fread((void*)&archiveHeader, 1, sizeof(archiveHeader), f);
 
 		// Make the memory
-		m_pArchiveMemory = (BtU8*)BtMemory::Allocate(archiveHeader.m_nDataAndInstanceSize);
+		m_pArchiveMemory = (BtU8*)BtMemory::Allocate(archiveHeader.m_nDataSize);
+
+		BtU32 kBytes = archiveHeader.m_nDataSize / 1024;
+		BtU32 mBytes = kBytes / 1024;
+		(void)mBytes;
 
 		if (m_pArchiveMemory == BtNull)
 		{
@@ -86,11 +90,7 @@ void BaArchive::LoadFile( const BtChar* archiveName )
 
 		// Load the compressed file
 		LBtCompressedFile compressedFile;
-		compressedFile.Read(f, m_pArchiveMemory, archiveHeader.m_nDataAndInstanceSize);
-
-		BtU32 kBytes = archiveHeader.m_nDataAndInstanceSize / 1024;
-		BtU32 mBytes = kBytes / 1024;
-		(void)mBytes;
+		compressedFile.Read(f, m_pArchiveMemory, archiveHeader.m_nDataSize);
 
 		fclose(f);
 		m_isLoaded = BtTrue;

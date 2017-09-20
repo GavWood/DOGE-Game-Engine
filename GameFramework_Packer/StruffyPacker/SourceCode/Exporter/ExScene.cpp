@@ -2011,9 +2011,11 @@ void ExScene::SetCollisionMeshes()
 		// Cache each scene node
 		ExSgNode* pSceneNode = m_pSgNodes[nSceneNode];
 
+        BtChar FS = FsFile::GetFileSeparator();
+        
 		// Set the rigid body filename
 		BtChar collisionMeshFilename[MaxFilePath];
-		sprintf( collisionMeshFilename, "%s\\%s.cm", pPath(), pSceneNode->pName() );
+		sprintf( collisionMeshFilename, "%s%c%s.cm", pPath(), FS, pSceneNode->pName() );
 
 		// If the rigid body file exists then set the flag
 		if( pArchive()->GetFile( collisionMeshFilename ) != BtNull )

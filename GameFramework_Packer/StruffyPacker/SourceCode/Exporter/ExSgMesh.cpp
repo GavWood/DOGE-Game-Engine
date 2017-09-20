@@ -276,8 +276,6 @@ void ExSgMesh::MoveToVertexBuffers()
 				// Add each primitive
 				RsIndexedPrimitive primitive;
 
-				primitive.m_primitiveType = PaExportSizes::GetTriangleType(renderBlock.m_primitiveType);
-
 				BtU32 numprimitives = nIndices;
 
 				if( renderBlock.m_primitiveType == ExPT_STRIP )
@@ -292,7 +290,8 @@ void ExSgMesh::MoveToVertexBuffers()
 				{
 					numprimitives /= 3;
 				}
-
+                
+                primitive.m_primitiveType = PaExportSizes::GetTriangleType(renderBlock.m_primitiveType);
 				primitive.m_baseVertexIndex = nBaseVertex;
 				primitive.m_startIndex  = nBaseIndex;
 				primitive.m_minIndex    = 0;
