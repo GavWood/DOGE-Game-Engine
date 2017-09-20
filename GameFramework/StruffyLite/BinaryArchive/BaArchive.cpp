@@ -83,13 +83,15 @@ void BaArchive::LoadFile( const BtChar* archiveName )
 		BtU32 mBytes = kBytes / 1024;
 		(void)mBytes;
 
+		ErrorLog::Printf("Uncompressing %s from %d\n", filename, archiveHeader.m_nDataSize);
+
 		if (m_pArchiveMemory == BtNull)
 		{
 			ErrorLog::Fatal_Printf("Can't allocate memory for archive.");
 		}
 
 		// Load the compressed file
-		LBtCompressedFile compressedFile;
+		BtCompressedFile compressedFile;
 		compressedFile.Read(f, m_pArchiveMemory, archiveHeader.m_nDataSize);
 
 		fclose(f);

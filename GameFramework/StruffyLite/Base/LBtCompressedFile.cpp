@@ -5,14 +5,13 @@
 #include "BtCompressedFile.h"
 #include "BtBase.h"
 #include "BtPrint.h"
+#include "ErrorLog.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Read
 
-void LBtCompressedFile::Read( FILE *f, BtU8* pMemory, BtU32 targetSize )
+void BtCompressedFile::Read( FILE *f, BtU8* pMemory, BtU32 targetSize )
 {
-	BtU32 nPosition = 0;
-
 	// Open the file
 	m_file = f;
 
@@ -24,59 +23,55 @@ void LBtCompressedFile::Read( FILE *f, BtU8* pMemory, BtU32 targetSize )
 	m_strm.next_in  = Z_NULL;
 	BtS32 ret = inflateInit( &m_strm );
 
+	BtU8 *pOut = pMemory;
+
 	if( ret != Z_OK )
 	{
 		BtPrint( "inflateInit %d.\n", ret );
 	}
 
-	BtS32 nRetCode = Z_OK;
-
-	// Read in the data
-	do 
+	/* decompress until deflate stream ends or end of file */
+	do
 	{
-		BtU32 nBytesRead = (BtU32)fread( m_buffer, 1, StreamingSize, m_file );
+		BtU32 nBytesRead = (BtU32)fread(m_buffer, 1, StreamingSize, m_file);
 
 		m_strm.avail_in = nBytesRead;
 
-		if(	m_strm.avail_in == 0 )
-		{
+		if (m_strm.avail_in == 0)
 			break;
-		};
-
 		m_strm.next_in = m_buffer;
 
-		// run inflate() on input until output buffer not full
-		do
-		{
-			// Validate that we've not passed the end of the buffer
-			BtAssert( nPosition < targetSize );
+		/* run inflate() on input until output buffer not full */
+		do {
 
-			// Calculate the address
-			BtU8* pAddress = pMemory + nPosition;
+			m_strm.avail_out = StreamingSize;
+			m_strm.next_out = pOut;
+			ret = inflate(&m_strm, Z_NO_FLUSH);
+			assert(ret != Z_STREAM_ERROR);  /* state not clobbered */
+			switch (ret) {
+			case Z_NEED_DICT:
+				ret = Z_DATA_ERROR;     /* and fall through */
+			case Z_DATA_ERROR:
+			case Z_MEM_ERROR:
+				
+				ErrorLog::Fatal_Printf("inflate %d.\n", ret);
 
-			BtU32 chunkSize = targetSize - nPosition;
-
-			if( chunkSize > StreamingSize )
-			{
-				chunkSize = StreamingSize;
+				(void)inflateEnd(&m_strm);
+				int a = 0;
+				a++;
+				return;
 			}
+			BtU32 have = StreamingSize - m_strm.avail_out;
+			
+			pOut += have;
 
-			m_strm.avail_out = chunkSize;
-			m_strm.next_out  = (Bytef*) pAddress;
-			nRetCode = inflate( &m_strm, Z_NO_FLUSH );
+		} while (m_strm.avail_out == 0);
 
-			// Get how much we are adding
-			BtS32 nAmountedInflated = chunkSize - m_strm.avail_out;
+		/* done when inflate() says it's done */
+	} while (ret != Z_STREAM_END);
 
-			// Increment the position
- 			nPosition += (BtU32) nAmountedInflated;
-
-		} while( m_strm.avail_out == 0 );
-	
-	} while( nRetCode != Z_STREAM_END );
-
-	// zlib. End inflating
-	(void)inflateEnd( &m_strm );
+	/* clean up and return */
+	(void)inflateEnd(&m_strm);
 
 	fclose( m_file );
 }
