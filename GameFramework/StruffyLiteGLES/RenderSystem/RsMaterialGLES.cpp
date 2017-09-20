@@ -29,31 +29,31 @@ RsMaterialWinGL::RsMaterialWinGL()
 //virtual
 RsMaterial* RsMaterialWinGL::GetDuplicate() const
 {
-	// Allocate the memory
-	BtU8* pMemory = BtMemory::Allocate( m_pFileData->m_nInstanceSize + m_pFileData->m_nFileDataSize );
-
-	// Create the class
-	RsMaterialWinGL* pMaterial = new( pMemory ) RsMaterialWinGL;
-
-	// Advance pass the instance size
-	pMemory += m_pFileData->m_nInstanceSize;
-
-	// Copy the memory
-	BtMemory::Copy( pMemory, m_pFileData, sizeof( BaMaterialFileData ) );
-
-	// Flag as a duplicate
-	pMaterial->m_isDuplicate = BtTrue;
-
-	// Add the duplicate
-	m_pArchive->AddDuplicate( pMaterial );
-
-	// Set the file data
-	pMaterial->m_pFileData = (BaMaterialFileData*) pMemory;
-
-	pMaterial->SetTitle( GetTitle() );
-
-	// Return the memory
-	return pMaterial;
+    // Allocate the memory
+    BtU8* pMemory = BtMemory::Allocate( sizeof(RsMaterialWinGL) + m_pFileData->m_nFileDataSize );
+    
+    // Create the class
+    RsMaterialWinGL* pMaterial = new( pMemory ) RsMaterialWinGL;
+    
+    // Advance pass the instance size
+    pMemory += sizeof(RsMaterialWinGL);
+    
+    // Copy the memory
+    BtMemory::Copy( pMemory, m_pFileData, sizeof( BaMaterialFileData ) );
+    
+    // Flag as a duplicate
+    pMaterial->m_isDuplicate = BtTrue;
+    
+    // Add the duplicate
+    m_pArchive->AddDuplicate( pMaterial );
+    
+    // Set the file data
+    pMaterial->m_pFileData = (BaMaterialFileData*) pMemory;
+    
+    pMaterial->SetTitle( GetTitle() );
+    
+    // Return the memory
+    return pMaterial;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

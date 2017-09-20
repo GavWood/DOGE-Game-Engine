@@ -170,10 +170,13 @@ void SbCamera::Update()
 	}
 
 	static BtBool isCursorKeys = BtFalse;
+    static MtMatrix3 m3StartingRotation;
 
 	// Rotate the camera
 	BtFloat speed = BtTime::GetTick();
 
+    BtBool oldCursorKeysState = isCursorKeys;
+    
 	if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LSHIFT))
 	{
 		if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LEFT))
@@ -204,7 +207,12 @@ void SbCamera::Update()
 		m3RotateY.SetRotationX(m_cameraData.m_pitch);
 		MtMatrix3 m3RotateX;
 		m3RotateX.SetRotationY(m_cameraData.m_yaw);
-		m_cameraData.m_m3Rotation = m3RotateX * m3RotateY;
+        
+        if( oldCursorKeysState != isCursorKeys )
+        {
+            m3StartingRotation = m_cameraData.m_m3Rotation;
+        }
+        m_cameraData.m_m3Rotation = m3StartingRotation * m3RotateX * m3RotateY;
 	}
 
 	if( UiKeyboard::pInstance()->IsPressed(SaveCameraKey) )
@@ -223,7 +231,15 @@ void SbCamera::Update()
 
 void SbCamera::Render()
 {
-	if( !ApConfig::IsWin() && ShHMD::IsHMD() )
+    if( ApConfig::IsOSX() )
+    {
+        // Set the rotation
+        m_camera.SetRotation(m_cameraData.m_m3Rotation);
+        
+        // Set the position
+        m_camera.SetPosition(m_cameraData.m_v3Position);
+    }
+    else if( !ApConfig::IsWin() && ShHMD::IsHMD() )
 	{
 		// Support a landscape quaternion
 		MtMatrix3 m_m3Rotation;

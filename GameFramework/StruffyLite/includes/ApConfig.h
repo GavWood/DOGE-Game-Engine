@@ -46,6 +46,7 @@ public:
 	static BtBool				IsWin();
 	static BtBool				IsPhone();
 	static BtBool				IsAppleTV();
+    static BtBool               IsOSX();
 
 	static void					SetTitle(const BtChar* title);
 	static const BtChar		   *GetTitle();

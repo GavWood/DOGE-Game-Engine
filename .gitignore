@@ -80,3 +80,8 @@ CardBasedGames/CardTestBed/Tutorial1App/Tutorial1App.xcodeproj/project.xcworkspa
 *.OSX
 GameFramework_Tutorials/3DScene/3DScene/BuildFiles/AssetBuildList.OSX
 GameFramework_Tutorials/3DScene/3DScene/BuildFiles/game.OSX
+GameFramework_Tutorials/3DScene/3DScene/Release/utility.OSXz
+GameFramework_Tutorials/3DScene/3DScene/BuildFiles/AssetBuildList.OSX
+GameFramework_Tutorials/3DScene/3DScene/BuildFiles/game.OSX
+GameFramework_Tutorials/3DScene/3DScene/BuildFiles/hmd.OSX
+GameFramework_Tutorials/3DScene/3DScene/BuildFiles/ResourceList.OSX
