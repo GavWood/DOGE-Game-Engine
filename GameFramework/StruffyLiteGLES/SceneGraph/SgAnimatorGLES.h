@@ -50,7 +50,6 @@ private:
 	BaSgAnimationTransformFileData*	m_pTransforms;
 	BaSgAnimationTimeFileData*		m_pTimes;
 	BtFloat							m_time;
-	BtBool							m_bSetup;
 	BtBool							m_bEnded;
 	BtBool							m_bPaused;
 	BtBool							m_isDuplicate;
