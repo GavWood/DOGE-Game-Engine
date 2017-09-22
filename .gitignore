@@ -76,3 +76,9 @@ CardBasedGames/CardTestBed/Tutorial1App/Tutorial1App.xcodeproj/project.xcworkspa
 *.xcuserstate
 CardBasedGames/CardTestBed/Tutorial1App/Tutorial1App.xcodeproj/project.xcworkspace/xcuserdata/localadmin.xcuserdatad/UserInterfaceState.xcuserstate
 *.xcuserstate
+Release
+Release
+/CardBasedGames/TurnTakingPlay/TurnTakingPlay/Release
+/CardBasedGames/SynchronisedPlay/SynchronisedPlay/Release/*.WinGLz
+/CardBasedGames/SynchronisedPlay/SynchronisedPlay/Release/*.iPhonez
+/CardBasedGames/CardTestBed/Tutorial1/Release
