@@ -45,6 +45,9 @@ void ScMain::Init()
     BtBool isSimulator = ApConfig::IsSimulator();
     (void)isSimulator;
     
+    ApConfig::SetAR( BtTrue );
+    // ApConfig::SetAR( BtFalse );
+    
 	// Load the game archive
 #ifdef WIN32
     ApConfig::SetResourcePath( "..\\3DScene\\release\\" );
@@ -364,7 +367,11 @@ void ScMain::Render2DScene()
 
 void ScMain::Render3DScene()
 {
-	m_skybox.Render();
+    if( !ApConfig::IsAR() )
+    {
+        m_skybox.Render();
+    }
+    
 	m_bubbles.Render();
 	m_model.Render();
 

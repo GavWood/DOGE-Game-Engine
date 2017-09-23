@@ -23,6 +23,7 @@ BtBool ApConfig::m_isCheatMode = BtFalse;
 BtBool ApConfig::m_isSimulator = BtFalse;
 BtBool ApConfig::m_isDebugBuild = BtFalse;
 BtBool ApConfig::m_isPaused = BtFalse;
+BtBool ApConfig::m_isAR = BtFalse;
 BtBool ApConfig::m_isInitialised = BtFalse;
 BtU32 ApConfig::m_instances = 0;
 
@@ -158,6 +159,22 @@ BtBool ApConfig::IsDebug()
 void ApConfig::SetDebug( BtBool isDebug )
 {
     m_isDebug = isDebug;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// IsAR
+
+BtBool ApConfig::IsAR()
+{
+    return m_isAR;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// SetAR
+
+void ApConfig::SetAR(BtBool isAR)
+{
+    m_isAR = isAR;
 }
 
 ////////////////////////////////////////////////////////////////////////////////

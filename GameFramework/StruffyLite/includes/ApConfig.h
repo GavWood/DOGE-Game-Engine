@@ -63,6 +63,9 @@ public:
 	static BtBool               IsDebugBuild();
 	static void                 SetDebugBuild(BtBool isDebug);
 
+    static BtBool               IsAR();
+    static void                 SetAR(BtBool isAR);
+
 	static BtBool               IsPaused();
 	static void                 SetPaused(BtBool isPaused);
 
@@ -87,6 +90,7 @@ private:
     static ApDevice             m_device;
     static BtBool               m_isDebug;
     static BtBool               m_isCheatMode;
+    static BtBool               m_isAR;
     static BtBool               m_isSimulator;
 	static BtBool				m_isDebugBuild;
 	static BtBool				m_isPaused;

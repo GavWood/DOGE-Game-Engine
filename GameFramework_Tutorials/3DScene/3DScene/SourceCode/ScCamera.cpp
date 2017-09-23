@@ -227,7 +227,7 @@ void SbCamera::Update()
 
 void SbCamera::Render()
 {
-    if( ApConfig::IsOSX() )
+    if( ApConfig::IsDesktop() )
     {
         // Set the rotation
         m_camera.SetRotation(m_cameraData.m_m3Rotation);
@@ -235,66 +235,69 @@ void SbCamera::Render()
         // Set the position
         m_camera.SetPosition(m_cameraData.m_v3Position);
     }
-    else if( !ApConfig::IsWin() && ShHMD::IsHMD() )
+    else // IsPhone()
 	{
-		// Support a landscape quaternion
-		MtMatrix3 m_m3Rotation;
-		MtQuaternion quaternion = ShIMU::GetQuaternion(0);
-		quaternion.x = quaternion.x;
-		quaternion.y = quaternion.y;
-		quaternion.z = -quaternion.z;
+        if( ApConfig::IsAR()  )
+        {
+            // Support a landscape quaternion
+            MtMatrix3 m_m3Rotation;
+            MtQuaternion quaternion = ShIMU::GetQuaternion(0);
+            quaternion.x = quaternion.x;
+            quaternion.y = quaternion.y;
+            quaternion.z = -quaternion.z;
 
-		m_m3Rotation = MtMatrix3(quaternion);
-		//m_m3Rotation = m_m3Rotation.GetInverse();
+            m_m3Rotation = MtMatrix3(quaternion);
+            //m_m3Rotation = m_m3Rotation.GetInverse();
 
-		MtMatrix3 m3RotateY;
-		m3RotateY.SetRotationY(MtDegreesToRadians(90.0f));
+            MtMatrix3 m3RotateY;
+            m3RotateY.SetRotationY(MtDegreesToRadians(90.0f));
 
-		MtMatrix3 m3RotateZ;
-		m3RotateZ.SetRotationZ(MtDegreesToRadians(-90.0f));
+            MtMatrix3 m3RotateZ;
+            m3RotateZ.SetRotationZ(MtDegreesToRadians(-90.0f));
 
-		m_m3Rotation = m3RotateY * m_m3Rotation;
-		m_m3Rotation = m3RotateZ * m_m3Rotation;
-		m_m3Rotation = m_m3Rotation * m3RotateZ;
+            m_m3Rotation = m3RotateY * m_m3Rotation;
+            m_m3Rotation = m3RotateZ * m_m3Rotation;
+            m_m3Rotation = m_m3Rotation * m3RotateZ;
 
-		m_camera.SetRotation(m_m3Rotation);
+            m_camera.SetRotation(m_m3Rotation);
 
-		// Set the position
-		m_camera.SetPosition(m_cameraData.m_v3Position);
-	}
-	else if (ShHMD::IsHMD())
-	{
-		MtMatrix4 m4Projection = ShHMD::GetProjectionMatrix();
-		m_camera.SetProjection(m4Projection);
+            // Set the position
+            m_camera.SetPosition(m_cameraData.m_v3Position);
+        }
+        else if( ShHMD::IsHMD() )
+        {
+            MtMatrix4 m4Projection = ShHMD::GetProjectionMatrix();
+            m_camera.SetProjection(m4Projection);
 
-		MtMatrix3 m3RotateY;
-		m3RotateY.SetRotationX(m_cameraData.m_pitch);
-		MtMatrix3 m3RotateX;
-		m3RotateX.SetRotationY(m_cameraData.m_yaw);
-		m_cameraData.m_m3Rotation = m3RotateX * m3RotateY;
+            MtMatrix3 m3RotateY;
+            m3RotateY.SetRotationX(m_cameraData.m_pitch);
+            MtMatrix3 m3RotateX;
+            m3RotateX.SetRotationY(m_cameraData.m_yaw);
+            m_cameraData.m_m3Rotation = m3RotateX * m3RotateY;
 
-		// Cache the ShHMD rotation
-		MtQuaternion quaternion = ShHMD::GetQuaternion();
+            // Cache the ShHMD rotation
+            MtQuaternion quaternion = ShHMD::GetQuaternion();
 
-		// Set the IMU rotation
-		MtMatrix4 m4FinalRotation = MtMatrix3(quaternion);
+            // Set the IMU rotation
+            MtMatrix4 m4FinalRotation = MtMatrix3(quaternion);
 
-		// Set the rotation
-		m_camera.SetRotation(m4FinalRotation);
+            // Set the rotation
+            m_camera.SetRotation(m4FinalRotation);
 
-		MtVector3 v3HMDPosition = ShHMD::GetPosition();
+            MtVector3 v3HMDPosition = ShHMD::GetPosition();
 
-		// Set the position
-		m_camera.SetPosition(m_cameraData.m_v3Position + v3HMDPosition );
-	}
-	else
-	{
-		// Set the rotation
-		m_camera.SetRotation(m_cameraData.m_m3Rotation);
-
-		// Set the position
-		m_camera.SetPosition(m_cameraData.m_v3Position);
-	}
+            // Set the position
+            m_camera.SetPosition(m_cameraData.m_v3Position + v3HMDPosition );
+        }
+        else
+        {
+            // Set the rotation
+            m_camera.SetRotation(m_cameraData.m_m3Rotation);
+            
+            // Set the position
+            m_camera.SetPosition(m_cameraData.m_v3Position);
+        }
+    }
 
 	// Update the camera
 	m_camera.Update();
