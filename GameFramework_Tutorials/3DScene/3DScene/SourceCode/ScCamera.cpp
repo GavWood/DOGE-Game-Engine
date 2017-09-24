@@ -116,14 +116,14 @@ void SbCamera::Update()
             }
         }
     }
-    if( ApConfig::IsDesktop() )
+    else if( ApConfig::IsDesktop() )
     {
         static BtBool isLoaded = BtFalse;
         if( isLoaded == BtFalse )
         {
             // If we have a previously saved version of the camera then load
             FsFile file;
-            BtChar filename[64];
+            BtChar filename[256];
             sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "camera.txt");
             file.Open( filename, FsMode_Read );
             if(file.IsOpen())
@@ -213,7 +213,7 @@ void SbCamera::Update()
         if( UiKeyboard::pInstance()->IsPressed(SaveCameraKey) )
         {
             FsFile file;
-            BtChar filename[64];
+            BtChar filename[256];
             sprintf( filename, "%s%s", ApConfig::GetResourcePath(), "camera.txt" );
             file.Open( filename, FsMode_Write );
             if( file.IsOpen() )
@@ -242,27 +242,15 @@ void SbCamera::Render()
             // Support a landscape quaternion
             MtMatrix3 m_m3Rotation;
             MtQuaternion quaternion = ShIMU::GetQuaternion(0);
-            quaternion.x = quaternion.x;
-            quaternion.y = quaternion.y;
+            quaternion.x =  quaternion.x;
+            quaternion.y =  quaternion.y;
             quaternion.z = -quaternion.z;
-
             m_m3Rotation = MtMatrix3(quaternion);
-            //m_m3Rotation = m_m3Rotation.GetInverse();
-
-            MtMatrix3 m3RotateY;
-            m3RotateY.SetRotationY(MtDegreesToRadians(90.0f));
-
-            MtMatrix3 m3RotateZ;
-            m3RotateZ.SetRotationZ(MtDegreesToRadians(-90.0f));
-
-            m_m3Rotation = m3RotateY * m_m3Rotation;
-            m_m3Rotation = m3RotateZ * m_m3Rotation;
-            m_m3Rotation = m_m3Rotation * m3RotateZ;
-
             m_camera.SetRotation(m_m3Rotation);
 
             // Set the position
-            m_camera.SetPosition(m_cameraData.m_v3Position);
+            MtVector3 v3Position = ShIMU::GetPosition(0); // m_cameraData.m_v3Position
+            m_camera.SetPosition( m_cameraData.m_v3Position + v3Position );
         }
         else if( ShHMD::IsHMD() )
         {

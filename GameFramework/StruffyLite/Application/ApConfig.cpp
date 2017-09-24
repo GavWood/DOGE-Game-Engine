@@ -356,7 +356,7 @@ BtBool ApConfig::IsPhone()
 
 BtBool ApConfig::IsOSX()
 {
-    if( m_device == ApDevice_WIN )
+    if( m_device == ApDevice_OSX )
     {
         return BtTrue;
     }
