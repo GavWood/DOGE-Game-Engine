@@ -1,6 +1,8 @@
 *.xcbkptlist
 *.iOS
 *.iOSz
+*.OSX
+*.OSXz
 *.WinGL
 *.WinGLz
 *.tmp
