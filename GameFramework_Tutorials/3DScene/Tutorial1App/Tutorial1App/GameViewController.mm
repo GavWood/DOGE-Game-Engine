@@ -365,6 +365,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 {
     BtTime::SetTick( 1.0f / 30.0f );
     
+    // Set the apps configuration
     NSString *resourceDirectory = [[NSBundle mainBundle] resourcePath];
     resourceDirectory = [resourceDirectory stringByAppendingString:@"/"];
     const BtChar *resources = [resourceDirectory cStringUsingEncoding:NSASCIIStringEncoding];
@@ -394,6 +395,8 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     // Get the resolution
     [self resolution];
     
+    [self setupSensorFusion];
+    
     // Create the renderer implementation
     RsImpl::pInstance()->Create();
     
@@ -418,20 +421,43 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     // Setup the taps
     //[self setupTap];
     
-    // Setup the sensor fusion
-    [self setupSensorFusion];
-    
     // Allow for recording and playback of sound
     [self setupAudioAsMixed];
     
     // Capture the phones main camera
-    // GLKView *view = (GLKView *)self.view;
-    // [self captureBackCamera : view ];
+    if( ApConfig::IsAR() )
+    {
+        GLKView *view = (GLKView *)self.view;
+        [self captureBackCamera : view ];
+    }
+}
+
+// https://itw01.com/UZE4DV5.html
+- (void)setupAR
+{
+    if (@available(iOS 11.0, *))
+    {
+        self.arSession = [ARSession new];
+        self.arSession.delegate = self;
+    }
+}
+
+- (void)runAR
+{
+    if (@available(iOS 11.0, *))
+    {
+        ARWorldTrackingConfiguration *config = [ARWorldTrackingConfiguration new];
+        config.planeDetection = ARPlaneDetectionHorizontal;
+        [self.arSession runWithConfiguration:config];
+    }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self setupAR];
+    //[self runAR];
     
     [self setupAudioAsMixed];
     
@@ -453,6 +479,16 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     self.preferredFramesPerSecond = 60;
     
     [self gameSetup];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    // Create a session configuration
+    ARWorldTrackingConfiguration *configuration = [ARWorldTrackingConfiguration new];
+    
+    // Run the view's session
+    [self.arSession runWithConfiguration:configuration];
 }
 
 static void completionCallback (SystemSoundID  mySSID, void* myself)
@@ -715,6 +751,21 @@ static bool isUpdated = false;
     }
 }
 
+
+- (void)session:(ARSession *)session didFailWithError:(NSError *)error {
+    // Present an error message to the user
+}
+
+- (void)sessionWasInterrupted:(ARSession *)session {
+    // Inform the user that the session has been interrupted, for example, by presenting an overlay
+    
+}
+
+- (void)sessionInterruptionEnded:(ARSession *)session {
+    // Reset tracking and/or remove existing anchors if consistent tracking is required
+    
+}
+
 -(void)setupSensorFusion
 {
     // Setup the motion manager
@@ -731,17 +782,105 @@ static bool isUpdated = false;
                                                            toQueue: [[NSOperationQueue alloc] init]
                                                        withHandler: ^(CMDeviceMotion *dmReceived, NSError *error)
          {
-             MtVector3 v3Acceleration;
-             v3Acceleration.x = motionManager.deviceMotion.userAcceleration.x;
-             v3Acceleration.y = motionManager.deviceMotion.userAcceleration.y;
-             v3Acceleration.z = motionManager.deviceMotion.userAcceleration.z;
-             ShIMU::SetAccelerometer( 0, v3Acceleration );
+             //MtVector3 v3Acceleration;
+             //v3Acceleration.x = motionManager.deviceMotion.userAcceleration.x;
+             //v3Acceleration.y = motionManager.deviceMotion.userAcceleration.y;
+             //v3Acceleration.z = motionManager.deviceMotion.userAcceleration.z;
+             //ShIMU::SetAccelerometer( 0, v3Acceleration );
              
              CMQuaternion currentAtt = motionManager.deviceMotion.attitude.quaternion;
              MtQuaternion quaternion( currentAtt.x, currentAtt.y, currentAtt.z, currentAtt.w );
-             ShIMU::SetQuaternion( 0, quaternion );
+            // ShIMU::SetQuaternion( 0, quaternion );
          }
          ];
+    }
+}
+
+- (void)session:(ARSession *)session didUpdateFrame:(ARFrame *)frame
+{
+    // https://github.com/sacchy/Unity-Arkit/blob/master/Assets/Plugins/iOS/UnityARKit/NativeInterface/ARSessionNative.mm
+    // https://blog.pusher.com/building-ar-game-arkit-spritekit/
+    
+    UIInterfaceOrientation orient = [[UIApplication sharedApplication] statusBarOrientation];
+    matrix_float4x4 rotatedMatrix = matrix_identity_float4x4;
+    
+    // rotation  matrix
+    // [ cos    -sin]
+    // [ sin     cos]
+    switch (orient) {
+        case UIInterfaceOrientationPortrait:
+            rotatedMatrix.columns[0][0] = 0;
+            rotatedMatrix.columns[0][1] = 1;
+            rotatedMatrix.columns[1][0] = -1;
+            rotatedMatrix.columns[1][1] = 0;
+            break;
+        case UIInterfaceOrientationLandscapeLeft:
+            rotatedMatrix.columns[0][0] = -1;
+            rotatedMatrix.columns[0][1] = 0;
+            rotatedMatrix.columns[1][0] = 0;
+            rotatedMatrix.columns[1][1] = -1;
+            break;
+        case UIInterfaceOrientationPortraitUpsideDown:
+            rotatedMatrix.columns[0][0] = 0;
+            rotatedMatrix.columns[0][1] = -1;
+            rotatedMatrix.columns[1][0] = 1;
+            rotatedMatrix.columns[1][1] = 0;
+            break;
+        default:
+            break;
+    }
+    matrix_float4x4 matrix = matrix_multiply(frame.camera.transform, rotatedMatrix);
+    MtMatrix4 m4Transform;
+    for (int col = 0; col < 4; ++col)
+    {
+        for (int row = 0; row < 4; ++row)
+        {
+            m4Transform[col][row] = matrix.columns[col][row];
+        }
+    }
+    
+    matrix_float4x4 original = frame.camera.transform;
+    MtVector3 v3Position( original.columns[3].x,
+                          original.columns[3].y,
+                         -original.columns[3].z );
+    ShIMU::SetPosition( 0, v3Position );
+    MtQuaternion quaternion = m4Transform;
+    ShIMU::SetQuaternion( 0, quaternion );
+}
+
+- (void)session:(ARSession *)session cameraDidChangeTrackingState:(ARCamera *)camera {
+    ARTrackingState trackingState = camera.trackingState;
+    if (self.currentTrackingState == trackingState) {
+        return;
+    }
+    self.currentTrackingState = trackingState;
+    
+    switch(trackingState) {
+        case ARTrackingStateNotAvailable:
+            NSLog(@"Camera tracking is not available on this device");
+            break;
+            
+        case ARTrackingStateLimited:
+            switch(camera.trackingStateReason) {
+                case ARTrackingStateReasonExcessiveMotion:
+                    NSLog(@"Limited tracking: slow down the movement of the device");
+                    break;
+                    
+                case ARTrackingStateReasonInsufficientFeatures:
+                    NSLog(@"Limited tracking: too few feature points, view areas with more textures");
+                    break;
+                    
+                case ARTrackingStateReasonNone:
+                    NSLog(@"Tracking limited none");
+                    break;
+                case ARTrackingStateReasonInitializing:
+                    break;
+            }
+            break;
+            
+        case ARTrackingStateNormal:
+            //[self showMessage:@"Tracking is back to normal"];
+            break;
     }
 }
 

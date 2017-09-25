@@ -18,6 +18,7 @@ struct ShIMUSensor
 {
     MtVector3                   m_v3Accelerometer;
     MtVector3                   m_v3Rotation;
+    MtVector3                   m_v3Position;
     MtQuaternion                m_quaternion;
     MtMatrix4                   m_m4Transform;
 };
@@ -39,10 +40,12 @@ public:
     static void                 SetQuaternion( BtU32 index, const MtQuaternion &quaternion );
     static void                 SetAccelerometer( BtU32 index, const MtVector3 &v3Accelerometer );
     static void                 SetRotation( BtU32 index, const MtVector3 &v3Rotation );
+    static void                 SetPosition( BtU32 index, const MtVector3 &v3Position );
     
     static MtMatrix4            GetTransform( BtU32 index );
     static void                 SetTransform( BtU32 index, MtMatrix4 &m4Transform );
     static MtVector3            GetAccelerometer( BtU32 index );
+    static MtVector3            GetPosition( BtU32 index );
     static MtQuaternion         GetQuaternion( BtU32 index );
     static BtU32                GetNumSensors();
     static void                 SetNumSensors( BtU32 sensors );

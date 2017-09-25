@@ -71,7 +71,7 @@ void ShIMU::SetAccelerometer( BtU32 index, const MtVector3 &v3Accelerometer )
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// Update
+// SetRotation
 
 void ShIMU::SetRotation( BtU32 index, const MtVector3 &v3Rotation )
 {
@@ -79,12 +79,23 @@ void ShIMU::SetRotation( BtU32 index, const MtVector3 &v3Rotation )
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// Update
+// SetPosition
+
+void ShIMU::SetPosition( BtU32 index, const MtVector3 &v3Position )
+{
+    m_sensors[index].m_v3Position = v3Position;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// GetTransform
 
 MtMatrix4 ShIMU::GetTransform( BtU32 index )
 {
     return m_sensors[index].m_m4Transform;
 }
+
+////////////////////////////////////////////////////////////////////////////////
+// SetTransform
 
 void ShIMU::SetTransform( BtU32 index, MtMatrix4 &m4Transform )
 {
@@ -92,7 +103,15 @@ void ShIMU::SetTransform( BtU32 index, MtMatrix4 &m4Transform )
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// Update
+// GetPosition
+
+MtVector3 ShIMU::GetPosition( BtU32 index )
+{
+    return m_sensors[index].m_v3Position;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// GetAccelerometer
 
 MtVector3 ShIMU::GetAccelerometer( BtU32 index )
 {
@@ -100,7 +119,7 @@ MtVector3 ShIMU::GetAccelerometer( BtU32 index )
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// Update
+// GetQuaternion
 
 MtQuaternion ShIMU::GetQuaternion( BtU32 index )
 {
