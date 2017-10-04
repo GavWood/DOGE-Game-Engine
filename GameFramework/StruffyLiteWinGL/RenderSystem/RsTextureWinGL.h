@@ -39,6 +39,8 @@ public:
 	void					SetClamped(BtBool isEnabled);
 	void					SetWrapped(BtBool isEnabled);
 
+	void					SetTexture(BtU32 newHandle);
+
 	void					SetTexture();
 
 	RsColour				GetPixel( BtU32 x, BtU32 y, BtU8& red, BtU8& green, BtU8& blue, BtU8 &alpha );
