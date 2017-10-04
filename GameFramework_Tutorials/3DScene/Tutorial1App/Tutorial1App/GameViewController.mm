@@ -686,13 +686,10 @@ static bool isUpdated = false;
     }
 }
 
-CVOpenGLESTextureRef createTexture(
-                                   CVOpenGLESTextureCacheRef textureCache,
-                                   CVPixelBufferRef pixelBuffer,
-                                   int planeIndex,
-                                   GLenum format,
-                                   int width,
-                                   int height )
+CVOpenGLESTextureRef createTexture( CVOpenGLESTextureCacheRef textureCache,
+                                    CVPixelBufferRef pixelBuffer,
+                                    int planeIndex,
+                                    GLenum format )
 {
     GLsizei imageWidth = (GLsizei)CVPixelBufferGetWidthOfPlane(pixelBuffer, planeIndex);
     GLsizei imageHeight = (GLsizei)CVPixelBufferGetHeightOfPlane(pixelBuffer, planeIndex);
@@ -735,10 +732,10 @@ CVOpenGLESTextureRef createTexture(
     assert( numberOfPlanes > 1 );
    
     // Create the Y texture. This determines the brightness of the colour (referred to as luminance or luma)
-    yTexture = createTexture(_videoTextureCache, pixelBuffer, 0, GL_LUMINANCE, imageWidth, imageHeight );
+    yTexture = createTexture(_videoTextureCache, pixelBuffer, 0, GL_LUMINANCE );
     
     // cbcr components determine the color itself (the chroma).
-    CbCrTexture = createTexture(_videoTextureCache, pixelBuffer, 1, GL_LUMINANCE_ALPHA, imageWidth, imageHeight );
+    CbCrTexture = createTexture(_videoTextureCache, pixelBuffer, 1, GL_LUMINANCE_ALPHA );
     
     // Bind the Y texture and set up its texture stage states
     glBindTexture(CVOpenGLESTextureGetTarget(yTexture), CVOpenGLESTextureGetName(yTexture));
