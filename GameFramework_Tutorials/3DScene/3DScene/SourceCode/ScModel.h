@@ -19,8 +19,8 @@ public:
 	// Public functions
 	void							Init();
 	void							Setup( BaArchive *pArchive, BaArchive *pAnimArchive  );
-	void							Update();
-	void							Render();
+	void							Update( RsCamera &camera );
+	void							Render( RsCamera &camera );
 
 	// Accessors
 

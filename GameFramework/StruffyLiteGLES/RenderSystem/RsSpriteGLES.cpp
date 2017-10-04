@@ -10,6 +10,7 @@
 #include "BtMemory.h"
 #include "BtPrint.h"
 #include "RsGLES.h"
+#include "RsShaderGLES.h"
 #include <stdio.h>
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -236,7 +237,7 @@ void RsSpriteWinGL::Render( BtBool isFlipX, const MtVector2& v2CurrentPosition, 
 void RsSpriteWinGL::Render( RsSpriteRenderable *pRenderable )
 {
 	// Cache the shader
-	RsShader *pShader = pRenderable->m_pShader;
+	RsShaderWinGL *pShader = (RsShaderWinGL*)pRenderable->m_pShader;
     
 	// Validate the shader
 	BtAssert( pShader );
@@ -244,11 +245,28 @@ void RsSpriteWinGL::Render( RsSpriteRenderable *pRenderable )
 	// Apply the shader
 	pShader->SetTechnique( "RsShaderTG2" );
 
-	// Cache the texture
-	RsTextureWinGL* pTexture = (RsTextureWinGL*)m_pFileData->m_pTexture;
+    // Set the texture
+    glActiveTexture(GL_TEXTURE0 );
     
-	// Set the texture
-	pTexture->SetTexture();
+    RsTextureWinGL* pTexture = (RsTextureWinGL*)m_pFileData->m_pTexture;
+    if( pTexture )
+    {
+        GLenum error = glGetError();
+        (void)error;
+        
+        // Cache the texture handle
+        BtU32 textureHandle = pTexture->GetTextureHandle();
+        
+        // Bind the texture to the handle
+        glBindTexture(GL_TEXTURE_2D, textureHandle );
+        
+        // Set the shader sampler
+        pShader->SetSampler(0);
+    }
+    else
+    {
+        glBindTexture(GL_TEXTURE_2D, 0 );
+    }
     
 	RsPrimitive* pPrimitives = (RsPrimitive*) pRenderable->m_primitive;
     

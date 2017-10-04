@@ -10,6 +10,7 @@
 #include "BtString.h"
 #include "MtVector2.h"
 #include "RsGLES.h"
+#include "RsShaderGLES.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // FixPointers
@@ -412,7 +413,7 @@ MtVector2 RsFontGLES::Render( const MtVector2& v2StartPosition,
 void RsFontGLES::Render( RsFontRenderable *pFontRenderable )
 {
 	// Cache the shader
-	RsShader *pShader = pFontRenderable->m_pShader;
+	RsShaderWinGL *pShader = (RsShaderWinGL*)pFontRenderable->m_pShader;
     
 	// Validate the shader
 	BtAssert( pShader );
@@ -426,13 +427,29 @@ void RsFontGLES::Render( RsFontRenderable *pFontRenderable )
         
         pTexture = (RsTextureWinGL*)pFontRenderable->m_pTexture;
     }
+    
+    // Apply the shader
+    pShader->SetTechnique( "RsShaderTG2" );
 
-	// Set the texture
-	pTexture->SetTexture();
-    
-	// Apply the shader
-	pShader->SetTechnique( "RsShaderTG2" );
-    
+    // Setup the texture
+    if( pTexture )
+    {
+        GLenum error = glGetError();
+        (void)error;
+            
+        // Cache the texture handle
+        BtU32 textureHandle = pTexture->GetTextureHandle();
+        
+        // Bind the texture to the handle
+        glActiveTexture( GL_TEXTURE0 );
+        
+        // Bind the texture to the handle
+        glBindTexture(GL_TEXTURE_2D, textureHandle );
+        
+        // Set the shader sampler
+        pShader->SetSampler(0);
+    }
+
 	RsPrimitive* pPrimitives = (RsPrimitive*) pFontRenderable->m_primitive;
     
 	// Set vertex arrays

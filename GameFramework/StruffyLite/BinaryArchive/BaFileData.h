@@ -11,6 +11,7 @@
 #include "MtAABB.h"
 #include "MtSphere.h"
 
+class BaArchive;
 class BaResource;
 class RsTexture;
 class RsMaterial;

@@ -1,10 +1,4 @@
-
-//
-//  MuViewController.m
-//  GameViewController.mm
-//
-//  Created by Gavin Wood on 07/06/2012.
-//  Copyright (c) 2012 Computer Science. All rights reserved.
+// GameViewController.mm
 
 #import "GameViewController.h"
 #import <Foundation/Foundation.h>

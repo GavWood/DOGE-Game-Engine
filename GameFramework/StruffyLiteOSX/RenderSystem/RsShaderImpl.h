@@ -22,6 +22,7 @@ const BtU32 RsShaderLitTextured = 3;
 const BtU32 RsShaderSkin = 4;
 const BtU32 RsProjectedTexture = 5;
 const BtU32 RsShadow = 6;
+const BtU32 RsYUVToRGB = 7;
 
 // Class Declaration
 class RsShaderWinGL : public RsShader

@@ -18,6 +18,7 @@ const BtU32 RsShaderLitTextured = 3;
 const BtU32 RsShaderSkin = 4;
 const BtU32 RsProjectedTexture = 5;
 const BtU32 RsShadow = 6;
+const BtU32 RsYUVToRGB = 7;
 
 struct BaResourceHeader;
 
@@ -57,6 +58,7 @@ public:
 	void								SetFloat( const BtChar* pName, BtFloat value );
 	void								SetInteger( const BtChar* pName, BtU32 value );
 	void								SetCamera( const RsCamera &camera );
+    void                                SetSampler( BtU32 iTexture );
     bool                                isTextureMatrix();
     
 	// By handle
@@ -74,9 +76,9 @@ private:
     
 	BaShaderFileData*					m_pFileData;
     
-	BtS32								m_program[8];
-	BtS32								m_sampler[8];
+	BtS32								m_program[16];
+	BtS32								m_sampler[16];
     
-	BtS32								m_handles[8][RsHandles_MAX];
+	BtS32								m_handles[16][RsHandles_MAX];
 	MtVector4							m_floats[RsHandles_MAX];
 };

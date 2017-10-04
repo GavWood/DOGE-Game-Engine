@@ -1,10 +1,4 @@
-//
 //  AppDelegate.m
-//  Tutorial1App
-//
-//  Created by localadmin on 25/11/2015.
-//  Copyright © 2015 localadmin. All rights reserved.
-//
 
 #import "AppDelegate.h"
 #import "PeerToPeer.h"

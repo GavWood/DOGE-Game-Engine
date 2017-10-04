@@ -459,12 +459,33 @@ void RsMaterialWinGL::Render( RsMaterialRenderable *pRenderable )
 		glDisableVertexAttribArray( i );
 	}
     
-	// Cache the texture
-	RsTextureWinGL* pTexture = (RsTextureWinGL*)m_pFileData->m_pTexture[0];
-    
 	// Set the texture
-	pTexture->SetTexture();
-    
+    for( BtU32 i=0; i<MaxTextures; i++ )
+    {
+        // Set the texture
+        glActiveTexture(GL_TEXTURE0 + i );
+        
+        RsTextureWinGL* pTexture = (RsTextureWinGL*)m_pFileData->m_pTexture[i];
+        if( pTexture )
+        {
+            GLenum error = glGetError();
+            (void)error;
+            
+            // Cache the texture handle
+            BtU32 textureHandle = pTexture->GetTextureHandle();
+            
+            // Bind the texture to the handle
+            glBindTexture(GL_TEXTURE_2D, textureHandle );
+            
+            // Set the shader sampler
+            pShader->SetSampler(i);
+        }
+        else
+        {
+            glBindTexture(GL_TEXTURE_2D, 0 );
+        }
+    }
+
 	// Set vertex arrays
 	BtU32 stride = sizeof(RsVertex3);
     

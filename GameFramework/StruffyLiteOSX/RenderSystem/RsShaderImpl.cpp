@@ -8,6 +8,8 @@
 #include "BtString.h"
 #include "RsShaderImpl.h"
 #include "RsMaterialImpl.h"
+#include "RsMaterialImpl.h"
+#include "RsIndexBufferImpl.h"
 #include "RsImpl.h"
 #include "ErrorLog.h"
 #include <new>
@@ -47,9 +49,7 @@ void RsShaderWinGL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
     
     for( BtU32 shaderIndex=0; shaderIndex<m_pFileData->m_count; shaderIndex = shaderIndex + 2 )
     {
-        GLuint program = glCreateProgram();
-        
-        m_program[i] = program;
+        m_program[i] = glCreateProgram();
         
         BaShader &vertexShaderData = m_pFileData->m_shaders[shaderIndex + 0];
         BaShader &pixelShaderData  = m_pFileData->m_shaders[shaderIndex + 1];
@@ -63,7 +63,7 @@ void RsShaderWinGL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
         glShaderSource( vertexShader, 1, &vertexText, (const GLint*)&vertexShaderData.m_size );
         glShaderSource( fragmentShader, 1, &fragmentText, (const GLint*)&pixelShaderData.m_size);
         
-        //ErrorLog::Printf( "Compiling vertex shader %d\n", shaderIndex );
+        ErrorLog::Printf( "Compiling vertex shader %d\n", shaderIndex );
         
         glCompileShader(vertexShader);
         glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &status );
@@ -72,11 +72,17 @@ void RsShaderWinGL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
             getError( vertexShader );
         }
         
+        if( shaderIndex == 14 )
+        {
+            int a=0;
+            a++;
+        }
+        
         glCompileShader(fragmentShader);
         glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &status );
         if( status == 0 )
         {
-            ErrorLog::Printf( "Error compiling pixel shader %d =\n%s\n", shaderIndex, fragmentText );
+            ErrorLog::Printf( "Error compiling pixel shader %d = %s\n", shaderIndex, fragmentText );
             getError( fragmentShader );
         }
         //else
@@ -87,9 +93,9 @@ void RsShaderWinGL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
         glAttachShader( m_program[i], vertexShader );
         glAttachShader( m_program[i], fragmentShader );
         glLinkProgram( m_program[i] );
-        glUseProgram( m_program[i] );
         
-        if( i != RsShaderPassThrough )
+        // We don't need to use the program because its referenced explictly
+        if( ( i != RsShaderPassThrough ) && ( i != RsYUVToRGB ) )
         {
             m_handles[i][RsHandles_Light0Direction] = glGetUniformLocation(m_program[i], "s_lightDirection");
             error = glGetError();
@@ -172,16 +178,33 @@ void RsShaderWinGL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
             error = glGetError();
             (void)error;
         }
+        
         glLinkProgram( m_program[i] );
+        
+        m_sampler[0] = glGetUniformLocation( m_program[i], "myTexture" );
+        m_sampler[1] = glGetUniformLocation( m_program[i], "myTexture2" );
+        
+        if( i == RsShaderPassThrough )
+        {
+            printf( "%s", fragmentText );
+            int a=0;
+            a++;
+        }
+        else if( i == RsYUVToRGB )
+        {
+            printf( "%s", fragmentText );
+            int a=0;
+            a++;
+        }
         
         error = glGetError();
         (void)error;
         
-        glUseProgram( BtNull );
-        
         ++i;
     }
-
+    
+    int a=0;
+    a++;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -196,44 +219,26 @@ void RsShaderWinGL::CreateOnDevice()
 
 RsShader* RsShaderWinGL::pDuplicate()
 {
-	// Allocate the memory
-	BtU8* pMemory = BtMemory::Allocate( sizeof(RsShaderWinGL) );
-
-	// Create the class
-	RsShaderWinGL* pShader = new( pMemory ) RsShaderWinGL;
-
-	// Copy the details
-	BtMemory::Copy( pShader, this, sizeof( RsShaderWinGL ) );
-
-	// Flag as a duplicate
-	pShader->m_isDuplicate = BtTrue;
-
-	// Add the duplicate
-	m_pArchive->AddDuplicate( pShader );
-
-	// Create the shader on the device
-	pShader->CreateOnDevice();
-
-	// Return the memory
-	return pShader;
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// GetAmbient
-
-RsColour RsShaderWinGL::GetAmbient()
-{
-	//return m_ambient;
-	return RsColour::WhiteColour();
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// GetDirectionalLight
-
-MtVector3 RsShaderWinGL::GetDirectionalLight()
-{
-//	return m_v3LightDirection;
-	return MtVector3( 0, 0, 0 );
+    // Allocate the memory
+    BtU8* pMemory = BtMemory::Allocate( sizeof(RsShaderWinGL) );
+    
+    // Create the class
+    RsShaderWinGL* pShader = new( pMemory ) RsShaderWinGL;
+    
+    // Copy the details
+    BtMemory::Copy( pShader, this, sizeof( RsShaderWinGL ) );
+    
+    // Flag as a duplicate
+    pShader->m_isDuplicate = BtTrue;
+    
+    // Add the duplicate
+    m_pArchive->AddDuplicate( pShader );
+    
+    // Create the shader on the device
+    pShader->CreateOnDevice();
+    
+    // Return the memory
+    return pShader;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -241,14 +246,10 @@ MtVector3 RsShaderWinGL::GetDirectionalLight()
 
 void RsShaderWinGL::SetAmbient( const RsColour &colour )
 {
-	MtVector4 v4Colour;
-	v4Colour.x = colour.Red();
-	v4Colour.y = colour.Green();
-	v4Colour.z = colour.Blue();
-	v4Colour.w = colour.Alpha();
-
-	// Set the lights ambient level
-	SetFloats(RsHandles_LightAmbient, v4Colour, 3);
+    MtVector4 v4Ambient( colour.Red(), colour.Green(), colour.Blue(), 1.0f );
+    
+    // Set the ambient lights
+    m_floats[RsHandles_LightAmbient]= v4Ambient;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -256,7 +257,9 @@ void RsShaderWinGL::SetAmbient( const RsColour &colour )
 
 void RsShaderWinGL::SetDirectionalLight( const MtVector3 &v3Direction )
 {
-	SetFloats(RsHandles_Light0Direction, &v3Direction.x, 3);
+    // Set the light direction
+    MtVector4 v4Direction( v3Direction.x, v3Direction.y, v3Direction.z, 1.0f );
+    m_floats[RsHandles_Light0Direction] = v4Direction;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -278,75 +281,74 @@ void RsShaderWinGL::RemoveFromDevice()
 
 void RsShaderWinGL::SetTechnique( const BtChar* pTechniqueName )
 {
-	GLenum error;
-	error = glGetError();
-	(void)error;
-
-	// http://en.wikibooks.org/wiki/OpenGL_Programming/Stencil_buffer
-	if (BtStrCompare(pTechniqueName, "RsShaderAdditive") == BtTrue)
-	{
-		glDisable(GL_CULL_FACE);
-		glDisable(GL_DEPTH_TEST);
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		m_currentProgram = RsShaderTextured;
-	}
-	else if (BtStrCompare(pTechniqueName, "lensflare") == BtTrue)
-	{
-		glDisable(GL_CULL_FACE);
-		glDisable(GL_DEPTH_TEST);
-		glEnable(GL_BLEND);
-		glBlendFunc( GL_ONE, GL_ONE );
-		m_currentProgram = RsShaderPassThrough;
-	}
-	else if (BtStrCompare(pTechniqueName, "RsShadow") == BtTrue)
-	{
-		glDisable(GL_CULL_FACE);
-		glDisable(GL_DEPTH_TEST);
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		m_currentProgram = RsShadow;
-	}
-	else if (BtStrCompare(pTechniqueName, "RsProjectedShadow") == BtTrue)
-	{
-		glDisable(GL_CULL_FACE);
-		glDisable(GL_DEPTH_TEST);
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		m_currentProgram = RsProjectedTexture;
-	}
-	else if( BtStrCompare( pTechniqueName, "RsShaderT2" ) == BtTrue )
-	{
-		glDisable( GL_CULL_FACE );
-		glDisable( GL_DEPTH_TEST );
-		glEnable( GL_BLEND ); 
-		glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) ; 
-
-		// Use The Program Object Instead Of Fixed Function OpenGL
-		m_currentProgram = RsShaderPassThrough;
-	}
-	else if( BtStrCompare( pTechniqueName, "RsShaderTG2" ) == BtTrue )
-	{
-		glDisable( GL_CULL_FACE );
-		glDisable( GL_DEPTH_TEST );
-		glEnable( GL_BLEND ); 
-		glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) ; 
-
-		// Use The Program Object Instead Of Fixed Function OpenGL
-		m_currentProgram = RsShaderPassThrough;
-	}
-	else if( BtStrCompare( pTechniqueName, "RsShaderZT" ) == BtTrue )
-	{
-		glDisable( GL_DEPTH_TEST );
-		glDisable( GL_CULL_FACE );
-		glEnable( GL_DEPTH_TEST );
-		glEnable( GL_BLEND ); 
-		glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-		// Use The Program Object Instead Of Fixed Function OpenGL
-		m_currentProgram = RsShaderTextured;
-	}
+    GLenum error;
+    error = glGetError();
+    (void)error;
+    
+    // http://en.wikibooks.org/wiki/OpenGL_Programming/Stencil_buffer
+    if (BtStrCompare(pTechniqueName, "RsShaderAdditive") == BtTrue)
+    {
+        glDisable(GL_CULL_FACE);
+        glDisable(GL_DEPTH_TEST);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        m_currentProgram = RsShaderTextured;
+    }
+    else if (BtStrCompare(pTechniqueName, "lensflare") == BtTrue)
+    {
+        glDisable(GL_CULL_FACE);
+        glDisable(GL_DEPTH_TEST);
+        glEnable(GL_BLEND);
+        glBlendFunc( GL_ONE, GL_ONE );
+        m_currentProgram = RsShaderPassThrough;
+    }
+    else if (BtStrCompare(pTechniqueName, "RsShadow") == BtTrue)
+    {
+        glDisable(GL_CULL_FACE);
+        glDisable(GL_DEPTH_TEST);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        m_currentProgram = RsShadow;
+    }
+    else if (BtStrCompare(pTechniqueName, "RsProjectedShadow") == BtTrue)
+    {
+        glDisable(GL_CULL_FACE);
+        glDisable(GL_DEPTH_TEST);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        m_currentProgram = RsProjectedTexture;
+    }
+    else if( BtStrCompare( pTechniqueName, "RsShaderT2" ) == BtTrue )
+    {
+        glDisable( GL_CULL_FACE );
+        glDisable( GL_DEPTH_TEST );
+        glEnable( GL_BLEND );
+        glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) ;
+        
+        // Use The Program Object Instead Of Fixed Function OpenGL
+        m_currentProgram = RsShaderPassThrough;
+    }
     else if( BtStrCompare( pTechniqueName, "RsShaderTG" ) == BtTrue )
+    {
+        glDisable( GL_CULL_FACE );
+        glDisable( GL_DEPTH_TEST );
+        glEnable( GL_BLEND );
+        glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) ;
+        
+        // Use The Program Object Instead Of Fixed Function OpenGL
+        m_currentProgram = RsShaderTextured;
+    }
+    else if( BtStrCompare( pTechniqueName, "RsShaderTG2" ) == BtTrue )
+    {
+        glDisable( GL_CULL_FACE );
+        glDisable( GL_DEPTH_TEST );
+        glEnable( GL_BLEND );
+        glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) ;
+        
+        // Use The Program Object Instead Of Fixed Function OpenGL
+        m_currentProgram = RsShaderPassThrough;
+    }
+    else if( BtStrCompare( pTechniqueName, "RsShaderT" ) == BtTrue )
     {
         glDisable( GL_DEPTH_TEST );
         glDisable( GL_CULL_FACE );
@@ -356,98 +358,89 @@ void RsShaderWinGL::SetTechnique( const BtChar* pTechniqueName )
         // Use The Program Object Instead Of Fixed Function OpenGL
         m_currentProgram = RsShaderTextured;
     }
-	else if( BtStrCompare( pTechniqueName, "RsShaderT" ) == BtTrue )
-	{
-		glDisable( GL_DEPTH_TEST );
-		glDisable( GL_CULL_FACE );
-		glEnable( GL_BLEND ); 
-		glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-		// Use The Program Object Instead Of Fixed Function OpenGL
-		m_currentProgram = RsShaderTextured;
-	}
-	else if( BtStrCompare( pTechniqueName, "RsShaderT" ) == BtTrue )
-	{
-		glDisable( GL_DEPTH_TEST );
-		glDisable( GL_CULL_FACE );
-		glEnable( GL_BLEND ); 
-		glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-		// Use The Program Object Instead Of Fixed Function OpenGL
-		m_currentProgram = RsShaderTextured;
-	}
-	else if( BtStrCompare( pTechniqueName, "RsShaderZL" ) == BtTrue )
-	{
-		glEnable( GL_DEPTH_TEST );
-		glDepthFunc( GL_LEQUAL );
-		glEnable( GL_CULL_FACE );
-		glFrontFace(GL_CW);
-		glEnable( GL_BLEND ); 
-		glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-		// Use The Program Object Instead Of Fixed Function OpenGL
-		m_currentProgram = RsShaderLit;
-	}
-	else if (BtStrCompare(pTechniqueName, "RsShaderZLTGD"))
-	{
-		glEnable(GL_DEPTH_TEST);
-		glDisable(GL_CULL_FACE);
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-		// Use The Program Object Instead Of Fixed Function OpenGL
-		m_currentProgram = RsShaderLitTextured;
-	}
-	else if ( BtStrCompare(pTechniqueName, "RsShaderZLT") ||
-			  BtStrCompare(pTechniqueName, "RsShaderZLTG") ||
-			  BtStrCompare(pTechniqueName, "RsShaderZTG"))
-	{
-		glEnable(GL_DEPTH_TEST);
-		glEnable(GL_CULL_FACE);
-		glFrontFace(GL_CW);
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-		// Use The Program Object Instead Of Fixed Function OpenGL
-		m_currentProgram = RsShaderLitTextured;
-	}
-	else if (BtStrCompare(pTechniqueName, "RsShaderZLTES"))
-	{
-		glEnable(GL_DEPTH_TEST);
-		glEnable(GL_CULL_FACE);
-		glFrontFace(GL_CW);
-		glEnable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-		// Use The Program Object Instead Of Fixed Function OpenGL
-		m_currentProgram = RsShaderLitTextured;
-	}
-	else if( BtStrCompare( pTechniqueName, "RsShaderZLTS" ) )
-	{
-		glEnable( GL_DEPTH_TEST );
-		glDepthFunc( GL_LEQUAL );
-		glDisable( GL_CULL_FACE );
-		glEnable( GL_BLEND ); 
-		glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-		// Use The Program Object Instead Of Fixed Function OpenGL
-		m_currentProgram = RsShaderSkin;
-	}
-	else
-	{
-		ErrorLog::Fatal_Printf( "Shader %s not implemented", pTechniqueName );
-	}
-
-	glUseProgram( m_program[m_currentProgram] );
-
-	switch( m_currentProgram )
-	{
-	case RsShaderLit:
-	case RsShaderLitTextured:
-	case RsShaderSkin:
-		SetLights( m_currentProgram );
-		break;
-	}
+    else if( BtStrCompare( pTechniqueName, "RsShaderT" ) == BtTrue )
+    {
+        glDisable( GL_DEPTH_TEST );
+        glDisable( GL_CULL_FACE );
+        glEnable( GL_BLEND );
+        glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        
+        // Use The Program Object Instead Of Fixed Function OpenGL
+        m_currentProgram = RsShaderTextured;
+    }
+    else if( BtStrCompare( pTechniqueName, "RsShaderZL" ) == BtTrue )
+    {
+        glEnable( GL_DEPTH_TEST );
+        glDepthFunc( GL_LEQUAL );
+        glEnable( GL_CULL_FACE );
+        glFrontFace(GL_CW);
+        glEnable( GL_BLEND );
+        glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        
+        // Use The Program Object Instead Of Fixed Function OpenGL
+        m_currentProgram = RsShaderLit;
+    }
+    else if (BtStrCompare(pTechniqueName, "RsShaderZLTGD"))
+    {
+        glEnable(GL_DEPTH_TEST);
+        glDisable(GL_CULL_FACE);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        
+        // Use The Program Object Instead Of Fixed Function OpenGL
+        m_currentProgram = RsShaderLitTextured;
+    }
+    else if ( BtStrCompare(pTechniqueName, "RsShaderZLT") ||
+             BtStrCompare(pTechniqueName, "RsShaderZLTG") ||
+             BtStrCompare(pTechniqueName, "RsShaderZTG"))
+    {
+        glEnable(GL_DEPTH_TEST);
+        glEnable(GL_CULL_FACE);
+        glFrontFace(GL_CW);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        
+        // Use The Program Object Instead Of Fixed Function OpenGL
+        m_currentProgram = RsShaderLitTextured;
+    }
+    else if( BtStrCompare( pTechniqueName, "RsShaderZLTS" ) )
+    {
+        glEnable( GL_DEPTH_TEST );
+        glDepthFunc( GL_LEQUAL );
+        glDisable( GL_CULL_FACE );
+        glEnable( GL_BLEND );
+        glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        
+        // Use The Program Object Instead Of Fixed Function OpenGL
+        m_currentProgram = RsShaderSkin;
+    }
+    else if( BtStrCompare( pTechniqueName, "RsYUVToRGB" ) )
+    {
+        glDisable( GL_CULL_FACE );
+        glDisable( GL_DEPTH_TEST );
+        glEnable( GL_BLEND );
+        glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) ;
+        
+        // Use The Program Object Instead Of Fixed Function OpenGL
+        m_currentProgram = RsYUVToRGB;
+    }
+    else
+    {
+        //ErrorLog::Fatal_Printf( "Shader %s not implemented", pTechniqueName );
+        int a=0;
+        a++;
+    }
+    
+    glUseProgram( m_program[m_currentProgram] );
+    
+    switch( m_currentProgram )
+    {
+        case RsShaderLit:
+        case RsShaderLitTextured:
+        case RsShaderSkin:
+            SetLights( m_currentProgram );
+            break;
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -462,13 +455,6 @@ void RsShaderWinGL::SetMatrix( const BtChar* pMatrix, const MtMatrix4& m4Matrix 
 
 void SetOrthgonalProjection(float width, float height, float zNear, float zFar)
 {
-	//glMatrixMode(GL_PROJECTION);
-	//glLoadIdentity();
-
-	width  /= 2.0f;
-	height /= 2.0f;
-
-	//glOrtho( -width, width, height, -height, zNear, zFar );
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -476,17 +462,6 @@ void SetOrthgonalProjection(float width, float height, float zNear, float zFar)
 
 void SetPerspectiveProjection(float fovy, float aspect, float zNear, float zFar)
 {
-	//glMatrixMode(GL_PROJECTION);
-	//glLoadIdentity();
-
-	double xmin, xmax, ymin, ymax;
-
-	ymax = zNear * MtTan( fovy );
-	ymin = -ymax;
-	xmin = ymin * aspect;
-	xmax = ymax * aspect;
-
-	//glFrustum(xmin, xmax, ymin, ymax, zNear, zFar);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -494,30 +469,15 @@ void SetPerspectiveProjection(float fovy, float aspect, float zNear, float zFar)
 
 void RsShaderWinGL::SetCamera( const RsCamera &camera )
 {
-	BtBool isPerspective = camera.GetPerspective();
-
-	if( isPerspective == BtTrue )
-	{
-		SetPerspectiveProjection( camera.FieldOfView() * 0.5f, camera.GetWidth() / camera.GetHeight(), camera.NearPlane(), camera.FarPlane() );
-	}
-	else
-	{
-		SetOrthgonalProjection( camera.GetWidth(), camera.GetHeight(), camera.NearPlane(), camera.FarPlane() );
-	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// SetMatrix
+// SetSampler
 
-void RsShaderWinGL::SetMatrix(const BtChar* pMatrixName, const MtMatrix4* pMatrix, BtU32 nCount)
+void RsShaderWinGL::SetSampler( BtU32 iTexture )
 {
-	glUniformMatrix4fv(m_handles[RsShaderSkin][RsHandles_BoneMatrix], nCount, GL_FALSE, (const GLfloat*)pMatrix);
-
-	GLenum error = glGetError();
-	(void)error;
-
-	int a = 0;
-	a++;
+    // Set the sampler stage to the address from the shader
+    glUniform1i( m_sampler[iTexture], iTexture );
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -525,30 +485,25 @@ void RsShaderWinGL::SetMatrix(const BtChar* pMatrixName, const MtMatrix4* pMatri
 
 void RsShaderWinGL::SetMatrix( RsHandles handle, const MtMatrix4& m4Matrix )
 {
-	if( handle == RsHandles_TextureMatrix0 )
-	{
-		GLenum error;
-
-		glUseProgram( m_program[RsProjectedTexture] );
-
-		error = glGetError();
-
-		glUniformMatrix4fv( m_handles[RsProjectedTexture][handle], 1, GL_FALSE, (const GLfloat*)&m4Matrix);
-
-		error = glGetError();
-
-		int a = 0;
-		a++;
-	}
-	else
-	{
-		glUniformMatrix4fv( m_handles[m_currentProgram][handle], 1, GL_FALSE, (const GLfloat*)&m4Matrix );
-
-		//GLenum error = glGetError();
-
-		int a = 0;
-		a++;
-	}
+    if( handle == RsHandles_TextureMatrix0 )
+    {
+        GLenum error;
+        
+        glUseProgram( m_program[RsProjectedTexture] );
+        
+        error = glGetError();
+        
+        glUniformMatrix4fv( m_handles[RsProjectedTexture][handle], 1, GL_FALSE, (const GLfloat*)&m4Matrix);
+        
+        error = glGetError();
+        
+        int a = 0;
+        a++;
+    }
+    else
+    {
+        glUniformMatrix4fv( m_handles[m_currentProgram][handle], 1, GL_FALSE, (const GLfloat*)&m4Matrix );
+    }
 }
 
 // http://www.sjbaker.org/steve/omniv/opengl_lighting.html
@@ -559,7 +514,21 @@ void RsShaderWinGL::SetMatrix( RsHandles handle, const MtMatrix4& m4Matrix )
 
 void RsShaderWinGL::SetFloats( RsHandles handle, const BtFloat* pArray, BtU32 nCount )
 {
-	m_floats[handle] = MtVector4( pArray[0], pArray[1], pArray[2], 1.0f );
+    m_floats[handle] = MtVector4( pArray[0], pArray[1], pArray[2], 1.0f );
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// SetMatrix
+
+void RsShaderWinGL::SetMatrix( const BtChar* pMatrixName, const MtMatrix4* pMatrix, BtU32 nCount )
+{
+    glUniformMatrix4fv( m_handles[RsShaderSkin][RsHandles_BoneMatrix], nCount, GL_FALSE, (const GLfloat*)pMatrix );
+    
+    GLenum error = glGetError();
+    (void)error;
+    
+    int a=0;
+    a++;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -602,12 +571,12 @@ void RsShaderWinGL::Commit()
 
 void RsShaderWinGL::Draw( const RsPrimitive *pPrimitive )
 {
-	Commit();
-
-	RsPrimitive* pPrimitives = (RsPrimitive*) pPrimitive;
-
-	// Draw vertex
-	glDrawArrays( pPrimitives->m_primitiveType, 0, pPrimitives->m_numVertex );
+    Commit();
+    
+    RsPrimitive* pPrimitives = (RsPrimitive*) pPrimitive;
+    
+    // Draw vertex
+    glDrawArrays( pPrimitives->m_primitiveType, 0, pPrimitives->m_numVertex );
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -615,17 +584,26 @@ void RsShaderWinGL::Draw( const RsPrimitive *pPrimitive )
 
 void RsShaderWinGL::Draw( const RsIndexedPrimitive *pPrimitive )
 {
-	Commit();
-
-	RsIndexedPrimitive* pPrimitives = (RsIndexedPrimitive*) pPrimitive;
-
-	GLenum primType = pPrimitives->m_primitiveType;
-
-	// Draw vertex
-	glDrawElements( primType,
-					pPrimitives->m_numIndices,
-					GL_UNSIGNED_SHORT,
-					GL_BUFFER_OFFSET( pPrimitives->m_startIndex * 2 ) );
+    Commit();
+    
+    RsIndexedPrimitive* pPrimitives = (RsIndexedPrimitive*) pPrimitive;
+    
+    GLenum primType = pPrimitives->m_primitiveType;
+    
+    BtU32 indexType = GL_UNSIGNED_SHORT;
+    BtU32 indexSize = 2;
+    
+    if (pPrimitives->m_indexType == RsIndexBufferWinGL::IndType_Long)
+    {
+        indexType = GL_UNSIGNED_INT;
+        indexSize = 4;
+    }
+    
+    // Draw vertex
+    glDrawElements( primType,
+                   pPrimitives->m_numIndices,
+                   GL_UNSIGNED_SHORT,
+                   GL_BUFFER_OFFSET( pPrimitives->m_startIndex * 2 ) );
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -647,36 +625,39 @@ void RsShaderWinGL::SetTexture( const BtChar* pName )
 
 void RsShaderWinGL::SetMaterial( RsMaterial* pMaterial )
 {
-	RsMaterialWinGL* pMaterialWinGL = (RsMaterialWinGL*) pMaterial;
-
-	BtU32 flag = pMaterialWinGL->GetFlags() & RsMaterial_Lit;
-
-	SetFloat( "s_materialFlags", (BtFloat) flag );
-
-	RsColour diffuseColour = pMaterialWinGL->GetDiffuseColour();
-	//diffuseColour = RsColour( 1.0f, 1.0f, 1.0f, 1.0f );
-	glUniform4fv(m_handles[m_currentProgram][RsHandles_Colour], 1, (BtFloat*)&diffuseColour );
-
-	//glUniform1i( m_sampler, 0);	// Texture Unit 0
-
-	// http://lwjgl.org/wiki/index.php?title=GLSL_Tutorial:_Texturing
-	// Set the textures
-	for( BtU32 iTexture=0; iTexture<1; ++iTexture )
-	{
-		// Cache each texture
-		RsTextureWinGL *pTexture = (RsTextureWinGL*)pMaterialWinGL->GetTexture(iTexture);
-
-		if( pTexture != BtNull )
-		{
-			// http://www.opengl.org/wiki/Sampler_(GLSL)
-			glActiveTexture( GL_TEXTURE0 );
-			pTexture->SetTexture();
-		}
-		else
-		{
-			glBindTexture(GL_TEXTURE_2D, 0 );
-		}
-	}	
+    RsMaterialWinGL* pMaterialWinGL = (RsMaterialWinGL*) pMaterial;
+    
+    BtU32 flag = pMaterialWinGL->GetFlags() & RsMaterial_Lit;
+    
+    SetFloat( "s_materialFlags", (BtFloat) flag );
+    SetColour( "s_v4MaterialColour", pMaterialWinGL->GetDiffuseColour() );
+    
+    // Set the texture
+    for( BtU32 i=0; i<MaxTextures; i++ )
+    {
+        // Set the texture
+        glActiveTexture(GL_TEXTURE0 + i );
+        
+        RsTextureWinGL *pTexture = (RsTextureWinGL*)pMaterialWinGL->GetTexture(i);
+        if( pTexture )
+        {
+            GLenum error = glGetError();
+            (void)error;
+            
+            // Cache the texture handle
+            BtU32 textureHandle = pTexture->GetTextureHandle();
+            
+            // Bind the texture to the handle
+            glBindTexture(GL_TEXTURE_2D, textureHandle );
+            
+            // Set the shader sampler
+            SetSampler(i);
+        }
+        else
+        {
+            glBindTexture(GL_TEXTURE_2D, 0 );
+        }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -684,16 +665,16 @@ void RsShaderWinGL::SetMaterial( RsMaterial* pMaterial )
 
 void RsShaderWinGL::SetLights(BtU32 index)
 {
-	// Set the light direction
-	MtVector4 v4Direction = m_floats[RsHandles_Light0Direction];
-	v4Direction.w = 0;
-	glUniform4fv( m_handles[index][RsHandles_Light0Direction], 1, v4Direction );
-
-	// Set the ambient lights
-	MtVector4 v4Ambient = m_floats[RsHandles_LightAmbient];
-	v4Ambient.w = 0;
-	glUniform4fv( m_handles[index][RsHandles_LightAmbient], 1, v4Ambient );
-
-	int a=0;
-	a++;
+    // Set the light direction
+    MtVector4 v4Direction = m_floats[RsHandles_Light0Direction];
+    glUniform4fv( m_handles[index][RsHandles_Light0Direction], 1, v4Direction );
+    
+    // Set the ambient lights
+    MtVector4 v4Ambient = m_floats[RsHandles_LightAmbient];
+    v4Ambient.w = 0;
+    glUniform4fv( m_handles[index][RsHandles_LightAmbient], 1, v4Ambient );
+    
+    int a=0;
+    a++;
 }
+

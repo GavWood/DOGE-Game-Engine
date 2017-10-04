@@ -28,7 +28,7 @@ void getError( int objectHandle )
 	{
 		GLchar* compiler_log = (GLchar*)malloc(blen);
 		glGetShaderInfoLog(objectHandle, blen, &slen, compiler_log);
-		//ErrorLog::Fatal_Printf( "%s\n", compiler_log );
+		ErrorLog::Fatal_Printf( "%s\n", compiler_log );
 		free (compiler_log);
 	}
 }
@@ -50,9 +50,7 @@ void RsShaderWinGL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
     
     for( BtU32 shaderIndex=0; shaderIndex<m_pFileData->m_count; shaderIndex = shaderIndex + 2 )
     {
-        GLuint program = glCreateProgram();
-        
-        m_program[i] = program;
+        m_program[i] = glCreateProgram();
         
         BaShader &vertexShaderData = m_pFileData->m_shaders[shaderIndex + 0];
         BaShader &pixelShaderData  = m_pFileData->m_shaders[shaderIndex + 1];
@@ -75,6 +73,12 @@ void RsShaderWinGL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
             getError( vertexShader );
         }
         
+        if( shaderIndex == 14 )
+        {
+            int a=0;
+            a++;
+        }
+        
         glCompileShader(fragmentShader);
         glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &status );
         if( status == 0 )
@@ -90,9 +94,9 @@ void RsShaderWinGL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
         glAttachShader( m_program[i], vertexShader );
         glAttachShader( m_program[i], fragmentShader );
         glLinkProgram( m_program[i] );
-        glUseProgram( m_program[i] );
-        
-        if( i != RsShaderPassThrough )
+     
+        // We don't need to use the program because its referenced explictly
+        if( ( i != RsShaderPassThrough ) && ( i != RsYUVToRGB ) )
         {
             m_handles[i][RsHandles_Light0Direction] = glGetUniformLocation(m_program[i], "s_lightDirection");
             error = glGetError();
@@ -175,15 +179,33 @@ void RsShaderWinGL::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
             error = glGetError();
             (void)error;
         }
+        
         glLinkProgram( m_program[i] );
+        
+        m_sampler[0] = glGetUniformLocation( m_program[i], "myTexture" );
+        m_sampler[1] = glGetUniformLocation( m_program[i], "myTexture2" );
+        
+        if( i == RsShaderPassThrough )
+        {
+            printf( "%s", fragmentText );
+            int a=0;
+            a++;
+        }
+        else if( i == RsYUVToRGB )
+        {
+            printf( "%s", fragmentText );
+            int a=0;
+            a++;
+        }
         
         error = glGetError();
         (void)error;
         
-        glUseProgram( BtNull );
-        
         ++i;
     }
+    
+    int a=0;
+    a++;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -400,6 +422,16 @@ void RsShaderWinGL::SetTechnique( const BtChar* pTechniqueName )
 		// Use The Program Object Instead Of Fixed Function OpenGL
 		m_currentProgram = RsShaderSkin;
 	}
+    else if( BtStrCompare( pTechniqueName, "RsYUVToRGB" ) )
+    {
+        glDisable( GL_CULL_FACE );
+        glDisable( GL_DEPTH_TEST );
+        glEnable( GL_BLEND );
+        glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) ;
+        
+        // Use The Program Object Instead Of Fixed Function OpenGL
+        m_currentProgram = RsYUVToRGB;
+    }
 	else
 	{
 		//ErrorLog::Fatal_Printf( "Shader %s not implemented", pTechniqueName );
@@ -445,6 +477,15 @@ void SetPerspectiveProjection(float fovy, float aspect, float zNear, float zFar)
 
 void RsShaderWinGL::SetCamera( const RsCamera &camera )
 {
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// SetSampler
+
+void RsShaderWinGL::SetSampler( BtU32 iTexture )
+{
+    // Set the sampler stage to the address from the shader
+    glUniform1i( m_sampler[iTexture], iTexture );
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -599,26 +640,32 @@ void RsShaderWinGL::SetMaterial( RsMaterial* pMaterial )
 	SetFloat( "s_materialFlags", (BtFloat) flag );
 	SetColour( "s_v4MaterialColour", pMaterialWinGL->GetDiffuseColour() );
     
-	//glUniform1i( m_sampler, 0);	// Texture Unit 0
-    
-	// http://lwjgl.org/wiki/index.php?title=GLSL_Tutorial:_Texturing
-	// Set the textures
-	for( BtU32 iTexture=0; iTexture<1; ++iTexture )
-	{
-		// Cache each texture
-		RsTextureWinGL *pTexture = (RsTextureWinGL*)pMaterialWinGL->GetTexture(iTexture);
+    // Set the texture
+    for( BtU32 i=0; i<MaxTextures; i++ )
+    {
+        // Set the texture
+        glActiveTexture(GL_TEXTURE0 + i );
         
-		if( pTexture != BtNull )
-		{
-			// http://www.opengl.org/wiki/Sampler_(GLSL)
-			glActiveTexture( GL_TEXTURE0 );
-			pTexture->SetTexture();
-		}
-		else
-		{
-			glBindTexture(GL_TEXTURE_2D, 0 );
-		}
-	}
+        RsTextureWinGL *pTexture = (RsTextureWinGL*)pMaterialWinGL->GetTexture(i);
+        if( pTexture )
+        {
+            GLenum error = glGetError();
+            (void)error;
+            
+            // Cache the texture handle
+            BtU32 textureHandle = pTexture->GetTextureHandle();
+            
+            // Bind the texture to the handle
+            glBindTexture(GL_TEXTURE_2D, textureHandle );
+            
+            // Set the shader sampler
+            SetSampler(i);
+        }
+        else
+        {
+            glBindTexture(GL_TEXTURE_2D, 0 );
+        }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////

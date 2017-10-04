@@ -30,12 +30,13 @@
 		7B111CE11F5C056B00E2C475 /* game.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B111CC61F5C056B00E2C475 /* game.iPhonez */; };
 		7B111CE31F5C056B00E2C475 /* hmd.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B111CC81F5C056B00E2C475 /* hmd.iPhonez */; };
 		7B111CE51F5C056B00E2C475 /* utility.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B111CCA1F5C056B00E2C475 /* utility.iPhonez */; };
-		7B111CEA1F5C056B00E2C475 /* ScBubbles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B111CD01F5C056B00E2C475 /* ScBubbles.cpp */; };
-		7B111CEB1F5C056B00E2C475 /* ScCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B111CD21F5C056B00E2C475 /* ScCamera.cpp */; };
-		7B111CEC1F5C056B00E2C475 /* ScFrustum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B111CD41F5C056B00E2C475 /* ScFrustum.cpp */; };
-		7B111CED1F5C056B00E2C475 /* ScMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B111CD61F5C056B00E2C475 /* ScMain.cpp */; };
-		7B111CEE1F5C056B00E2C475 /* ScModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B111CD81F5C056B00E2C475 /* ScModel.cpp */; };
-		7B111CEF1F5C056B00E2C475 /* ScRenderSkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B111CDB1F5C056B00E2C475 /* ScRenderSkybox.cpp */; };
+		7B21F2741F7FDD0A008FF5F3 /* CbCrtoRGB.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B21F2731F7FDD0A008FF5F3 /* CbCrtoRGB.frag */; };
+		7B2AF14C1F839D8000BF3AF8 /* ScBubbles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B2AF13F1F839D7F00BF3AF8 /* ScBubbles.cpp */; };
+		7B2AF14D1F839D8000BF3AF8 /* ScMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B2AF1401F839D7F00BF3AF8 /* ScMain.cpp */; };
+		7B2AF14E1F839D8000BF3AF8 /* ScModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B2AF1431F839D8000BF3AF8 /* ScModel.cpp */; };
+		7B2AF14F1F839D8000BF3AF8 /* ScRenderSkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B2AF1451F839D8000BF3AF8 /* ScRenderSkybox.cpp */; };
+		7B2AF1501F839D8000BF3AF8 /* ScCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B2AF1461F839D8000BF3AF8 /* ScCamera.cpp */; };
+		7B2AF1511F839D8000BF3AF8 /* ScFrustum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B2AF1481F839D8000BF3AF8 /* ScFrustum.cpp */; };
 		7B45A1141F642B05009ECFA2 /* shaderTextured.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A1071F642B05009ECFA2 /* shaderTextured.vert */; };
 		7B45A1151F642B05009ECFA2 /* shaderTextured.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A1081F642B05009ECFA2 /* shaderTextured.frag */; };
 		7B45A1161F642B05009ECFA2 /* shaderSkin.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A1091F642B05009ECFA2 /* shaderSkin.vert */; };
@@ -221,20 +222,21 @@
 		7B111CC61F5C056B00E2C475 /* game.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = game.iPhonez; sourceTree = "<group>"; };
 		7B111CC81F5C056B00E2C475 /* hmd.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = hmd.iPhonez; sourceTree = "<group>"; };
 		7B111CCA1F5C056B00E2C475 /* utility.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = utility.iPhonez; sourceTree = "<group>"; };
-		7B111CD01F5C056B00E2C475 /* ScBubbles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScBubbles.cpp; sourceTree = "<group>"; };
-		7B111CD11F5C056B00E2C475 /* ScBubbles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScBubbles.h; sourceTree = "<group>"; };
-		7B111CD21F5C056B00E2C475 /* ScCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScCamera.cpp; sourceTree = "<group>"; };
-		7B111CD31F5C056B00E2C475 /* ScCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScCamera.h; sourceTree = "<group>"; };
-		7B111CD41F5C056B00E2C475 /* ScFrustum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScFrustum.cpp; sourceTree = "<group>"; };
-		7B111CD51F5C056B00E2C475 /* ScFrustum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScFrustum.h; sourceTree = "<group>"; };
-		7B111CD61F5C056B00E2C475 /* ScMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScMain.cpp; sourceTree = "<group>"; };
-		7B111CD71F5C056B00E2C475 /* ScMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScMain.h; sourceTree = "<group>"; };
-		7B111CD81F5C056B00E2C475 /* ScModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScModel.cpp; sourceTree = "<group>"; };
-		7B111CD91F5C056B00E2C475 /* ScModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScModel.h; sourceTree = "<group>"; };
-		7B111CDA1F5C056B00E2C475 /* ScParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScParticle.h; sourceTree = "<group>"; };
-		7B111CDB1F5C056B00E2C475 /* ScRenderSkybox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScRenderSkybox.cpp; sourceTree = "<group>"; };
-		7B111CDC1F5C056B00E2C475 /* ScRenderSkybox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScRenderSkybox.h; sourceTree = "<group>"; };
-		7B111CDD1F5C056B00E2C475 /* ScWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScWorld.h; sourceTree = "<group>"; };
+		7B21F2731F7FDD0A008FF5F3 /* CbCrtoRGB.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = CbCrtoRGB.frag; path = ../3DScene/GameData/Game.Archive/Shaders/CbCrtoRGB.frag; sourceTree = "<group>"; };
+		7B2AF13E1F839D7F00BF3AF8 /* ScWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScWorld.h; sourceTree = "<group>"; };
+		7B2AF13F1F839D7F00BF3AF8 /* ScBubbles.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScBubbles.cpp; sourceTree = "<group>"; };
+		7B2AF1401F839D7F00BF3AF8 /* ScMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScMain.cpp; sourceTree = "<group>"; };
+		7B2AF1411F839D8000BF3AF8 /* ScCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScCamera.h; sourceTree = "<group>"; };
+		7B2AF1421F839D8000BF3AF8 /* ScMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScMain.h; sourceTree = "<group>"; };
+		7B2AF1431F839D8000BF3AF8 /* ScModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScModel.cpp; sourceTree = "<group>"; };
+		7B2AF1441F839D8000BF3AF8 /* ScFrustum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScFrustum.h; sourceTree = "<group>"; };
+		7B2AF1451F839D8000BF3AF8 /* ScRenderSkybox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScRenderSkybox.cpp; sourceTree = "<group>"; };
+		7B2AF1461F839D8000BF3AF8 /* ScCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScCamera.cpp; sourceTree = "<group>"; };
+		7B2AF1471F839D8000BF3AF8 /* ScBubbles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScBubbles.h; sourceTree = "<group>"; };
+		7B2AF1481F839D8000BF3AF8 /* ScFrustum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScFrustum.cpp; sourceTree = "<group>"; };
+		7B2AF1491F839D8000BF3AF8 /* ScRenderSkybox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScRenderSkybox.h; sourceTree = "<group>"; };
+		7B2AF14A1F839D8000BF3AF8 /* ScModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScModel.h; sourceTree = "<group>"; };
+		7B2AF14B1F839D8000BF3AF8 /* ScParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScParticle.h; sourceTree = "<group>"; };
 		7B45A1041F642640009ECFA2 /* RsPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RsPlatform.h; sourceTree = "<group>"; };
 		7B45A1071F642B05009ECFA2 /* shaderTextured.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderTextured.vert; path = ../3DScene/GameData/Game.Archive/Shaders/shaderTextured.vert; sourceTree = "<group>"; };
 		7B45A1081F642B05009ECFA2 /* shaderTextured.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderTextured.frag; path = ../3DScene/GameData/Game.Archive/Shaders/shaderTextured.frag; sourceTree = "<group>"; };
@@ -646,20 +648,20 @@
 		7B111CCC1F5C056B00E2C475 /* SourceCode */ = {
 			isa = PBXGroup;
 			children = (
-				7B111CD01F5C056B00E2C475 /* ScBubbles.cpp */,
-				7B111CD11F5C056B00E2C475 /* ScBubbles.h */,
-				7B111CD21F5C056B00E2C475 /* ScCamera.cpp */,
-				7B111CD31F5C056B00E2C475 /* ScCamera.h */,
-				7B111CD41F5C056B00E2C475 /* ScFrustum.cpp */,
-				7B111CD51F5C056B00E2C475 /* ScFrustum.h */,
-				7B111CD61F5C056B00E2C475 /* ScMain.cpp */,
-				7B111CD71F5C056B00E2C475 /* ScMain.h */,
-				7B111CD81F5C056B00E2C475 /* ScModel.cpp */,
-				7B111CD91F5C056B00E2C475 /* ScModel.h */,
-				7B111CDA1F5C056B00E2C475 /* ScParticle.h */,
-				7B111CDB1F5C056B00E2C475 /* ScRenderSkybox.cpp */,
-				7B111CDC1F5C056B00E2C475 /* ScRenderSkybox.h */,
-				7B111CDD1F5C056B00E2C475 /* ScWorld.h */,
+				7B2AF13F1F839D7F00BF3AF8 /* ScBubbles.cpp */,
+				7B2AF1471F839D8000BF3AF8 /* ScBubbles.h */,
+				7B2AF1461F839D8000BF3AF8 /* ScCamera.cpp */,
+				7B2AF1411F839D8000BF3AF8 /* ScCamera.h */,
+				7B2AF1481F839D8000BF3AF8 /* ScFrustum.cpp */,
+				7B2AF1441F839D8000BF3AF8 /* ScFrustum.h */,
+				7B2AF1401F839D7F00BF3AF8 /* ScMain.cpp */,
+				7B2AF1421F839D8000BF3AF8 /* ScMain.h */,
+				7B2AF1431F839D8000BF3AF8 /* ScModel.cpp */,
+				7B2AF14A1F839D8000BF3AF8 /* ScModel.h */,
+				7B2AF14B1F839D8000BF3AF8 /* ScParticle.h */,
+				7B2AF1451F839D8000BF3AF8 /* ScRenderSkybox.cpp */,
+				7B2AF1491F839D8000BF3AF8 /* ScRenderSkybox.h */,
+				7B2AF13E1F839D7F00BF3AF8 /* ScWorld.h */,
 			);
 			name = SourceCode;
 			path = ../3DScene/SourceCode;
@@ -690,6 +692,7 @@
 		7B45A1061F642AD8009ECFA2 /* GameData */ = {
 			isa = PBXGroup;
 			children = (
+				7B21F2731F7FDD0A008FF5F3 /* CbCrtoRGB.frag */,
 				7B45A1071F642B05009ECFA2 /* shaderTextured.vert */,
 				7B45A1081F642B05009ECFA2 /* shaderTextured.frag */,
 				7B45A1091F642B05009ECFA2 /* shaderSkin.vert */,
@@ -1113,6 +1116,7 @@
 		7BF845911E71DFC0005D5C0D /* RenderSystem */ = {
 			isa = PBXGroup;
 			children = (
+				7BF845991E71DFC0005D5C0D /* RsGLES.h */,
 				7BF845921E71DFC0005D5C0D /* RsCapsGLES.cpp */,
 				7BF845931E71DFC0005D5C0D /* RsCapsGLES.h */,
 				7BF845941E71DFC0005D5C0D /* RsColourGLES.cpp */,
@@ -1120,7 +1124,6 @@
 				7BF845961E71DFC0005D5C0D /* RsFlashGLES.h */,
 				7BF845971E71DFC0005D5C0D /* RsFontGLES.cpp */,
 				7BF845981E71DFC0005D5C0D /* RsFontGLES.h */,
-				7BF845991E71DFC0005D5C0D /* RsGLES.h */,
 				7BF8459A1E71DFC0005D5C0D /* RsImplGLES.cpp */,
 				7BF8459B1E71DFC0005D5C0D /* RsImplGLES.h */,
 				7BF8459C1E71DFC0005D5C0D /* RsIndexBufferGLES.cpp */,
@@ -1345,6 +1348,7 @@
 				7B45A11B1F642B05009ECFA2 /* shaderLitTextured.frag in Resources */,
 				7BF34B6C1C0601300048F1DF /* Assets.xcassets in Resources */,
 				7BF34B6F1C0601300048F1DF /* LaunchScreen.storyboard in Resources */,
+				7B21F2741F7FDD0A008FF5F3 /* CbCrtoRGB.frag in Resources */,
 				7B45A11F1F642B05009ECFA2 /* projectedTexture.vert in Resources */,
 				7B111CE51F5C056B00E2C475 /* utility.iPhonez in Resources */,
 				7B45A11C1F642B05009ECFA2 /* shaderLit.vert in Resources */,
@@ -1376,13 +1380,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BF846A91E71DFC1005D5C0D /* SgRigidBodyImpl.cpp in Sources */,
+				7B2AF14F1F839D8000BF3AF8 /* ScRenderSkybox.cpp in Sources */,
 				7B0D27BF1F5452930076EF97 /* BaArchive.cpp in Sources */,
 				7BF8469E1E71DFC1005D5C0D /* LRdRandom.cpp in Sources */,
 				7BF8469B1E71DFC1005D5C0D /* MtVector2.cpp in Sources */,
+				7B2AF14D1F839D8000BF3AF8 /* ScMain.cpp in Sources */,
 				7BF846971E71DFC1005D5C0D /* MtQuaternion.cpp in Sources */,
 				7BF846911E71DFC1005D5C0D /* MtMath.cpp in Sources */,
+				7B2AF14C1F839D8000BF3AF8 /* ScBubbles.cpp in Sources */,
 				7BF846A21E71DFC1005D5C0D /* RsImpl.cpp in Sources */,
-				7B111CEF1F5C056B00E2C475 /* ScRenderSkybox.cpp in Sources */,
 				7BF846711E71DFC1005D5C0D /* PeerToPeer.cpp in Sources */,
 				7B0D27B41F5451E10076EF97 /* inffast.c in Sources */,
 				7BF846B01E71DFC1005D5C0D /* RsColourGLES.cpp in Sources */,
@@ -1402,15 +1408,14 @@
 				7BF846611E71DFC0005D5C0D /* HlDebug.cpp in Sources */,
 				7BF846631E71DFC0005D5C0D /* HlEvents.cpp in Sources */,
 				7BF846721E71DFC1005D5C0D /* ShAchievement.cpp in Sources */,
-				7B111CEC1F5C056B00E2C475 /* ScFrustum.cpp in Sources */,
 				7BF846901E71DFC1005D5C0D /* MtLine.cpp in Sources */,
+				7B2AF1501F839D8000BF3AF8 /* ScCamera.cpp in Sources */,
 				7B0D27AE1F5451E10076EF97 /* adler32.c in Sources */,
 				7BF846C51E71DFC1005D5C0D /* Ui360WinGL.cpp in Sources */,
 				7B0D27B71F5451E10076EF97 /* trees.c in Sources */,
 				7BF846BA1E71DFC1005D5C0D /* RsTextureGLES.cpp in Sources */,
 				7BF846BB1E71DFC1005D5C0D /* RsVertexBufferGLES.cpp in Sources */,
 				7BF8469D1E71DFC1005D5C0D /* MtVector4.cpp in Sources */,
-				7B111CEA1F5C056B00E2C475 /* ScBubbles.cpp in Sources */,
 				7BF8467E1E71DFC1005D5C0D /* ShVibration.cpp in Sources */,
 				7BF8467F1E71DFC1005D5C0D /* ApConfig.cpp in Sources */,
 				7BF846751E71DFC1005D5C0D /* ShCamera.cpp in Sources */,
@@ -1428,7 +1433,6 @@
 				7BF846BD1E71DFC1005D5C0D /* SgCollisionGLES.cpp in Sources */,
 				7BF846681E71DFC0005D5C0D /* HlModel.cpp in Sources */,
 				7BF846641E71DFC0005D5C0D /* HlFont.cpp in Sources */,
-				7B111CEB1F5C056B00E2C475 /* ScCamera.cpp in Sources */,
 				7BF846991E71DFC1005D5C0D /* MtSphere.cpp in Sources */,
 				7BF846781E71DFC1005D5C0D /* ShJoystick.cpp in Sources */,
 				7BF8469A1E71DFC1005D5C0D /* MtTriangle.cpp in Sources */,
@@ -1446,6 +1450,7 @@
 				7BF846981E71DFC1005D5C0D /* MtRay.cpp in Sources */,
 				7BF846841E71DFC1005D5C0D /* LBtMemory.cpp in Sources */,
 				7B0D27AF1F5451E10076EF97 /* compress.c in Sources */,
+				7B2AF14E1F839D8000BF3AF8 /* ScModel.cpp in Sources */,
 				7BF846811E71DFC1005D5C0D /* BtPrint.cpp in Sources */,
 				7BF846A11E71DFC1005D5C0D /* RsFrustum.cpp in Sources */,
 				7BF34B671C0601300048F1DF /* GameViewController.mm in Sources */,
@@ -1464,7 +1469,6 @@
 				7BF8469F1E71DFC1005D5C0D /* RsCamera.cpp in Sources */,
 				7BF846B21E71DFC1005D5C0D /* RsFontGLES.cpp in Sources */,
 				7BF846B41E71DFC1005D5C0D /* RsIndexBufferGLES.cpp in Sources */,
-				7B111CED1F5C056B00E2C475 /* ScMain.cpp in Sources */,
 				7BF8468A1E71DFC1005D5C0D /* LBaUserData.cpp in Sources */,
 				7BF846A31E71DFC1005D5C0D /* RsRenderTarget.cpp in Sources */,
 				7BF846791E71DFC1005D5C0D /* ShKeyboard.cpp in Sources */,
@@ -1476,8 +1480,8 @@
 				7BF8467B1E71DFC1005D5C0D /* ShNetwork.cpp in Sources */,
 				7BF846621E71DFC0005D5C0D /* HlDraw.cpp in Sources */,
 				7BF8468B1E71DFC1005D5C0D /* DyCollisionAnalytical.cpp in Sources */,
-				7B111CEE1F5C056B00E2C475 /* ScModel.cpp in Sources */,
 				7BF846771E71DFC1005D5C0D /* ShIMU.cpp in Sources */,
+				7B2AF1511F839D8000BF3AF8 /* ScFrustum.cpp in Sources */,
 				7BF8465F1E71DFC0005D5C0D /* HlAnimation.cpp in Sources */,
 				7BF846891E71DFC1005D5C0D /* BaResource.cpp in Sources */,
 				7BF8468F1E71DFC1005D5C0D /* MtAABB.cpp in Sources */,
@@ -1637,10 +1641,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 85AF28B4Q9;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj";
+				EXCLUDED_SOURCE_FILE_NAMES = "$(SRCROOT)/../3DScene/GameData";
 				FRAMEWORK_SEARCH_PATHS = "/Users/localadmin/Documents/GameFramework/OpenLab_ThirdParty/**";
 				INFOPLIST_FILE = Tutorial1App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
+				NEW_SETTING1 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.baawolf.Tutorial1App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "/Users/localadmin/Documents/GameFramework/GameFramework_ThirdParty/bullet/**";
@@ -1653,10 +1660,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 85AF28B4Q9;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj";
+				EXCLUDED_SOURCE_FILE_NAMES = "$(SRCROOT)/../3DScene/GameData";
 				FRAMEWORK_SEARCH_PATHS = "/Users/localadmin/Documents/GameFramework/GameFramework_ThirdParty/**";
 				INFOPLIST_FILE = Tutorial1App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				NEW_SETTING = "";
+				NEW_SETTING1 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.baawolf.Tutorial1App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "/Users/localadmin/Documents/GameFramework/GameFramework_ThirdParty/bullet/**";

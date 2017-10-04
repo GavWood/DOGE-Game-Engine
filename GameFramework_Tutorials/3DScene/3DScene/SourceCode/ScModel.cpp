@@ -22,9 +22,10 @@
 #include "SgBone.h"
 #include "HlModel.h"
 #include "SgSkin.h"
-
+#include "ShTouch.h"
 #include "ScModel.h"
 #include "ScWorld.h"
+#include "HlFont.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Setup
@@ -48,7 +49,7 @@ void ScModel::Setup( BaArchive *pGameArchive, BaArchive *pAnimArchive )
 ////////////////////////////////////////////////////////////////////////////////
 // Update
 
-void ScModel::Update()
+void ScModel::Update( RsCamera &camera )
 {
 	MtMatrix4 m4Transform;
 	m4Transform.SetIdentity();
@@ -61,16 +62,14 @@ void ScModel::Update()
 	}
 	if (m_pFish)
 	{
-		BtFloat scale = 1.0f;
-		MtMatrix4 m4Scale;
-		m4Scale.SetScale( MtVector3(scale, scale, scale) );
-		m_pFish->SetLocalTransform(m4Transform);
-		MtMatrix4 m4Transform;
-		static BtFloat z = 0;
-		//z += 0.1f * BtTime::GetTick();
-		m4Transform.SetTranslation(MtVector3(0, 0, z ));
-		m_pFish->SetLocalTransform(m4Scale * m4Transform);
-		m_pFish->Update();
+        if( ShTouch::IsPressed() )
+        {
+            MtMatrix3 m3Rotation = camera.GetRotation();
+            MtVector3 v3Position = MtVector3( 0, 0, 1 ) * m3Rotation;
+            m4Transform.SetTranslation( v3Position );
+            m_pFish->SetLocalTransform(m4Transform);
+        }
+        m_pFish->Update();
 	}
 	if (m_pAnimator)
 	{
@@ -99,7 +98,7 @@ void ScModel::Update()
 ////////////////////////////////////////////////////////////////////////////////
 // Render
 
-void ScModel::Render()
+void ScModel::Render( RsCamera &camera )
 {
 	// Set the light direction
 	MtVector3 v3LightDirection( -1, -1, 0 );
@@ -133,4 +132,12 @@ void ScModel::Render()
 	{
 		m_pCube->Render();
 	}
+    
+    
+    MtVector2 v2Position( 0, 0 );
+    MtVector3 v3Position = camera.GetRotation().Col2();
+    
+    BtChar text[32];
+    sprintf( text, "%.2f %.2f %.2f", v3Position.x, v3Position.y, v3Position.z );
+    HlFont::Render(v2Position, text, RsColour::BlackColour(), MaxSortOrders - 1);
 }

@@ -31,6 +31,8 @@ public:
 	virtual BtU32			GetOriginalHeight() const = 0;
 	virtual MtVector2		GetOriginalDimension() const = 0;
 
+    virtual void            SetTexture( BtU32 newHandle ) = 0;
+    
 	virtual BtU8		   *ReadMemory() = 0;
 	virtual void			WriteMemory( BtU8* pMemory, BtU32 size ) = 0;
 

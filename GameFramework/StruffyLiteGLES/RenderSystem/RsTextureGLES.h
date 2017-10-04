@@ -21,30 +21,30 @@ public:
 
     BtU32                   GetTextureHandle();
     
-	virtual void			FixPointers( BtU8 *pFileData, BaArchive *pArchive );
+	void		        	FixPointers( BtU8 *pFileData, BaArchive *pArchive );
 
 	void 					CreateOnDevice();
 	void 					RemoveFromDevice();
     
     BtU32                   GetWindowHandle();
     
-    virtual RsTexture*		GetDuplicate() const;
+    RsTexture*		        GetDuplicate() const;
 
 	BtU32					GetWidth() const;
 	BtU32					GetHeight() const;
-	virtual MtVector2		GetDimension() const;
+	MtVector2		        GetDimension() const;
 
-    virtual void			SetClamped(BtBool isEnabled) {};
-    virtual void			SetWrapped(BtBool isEnabled) {};
+    void		        	SetClamped(BtBool isEnabled) {};
+    void		        	SetWrapped(BtBool isEnabled) {};
     
-	virtual BtU32			GetOriginalWidth() const;
-	virtual BtU32			GetOriginalHeight() const;
-	virtual MtVector2		GetOriginalDimension() const;
+	BtU32		        	GetOriginalWidth() const;
+	BtU32		        	GetOriginalHeight() const;
+	MtVector2	        	GetOriginalDimension() const;
 
     BtU8                   *ReadMemory();
     void                    WriteMemory( BtU8* pMemory, BtU32 size );
 
-	void					SetTexture();
+    void                    SetTexture( BtU32 newHandle );
 
 	RsColour				GetPixel( BtU32 x, BtU32 y, BtU8& red, BtU8& green, BtU8& blue, BtU8 &alpha );
 

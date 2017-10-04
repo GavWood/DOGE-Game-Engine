@@ -114,7 +114,7 @@ void RsRenderTargetWinGL::Render()
 	}
     
 	// Clear the viewport
-	if( IsCleared() == BtTrue )
+	if( IsCleared() && IsZCleared() )
 	{
 		// Set the clear colour
 		glClearColor( m_clearColour.Red(), m_clearColour.Green(), m_clearColour.Blue(), m_clearColour.Alpha() );
@@ -126,7 +126,15 @@ void RsRenderTargetWinGL::Render()
         if (err != GL_NO_ERROR)
             printf( "RsRenderTargetWinGL::Render. glError: 0x%04X", err);
 	}
-
+    else if( IsZCleared() )
+    {
+        glClear(GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+        
+        err = glGetError();
+        if (err != GL_NO_ERROR)
+            printf( "RsRenderTargetWinGL::Render. glError: 0x%04X", err);
+    }
+    
 	for( BtU32 sortOrder=0; sortOrder<MaxSortOrders; sortOrder++ )
 	{
 		// Render the materials

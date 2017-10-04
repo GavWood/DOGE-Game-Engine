@@ -22,8 +22,8 @@
 
 #include "ScMain.h"
 #include "ScCamera.h"
+#include "ShCamera.h"
 
-static BtBool UseHMD = BtFalse;
 static BtBool isFrustumStill = BtFalse;
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -46,7 +46,7 @@ void ScMain::Init()
     (void)isSimulator;
     
     ApConfig::SetAR( BtTrue );
-    // ApConfig::SetAR( BtFalse );
+    //ApConfig::SetAR( BtFalse );
     
 	// Load the game archive
 #ifdef WIN32
@@ -76,11 +76,6 @@ void ScMain::Create()
 	m_animArchive.Load("anim");
 	m_utilityArchive.Load("utility");
     
-    if( UseHMD )
-    {
-        m_hmdArchive.Load("hmd");
-    }
-    
 	m_pWhite2 = m_utilityArchive.GetMaterial( "white2" );
 	m_pWhite3 = m_utilityArchive.GetMaterial( "white3" );
 	m_pShader = m_gameArchive.GetShader( "shader" );
@@ -99,20 +94,10 @@ void ScMain::Create()
 	HlFont::Setup( &m_utilityArchive, "vera" );
 	HlMouse::Setup( &m_utilityArchive );
 	HlDraw::Setup( pMaterial2, pMaterial3, pMaterial3notest );
-
-	m_joysticks.Setup(pMaterial2, pMaterial3, pMaterial3notest );
-	//m_joysticks.Setup(pNode1, pNode2);
-
-    if( UseHMD )
-    {
-        m_pLeftEye  = m_hmdArchive.GetMaterial("ovrl");
-        m_pRightEye = m_hmdArchive.GetMaterial("ovrr");
-
-        ShHMD::SetMaterial(0, m_pLeftEye );
-        ShHMD::SetMaterial(1, m_pRightEye );
-    }
     
 	Reset();
+    
+    ShCamera::Create( &m_gameArchive );
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -144,7 +129,7 @@ void ScMain::UpdateTest()
 
 	m_camera.Update();
 	m_skybox.Update( m_camera.GetCamera().GetPosition() );
-	m_model.Update();
+	m_model.Update( m_camera.GetCamera() );
 	m_bubbles.Update();
 
 	HlDebug::Update();
@@ -158,17 +143,14 @@ void ScMain::UpdateTest()
 	{
 		isFrustumStill = !isFrustumStill;
 	}
-
 	if (UiKeyboard::pInstance()->IsPressed(PauseKey))
 	{
 		ApConfig::SetPaused(!ApConfig::IsPaused());
 	}
-
 	if(UiKeyboard::pInstance()->IsPressed(DebugKey))
 	{
 		ApConfig::SetDebug(!ApConfig::IsDebug());
 	}
-	
 	if (UiKeyboard::pInstance()->IsPressed(CloseGameKey))
 	{
 		m_isClosing = BtTrue;
@@ -191,12 +173,6 @@ void ScMain::Update()
 	
 		// Unload the archive
 		m_utilityArchive.Unload();
-        
-        if( UseHMD )
-        {
-            // Unload the oculus archive
-            m_hmdArchive.Unload();
-        }
         
 		// Read to close
 		m_isClosed = BtTrue;
@@ -222,8 +198,8 @@ void ScMain::SetupRender()
 	pRenderTarget->SetCamera( m_camera.GetCamera() );
 
 	// Clear the render target
-	pRenderTarget->SetCleared( BtTrue );
-
+    pRenderTarget->SetCleared( BtTrue );
+    
 	// Clear the z buffer
 	pRenderTarget->SetZCleared( BtTrue );
 
@@ -275,10 +251,10 @@ void ScMain::RestoreRenderTarget()
 
 	// Set the camera
 	pRenderTarget->SetCamera( m_camera.GetCamera() );
-
-	// Clear the render target
-	pRenderTarget->SetCleared( BtTrue );
-
+    
+    // Clear the render target
+    pRenderTarget->SetCleared( BtTrue );
+    
 	// Clear the z buffer
 	pRenderTarget->SetZCleared( BtTrue );
 
@@ -371,15 +347,18 @@ void ScMain::Render3DScene()
     {
         m_skybox.Render();
     }
+    else
+    {
+        ShCamera::Render();
+    }
     
 	m_bubbles.Render();
-	m_model.Render();
+	m_model.Render( m_camera.GetCamera() );
 
 	if(isFrustumStill)
 	{
 		m_frustum.Render();
 	}
-//	m_joysticks.Render();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -406,6 +385,7 @@ void ScMain::RenderTests()
 //    Render2DScene();
 
 	RestoreRenderTarget();
+   
 	Render3DScene();
 
 	int a=0;

@@ -427,6 +427,14 @@ RsColour RsTextureWinGL::GetPixel( BtU32 x, BtU32 y, BtU8& red, BtU8& green, BtU
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// SetTexture
+
+void RsTextureWinGL::SetTexture( BtU32 newTextureID )
+{
+    m_texture = newTextureID;
+}
+
+////////////////////////////////////////////////////////////////////////////////
 // Render
 
 void RsTextureWinGL::Render( const MtVector2& v2Position, BtU32 sortOrder )

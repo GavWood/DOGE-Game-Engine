@@ -288,22 +288,9 @@ void RsTextureWinGL::CreateOnDevice()
 ////////////////////////////////////////////////////////////////////////////////
 // SetTexture
 
-void RsTextureWinGL::SetTexture()
+void RsTextureWinGL::SetTexture( BtU32 newTextureID )
 {
-    GLenum error;
-    
-	glBindTexture(GL_TEXTURE_2D, m_texture );
-    error = glGetError();
-    
-    if( 1 )
-    {
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    }
-
-    (void)error;
-    int a=0;
-    a++;
+    m_texture = newTextureID;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -588,9 +575,15 @@ void RsTextureWinGL::Render( RsTextureRenderable *pRenderable )
 	// Cache the texture
 	RsTextureWinGL* pTexture = (RsTextureWinGL*)pRenderable->m_pTexture;
 
-	// Set the texture
-	pTexture->SetTexture();
-
+    // Set the texture
+    glActiveTexture(GL_TEXTURE0 );
+ 
+    // Bind the texture to the handle
+    glBindTexture(GL_TEXTURE_2D, pTexture->GetTextureHandle() );
+            
+    // Set the shader sampler
+    pShader->SetSampler(0);
+    
 	// Set vertex arrays
 	BtU32 stride = sizeof(RsVertex3);
 

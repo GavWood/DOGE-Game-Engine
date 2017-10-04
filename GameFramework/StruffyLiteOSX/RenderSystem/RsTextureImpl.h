@@ -44,6 +44,8 @@ public:
     BtU8                   *ReadMemory();
     void                    WriteMemory( BtU8* pMemory, BtU32 size );
 
+    void                    SetTexture( BtU32 newTextureID );
+    
 	void					SetTexture();
 
 	RsColour				GetPixel( BtU32 x, BtU32 y, BtU8& red, BtU8& green, BtU8& blue, BtU8 &alpha );

@@ -1,10 +1,4 @@
-
-//
-//  MuViewController.m
 //  GameViewController.mm
-//
-//  Created by Gavin Wood on 07/06/2012.
-//  Copyright (c) 2012 Computer Science. All rights reserved.
 
 #import "GameViewController.h"
 #import <Foundation/Foundation.h>
@@ -17,6 +11,7 @@
 #import <CoreMedia/CoreMedia.h>
 #import <TargetConditionals.h>
 #import <CoreMotion/CoreMotion.h>
+#import <CoreVideo/CoreVideo.h>
 
 // Struffy entry point
 #import <stdio.h>
@@ -34,7 +29,7 @@
 #import "ScMain.h"
 #import "AppDelegate.h"
 #import "PeerToPeer.h"
-//#import "VideoCapture.h"
+#import "ShCamera.h"
 
 // My globals
 ScMain myProject;
@@ -60,18 +55,11 @@ CMMotionManager *motionManager;
 //---------------------------------------------------------------------------------
 // helpers
 
-void interruptionListenerCallback (void   *inUserData, UInt32    interruptionState )
+void interruptionListenerCallback (void *inUserData, UInt32 interruptionState )
 {
-    /*
-     // you could do this with a cast below, but I will keep it here to make it clearer
-     YourSoundControlObject *controller = (YourSoundControlObject *) inUserData;
-     
-     if (interruptionState == kAudioSessionBeginInterruption) {
-     [controller _haltOpenALSession];
-     } else if (interruptionState == kAudioSessionEndInterruption) {
-     [controller _resumeOpenALSession];
-     }
-     */
+    // For breakpointing
+    int a=0;
+    a++;
 }
 
 enum {
@@ -247,120 +235,6 @@ UIDeviceResolution deviceType;
                        nil];
 }
 
-
--(void)captureBackCamera : (GLKView *)view
-{
-    NSError *error = nil;
-    
-    // create a low-quality capture session
-    captureSession = [[AVCaptureSession alloc] init];
-    
-    // Setup the configuration
-    [captureSession beginConfiguration];
-    
-    // We might need to consider this for older iPhones - AVCaptureSessionPreset352x288
-    // Add inputs and outputs.
-    if ([captureSession canSetSessionPreset:AVCaptureSessionPreset1920x1080])
-    {
-        captureSession.sessionPreset = AVCaptureSessionPreset1920x1080;
-    }
-    else {
-        NSLog(@"Cannot set session preset to 640x480");
-    }
-    
-    // Get the back facing camera
-    AVCaptureDevice *captureDevice = nil;
-    NSArray *videoDevices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-    for( AVCaptureDevice *device in videoDevices )
-    {
-        if( device.position == AVCaptureDevicePositionBack )
-        {
-            captureDevice = device;
-            break;
-        }
-    }
-    //  couldn't find one on the front, so just get the default video device.
-    if( captureDevice == nil )
-    {
-        captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    }
-    
-    // ...and a device input
-    AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
-    [captureSession addInput:input];
-    
-    // create a VideDataOutput to route output to us
-    AVCaptureVideoDataOutput *output = [[AVCaptureVideoDataOutput alloc] init];
-    [output setAlwaysDiscardsLateVideoFrames:YES];
-    
-    // set 32bpp BGRA pixel format, since I'll want to make sense of the frame
-    [output setVideoSettings:
-     [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
-                                 forKey:(id)kCVPixelBufferPixelFormatTypeKey]];
-    
-    //[output setSampleBufferDelegate:self queue:dispatch_get_main_queue()];
-    dispatch_queue_t queue = dispatch_queue_create("myQueue", NULL);
-    [output setSampleBufferDelegate:self queue:queue];
-    [captureSession addOutput:output];
-    
-    AVCaptureVideoPreviewLayer *previewLayer = [AVCaptureVideoPreviewLayer layerWithSession:captureSession];
-    previewLayer.frame = view.bounds;
-    previewLayer.hidden = true;
-    [view.layer addSublayer:previewLayer];
-    
-    // Save this configuration
-    [captureSession commitConfiguration];
-    
-    // Begin capturing the video
-    [captureSession startRunning];
-}
-
--(void)captureStop
-{
-    [captureSession stopRunning];
-    self.captureSession = nil;
-}
-
--(void) captureOutput:(AVCaptureOutput*)captureOutput
-didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
-       fromConnection:(AVCaptureConnection*)connection
-
-{
-    // Get the image buffer
-    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer( sampleBuffer );
-    
-    CVPixelBufferLockBaseAddress(imageBuffer,0);
-    
-    // Get the base address of the captured movie
-    uint8_t *baseAddress = (uint8_t *)CVPixelBufferGetBaseAddress(imageBuffer);
-    
-    if( baseAddress != NULL )
-    {
-        size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
-        (void)bytesPerRow;
-        //size_t width = CVPixelBufferGetWidth(imageBuffer);
-        //size_t height = CVPixelBufferGetHeight(imageBuffer);
-        
-        static int displayed = false;
-        if( !displayed )
-        {
-            // NSLog( @"Bytes per row %d", (int)bytesPerRow );
-            // NSLog( @"Width %d",  (int)width );
-            // NSLog( @"Height %d", (int)height );
-            displayed = true;
-        }
-        
-        // Set the camera in our software. Eventually we will have a separate shared camera class to handle this
-        //CVVideoCapture::SetMemory( baseAddress, (BtU32)( bytesPerRow * height ) );
-        
-        int a=0;
-        a++;
-    }
-    
-    // Release the image buffer
-    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
-}
-
 - (void)gameSetup
 {
     BtTime::SetTick( 1.0f / 30.0f );
@@ -423,16 +297,9 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     
     // Allow for recording and playback of sound
     [self setupAudioAsMixed];
-    
-    // Capture the phones main camera
-    if( ApConfig::IsAR() )
-    {
-        GLKView *view = (GLKView *)self.view;
-        [self captureBackCamera : view ];
-    }
 }
 
-// https://itw01.com/UZE4DV5.html
+
 - (void)setupAR
 {
     if (@available(iOS 11.0, *))
@@ -446,18 +313,24 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 {
     if (@available(iOS 11.0, *))
     {
-        ARWorldTrackingConfiguration *config = [ARWorldTrackingConfiguration new];
-        config.planeDetection = ARPlaneDetectionHorizontal;
-        [self.arSession runWithConfiguration:config];
+        // Create a session configuration
+        ARWorldTrackingConfiguration *configuration = [ARWorldTrackingConfiguration new];
+        
+        // Run the view's session
+        [self.arSession runWithConfiguration:configuration];
+    }
+}
+
+- (void)pauseAR {
+    if (@available(iOS 11.0, *))
+    {
+        [self.arSession pause];
     }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    [self setupAR];
-    //[self runAR];
     
     [self setupAudioAsMixed];
     
@@ -479,17 +352,34 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     self.preferredFramesPerSecond = 60;
     
     [self gameSetup];
+    
+    // Capture the phones main camera
+    if( ApConfig::IsAR() )
+    {
+        // initialize video texture cache
+        CVReturn err = CVOpenGLESTextureCacheCreate(kCFAllocatorDefault, NULL, self.context, NULL, &_videoTextureCache);
+        if (err){
+            NSLog(@"Error creating CVOpenGLESTextureCacheCreate %d", err);
+        }
+        
+        [self setupAR];
+    }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
-    
-    // Create a session configuration
-    ARWorldTrackingConfiguration *configuration = [ARWorldTrackingConfiguration new];
-    
-    // Run the view's session
-    [self.arSession runWithConfiguration:configuration];
+    [self runAR];
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self pauseAR];
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Vibrate the phone
 
 static void completionCallback (SystemSoundID  mySSID, void* myself)
 {
@@ -695,18 +585,18 @@ static bool isShaken = false;
     /*
      if( ShVibration::GetNumItems() )
      {
-     // Peek at the vibration action
-     ShVibrationAction action = ShVibration::PeekAction();
+         // Peek at the vibration action
+         ShVibrationAction action = ShVibration::PeekAction();
      
-     // Shall we start vibrating
-     if( action.m_type == ShVibrationActionType_Start )
-     {
-     // Pop the action
-     ShVibration::PopAction();
+         // Shall we start vibrating
+         if( action.m_type == ShVibrationActionType_Start )
+         {
+         // Pop the action
+         ShVibration::PopAction();
      
-     // Vibrate the phone
-     [self vibrate];
-     }
+         // Vibrate the phone
+         [self vibrate];
+         }
      }
      */
 }
@@ -796,11 +686,90 @@ static bool isUpdated = false;
     }
 }
 
+CVOpenGLESTextureRef createTexture(
+                                   CVOpenGLESTextureCacheRef textureCache,
+                                   CVPixelBufferRef pixelBuffer,
+                                   int planeIndex,
+                                   GLenum format,
+                                   int width,
+                                   int height )
+{
+    GLsizei imageWidth = (GLsizei)CVPixelBufferGetWidthOfPlane(pixelBuffer, planeIndex);
+    GLsizei imageHeight = (GLsizei)CVPixelBufferGetHeightOfPlane(pixelBuffer, planeIndex);
+    
+    CVOpenGLESTextureRef texture = NULL;
+    CVReturn err = noErr;
+    err = CVOpenGLESTextureCacheCreateTextureFromImage(kCFAllocatorDefault,
+                                                       textureCache,
+                                                       pixelBuffer,
+                                                       NULL,
+                                                       GL_TEXTURE_2D,
+                                                       format,
+                                                       imageWidth,
+                                                       imageHeight,
+                                                       format,
+                                                       GL_UNSIGNED_BYTE,
+                                                       planeIndex,
+                                                       &texture);
+    
+    if (err != kCVReturnSuccess) {
+        CVBufferRelease(texture);
+        texture = nil;
+        NSLog(@"Error at CVOpenGLESTextureCacheCreateTextureFromImage %d", err);
+    }
+    return texture;
+}
+
 - (void)session:(ARSession *)session didUpdateFrame:(ARFrame *)frame
 {
-    // https://github.com/sacchy/Unity-Arkit/blob/master/Assets/Plugins/iOS/UnityARKit/NativeInterface/ARSessionNative.mm
-    // https://blog.pusher.com/building-ar-game-arkit-spritekit/
+    // Release the last version of the textures
+    CVBufferRelease(yTexture);
+    CVBufferRelease(CbCrTexture);
     
+    // Get handles to resources
+    CVPixelBufferRef pixelBuffer = frame.capturedImage;
+    CVPixelBufferLockBaseAddress(pixelBuffer, kCVPixelBufferLock_ReadOnly);
+    
+    // Check the number of planes
+    int numberOfPlanes = (int)CVPixelBufferGetPlaneCount(pixelBuffer);
+    assert( numberOfPlanes > 1 );
+   
+    // Create the Y texture. This determines the brightness of the colour (referred to as luminance or luma)
+    yTexture = createTexture(_videoTextureCache, pixelBuffer, 0, GL_LUMINANCE, imageWidth, imageHeight );
+    
+    // cbcr components determine the color itself (the chroma).
+    CbCrTexture = createTexture(_videoTextureCache, pixelBuffer, 1, GL_LUMINANCE_ALPHA, imageWidth, imageHeight );
+    
+    // Bind the Y texture and set up its texture stage states
+    glBindTexture(CVOpenGLESTextureGetTarget(yTexture), CVOpenGLESTextureGetName(yTexture));
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glBindTexture(CVOpenGLESTextureGetTarget(yTexture), 0);
+    
+    // Bind the cbcr texture and set up its texture stage states
+    glBindTexture(CVOpenGLESTextureGetTarget(CbCrTexture), CVOpenGLESTextureGetName(CbCrTexture));
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glBindTexture(CVOpenGLESTextureGetTarget(CbCrTexture), 0);
+    
+    int yTextureGL = CVOpenGLESTextureGetName(yTexture);
+    int CbCrTextureGL = CVOpenGLESTextureGetName(CbCrTexture);
+    
+    ShCamera::Update( yTextureGL, CbCrTextureGL );
+    
+    // Unlock the base address
+    CVPixelBufferUnlockBaseAddress( pixelBuffer, kCVPixelBufferLock_ReadOnly );
+    
+    // Flush every update
+    CVOpenGLESTextureCacheFlush(_videoTextureCache, 0);
+    
+    BtAssert( CVOpenGLESTextureGetTarget(CbCrTexture) == GL_TEXTURE_2D );
+    
+    // Set the orientation
     UIInterfaceOrientation orient = [[UIApplication sharedApplication] statusBarOrientation];
     matrix_float4x4 rotatedMatrix = matrix_identity_float4x4;
     
@@ -829,6 +798,8 @@ static bool isUpdated = false;
         default:
             break;
     }
+    
+    // Create a matrix in the game engine's representation from the frame's own world transform
     matrix_float4x4 matrix = matrix_multiply(frame.camera.transform, rotatedMatrix);
     MtMatrix4 m4Transform;
     for (int col = 0; col < 4; ++col)
@@ -839,10 +810,13 @@ static bool isUpdated = false;
         }
     }
     
+    // Extract the position from the world transform
     matrix_float4x4 original = frame.camera.transform;
     MtVector3 v3Position( original.columns[3].x,
                           original.columns[3].y,
                          -original.columns[3].z );
+    
+    // Set these on the IMU class so we can use them in the game logic
     ShIMU::SetPosition( 0, v3Position );
     MtQuaternion quaternion = m4Transform;
     ShIMU::SetQuaternion( 0, quaternion );
