@@ -45,7 +45,7 @@ void ScMain::Init()
     BtBool isSimulator = ApConfig::IsSimulator();
     (void)isSimulator;
     
-	if( ApConfig::IsPhone() )
+    if( ApConfig::IsPhone() && !isSimulator)
 	{
 		ApConfig::SetAR(BtTrue);
 	}

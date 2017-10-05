@@ -49,7 +49,6 @@
 		7B1BDAC41F5F4BC40030E0D2 /* fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BDAC11F5F4BC40030E0D2 /* fft.cpp */; };
 		7B1BDADB1F5F4D9E0030E0D2 /* anim.OSXz in Resources */ = {isa = PBXBuildFile; fileRef = 7B1BDAD71F5F4D9E0030E0D2 /* anim.OSXz */; };
 		7B1BDADC1F5F4D9E0030E0D2 /* game.OSXz in Resources */ = {isa = PBXBuildFile; fileRef = 7B1BDAD81F5F4D9E0030E0D2 /* game.OSXz */; };
-		7B1BDADD1F5F4D9E0030E0D2 /* hmd.OSXz in Resources */ = {isa = PBXBuildFile; fileRef = 7B1BDAD91F5F4D9E0030E0D2 /* hmd.OSXz */; };
 		7B1BDADE1F5F4D9E0030E0D2 /* utility.OSXz in Resources */ = {isa = PBXBuildFile; fileRef = 7B1BDADA1F5F4D9E0030E0D2 /* utility.OSXz */; };
 		7B1BDAFA1F5F4E740030E0D2 /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BDAE01F5F4E740030E0D2 /* adler32.c */; };
 		7B1BDAFB1F5F4E740030E0D2 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BDAE11F5F4E740030E0D2 /* compress.c */; };
@@ -277,7 +276,6 @@
 		7B1BDAC21F5F4BC40030E0D2 /* fft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fft.h; sourceTree = "<group>"; };
 		7B1BDAD71F5F4D9E0030E0D2 /* anim.OSXz */ = {isa = PBXFileReference; lastKnownFileType = file; path = anim.OSXz; sourceTree = "<group>"; };
 		7B1BDAD81F5F4D9E0030E0D2 /* game.OSXz */ = {isa = PBXFileReference; lastKnownFileType = file; path = game.OSXz; sourceTree = "<group>"; };
-		7B1BDAD91F5F4D9E0030E0D2 /* hmd.OSXz */ = {isa = PBXFileReference; lastKnownFileType = file; path = hmd.OSXz; sourceTree = "<group>"; };
 		7B1BDADA1F5F4D9E0030E0D2 /* utility.OSXz */ = {isa = PBXFileReference; lastKnownFileType = file; path = utility.OSXz; sourceTree = "<group>"; };
 		7B1BDAE01F5F4E740030E0D2 /* adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = adler32.c; sourceTree = "<group>"; };
 		7B1BDAE11F5F4E740030E0D2 /* compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = compress.c; sourceTree = "<group>"; };
@@ -850,7 +848,6 @@
 			children = (
 				7B1BDAD71F5F4D9E0030E0D2 /* anim.OSXz */,
 				7B1BDAD81F5F4D9E0030E0D2 /* game.OSXz */,
-				7B1BDAD91F5F4D9E0030E0D2 /* hmd.OSXz */,
 				7B1BDADA1F5F4D9E0030E0D2 /* utility.OSXz */,
 			);
 			name = Release;
@@ -1528,7 +1525,6 @@
 				7BE8B3B91F6285F500ABFF3C /* visualinfo.exe in Resources */,
 				7B1B80431F605A0000573424 /* shaderLitTexturedOSX.vert in Resources */,
 				7BE8B3B41F6285F500ABFF3C /* glew32.dll in Resources */,
-				7B1BDADD1F5F4D9E0030E0D2 /* hmd.OSXz in Resources */,
 				7B1B80401F605A0000573424 /* shaderLitOSX.frag in Resources */,
 				7B1BDADC1F5F4D9E0030E0D2 /* game.OSXz in Resources */,
 				7B1B80451F605A0000573424 /* shaderPassThroughOSX.vert in Resources */,

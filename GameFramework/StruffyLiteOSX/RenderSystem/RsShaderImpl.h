@@ -61,6 +61,8 @@ public:
 	void								SetCamera( const RsCamera &camera );
 	void								SetLights(BtU32 index);
 
+    void                                SetSampler( BtU32 sampler );
+    
 	// By handle
 	void								SetMatrix( RsHandles Handle, const MtMatrix4& m4Matrix );
 	void								SetFloats( RsHandles Handle, const BtFloat* pArray, BtU32 nCount );

@@ -28,7 +28,6 @@
 		7B111CC11F5C003B00E2C475 /* SgBoneGLES.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B111CC01F5C003B00E2C475 /* SgBoneGLES.cpp */; };
 		7B111CDE1F5C056B00E2C475 /* anim.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B111CC31F5C056B00E2C475 /* anim.iPhonez */; };
 		7B111CE11F5C056B00E2C475 /* game.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B111CC61F5C056B00E2C475 /* game.iPhonez */; };
-		7B111CE31F5C056B00E2C475 /* hmd.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B111CC81F5C056B00E2C475 /* hmd.iPhonez */; };
 		7B111CE51F5C056B00E2C475 /* utility.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B111CCA1F5C056B00E2C475 /* utility.iPhonez */; };
 		7B21F2741F7FDD0A008FF5F3 /* CbCrtoRGB.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B21F2731F7FDD0A008FF5F3 /* CbCrtoRGB.frag */; };
 		7B2AF14C1F839D8000BF3AF8 /* ScBubbles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B2AF13F1F839D7F00BF3AF8 /* ScBubbles.cpp */; };
@@ -220,7 +219,6 @@
 		7B111CC01F5C003B00E2C475 /* SgBoneGLES.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SgBoneGLES.cpp; sourceTree = "<group>"; };
 		7B111CC31F5C056B00E2C475 /* anim.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = anim.iPhonez; sourceTree = "<group>"; };
 		7B111CC61F5C056B00E2C475 /* game.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = game.iPhonez; sourceTree = "<group>"; };
-		7B111CC81F5C056B00E2C475 /* hmd.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = hmd.iPhonez; sourceTree = "<group>"; };
 		7B111CCA1F5C056B00E2C475 /* utility.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; path = utility.iPhonez; sourceTree = "<group>"; };
 		7B21F2731F7FDD0A008FF5F3 /* CbCrtoRGB.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = CbCrtoRGB.frag; path = ../3DScene/GameData/Game.Archive/Shaders/CbCrtoRGB.frag; sourceTree = "<group>"; };
 		7B2AF13E1F839D7F00BF3AF8 /* ScWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScWorld.h; sourceTree = "<group>"; };
@@ -638,7 +636,6 @@
 			children = (
 				7B111CC31F5C056B00E2C475 /* anim.iPhonez */,
 				7B111CC61F5C056B00E2C475 /* game.iPhonez */,
-				7B111CC81F5C056B00E2C475 /* hmd.iPhonez */,
 				7B111CCA1F5C056B00E2C475 /* utility.iPhonez */,
 			);
 			name = Release;
@@ -1354,7 +1351,6 @@
 				7B45A11C1F642B05009ECFA2 /* shaderLit.vert in Resources */,
 				7B45A11D1F642B05009ECFA2 /* shaderLit.frag in Resources */,
 				7B45A1141F642B05009ECFA2 /* shaderTextured.vert in Resources */,
-				7B111CE31F5C056B00E2C475 /* hmd.iPhonez in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
