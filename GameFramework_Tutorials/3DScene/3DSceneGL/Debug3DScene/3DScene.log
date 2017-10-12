@@ -1,0 +1,9 @@
+﻿  ScRenderSkybox.cpp
+  ScModel.cpp
+  ScMain.cpp
+  ScFrustum.cpp
+  ScCamera.cpp
+  ScBubbles.cpp
+  GaProject_3DScene.cpp
+  Generating Code...
+  3DScene.vcxproj -> C:\github\game-framework-private\GameFramework_Tutorials\3DScene\3DSceneGL\Debug3DScene\3DScene.lib

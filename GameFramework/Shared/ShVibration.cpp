@@ -1,0 +1,54 @@
+////////////////////////////////////////////////////////////////////////////////
+// ShVibration
+
+// Includes
+#include "ShVibration.h"
+#include "RsUtil.h"
+
+////////////////////////////////////////////////////////////////////////////////
+// statics
+
+// Public functions
+BtQueue<ShVibrationAction, 128> ShVibration::m_actions;
+BtU32 ShVibration::m_length = 8;
+
+////////////////////////////////////////////////////////////////////////////////
+// PushAction
+
+//static
+void ShVibration::PushAction( ShVibrationAction action )
+{
+    m_actions.Push( action );
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// GetNumItems
+
+//static
+BtU32 ShVibration::GetNumItems()
+{
+    return m_actions.GetItemCount();
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// PopAction
+
+//static
+ShVibrationAction ShVibration::PopAction()
+{
+    ShVibrationAction action;
+    action = m_actions.Pop();
+    return action;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// PeekAction
+
+//static
+ShVibrationAction ShVibration::PeekAction()
+{
+	ShVibrationAction action;
+	action = m_actions.Peek();
+	return action;
+}
+

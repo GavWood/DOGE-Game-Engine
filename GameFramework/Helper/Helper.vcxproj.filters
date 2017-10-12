@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="HlDraw.cpp">
+      <Filter>Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="HlDebug.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="HlKeyboard.cpp">
+      <Filter>Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="HlMaterial.cpp">
+      <Filter>Material</Filter>
+    </ClCompile>
+    <ClCompile Include="HlModel.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="HlMouse.cpp">
+      <Filter>Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="HlFont.cpp">
+      <Filter>Font</Filter>
+    </ClCompile>
+    <ClCompile Include="HlScreenSize.cpp">
+      <Filter>ScreenSize</Filter>
+    </ClCompile>
+    <ClCompile Include="HlTimer.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="HlTrueType.cpp">
+      <Filter>TrueType</Filter>
+    </ClCompile>
+    <ClCompile Include="HlUserData.cpp">
+      <Filter>UserData</Filter>
+    </ClCompile>
+    <ClCompile Include="HlView.cpp">
+      <Filter>View</Filter>
+    </ClCompile>
+    <ClCompile Include="HlEvents.cpp">
+      <Filter>Events</Filter>
+    </ClCompile>
+    <ClCompile Include="HlArchive.cpp">
+      <Filter>Archive</Filter>
+    </ClCompile>
+    <ClCompile Include="HlAnimation.cpp">
+      <Filter>Model</Filter>
+    </ClCompile>
+    <ClCompile Include="HlJoysticks.cpp">
+      <Filter>Joysticks</Filter>
+    </ClCompile>
+    <ClCompile Include="HlGesture.cpp">
+      <Filter>Gesture</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HlDraw.h">
+      <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="HlDebug.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="HlKeyboard.h">
+      <Filter>Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="HlMaterial.h">
+      <Filter>Material</Filter>
+    </ClInclude>
+    <ClInclude Include="HlModel.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="HlMouse.h">
+      <Filter>Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="HlFont.h">
+      <Filter>Font</Filter>
+    </ClInclude>
+    <ClInclude Include="HlScreenSize.h">
+      <Filter>ScreenSize</Filter>
+    </ClInclude>
+    <ClInclude Include="HlTimer.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="HlTrueType.h">
+      <Filter>TrueType</Filter>
+    </ClInclude>
+    <ClInclude Include="HlUserData.h">
+      <Filter>UserData</Filter>
+    </ClInclude>
+    <ClInclude Include="HlView.h">
+      <Filter>View</Filter>
+    </ClInclude>
+    <ClInclude Include="HlEvents.h">
+      <Filter>Events</Filter>
+    </ClInclude>
+    <ClInclude Include="HlArchive.h">
+      <Filter>Archive</Filter>
+    </ClInclude>
+    <ClInclude Include="HlAnimation.h">
+      <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="HlJoysticks.h">
+      <Filter>Joysticks</Filter>
+    </ClInclude>
+    <ClInclude Include="HlGesture.h">
+      <Filter>Gesture</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{55511cd5-8ec8-4525-80d8-35fd26899f91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Draw">
+      <UniqueIdentifier>{c83dc016-9a51-4808-999f-fb554657cf14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Keyboard">
+      <UniqueIdentifier>{4b66e88f-faf3-44b4-8d6f-24a415a44541}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Material">
+      <UniqueIdentifier>{eb4809c4-e27b-4d63-9c99-20bd5038f260}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{32bfbc4a-a1de-4f1f-b263-5884f5e35fe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mouse">
+      <UniqueIdentifier>{086bca90-87c2-45e8-9f38-2898a32f5652}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Font">
+      <UniqueIdentifier>{b0218846-bc9f-4b43-9b40-c804be1246d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ScreenSize">
+      <UniqueIdentifier>{8ba5d408-9c3c-40f1-bc8c-7605a8572e01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Timer">
+      <UniqueIdentifier>{9cf49e94-9378-4aa2-9689-7f4705c658f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TrueType">
+      <UniqueIdentifier>{612ced3a-1f2d-476b-a586-04a3bcb25167}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UserData">
+      <UniqueIdentifier>{55fe50b1-e53a-4d28-ba91-d952dcf9c0c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="View">
+      <UniqueIdentifier>{dbb215c4-7c8b-4d61-bee6-e20f12b8911d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Events">
+      <UniqueIdentifier>{54e2bf77-b879-42d9-8a79-2d317fa1da32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archive">
+      <UniqueIdentifier>{beb36d0c-8535-4da7-8839-18cae861eccb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Joysticks">
+      <UniqueIdentifier>{9c1612ac-1829-4949-8946-e95d75c66204}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gesture">
+      <UniqueIdentifier>{2f9ef8ce-47c0-41a9-b4a3-0cdd1c0af760}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

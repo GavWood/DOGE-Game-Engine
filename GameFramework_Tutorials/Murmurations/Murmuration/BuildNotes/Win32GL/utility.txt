@@ -1,0 +1,17 @@
+1024.05, white3noztest, Texture
+1024.05, font, Texture
+1024.05, white3, Texture
+256.05, vera_0, Texture
+64.39, vera, Userdata
+53.52, mousepointers, Texture
+10.39, vera, Font
+2.03, mousepointers, Sprite
+0.32, white3noztest, Material
+0.32, white2, Material
+0.32, font, Material
+0.32, white3, Material
+0.30, white2, Texture
+
+Main memory total 3460 KBytes
+Graphics total 3382 KBytes
+Sound total 0 KBytes

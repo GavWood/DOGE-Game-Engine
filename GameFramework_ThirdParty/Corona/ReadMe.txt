@@ -1,0 +1,2 @@
+// Get Corona license here
+

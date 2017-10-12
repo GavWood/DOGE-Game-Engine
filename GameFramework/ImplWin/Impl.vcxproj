@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Base\Application\ApConfig.cpp" />
+    <ClCompile Include="..\Base\Base\BtCRC.cpp" />
+    <ClCompile Include="..\Base\Base\BtPrint.cpp" />
+    <ClCompile Include="..\Base\Base\LBtCompressedFile.cpp" />
+    <ClCompile Include="..\Base\Base\LBtMemory.cpp" />
+    <ClCompile Include="..\Base\Base\LBtString.cpp" />
+    <ClCompile Include="..\Base\BinaryArchive\BaArchive.cpp" />
+    <ClCompile Include="..\Base\BinaryArchive\BaResource.cpp" />
+    <ClCompile Include="..\Base\BinaryArchive\LBaUserData.cpp" />
+    <ClCompile Include="..\Base\Dynamics\DyCollisionAnalytical.cpp" />
+    <ClCompile Include="..\Base\Dynamics\DyCollisionMesh.cpp" />
+    <ClCompile Include="..\Base\ErrorLog\ErrorLog.cpp" />
+    <ClCompile Include="..\Base\FileSystem\FsFile.cpp" />
+    <ClCompile Include="..\Base\Maths\MtAABB.cpp" />
+    <ClCompile Include="..\Base\Maths\MtLine.cpp" />
+    <ClCompile Include="..\Base\Maths\MtMath.cpp" />
+    <ClCompile Include="..\Base\Maths\MtMatrix3.cpp" />
+    <ClCompile Include="..\Base\Maths\MtMatrix4.cpp" />
+    <ClCompile Include="..\Base\Maths\MtPlane.cpp" />
+    <ClCompile Include="..\Base\Maths\MtPoint.cpp" />
+    <ClCompile Include="..\Base\Maths\MtQuad.cpp" />
+    <ClCompile Include="..\Base\Maths\MtQuaternion.cpp" />
+    <ClCompile Include="..\Base\Maths\MtRay.cpp" />
+    <ClCompile Include="..\Base\Maths\MtSphere.cpp" />
+    <ClCompile Include="..\Base\Maths\MtTriangle.cpp" />
+    <ClCompile Include="..\Base\Maths\MtVector2.cpp" />
+    <ClCompile Include="..\Base\Maths\MtVector3.cpp" />
+    <ClCompile Include="..\Base\Maths\MtVector4.cpp" />
+    <ClCompile Include="..\Base\RandomNumbers\LRdRandom.cpp" />
+    <ClCompile Include="..\Base\RenderSystem\RsCamera.cpp" />
+    <ClCompile Include="..\Base\RenderSystem\RsColour.cpp" />
+    <ClCompile Include="..\Base\RenderSystem\RsFrustum.cpp" />
+    <ClCompile Include="..\Base\RenderSystem\RsImpl.cpp" />
+    <ClCompile Include="..\Base\RenderSystem\RsIndexBuffer.cpp" />
+    <ClCompile Include="..\Base\RenderSystem\RsRenderTarget.cpp" />
+    <ClCompile Include="..\Base\RenderSystem\RsResourceManager.cpp" />
+    <ClCompile Include="..\Base\RenderSystem\RsShader.cpp" />
+    <ClCompile Include="..\Base\RenderSystem\RsUtil.cpp" />
+    <ClCompile Include="..\Base\SceneGraph\SgBlendShapeImpl.cpp" />
+    <ClCompile Include="..\Base\SceneGraph\SgLightImpl.cpp" />
+    <ClCompile Include="..\Base\SceneGraph\SgRigidBodyImpl.cpp" />
+    <ClCompile Include="..\Base\UserInterface\Ui360.cpp" />
+    <ClCompile Include="..\Base\UserInterface\UiKeyboard.cpp" />
+    <ClCompile Include="..\Impl\BinaryArchive\BaArchiveImpl.cpp" />
+    <ClCompile Include="..\Impl\RenderSystem\RsCapsImpl.cpp" />
+    <ClCompile Include="..\Impl\RenderSystem\RsFlashImpl.cpp" />
+    <ClCompile Include="..\Impl\RenderSystem\RsFontImpl.cpp" />
+    <ClCompile Include="..\Impl\RenderSystem\RsIndexBufferImpl.cpp" />
+    <ClCompile Include="..\Impl\RenderSystem\RsManagerImpl.cpp" />
+    <ClCompile Include="..\Impl\RenderSystem\RsMaterialImpl.cpp" />
+    <ClCompile Include="..\Impl\RenderSystem\RsRenderTargetImpl.cpp" />
+    <ClCompile Include="..\Impl\RenderSystem\RsSceneImpl.cpp" />
+    <ClCompile Include="..\Impl\RenderSystem\RsShaderImpl.cpp" />
+    <ClCompile Include="..\Impl\RenderSystem\RsSpriteImpl.cpp" />
+    <ClCompile Include="..\Impl\RenderSystem\RsTextureImpl.cpp" />
+    <ClCompile Include="..\Impl\RenderSystem\RsVertexBufferImpl.cpp" />
+    <ClCompile Include="..\Impl\SceneGraph\SgAnimatorImpl.cpp" />
+    <ClCompile Include="..\Impl\SceneGraph\SgBoneImpl.cpp" />
+    <ClCompile Include="..\Impl\SceneGraph\SgCollisionImpl.cpp" />
+    <ClCompile Include="..\Impl\SceneGraph\SgMaterialsImpl.cpp" />
+    <ClCompile Include="..\Impl\SceneGraph\SgMeshImpl.cpp" />
+    <ClCompile Include="..\Impl\SceneGraph\SgNodeImpl.cpp" />
+    <ClCompile Include="..\Impl\SceneGraph\SgSkinImpl.cpp" />
+    <ClCompile Include="..\Impl\Sound\SdSoundCaptureImpl.cpp" />
+    <ClCompile Include="..\Impl\Sound\SdSoundImpl.cpp" />
+    <ClCompile Include="..\Impl\UserInterface\Ui360.cpp" />
+    <ClCompile Include="..\Impl\UserInterface\UiInputImpl.cpp" />
+    <ClCompile Include="..\Impl\UserInterface\UiKeyboardImpl.cpp" />
+    <ClCompile Include="BtThread.cpp" />
+    <ClCompile Include="BtTime.cpp" />
+    <ClCompile Include="RsColourImpl.cpp" />
+    <ClCompile Include="Ui360Impl.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Base\BinaryArchive\BaFileData.h" />
+    <ClInclude Include="..\Base\BinaryArchive\BtCompressedFile.h" />
+    <ClInclude Include="..\Base\Dynamics\DyCollisionAnalytical.h" />
+    <ClInclude Include="..\Base\Dynamics\DyCollisionMesh.h" />
+    <ClInclude Include="..\Base\includes\ApConfig.h" />
+    <ClInclude Include="..\Base\includes\BaArchive.h" />
+    <ClInclude Include="..\Base\includes\BaDuplicate.h" />
+    <ClInclude Include="..\Base\includes\BaResource.h" />
+    <ClInclude Include="..\Base\includes\BaUserData.h" />
+    <ClInclude Include="..\Base\includes\BtArray.h" />
+    <ClInclude Include="..\Base\includes\BtBase.h" />
+    <ClInclude Include="..\Base\includes\BtCollection.h" />
+    <ClInclude Include="..\Base\includes\BtCRC.h" />
+    <ClInclude Include="..\Base\includes\BtEnum.h" />
+    <ClInclude Include="..\Base\includes\BtLinkedList.h" />
+    <ClInclude Include="..\Base\includes\BtMemory.h" />
+    <ClInclude Include="..\Base\includes\BtPrint.h" />
+    <ClInclude Include="..\Base\includes\BtQueue.h" />
+    <ClInclude Include="..\Base\includes\BtString.h" />
+    <ClInclude Include="..\Base\includes\BtThread.h" />
+    <ClInclude Include="..\Base\includes\BtTime.h" />
+    <ClInclude Include="..\Base\includes\BtTypes.h" />
+    <ClInclude Include="..\Base\includes\ErrorLog.h" />
+    <ClInclude Include="..\Base\includes\FsFile.h" />
+    <ClInclude Include="..\Base\includes\MtAABB.h" />
+    <ClInclude Include="..\Base\includes\MtLine.h" />
+    <ClInclude Include="..\Base\includes\MtMath.h" />
+    <ClInclude Include="..\Base\includes\MtMatrix3.h" />
+    <ClInclude Include="..\Base\includes\MtMatrix4.h" />
+    <ClInclude Include="..\Base\includes\MtPlane.h" />
+    <ClInclude Include="..\Base\includes\MtPoint.h" />
+    <ClInclude Include="..\Base\includes\MtQuad.h" />
+    <ClInclude Include="..\Base\includes\MtQuaternion.h" />
+    <ClInclude Include="..\Base\includes\MtRay.h" />
+    <ClInclude Include="..\Base\includes\MtSphere.h" />
+    <ClInclude Include="..\Base\includes\MtTriangle.h" />
+    <ClInclude Include="..\Base\includes\MtVector2.h" />
+    <ClInclude Include="..\Base\includes\MtVector3.h" />
+    <ClInclude Include="..\Base\includes\MtVector4.h" />
+    <ClInclude Include="..\Base\includes\RdRandom.h" />
+    <ClInclude Include="..\Base\includes\RsCamera.h" />
+    <ClInclude Include="..\Base\includes\RsCaps.h" />
+    <ClInclude Include="..\Base\includes\RsColour.h" />
+    <ClInclude Include="..\Base\includes\RsFlash.h" />
+    <ClInclude Include="..\Base\includes\RsFont.h" />
+    <ClInclude Include="..\Base\includes\RsFrustum.h" />
+    <ClInclude Include="..\Base\includes\RsIndexBuffer.h" />
+    <ClInclude Include="..\Base\includes\RsMaterial.h" />
+    <ClInclude Include="..\Base\includes\RsPrimitive.h" />
+    <ClInclude Include="..\Base\includes\RsRenderTarget.h" />
+    <ClInclude Include="..\Base\includes\RsRenderTypes.h" />
+    <ClInclude Include="..\Base\includes\RsShader.h" />
+    <ClInclude Include="..\Base\includes\RsSprite.h" />
+    <ClInclude Include="..\Base\includes\RsTexture.h" />
+    <ClInclude Include="..\Base\includes\RsUtil.h" />
+    <ClInclude Include="..\Base\includes\RsVertex.h" />
+    <ClInclude Include="..\Base\includes\RsViewport.h" />
+    <ClInclude Include="..\Base\includes\SdSound.h" />
+    <ClInclude Include="..\Base\includes\SgAnimator.h" />
+    <ClInclude Include="..\Base\includes\SgBlendShape.h" />
+    <ClInclude Include="..\Base\includes\SgBone.h" />
+    <ClInclude Include="..\Base\includes\SgCamera.h" />
+    <ClInclude Include="..\Base\includes\SgCollision.h" />
+    <ClInclude Include="..\Base\includes\SgLight.h" />
+    <ClInclude Include="..\Base\includes\SgMaterial.h" />
+    <ClInclude Include="..\Base\includes\SgMesh.h" />
+    <ClInclude Include="..\Base\includes\SgNode.h" />
+    <ClInclude Include="..\Base\includes\SgRigidBody.h" />
+    <ClInclude Include="..\Base\includes\SgSkin.h" />
+    <ClInclude Include="..\Base\includes\Ui360.h" />
+    <ClInclude Include="..\Base\includes\UiJoystick.h" />
+    <ClInclude Include="..\Base\includes\UiKeyboard.h" />
+    <ClInclude Include="..\Base\includes\UiMouse.h" />
+    <ClInclude Include="..\Base\RenderSystem\RsImpl.h" />
+    <ClInclude Include="..\Base\RenderSystem\RsResourceManager.h" />
+    <ClInclude Include="..\Base\SceneGraph\SgBlendShapeImpl.h" />
+    <ClInclude Include="..\Base\SceneGraph\SgBoneImpl.h" />
+    <ClInclude Include="..\Base\SceneGraph\SgCameraImpl.h" />
+    <ClInclude Include="..\Base\SceneGraph\SgLightImpl.h" />
+    <ClInclude Include="..\Base\SceneGraph\SgRigidBodyImpl.h" />
+    <ClInclude Include="..\Impl\RenderSystem\RsCapsImpl.h" />
+    <ClInclude Include="..\Impl\RenderSystem\RsFlashImpl.h" />
+    <ClInclude Include="..\Impl\RenderSystem\RsFontImpl.h" />
+    <ClInclude Include="..\Impl\RenderSystem\RsIndexBufferImpl.h" />
+    <ClInclude Include="..\Impl\RenderSystem\RsManagerImpl.h" />
+    <ClInclude Include="..\Impl\RenderSystem\RsMaterialImpl.h" />
+    <ClInclude Include="..\Impl\RenderSystem\RsRenderTargetImpl.h" />
+    <ClInclude Include="..\Impl\RenderSystem\RsSceneImpl.h" />
+    <ClInclude Include="..\Impl\RenderSystem\RsShaderImpl.h" />
+    <ClInclude Include="..\Impl\RenderSystem\RsSpriteImpl.h" />
+    <ClInclude Include="..\Impl\RenderSystem\RsTextureImpl.h" />
+    <ClInclude Include="..\Impl\RenderSystem\RsVertexBufferImpl.h" />
+    <ClInclude Include="..\Impl\SceneGraph\SgAnimatorImpl.h" />
+    <ClInclude Include="..\Impl\SceneGraph\SgBoneImpl.h" />
+    <ClInclude Include="..\Impl\SceneGraph\SgCollisionImpl.h" />
+    <ClInclude Include="..\Impl\SceneGraph\SgMaterialsImpl.h" />
+    <ClInclude Include="..\Impl\SceneGraph\SgMeshImpl.h" />
+    <ClInclude Include="..\Impl\SceneGraph\SgNodeImpl.h" />
+    <ClInclude Include="..\Impl\SceneGraph\SgSkinImpl.h" />
+    <ClInclude Include="..\Impl\Sound\SdSoundCaptureImpl.h" />
+    <ClInclude Include="..\Impl\Sound\SdSoundImpl.h" />
+    <ClInclude Include="..\Impl\UserInterface\UiInputImpl.h" />
+    <ClInclude Include="..\Impl\UserInterface\UiKeyboardImpl.h" />
+    <ClInclude Include="RsPlatform.h" />
+    <ClInclude Include="Ui360Impl.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2D698532-CCBC-4C89-8F00-82A6C1CB073B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>StruffyLiteWinGL</RootNamespace>
+    <ProjectName>Impl</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\GameFrameWork\includes\;$(ProjectDir)\..\..\GameFrameWork\Base\Maths;$(ProjectDir)\..\..\GameFrameWork\Base\BinaryArchive;$(ProjectDir)\..\..\GameFrameWork\Base\RenderSystem;$(ProjectDir)\..\..\GameFrameWork\Base\Base;$(ProjectDir)\..\..\GameFrameWork\Base\RandomNumbers;$(ProjectDir)\..\..\GameFrameWork\Base\Sound;$(ProjectDir)\..\..\GameFrameWork\Base\Application;$(ProjectDir)\..\..\GameFrameWork\Base\Includes;$(ProjectDir)\..\..\GameFrameWork\Base\Dynamics;$(ProjectDir)\..\..\GameFrameWork\Base\UserInterface;$(ProjectDir)\..\..\GameFrameWork\Base\SceneGraph;$(ProjectDir)\..\..\GameFrameWork\Impl\RenderSystem\;$(ProjectDir)\..\..\GameFrameWork\Impl\Sound;$(ProjectDir)\..\..\GameFrameWork\Impl\UserInterface;$(ProjectDir)\..\..\GameFrameWork\Impl\SceneGraph;$(ProjectDir)\..\..\GameFrameWork\ImplWin;$(ProjectDir)\..\..\GameFramework_ThirdParty\JSon;$(ProjectDir)\..\..\GameFramework_ThirdParty\ZLib;$(ProjectDir)\..\..\GameFramework_ThirdParty\glfw\include;$(ProjectDir)\..\..\GameFramework_ThirdParty\openal;$(ProjectDir)\..\..\GameFramework_ThirdParty\glew\glew-1.11.0\include;$(ProjectDir)\..\..\GameFramework_ThirdParty\fft;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\GameFrameWork\includes\;$(ProjectDir)\..\..\GameFrameWork\Base\Maths;$(ProjectDir)\..\..\GameFrameWork\Base\BinaryArchive;$(ProjectDir)\..\..\GameFrameWork\Base\RenderSystem;$(ProjectDir)\..\..\GameFrameWork\Base\Base;$(ProjectDir)\..\..\GameFrameWork\Base\RandomNumbers;$(ProjectDir)\..\..\GameFrameWork\Base\Sound;$(ProjectDir)\..\..\GameFrameWork\Base\Application;$(ProjectDir)\..\..\GameFrameWork\Base\Includes;$(ProjectDir)\..\..\GameFrameWork\Base\Dynamics;$(ProjectDir)\..\..\GameFrameWork\Base\UserInterface;$(ProjectDir)\..\..\GameFrameWork\Base\SceneGraph;$(ProjectDir)\..\..\GameFrameWork\Impl\RenderSystem\;$(ProjectDir)\..\..\GameFrameWork\Impl\Sound;$(ProjectDir)\..\..\GameFrameWork\Impl\UserInterface;$(ProjectDir)\..\..\GameFrameWork\Impl\SceneGraph;$(ProjectDir)\..\..\GameFrameWork\ImplWin;$(ProjectDir)\..\..\GameFramework_ThirdParty\JSon;$(ProjectDir)\..\..\GameFramework_ThirdParty\ZLib;$(ProjectDir)\..\..\GameFramework_ThirdParty\glfw\include;$(ProjectDir)\..\..\GameFramework_ThirdParty\openal;$(ProjectDir)\..\..\GameFramework_ThirdParty\glew\glew-1.11.0\include;$(ProjectDir)\..\..\GameFramework_ThirdParty\fft;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

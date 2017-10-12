@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Test|Win32">
+      <Configuration>Test</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6A4946A8-5B80-4501-8165-96F3D0B5E8C0}</ProjectGuid>
+    <RootNamespace>Helper</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Test|Win32'">
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\GameFrameWork\Base\Maths;$(ProjectDir)\..\..\GameFrameWork\Base\BinaryArchive;$(ProjectDir)\..\..\GameFrameWork\Base\RenderSystem;$(ProjectDir)\..\..\GameFrameWork\Base\Base;$(ProjectDir)\..\..\GameFrameWork\Base\HTTPRequest;$(ProjectDir)\..\..\GameFrameWork\Base\RandomNumbers;$(ProjectDir)\..\..\GameFrameWork\Base\Sound;$(ProjectDir)\..\..\GameFrameWork\Base\SceneGrap;$(ProjectDir)\..\..\GameFrameWork\Base\Application;$(ProjectDir)\..\..\GameFrameWork\Base\Includes;$(ProjectDir)\..\..\GameFrameWork\Base\Dynamics;$(ProjectDir)\..\..\GameFrameWork\Base\UserInterface;$(ProjectDir)\..\..\GameFrameWork\Base\Base\Win32;$(ProjectDir)\..\..\GameFrameWork\Shared;$(ProjectDir)\..\..\GameFramework_ThirdParty\TinyXML;$(ProjectDir)\..\..\GameFramework_ThirdParty\ZLib;$(ProjectDir)\..\..\GameFramework_ThirdParty\stb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\GameFrameWork\Base\Maths;$(ProjectDir)\..\..\GameFrameWork\Base\BinaryArchive;$(ProjectDir)\..\..\GameFrameWork\Base\RenderSystem;$(ProjectDir)\..\..\GameFrameWork\Base\Base;$(ProjectDir)\..\..\GameFrameWork\Base\HTTPRequest;$(ProjectDir)\..\..\GameFrameWork\Base\RandomNumbers;$(ProjectDir)\..\..\GameFrameWork\Base\Sound;$(ProjectDir)\..\..\GameFrameWork\Base\SceneGrap;$(ProjectDir)\..\..\GameFrameWork\Base\Application;$(ProjectDir)\..\..\GameFrameWork\Base\Includes;$(ProjectDir)\..\..\GameFrameWork\Base\Dynamics;$(ProjectDir)\..\..\GameFrameWork\Base\UserInterface;$(ProjectDir)\..\..\GameFrameWork\Base\Base\Win32;$(ProjectDir)\..\..\GameFrameWork\Shared;$(ProjectDir)\..\..\GameFramework_ThirdParty\TinyXML;$(ProjectDir)\..\..\GameFramework_ThirdParty\ZLib;$(ProjectDir)\..\..\GameFramework_ThirdParty\stb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="HlAnimation.cpp" />
+    <ClCompile Include="HlArchive.cpp" />
+    <ClCompile Include="HlDebug.cpp" />
+    <ClCompile Include="HlDraw.cpp" />
+    <ClCompile Include="HlEvents.cpp" />
+    <ClCompile Include="HlFont.cpp" />
+    <ClCompile Include="HlGesture.cpp" />
+    <ClCompile Include="HlJoysticks.cpp" />
+    <ClCompile Include="HlKeyboard.cpp" />
+    <ClCompile Include="HlMaterial.cpp" />
+    <ClCompile Include="HlModel.cpp" />
+    <ClCompile Include="HlMouse.cpp" />
+    <ClCompile Include="HlScreenSize.cpp" />
+    <ClCompile Include="HlTimer.cpp" />
+    <ClCompile Include="HlTrueType.cpp" />
+    <ClCompile Include="HlUserData.cpp" />
+    <ClCompile Include="HlView.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HlAnimation.h" />
+    <ClInclude Include="HlArchive.h" />
+    <ClInclude Include="HlDebug.h" />
+    <ClInclude Include="HlDraw.h" />
+    <ClInclude Include="HlEvents.h" />
+    <ClInclude Include="HlFont.h" />
+    <ClInclude Include="HlGesture.h" />
+    <ClInclude Include="HlJoysticks.h" />
+    <ClInclude Include="HlKeyboard.h" />
+    <ClInclude Include="HlMaterial.h" />
+    <ClInclude Include="HlModel.h" />
+    <ClInclude Include="HlMouse.h" />
+    <ClInclude Include="HlScreenSize.h" />
+    <ClInclude Include="HlTimer.h" />
+    <ClInclude Include="HlTrueType.h" />
+    <ClInclude Include="HlUserData.h" />
+    <ClInclude Include="HlView.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

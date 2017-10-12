@@ -1,0 +1,19 @@
+﻿  HlAnimation.cpp
+  HlArchive.cpp
+  HlDebug.cpp
+  HlDraw.cpp
+  HlEvents.cpp
+  HlFont.cpp
+  HlGesture.cpp
+  HlJoysticks.cpp
+  HlKeyboard.cpp
+  HlMaterial.cpp
+  HlModel.cpp
+  HlMouse.cpp
+  HlScreenSize.cpp
+  HlTimer.cpp
+  HlTrueType.cpp
+  HlUserData.cpp
+  HlView.cpp
+  Generating Code...
+  Helper.vcxproj -> C:\github\game-framework-private\CardBasedGames\CardTestBed\Tutorial1GL\Release\Helper\Helper.lib

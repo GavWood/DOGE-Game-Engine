@@ -1,0 +1,56 @@
+﻿  TeTexture.cpp
+  PaRendering.cpp
+  main.cpp
+  PaResource.cpp
+  PaPacker.cpp
+  PaMemoryResource.cpp
+  PaAsset.cpp
+  PaArchive.cpp
+  PaTopState.cpp
+  PaFileDetails.cpp
+  FsFindFile.cpp
+  ExVertexBuffer.cpp
+  ExVertex.cpp
+  ExUserData.cpp
+  ExTextureList.cpp
+  ExTexture.cpp
+  ExStrip.cpp
+  ExStrings.cpp
+  ExStandardShader.cpp
+..\Packer\SourceCode\Exporter\ExStandardShader.cpp(228): warning C4800: 'BtFloat': forcing value to bool 'true' or 'false' (performance warning)
+..\Packer\SourceCode\Exporter\ExStandardShader.cpp(229): warning C4800: 'BtFloat': forcing value to bool 'true' or 'false' (performance warning)
+  ExSprites.cpp
+  Generating Code...
+  Compiling...
+  ExSound.cpp
+  ExShader.cpp
+  ExSgSkin.cpp
+  ExSgNode.cpp
+  ExSgMesh.cpp
+  ExSgLight.cpp
+  ExSgCollision.cpp
+  ExSgCamera.cpp
+  ExSgBone.cpp
+  ExSgBlendShape.cpp
+  ExSgAnimation.cpp
+  ExScene.cpp
+..\Packer\SourceCode\Exporter\ExScene.cpp(206): warning C4996: 'FCDSceneNode::IsJoint': [3.05A] This function is now deprecated. Please use 'GetJointFlag' instead.
+  C:\github\game-framework-private\GameFramework_ThirdParty\FCollada\FCollada\FCDocument\FCDSceneNode.h(260): note: see declaration of 'FCDSceneNode::IsJoint'
+..\Packer\SourceCode\Exporter\ExScene.cpp(1863): warning C4244: 'argument': conversion from 'BtU64' to 'unsigned int', possible loss of data
+  ExRigidBody.cpp
+  ExResource.cpp
+  ExMaterialList.cpp
+  ExMaterial.cpp
+  ExIndexBuffer.cpp
+  ExFont.cpp
+  ExFlash.cpp
+  ExExporter.cpp
+  Generating Code...
+  Compiling...
+  ExCollisionMesh.cpp
+  ExCollisionAnalytical.cpp
+  Generating Code...
+Corona.lib(Corona.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+     Creating library C:\github\game-framework-private\GameFramework_Packer\Packer_Win32\Debug\Packer_Win32.lib and object C:\github\game-framework-private\GameFramework_Packer\Packer_Win32\Debug\Packer_Win32.exp
+  Packer_Win32.vcxproj -> C:\github\game-framework-private\GameFramework_Packer\Packer_Win32\Debug\Packer_Win32.exe
+  Packer_Win32.vcxproj -> C:\github\game-framework-private\GameFramework_Packer\Packer_Win32\Debug\Packer.pdb (Full PDB)

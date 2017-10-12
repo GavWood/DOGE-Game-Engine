@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="SourceCode">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="png">
+      <UniqueIdentifier>{dafe6632-15d4-4e35-9777-51be33b6a2a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="gif">
+      <UniqueIdentifier>{105a3b82-894e-4270-9d1b-ac2c6f480150}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jpg">
+      <UniqueIdentifier>{c5ddc3e2-2aca-44c1-9c09-913265de774c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="corona.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryFile.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="Open.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="Save.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleImage.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>SourceCode</Filter>
+    </ClInclude>
+    <ClInclude Include="libpng-1.2.1\png.h">
+      <Filter>png</Filter>
+    </ClInclude>
+    <ClInclude Include="libpng-1.2.1\pngasmrd.h">
+      <Filter>png</Filter>
+    </ClInclude>
+    <ClInclude Include="libpng-1.2.1\pngconf.h">
+      <Filter>png</Filter>
+    </ClInclude>
+    <ClInclude Include="libungif-4.1.0\gif_lib.h">
+      <Filter>gif</Filter>
+    </ClInclude>
+    <ClInclude Include="libungif-4.1.0\gif_lib_private.h">
+      <Filter>gif</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg-6b\jversion.h">
+      <Filter>jpg</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg-6b\jpeglib.h">
+      <Filter>jpg</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg-6b\jpegint.h">
+      <Filter>jpg</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg-6b\jmorecfg.h">
+      <Filter>jpg</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg-6b\jmemsys.h">
+      <Filter>jpg</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg-6b\jinclude.h">
+      <Filter>jpg</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg-6b\jerror.h">
+      <Filter>jpg</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg-6b\jdhuff.h">
+      <Filter>jpg</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg-6b\jdct.h">
+      <Filter>jpg</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg-6b\jconfig.h">
+      <Filter>jpg</Filter>
+    </ClInclude>
+    <ClInclude Include="jpeg-6b\jchuff.h">
+      <Filter>jpg</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Convert.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="Corona.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultFileSystem.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryFile.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenBMP.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGIF.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenJPEG.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenPCX.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenPNG.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenTGA.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SavePNG.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="SaveTGA.cpp">
+      <Filter>SourceCode</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\png.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngerror.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pnggccrd.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngget.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngmem.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngpread.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngread.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngrio.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngrtran.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngrutil.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngset.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngtest.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngtrans.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngvcrd.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngwio.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngwrite.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngwtran.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libpng-1.2.1\pngwutil.c">
+      <Filter>png</Filter>
+    </ClCompile>
+    <ClCompile Include="libungif-4.1.0\dgif_lib.c">
+      <Filter>gif</Filter>
+    </ClCompile>
+    <ClCompile Include="libungif-4.1.0\gif_err.c">
+      <Filter>gif</Filter>
+    </ClCompile>
+    <ClCompile Include="libungif-4.1.0\gifalloc.c">
+      <Filter>gif</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jutils.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jquant2.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jquant1.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jmemnobs.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jmemmgr.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jidctred.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jidctint.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jidctfst.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jidctflt.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jfdctint.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jfdctfst.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jfdctflt.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jerror.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdtrans.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdsample.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdpostct.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdphuff.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdmerge.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdmaster.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdmarker.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdmainct.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdinput.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdhuff.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jddctmgr.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdcolor.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdcoefct.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdatasrc.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdatadst.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdapistd.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jdapimin.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jctrans.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jcsample.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jcprepct.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jcphuff.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jcparam.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jcomapi.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jcmaster.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jcmarker.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jcmainct.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jcinit.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jchuff.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jcdctmgr.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jccolor.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jccoefct.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jcapistd.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+    <ClCompile Include="jpeg-6b\jcapimin.c">
+      <Filter>jpg</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

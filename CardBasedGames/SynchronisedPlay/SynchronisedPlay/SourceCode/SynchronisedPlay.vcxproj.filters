@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="SbCamera.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="SbPeers.cpp">
+      <Filter>Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="GaProject_SynchronisedPlay.cpp" />
+    <ClCompile Include="SbMain.cpp">
+      <Filter>Card</Filter>
+    </ClCompile>
+    <ClCompile Include="CgCard.cpp">
+      <Filter>Card</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SbCamera.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="SbPeers.h">
+      <Filter>Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="SbMain.h">
+      <Filter>Card</Filter>
+    </ClInclude>
+    <ClInclude Include="CgCard.h">
+      <Filter>Card</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Helpers">
+      <UniqueIdentifier>{1aaa8d9c-6687-4a97-9eda-b8b6600de57b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Card">
+      <UniqueIdentifier>{96c052f1-e46f-4456-ab72-7a6414a46f26}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

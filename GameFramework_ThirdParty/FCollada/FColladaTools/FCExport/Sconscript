@@ -1,0 +1,47 @@
+#Sconscript for FCExport in FColladaTools.
+#by Veronique Laforte and Alfred Leung, Aug. 27th 2007
+
+#Create the Environment which creates the compile and linker command lines.
+env = Environment()
+ifdebug = ARGUMENTS.get('debug', 0)
+
+#Add the compiler and linker flags and include search path
+env.Append(CPPPATH = '../../../../../FCollada')
+
+#Add the macros defined for all the builds
+env.Append(CPPDEFINES = ['LINUX'])
+
+#Add the macros and flags defined only for DEBUG, or RELEASE
+if int(ifdebug):
+    env.Append(CPPDEFINES = ['_DEBUG'])
+    env.Append(CCFLAGS = ['-O0', '-g'])
+else:
+    env.Append(CPPDEFINES = ['NDEBUG'])
+    env.Append(CCFLAGS = ['-O2'])
+
+
+#List of the source code to compile, and make a library out of it
+if int(ifdebug):
+    libs = Split("""FColladaSUD
+		    dl""")
+
+else:
+    libs = Split("""FColladaSUR
+                    dl""")
+
+list = Split("""FCExport.cpp""")
+
+#For LINUX only, the list of paths where to look for the libraries
+#   to link with.
+path = Split("""../../../../../FCollada/Output
+					""")
+
+
+if int(ifdebug):
+    FCExport = env.Program('FCExportD', list, LIBS=libs, LIBPATH=path)
+else:
+    FCExport = env.Program('FCExportR', list, LIBS=libs, LIBPATH=path)
+
+#Specifying the name and directory of output library
+env.Install('../../', FCExport)
+

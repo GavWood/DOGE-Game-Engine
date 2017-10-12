@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="SbCamera.cpp">
+      <Filter>SourceCode\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="SbFrustum.cpp">
+      <Filter>SourceCode\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="SbModel.cpp">
+      <Filter>SourceCode\Models</Filter>
+    </ClCompile>
+    <ClCompile Include="SbMain.cpp">
+      <Filter>SourceCode\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SbRenderSkybox.cpp">
+      <Filter>SourceCode\Skybox</Filter>
+    </ClCompile>
+    <ClCompile Include="MuMurmuration.cpp">
+      <Filter>Murmuration</Filter>
+    </ClCompile>
+    <ClCompile Include="kdtree_wrapper.cpp">
+      <Filter>KDTree</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SbCamera.h">
+      <Filter>SourceCode\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="SbFrustum.h">
+      <Filter>SourceCode\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="SbModel.h">
+      <Filter>SourceCode\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="SbMain.h">
+      <Filter>SourceCode\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SbRenderSkybox.h">
+      <Filter>SourceCode\Skybox</Filter>
+    </ClInclude>
+    <ClInclude Include="SbWorld.h">
+      <Filter>SourceCode\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="MuMurmuration.h">
+      <Filter>Murmuration</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="SourceCode">
+      <UniqueIdentifier>{c21f67e3-0e23-4dc3-bd48-22a365b0bdd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\Camera">
+      <UniqueIdentifier>{5f82f562-0a05-49a0-a93e-235fffad0deb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\Main">
+      <UniqueIdentifier>{1b77d58e-da46-4869-8d5e-ea3d564c7d4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\Models">
+      <UniqueIdentifier>{de37591a-9008-4679-bd89-b7043e7778a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SourceCode\Skybox">
+      <UniqueIdentifier>{eb1671bd-a79a-4ad7-9a19-8ff592c32f4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Murmuration">
+      <UniqueIdentifier>{0b3d45d5-4240-4b3f-b1a7-7ca3369e620c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KDTree">
+      <UniqueIdentifier>{e06669e1-91f0-4346-a17b-a83481b12379}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

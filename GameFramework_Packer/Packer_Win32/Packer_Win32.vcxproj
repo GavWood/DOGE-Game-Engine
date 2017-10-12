@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\BatchFiles\OpenFolder.bat">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="..\BatchFiles\UpdatePacker.bat">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\GameFramework_ThirdParty\Corona\Corona.vcxproj">
+      <Project>{a4bf679b-bec9-43bb-b6ae-bdaf39f0aa6a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GameFramework_ThirdParty\FCollada\FColladaPlugins\FArchiveXML\FArchiveXML.vcxproj">
+      <Project>{5a441cc6-f281-4a83-8bc4-323d4148c7c0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GameFramework_ThirdParty\FCollada\FCollada\FCollada.vcxproj">
+      <Project>{ff956bb3-f377-43a8-ab31-633299bdf6c6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GameFramework_ThirdParty\FCollada\FCollada\LibXML\LibXML.vcxproj">
+      <Project>{d7f466f4-2aea-4648-be09-024c887bc157}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GameFramework_ThirdParty\JSON\JSON\JSON.vcxproj">
+      <Project>{6c9d89e7-72ac-4092-8e1b-69cd107c3183}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\GameFramework_ThirdParty\ZLib\Zlib\Zlib.vcxproj">
+      <Project>{71bcb9c3-b2fa-4eb1-8734-ce236658b26b}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\GameFramework\Base\includes\ApConfig.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BaArchive.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BaDuplicate.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BaResource.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BaUserData.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BtArray.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BtBase.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BtCollection.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BtCRC.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BtEnum.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BtLinkedList.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BtMemory.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BtPrint.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BtQueue.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BtString.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BtThread.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BtTime.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\BtTypes.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\ErrorLog.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\FsFile.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtAABB.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtLine.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtMath.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtMatrix3.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtMatrix4.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtPlane.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtPoint.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtQuad.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtQuaternion.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtRay.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtSphere.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtTriangle.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtVector2.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtVector3.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\MtVector4.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RdRandom.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsCamera.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsCaps.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsColour.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsFlash.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsFont.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsFrustum.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsIndexBuffer.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsMaterial.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsPrimitive.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsRenderTarget.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsRenderTypes.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsShader.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsSprite.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsTexture.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsUtil.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsVertex.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\RsViewport.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\SdSound.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\SgAnimator.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\SgBlendShape.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\SgBone.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\SgCamera.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\SgCollision.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\SgLight.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\SgMaterial.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\SgMesh.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\SgNode.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\SgRigidBody.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\SgSkin.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\Ui360.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\UiJoystick.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\UiKeyboard.h" />
+    <ClInclude Include="..\..\GameFramework\Base\includes\UiMouse.h" />
+    <ClInclude Include="..\Packer\SourceCode\BtSingleton.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExCollisionAnalytical.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExCollisionMesh.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExExporter.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExFlash.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExFont.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExIndexBuffer.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExJointWeightPair.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExMaterial.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExMaterialBlock.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExMaterialList.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExMatrix.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExResource.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExRigidBody.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExScene.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExSchedule.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExSgAnimation.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExSgBlendShape.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExSgBone.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExSgCamera.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExSgCollision.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExSgLight.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExSgMesh.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExSgNode.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExSgSkin.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExShader.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExSound.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExSprites.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExStandardShader.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExStrings.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExStrip.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExTexture.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExTextureList.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExUserData.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExVertex.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExVertexBuffer.h" />
+    <ClInclude Include="..\Packer\SourceCode\Exporter\ExVertexJointWeightPairs.h" />
+    <ClInclude Include="..\Packer\SourceCode\FileSystem\Win32\FsFindFile.h" />
+    <ClInclude Include="..\Packer\SourceCode\Includes\PaFileDetails.h" />
+    <ClInclude Include="..\Packer\SourceCode\Includes\PaFilename.h" />
+    <ClInclude Include="..\Packer\SourceCode\Includes\PaMemoryResource.h" />
+    <ClInclude Include="..\Packer\SourceCode\Includes\PaPackerInterface.h" />
+    <ClInclude Include="..\Packer\SourceCode\Metasequoia\BcDXF.h" />
+    <ClInclude Include="..\Packer\SourceCode\Metasequoia\BcMetasequoiaExport.h" />
+    <ClInclude Include="..\Packer\SourceCode\Metasequoia\McArray.h" />
+    <ClInclude Include="..\Packer\SourceCode\Metasequoia\McCollada.h" />
+    <ClInclude Include="..\Packer\SourceCode\Metasequoia\McMetasequoia.h" />
+    <ClInclude Include="..\Packer\SourceCode\Metasequoia\McTextFileReader.h" />
+    <ClInclude Include="..\Packer\SourceCode\Metasequoia\McVanilla.h" />
+    <ClInclude Include="..\Packer\SourceCode\Packer\main.hpp" />
+    <ClInclude Include="..\Packer\SourceCode\Packer\PaArchive.h" />
+    <ClInclude Include="..\Packer\SourceCode\Packer\PaArray.h" />
+    <ClInclude Include="..\Packer\SourceCode\Packer\PaAsset.h" />
+    <ClInclude Include="..\Packer\SourceCode\Packer\PaDependency.h" />
+    <ClInclude Include="..\Packer\SourceCode\Packer\PaPacker.h" />
+    <ClInclude Include="..\Packer\SourceCode\Packer\PaResource.h" />
+    <ClInclude Include="..\Packer\SourceCode\PaTopState.h" />
+    <ClInclude Include="..\Packer\SourceCode\Rendering\PaRendering.h" />
+    <ClInclude Include="..\Packer\SourceCode\Sound\SndIff.h" />
+    <ClInclude Include="..\Packer\SourceCode\Texture\TeTexture.h" />
+    <ClInclude Include="..\Packer\SourceCode\UtFilename.h" />
+    <ClInclude Include="..\Packer\SourceCode\UtTokeniser.h" />
+    <ClInclude Include="..\Packer\SourceCode\UtXML.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\GameFramework\Base\Base\BtCRC.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Base\BtPrint.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Base\LBtCompressedFile.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Base\LBtMemory.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Base\LBtString.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\ErrorLog\ErrorLog.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\FileSystem\FsFile.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtAABB.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtLine.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtMath.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtMatrix3.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtMatrix4.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtPlane.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtPoint.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtQuad.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtQuaternion.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtRay.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtSphere.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtTriangle.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtVector2.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtVector3.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\Maths\MtVector4.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\RenderSystem\RsColour.cpp" />
+    <ClCompile Include="..\..\GameFramework\Base\RenderSystem\RsIndexBuffer.cpp" />
+    <ClCompile Include="..\..\GameFramework\ImplWin\BtTime.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExCollisionAnalytical.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExCollisionMesh.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExExporter.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExFlash.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExFont.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExIndexBuffer.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExMaterial.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExMaterialList.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExResource.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExRigidBody.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExScene.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExSgAnimation.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExSgBlendShape.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExSgBone.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExSgCamera.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExSgCollision.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExSgLight.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExSgMesh.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExSgNode.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExSgSkin.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExShader.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExSound.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExSprites.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExStandardShader.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExStrings.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExStrip.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExTexture.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExTextureList.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExUserData.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExVertex.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExVertexBuffer.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Exporter\ExVertexJointWeightPairs.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\FileSystem\Win32\FsFindFile.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Includes\PaFileDetails.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Metasequoia\BcDXF.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Metasequoia\BcMetasequoiaExport.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Metasequoia\McCollada.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Metasequoia\McMetasequoia.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Metasequoia\McTextFileReader.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Metasequoia\McVanilla.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Packer\main.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Packer\PaArchive.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Packer\PaAsset.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Packer\PaMemoryResource.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Packer\PaPacker.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Packer\PaResource.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\PaTopState.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Rendering\PaRendering.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Sound\SndIff.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\Texture\TeTexture.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\UtFilename.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\UtTokeniser.cpp" />
+    <ClCompile Include="..\Packer\SourceCode\UtXML.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\GameFramework_Packer\config.xml">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <SubType>Designer</SubType>
+    </Xml>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{65065A68-49F3-4AF0-A929-460922C5926A}</ProjectGuid>
+    <RootNamespace>Packer</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\GameFramework\Base\BinaryArchive;$(SolutionDir)\..\..\GameFramework\Base\Includes;$(SolutionDir)\..\..\GameFramework\Base\Dynamics;$(SolutionDir)\..\..\GameFramework\Base\Base;E:\GameFramework\GameFramework_ThirdParty\glew\glew-1.11.0\include\;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Program Files (x86)\Windows Kits\8.1\Include\um\gl;$(SolutionDir)\..\Packer\SourceCode\includes;$(SolutionDir)\..\Packer\SourceCode\;$(SolutionDir)\..\Packer\SourceCode\Exporter;$(SolutionDir)\..\Packer\SourceCode\Packer;$(SolutionDir)\..\Packer\SourceCode\Metasequoia;$(SolutionDir)\..\Packer\SourceCode\Sound;$(SolutionDir)\..\Packer\SourceCode\Texture;$(SolutionDir)\..\Packer\SourceCode\FileSystem;$(SolutionDir)\..\Packer\SourceCode\FileSystem\Win32;$(SolutionDir)\..\Packer\SourceCode\Rendering;$(SolutionDir)\..\..\BaaConvert;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\libpng-1.2.1;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\jpeg-6b;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\libungif-4.1.0;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\LibXML\include;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\LibXML;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FCDocument;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FMath;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FUtils;$(SolutionDir)\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\GameFramework_ThirdParty\JSON;$(SolutionDir)\..\..\GameFramework_ThirdParty\OpenAL</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_WINDOWS;D3D_DEBUG_INFO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;dinput8.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(TargetPath)</OutputFile>
+      <AdditionalLibraryDirectories>..\..\Lib;C:\WINDDK\3790.1830\lib\wxp\i386;\Struffy\Struffy\lib;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>MSVCRTD.lib;libcmt.lib;msvcprtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)Packer.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\GameFramework\Base\BinaryArchive;$(SolutionDir)\..\..\GameFramework\Base\Includes;$(SolutionDir)\..\..\GameFramework\Base\Dynamics;$(SolutionDir)\..\..\GameFramework\Base\Base;E:\GameFramework\GameFramework_ThirdParty\glew\glew-1.11.0\include\;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Program Files (x86)\Windows Kits\8.1\Include\um\gl;$(SolutionDir)\..\Packer\SourceCode\includes;$(SolutionDir)\..\Packer\SourceCode\;$(SolutionDir)\..\Packer\SourceCode\Exporter;$(SolutionDir)\..\Packer\SourceCode\Packer;$(SolutionDir)\..\Packer\SourceCode\Metasequoia;$(SolutionDir)\..\Packer\SourceCode\Sound;$(SolutionDir)\..\Packer\SourceCode\Texture;$(SolutionDir)\..\Packer\SourceCode\FileSystem;$(SolutionDir)\..\Packer\SourceCode\FileSystem\Win32;$(SolutionDir)\..\Packer\SourceCode\Rendering;$(SolutionDir)\..\..\BaaConvert;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\libpng-1.2.1;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\jpeg-6b;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\libungif-4.1.0;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\LibXML\include;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\LibXML;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FCDocument;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FMath;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FUtils;$(SolutionDir)\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\GameFramework_ThirdParty\JSON;$(SolutionDir)\..\..\GameFramework_ThirdParty\OpenAL</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;dinput8.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(TargetPath)</OutputFile>
+      <AdditionalLibraryDirectories>..\..\Lib;C:\WINDDK\3790.1830\lib\wxp\i386;\Struffy\Struffy\lib;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

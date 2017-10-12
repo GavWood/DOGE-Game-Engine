@@ -7,6 +7,15 @@
 *.WinGLz
 *.tmp
 *.xcuserstate
+*.suo
+*.keeps
+*.pbxuser
+*.xcworkspace
+*.tlog
+.DS_Store
+*.pdb
+*.obj
+xcuserdata
 
 CardBasedGames/TurnTakingPlay/TurnTakingPlay/BuildFiles/*
 CardBasedGames/TurnTakingPlay/TurnTakingPlay/BuildNotes/*
@@ -18,6 +27,10 @@ CardBasedGames/CardTestBed/Tutorial1/Release/*
 
 CardBasedGames/SynchronisedPlay/SynchronisedPlay/BuildFiles/*
 CardBasedGames/SynchronisedPlay/SynchronisedPlay/BuildNotes/*
+
+GameFramework_Tutorials/Murmurations/Murmuration/BuildFiles/*
+GameFramework_Tutorials/Murmurations/Murmuration/BuildNotes/*
+GameFramework_Tutorials/Murmurations/Murmuration/Release/*
 
 GameFramework_Tutorials/3DScene/3DScene/BuildFiles/*
 GameFramework_Tutorials/3DScene/3DScene/BuildNotes/*

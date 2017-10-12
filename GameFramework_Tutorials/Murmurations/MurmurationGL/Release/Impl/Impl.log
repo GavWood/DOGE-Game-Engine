@@ -1,0 +1,132 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of Ui360.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are ..\Base\UserInterface\Ui360.cpp, ..\Impl\UserInterface\Ui360.cpp.
+  ApConfig.cpp
+..\Base\Application\ApConfig.cpp(285): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+..\Base\Application\ApConfig.cpp(286): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  BtCRC.cpp
+  BtPrint.cpp
+..\Base\Base\BtPrint.cpp(26): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1465): note: see declaration of 'vsprintf'
+  LBtCompressedFile.cpp
+  LBtMemory.cpp
+  LBtString.cpp
+..\Base\Base\LBtString.cpp(38): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+..\Base\Base\LBtString.cpp(147): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+..\Base\Base\LBtString.cpp(155): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+..\Base\Base\LBtString.cpp(163): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+..\Base\Base\LBtString.cpp(171): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
+..\Base\Base\LBtString.cpp(181): warning C4996: 'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(90): note: see declaration of 'strcat'
+..\Base\Base\LBtString.cpp(180): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+  BaArchive.cpp
+..\Base\BinaryArchive\BaArchive.cpp(72): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  BaResource.cpp
+  LBaUserData.cpp
+  DyCollisionAnalytical.cpp
+  DyCollisionMesh.cpp
+  ErrorLog.cpp
+..\Base\ErrorLog\ErrorLog.cpp(43): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+..\Base\ErrorLog\ErrorLog.cpp(57): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1465): note: see declaration of 'vsprintf'
+..\Base\ErrorLog\ErrorLog.cpp(69): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1465): note: see declaration of 'vsprintf'
+..\Base\ErrorLog\ErrorLog.cpp(84): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  FsFile.cpp
+..\Base\FileSystem\FsFile.cpp(89): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+..\Base\FileSystem\FsFile.cpp(93): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+..\Base\FileSystem\FsFile.cpp(97): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+..\Base\FileSystem\FsFile.cpp(101): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+..\Base\FileSystem\FsFile.cpp(155): warning C4996: 'vsprintf': This function or variable may be unsafe. Consider using vsprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1465): note: see declaration of 'vsprintf'
+  MtAABB.cpp
+  MtLine.cpp
+  MtMath.cpp
+  MtMatrix3.cpp
+  MtMatrix4.cpp
+  MtPlane.cpp
+  MtPoint.cpp
+  Compiling...
+  MtQuad.cpp
+  MtQuaternion.cpp
+  MtRay.cpp
+  MtSphere.cpp
+  MtTriangle.cpp
+  MtVector2.cpp
+  MtVector3.cpp
+  MtVector4.cpp
+  LRdRandom.cpp
+  RsCamera.cpp
+  RsColour.cpp
+  RsFrustum.cpp
+  RsImpl.cpp
+  RsIndexBuffer.cpp
+  RsRenderTarget.cpp
+  RsResourceManager.cpp
+  RsShader.cpp
+  RsUtil.cpp
+..\Base\RenderSystem\RsUtil.cpp(63): warning C4244: 'return': conversion from 'float' to 'BtU32', possible loss of data
+..\Base\RenderSystem\RsUtil.cpp(71): warning C4244: 'return': conversion from 'float' to 'BtU32', possible loss of data
+  SgBlendShapeImpl.cpp
+  SgLightImpl.cpp
+  Compiling...
+  SgRigidBodyImpl.cpp
+  Ui360.cpp
+  UiKeyboard.cpp
+  BaArchiveImpl.cpp
+  RsCapsImpl.cpp
+  RsColourImpl.cpp
+  RsFlashImpl.cpp
+  RsFontImpl.cpp
+..\Impl\RenderSystem\RsFontImpl.cpp(208): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+  RsIndexBufferImpl.cpp
+  RsManagerImpl.cpp
+  RsMaterialImpl.cpp
+  RsRenderTargetImpl.cpp
+  RsSceneImpl.cpp
+  RsShaderImpl.cpp
+  RsSpriteImpl.cpp
+  RsTextureImpl.cpp
+  RsVertexBufferImpl.cpp
+  SgAnimatorImpl.cpp
+  SgBoneImpl.cpp
+  SgCollisionImpl.cpp
+  Compiling...
+  SgMaterialsImpl.cpp
+  SgMeshImpl.cpp
+  SgNodeImpl.cpp
+  SgSkinImpl.cpp
+  SdSoundCaptureImpl.cpp
+..\Impl\Sound\SdSoundCaptureImpl.cpp(101): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+..\Impl\Sound\SdSoundCaptureImpl.cpp(114): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+..\Impl\Sound\SdSoundCaptureImpl.cpp(116): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+..\Impl\Sound\SdSoundCaptureImpl.cpp(117): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+..\Impl\Sound\SdSoundCaptureImpl.cpp(126): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
+  SdSoundImpl.cpp
+  Ui360.cpp
+  UiInputImpl.cpp
+  UiKeyboardImpl.cpp
+  BtThread.cpp
+  BtTime.cpp
+  Ui360Impl.cpp
+C:\github\game-framework-private\GameFramework_Tutorials\Murmurations\MurmurationGL\Release\Impl\Ui360.obj : warning LNK4042: object specified more than once; extras ignored
+  Impl.vcxproj -> C:\github\game-framework-private\GameFramework_Tutorials\Murmurations\MurmurationGL\Release\Impl\Impl.lib

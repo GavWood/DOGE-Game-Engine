@@ -1,0 +1,15 @@
+﻿  ShAchievement.cpp
+  ShCamera.cpp
+ShCamera.cpp(57): warning C4244: 'initializing': conversion from 'BtU32' to 'BtFloat', possible loss of data
+ShCamera.cpp(58): warning C4244: 'initializing': conversion from 'BtU32' to 'BtFloat', possible loss of data
+  ShHMD.cpp
+  ShIMU.cpp
+  ShJoystick.cpp
+ShJoystick.cpp(34): warning C4244: 'argument': conversion from 'BtU32' to 'BtFloat', possible loss of data
+  ShKeyboard.cpp
+  ShMail.cpp
+  ShNetwork.cpp
+  ShRecorder.cpp
+  ShTouch.cpp
+  ShVibration.cpp
+  Shared.vcxproj -> C:\github\game-framework-private\GameFramework_Tutorials\Murmurations\MurmurationGL\Release\Shared\Shared.lib

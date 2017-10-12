@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Base">
+      <UniqueIdentifier>{309e7af7-7eef-4a39-89f0-5520a3a29870}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Application">
+      <UniqueIdentifier>{cde40481-a837-4efe-a003-dee8691329a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Base">
+      <UniqueIdentifier>{d6ca6cde-0b8e-4182-9716-b6155fa2921e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\BinaryArchive">
+      <UniqueIdentifier>{1aa78267-7c9e-4a95-b72b-47ae6c760a9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Dynamics">
+      <UniqueIdentifier>{cc73a4e7-3bb2-41fe-a304-a751f9a76064}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\ErrorLog">
+      <UniqueIdentifier>{fc62d01b-34d4-4d68-b95c-27f6b4cb2eb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Include">
+      <UniqueIdentifier>{a126fb57-d420-495a-9d4d-e7827647a8c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\FileSystem">
+      <UniqueIdentifier>{d6a50b68-7e50-4bd1-b210-9a6e29c0faec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Maths">
+      <UniqueIdentifier>{2ea0f412-ace3-45d2-b4b2-96dcb41d5221}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\RdRandom">
+      <UniqueIdentifier>{8513a564-02fd-4fae-a67c-e61439dedeae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\RenderSystem">
+      <UniqueIdentifier>{9ec3fd71-81f0-4062-999a-104b25e6e95c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\SceneGraph">
+      <UniqueIdentifier>{5f81dcb4-4095-4606-a43e-4b820fe6a9d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\UserInterface">
+      <UniqueIdentifier>{b6f061b4-0713-42b0-a2dc-05c954284b33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImplWin">
+      <UniqueIdentifier>{13988ef4-e277-461c-8ee4-c876d46f77ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Impl">
+      <UniqueIdentifier>{1eeedd71-909c-4fb3-a0bb-0bbd94f789e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Impl\RenderSystem">
+      <UniqueIdentifier>{39868492-94ea-476a-ad35-740c45a5ac1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Impl\BinaryArchive">
+      <UniqueIdentifier>{c0595e2f-1aa7-4a13-89ff-9a478e60bbf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Impl\SceneGraph">
+      <UniqueIdentifier>{dc90146c-7f18-485b-bcb0-890fe415e2b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Impl\Sound">
+      <UniqueIdentifier>{d592ffe9-47f4-4fa5-bea3-7f116fde3abc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Impl\UserInterface">
+      <UniqueIdentifier>{285b20dc-8c54-43ef-9908-172c3eef8fa7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Base\Application\ApConfig.cpp">
+      <Filter>Base\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Base\LBtString.cpp">
+      <Filter>Base\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Base\BtCRC.cpp">
+      <Filter>Base\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Base\BtPrint.cpp">
+      <Filter>Base\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Base\LBtCompressedFile.cpp">
+      <Filter>Base\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Base\LBtMemory.cpp">
+      <Filter>Base\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\BinaryArchive\BaArchive.cpp">
+      <Filter>Base\BinaryArchive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\BinaryArchive\BaResource.cpp">
+      <Filter>Base\BinaryArchive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\BinaryArchive\LBaUserData.cpp">
+      <Filter>Base\BinaryArchive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Dynamics\DyCollisionAnalytical.cpp">
+      <Filter>Base\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Dynamics\DyCollisionMesh.cpp">
+      <Filter>Base\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\ErrorLog\ErrorLog.cpp">
+      <Filter>Base\ErrorLog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\FileSystem\FsFile.cpp">
+      <Filter>Base\FileSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtAABB.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtLine.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtMath.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtMatrix3.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtMatrix4.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtPlane.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtPoint.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtQuad.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtQuaternion.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtRay.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtSphere.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtTriangle.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtVector2.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtVector3.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\Maths\MtVector4.cpp">
+      <Filter>Base\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\RandomNumbers\LRdRandom.cpp">
+      <Filter>Base\RdRandom</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\RenderSystem\RsCamera.cpp">
+      <Filter>Base\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\RenderSystem\RsColour.cpp">
+      <Filter>Base\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\RenderSystem\RsFrustum.cpp">
+      <Filter>Base\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\RenderSystem\RsImpl.cpp">
+      <Filter>Base\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\RenderSystem\RsIndexBuffer.cpp">
+      <Filter>Base\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\RenderSystem\RsRenderTarget.cpp">
+      <Filter>Base\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\RenderSystem\RsResourceManager.cpp">
+      <Filter>Base\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\RenderSystem\RsShader.cpp">
+      <Filter>Base\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\RenderSystem\RsUtil.cpp">
+      <Filter>Base\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\SceneGraph\SgBlendShapeImpl.cpp">
+      <Filter>Base\SceneGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\SceneGraph\SgLightImpl.cpp">
+      <Filter>Base\SceneGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\SceneGraph\SgRigidBodyImpl.cpp">
+      <Filter>Base\SceneGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\UserInterface\Ui360.cpp">
+      <Filter>Base\UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Base\UserInterface\UiKeyboard.cpp">
+      <Filter>Base\UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="BtThread.cpp">
+      <Filter>ImplWin</Filter>
+    </ClCompile>
+    <ClCompile Include="BtTime.cpp">
+      <Filter>ImplWin</Filter>
+    </ClCompile>
+    <ClCompile Include="Ui360Impl.cpp">
+      <Filter>ImplWin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\RenderSystem\RsCapsImpl.cpp">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\RenderSystem\RsFlashImpl.cpp">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\RenderSystem\RsFontImpl.cpp">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\RenderSystem\RsIndexBufferImpl.cpp">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\RenderSystem\RsManagerImpl.cpp">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\RenderSystem\RsMaterialImpl.cpp">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\RenderSystem\RsRenderTargetImpl.cpp">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\RenderSystem\RsSceneImpl.cpp">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\RenderSystem\RsShaderImpl.cpp">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\RenderSystem\RsSpriteImpl.cpp">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\RenderSystem\RsTextureImpl.cpp">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\RenderSystem\RsVertexBufferImpl.cpp">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\BinaryArchive\BaArchiveImpl.cpp">
+      <Filter>Impl\BinaryArchive</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\SceneGraph\SgAnimatorImpl.cpp">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\SceneGraph\SgBoneImpl.cpp">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\SceneGraph\SgCollisionImpl.cpp">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\SceneGraph\SgMaterialsImpl.cpp">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\SceneGraph\SgMeshImpl.cpp">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\SceneGraph\SgNodeImpl.cpp">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\SceneGraph\SgSkinImpl.cpp">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\Sound\SdSoundCaptureImpl.cpp">
+      <Filter>Impl\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\Sound\SdSoundImpl.cpp">
+      <Filter>Impl\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\UserInterface\Ui360.cpp">
+      <Filter>Impl\UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\UserInterface\UiInputImpl.cpp">
+      <Filter>Impl\UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Impl\UserInterface\UiKeyboardImpl.cpp">
+      <Filter>Impl\UserInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="RsColourImpl.cpp">
+      <Filter>ImplWin</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Base\BinaryArchive\BaFileData.h">
+      <Filter>Base\BinaryArchive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\BinaryArchive\BtCompressedFile.h">
+      <Filter>Base\BinaryArchive</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\Dynamics\DyCollisionAnalytical.h">
+      <Filter>Base\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\Dynamics\DyCollisionMesh.h">
+      <Filter>Base\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\ApConfig.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BaArchive.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BaDuplicate.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BaResource.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BaUserData.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BtArray.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BtBase.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BtCollection.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BtCRC.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BtEnum.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BtLinkedList.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BtMemory.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BtPrint.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BtQueue.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BtString.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BtThread.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BtTime.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\BtTypes.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\ErrorLog.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\FsFile.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtAABB.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtLine.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtMath.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtMatrix3.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtMatrix4.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtPlane.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtPoint.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtQuad.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtQuaternion.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtRay.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtSphere.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtTriangle.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtVector2.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtVector3.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\MtVector4.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RdRandom.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsCamera.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsCaps.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsColour.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsFlash.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsFont.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsFrustum.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsIndexBuffer.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsMaterial.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsPrimitive.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsRenderTarget.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsRenderTypes.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsShader.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsSprite.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsTexture.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsUtil.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsVertex.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\RsViewport.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\SdSound.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\SgAnimator.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\SgBlendShape.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\SgBone.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\SgCamera.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\SgCollision.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\SgLight.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\SgMaterial.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\SgMesh.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\SgNode.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\SgRigidBody.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\SgSkin.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\Ui360.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\UiJoystick.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\UiKeyboard.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\includes\UiMouse.h">
+      <Filter>Base\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\RenderSystem\RsImpl.h">
+      <Filter>Base\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\RenderSystem\RsResourceManager.h">
+      <Filter>Base\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\SceneGraph\SgBlendShapeImpl.h">
+      <Filter>Base\SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\SceneGraph\SgBoneImpl.h">
+      <Filter>Base\SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\SceneGraph\SgCameraImpl.h">
+      <Filter>Base\SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\SceneGraph\SgLightImpl.h">
+      <Filter>Base\SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Base\SceneGraph\SgRigidBodyImpl.h">
+      <Filter>Base\SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="RsPlatform.h">
+      <Filter>ImplWin</Filter>
+    </ClInclude>
+    <ClInclude Include="Ui360Impl.h">
+      <Filter>ImplWin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\RenderSystem\RsVertexBufferImpl.h">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\RenderSystem\RsCapsImpl.h">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\RenderSystem\RsFlashImpl.h">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\RenderSystem\RsFontImpl.h">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\RenderSystem\RsIndexBufferImpl.h">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\RenderSystem\RsManagerImpl.h">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\RenderSystem\RsMaterialImpl.h">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\RenderSystem\RsRenderTargetImpl.h">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\RenderSystem\RsSceneImpl.h">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\RenderSystem\RsShaderImpl.h">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\RenderSystem\RsSpriteImpl.h">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\RenderSystem\RsTextureImpl.h">
+      <Filter>Impl\RenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\SceneGraph\SgAnimatorImpl.h">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\SceneGraph\SgBoneImpl.h">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\SceneGraph\SgCollisionImpl.h">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\SceneGraph\SgMaterialsImpl.h">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\SceneGraph\SgMeshImpl.h">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\SceneGraph\SgNodeImpl.h">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\SceneGraph\SgSkinImpl.h">
+      <Filter>Impl\SceneGraph</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\Sound\SdSoundCaptureImpl.h">
+      <Filter>Impl\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\Sound\SdSoundImpl.h">
+      <Filter>Impl\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\UserInterface\UiKeyboardImpl.h">
+      <Filter>Impl\UserInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Impl\UserInterface\UiInputImpl.h">
+      <Filter>Impl\UserInterface</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

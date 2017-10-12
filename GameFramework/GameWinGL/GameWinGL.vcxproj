@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1BC33B2E-5E35-4755-902F-8CFECFB6DFE1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GameWinGL</RootNamespace>
+    <ProjectName>GameWinGL</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\GameFrameWork\includes\;$(ProjectDir)\..\..\GameFrameWork\Base\Maths;$(ProjectDir)\..\..\GameFrameWork\Base\BinaryArchive;$(ProjectDir)\..\..\GameFrameWork\Base\RenderSystem;$(ProjectDir)\..\..\GameFrameWork\Base\Base;$(ProjectDir)\..\..\GameFrameWork\Base\RandomNumbers;$(ProjectDir)\..\..\GameFrameWork\Base\Sound;$(ProjectDir)\..\..\GameFrameWork\Base\Application;$(ProjectDir)\..\..\GameFrameWork\Base\Includes;$(ProjectDir)\..\..\GameFrameWork\Base\Dynamics;$(ProjectDir)\..\..\GameFrameWork\Base\UserInterface;$(ProjectDir)\..\..\GameFrameWork\Base\SceneGraph;$(ProjectDir)\..\..\GameFrameWork\Game;$(ProjectDir)\..\..\GameFrameWork\Helper;$(ProjectDir)\..\..\GameFrameWork\Shared;$(ProjectDir)\..\..\GameFramework\Impl\RenderSystem;$(ProjectDir)\..\..\GameFramework\Impl\UserInterface;$(ProjectDir)\..\..\GameFramework\Impl\Sound;$(ProjectDir)\..\..\GameFramework\Impl\;$(ProjectDir)\..\..\GameFrameWork\ImplWin\;$(ProjectDir)\..\..\GameFramework_ThirdParty\ManyMouse;$(ProjectDir)\..\..\GameFramework_ThirdParty\ZLib;$(ProjectDir)\..\..\GameFramework_ThirdParty\JSon;$(ProjectDir)\..\..\GameFramework_ThirdParty\GLFW\include;$(ProjectDir)\..\..\GameFramework_ThirdParty\openal;$(ProjectDir)\..\..\GameFramework_ThirdParty\glew\glew-1.11.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>C:\glfw\support\msvc90\glfw-2.7.bin.WIN32\lib-msvc90\debug;$(ProjectDir)\..\..\GameFramework_ThirdParty\OpenAL;$(ProjectDir)\..\..\GameFramework_ThirdParty\glew\glew-1.11.0\lib\release\win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>openal32.lib;opengl32.lib;glu32.lib;xinput.lib;glew32.lib</AdditionalDependencies>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\..\..\GameFrameWork\includes\;$(ProjectDir)\..\..\GameFrameWork\Base\Maths;$(ProjectDir)\..\..\GameFrameWork\Base\BinaryArchive;$(ProjectDir)\..\..\GameFrameWork\Base\RenderSystem;$(ProjectDir)\..\..\GameFrameWork\Base\Base;$(ProjectDir)\..\..\GameFrameWork\Base\RandomNumbers;$(ProjectDir)\..\..\GameFrameWork\Base\Sound;$(ProjectDir)\..\..\GameFrameWork\Base\Application;$(ProjectDir)\..\..\GameFrameWork\Base\Includes;$(ProjectDir)\..\..\GameFrameWork\Base\Dynamics;$(ProjectDir)\..\..\GameFrameWork\Base\UserInterface;$(ProjectDir)\..\..\GameFrameWork\Base\SceneGraph;$(ProjectDir)\..\..\GameFrameWork\Game;$(ProjectDir)\..\..\GameFrameWork\Helper;$(ProjectDir)\..\..\GameFrameWork\Shared;$(ProjectDir)\..\..\GameFramework\Impl\RenderSystem;$(ProjectDir)\..\..\GameFramework\Impl\UserInterface;$(ProjectDir)\..\..\GameFramework\Impl\Sound;$(ProjectDir)\..\..\GameFramework\Impl\;$(ProjectDir)\..\..\GameFrameWork\ImplWin\;$(ProjectDir)\..\..\GameFramework_ThirdParty\ManyMouse;$(ProjectDir)\..\..\GameFramework_ThirdParty\ZLib;$(ProjectDir)\..\..\GameFramework_ThirdParty\JSon;$(ProjectDir)\..\..\GameFramework_ThirdParty\GLFW\include;$(ProjectDir)\..\..\GameFramework_ThirdParty\openal;$(ProjectDir)\..\..\GameFramework_ThirdParty\glew\glew-1.11.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>openal32.lib;opengl32.lib;glu32.lib;xinput.lib;openal32.lib;gdi32.lib;glew32.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\glfw\support\msvc90\glfw-2.7.bin.WIN32\lib-msvc90\debug;$(ProjectDir)\..\..\GameFramework_ThirdParty\OpenAL;$(ProjectDir)\..\..\GameFramework_ThirdParty\glew\glew-1.11.0\lib\release\win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="gameWinGL.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

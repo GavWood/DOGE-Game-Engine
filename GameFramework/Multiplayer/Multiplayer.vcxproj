@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PeerToPeer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PeerToPeer.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C6D51628-9E61-427B-A3C3-E9468029F55D}</ProjectGuid>
+    <RootNamespace>Helper</RootNamespace>
+    <ProjectName>PeerToPeer</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\GameFrameWork\includes\;$(SolutionDir)\..\..\..\GameFrameWork\Base\Base;$(SolutionDir)\..\..\..\GameFrameWork\Base\Maths;$(SolutionDir)\..\..\..\GameFrameWork\Base\BinaryArchive;$(SolutionDir)\..\..\..\GameFrameWork\Base\RenderSystem;$(SolutionDir)\..\..\..\GameFrameWork\Base\RandomNumbers;$(SolutionDir)\..\..\..\GameFrameWork\Base\Sound;$(SolutionDir)\..\..\..\GameFrameWork\Base\Application;$(SolutionDir)\..\..\..\GameFrameWork\Base\Includes;$(SolutionDir)\..\..\..\GameFrameWork\Base\Dynamics;$(SolutionDir)\..\..\..\GameFrameWork\Base\UserInterface;$(SolutionDir)\..\..\..\GameFrameWork\Base\SceneGraph\;$(SolutionDir)\..\..\..\GameFrameWork\Game;$(SolutionDir)\..\..\..\GameFrameWork\Helper;$(SolutionDir)..\..\..\GameFramework\Dynamics\;$(SolutionDir)..\..\..\GameFrameWork\Shared;$(SolutionDir)\..\..\..\GameFrameWork\Multiplayer\;$(SolutionDir)..\..\..\GameFramework_ThirdParty\FFT;$(SolutionDir)..\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)..\..\..\GameFramework_ThirdParty\enet\include;$(SolutionDir)..\..\..\GameFramework_ThirdParty\enet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\GameFrameWork\includes\;$(SolutionDir)\..\..\..\GameFrameWork\Base\Base;$(SolutionDir)\..\..\..\GameFrameWork\Base\Maths;$(SolutionDir)\..\..\..\GameFrameWork\Base\BinaryArchive;$(SolutionDir)\..\..\..\GameFrameWork\Base\RenderSystem;$(SolutionDir)\..\..\..\GameFrameWork\Base\RandomNumbers;$(SolutionDir)\..\..\..\GameFrameWork\Base\Sound;$(SolutionDir)\..\..\..\GameFrameWork\Base\Application;$(SolutionDir)\..\..\..\GameFrameWork\Base\Includes;$(SolutionDir)\..\..\..\GameFrameWork\Base\Dynamics;$(SolutionDir)\..\..\..\GameFrameWork\Base\UserInterface;$(SolutionDir)\..\..\..\GameFrameWork\Base\SceneGraph\;$(SolutionDir)\..\..\..\GameFrameWork\Game;$(SolutionDir)\..\..\..\GameFrameWork\Helper;$(SolutionDir)..\..\..\GameFramework\Dynamics\;$(SolutionDir)..\..\..\GameFrameWork\Shared;$(SolutionDir)\..\..\..\GameFrameWork\Multiplayer\;$(SolutionDir)..\..\..\GameFramework_ThirdParty\FFT;$(SolutionDir)..\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)..\..\..\GameFramework_ThirdParty\enet\include;$(SolutionDir)..\..\..\GameFramework_ThirdParty\enet;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

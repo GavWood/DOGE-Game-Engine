@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <project>8</project>
+  <platform>1</platform>
+  <projects>
+        <project>
+            <id>1</id>
+            <path>/Users/localadmin/Documents/Game-Framework-Private/GameFramework_Tutorials/3DScene/3DScene/</path>
+        </project>
+        
+        <project>
+            <id>2</id>
+          <path>c:\github\Game-Framework\GameFramework_Tutorials\3DScene\3DScene\</path>
+        </project>
+
+        <project>
+          <id>3</id>
+          <path>c:\github\game-framework-private\GameFramework_Tutorials\3DScene\3DScene\</path>
+        </project>
+
+        <project>
+          <id>4</id>
+          <path>c:\github\game-framework-private\GameFramework_Tutorials\Murmurations\Murmuration\</path>
+        </project>
+        
+        <project>
+            <id>5</id>
+            <path>/Users/localadmin/Documents/Game-Framework-Private/CardBasedGames/CardTestBed/Tutorial1/</path>
+        </project>
+
+        <project>
+          <id>6</id>
+          <path>\github\game-framework-private\CardBasedGames\CardTestBed\Tutorial1\</path>
+        </project>
+        
+        <project>
+            <id>7</id>
+            <path>/Users/localadmin/Documents/Game-Framework-Private/CardBasedGames/SynchronisedPlay/SynchronisedPlay/</path>
+        </project>
+        
+        <project>
+            <id>8</id>
+            <path>/Users/localadmin/Documents/Game-Framework-Private/CardBasedGames/TurnTakingPlay/TurnTakingPlay/</path>
+        </project>
+  </projects>
+</config>

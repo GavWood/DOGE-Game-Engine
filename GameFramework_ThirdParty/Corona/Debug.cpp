@@ -1,0 +1,46 @@
+#include "Debug.h"
+
+#ifdef CORONA_DEBUG
+
+
+FILE* Log::handle;
+int Log::indent_count;
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+void
+Log::Write(const char* str)
+{
+  EnsureOpen();
+  if (handle) {
+    std::string s(std::string(indent_count * 2, ' ') + str + "\n");
+    fputs(s.c_str(), handle);
+    fflush(handle);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+void
+Log::EnsureOpen()
+{
+  if (!handle)
+  {
+    handle = fopen("corona_debug.log", "w");
+    atexit(Close);
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+void
+Log::Close()
+{
+  fclose(handle);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+#endif
