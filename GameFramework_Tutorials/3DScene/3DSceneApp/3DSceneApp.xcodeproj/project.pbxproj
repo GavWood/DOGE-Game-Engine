@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7B0D26F41F5451E10076EF97 /* fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D24C81F5451E00076EF97 /* fft.cpp */; };
 		7B0D27991F5451E10076EF97 /* cJSON.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D259B1F5451E10076EF97 /* cJSON.c */; };
-		7B0D27A91F5451E10076EF97 /* SessionController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D25BB1F5451E10076EF97 /* SessionController.mm */; };
 		7B0D27AD1F5451E10076EF97 /* tinyxml2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D25C31F5451E10076EF97 /* tinyxml2.cpp */; };
 		7B0D27AE1F5451E10076EF97 /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D25C61F5451E10076EF97 /* adler32.c */; };
 		7B0D27AF1F5451E10076EF97 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B0D25C71F5451E10076EF97 /* compress.c */; };
@@ -76,6 +75,7 @@
 		7BA2863C1F85A0AC00E1B21C /* BaArchiveImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BA286221F85A0AC00E1B21C /* BaArchiveImpl.cpp */; };
 		7BA286421F85A19700E1B21C /* BtTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BA286401F85A19700E1B21C /* BtTime.cpp */; };
 		7BA286431F85A19700E1B21C /* Ui360Impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7BA286411F85A19700E1B21C /* Ui360Impl.cpp */; };
+		7BE93B101F8F8B0B001998D6 /* McManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BE93B0E1F8F8B0B001998D6 /* McManager.mm */; };
 		7BF217501C09D7A7004E4743 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF2174F1C09D7A7004E4743 /* CoreMedia.framework */; };
 		7BF34B5D1C0601300048F1DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF34B5C1C0601300048F1DF /* main.m */; };
 		7BF34B671C0601300048F1DF /* GameViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BF34B661C0601300048F1DF /* GameViewController.mm */; };
@@ -187,8 +187,6 @@
 		7B0D25B51F5451E10076EF97 /* EFX-Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EFX-Util.h"; sourceTree = "<group>"; };
 		7B0D25B61F5451E10076EF97 /* efx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = efx.h; sourceTree = "<group>"; };
 		7B0D25B81F5451E10076EF97 /* xram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = xram.h; sourceTree = "<group>"; };
-		7B0D25BA1F5451E10076EF97 /* SessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionController.h; sourceTree = "<group>"; };
-		7B0D25BB1F5451E10076EF97 /* SessionController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SessionController.mm; sourceTree = "<group>"; };
 		7B0D25C31F5451E10076EF97 /* tinyxml2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml2.cpp; sourceTree = "<group>"; };
 		7B0D25C41F5451E10076EF97 /* tinyxml2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tinyxml2.h; sourceTree = "<group>"; };
 		7B0D25C61F5451E10076EF97 /* adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = adler32.c; sourceTree = "<group>"; };
@@ -300,6 +298,8 @@
 		7BA2863F1F85A19700E1B21C /* Ui360Impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ui360Impl.h; path = ImpliOS/Ui360Impl.h; sourceTree = "<group>"; };
 		7BA286401F85A19700E1B21C /* BtTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BtTime.cpp; path = ImpliOS/BtTime.cpp; sourceTree = "<group>"; };
 		7BA286411F85A19700E1B21C /* Ui360Impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ui360Impl.cpp; path = ImpliOS/Ui360Impl.cpp; sourceTree = "<group>"; };
+		7BE93B0E1F8F8B0B001998D6 /* McManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = McManager.mm; sourceTree = "<group>"; };
+		7BE93B0F1F8F8B0B001998D6 /* McManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = McManager.h; sourceTree = "<group>"; };
 		7BF2174F1C09D7A7004E4743 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7BF34B581C0601300048F1DF /* 3DSceneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3DSceneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF34B5C1C0601300048F1DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -536,7 +536,6 @@
 				7B0D24C71F5451E00076EF97 /* FFT */,
 				7B0D259A1F5451E10076EF97 /* JSON */,
 				7B0D25B11F5451E10076EF97 /* OpenAL */,
-				7B0D25B91F5451E10076EF97 /* SessionController */,
 				7B0D25C11F5451E10076EF97 /* TinyXML */,
 				7B0D25C51F5451E10076EF97 /* ZLib */,
 			);
@@ -573,15 +572,6 @@
 				7B0D25B81F5451E10076EF97 /* xram.h */,
 			);
 			path = OpenAL;
-			sourceTree = "<group>";
-		};
-		7B0D25B91F5451E10076EF97 /* SessionController */ = {
-			isa = PBXGroup;
-			children = (
-				7B0D25BA1F5451E10076EF97 /* SessionController.h */,
-				7B0D25BB1F5451E10076EF97 /* SessionController.mm */,
-			);
-			path = SessionController;
 			sourceTree = "<group>";
 		};
 		7B0D25C11F5451E10076EF97 /* TinyXML */ = {
@@ -645,11 +635,11 @@
 			path = ../3DScene/SourceCode;
 			sourceTree = "<group>";
 		};
-		7B1B404C1F5E95B900A82475 /* GitHub-Private */ = {
+		7B1B404C1F5E95B900A82475 /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "GitHub-Private";
+			name = GitHub;
 			sourceTree = "<group>";
 		};
 		7B3F4F0A1F8C0EFD00CE6620 /* Release */ = {
@@ -662,11 +652,11 @@
 			name = Release;
 			sourceTree = "<group>";
 		};
-		7B45A1031F6425F2009ECFA2 /* GLES-Private */ = {
+		7B45A1031F6425F2009ECFA2 /* GLES */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "GLES-Private";
+			name = GLES;
 			sourceTree = "<group>";
 		};
 		7B45A1061F642AD8009ECFA2 /* GameData */ = {
@@ -805,8 +795,8 @@
 		7BF34B4F1C0601300048F1DF = {
 			isa = PBXGroup;
 			children = (
-				7B45A1031F6425F2009ECFA2 /* GLES-Private */,
-				7B1B404C1F5E95B900A82475 /* GitHub-Private */,
+				7B45A1031F6425F2009ECFA2 /* GLES */,
+				7B1B404C1F5E95B900A82475 /* GitHub */,
 				7BF8518D1E71E12A005D5C0D /* Frameworks */,
 				7B0D23821F5451E00076EF97 /* GameFramework_ThirdParty */,
 				7BF844941E71DFC0005D5C0D /* GameFramework */,
@@ -916,6 +906,8 @@
 		7BF844E31E71DFC0005D5C0D /* Multiplayer */ = {
 			isa = PBXGroup;
 			children = (
+				7BE93B0F1F8F8B0B001998D6 /* McManager.h */,
+				7BE93B0E1F8F8B0B001998D6 /* McManager.mm */,
 				7BF844E51E71DFC0005D5C0D /* PeerToPeer.cpp */,
 				7BF844E61E71DFC0005D5C0D /* PeerToPeer.h */,
 			);
@@ -1363,7 +1355,6 @@
 				7BF846711E71DFC1005D5C0D /* PeerToPeer.cpp in Sources */,
 				7B0D27B41F5451E10076EF97 /* inffast.c in Sources */,
 				7BA286331F85A0AC00E1B21C /* RsRenderTargetImpl.cpp in Sources */,
-				7B0D27A91F5451E10076EF97 /* SessionController.mm in Sources */,
 				7BA286381F85A0AC00E1B21C /* RsVertexBufferImpl.cpp in Sources */,
 				7BF8466B1E71DFC0005D5C0D /* HlTimer.cpp in Sources */,
 				7B0D27AD1F5451E10076EF97 /* tinyxml2.cpp in Sources */,
@@ -1375,6 +1366,7 @@
 				7BA2863A1F85A0AC00E1B21C /* UiInputImpl.cpp in Sources */,
 				7BA286391F85A0AC00E1B21C /* Ui360.cpp in Sources */,
 				7BF846951E71DFC1005D5C0D /* MtPoint.cpp in Sources */,
+				7BE93B101F8F8B0B001998D6 /* McManager.mm in Sources */,
 				7BA286311F85A0AC00E1B21C /* RsManagerImpl.cpp in Sources */,
 				7BA2862C1F85A0AC00E1B21C /* RsCapsImpl.cpp in Sources */,
 				7B0D27B51F5451E10076EF97 /* inflate.c in Sources */,

@@ -1,5 +1,4 @@
-//  AppDelegate.m
-
+//  AppDelegate.mm
 #import "AppDelegate.h"
 #import "PeerToPeer.h"
 #import "string.h"
@@ -9,14 +8,13 @@
 @end
 
 @implementation AppDelegate
-@synthesize sessionController;
+@synthesize sessionManager;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    sessionController = [[SessionController alloc] init];
-    self.sessionController.delegate = self;
-    
+    sessionManager = [[MCManager alloc] init];
+    [sessionManager setup];
     return YES;
 }
 
@@ -45,28 +43,7 @@
 
 -(void)sendData:(NSData*)data
 {
-    [self.sessionController sendData:data];
-}
-
-- (void)sessionDidChangeState
-{
-    // Add the peers to our vector
-    unsigned long count = self.sessionController.connectedPeers.count;
-    for( unsigned long i=0; i<count; i++ )
-    {
-        MCPeerID *peerID = self.sessionController.connectedPeers[i];
-        
-        // Cache the IOS network name
-        BtU8 *networkName = (BtU8*)( [[peerID displayName] UTF8String] );
-        
-        // Add the peer
-        MpPeer peer;
-        peer.m_address = 0;
-        peer.m_port = 0;
-        peer.m_startTime = MpPeerToPeer::GetTimeStarted();
-        strcpy( (char*)peer.m_networkName, (char*)networkName );
-        MpPeerToPeer::AddPeer( peer );
-    }
+    [self.sessionManager sendData:data];
 }
 
 @end

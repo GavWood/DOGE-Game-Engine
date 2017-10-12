@@ -9,19 +9,6 @@
 /* Begin PBXBuildFile section */
 		3A1598EF11B9DE37001E7AB5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1598EE11B9DE37001E7AB5 /* OpenGL.framework */; };
 		3A15990711B9DE6C001E7AB5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A15990611B9DE6C001E7AB5 /* QuartzCore.framework */; };
-		7B1B803D1F605A0000573424 /* projectedTextureOSX.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B80301F605A0000573424 /* projectedTextureOSX.frag */; };
-		7B1B803E1F605A0000573424 /* projectedTextureOSX.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B80311F605A0000573424 /* projectedTextureOSX.vert */; };
-		7B1B803F1F605A0000573424 /* shader.osx in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B80321F605A0000573424 /* shader.osx */; };
-		7B1B80401F605A0000573424 /* shaderLitOSX.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B80331F605A0000573424 /* shaderLitOSX.frag */; };
-		7B1B80411F605A0000573424 /* shaderLitOSX.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B80341F605A0000573424 /* shaderLitOSX.vert */; };
-		7B1B80421F605A0000573424 /* shaderLitTexturedOSX.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B80351F605A0000573424 /* shaderLitTexturedOSX.frag */; };
-		7B1B80431F605A0000573424 /* shaderLitTexturedOSX.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B80361F605A0000573424 /* shaderLitTexturedOSX.vert */; };
-		7B1B80441F605A0000573424 /* shaderPassThroughOSX.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B80371F605A0000573424 /* shaderPassThroughOSX.frag */; };
-		7B1B80451F605A0000573424 /* shaderPassThroughOSX.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B80381F605A0000573424 /* shaderPassThroughOSX.vert */; };
-		7B1B80461F605A0000573424 /* shaderSkinOSX.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B80391F605A0000573424 /* shaderSkinOSX.frag */; };
-		7B1B80471F605A0000573424 /* shaderSkinOSX.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B803A1F605A0000573424 /* shaderSkinOSX.vert */; };
-		7B1B80481F605A0000573424 /* shaderTexturedOSX.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B803B1F605A0000573424 /* shaderTexturedOSX.frag */; };
-		7B1B80491F605A0000573424 /* shaderTexturedOSX.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B803C1F605A0000573424 /* shaderTexturedOSX.vert */; };
 		7B1BDAC41F5F4BC40030E0D2 /* fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B1BDAC11F5F4BC40030E0D2 /* fft.cpp */; };
 		7B1BDADB1F5F4D9E0030E0D2 /* anim.OSXz in Resources */ = {isa = PBXBuildFile; fileRef = 7B1BDAD71F5F4D9E0030E0D2 /* anim.OSXz */; };
 		7B1BDADC1F5F4D9E0030E0D2 /* game.OSXz in Resources */ = {isa = PBXBuildFile; fileRef = 7B1BDAD81F5F4D9E0030E0D2 /* game.OSXz */; };
@@ -211,19 +198,6 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		3A1598EE11B9DE37001E7AB5 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		3A15990611B9DE6C001E7AB5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		7B1B80301F605A0000573424 /* projectedTextureOSX.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = projectedTextureOSX.frag; path = ../3DScene/GameData/Game.Archive/Shaders/projectedTextureOSX.frag; sourceTree = "<group>"; };
-		7B1B80311F605A0000573424 /* projectedTextureOSX.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = projectedTextureOSX.vert; path = ../3DScene/GameData/Game.Archive/Shaders/projectedTextureOSX.vert; sourceTree = "<group>"; };
-		7B1B80321F605A0000573424 /* shader.osx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = shader.osx; path = ../3DScene/GameData/Game.Archive/Shaders/shader.osx; sourceTree = "<group>"; };
-		7B1B80331F605A0000573424 /* shaderLitOSX.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderLitOSX.frag; path = ../3DScene/GameData/Game.Archive/Shaders/shaderLitOSX.frag; sourceTree = "<group>"; };
-		7B1B80341F605A0000573424 /* shaderLitOSX.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderLitOSX.vert; path = ../3DScene/GameData/Game.Archive/Shaders/shaderLitOSX.vert; sourceTree = "<group>"; };
-		7B1B80351F605A0000573424 /* shaderLitTexturedOSX.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderLitTexturedOSX.frag; path = ../3DScene/GameData/Game.Archive/Shaders/shaderLitTexturedOSX.frag; sourceTree = "<group>"; };
-		7B1B80361F605A0000573424 /* shaderLitTexturedOSX.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderLitTexturedOSX.vert; path = ../3DScene/GameData/Game.Archive/Shaders/shaderLitTexturedOSX.vert; sourceTree = "<group>"; };
-		7B1B80371F605A0000573424 /* shaderPassThroughOSX.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderPassThroughOSX.frag; path = ../3DScene/GameData/Game.Archive/Shaders/shaderPassThroughOSX.frag; sourceTree = "<group>"; };
-		7B1B80381F605A0000573424 /* shaderPassThroughOSX.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderPassThroughOSX.vert; path = ../3DScene/GameData/Game.Archive/Shaders/shaderPassThroughOSX.vert; sourceTree = "<group>"; };
-		7B1B80391F605A0000573424 /* shaderSkinOSX.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderSkinOSX.frag; path = ../3DScene/GameData/Game.Archive/Shaders/shaderSkinOSX.frag; sourceTree = "<group>"; };
-		7B1B803A1F605A0000573424 /* shaderSkinOSX.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderSkinOSX.vert; path = ../3DScene/GameData/Game.Archive/Shaders/shaderSkinOSX.vert; sourceTree = "<group>"; };
-		7B1B803B1F605A0000573424 /* shaderTexturedOSX.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderTexturedOSX.frag; path = ../3DScene/GameData/Game.Archive/Shaders/shaderTexturedOSX.frag; sourceTree = "<group>"; };
-		7B1B803C1F605A0000573424 /* shaderTexturedOSX.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderTexturedOSX.vert; path = ../3DScene/GameData/Game.Archive/Shaders/shaderTexturedOSX.vert; sourceTree = "<group>"; };
 		7B1BDAA61F5F42660030E0D2 /* 3DSceneOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3DSceneOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1BDAAC1F5F43170030E0D2 /* game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = game.h; sourceTree = "<group>"; };
 		7B1BDAAD1F5F43170030E0D2 /* GaProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GaProject.h; sourceTree = "<group>"; };
@@ -603,26 +577,6 @@
 			name = OSXGLEssentials;
 			sourceTree = "<group>";
 		};
-		7B1B21F31F5FE4C000EE7953 /* GameData */ = {
-			isa = PBXGroup;
-			children = (
-				7B1B80301F605A0000573424 /* projectedTextureOSX.frag */,
-				7B1B80311F605A0000573424 /* projectedTextureOSX.vert */,
-				7B1B80321F605A0000573424 /* shader.osx */,
-				7B1B80331F605A0000573424 /* shaderLitOSX.frag */,
-				7B1B80341F605A0000573424 /* shaderLitOSX.vert */,
-				7B1B80351F605A0000573424 /* shaderLitTexturedOSX.frag */,
-				7B1B80361F605A0000573424 /* shaderLitTexturedOSX.vert */,
-				7B1B80371F605A0000573424 /* shaderPassThroughOSX.frag */,
-				7B1B80381F605A0000573424 /* shaderPassThroughOSX.vert */,
-				7B1B80391F605A0000573424 /* shaderSkinOSX.frag */,
-				7B1B803A1F605A0000573424 /* shaderSkinOSX.vert */,
-				7B1B803B1F605A0000573424 /* shaderTexturedOSX.frag */,
-				7B1B803C1F605A0000573424 /* shaderTexturedOSX.vert */,
-			);
-			name = GameData;
-			sourceTree = "<group>";
-		};
 		7B1B7A751F641F4800384862 /* OSX-Private */ = {
 			isa = PBXGroup;
 			children = (
@@ -862,7 +816,6 @@
 		7BAF25601F5EC56D00C59E53 /* 3DScene */ = {
 			isa = PBXGroup;
 			children = (
-				7B1B21F31F5FE4C000EE7953 /* GameData */,
 				7BAF256A1F5EC5B500C59E53 /* SourceCode */,
 				7BAF25611F5EC5AA00C59E53 /* Release */,
 			);
@@ -1505,47 +1458,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B1B80441F605A0000573424 /* shaderPassThroughOSX.frag in Resources */,
 				7BE8B3C21F6285F500ABFF3C /* glew.png in Resources */,
 				7BE8B3C81F6285F500ABFF3C /* khronos.txt in Resources */,
-				7B1B80481F605A0000573424 /* shaderTexturedOSX.frag in Resources */,
 				7BE8B3D71F6285F500ABFF3C /* README.txt in Resources */,
 				7B1BDB0B1F5F4F370030E0D2 /* InfoPlist.strings in Resources */,
 				7BE8B3C91F6285F500ABFF3C /* log.html in Resources */,
 				7BE8B3C61F6285F500ABFF3C /* index.html in Resources */,
 				7BE8B3C11F6285F500ABFF3C /* glew.html in Resources */,
 				7BE8B3C51F6285F500ABFF3C /* gpl.txt in Resources */,
-				7B1B803E1F605A0000573424 /* projectedTextureOSX.vert in Resources */,
 				7BE8B3BF1F6285F500ABFF3C /* credits.html in Resources */,
 				7BE8B3D61F6285F500ABFF3C /* LICENSE.txt in Resources */,
 				7BE8B3C41F6285F500ABFF3C /* glxew.html in Resources */,
 				7BE8B3B81F6285F500ABFF3C /* glewinfo.exe in Resources */,
 				7BE8B3BD1F6285F500ABFF3C /* basic.html in Resources */,
-				7B1B80471F605A0000573424 /* shaderSkinOSX.vert in Resources */,
 				7BE8B3BA1F6285F500ABFF3C /* glew32mx.dll in Resources */,
 				7B1BDADE1F5F4D9E0030E0D2 /* utility.OSXz in Resources */,
 				7BE8B3B91F6285F500ABFF3C /* visualinfo.exe in Resources */,
-				7B1B80431F605A0000573424 /* shaderLitTexturedOSX.vert in Resources */,
 				7BE8B3B41F6285F500ABFF3C /* glew32.dll in Resources */,
-				7B1B80401F605A0000573424 /* shaderLitOSX.frag in Resources */,
 				7B1BDADC1F5F4D9E0030E0D2 /* game.OSXz in Resources */,
-				7B1B80451F605A0000573424 /* shaderPassThroughOSX.vert in Resources */,
 				7BE8B3C01F6285F500ABFF3C /* glew.css in Resources */,
-				7B1B80461F605A0000573424 /* shaderSkinOSX.frag in Resources */,
 				7BE8B3B61F6285F500ABFF3C /* visualinfo.exe in Resources */,
-				7B1B80411F605A0000573424 /* shaderLitOSX.vert in Resources */,
-				7B1B803D1F605A0000573424 /* projectedTextureOSX.frag in Resources */,
 				7BE8B3CC1F6285F500ABFF3C /* ogl_sm.jpg in Resources */,
 				7BE8B3CB1F6285F500ABFF3C /* new.png in Resources */,
 				7BE8B3BC1F6285F500ABFF3C /* advanced.html in Resources */,
-				7B1B803F1F605A0000573424 /* shader.osx in Resources */,
 				7BE8B3B51F6285F500ABFF3C /* glewinfo.exe in Resources */,
 				7B1BDADB1F5F4D9E0030E0D2 /* anim.OSXz in Resources */,
-				7B1B80491F605A0000573424 /* shaderTexturedOSX.vert in Resources */,
 				7BE8B3D81F6285F500ABFF3C /* TODO.txt in Resources */,
 				7BE8B3CA1F6285F500ABFF3C /* mesa.txt in Resources */,
 				7BE8B3BB1F6285F500ABFF3C /* glew32mx.dll in Resources */,
-				7B1B80421F605A0000573424 /* shaderLitTexturedOSX.frag in Resources */,
 				7BE8B3BE1F6285F500ABFF3C /* build.html in Resources */,
 				7BE8B3C31F6285F500ABFF3C /* glew.txt in Resources */,
 				7BE8B3C71F6285F500ABFF3C /* install.html in Resources */,

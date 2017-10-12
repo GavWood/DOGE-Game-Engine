@@ -268,9 +268,7 @@ UIDeviceResolution deviceType;
     
     // Get the resolution
     [self resolution];
-    
-    [self setupSensorFusion];
-    
+
     // Create the renderer implementation
     RsImpl::pInstance()->Create();
     
@@ -654,36 +652,6 @@ static bool isUpdated = false;
 - (void)sessionInterruptionEnded:(ARSession *)session {
     // Reset tracking and/or remove existing anchors if consistent tracking is required
     
-}
-
--(void)setupSensorFusion
-{
-    // Setup the motion manager
-    motionManager = [[CMMotionManager alloc] init];
-    
-    // Capture device motion updates
-    BtFloat SampleFrequency = 100.0f;
-    [motionManager setDeviceMotionUpdateInterval: 1.0f/SampleFrequency ];   // SampleFrequency given in
-    
-    if( motionManager.isDeviceMotionAvailable )
-    {
-        // This device supports DeviceMotion events. Configure the sampling rate and start the IMU with an available reference frame
-        [motionManager startDeviceMotionUpdatesUsingReferenceFrame: CMAttitudeReferenceFrameXArbitraryCorrectedZVertical
-                                                           toQueue: [[NSOperationQueue alloc] init]
-                                                       withHandler: ^(CMDeviceMotion *dmReceived, NSError *error)
-         {
-             //MtVector3 v3Acceleration;
-             //v3Acceleration.x = motionManager.deviceMotion.userAcceleration.x;
-             //v3Acceleration.y = motionManager.deviceMotion.userAcceleration.y;
-             //v3Acceleration.z = motionManager.deviceMotion.userAcceleration.z;
-             //ShIMU::SetAccelerometer( 0, v3Acceleration );
-             
-             CMQuaternion currentAtt = motionManager.deviceMotion.attitude.quaternion;
-             MtQuaternion quaternion( currentAtt.x, currentAtt.y, currentAtt.z, currentAtt.w );
-            // ShIMU::SetQuaternion( 0, quaternion );
-         }
-         ];
-    }
 }
 
 CVOpenGLESTextureRef createTexture( CVOpenGLESTextureCacheRef textureCache,
