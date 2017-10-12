@@ -1,3 +1,0 @@
-﻿cl : Command line warning D9025: overriding '/sdl' with '/GS-'
-  stb.cpp
-  stb.vcxproj -> C:\github\game-framework-private\GameFramework_Tutorials\Murmurations\MurmurationGL\Debug\stb\stb.lib
