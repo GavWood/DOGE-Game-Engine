@@ -14,7 +14,14 @@
 *.tlog
 .DS_Store
 *.pdb
+*.log
+*.idb
+*.db
 *.obj
+*.exp
+*.pch
+*.lib
+*.lastbuildstate
 xcuserdata
 
 CardBasedGames/TurnTakingPlay/TurnTakingPlay/BuildFiles/*
