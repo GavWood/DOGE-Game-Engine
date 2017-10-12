@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 // HlTrueType
-
+/*
 #include "HlTrueType.h"
 #include "RsMaterial.h"
 #include "RsTexture.h"
@@ -24,7 +24,6 @@ void HlTrueType::Setup( BaArchive *pArchive, const BtChar *fontText, const BtCha
 	m_pArchive = pArchive;
 	m_pUserData = m_pArchive->GetUserData(fontText);
 
-	/* prepare font */
 	if(!stbtt_InitFont(&m_stbFontInfo, m_pUserData->GetData(), 0))
 	{
 		printf("failed\n");
@@ -260,3 +259,4 @@ void HlTrueType::Render( const BtChar *text, RsColour colour )
 
 	m_pTextTexture->GetTexture(0)->WriteMemory((BtU8*)m_pTempTextMemory, m_width * m_height );
 }
+*/

@@ -4,6 +4,7 @@
 // Include guard
 #pragma once
 
+/*
 // Includes
 #include "BaArchive.h"
 #include "BtBase.h"
@@ -55,3 +56,4 @@ private:
 	BtU32						 m_height;
 	BtU8						*m_pTempTextMemory;
 };
+*/

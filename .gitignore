@@ -20,7 +20,6 @@
 *.obj
 *.exp
 *.pch
-*.lib
 *.lastbuildstate
 xcuserdata
 
