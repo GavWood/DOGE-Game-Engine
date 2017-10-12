@@ -1,6 +1,0 @@
-﻿  PaTopState.cpp
-cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
-Corona.lib(Corona.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
-     Creating library C:\github\Game-Framework\GameFramework_Packer\Packer_Win32\Debug\Packer_Win32.lib and object C:\github\Game-Framework\GameFramework_Packer\Packer_Win32\Debug\Packer_Win32.exp
-  Packer_Win32.vcxproj -> C:\github\Game-Framework\GameFramework_Packer\Packer_Win32\Debug\Packer_Win32.exe
-  Packer_Win32.vcxproj -> C:\github\Game-Framework\GameFramework_Packer\Packer_Win32\Debug\Packer.pdb (Full PDB)
