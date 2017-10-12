@@ -1,6 +1,0 @@
-﻿  tinyxml2.cpp
-c:\github\game-framework-private\gameframework_thirdparty\tinyxml\tinyxml2.h(2160): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(2254): note: see declaration of 'sscanf'
-c:\github\game-framework-private\gameframework_thirdparty\tinyxml\tinyxml2.h(2174): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-  TinyXML.vcxproj -> C:\github\game-framework-private\GameFramework_Tutorials\3DScene\3DSceneGL\Release\TinyXML\TinyXML.lib
