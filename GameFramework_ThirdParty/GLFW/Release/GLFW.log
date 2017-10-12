@@ -1,1 +1,29 @@
-﻿  GLFW.vcxproj -> C:\github\game-framework-private\CardBasedGames\CardTestBed\Tutorial1GL\Release\GLFW.lib
+﻿  enable.c
+  fullscreen.c
+  glext.c
+  image.c
+  init.c
+  input.c
+  joystick.c
+  stream.c
+stream.c(43): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  tga.c
+  thread.c
+  time.c
+  win32_dllmain.c
+  win32_enable.c
+  win32_fullscreen.c
+  win32_glext.c
+  win32_init.c
+win32\win32_init.c(237): warning C4996: 'GetVersionExA': was declared deprecated
+  C:\Program Files (x86)\Windows Kits\8.1\Include\um\sysinfoapi.h(433): note: see declaration of 'GetVersionExA'
+  win32_joystick.c
+  win32_thread.c
+  win32_time.c
+  win32_window.c
+win32\win32_window.c(1774): warning C4101: 'ClipWindowRect': unreferenced local variable
+  Compiling...
+  window.c
+window.c(934): warning C4047: 'return': 'int' differs in levels of indirection from 'HWND'
+  GLFW.vcxproj -> C:\github\Game-Framework\CardBasedGames\TurnTakingPlay\TurnTakingPlayGL\Release\GLFW.lib

@@ -48,7 +48,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\GameFrameWork\includes\;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Base;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Maths;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\BinaryArchive;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\RenderSystem;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\RandomNumbers;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Sound;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\SceneGrap;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Application;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Includes;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Dynamics;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\UserInterface;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Base\Win32;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\SceneGraph\Win32;$(SolutionDir)\..\..\..\GameFrameWork\Game;$(SolutionDir)\..\..\..\GameFrameWork\Helper;$(SolutionDir)\..\..\..\GameFrameWork\Shared;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\GLFW\include;$(SolutionDir)\..\..\..\GavinWood_Tutorials\TutorialRoot\Tutorial1\SourceCode;$(SolutionDir)\..\..\..\GameFrameWork\Dynamics;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\stb;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\opencv;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\lodepng;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\GameFrameWork\includes\;$(SolutionDir)\..\..\..\GameFrameWork\Base\Base;$(SolutionDir)\..\..\..\GameFrameWork\Base\Maths;$(SolutionDir)\..\..\..\GameFrameWork\Base\BinaryArchive;$(SolutionDir)\..\..\..\GameFrameWork\Base\RenderSystem;$(SolutionDir)\..\..\..\GameFrameWork\Base\RandomNumbers;$(SolutionDir)\..\..\..\GameFrameWork\Base\Sound;$(SolutionDir)\..\..\..\GameFrameWork\Base\SceneGrap;$(SolutionDir)\..\..\..\GameFrameWork\Base\Application;$(SolutionDir)\..\..\..\GameFrameWork\Base\Includes;$(SolutionDir)\..\..\..\GameFrameWork\Base\Dynamics;$(SolutionDir)\..\..\..\GameFrameWork\Base\UserInterface;$(SolutionDir)\..\..\..\GameFrameWork\Game;$(SolutionDir)\..\..\..\GameFrameWork\Helper;$(SolutionDir)\..\..\..\GameFrameWork\Shared;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\..\GameFrameWork\Dynamics;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\GLFW\include;$(SolutionDir)\..\..\..\CardBasedGames\CardTestBed\TurnTakingPlay\SourceCode;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\LodePng;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions);_WINDOWS;StruffyLiteWinGL</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -73,7 +73,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\GameFrameWork\includes\;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Base;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Maths;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\BinaryArchive;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\RenderSystem;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\RandomNumbers;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Sound;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\SceneGrap;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Application;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Includes;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Dynamics;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\UserInterface;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\Base\Win32;$(SolutionDir)\..\..\..\GameFrameWork\StruffyLite\SceneGraph\Win32;$(SolutionDir)\..\..\..\GameFrameWork\Game;$(SolutionDir)\..\..\..\GameFrameWork\Helper;$(SolutionDir)\..\..\..\GameFrameWork\Shared;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\GLFW\include;$(SolutionDir)\..\..\..\GavinWood_Tutorials\TutorialRoot\Tutorial1\SourceCode;$(SolutionDir)\..\..\..\GameFrameWork\Dynamics;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\stb;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\opencv;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\lodepng;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\GameFrameWork\includes\;$(SolutionDir)\..\..\..\GameFrameWork\Base\Base;$(SolutionDir)\..\..\..\GameFrameWork\Base\Maths;$(SolutionDir)\..\..\..\GameFrameWork\Base\BinaryArchive;$(SolutionDir)\..\..\..\GameFrameWork\Base\RenderSystem;$(SolutionDir)\..\..\..\GameFrameWork\Base\RandomNumbers;$(SolutionDir)\..\..\..\GameFrameWork\Base\Sound;$(SolutionDir)\..\..\..\GameFrameWork\Base\SceneGrap;$(SolutionDir)\..\..\..\GameFrameWork\Base\Application;$(SolutionDir)\..\..\..\GameFrameWork\Base\Includes;$(SolutionDir)\..\..\..\GameFrameWork\Base\Dynamics;$(SolutionDir)\..\..\..\GameFrameWork\Base\UserInterface;$(SolutionDir)\..\..\..\GameFrameWork\Game;$(SolutionDir)\..\..\..\GameFrameWork\Helper;$(SolutionDir)\..\..\..\GameFrameWork\Shared;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\..\GameFrameWork\Dynamics;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\GLFW\include;$(SolutionDir)\..\..\..\CardBasedGames\CardTestBed\TurnTakingPlay\SourceCode;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\LodePng;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WINDOWS;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -99,17 +99,14 @@
     <ProjectReference Include="..\..\..\GameFramework\Helper\Helper.vcxproj">
       <Project>{6a4946a8-5b80-4501-8165-96f3d0b5e8c0}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework\ImplWin\Impl.vcxproj">
+      <Project>{2d698532-ccbc-4c89-8f00-82a6c1cb073b}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\GameFramework\Multiplayer\Multiplayer.vcxproj">
       <Project>{c6d51628-9e61-427b-a3c3-e9468029f55d}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\..\GameFramework\Shared\Shared.vcxproj">
       <Project>{07b16539-9c37-4bd7-bfb1-2a8ad06c6f4e}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\GameFramework\StruffyLiteWinGL\StruffyLiteWinGL.vcxproj">
-      <Project>{2ce27105-5ef8-40eb-892c-3a8e883a3b93}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\GameFramework\StruffyLite\StruffyLite.vcxproj">
-      <Project>{83eb3ca3-b332-4b24-9099-677248fe9c21}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\..\GameFramework_ThirdParty\enet\enet.vcxproj">
       <Project>{7472da5d-95df-4043-90a4-bf7143cea717}</Project>
