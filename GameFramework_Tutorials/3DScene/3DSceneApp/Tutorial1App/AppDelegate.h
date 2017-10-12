@@ -1,12 +1,12 @@
-//  AppDelegate.h
+//  AppDelegate.mm
 #import <UIKit/UIKit.h>
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
-#import "SessionController.h"
+#import "McManager.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, SessionControllerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property SessionController *sessionController;
+@property MCManager *sessionManager;
 
 -(void)sendData:(NSData*)data;
 
