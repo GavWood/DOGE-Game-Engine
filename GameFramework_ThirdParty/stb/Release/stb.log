@@ -1,3 +1,0 @@
-﻿cl : Command line warning D9025: overriding '/sdl' with '/GS-'
-  stb.cpp
-  stb.vcxproj -> C:\github\Game-Framework\CardBasedGames\TurnTakingPlay\TurnTakingPlayGL\Release\stb.lib

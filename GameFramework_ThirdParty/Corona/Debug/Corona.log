@@ -179,5 +179,4 @@ c:\github\game-framework\gameframework_thirdparty\corona\jpeg-6b\jerror.c(195): 
   jcapistd.c
   jcapimin.c
   Generating Code...
-cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
   Corona.vcxproj -> C:\github\Game-Framework\GameFramework_Packer\Packer_Win32\Debug\Corona.lib
