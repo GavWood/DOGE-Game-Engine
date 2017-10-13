@@ -105,7 +105,7 @@ void BaArchive::LoadFile( const BtChar* archiveName )
 		system("dir \\temp\\test.txt");
 #endif
         
-        BtPrint("Could not find archive %s\r\n", archiveName);
+        ErrorLog::Fatal_Printf("Could not find archive \"%s\"\r\n", archiveName);
 	}
 }
 

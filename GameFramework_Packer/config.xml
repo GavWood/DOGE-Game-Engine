@@ -5,37 +5,37 @@
   <projects>
         <project>
             <id>1</id>
-            <path>/Users/localadmin/Documents/Game-Framework/GameFramework_Tutorials/3DScene/3DScene/</path>
+            <path>/Users/localadmin/Documents/DOGE-Game-Engine/3D-Demo/3DScene/3DScene/</path>
         </project>
         
         <project>
             <id>2</id>
-            <path>c:\github\game-framework\GameFramework_Tutorials\3DScene\3DScene\</path>
+            <path>c:\github\DOGE-Game-Engine\3D-Demos\3DScene\3DScene\</path>
         </project>
 
         <project>
             <id>3</id>
-            <path>c:\github\game-framework\GameFramework_Tutorials\Murmurations\Murmuration\</path>
+            <path>c:\github\DOGE-Game-Engine\3D-Demos\Murmurations\Murmuration\</path>
         </project>
         
         <project>
             <id>4</id>
-            <path>/Users/localadmin/Documents/Game-Framework/CardBasedGames/CardTestBed/Tutorial1/</path>
+            <path>/Users/localadmin/Documents/DOGE-Game-Engine/CardBasedGames/CardTestBed/Tutorial1/</path>
         </project>
 
         <project>
             <id>5</id>
-            <path>\github\game-framework\CardBasedGames\CardTestBed\Tutorial1\</path>
+            <path>\github\DOGE-Game-Engine\CardBasedGames\CardTestBed\Tutorial1\</path>
         </project>
         
         <project>
             <id>6</id>
-            <path>/Users/localadmin/Documents/Game-Framework/CardBasedGames/SynchronisedPlay/SynchronisedPlay/</path>
+            <path>/Users/localadmin/Documents/DOGE-Game-Engine/CardBasedGames/SynchronisedPlay/SynchronisedPlay/</path>
         </project>
         
         <project>
             <id>7</id>
-            <path>/Users/localadmin/Documents/Game-Framework/CardBasedGames/TurnTakingPlay/TurnTakingPlay/</path>
+            <path>/Users/localadmin/Documents/DOGE-Game-Engine/CardBasedGames/TurnTakingPlay/TurnTakingPlay/</path>
         </project>
   </projects>
 </config>

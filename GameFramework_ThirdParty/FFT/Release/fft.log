@@ -1,3 +1,1 @@
-﻿cl : Command line warning D9025: overriding '/sdl' with '/GS-'
-  fft.cpp
-  fft.vcxproj -> C:\github\Game-Framework\GameFramework_Tutorials\3DScene\3DSceneGL\Release\fft.lib
+﻿  fft.vcxproj -> C:\github\DOGE-Game-Engine\3D-Demos\3DScene\3DSceneGL\Release\fft.lib
