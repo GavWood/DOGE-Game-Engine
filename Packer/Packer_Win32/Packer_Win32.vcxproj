@@ -255,11 +255,7 @@
     <ClCompile Include="..\Packer\SourceCode\UtXML.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="..\..\GameFramework_Packer\config.xml">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <SubType>Designer</SubType>
-    </Xml>
+    <Xml Include="..\config.xml" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{65065A68-49F3-4AF0-A929-460922C5926A}</ProjectGuid>

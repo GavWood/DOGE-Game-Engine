@@ -1,9 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
-// PaAsset
+// PaAsset.h
 
-#ifndef __PaAsset_h__
-#define __PaAsset_h__
-
+#pragma once
 #include <vector>
 #include "BtTypes.h"
 #include "BtString.h"
@@ -107,5 +105,3 @@ inline void PaAsset::bExported( BtBool bExported )
 {
 	m_bExported = bExported;
 }
-
-#endif // __PaAsset_h__

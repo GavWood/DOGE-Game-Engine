@@ -179,4 +179,4 @@ c:\github\doge-game-engine\gameframework_thirdparty\corona\jpeg-6b\jerror.c(195)
   jcapistd.c
   jcapimin.c
   Generating Code...
-  Corona.vcxproj -> C:\github\DOGE-Game-Engine\GameFramework_Packer\Packer_Win32\Debug\Corona.lib
+  Corona.vcxproj -> C:\github\DOGE-Game-Engine\Packer\Packer_Win32\Debug\Corona.lib

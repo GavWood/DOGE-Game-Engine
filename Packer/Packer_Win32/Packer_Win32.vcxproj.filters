@@ -717,7 +717,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Xml Include="..\..\GameFramework_Packer\config.xml">
+    <Xml Include="..\config.xml">
       <Filter>Config</Filter>
     </Xml>
   </ItemGroup>

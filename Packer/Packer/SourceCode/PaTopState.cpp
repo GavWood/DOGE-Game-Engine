@@ -175,10 +175,14 @@ BtBool PaTopState::ReadConfig()
 	xmlNode *cur;
 
 #ifdef WIN32
-	cur = xml.Open("\\github\\DOGE-Game-Engine\\GameFramework_Packer\\config.xml", "config" );
+	cur = xml.Open("\\github\\DOGE-Game-Engine\\Packer\\config.xml", "config" );
 #else
 	cur = xml.Open("/Users/localadmin/Documents/DOGE-Game-Engine/GameFramework_Packer/config.xml", "config");
 #endif
+	if (!cur)
+	{
+		cur = xml.Open("config.xml", "config");
+	}
 
 	BtU32 projectId  = xml.GetUintFromNode(cur, "project");
 	m_platform = (PackerPlatform)xml.GetUintFromNode(cur, "platform");
