@@ -73,3 +73,6 @@ See top of nanoflann.hpp
 Card forms are illustrated using Bryon Knolls cards which can be found here:
 http://byronknoll.blogspot.co.uk/2011/03/vector-playing-cards.html
 
+### Sean Barrett
+Nothings library - this has been used for playing with True Type Fonts (TTF).
+https://github.com/nothings/stb
