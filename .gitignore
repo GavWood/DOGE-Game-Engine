@@ -28,10 +28,10 @@ CardBasedGames/CardTestBed/Tutorial1/Release/*
 CardBasedGames/SynchronisedPlay/SynchronisedPlay/BuildFiles/*
 CardBasedGames/SynchronisedPlay/SynchronisedPlay/BuildNotes/*
 
-GameFramework_Tutorials/Murmurations/Murmuration/BuildFiles/*
-GameFramework_Tutorials/Murmurations/Murmuration/BuildNotes/*
-GameFramework_Tutorials/Murmurations/Murmuration/Release/*
+3D-Demos/Murmurations/Murmuration/BuildFiles/*
+3D-Demos/Murmurations/Murmuration/BuildNotes/*
+3D-Demos/Murmurations/Murmuration/Release/*
 
-GameFramework_Tutorials/3DScene/3DScene/BuildFiles/*
-GameFramework_Tutorials/3DScene/3DScene/BuildNotes/*
-GameFramework_Tutorials/3DScene/3DScene/Release/*
+3D-Demos/3DScene/3DScene/BuildFiles/*
+3D-Demos/3DScene/3DScene/BuildNotes/*
+3D-Demos/3DScene/3DScene/Release/*
