@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
-  <project>2</project>
-  <platform>2</platform>
+  <project>1</project>
+  <platform>3</platform>
   <projects>
         <project>
             <id>1</id>
-            <path>/Users/localadmin/Documents/DOGE-Game-Engine/3D-Demo/3DScene/3DScene/</path>
+            <path>/Users/localadmin/Documents/DOGE-Game-Engine/3D-Demos/3DScene/3DScene/</path>
         </project>
         
         <project>
