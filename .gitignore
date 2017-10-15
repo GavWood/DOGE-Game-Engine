@@ -1,10 +1,4 @@
 *.xcbkptlist
-*.iOS
-*.iOSz
-*.OSX
-*.OSXz
-*.WinGL
-*.WinGLz
 *.tmp
 *.xcuserstate
 *.suo
