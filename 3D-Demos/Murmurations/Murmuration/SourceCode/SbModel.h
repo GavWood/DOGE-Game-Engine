@@ -30,6 +30,5 @@ private:
 	
 	// Private members
 	SgNode						   *m_pDebugCube;
-	RsFont						   *m_pFont;
 	RsShader					   *m_pShader;
 };

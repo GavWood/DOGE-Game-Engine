@@ -10,7 +10,6 @@
 
 void SbFrustum::Setup( BaArchive *pArchive )
 {
-	m_pWhite3 = pArchive->GetMaterial( "white3" );
 }
 
 ////////////////////////////////////////////////////////////////////////////////

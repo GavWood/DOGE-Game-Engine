@@ -81,11 +81,9 @@ private:
 	MtVector3						m_v3Position;
 	SbCamera						m_camera;
 	RsMaterial					   *m_pWhite2;
-	RsMaterial					   *m_pWhite3;
 	RsMaterial					   *m_pGUIRenderTarget;
 	RsShader					   *m_pBloom;
-	SdSound						   *m_pSound;
-
+	
 	// Test classes
 	SbModel							m_model;
 	SbRenderSkybox					m_skybox;

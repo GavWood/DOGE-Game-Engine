@@ -29,6 +29,5 @@ private:
 	// Private functions
 
 	MtVector3			m_rect[5];
-	RsMaterial		   *m_pWhite3;
 };
 

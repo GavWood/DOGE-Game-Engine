@@ -92,7 +92,6 @@ private:
 	void							UpdateFactors();
 
 	// Private members
-	RsMaterial					   *m_pWhite3;
 	RsMaterial					   *m_pBird3;
 
 	RsShader					   *m_pShader;
