@@ -175,9 +175,11 @@ void RsShaderImpl::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
         }
         
         glLinkProgram( m_program[i] );
+        glUseProgram( m_program[i] );
         
-        m_sampler[0] = glGetUniformLocation( m_program[i], "myTexture" );
-        m_sampler[1] = glGetUniformLocation( m_program[i], "myTexture2" );
+        // Sets sampler location against current program
+        m_sampler[i][0] = glGetUniformLocation( m_program[i], "myTexture" );
+        m_sampler[i][1] = glGetUniformLocation( m_program[i], "myTexture2" );
         
         if( i == RsShaderPassThrough )
         {
@@ -187,7 +189,8 @@ void RsShaderImpl::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
         }
         else if( i == RsYUVToRGB )
         {
-            //printf( "%s", fragmentText );
+            printf( "%d\n", m_sampler[i][0] );
+            printf( "%d\n", m_sampler[i][1] );
             int a=0;
             a++;
         }
@@ -197,6 +200,7 @@ void RsShaderImpl::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
         
         ++i;
     }
+    glUseProgram( BtNull );
     
     int a=0;
     a++;
@@ -479,7 +483,7 @@ void RsShaderImpl::SetCamera( const RsCamera &camera )
 void RsShaderImpl::SetSampler( BtU32 iTexture )
 {
     // Set the sampler stage to the address from the shader
-    glUniform1i( m_sampler[iTexture], iTexture );
+    glUniform1i( m_sampler[m_currentProgram][iTexture], iTexture );
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -1,7 +1,7 @@
 // Uses code based on Jose Luis Blanco (joseluisblancoc@gmail.com)
 // KD Tree work.
 
-#include <nanoflann.hpp>
+#include "nanoflann.hpp"
 #include "MuMurmuration.h"
 
 #include <ctime>

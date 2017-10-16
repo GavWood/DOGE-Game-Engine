@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
   <project>1</project>
-  <platform>1</platform>
+  <platform>3</platform>
   <projects>
         <project>
             <id>1</id>
@@ -20,21 +20,26 @@
         
         <project>
             <id>4</id>
+            <path>/Users/localadmin/Documents/DOGE-Game-Engine/3D-Demos/Murmurations/Murmuration/</path>
+        </project>
+        
+        <project>
+            <id>5</id>
             <path>/Users/localadmin/Documents/DOGE-Game-Engine/CardBasedGames/CardTestBed/Tutorial1/</path>
         </project>
 
         <project>
-            <id>5</id>
+            <id>6</id>
             <path>\github\DOGE-Game-Engine\CardBasedGames\CardTestBed\Tutorial1\</path>
         </project>
         
         <project>
-            <id>6</id>
+            <id>7</id>
             <path>/Users/localadmin/Documents/DOGE-Game-Engine/CardBasedGames/SynchronisedPlay/SynchronisedPlay/</path>
         </project>
         
         <project>
-            <id>7</id>
+            <id>8</id>
             <path>/Users/localadmin/Documents/DOGE-Game-Engine/CardBasedGames/TurnTakingPlay/TurnTakingPlay/</path>
         </project>
   </projects>

@@ -39,17 +39,11 @@ void SbMain::Init()
 	RdRandom::SetRandomSeed();
 
 	// Load the game archive
-    ApConfig::SetResourcePath( "..\\murmuration\\release\\" );
-	ApConfig::CheckResourcePath( "game" );
-
-	int test = 1;
-	int one  = 1;
-	if( one && test )
-	{
-		int a=0;
-		a++;
-	}
-
+    if( ApConfig::IsWin() )
+    {
+        ApConfig::SetResourcePath( "..\\murmuration\\release\\" );
+        ApConfig::CheckResourcePath( "game" );
+    }
 	RsUtil::SetDimension(MtVector2(800.0f, 600.0f));
 }
 

@@ -36,59 +36,37 @@ ExExporter::ExExporter()
 	// m_bPackTextures = BtFalse;
 }
 
+BtBool IsImage( const BtChar *extension )
+{
+    if( BtStrCompare( "jpg", extension ) )
+    {
+        return BtTrue;
+    }
+    if( BtStrCompare( "png", extension ) )
+    {
+        return BtTrue;
+    }
+    if( BtStrCompare( "bmp", extension ) )
+    {
+        return BtTrue;
+    }
+    if( BtStrCompare( "dds", extension ) )
+    {
+        return BtTrue;
+    }
+    return BtFalse;
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // SetResourceType
 
 BtBool ExExporter::SetResourceType( const PaFileDetails &file, BaResourceType& eResourceType )
 {
-	//if( BtStrCompare( file.m_szFolder, "sprites" ) == BtTrue )
-	{
-		int a=0;
-		a++;
-
-		BtChar *plat;
-
-		plat = BtStrStr( file.m_szTitle, ".windx" );
-		if( plat )
-		{
-			*plat = 0;
-			if( PaTopState::Instance().GetPlatform() != PackerPlatform_WinDX )
-			{
-				return BtFalse;	
-			}
-		}
-		plat = BtStrStr( file.m_szTitle, ".gles" );
-		if( plat )
-		{
-			*plat = 0;
-			if( PaTopState::Instance().GetPlatform() != PackerPlatform_GLES )
-			{
-				return BtFalse;	
-			}
-		}
-		plat = BtStrStr( file.m_szTitle, ".wingl" );
-		if( plat )
-		{
-			*plat = 0;
-			if( PaTopState::Instance().GetPlatform() != PackerPlatform_WinGL )
-			{
-				return BtFalse;	
-			}
-		}
-		plat = BtStrStr(file.m_szTitle, ".osx");
-		if(plat)
-		{
-			*plat = 0;
-			if(PaTopState::Instance().GetPlatform() != PackerPlatform_OSX)
-			{
-				return BtFalse;
-			}
-		}
-	}
-
-	// Pack some userdata
+    // Pack some userdata
 	eResourceType = BaRT_NotSet;
-
+    
+    printf ("extension = %s\n", file.m_szExtension );
+    
 	if( BtStrCompare( file.m_szFolder, "shaders" ) == BtTrue )
 	{
 		// Pack a sound
@@ -96,28 +74,28 @@ BtBool ExExporter::SetResourceType( const PaFileDetails &file, BaResourceType& e
 
 		if( PaTopState::Instance().GetPlatform() == PackerPlatform_WinDX )
 		{
-			if (strstr(".dx11", file.m_szExtension))
+			if ( BtStrCompare("dx11", file.m_szExtension))
 			{
 				return BtTrue;
 			}
 		}
 		else if( PaTopState::Instance().GetPlatform() == PackerPlatform_GLES )
 		{
-			if( strstr( ".gles", file.m_szExtension ) )
+			if( BtStrCompare( "gles", file.m_szExtension ) )
 			{
 				return BtTrue;
 			}
 		}
 		else if(PaTopState::Instance().GetPlatform() == PackerPlatform_WinGL )
 		{
-			if(strstr(".wingl", file.m_szExtension))
+			if( BtStrCompare("wingl", file.m_szExtension))
 			{
 				return BtTrue;
 			}
 		}
 		else if(PaTopState::Instance().GetPlatform() == PackerPlatform_OSX )
 		{
-			if(strstr(".osx", file.m_szExtension))
+			if( BtStrCompare("osx", file.m_szExtension))
 			{
 				return BtTrue;
 			}
@@ -138,7 +116,7 @@ BtBool ExExporter::SetResourceType( const PaFileDetails &file, BaResourceType& e
 		// Pack a sound
 		eResourceType = BaRT_Sound;
 
-		if( strstr( ".wav", file.m_szExtension ) )
+		if( strstr( "wav", file.m_szExtension ) )
 		{
 			return BtTrue;
 		}
@@ -148,11 +126,11 @@ BtBool ExExporter::SetResourceType( const PaFileDetails &file, BaResourceType& e
 		// Pack a texture
 		eResourceType = BaRT_Input;
 
-		if (strstr(".ttf", file.m_szExtension))
+		if (BtStrCompare("ttf", file.m_szExtension))
 		{
 			return BtTrue;
 		}
-		else if( strstr( ".txt", file.m_szExtension ) )
+		else if( BtStrCompare( "txt", file.m_szExtension ) )
 		{
 			return BtTrue;
 		}
@@ -162,7 +140,7 @@ BtBool ExExporter::SetResourceType( const PaFileDetails &file, BaResourceType& e
 		// Pack a texture
 		eResourceType = BaRT_Sprite;
 
-		if( BtStrStr( ".jpg .png .tga .bmp", file.m_szExtension ) )
+		if( IsImage( file.m_szExtension ) )
 		{
 			return BtTrue;
 		}
@@ -172,7 +150,7 @@ BtBool ExExporter::SetResourceType( const PaFileDetails &file, BaResourceType& e
 		// Pack a texture
 		eResourceType = BaRT_Texture;
 
-		if( strstr( ".jpg .png .tga .bmp .dds", file.m_szExtension ) )
+		if( IsImage( file.m_szExtension ) )
 		{
 			return BtTrue;
 		}
@@ -182,12 +160,12 @@ BtBool ExExporter::SetResourceType( const PaFileDetails &file, BaResourceType& e
 		// Pack a texture
 		eResourceType = BaRT_Material;
 
-		if( strstr( ".mat", file.m_szExtension ) )
+		if( BtStrCompare( ".mat", file.m_szExtension ) )
 		{
 			return BtTrue;
 		}
 
-		if( strstr( ".material", file.m_szExtension ) )
+		if( BtStrCompare( "material", file.m_szExtension ) )
 		{
 			return BtTrue;
 		}
@@ -197,11 +175,11 @@ BtBool ExExporter::SetResourceType( const PaFileDetails &file, BaResourceType& e
 		// Pack a texture
 		eResourceType = BaRT_Scene;
 
-		if( strstr( ".dae", file.m_szExtension ) )
+		if( BtStrCompare( "dae", file.m_szExtension ) )
 		{
 			return BtTrue;
 		}
-		else if( strstr( ".mqo", file.m_szExtension ) )
+		else if( BtStrCompare( "mqo", file.m_szExtension ) )
 		{
 			return BtTrue;
 		}
@@ -211,22 +189,22 @@ BtBool ExExporter::SetResourceType( const PaFileDetails &file, BaResourceType& e
 		// Pack a string
 		eResourceType = BaRT_Strings;
 
-		if( strstr( ".txt", file.m_szExtension ) )
+		if( BtStrCompare( "txt", file.m_szExtension ) )
 		{
 			return BtTrue;
 		}
 	}
 	else if( BtStrCompare( file.m_szFolder, "fonts" ) == BtTrue )
 	{
-		if( strstr(".fnt", file.m_szExtension) )
+		if( BtStrCompare("fnt", file.m_szExtension) )
 		{
 			eResourceType = BaRT_Font;
 
 			return BtTrue;
 		}
 
-		if( strstr( ".ttf", file.m_szExtension) ||
-			strstr( ".otf", file.m_szExtension)
+		if( BtStrCompare( "ttf", file.m_szExtension) ||
+			BtStrCompare( "otf", file.m_szExtension)
 		  )
 		{
 			eResourceType = BaRT_Font;

@@ -57,19 +57,8 @@ void ScMain::Init()
 	// Load the game archive
 #ifdef WIN32
     ApConfig::SetResourcePath( "..\\3DScene\\release\\" );
-#endif
     ApConfig::CheckResourcePath( "game" );
-    
-	int test = 1;
-	int one  = 1;
-	if( one && test )
-	{
-		int a=0;
-		a++;
-	}
-
-#ifdef WIN32
-	RsUtil::SetDimension(MtVector2(800.0f, 600.0f));
+    RsUtil::SetDimension(MtVector2(800.0f, 600.0f));
 #endif
 }
 
