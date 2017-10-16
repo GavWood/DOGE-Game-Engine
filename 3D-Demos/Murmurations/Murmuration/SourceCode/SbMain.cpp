@@ -39,17 +39,11 @@ void SbMain::Init()
 	RdRandom::SetRandomSeed();
 
 	// Load the game archive
-    ApConfig::SetResourcePath( "..\\murmuration\\release\\" );
-	ApConfig::CheckResourcePath( "game" );
-
-	int test = 1;
-	int one  = 1;
-	if( one && test )
-	{
-		int a=0;
-		a++;
-	}
-
+    if( ApConfig::IsWin() )
+    {
+        ApConfig::SetResourcePath( "..\\murmuration\\release\\" );
+        ApConfig::CheckResourcePath( "game" );
+    }
 	RsUtil::SetDimension(MtVector2(800.0f, 600.0f));
 }
 
@@ -62,7 +56,6 @@ void SbMain::Create()
 	m_utilityArchive.Load("utility");
 
 	m_pWhite2 = m_utilityArchive.GetMaterial( "white2" );
-	m_pWhite3 = m_utilityArchive.GetMaterial( "white3" );
 	m_pShader = m_gameArchive.GetShader( "shader" );
 	 
 	m_skybox.Setup( &m_gameArchive );
@@ -80,8 +73,6 @@ void SbMain::Create()
 
 	m_joysticks.Setup(pMaterial2, pMaterial3, pMaterial3notest );
 	//m_joysticks.Setup(pNode1, pNode2);
-
-	m_pSound = m_gameArchive.GetSound( "howl" );
 
 	strcpy(m_text, "");
 
@@ -143,11 +134,6 @@ void SbMain::UpdateTest()
 	if (UiKeyboard::pInstance()->IsPressed(PauseKey))
 	{
 		ApConfig::SetPaused( !ApConfig::IsPaused() );
-	}
-
-	if( UiKeyboard::pInstance()->IsPressed( UiKeyCode_Y ) )
-	{
-		m_pSound->Play();
 	}
 }
 

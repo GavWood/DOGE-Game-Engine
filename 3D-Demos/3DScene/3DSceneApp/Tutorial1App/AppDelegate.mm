@@ -13,8 +13,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    sessionManager = [[MCManager alloc] init];
-    [sessionManager setup];
+    //sessionManager = [[MCManager alloc] init];
+    //[sessionManager setup];
     return YES;
 }
 

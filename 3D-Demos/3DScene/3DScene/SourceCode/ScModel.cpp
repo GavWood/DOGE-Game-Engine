@@ -26,6 +26,7 @@
 #include "ScModel.h"
 #include "ScWorld.h"
 #include "HlFont.h"
+#include "HlModel.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Setup
@@ -34,6 +35,16 @@ void ScModel::Setup( BaArchive *pGameArchive, BaArchive *pAnimArchive )
 {
 	// Cache our model
 	m_pFish = pGameArchive->GetNode( "render_model" );
+    
+    if( m_pFish )
+    {
+        HlModel::MeasureSphere(m_sphere, m_pFish );
+        BtFloat radius = m_sphere.GetRadius();
+        (void)radius;
+        int a=0;
+        a++;
+    }
+    
 	//m_pCube = pGameArchive->GetNode("cube");
 	//HlModel::SetSortOrders(m_pCube, ModelSortOrder);
 	HlModel::SetSortOrders(m_pFish, ModelSortOrder);
@@ -64,9 +75,28 @@ void ScModel::Update( RsCamera &camera )
 	{
         if( ShTouch::IsPressed() )
         {
-            MtMatrix3 m3Rotation = camera.GetRotation();
-            MtVector3 v3Position = MtVector3( 0, 0, 1 ) * m3Rotation;
+            // Get the camera origin
+            MtVector3 v3Position = camera.GetPosition();
+            
+            // Move the fish in front of the camera
+            MtMatrix3 m3Rotation = camera.GetRotation().GetInverse();
+            v3Position = v3Position + ( MtVector3( 0, 0, 0.20 ) * m3Rotation );
+            
+            // Set the matrix with this transform
             m4Transform.SetTranslation( v3Position );
+            
+            // Rotate the fish so its always facing away from the camera
+            MtMatrix4 m4SpinFish;
+            m4SpinFish.SetRotationY( MtDegreesToRadians( 180.0f ) );
+            MtMatrix4 m4RotateFish( m3Rotation );
+            m4RotateFish = m4SpinFish * m4RotateFish;
+            
+            // Scale the fish
+            MtMatrix4 m4Scale;
+            m4Scale.SetScale( 0.10f );  // Make the fish 10cm
+            
+            // Now face the fish toward the camera
+            m4Transform = m4Scale * m4RotateFish * m4Transform;
             m_pFish->SetLocalTransform(m4Transform);
         }
         m_pFish->Update();

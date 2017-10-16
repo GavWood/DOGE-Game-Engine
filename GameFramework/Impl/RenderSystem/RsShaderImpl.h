@@ -77,7 +77,7 @@ private:
 	BaShaderFileData*					m_pFileData;
     
 	BtS32								m_program[16];
-	BtS32								m_sampler[16];
+	BtS32								m_sampler[16][8];
     
 	BtS32								m_handles[16][RsHandles_MAX];
 	MtVector4							m_floats[RsHandles_MAX];

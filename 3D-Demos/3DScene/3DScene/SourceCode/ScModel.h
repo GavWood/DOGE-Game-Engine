@@ -6,6 +6,7 @@
 #include "BtTypes.h"
 #include "RsCamera.h"
 #include "MtMatrix4.h"
+#include "MtSphere.h"
 
 class RsModel;
 class BaArchive;
@@ -34,4 +35,5 @@ private:
 	SgNode						   *m_pCube;
 	BtFloat							m_time;
 	RsShader					   *m_pShader;
+    MtSphere                        m_sphere;
 };

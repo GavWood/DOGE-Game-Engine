@@ -33,9 +33,6 @@ void SbModel::Setup( BaArchive *pGameArchive, BaArchive *pAnimArchive )
 	m_pDebugCube = pGameArchive->GetNode( "cube" );
 	HlModel::SetSortOrders(m_pDebugCube, ModelSortOrder);
 	
-	// Cache the font
-	m_pFont = pGameArchive->GetFont( "vera20" );
-
 	// Cache the main shader
 	m_pShader = pGameArchive->GetShader( "shader" );
 }

@@ -67,7 +67,6 @@ extern void doKDTree(SbStarling *pFlock, int numBoids);
 void SbMurmuration::Setup( BaArchive *pArchive )
 {
 	m_pShader = pArchive->GetShader( "shader" );
-	m_pWhite3 = pArchive->GetMaterial( "white3" );
 	m_pBird3  = pArchive->GetMaterial("bird3");				// The texture for the bird
 
 	// Some good stable low factors
@@ -548,8 +547,8 @@ void SbMurmuration::Render( RsCamera *pCamera )
 	// |{   }    \   |
 	// |_\_/______\__|
 
-	const BtFloat StarlingHalfWingSpan  = m_config.StarlingWingSpan * 2.0f;
-	const BtFloat PereguineHalfWingSpan = m_config.PereguineWingSpan  * 2.0f;
+	const BtFloat StarlingHalfWingSpan  = m_config.StarlingWingSpan * 12.0f;
+	const BtFloat PereguineHalfWingSpan = m_config.PereguineWingSpan  * 12.0f;
 
 	MtMatrix3 m3Orientation = pCamera->GetRotation();
 
@@ -643,8 +642,9 @@ void SbMurmuration::Render( RsCamera *pCamera )
 		m4Transform.SetTranslation(g_v3Centre);
 		HlDraw::RenderCross(m4Transform, m_config.PereguineWingSpan * 2.0f, MaxSortOrders - 1);
 
-		//sprintf(text, "FPS %.0f", RsUtil::GetFPS());
-		//HlFont::RenderHeavy(MtVector2(100, 15), text, MaxSortOrders - 1);
+        BtChar text[32];
+		sprintf(text, "FPS %.0f", RsUtil::GetFPS());
+		HlFont::RenderHeavy(MtVector2(100, 15), text, MaxSortOrders - 1);
 	}
 }
 
