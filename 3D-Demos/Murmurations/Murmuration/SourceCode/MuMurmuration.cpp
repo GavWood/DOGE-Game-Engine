@@ -36,7 +36,7 @@
 
 // Pre-requisits
 const BtFloat WorldSize = 128;
-const BtU32 MaxBoids = 2048.0f;
+const BtU32 MaxBoids = 2048;
 const BtU32 MaxPredators = 2;
 
 MtAABB aabb;
@@ -67,7 +67,8 @@ extern void doKDTree(SbStarling *pFlock, int numBoids);
 void SbMurmuration::Setup( BaArchive *pArchive )
 {
 	m_pShader = pArchive->GetShader( "shader" );
-	m_pBird3  = pArchive->GetMaterial("bird3");				// The texture for the bird
+	m_pBird3  = pArchive->GetMaterial("bird3");					// The texture for the bird
+	m_pWhite3 = pArchive->GetMaterial("white3");				// White texture
 
 	// Some good stable low factors
 	m_config.SeparationFactor = 0.05f;
@@ -123,7 +124,7 @@ void SbMurmuration::Reset()
 		SbStarling &starling = g_flock[i];
 		starling.v3Target = MtVector3(0, 0, 0);
 		starling.v3Vel = MtVector3(0, 0, 0);
-		starling.decisionCount = RdRandom::GetNumber(0.0f, 10.0f);
+		starling.decisionCount = RdRandom::GetFloat(0.0f, 10.0f);
 
 		// Give them a target
 		BtFloat x = RdRandom::GetFloat(-WorldSize, WorldSize);
@@ -211,7 +212,7 @@ void SbMurmuration::Reset()
 
 void SbMurmuration::UpdateFactors()
 {
-	for (BtS32 i = 0; i < m_config.m_numBoids; i++)
+	for (BtU32 i = 0; i < m_config.m_numBoids; i++)
 	{
 		SbStarling &Starling = g_flock[i];
 		Starling.cohesion = m_config.CohesionFactor;//  *RdRandom::GetFloat(0.8f, 1.0f);
@@ -273,7 +274,7 @@ void SbMurmuration::Update()
 	BtBool readOnly = BtFalse;
 	HlDebug::Reset();
 	HlDebug::AddUInt(0, "Num boids", &m_config.m_numBoids, readOnly, 1, MaxBoids, 1);
-	HlDebug::AddInteger(0, "Num predators", &m_config.NumPredators, readOnly, 0, 2, 1);
+	HlDebug::AddUInt(0, "Num predators", &m_config.NumPredators, readOnly, 0, 2, 1);
 	
 	HlDebug::AddBool(0, "Is spotting", &g_isSpotting, readOnly);
 	
@@ -303,7 +304,7 @@ void SbMurmuration::Update()
 
 	// Calculate the ABB for our flock
 	MtAABB aabb = MtAABB( g_flock[0].v3Pos );
-	for( BtS32 i=1; i<m_config.m_numBoids; i++ )
+	for( BtU32 i=1; i<m_config.m_numBoids; i++ )
 	{
 		// Expand the AABB
 		aabb.ExpandBy( g_flock[i].v3Pos );
@@ -322,14 +323,14 @@ void SbMurmuration::Update()
 	doKDTree( g_flock, m_config.m_numBoids );
 
 	// Make the starlings avoid the predators
-	for(BtS32 i = 0; i < m_config.NumPredators; i++)
+	for(BtU32 i = 0; i < m_config.NumPredators; i++)
 	{
 		SbPereguine &Peregrine = g_predators[i];
 
 		Peregrine.shortestDistance = (Peregrine.v3Pos - g_flock[0].v3Pos).GetLengthSquared();
 		Peregrine.pStarling = &g_flock[0];
 
-		for(BtS32 j = 0; j < m_config.m_numBoids; j++)
+		for(BtU32 j = 0; j < m_config.m_numBoids; j++)
 		{
 			SbStarling &starling = g_flock[j];
 
@@ -351,7 +352,7 @@ void SbMurmuration::Update()
 	}
 
 	// Predator attract
-	for(BtS32 i = 0; i < m_config.NumPredators; i++)
+	for(BtU32 i = 0; i < m_config.NumPredators; i++)
 	{
 		SbPereguine &Peregrine = g_predators[i];
 
@@ -393,14 +394,14 @@ void SbMurmuration::Update()
 	}
 
 	// Main flocking calculations
-	for( BtS32 i=0; i<m_config.m_numBoids; i++ )
+	for( BtU32 i=0; i<m_config.m_numBoids; i++ )
 	{
 		SbStarling &bird = g_flock[i];
 		bird.decisionCount -= BtTime::GetTick();
 
 		if (bird.decisionCount < 0)
 		{
-			bird.decisionCount = RdRandom::GetNumber(5.0f, 10.0f);
+			bird.decisionCount = RdRandom::GetFloat(5.0f, 10.0f);
 
 			BtFloat x = RdRandom::GetFloat(-WorldSize, WorldSize);
 			BtFloat y = RdRandom::GetFloat(-WorldSize, WorldSize);
@@ -469,7 +470,7 @@ void SbMurmuration::Update()
 	}
 
 	// Update the birds velocity and position
-	for( BtS32 i=0; i<m_config.m_numBoids; i++ )
+	for( BtU32 i=0; i<m_config.m_numBoids; i++ )
 	{
 		SbStarling &starling = g_flock[i];
 
@@ -547,8 +548,8 @@ void SbMurmuration::Render( RsCamera *pCamera )
 	// |{   }    \   |
 	// |_\_/______\__|
 
-	const BtFloat StarlingHalfWingSpan  = m_config.StarlingWingSpan * 12.0f;
-	const BtFloat PereguineHalfWingSpan = m_config.PereguineWingSpan  * 12.0f;
+	const BtFloat StarlingHalfWingSpan  = m_config.StarlingWingSpan * 2.0f;
+	const BtFloat PereguineHalfWingSpan = m_config.PereguineWingSpan  * 2.0f;
 
 	MtMatrix3 m3Orientation = pCamera->GetRotation();
 
@@ -610,7 +611,7 @@ void SbMurmuration::Render( RsCamera *pCamera )
 	{
 		const BtFloat PeregrineHalfWingSpan = m_config.PereguineWingSpan;
 
-		for(BtS32 i = 0; i < m_config.NumPredators; i++)
+		for(BtU32 i = 0; i < m_config.NumPredators; i++)
 		{
 			SbPereguine &Peregrine = g_predators[i];
 
@@ -633,6 +634,23 @@ void SbMurmuration::Render( RsCamera *pCamera )
 		}
 		m_pBird3->Render(RsPT_TriangleList, pVertex, m_config.NumPredators * 3, MaxSortOrders - 1, BtFalse);
 	}
+
+	/*
+	RsVertex3 vertex[3];
+	vertex[0].m_v3Position = MtVector3(  0,  0,  0);
+	vertex[1].m_v3Position = MtVector3(  0,  0, 100);
+	vertex[2].m_v3Position = MtVector3(100, 0, 100);
+	for (BtU32 i = 0; i < 3; i++)
+	{
+		vertex[i].m_v2UV = MtVector2(0.5f, 0.5f);
+		vertex[i].m_v3Normal = MtVector3(0, 1, 0);
+		vertex[i].m_colour = RsColour::WhiteColour().asWord();
+	}
+	m_pWhite3->Render(RsPT_TriangleList, vertex, 3, MaxSortOrders - 1, BtTrue);
+	MtMatrix4 m4Transform;
+	m4Transform.SetTranslation( MtVector3( 0, 0, 0 ) );
+	HlDraw::RenderCross(m4Transform, 20, MaxSortOrders - 1);
+	*/
 
 	if( ApConfig::IsDebug() )
 	{

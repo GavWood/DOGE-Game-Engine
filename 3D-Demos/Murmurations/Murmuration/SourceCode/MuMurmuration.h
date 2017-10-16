@@ -35,7 +35,7 @@ struct SbConfig
 	BtFloat								PredatorAttractedFactor;
 
 	BtU32								m_numBoids;
-	BtS32								NumPredators;
+	BtU32								NumPredators;
 };
 
 // Main structures
@@ -93,6 +93,7 @@ private:
 
 	// Private members
 	RsMaterial					   *m_pBird3;
+	RsMaterial					   *m_pWhite3;
 
 	RsShader					   *m_pShader;
 	BtBool							m_isPaused;
