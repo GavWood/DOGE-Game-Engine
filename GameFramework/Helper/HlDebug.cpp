@@ -345,6 +345,11 @@ void HlDebug::Save()
 
 void HlDebug::Update()
 {
+    if( UiKeyboard::pInstance()->IsHeld( UiKeyCode_LSHIFT ) )
+    {
+        return;
+    }
+    
 	static BtBool isLoaded = BtFalse;
 	if(isLoaded == BtFalse)
 	{
@@ -378,13 +383,15 @@ void HlDebug::Update()
 		
 	diff = diff * BtTime::GetTick();
 
-	if( UiKeyboard::pInstance()->IsHeld( UiKeyCode_RSHIFT ) )
+    UiKeyCode speedUpKey = UiKeyCode_PLUS;
+    
+	if( UiKeyboard::pInstance()->IsHeld( speedUpKey ) )
 	{
 		diff *= 10.0f;
 	}
 
 	if( UiKeyboard::pInstance()->IsPressed( UiKeyCode_LEFT ) ||
-		( UiKeyboard::pInstance()->IsHeld( UiKeyCode_LEFT ) && UiKeyboard::pInstance()->IsHeld( UiKeyCode_RSHIFT )))
+		( UiKeyboard::pInstance()->IsHeld( UiKeyCode_LEFT ) && UiKeyboard::pInstance()->IsHeld( speedUpKey )))
 	{
 		if(item.m_type == HlDebugEnum)
 		{
@@ -422,7 +429,7 @@ void HlDebug::Update()
 		}
 	}
 	if( UiKeyboard::pInstance()->IsPressed(UiKeyCode_RIGHT) ||
-		( UiKeyboard::pInstance()->IsHeld(UiKeyCode_RIGHT) && UiKeyboard::pInstance()->IsHeld(UiKeyCode_RSHIFT)))
+		( UiKeyboard::pInstance()->IsHeld(UiKeyCode_RIGHT) && UiKeyboard::pInstance()->IsHeld(speedUpKey)))
 	{
 		if( item.m_type == HlDebugEnum )
 		{

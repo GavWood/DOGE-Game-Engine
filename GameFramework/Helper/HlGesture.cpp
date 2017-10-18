@@ -31,8 +31,6 @@ void HlGesture::Update()
 	
 	if (ShTouch::IsHeld(0) && m_isMeasuring )
 	{
-		const RsCamera &camera = RsRenderTarget::GetCurrent()->GetCamera();
-
 		MtVector2 v2Current = ShTouch::GetPosition(0);
 
 		MtVector2 v2Delta = v2Current - m_v2Start;

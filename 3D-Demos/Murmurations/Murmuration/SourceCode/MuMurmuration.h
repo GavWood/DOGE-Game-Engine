@@ -22,10 +22,10 @@ struct SbConfig
 	BtFloat								NeighbourAlignFactor;
 	BtFloat								CohesionFactor;
 
-	BtFloat								StarlingWingSpan;						// 37 to 42cm
-	BtFloat								PereguineWingSpan;						// 65 to 82cm
+	BtFloat								StarlingWingSpan;
+	BtFloat								PereguineWingSpan;
 
-	BtFloat								LocalTargetFactor;						// unused for now
+	BtFloat								LocalTargetFactor;
 
 	BtFloat								MinSpeed;
 	BtFloat								MaxSpeed;
@@ -82,14 +82,26 @@ public:
 	void							Render( RsCamera *pCamera );
 	void							Destroy();
 	void							Reset();
+    
+    void                            Load();
+    void                            Save();
 
 	// Accessors
 	MtVector3						GetPosition();
+    BtChar                         *GetConfigFilename();
+    BtChar                         *GetPredatorFilename();
+    BtChar                         *GetStarlingFilename();
 
 private:
 
 	// Private function
 	void							UpdateFactors();
+    void                            SaveData();
+    
+    BtChar                          m_predatorFilename[256];
+    BtChar                          m_starlingFilename[256];
+    BtChar                          m_configFilename[256];
+    
 
 	// Private members
 	RsMaterial					   *m_pBird3;

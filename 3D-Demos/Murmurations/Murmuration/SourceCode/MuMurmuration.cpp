@@ -30,19 +30,25 @@
 
 #include "nanoflann.hpp"
 
-// starling speed murmuration 
-// traveling speed 50-65
-// foraging speed 30-40
+// Defines
 
-// Pre-requisits
-const BtFloat WorldSize = 128;
+// Starling normal flight speed 50-65knts
+// Starling foraging speed 30-40knts
+
+const BtFloat WorldSize = 128.0f;
+const BtFloat HalfWorldSize = WorldSize / 2;
+const BtFloat SmallNumberInTermsOfAStarling = 0.001f;    // 1mm
+
 const BtU32 MaxBoids = 2048;
 const BtU32 MaxPredators = 2;
+
+// Global variables to place the birds
+SbPereguine g_predators[MaxPredators];
+SbStarling g_flock[MaxBoids];
 
 MtAABB aabb;
 const BtU32 MaxVerts = MaxBoids + MaxPredators;
 RsVertex3 myVertex[MaxVerts * 3];
-const BtU32 MaxNeighbours = 7;
 
 // ------------------------------ Variables --------------------------------
 
@@ -51,15 +57,29 @@ MtVector3 g_v3Centre(0, 0, 0);
 BtBool g_isSpotting = BtFalse;
 
 //-------------------------------------------------------------
-
-// Global variables to place the birds
-SbPereguine g_predators[MaxPredators];
-SbStarling g_flock[MaxBoids];
-
-//-------------------------------------------------------------
-// KD Tree
+// KD Tree - this is used to calculate who the neighbours are
 
 extern void doKDTree(SbStarling *pFlock, int numBoids);
+
+//-------------------------------------------------------------
+
+BtChar *SbMurmuration::GetConfigFilename()
+{
+    sprintf(m_configFilename, "%s%s", ApConfig::GetDocuments(), "config_osx.txt");
+    return m_configFilename;
+}
+
+BtChar *SbMurmuration::GetPredatorFilename()
+{
+    sprintf(m_predatorFilename, "%s%s", ApConfig::GetDocuments(), "predators_osx.txt");
+    return m_predatorFilename;
+}
+
+BtChar *SbMurmuration::GetStarlingFilename()
+{
+    sprintf(m_starlingFilename, "%s%s", ApConfig::GetDocuments(), "starlings_osx.txt");
+    return m_starlingFilename;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Setup
@@ -85,16 +105,62 @@ void SbMurmuration::Setup( BaArchive *pArchive )
 
 	m_config.StarlingWingSpan = 0.37f;					// 37 to 42cm
 	m_config.PereguineWingSpan = 1.2f;					// 74 to 120cm
-
-	if (ApConfig::IsDebugBuild())
-	{
-		m_config.m_numBoids = 256;
-	}
-	else
-	{
-		m_config.m_numBoids = 2048;
-	}
+    m_config.m_numBoids = MaxBoids;
 	m_config.NumPredators = 1;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Load
+
+void SbMurmuration::Load()
+{
+    // Load the config from the file
+    FsFile file;
+    file.Open( GetConfigFilename(), FsMode_Read);
+    if (file.IsOpen())
+    {
+        if (file.GetSize() == sizeof(SbConfig) )
+        {
+            file.Read(m_config);
+        }
+        file.Close();
+    }
+    
+    // Important - we can set MaxBoids so cap the config to match that
+    // otherwise we might have saved more birds than are in the array
+    m_config.m_numBoids = MtMin( m_config.m_numBoids, MaxBoids );
+    m_config.NumPredators = MtMin( m_config.NumPredators, MaxPredators );
+
+    // Read the bird positions
+    file.Open( GetStarlingFilename(), FsMode_Read);
+    if (file.IsOpen())
+    {
+        BtU32 maxSize = sizeof(SbStarling) * m_config.m_numBoids;
+        if (file.GetSize() == maxSize)
+        {
+            for (BtU32 i = 0; i < m_config.m_numBoids; i++)
+            {
+                SbStarling &starling = g_flock[i];
+                file.Read(starling);
+            }
+        }
+        file.Close();
+    }
+
+    file.Open( GetPredatorFilename(), FsMode_Read);
+    if (file.IsOpen())
+    {
+        BtU32 maxSize = sizeof(SbPereguine) * m_config.NumPredators;
+        if (file.GetSize() == maxSize )
+        {
+            for (BtU32 i = 0; i < m_config.NumPredators; i++)
+            {
+                SbPereguine &Peregrine = g_predators[i];
+                file.Read(Peregrine);
+            }
+            file.Close();
+        }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -127,69 +193,24 @@ void SbMurmuration::Reset()
 		starling.decisionCount = RdRandom::GetFloat(0.0f, 10.0f);
 
 		// Give them a target
-		BtFloat x = RdRandom::GetFloat(-WorldSize, WorldSize);
-		BtFloat y = RdRandom::GetFloat(-WorldSize, WorldSize);
-		BtFloat z = RdRandom::GetFloat(-WorldSize, WorldSize);
+		BtFloat x = RdRandom::GetFloat(-HalfWorldSize, HalfWorldSize);
+		BtFloat y = RdRandom::GetFloat(-HalfWorldSize, HalfWorldSize);
+		BtFloat z = RdRandom::GetFloat(-HalfWorldSize, HalfWorldSize);
 		starling.v3Target = MtVector3(x, y, z);
 	}
 
-	if (1)
-	{
-		for (BtU32 i = 0; i < MaxBoids; i++)
-		{
-			SbStarling &starling = g_flock[i];
-			BtFloat x = RdRandom::GetFloat(-WorldSize, WorldSize);
-			BtFloat y = RdRandom::GetFloat(-WorldSize, WorldSize);
-			BtFloat z = RdRandom::GetFloat(-WorldSize, WorldSize);
-			starling.v3Pos = MtVector3(x, y, z);
-		}
+    for (BtU32 i = 0; i < MaxBoids; i++)
+    {
+        SbStarling &starling = g_flock[i];
+        BtFloat x = RdRandom::GetFloat(-WorldSize, WorldSize);
+        BtFloat y = RdRandom::GetFloat(-WorldSize, WorldSize);
+        BtFloat z = RdRandom::GetFloat(-WorldSize, WorldSize);
+        starling.v3Pos = MtVector3( x, y, z );
 	}
 
-	// Load the boids from the file
-	FsFile file;
-	BtChar filename[64];
-	sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "config.txt");
-	file.Open(filename, FsMode_Read);
-	if (file.IsOpen())
-	{
-		if (file.GetSize() == sizeof(SbConfig) )
-		{
-			file.Read(m_config);
-		}
-		file.Close();
-	}
-	sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "boids.txt");
-	file.Open(filename, FsMode_Read);
-	if (file.IsOpen())
-	{
-		BtU32 maxSize = sizeof(SbStarling) * m_config.m_numBoids;
-		if (file.GetSize() == maxSize)
-		{
-			for (BtU32 i = 0; i < m_config.m_numBoids; i++)
-			{
-				SbStarling &starling = g_flock[i];
-				file.Read(starling);
-			}
-		}
-		file.Close();
-	}
-	sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "predators.txt");
-	file.Open(filename, FsMode_Read);
-	if (file.IsOpen())
-	{
-		BtU32 maxSize = sizeof(SbPereguine) * m_config.NumPredators;
-		if (file.GetSize() == maxSize )
-		{
-			for (BtU32 i = 0; i < m_config.NumPredators; i++)
-			{
-				SbPereguine &Peregrine = g_predators[i];
-				file.Read(Peregrine);
-			}
-			file.Close();
-		}
-	}
+    Load();
 
-	// Give the Peregrines a dark red colour
+	// Give the Peregrines a dark reddish colour
 	for (BtU32 i = 0; i < MaxPredators; i++)
 	{
 		SbPereguine &Peregrine = g_predators[i];
@@ -214,12 +235,47 @@ void SbMurmuration::UpdateFactors()
 {
 	for (BtU32 i = 0; i < m_config.m_numBoids; i++)
 	{
+        // We can add a little randomness to each starling's behaviour if we want
 		SbStarling &Starling = g_flock[i];
-		Starling.cohesion = m_config.CohesionFactor;//  *RdRandom::GetFloat(0.8f, 1.0f);
+		Starling.cohesion   = m_config.CohesionFactor;//  *RdRandom::GetFloat(0.8f, 1.0f);
 		Starling.separation = m_config.SeparationFactor;//  *RdRandom::GetFloat(0.8f, 1.0f);
-		Starling.alignment = m_config.NeighbourAlignFactor;//  *RdRandom::GetFloat(0.8f, 1.0f);
+		Starling.alignment  = m_config.NeighbourAlignFactor;//  *RdRandom::GetFloat(0.8f, 1.0f);
 		Starling.predatorAvoidFactor = m_config.PredatorAvoidedFactor;//  *RdRandom::GetFloat(0.8f, 1.0f);
 	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// SaveData
+
+void SbMurmuration::SaveData()
+{
+    FsFile file;
+   file.Open( GetConfigFilename(), FsMode_Write);
+    if (file.IsOpen())
+    {
+        file.Write(m_config);
+        file.Close();
+    }
+    file.Open( GetStarlingFilename(), FsMode_Write);
+    if (file.IsOpen())
+    {
+        for (BtU32 i = 0; i < m_config.m_numBoids; i++)
+        {
+            SbStarling &starling = g_flock[i];
+            file.Write( starling );
+        }
+        file.Close();
+    }
+    file.Open( GetPredatorFilename(), FsMode_Write);
+    if (file.IsOpen())
+    {
+        for (BtU32 i = 0; i < m_config.NumPredators; i++)
+        {
+            SbPereguine &Peregrine = g_predators[i];
+            file.Write(Peregrine);
+        }
+        file.Close();
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -227,41 +283,11 @@ void SbMurmuration::UpdateFactors()
 
 void SbMurmuration::Update()
 {
-	BtFloat dt = BtTime::GetTick();
+    BtFloat dt = BtTime::GetTick();
 
 	if (UiKeyboard::pInstance()->IsPressed(SaveCameraKey))
 	{
-		FsFile file;
-		BtChar filename[64];
-		sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "config.txt");
-		file.Open(filename, FsMode_Write);
-		if (file.IsOpen())
-		{
-			file.Write(m_config);
-			file.Close();
-		}
-		sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "boids.txt");
-		file.Open(filename, FsMode_Write);
-		if (file.IsOpen())
-		{
-			for (BtU32 i = 0; i < m_config.m_numBoids; i++)
-			{
-				SbStarling &starling = g_flock[i];
-				file.Write( starling );
-			}
-			file.Close();
-		}
-		sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "predators.txt");
-		file.Open(filename, FsMode_Write);
-		if (file.IsOpen())
-		{
-			for (BtU32 i = 0; i < m_config.NumPredators; i++)
-			{
-				SbPereguine &Peregrine = g_predators[i];
-				file.Write(Peregrine);
-			}
-			file.Close();
-		}
+        SaveData();
 	}
 
 	BtFloat small = 0;
@@ -281,7 +307,7 @@ void SbMurmuration::Update()
 	HlDebug::AddFloat(0, "Min speed", &m_config.MinSpeed, readOnly, HLUnits_Knots, small, maxSpeed);
 	HlDebug::AddFloat(0, "Max speed", &m_config.MaxSpeed, readOnly, HLUnits_Knots, small, maxSpeed);
 
-	HlDebug::AddFloat(0, "Predator avoid dist", &m_config.PredatorAvoidDistance, readOnly, HLUnits_StandardIndex, small, maxSpeed);
+	HlDebug::AddFloat(0, "Predator avoid dist", &m_config.PredatorAvoidDistance, readOnly, HLUnits_StandardIndex, small, maxDist);
 
 	HlDebug::AddFloat(0, "Predator avoided factor", &m_config.PredatorAvoidedFactor, readOnly, HLUnits_StandardIndex, small, maxBigFactor);
 	HlDebug::AddFloat(0, "Predator attracted factor", &m_config.PredatorAttractedFactor, readOnly, HLUnits_StandardIndex, small, maxBigFactor);
@@ -364,7 +390,7 @@ void SbMurmuration::Update()
 			//Peregrine.v3Pos.y = v3PositionAboveFlock.y;
 
 			MtVector3 v3Distance = Peregrine.pStarling->v3Pos - Peregrine.v3Pos;
-			if (v3Distance.GetLength())
+			if( v3Distance.GetLength() > SmallNumberInTermsOfAStarling )
 			{
 				Peregrine.v3Vel += v3Distance.GetNormalise() *  m_config.PredatorAttractedFactor;
 			}
@@ -403,12 +429,17 @@ void SbMurmuration::Update()
 		{
 			bird.decisionCount = RdRandom::GetFloat(5.0f, 10.0f);
 
-			BtFloat x = RdRandom::GetFloat(-WorldSize, WorldSize);
-			BtFloat y = RdRandom::GetFloat(-WorldSize, WorldSize);
-			BtFloat z = RdRandom::GetFloat(-WorldSize, WorldSize);
-
-			// Fun local targets or global
-//			bird.v3Target = MtVector3(x, y, z);
+			BtFloat x = RdRandom::GetFloat(-HalfWorldSize, HalfWorldSize);
+			BtFloat y = RdRandom::GetFloat(-HalfWorldSize, HalfWorldSize);
+			BtFloat z = RdRandom::GetFloat(-HalfWorldSize, HalfWorldSize);
+            (void)x;
+            (void)y;
+            (void)z;
+            
+			// Do we use these fun local targets
+			//bird.v3Target = MtVector3(x, y, z);
+            
+            // Or a more global target
 			bird.v3Target = MtVector3(0, 0, 0);
 
 			int a = 0;
@@ -426,9 +457,6 @@ void SbMurmuration::Update()
 			MtVector3 v3AverageVelocity(0, 0, 0);
 			MtVector3 v3AveragePosition(0, 0, 0);
 
-			SbStarling *closestNeighbour = bird.neighbours[0];
-			BtFloat closestDistance = (bird.neighbours[0]->v3Pos - bird.v3Pos).GetLengthSquared();
-
 			for (BtU32 j = 0; j < numNeighbours; j++)
 			{
 				SbStarling *pNeighbour = bird.neighbours[j];
@@ -440,9 +468,12 @@ void SbMurmuration::Update()
 			v3AverageVelocity /= (BtFloat)numNeighbours;
 
 			// Separate the birds
-			{
-				MtVector3 v3Delta = closestNeighbour->v3Pos - bird.v3Pos;
-				if (v3Delta.GetLength())
+            for (BtU32 j = 0; j < numNeighbours; j++)
+            {
+                SbStarling *pNeighbour = bird.neighbours[j];
+
+				MtVector3 v3Delta = pNeighbour->v3Pos - bird.v3Pos;
+				if( v3Delta.GetLength() > SmallNumberInTermsOfAStarling )
 				{
 					bird.v3Vel -= v3Delta.GetNormalise() * bird.separation;
 				}
@@ -525,10 +556,6 @@ void SbMurmuration::Render( RsCamera *pCamera )
 
 	// Cache the camera because we are going to use billboards to render the birds flat toward the camera
 	MtMatrix4 m4View = pCamera->GetRotation();
-	MtMatrix4 m4Projection = pCamera->GetProjection();
-	MtMatrix4 m4ViewProjection = m4View * m4Projection;
-	BtU32 width = (BtU32)pCamera->GetWidth();
-	BtU32 height = (BtU32)pCamera->GetHeight();
 
 	// Calculate what this flat vector would be
 	MtVector3 v3Up(0, 1, 0);
@@ -549,7 +576,7 @@ void SbMurmuration::Render( RsCamera *pCamera )
 	// |_\_/______\__|
 
 	const BtFloat StarlingHalfWingSpan  = m_config.StarlingWingSpan * 2.0f;
-	const BtFloat PereguineHalfWingSpan = m_config.PereguineWingSpan  * 2.0f;
+    const BtFloat PereguineHalfWingSpan = m_config.PereguineWingSpan  * 2.0f;
 
 	MtMatrix3 m3Orientation = pCamera->GetRotation();
 
@@ -609,8 +636,6 @@ void SbMurmuration::Render( RsCamera *pCamera )
 
 	if(m_config.NumPredators)
 	{
-		const BtFloat PeregrineHalfWingSpan = m_config.PereguineWingSpan;
-
 		for(BtU32 i = 0; i < m_config.NumPredators; i++)
 		{
 			SbPereguine &Peregrine = g_predators[i];
@@ -633,24 +658,7 @@ void SbMurmuration::Render( RsCamera *pCamera )
 			myVertex[i + 2].m_v2UV = MtVector2(1, 0);
 		}
 		m_pBird3->Render(RsPT_TriangleList, pVertex, m_config.NumPredators * 3, MaxSortOrders - 1, BtFalse);
-	}
-
-	/*
-	RsVertex3 vertex[3];
-	vertex[0].m_v3Position = MtVector3(  0,  0,  0);
-	vertex[1].m_v3Position = MtVector3(  0,  0, 100);
-	vertex[2].m_v3Position = MtVector3(100, 0, 100);
-	for (BtU32 i = 0; i < 3; i++)
-	{
-		vertex[i].m_v2UV = MtVector2(0.5f, 0.5f);
-		vertex[i].m_v3Normal = MtVector3(0, 1, 0);
-		vertex[i].m_colour = RsColour::WhiteColour().asWord();
-	}
-	m_pWhite3->Render(RsPT_TriangleList, vertex, 3, MaxSortOrders - 1, BtTrue);
-	MtMatrix4 m4Transform;
-	m4Transform.SetTranslation( MtVector3( 0, 0, 0 ) );
-	HlDraw::RenderCross(m4Transform, 20, MaxSortOrders - 1);
-	*/
+    }
 
 	if( ApConfig::IsDebug() )
 	{
@@ -659,10 +667,6 @@ void SbMurmuration::Render( RsCamera *pCamera )
 		MtMatrix4 m4Transform;
 		m4Transform.SetTranslation(g_v3Centre);
 		HlDraw::RenderCross(m4Transform, m_config.PereguineWingSpan * 2.0f, MaxSortOrders - 1);
-
-        BtChar text[32];
-		sprintf(text, "FPS %.0f", RsUtil::GetFPS());
-		HlFont::RenderHeavy(MtVector2(100, 15), text, MaxSortOrders - 1);
 	}
 }
 
