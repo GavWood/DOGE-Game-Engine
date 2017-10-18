@@ -30,7 +30,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 Visit [Wiki](https://github.com/GavWood/tutorials/wiki) for information on this project.
 
-Game engine and demo source code is published under the BSD 3 Clause (New BSD) license as generated from https://soulsphere.org/hacks/bsd/.
+The Game engine and the tutorials are published under the BSD 3 Clause (New BSD) license as generated from https://soulsphere.org/hacks/bsd/.
 
 Third party code is licensed according to the original software.
 
