@@ -1,5 +1,7 @@
 DOGE-Game-Engine (Digital Outdoor Game Engine)
+
 Copyright (c) 2017, Gavin Wood 
+
 All rights reserved. 
 
 Redistribution and use in source and binary forms, with or without 
