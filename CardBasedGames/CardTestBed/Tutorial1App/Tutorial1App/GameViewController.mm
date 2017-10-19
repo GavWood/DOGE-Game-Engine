@@ -373,6 +373,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     ApConfig::SetExtension( ".iPhonez" );
     
     // Set the platform
+    ApConfig::SetDevice( ApDevice_iPhone );
     ApConfig::SetPlatform( ApPlatform_GLES );
     
 #if TARGET_IPHONE_SIMULATOR

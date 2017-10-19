@@ -5,6 +5,7 @@
 #pragma once
 #include "HlView.h"
 #include "SdSound.h"
+#include "BtQueue.h"
 
 class SgNode;
 
@@ -29,4 +30,6 @@ private:
 
 	// Private members
 	SgNode						   *m_pNode;
+    BtQueue<BtFloat, 64>           m_pitch;
+    BtQueue<BtFloat, 64>           m_amplitude;
 };
