@@ -160,21 +160,27 @@ void RsMaterialImpl::Render( RsPrimitiveType primitiveType, RsVertex3 *pVertex, 
 	}
     
 	// Start the vertex
-	RsVertex3 *pEngineVertex = pImpl->StartVertex();
+    RsVertex3 *pVertexToRender = pVertex;
+    
+    if( isCopy )
+    {
+        // Get the start of the vertex and overwrite the original vertex pointer since this is a copy
+        pVertexToRender = pImpl->StartVertex();
 
-	// How much room did our vertex take
-	BtU32 memsize = sizeof(RsVertex3) * vertexCount;
+        // How much room did our vertex take
+        BtU32 memsize = sizeof(RsVertex3) * vertexCount;
 
-	// Copy the vertex
-	BtMemory::Copy( pEngineVertex, pVertex, memsize );
+        // Copy the vertex
+        BtMemory::Copy( pVertexToRender, pVertex, memsize );
 
-	// End the vertx
-	pImpl->EndVertex( vertexCount );
-
+        // End the vertx
+        pImpl->EndVertex( vertexCount );
+    }
+    
 	// Make a new material renderable
 	RsMaterialRenderable *pMaterialRenderable = pImpl->AddMaterial();
 	pMaterialRenderable->m_pMaterial = this;
-	pMaterialRenderable->m_pVertex   = pEngineVertex;
+	pMaterialRenderable->m_pVertex   = pVertexToRender;
 	pMaterialRenderable->m_primitive = pPrimitive;
 
 	// Validate the shader

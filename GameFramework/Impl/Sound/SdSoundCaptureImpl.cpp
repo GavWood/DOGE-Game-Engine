@@ -61,7 +61,6 @@ FILE *audioFile;
 BtU32 iDataSize;
 BtFloat volume;
 
-// KISS FFT
 BtBool SdSoundCaptureAL::m_isFFT = BtFalse;
 BtU32 SamplesRead = 0;
 
@@ -140,10 +139,10 @@ void SdSoundCaptureAL::StartCapture( BtBool isToFile, BtBool isFFT )
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// Update
+// UpdateCapture
 
 // static
-void SdSoundCaptureAL::Update()
+void SdSoundCaptureAL::UpdateCapture()
 {
 	ALint iSamplesAvailable;
     
@@ -235,20 +234,4 @@ void SdSoundCaptureAL::StopCapture()
 		// Close the audio file
 		fclose( audioFile );
 	}
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// Create
-
-void SdSoundCaptureAL::Create()
-{
-	SdSoundCaptureAL::StartCapture( BtFalse );
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// Destroy
-
-void SdSoundCaptureAL::Destroy()
-{
-	SdSoundCaptureAL::StopCapture();
 }

@@ -39,7 +39,7 @@ const BtFloat WorldSize = 128.0f;
 const BtFloat HalfWorldSize = WorldSize / 2;
 const BtFloat SmallNumberInTermsOfAStarling = 0.001f;    // 1mm
 
-const BtU32 MaxBoids = 2048;
+const BtU32 MaxBoids = 4096;
 const BtU32 MaxPredators = 2;
 
 // Global variables to place the birds
@@ -49,6 +49,8 @@ SbStarling g_flock[MaxBoids];
 MtAABB aabb;
 const BtU32 MaxVerts = MaxBoids + MaxPredators;
 RsVertex3 myVertex[MaxVerts * 3];
+
+BtU32 starlingColour = RsColour(0.2f, 0.30f, 0.2f, 0.75f).asWord();
 
 // ------------------------------ Variables --------------------------------
 
@@ -95,6 +97,7 @@ void SbMurmuration::Setup( BaArchive *pArchive )
 	m_config.NeighbourAlignFactor = 0.3f;
 	m_config.CohesionFactor = 0.3f;
 
+    m_config.PredatorLocalTargetFactor = 0.2f;
 	m_config.LocalTargetFactor = 0.2f;
 	m_config.MinSpeed = 15.0f;
 	m_config.MaxSpeed = 18.0f;
@@ -103,7 +106,7 @@ void SbMurmuration::Setup( BaArchive *pArchive )
 	m_config.PredatorAvoidDistance = 20.0f;
 	m_config.PredatorAttractedFactor = 2.0f;
 
-	m_config.StarlingWingSpan = 0.37f;					// 37 to 42cm
+	m_config.StarlingWingSpan = 0.42f;					// 37 to 42cm
 	m_config.PereguineWingSpan = 1.2f;					// 74 to 120cm
     m_config.m_numBoids = MaxBoids;
 	m_config.NumPredators = 1;
@@ -214,18 +217,19 @@ void SbMurmuration::Reset()
 	for (BtU32 i = 0; i < MaxPredators; i++)
 	{
 		SbPereguine &Peregrine = g_predators[i];
-		Peregrine.colour = RsColour(0.3f, 0.1f, 0.05f, 0.5f).asWord();
+		Peregrine.colour = RsColour(0.3f, 0.1f, 0.05f, 0.9f).asWord();
+        Peregrine.targetIndex = i * ( m_config.m_numBoids / MaxPredators );
 	}
 
-	// Give the starlings a random dark colour
-	for (BtU32 i = 0; i < MaxBoids; i++)
-	{
-		SbStarling &starling = g_flock[i];
-		BtFloat r = RdRandom::GetFloat(0.01f, 0.20f);
-		BtFloat g = RdRandom::GetFloat(0.01f, 0.20f);
-		BtFloat b = RdRandom::GetFloat(0.01f, 0.20f);
-		starling.colour = RsColour(r, g, b, 0.5f).asWord();
-	}
+    for( BtU32 tri=0; tri<MaxVerts; tri +=3 )
+    {
+        myVertex[tri + 0].m_colour = starlingColour;
+        myVertex[tri + 1].m_colour = starlingColour;
+        myVertex[tri + 2].m_colour = starlingColour;
+        myVertex[tri + 0].m_v2UV = MtVector2(0.0f, 0.0f);
+        myVertex[tri + 1].m_v2UV = MtVector2(0.0f, 1.0f);
+        myVertex[tri + 2].m_v2UV = MtVector2(1.0f, 1.0f);
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -293,7 +297,7 @@ void SbMurmuration::Update()
 	BtFloat small = 0;
 
 	BtFloat maxFactor = 20.0f;
-	BtFloat maxBigFactor = 2.0f;
+	BtFloat maxBigFactor = 200.0f;
 	BtFloat maxSpeed = MtKnotsToMetersPerSecond(60.0f);
 	BtFloat maxDist = WorldSize;
 
@@ -312,6 +316,7 @@ void SbMurmuration::Update()
 	HlDebug::AddFloat(0, "Predator avoided factor", &m_config.PredatorAvoidedFactor, readOnly, HLUnits_StandardIndex, small, maxBigFactor);
 	HlDebug::AddFloat(0, "Predator attracted factor", &m_config.PredatorAttractedFactor, readOnly, HLUnits_StandardIndex, small, maxBigFactor);
 	HlDebug::AddFloat(0, "Local target factor", &m_config.LocalTargetFactor, readOnly, HLUnits_StandardIndex, small, maxFactor);
+    HlDebug::AddFloat(0, "Predator Local target factor", &m_config.PredatorLocalTargetFactor, readOnly, HLUnits_StandardIndex, small, maxFactor);
 	HlDebug::AddFloat(0, "Cohesion", &m_config.CohesionFactor, readOnly, HLUnits_StandardIndex,					 small, maxFactor);
 	HlDebug::AddFloat(0, "Separation factor", &m_config.SeparationFactor, readOnly, HLUnits_StandardIndex,		 small, maxFactor);
 	HlDebug::AddFloat(0, "Alignment factor", &m_config.NeighbourAlignFactor, readOnly, HLUnits_StandardIndex,	 small, maxFactor);
@@ -332,8 +337,10 @@ void SbMurmuration::Update()
 	MtAABB aabb = MtAABB( g_flock[0].v3Pos );
 	for( BtU32 i=1; i<m_config.m_numBoids; i++ )
 	{
+        MtVector3 v3Position = g_flock[i].v3Pos;
+        
 		// Expand the AABB
-		aabb.ExpandBy( g_flock[i].v3Pos );
+		aabb.ExpandBy( v3Position );
 	}
 
 	// Set the centre
@@ -353,9 +360,8 @@ void SbMurmuration::Update()
 	{
 		SbPereguine &Peregrine = g_predators[i];
 
-		Peregrine.shortestDistance = (Peregrine.v3Pos - g_flock[0].v3Pos).GetLengthSquared();
-		Peregrine.pStarling = &g_flock[0];
-
+        Peregrine.targetIndex = Peregrine.targetIndex + BtTime::GetTick();
+        
 		for(BtU32 j = 0; j < m_config.m_numBoids; j++)
 		{
 			SbStarling &starling = g_flock[j];
@@ -364,11 +370,6 @@ void SbMurmuration::Update()
 
 			BtFloat distance = v3Distance.GetLengthSquared();
 
-			if( distance < Peregrine.shortestDistance )
-			{
-				Peregrine.shortestDistance = distance;
-				Peregrine.pStarling = &starling;
-			}
 			if( distance <  m_config.PredatorAvoidDistance *  m_config.PredatorAvoidDistance )
 			{
 				MtVector3 v3Delta = v3Distance.GetNormalise();
@@ -378,45 +379,31 @@ void SbMurmuration::Update()
 	}
 
 	// Predator attract
-	for(BtU32 i = 0; i < m_config.NumPredators; i++)
+    for(BtU32 i = 0; i < m_config.NumPredators; i++)
 	{
 		SbPereguine &Peregrine = g_predators[i];
 
-		MtVector3 v3PositionAboveFlock = g_v3Centre;
-		//v3PositionAboveFlock.y = aabb.Max().y + 20.0f;
+        SbStarling *pStarling = &g_flock[ (BtU32)Peregrine.targetIndex ];
 
-		if( Peregrine.shortestDistance <  m_config.PredatorAvoidDistance *  m_config.PredatorAvoidDistance )
-		{
-			//Peregrine.v3Pos.y = v3PositionAboveFlock.y;
-
-			MtVector3 v3Distance = Peregrine.pStarling->v3Pos - Peregrine.v3Pos;
-			if( v3Distance.GetLength() > SmallNumberInTermsOfAStarling )
-			{
-				Peregrine.v3Vel += v3Distance.GetNormalise() *  m_config.PredatorAttractedFactor;
-			}
-		}
-		else
-		{
-			MtVector3 v3Distance = v3PositionAboveFlock - Peregrine.v3Pos;
-			if (v3Distance.GetLength())
-			{
-				Peregrine.v3Vel += v3Distance.GetNormalise() *  m_config.PredatorAttractedFactor;
-			}
-		}
-
-		// Integrate the position
-		Peregrine.v3Pos += Peregrine.v3Vel * dt;
-
+        MtVector3 v3Distance = pStarling->v3Pos - Peregrine.v3Pos;
+        if( v3Distance.GetLength() > SmallNumberInTermsOfAStarling )
+        {
+            Peregrine.v3Vel += v3Distance.GetNormalise() *  m_config.PredatorAttractedFactor;
+        }
+	
 		// Cap the speed
 		BtFloat mag = Peregrine.v3Vel.GetLength();
-		if (mag <  m_config.MinSpeed)
+		if (mag < m_config.MinSpeed)
 		{
 			Peregrine.v3Vel = Peregrine.v3Vel.Normalise() *  m_config.MinSpeed;
 		}
-		if(mag > m_config.MaxSpeed)
+		if(mag > m_config.MinSpeed)
 		{
 			Peregrine.v3Vel = Peregrine.v3Vel.Normalise() * m_config.MaxSpeed;
 		}
+        
+        // Integrate the position
+        Peregrine.v3Pos += Peregrine.v3Vel * dt;
 	}
 
 	// Main flocking calculations
@@ -437,10 +424,10 @@ void SbMurmuration::Update()
             (void)z;
             
 			// Do we use these fun local targets
-			//bird.v3Target = MtVector3(x, y, z);
+			bird.v3Target = MtVector3(x, y, z);
             
             // Or a more global target
-			bird.v3Target = MtVector3(0, 0, 0);
+			//bird.v3Target = MtVector3(0, 0, 0);
 
 			int a = 0;
 			a++;
@@ -453,27 +440,37 @@ void SbMurmuration::Update()
 			//	separation: steer to avoid crowding local flockmates
 			//	cohesion : steer to move toward the average position(center of mass) of local flockmates
 			//	alignment : steer towards the average heading of local flockmates
-
+            BtU32 neighboursUsed = 0;
 			MtVector3 v3AverageVelocity(0, 0, 0);
 			MtVector3 v3AveragePosition(0, 0, 0);
 
 			for (BtU32 j = 0; j < numNeighbours; j++)
 			{
 				SbStarling *pNeighbour = bird.neighbours[j];
-
-				v3AveragePosition = pNeighbour->v3Pos;
-				v3AverageVelocity = pNeighbour->v3Vel;
+                
+                MtVector3 v3One = pNeighbour->v3Pos - bird.v3Pos;
+                MtVector3 v3Two = bird.v3Vel;
+                BtFloat dp = v3One.DotProduct(v3Two);
+                if( dp > 0 )
+                {
+                    v3AveragePosition += pNeighbour->v3Pos;
+                    v3AverageVelocity += pNeighbour->v3Vel;
+                    neighboursUsed++;
+                }
 			}
-			v3AveragePosition /= (BtFloat)numNeighbours;
-			v3AverageVelocity /= (BtFloat)numNeighbours;
-
+            if( neighboursUsed )
+            {
+                v3AveragePosition /= (BtFloat)neighboursUsed;
+                v3AverageVelocity /= (BtFloat)neighboursUsed;
+            }
+            
 			// Separate the birds
             for (BtU32 j = 0; j < numNeighbours; j++)
             {
                 SbStarling *pNeighbour = bird.neighbours[j];
 
 				MtVector3 v3Delta = pNeighbour->v3Pos - bird.v3Pos;
-				if( v3Delta.GetLength() > SmallNumberInTermsOfAStarling )
+				if( v3Delta.GetLengthSquared() > SmallNumberInTermsOfAStarling )
 				{
 					bird.v3Vel -= v3Delta.GetNormalise() * bird.separation;
 				}
@@ -482,7 +479,7 @@ void SbMurmuration::Update()
 			// Cohese the birds
 			{
 				MtVector3 v3Delta = v3AveragePosition - bird.v3Pos;
-				if (v3Delta.GetLength())
+				if( v3Delta.GetLengthSquared() > SmallNumberInTermsOfAStarling )
 				{
 					bird.v3Vel += v3Delta.GetNormalise() * bird.cohesion;
 				}
@@ -491,7 +488,7 @@ void SbMurmuration::Update()
 			// Align the birds
 			{
 				MtVector3 v3Delta = v3AverageVelocity - bird.v3Vel;
-				if (v3Delta.GetLength() > m_config.MinSpeed * 0.1f )
+				if( v3Delta.GetLengthSquared() > SmallNumberInTermsOfAStarling )
 				{
 					bird.v3Vel += v3Delta.GetNormalise() * bird.alignment;
 				}
@@ -512,7 +509,7 @@ void SbMurmuration::Update()
 			if (v3Delta.GetLength() > 0)
 			{
 				// Update the velocity to the target
-				starling.v3Vel += v3Delta.GetNormalise() *  m_config.LocalTargetFactor;
+				starling.v3Vel += v3Delta *  m_config.LocalTargetFactor;
 			}
 		}
 
@@ -575,11 +572,15 @@ void SbMurmuration::Render( RsCamera *pCamera )
 	// |{   }    \   |
 	// |_\_/______\__|
 
-	const BtFloat StarlingHalfWingSpan  = m_config.StarlingWingSpan * 2.0f;
-    const BtFloat PereguineHalfWingSpan = m_config.PereguineWingSpan  * 2.0f;
+    // We then need to multiple the dimension by two as we are using half a triangle
+    // Make these bigger to stand out in our sim (*3)
+	const BtFloat StarlingHalfWingSpan  = m_config.StarlingWingSpan * 2.0f * 3.0f;
+    const BtFloat PereguineHalfWingSpan = m_config.PereguineWingSpan  * 2.0f * 3.0f;
 
 	MtMatrix3 m3Orientation = pCamera->GetRotation();
-
+    MtVector3 v3AxisX = (m3Orientation.Col0() * StarlingHalfWingSpan);
+    MtVector3 v3AxisY = (m3Orientation.Col1() * StarlingHalfWingSpan);
+    
 	// Draw the birds
 	BtU32 tri = 0;
 	if( m_config.m_numBoids )
@@ -592,23 +593,9 @@ void SbMurmuration::Render( RsCamera *pCamera )
 
 			// Render the bird
 			myVertex[tri + 0].m_v3Position = v3Position;
-			myVertex[tri + 1].m_v3Position = v3Position + (m3Orientation.Col0() * StarlingHalfWingSpan);
-			myVertex[tri + 2].m_v3Position = v3Position + (m3Orientation.Col1() * StarlingHalfWingSpan);
-			myVertex[tri + 0].m_colour = Starling.colour;
-			myVertex[tri + 1].m_colour = Starling.colour;
-			myVertex[tri + 2].m_colour = Starling.colour;
-
-			myVertex[tri + 0].m_v2UV = MtVector2(0.0f, 0.0f);
-			myVertex[tri + 1].m_v2UV = MtVector2(0.0f, 1.0f);
-			myVertex[tri + 2].m_v2UV = MtVector2(1.0f, 1.0f);
+			myVertex[tri + 1].m_v3Position = v3Position + v3AxisX;
+			myVertex[tri + 2].m_v3Position = v3Position + v3AxisY;
 			tri += 3;
-		}
-
-		for(BtU32 i = 0; i < tri; i += 3)
-		{
-			myVertex[i + 0].m_v2UV = MtVector2(0, 0);
-			myVertex[i + 1].m_v2UV = MtVector2(0, 1);
-			myVertex[i + 2].m_v2UV = MtVector2(1, 0);
 		}
 
 		if (g_isSpotting)
@@ -627,7 +614,12 @@ void SbMurmuration::Render( RsCamera *pCamera )
 			myVertex[1].m_colour = spotColour;
 			myVertex[2].m_colour = spotColour;
 		}
-		
+        else
+        {
+            myVertex[0].m_colour = starlingColour;
+            myVertex[1].m_colour = starlingColour;
+            myVertex[2].m_colour = starlingColour;
+        }
 		m_pBird3->Render(RsPT_TriangleList, myVertex, tri, MaxSortOrders - 1, BtFalse);
 	}
 
@@ -663,10 +655,14 @@ void SbMurmuration::Render( RsCamera *pCamera )
 	if( ApConfig::IsDebug() )
 	{
 		HlDebug::Render();
-
+        
+        BtChar text[32];
+        sprintf(text, "%.2f", g_predators[0].targetIndex );
+        //HlFont::Render(MtVector2(200, 0), 3.0f, text, RsColour::BlackColour(), MaxSortOrders - 1);
+        
 		MtMatrix4 m4Transform;
 		m4Transform.SetTranslation(g_v3Centre);
-		HlDraw::RenderCross(m4Transform, m_config.PereguineWingSpan * 2.0f, MaxSortOrders - 1);
+		HlDraw::RenderCross(m4Transform, 50.0f, MaxSortOrders - 1);
 	}
 }
 

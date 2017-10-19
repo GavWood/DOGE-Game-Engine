@@ -12,18 +12,20 @@ class SdSoundCaptureAL
 {
 public:
 
+    // Main interface
+    static void                     StartCapture( BtBool isToFile, BtBool isFFT = BtFalse );
+    static void                     UpdateCapture();
+    static void                     StopCapture();
+
+    
+    // Accessors
     static BtFloat                  GetVolume();
     
-    void				            Create();
-	void		                    Update();
-    void					        Destroy();
-	static BtFloat				   *GetFFT( BtU32 &samples );
+    static BtFloat				   *GetFFT( BtU32 &samples );
 	static BtFloat					GetPitch();
    
 private:
     
-    static void                     StartCapture( BtBool isToFile, BtBool isFFT = BtFalse );
-	static void                     StopCapture();
 	static BtBool					m_isFFT;
 	static BtFloat					m_pitch;
 };

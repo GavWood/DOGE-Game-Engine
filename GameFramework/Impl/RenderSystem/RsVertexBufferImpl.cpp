@@ -1,4 +1,4 @@
-﻿////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 /// RsVertexBufferWinGL.cpp
 
 #include "RsPlatform.h"
@@ -59,8 +59,6 @@ void RsVertexBufferImpl::CreateOnDevice()
 
 void RsVertexBufferImpl::SetStream()
 {
-	int error = 0;// RsImplWinGL::CheckError();
-
 	// http://www.opengl.org/wiki/Vertex_Buffer_Object
 	for( BtU32 i=0; i<8; i++ )
 	{

@@ -1666,7 +1666,7 @@
 				FRAMEWORK_SEARCH_PATHS = "/Users/localadmin/Documents/GameFramework/OpenLab_ThirdParty/**";
 				INFOPLIST_FILE = Tutorial1App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.baawolf.Tutorial1App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baawolf.cardtestbed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "/Users/localadmin/Documents/GameFramework/GameFramework_ThirdParty/bullet/**";
 			};
@@ -1681,7 +1681,7 @@
 				FRAMEWORK_SEARCH_PATHS = "/Users/localadmin/Documents/GameFramework/GameFramework_ThirdParty/**";
 				INFOPLIST_FILE = Tutorial1App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.baawolf.Tutorial1App;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baawolf.cardtestbed;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "/Users/localadmin/Documents/GameFramework/GameFramework_ThirdParty/bullet/**";
 			};

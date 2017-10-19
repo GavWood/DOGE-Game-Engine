@@ -264,8 +264,7 @@ void ApConfig::SetExtension( const BtChar* pExtension )
 void ApConfig::SetResourcePath( const BtChar* pResourcePath )
 {
 	BtStrCopy( m_resourcePath, 256, pResourcePath );
-
-    BtPrint( "%s\n", m_resourcePath );
+    BtPrint( "Resource path set to: %s\n", m_resourcePath );
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -274,6 +273,7 @@ void ApConfig::SetResourcePath( const BtChar* pResourcePath )
 void ApConfig::SetDocuments( const BtChar* documents )
 {
 	BtStrCopy( m_documents, 256, documents );
+    BtPrint( "Document path set to: %s\n", documents );
 }
 
 ///////////////////////////////////////////////////////////////////////////////

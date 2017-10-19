@@ -15,13 +15,16 @@ UiKeyboardWin::UiKeyboardWin()
 	BtMemory::Set( m_nKeyDown, 0, sizeof( m_nKeyDown ) );
 	BtMemory::Set( m_nKeyNewDown, 0, sizeof( m_nKeyNewDown ) );
 	BtMemory::Set( m_nKeyUp, 0, sizeof( m_nKeyUp ) );
+    BtMemory::Set( m_isKeyPressed, 0, sizeof( m_isKeyPressed ) );
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // SetKeyUp
 
 void UiKeyboardWin::SetKeyUp( BtU32 keyIndex)
-{ 
+{
+    BtAssert( keyIndex < 512 );
+    
     // Is it pressed
     m_isKeyPressed[keyIndex] = BtFalse;
     
@@ -34,7 +37,9 @@ void UiKeyboardWin::SetKeyUp( BtU32 keyIndex)
 
 void UiKeyboardWin::SetKeyDown(BtU32 keyIndex)
 {
-     // Is it pressed
+    BtAssert( keyIndex < 512 );
+
+    // Is it pressed
     m_isKeyPressed[keyIndex] = BtTrue;
 }
 
@@ -67,7 +72,7 @@ void UiKeyboardWin::Update()
 	for (BtU32 i = 0; i < 256; i++)
 	{
 		// Was the key pressed?
-		BtBool isKeyPressed = m_isKeyPressed[i];	
+        BtBool isKeyPressed = m_isKeyPressed[i];	
 
 		// Was it released
 		m_nKeyUp[i] = !isKeyPressed && m_nKeyDown[i];

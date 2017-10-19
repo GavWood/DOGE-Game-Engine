@@ -21,6 +21,7 @@ public:
 	// Capture and FFT
 	static void				StartCapture( BtBool isToFile );
 	static void				StopCapture();
+    static void             UpdateCapture();
 	static BtFloat			GetVolume();
 	static BtFloat		   *GetFFT( BtU32 &samples );
 	static BtFloat			GetPitch();

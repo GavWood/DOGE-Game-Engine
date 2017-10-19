@@ -1,5 +1,3 @@
-precision mediump float;
-
 uniform sampler2D myTexture;
 uniform sampler2D myTexture2;
 

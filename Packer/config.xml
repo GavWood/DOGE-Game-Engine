@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
-  <project>1</project>
-  <platform>3</platform>
+  <project>6</project>
+  <platform>1</platform>
   <projects>
         <project>
             <id>1</id>
@@ -25,12 +25,12 @@
         
         <project>
             <id>5</id>
-            <path>/Users/localadmin/Documents/DOGE-Game-Engine/CardBasedGames/CardTestBed/Tutorial1/</path>
+            <path>\github\DOGE-Game-Engine\CardBasedGames\CardTestBed\Tutorial1\</path>
         </project>
-
+        
         <project>
             <id>6</id>
-            <path>\github\DOGE-Game-Engine\CardBasedGames\CardTestBed\Tutorial1\</path>
+            <path>/Users/localadmin/Documents/DOGE-Game-Engine/CardBasedGames/CardTestBed/Tutorial1/</path>
         </project>
         
         <project>

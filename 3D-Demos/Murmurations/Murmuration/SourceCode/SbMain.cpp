@@ -21,6 +21,7 @@
 #include "HlDebug.h"
 #include "SgNode.h"
 #include "HlModel.h"
+#include "BtQueue.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Init
@@ -84,6 +85,8 @@ void SbMain::Create()
 	m_camera.Init(v2Dimension);
 
 	m_murmuration.Setup(&m_gameArchive);
+    
+    Reset();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -236,7 +239,7 @@ void SbMain::RestoreRenderTarget()
 	pRenderTarget->SetZCleared( BtTrue );
 
 	// Set a good clear colour
-	pRenderTarget->SetClearColour( RsColour( 0.95f, 0.92f, 1.0f ) );
+	pRenderTarget->SetClearColour( RsColour( 0.98f, 0.98f, 1.0f ) );
 
 	// Apply this render target
 	pRenderTarget->Apply();

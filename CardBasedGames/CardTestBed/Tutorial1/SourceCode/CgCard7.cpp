@@ -68,6 +68,8 @@ void CgCard7::Update()
 
 	if( 1 )
 	{
+        SdSound::UpdateCapture();
+        
 		pitch = SdSound::GetPitch();
 		BtFloat vol = SdSound::GetVolume();
 

@@ -26,6 +26,8 @@ struct SbConfig
 	BtFloat								PereguineWingSpan;
 
 	BtFloat								LocalTargetFactor;
+    
+    BtFloat                             PredatorLocalTargetFactor;
 
 	BtFloat								MinSpeed;
 	BtFloat								MaxSpeed;
@@ -46,7 +48,9 @@ struct SbPereguine
 
 	MtVector3 v3DeltaVel;
 	BtFloat shortestDistance;
-	SbStarling *pStarling;
+    
+    BtFloat targetIndex;
+
 	BtU32 colour;
 };
 
