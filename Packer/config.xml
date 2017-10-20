@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
-  <project>6</project>
-  <platform>1</platform>
+  <project>9</project>
+  <platform>3</platform>
   <projects>
         <project>
             <id>1</id>
@@ -41,6 +41,11 @@
         <project>
             <id>8</id>
             <path>/Users/localadmin/Documents/DOGE-Game-Engine/CardBasedGames/TurnTakingPlay/TurnTakingPlay/</path>
+        </project>
+        
+        <project>
+            <id>9</id>
+            <path>/Users/localadmin/Documents/DOGE-Game-Engine/3D-Demos/PS-Move/PS-Move/</path>
         </project>
   </projects>
 </config>

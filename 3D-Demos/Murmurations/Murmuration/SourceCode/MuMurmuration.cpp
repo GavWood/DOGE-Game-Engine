@@ -49,6 +49,7 @@ SbStarling g_flock[MaxBoids];
 MtAABB aabb;
 const BtU32 MaxVerts = MaxBoids + MaxPredators;
 RsVertex3 myVertex[MaxVerts * 3];
+RsVertex3 PereguineVertex[MaxPredators * 3];
 
 BtU32 starlingColour = RsColour(0.2f, 0.30f, 0.2f, 0.75f).asWord();
 
@@ -227,8 +228,18 @@ void SbMurmuration::Reset()
         myVertex[tri + 1].m_colour = starlingColour;
         myVertex[tri + 2].m_colour = starlingColour;
         myVertex[tri + 0].m_v2UV = MtVector2(0.0f, 0.0f);
-        myVertex[tri + 1].m_v2UV = MtVector2(0.0f, 1.0f);
-        myVertex[tri + 2].m_v2UV = MtVector2(1.0f, 1.0f);
+        myVertex[tri + 1].m_v2UV = MtVector2(0.0f, 0.5f);
+        myVertex[tri + 2].m_v2UV = MtVector2(0.5f, 0.0f);
+    }
+    
+    for( BtU32 tri=0; tri<MaxPredators * 3; tri +=3 )
+    {
+        PereguineVertex[tri + 0].m_colour = starlingColour;
+        PereguineVertex[tri + 1].m_colour = starlingColour;
+        PereguineVertex[tri + 2].m_colour = starlingColour;
+        PereguineVertex[tri + 0].m_v2UV = MtVector2(0.0f, 0.0f);
+        PereguineVertex[tri + 1].m_v2UV = MtVector2(0.0f, 0.5f);
+        PereguineVertex[tri + 2].m_v2UV = MtVector2(0.5f, 0.0f);
     }
 }
 
@@ -513,21 +524,27 @@ void SbMurmuration::Update()
 			}
 		}
 
-		// Integrate the position
-		starling.v3Pos += starling.v3Vel * dt;
-
 		// Cap the speed
 		BtFloat mag = starling.v3Vel.GetLength();
 
 		if (mag <  m_config.MinSpeed)
 		{
-			starling.v3Vel = starling.v3Vel.Normalise() *  m_config.MinSpeed;
+			//starling.v3Vel = starling.v3Vel.Normalise() *  m_config.MinSpeed;
 		}
 
 		if( mag >  m_config.MaxSpeed )
 		{
 			starling.v3Vel = starling.v3Vel.Normalise() *  m_config.MaxSpeed;
 		}
+        
+        // Calculat the new velocity
+        starling.v3NewVel = starling.v3Vel;
+        
+        // Integrate the position
+        starling.v3Pos += starling.v3NewVel * dt;
+        
+        // Store the old velocity
+        starling.v3LastVel = starling.v3Vel;
 	}
 }
 
@@ -624,10 +641,9 @@ void SbMurmuration::Render( RsCamera *pCamera )
 	}
 
 	// Draw the predators
-	RsVertex3 *pVertex = &myVertex[tri];
-
-	if(m_config.NumPredators)
+	if( m_config.NumPredators )
 	{
+        tri = 0;
 		for(BtU32 i = 0; i < m_config.NumPredators; i++)
 		{
 			SbPereguine &Peregrine = g_predators[i];
@@ -635,29 +651,20 @@ void SbMurmuration::Render( RsCamera *pCamera )
 			MtVector3 &v3Position = Peregrine.v3Pos;
 
 			// Render the Peregrine
-			myVertex[tri + 0].m_v3Position = v3Position;
-			myVertex[tri + 1].m_v3Position = v3Position + (m3Orientation.Col0() * PereguineHalfWingSpan);
-			myVertex[tri + 2].m_v3Position = v3Position + (m3Orientation.Col1() * PereguineHalfWingSpan);
-			myVertex[tri + 0].m_colour = Peregrine.colour;
-			myVertex[tri + 1].m_colour = Peregrine.colour;
-			myVertex[tri + 2].m_colour = Peregrine.colour;
+			PereguineVertex[tri + 0].m_v3Position = v3Position;
+			PereguineVertex[tri + 1].m_v3Position = v3Position + (m3Orientation.Col0() * PereguineHalfWingSpan);
+			PereguineVertex[tri + 2].m_v3Position = v3Position + (m3Orientation.Col1() * PereguineHalfWingSpan);
 			tri += 3;
 		}
-		for(BtU32 i = 0; i < tri; i += 3)
-		{
-			myVertex[i + 0].m_v2UV = MtVector2(0, 0);
-			myVertex[i + 1].m_v2UV = MtVector2(0, 1);
-			myVertex[i + 2].m_v2UV = MtVector2(1, 0);
-		}
-		m_pBird3->Render(RsPT_TriangleList, pVertex, m_config.NumPredators * 3, MaxSortOrders - 1, BtFalse);
+		m_pBird3->Render(RsPT_TriangleList, PereguineVertex, m_config.NumPredators * 3, MaxSortOrders - 1, BtFalse);
     }
 
 	if( ApConfig::IsDebug() )
 	{
 		HlDebug::Render();
         
-        BtChar text[32];
-        sprintf(text, "%.2f", g_predators[0].targetIndex );
+        //BtChar text[32];
+        //sprintf(text, "%.2f", g_predators[0].targetIndex );
         //HlFont::Render(MtVector2(200, 0), 3.0f, text, RsColour::BlackColour(), MaxSortOrders - 1);
         
 		MtMatrix4 m4Transform;

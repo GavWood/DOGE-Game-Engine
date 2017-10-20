@@ -1,0 +1,21 @@
+5461.28, Fish_texture01, Texture
+177.27, PoNoCoU0TaBnSk, Not included in size list
+50.64, swim, Not included in size list
+12.13, swim, Not included in size list
+3.02, IndexBuffer, Not included in size list
+1.33, render_model, Not included in size list
+0.32, swimFish_texture, Material
+0.31, leftfin, Not included in size list
+0.31, joint1, Not included in size list
+0.31, joint2, Not included in size list
+0.31, joint3, Not included in size list
+0.31, joint4, Not included in size list
+0.31, joint5, Not included in size list
+0.31, rightfin, Not included in size list
+0.25, Main, Not included in size list
+0.08, CollisionMeshWin32, Not included in size list
+0.01, CAnalytical_, Not included in size list
+
+Main memory total 5708 KBytes
+Graphics total 5461 KBytes
+Sound total 0 KBytes

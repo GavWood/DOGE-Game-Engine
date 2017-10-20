@@ -60,6 +60,9 @@ struct SbStarling
 
 	MtVector3 v3Pos;
 	MtVector3 v3Vel;
+    MtVector3 v3NewVel;
+    MtVector3 v3LastVel;
+    
 	MtVector3 v3Target;
 	BtS32 x1, y1, z1;
 	BtS32 x4, y4, z4;
@@ -89,7 +92,7 @@ public:
     
     void                            Load();
     void                            Save();
-
+    
 	// Accessors
 	MtVector3						GetPosition();
     BtChar                         *GetConfigFilename();
