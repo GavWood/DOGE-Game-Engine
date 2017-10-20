@@ -1,4 +1,4 @@
-The Game engine and the tutorials are published under the BSD 3 Clause (New BSD) license as generated from https://soulsphere.org/hacks/bsd/.
+The Game engine and the tutorials are published under the Simplified BSD License as generated from https://soulsphere.org/hacks/bsd/.
 
 ---
 
