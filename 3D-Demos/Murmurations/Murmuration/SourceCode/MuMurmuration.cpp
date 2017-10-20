@@ -608,8 +608,8 @@ void SbMurmuration::Render( RsCamera *pCamera )
 
 			// Render the spotted starling
 			myVertex[0].m_v3Position = v3Position;
-			myVertex[1].m_v3Position = v3Position + (m3Orientation.Col0() * StarlingHalfWingSpan);
-			myVertex[2].m_v3Position = v3Position + (m3Orientation.Col1() * StarlingHalfWingSpan);
+			myVertex[1].m_v3Position = v3Position + (m3Orientation.Col0() * StarlingHalfWingSpan * 2.0f );
+			myVertex[2].m_v3Position = v3Position + (m3Orientation.Col1() * StarlingHalfWingSpan * 2.0f );
 			myVertex[0].m_colour = spotColour;
 			myVertex[1].m_colour = spotColour;
 			myVertex[2].m_colour = spotColour;
