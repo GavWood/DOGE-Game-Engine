@@ -1,4 +1,4 @@
-The Play Station Move controller API was written by Thomas Perl.
+The Play Station Move controller API used here was written by Thomas Perl.
 
 For original versions of the software - you can visit:
 
