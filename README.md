@@ -12,9 +12,6 @@ modification, are permitted provided that the following conditions are met:
  * Redistributions in binary form must reproduce the above copyright 
    notice, this list of conditions and the following disclaimer in the 
    documentation and/or other materials provided with the distribution. 
- * Neither the name of  nor the names of its contributors may be used to 
-   endorse or promote products derived from this software without specific 
-   prior written permission. 
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
 AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
@@ -32,7 +29,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 Visit [Wiki](https://github.com/GavWood/tutorials/wiki) for information on this project.
 
-The Game engine and the tutorials are published under the BSD 3 Clause (New BSD) license as generated from https://soulsphere.org/hacks/bsd/.
+The Game engine and the tutorials are published under Simplified BSD License as generated from https://soulsphere.org/hacks/bsd/.
 
 Third party code is licensed according to the original software.
 
