@@ -83,9 +83,7 @@ void ScMain::Create()
 	RsMaterial *pMaterial2 = m_utilityArchive.GetMaterial("white2");
 	RsMaterial *pMaterial3 = m_utilityArchive.GetMaterial("white3");
 	RsMaterial *pMaterial3notest = m_utilityArchive.GetMaterial("white3noztest");
-	m_pGUIRenderTarget = m_gameArchive.GetMaterial( "guirendertarget" );
-	m_pGUIRenderTarget->SetTechniqueName( "RsShaderT" );
-
+    
 	HlFont::Setup( &m_utilityArchive, "vera" );
 	HlMouse::Setup( &m_utilityArchive );
 	HlDraw::Setup( pMaterial2, pMaterial3, pMaterial3notest );
@@ -100,6 +98,8 @@ void ScMain::Create()
 
 void ScMain::Reset()
 {
+    ApConfig::SetPaused( BtFalse );
+    
 	MtVector2 v2Dimension = RsUtil::GetDimension();
 
 	if (ShHMD::IsHMD())
@@ -261,72 +261,6 @@ void ScMain::RestoreRenderTarget()
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// Render2DInto3D
-
-void ScMain::Render2DInto3D( RsCamera &camera )
-{
-	// This code perfectly frames a billboard in front of the camera
-	BtFloat completeFieldOfView = camera.GetFieldOfView();
-    MtMatrix3 m3Orientation = camera.GetRotation().GetInverse();
-	MtVector3 v3AxisXScaled = m3Orientation.XAxis() * 0.5f;
-	MtVector3 v3AxisYScaled = m3Orientation.YAxis() * 0.5f;
-	MtVector3 v3AxisZ       = m3Orientation.ZAxis();
-	
-	BtFloat fieldOfView = completeFieldOfView * 0.5f;
-	BtFloat tanAngle = MtTan(fieldOfView);
-	BtFloat distance = 0.5f / tanAngle;
-        
-	MtVector3 v3Position = camera.GetPosition() + ( v3AxisZ * distance );
-	//
-
-	{
-		m_v3Vertex[0].m_v3Position.x = v3Position.x - v3AxisXScaled.x - v3AxisYScaled.x;
-		m_v3Vertex[0].m_v3Position.y = v3Position.y - v3AxisXScaled.y - v3AxisYScaled.y;
-		m_v3Vertex[0].m_v3Position.z = v3Position.z - v3AxisXScaled.z - v3AxisYScaled.z;
-		m_v3Vertex[0].m_v2UV.x = 0;
-		m_v3Vertex[0].m_v2UV.y = 0;
-
-		m_v3Vertex[1].m_v3Position.x = v3Position.x + v3AxisXScaled.x - v3AxisYScaled.x;
-		m_v3Vertex[1].m_v3Position.y = v3Position.y + v3AxisXScaled.y - v3AxisYScaled.y;
-		m_v3Vertex[1].m_v3Position.z = v3Position.z + v3AxisXScaled.z - v3AxisYScaled.z;
-		m_v3Vertex[1].m_v2UV.x = 1;
-		m_v3Vertex[1].m_v2UV.y = 0;
-
-		m_v3Vertex[2].m_v3Position.x = v3Position.x - v3AxisXScaled.x + v3AxisYScaled.x;
-		m_v3Vertex[2].m_v3Position.y = v3Position.y - v3AxisXScaled.y + v3AxisYScaled.y;
-		m_v3Vertex[2].m_v3Position.z = v3Position.z - v3AxisXScaled.z + v3AxisYScaled.z;
-		m_v3Vertex[2].m_v2UV.x = 0;
-		m_v3Vertex[2].m_v2UV.y = 1;
-
-		// Second triangle
-		m_v3Vertex[3].m_v3Position.x = v3Position.x - v3AxisXScaled.x + v3AxisYScaled.x;
-		m_v3Vertex[3].m_v3Position.y = v3Position.y - v3AxisXScaled.y + v3AxisYScaled.y;
-		m_v3Vertex[3].m_v3Position.z = v3Position.z - v3AxisXScaled.z + v3AxisYScaled.z;
-		m_v3Vertex[3].m_v2UV.x = 0;
-		m_v3Vertex[3].m_v2UV.y = 1;
-
-		m_v3Vertex[4].m_v3Position.x = v3Position.x + v3AxisXScaled.x - v3AxisYScaled.x;
-		m_v3Vertex[4].m_v3Position.y = v3Position.y + v3AxisXScaled.y - v3AxisYScaled.y;
-		m_v3Vertex[4].m_v3Position.z = v3Position.z + v3AxisXScaled.z - v3AxisYScaled.z;
-		m_v3Vertex[4].m_v2UV.x = 1;
-		m_v3Vertex[4].m_v2UV.y = 0;
-
-		m_v3Vertex[5].m_v3Position.x = v3Position.x + v3AxisXScaled.x + v3AxisYScaled.x;
-		m_v3Vertex[5].m_v3Position.y = v3Position.y + v3AxisXScaled.y + v3AxisYScaled.y;
-		m_v3Vertex[5].m_v3Position.z = v3Position.z + v3AxisXScaled.z + v3AxisYScaled.z;
-		m_v3Vertex[5].m_v2UV.x = 1;
-		m_v3Vertex[5].m_v2UV.y = 1;
-
-		for(BtU32 i = 0; i < 6; i++)
-		{
-			m_v3Vertex[i].m_colour = RsColour::WhiteColour().asWord();
-			m_v3Vertex[i].m_v3Normal = MtVector3(0, 1, 0);
-		}
-	}
-	m_pGUIRenderTarget->Render(RsPT_TriangleList, m_v3Vertex, 6, MaxSortOrders - 1, BtTrue);
-}
-
-////////////////////////////////////////////////////////////////////////////////
 // Render2DScene
 
 void ScMain::Render2DScene()
@@ -368,19 +302,8 @@ void ScMain::RenderTests()
 
 	// Empty the render targets at the start
 	RsUtil::EmptyRenderTargets();
-
-	// Render to the GUI
-    RsCamera camera;
-    camera.SetProjection(MtMatrix4::m_identity);
-    camera.SetDimension(MtVector2(1024.0f, 1024.0f));
-    camera.SetViewport(RsViewport(0, 0, 1024, 1024));
-    camera.SetAspect(1.0f);
-  //  camera.Update();
- //   SetupRenderToTexture( m_pGUIRenderTarget->GetTexture(0), camera );
-//    Render2DScene();
-
+    
 	RestoreRenderTarget();
-   
 	Render3DScene();
 
 	int a=0;

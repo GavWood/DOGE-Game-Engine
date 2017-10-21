@@ -73,25 +73,18 @@ private:
 	BaArchive						m_gameArchive;
 	BaArchive						m_animArchive;
 	BaArchive						m_utilityArchive;
-	BaArchive						m_hmdArchive;
-	
+		
 	// Resources
-	HlJoysticks						m_joysticks;
-	RsMaterial					   *m_pLeftEye;
-	RsMaterial					   *m_pRightEye;
-
-	RsShader					   *m_pShader;
+    RsShader					   *m_pShader;
 	SbCamera						m_camera;
 	RsMaterial					   *m_pWhite2;
 	RsMaterial					   *m_pWhite3;
-	RsMaterial					   *m_pGUIRenderTarget;
 
 	// Test classes
 	ScModel							m_model;
 	ScRenderSkybox					m_skybox;
 	ScBubbles						m_bubbles;
 	ScFrustum						m_frustum;
-	RsVertex3						m_v3Vertex[6];
 };
 
 inline void ScMain::SetClosing()

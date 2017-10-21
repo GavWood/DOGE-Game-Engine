@@ -47,6 +47,7 @@ public:
 private:
 
 	// Private members
+    MtMatrix3                   m_m3StartingTransform;
 	ShCameraData				m_cameraData;
 	RsCamera					m_camera;
 	BtFloat						m_speed;

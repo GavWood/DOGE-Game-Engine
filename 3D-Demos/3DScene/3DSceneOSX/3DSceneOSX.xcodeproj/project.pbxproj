@@ -565,8 +565,6 @@
 		29B97314FDCFA39411CA2CEA /* OSXGLEssentials */ = {
 			isa = PBXGroup;
 			children = (
-				7B1B7A751F641F4800384862 /* OSX-Private */,
-				7BAF255C1F5EC4C100C59E53 /* GitHub-Private */,
 				7BAF255D1F5EC4E100C59E53 /* Frameworks */,
 				7BAF255E1F5EC4EA00C59E53 /* GameFramework_ThirdParty */,
 				7BAF255F1F5EC4F900C59E53 /* GameFramework */,
@@ -575,13 +573,6 @@
 				7B1BDAA71F5F42660030E0D2 /* Products */,
 			);
 			name = OSXGLEssentials;
-			sourceTree = "<group>";
-		};
-		7B1B7A751F641F4800384862 /* OSX-Private */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "OSX-Private";
 			sourceTree = "<group>";
 		};
 		7B1BDAA71F5F42660030E0D2 /* Products */ = {
@@ -763,13 +754,6 @@
 			);
 			name = BinaryArchive;
 			path = ../../../GameFramework/Impl/BinaryArchive;
-			sourceTree = "<group>";
-		};
-		7BAF255C1F5EC4C100C59E53 /* GitHub-Private */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "GitHub-Private";
 			sourceTree = "<group>";
 		};
 		7BAF255D1F5EC4E100C59E53 /* Frameworks */ = {

@@ -24,7 +24,7 @@ void SbCamera::Init( MtVector2 v2Dimension )
 	BtFloat width  = v2Dimension.x;
 	BtFloat height = v2Dimension.y;
 
-	m_camera = RsCamera( 0.01f, 100.0f, width / height, RsViewport( 0, 0, (BtU32)width, (BtU32)height ), MtDegreesToRadians( 60.0f ) );
+	m_camera = RsCamera( 0.1f, 1000.0f, width / height, RsViewport( 0, 0, (BtU32)width, (BtU32)height ), MtDegreesToRadians( 60.0f ) );
 	m_camera.SetDimension(MtVector2(width, height));
 	m_camera.SetPerspective( BtTrue );
 
@@ -132,6 +132,8 @@ void SbCamera::Update()
                 file.Close();
             }
             isLoaded = BtTrue;
+            
+            m_m3StartingTransform = m_cameraData.m_m3Rotation;
         }
         if(UiKeyboard::pInstance()->IsPressed(UiKeyCode_F3))
         {
@@ -172,8 +174,6 @@ void SbCamera::Update()
         // Rotate the camera
         BtFloat speed = BtTime::GetTick();
 
-        BtBool oldCursorKeysState = isCursorKeys;
-        
         if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LSHIFT))
         {
             if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LEFT))
@@ -203,12 +203,8 @@ void SbCamera::Update()
             m3RotateY.SetRotationX(m_cameraData.m_pitch);
             MtMatrix3 m3RotateX;
             m3RotateX.SetRotationY(m_cameraData.m_yaw);
-            
-            if( oldCursorKeysState != isCursorKeys )
-            {
-				//m3StartingRotation = m_cameraData.m_m3Rotation;
-            }
-            m_cameraData.m_m3Rotation = m3RotateX * m3RotateY;
+
+            m_cameraData.m_m3Rotation = m_m3StartingTransform * m3RotateX * m3RotateY;
         }
         if( UiKeyboard::pInstance()->IsPressed(SaveCameraKey) )
         {

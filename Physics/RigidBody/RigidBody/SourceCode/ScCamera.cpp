@@ -24,7 +24,7 @@ void SbCamera::Init( MtVector2 v2Dimension )
 	BtFloat width  = v2Dimension.x;
 	BtFloat height = v2Dimension.y;
 
-	m_camera = RsCamera( 0.01f, 100.0f, width / height, RsViewport( 0, 0, (BtU32)width, (BtU32)height ), MtDegreesToRadians( 60.0f ) );
+	m_camera = RsCamera( 0.1f, 1000.0f, width / height, RsViewport( 0, 0, (BtU32)width, (BtU32)height ), MtDegreesToRadians( 60.0f ) );
 	m_camera.SetDimension(MtVector2(width, height));
 	m_camera.SetPerspective( BtTrue );
 
