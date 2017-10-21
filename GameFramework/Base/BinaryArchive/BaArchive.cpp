@@ -396,6 +396,11 @@ void BaArchive::Unload()
 
 BaResource* BaArchive::GetResource( BaResourceType eType, const BtChar* szTitle ) const
 {
+    if( m_pArchiveMemory == BtNull )
+    {
+        ErrorLog::Fatal_Printf( "Archive not loaded." );
+    }
+    
 	// Get the archive header
 	BaArchiveHeader* pArchiveHeader = (BaArchiveHeader*) m_pArchiveMemory;
 

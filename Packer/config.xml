@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
-  <project>9</project>
+  <project>10</project>
   <platform>3</platform>
   <projects>
         <project>
@@ -46,6 +46,11 @@
         <project>
             <id>9</id>
             <path>/Users/localadmin/Documents/DOGE-Game-Engine/3D-Demos/PS-Move/PS-Move/</path>
+        </project>
+        
+        <project>
+            <id>10</id>
+            <path>/Users/localadmin/Documents/DOGE-Game-Engine/Physics/RigidBody/RigidBody/</path>
         </project>
   </projects>
 </config>
