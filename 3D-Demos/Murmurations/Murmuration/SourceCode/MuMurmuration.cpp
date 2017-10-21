@@ -228,8 +228,8 @@ void SbMurmuration::Reset()
         myVertex[tri + 1].m_colour = starlingColour;
         myVertex[tri + 2].m_colour = starlingColour;
         myVertex[tri + 0].m_v2UV = MtVector2(0.0f, 0.0f);
-        myVertex[tri + 1].m_v2UV = MtVector2(0.0f, 0.5f);
-        myVertex[tri + 2].m_v2UV = MtVector2(0.5f, 0.0f);
+        myVertex[tri + 1].m_v2UV = MtVector2(0.0f, 1.0f);
+        myVertex[tri + 2].m_v2UV = MtVector2(1.0f, 0.0f);
     }
     
     for( BtU32 tri=0; tri<MaxPredators * 3; tri +=3 )
@@ -238,8 +238,8 @@ void SbMurmuration::Reset()
         PereguineVertex[tri + 1].m_colour = starlingColour;
         PereguineVertex[tri + 2].m_colour = starlingColour;
         PereguineVertex[tri + 0].m_v2UV = MtVector2(0.0f, 0.0f);
-        PereguineVertex[tri + 1].m_v2UV = MtVector2(0.0f, 0.5f);
-        PereguineVertex[tri + 2].m_v2UV = MtVector2(0.5f, 0.0f);
+        PereguineVertex[tri + 1].m_v2UV = MtVector2(0.0f, 1.0f);
+        PereguineVertex[tri + 2].m_v2UV = MtVector2(1.0f, 0.0f);
     }
 }
 
