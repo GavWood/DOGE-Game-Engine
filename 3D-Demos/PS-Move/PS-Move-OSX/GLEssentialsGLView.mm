@@ -18,10 +18,17 @@
 #include <iostream>
 #include <sys/time.h>                // for gettimeofday()
 #include "stdio.h"                   // for gettimeofday()
+#include "UiKeyboard.h"
+
 #import <queue>
 
 // Thomas Perl's PS-Move-API
 #import "psmove.h"
+
+//#define MADGWICK
+#ifdef MADGWICK
+#include "madgwickAHRS.h"
+#endif
 
 #define SUPPORT_RETINA_RESOLUTION 1
 
@@ -38,6 +45,10 @@ AVAudioPlayer* audioPlayer;
 BtU32 numControllers;
 PSMove *moveArr[16];
 static int lastTrigger[16];
+
+#ifdef MADGWICK
+Madgwick madgwick[16];
+#endif
 
 -(void)setupIdentity
 {
@@ -60,6 +71,21 @@ static int lastTrigger[16];
         // Set the lights to 0
         psmove_set_leds( moveArr[i], 0, 0, 0 );
     }
+    [self resetIdentity];
+}
+
+-(void)resetIdentity
+{
+#ifdef MADGWICK
+    for( BtU32 i=0; i<numControllers; i++ )
+    {
+        Madgwick &madge = madgwick[i];
+        madge.q0 = 1.0f; madge.q1 = madge.q2 = madge.q3 = 0;
+
+        MtQuaternion quaternion = MtQuaternion( -madge.q1, -madge.q3, -madge.q2, madge.q0 );
+        ShIMU::SetQuaternion( i, quaternion );
+    }
+#endif
 }
 
 -(void)updateIdentity
@@ -71,23 +97,26 @@ static int lastTrigger[16];
         int res = psmove_poll( move );
         if (res)
         {
-            // Madgwick code
-            if( 0 )
+#ifdef MADGWICK
+            MtQuaternion quaternion;
+            BtFloat fax, fay, faz;
+            BtFloat fgx, fgy, fgz;
+            
+            for( BtU32 j=0; j<2; j++ )
             {
-                MtQuaternion quaternion;
-                /*
-                for( BtU32 j=0; j<2; j++ )
-                {
-                    PSMove_Frame frame = (PSMove_Frame)j;
-                    psmove_get_accelerometer_frame( move, frame, &fax, &fay, &faz );
-                    psmove_get_gyroscope_frame( move, frame, &fgx, &fgy, &fgz );
-                    madge.MadgwickAHRSupdateIMU( fgx, fgy, fgz, fax, fay, faz );
-                }
+                PSMove_Frame frame = (PSMove_Frame)j;
+                psmove_get_accelerometer_frame( move, frame, &fax, &fay, &faz );
+                psmove_get_gyroscope_frame( move, frame, &fgx, &fgy, &fgz );
                 
-                // Works vertically with x, z, y
-                quaternion = MtQuaternion( -madge.q1, -madge.q3, -madge.q2, madge.q0 );
-                */
+                Madgwick &madge = madgwick[i];
+                madge.MadgwickAHRSupdateIMU( fgx, fgy, fgz, fax, fay, faz );
             }
+            
+            // Works vertically with x, z, y
+            Madgwick &madge = madgwick[i];
+            quaternion = MtQuaternion( -madge.q1, -madge.q3, -madge.q2, madge.q0 );
+            ShIMU::SetQuaternion( 0, quaternion );
+#endif
            
             // Respond to the trigger
             int trigger = psmove_get_trigger( move );
@@ -457,6 +486,11 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
     
     // Update the project
     myProject.Update();
+    
+    if( UiKeyboard::pInstance()->IsPressed( UiKeyCode_R ) )
+    {
+        [self resetIdentity];
+    }
     
     // Update identity
     [self updateIdentity];

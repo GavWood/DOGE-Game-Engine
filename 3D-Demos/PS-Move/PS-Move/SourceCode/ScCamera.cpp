@@ -29,7 +29,7 @@ void SbCamera::Init( MtVector2 v2Dimension )
 	m_camera.SetDimension(MtVector2(width, height));
 	m_camera.SetPerspective( BtTrue );
 
-	m_cameraData.m_v3Position = MtVector3( 1.5f, 0, 2.0f );
+	m_cameraData.m_v3Position = MtVector3( 0, 0, -2.0f );
 	m_cameraData.m_m3Rotation.SetIdentity();
     
     MtMatrix3 m3Rotation;
