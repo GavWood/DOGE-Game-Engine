@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DyBody.cpp" />
+    <ClCompile Include="DyImpl.cpp" />
+    <ClCompile Include="DySoftBody.cpp" />
+    <ClCompile Include="DyWorld.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DyBody.h" />
+    <ClInclude Include="DyImpl.h" />
+    <ClInclude Include="DySoftBody.h" />
+    <ClInclude Include="DyWorld.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B4993ACF-8CD9-43E3-A0F4-8F688C2EDAF4}</ProjectGuid>
+    <ProjectName>Dynamics3</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\GameFrameWork\includes\;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Maths;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\BinaryArchive;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\RenderSystem;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Base;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\RandomNumbers;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Sound;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Application;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Includes;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Dynamics;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\UserInterface;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\SceneGraph;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Base\Win32;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\bulletdynamics\dynamics\;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\linearmath;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\bulletcollision\collisionshapes;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\bulletcollision\broadphasecollision;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\bulletcollision\gimpact;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\bulletdynamics\constraintsolver;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\bulletcollision\collisiondispatch;$(SolutionDir)\..\..\GameFrameWork\Helper;C:\GameFramework\GameFramework_ThirdParty\bullet3\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\GameFrameWork\includes\;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Maths;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\BinaryArchive;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\RenderSystem;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Base;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\RandomNumbers;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Sound;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Application;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Includes;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Dynamics;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\UserInterface;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\SceneGraph;$(SolutionDir)\..\..\GameFrameWork\StruffyLite\Base\Win32;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\bulletdynamics\dynamics\;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\linearmath;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\bulletcollision\collisionshapes;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\bulletcollision\broadphasecollision;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\bulletcollision\gimpact;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\bulletdynamics\constraintsolver;$(SolutionDir)\..\..\GameFrameWork_ThirdParty\bullet\bullet\bulletcollision\collisiondispatch;$(SolutionDir)\..\..\GameFrameWork\Helper;C:\GameFramework\GameFramework_ThirdParty\bullet3\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>false</MinimalRebuild>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

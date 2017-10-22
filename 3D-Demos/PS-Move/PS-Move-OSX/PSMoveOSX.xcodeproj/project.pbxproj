@@ -66,196 +66,6 @@
 		7B231A0F1F99ECE3008883E4 /* OpenGameData.bat in Resources */ = {isa = PBXBuildFile; fileRef = 7B23190D1F99ECE2008883E4 /* OpenGameData.bat */; };
 		7B231A101F99ECE3008883E4 /* Pack.bat in Resources */ = {isa = PBXBuildFile; fileRef = 7B23190E1F99ECE2008883E4 /* Pack.bat */; };
 		7B231A111F99ECE3008883E4 /* Publish.bat in Resources */ = {isa = PBXBuildFile; fileRef = 7B23190F1F99ECE2008883E4 /* Publish.bat */; };
-		7B231A121F99ECE3008883E4 /* anim.iPhone in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319111F99ECE2008883E4 /* anim.iPhone */; };
-		7B231A131F99ECE3008883E4 /* anim.OSX in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319121F99ECE2008883E4 /* anim.OSX */; };
-		7B231A141F99ECE3008883E4 /* ArchiveTimes.iOS in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319131F99ECE2008883E4 /* ArchiveTimes.iOS */; };
-		7B231A151F99ECE3008883E4 /* ArchiveTimes.OSX in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319141F99ECE2008883E4 /* ArchiveTimes.OSX */; };
-		7B231A161F99ECE3008883E4 /* AssetBuildList.iOS in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319151F99ECE2008883E4 /* AssetBuildList.iOS */; };
-		7B231A171F99ECE3008883E4 /* AssetBuildList.OSX in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319161F99ECE2008883E4 /* AssetBuildList.OSX */; };
-		7B231A181F99ECE3008883E4 /* game.iPhone in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319171F99ECE2008883E4 /* game.iPhone */; };
-		7B231A191F99ECE3008883E4 /* game.OSX in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319181F99ECE2008883E4 /* game.OSX */; };
-		7B231A1A1F99ECE3008883E4 /* globalID.dat in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319191F99ECE2008883E4 /* globalID.dat */; };
-		7B231A1B1F99ECE3008883E4 /* 0001_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_Fish_texture01.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23191B1F99ECE2008883E4 /* 0001_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_Fish_texture01.png.tmp */; };
-		7B231A1C1F99ECE3008883E4 /* 0002_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23191C1F99ECE2008883E4 /* 0002_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A1D1F99ECE3008883E4 /* 0003_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23191D1F99ECE2008883E4 /* 0003_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A1E1F99ECE3008883E4 /* 0004_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23191E1F99ECE2008883E4 /* 0004_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A1F1F99ECE3008883E4 /* 0005_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23191F1F99ECE2008883E4 /* 0005_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A201F99ECE3008883E4 /* 0006_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319201F99ECE2008883E4 /* 0006_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A211F99ECE3008883E4 /* 0007_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.dae.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319211F99ECE2008883E4 /* 0007_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.dae.tmp */; };
-		7B231A221F99ECE3008883E4 /* 0008_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319221F99ECE2008883E4 /* 0008_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A231F99ECE3008883E4 /* 0009_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319231F99ECE2008883E4 /* 0009_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A241F99ECE3008883E4 /* 0010_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319241F99ECE2008883E4 /* 0010_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A251F99ECE3008883E4 /* 0011_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319251F99ECE2008883E4 /* 0011_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A261F99ECE3008883E4 /* 0012_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319261F99ECE2008883E4 /* 0012_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A271F99ECE3008883E4 /* 0013_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319271F99ECE2008883E4 /* 0013_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A281F99ECE3008883E4 /* 0014_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319281F99ECE2008883E4 /* 0014_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A291F99ECE3008883E4 /* 0015_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319291F99ECE2008883E4 /* 0015_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A2A1F99ECE3008883E4 /* 0016_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23192A1F99ECE2008883E4 /* 0016_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A2B1F99ECE3008883E4 /* 0017_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23192B1F99ECE2008883E4 /* 0017_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A2C1F99ECE3008883E4 /* 0018_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23192C1F99ECE2008883E4 /* 0018_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.png.tmp */; };
-		7B231A2D1F99ECE3008883E4 /* 0019_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23192D1F99ECE2008883E4 /* 0019_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.tmp */; };
-		7B231A2E1F99ECE3008883E4 /* 0020_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23192E1F99ECE2008883E4 /* 0020_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.png.tmp */; };
-		7B231A2F1F99ECE3008883E4 /* 0021_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23192F1F99ECE2008883E4 /* 0021_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.tmp */; };
-		7B231A301F99ECE3008883E4 /* 0022_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319301F99ECE2008883E4 /* 0022_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.png.tmp */; };
-		7B231A311F99ECE3008883E4 /* 0023_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319311F99ECE2008883E4 /* 0023_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.tmp */; };
-		7B231A321F99ECE3008883E4 /* 0024_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319321F99ECE2008883E4 /* 0024_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.png.tmp */; };
-		7B231A331F99ECE3008883E4 /* 0025_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319331F99ECE2008883E4 /* 0025_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.tmp */; };
-		7B231A341F99ECE3008883E4 /* 0026_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319341F99ECE2008883E4 /* 0026_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.png.tmp */; };
-		7B231A351F99ECE3008883E4 /* 0027_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319351F99ECE2008883E4 /* 0027_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.tmp */; };
-		7B231A361F99ECE3008883E4 /* 0028_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319361F99ECE2008883E4 /* 0028_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.png.tmp */; };
-		7B231A371F99ECE3008883E4 /* 0029_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319371F99ECE2008883E4 /* 0029_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.tmp */; };
-		7B231A381F99ECE3008883E4 /* 0030_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319381F99ECE2008883E4 /* 0030_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.png.tmp */; };
-		7B231A391F99ECE3008883E4 /* 0031_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319391F99ECE2008883E4 /* 0031_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.tmp */; };
-		7B231A3A1F99ECE3008883E4 /* 0032_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv0.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23193A1F99ECE2008883E4 /* 0032_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv0.png.tmp */; };
-		7B231A3B1F99ECE3008883E4 /* 0033_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv1.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23193B1F99ECE2008883E4 /* 0033_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv1.png.tmp */; };
-		7B231A3C1F99ECE3008883E4 /* 0034_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23193C1F99ECE2008883E4 /* 0034_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv.tmp */; };
-		7B231A3D1F99ECE3008883E4 /* 0035_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23193D1F99ECE2008883E4 /* 0035_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.png.tmp */; };
-		7B231A3E1F99ECE3008883E4 /* 0036_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23193E1F99ECE2008883E4 /* 0036_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */; };
-		7B231A3F1F99ECE3008883E4 /* 0037_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23193F1F99ECE2008883E4 /* 0037_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */; };
-		7B231A401F99ECE3008883E4 /* 0038_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319401F99ECE2008883E4 /* 0038_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */; };
-		7B231A411F99ECE3008883E4 /* 0039_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319411F99ECE2008883E4 /* 0039_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */; };
-		7B231A421F99ECE3008883E4 /* 0040_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319421F99ECE2008883E4 /* 0040_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */; };
-		7B231A431F99ECE3008883E4 /* 0041_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.dae.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319431F99ECE2008883E4 /* 0041_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.dae.tmp */; };
-		7B231A441F99ECE3008883E4 /* 0042_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319441F99ECE2008883E4 /* 0042_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */; };
-		7B231A451F99ECE3008883E4 /* 0043_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_Fish_texture01.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319451F99ECE2008883E4 /* 0043_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_Fish_texture01.png.tmp */; };
-		7B231A461F99ECE3008883E4 /* 0044_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319461F99ECE2008883E4 /* 0044_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A471F99ECE3008883E4 /* 0045_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319471F99ECE2008883E4 /* 0045_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A481F99ECE3008883E4 /* 0046_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319481F99ECE2008883E4 /* 0046_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A491F99ECE3008883E4 /* 0047_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319491F99ECE2008883E4 /* 0047_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A4A1F99ECE3008883E4 /* 0048_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23194A1F99ECE2008883E4 /* 0048_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A4B1F99ECE3008883E4 /* 0049_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.dae.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23194B1F99ECE2008883E4 /* 0049_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.dae.tmp */; };
-		7B231A4C1F99ECE3008883E4 /* 0050_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23194C1F99ECE2008883E4 /* 0050_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A4D1F99ECE3008883E4 /* 0051_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23194D1F99ECE2008883E4 /* 0051_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A4E1F99ECE3008883E4 /* 0052_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23194E1F99ECE2008883E4 /* 0052_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A4F1F99ECE3008883E4 /* 0053_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23194F1F99ECE2008883E4 /* 0053_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A501F99ECE3008883E4 /* 0054_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319501F99ECE2008883E4 /* 0054_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A511F99ECE3008883E4 /* 0055_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319511F99ECE2008883E4 /* 0055_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A521F99ECE3008883E4 /* 0056_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319521F99ECE2008883E4 /* 0056_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A531F99ECE3008883E4 /* 0057_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319531F99ECE2008883E4 /* 0057_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A541F99ECE3008883E4 /* 0058_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319541F99ECE2008883E4 /* 0058_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A551F99ECE3008883E4 /* 0059_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_shaders_shader.gles.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319551F99ECE2008883E4 /* 0059_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_shaders_shader.gles.tmp */; };
-		7B231A561F99ECE3008883E4 /* 0060_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera_0.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319561F99ECE2008883E4 /* 0060_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera_0.png.tmp */; };
-		7B231A571F99ECE3008883E4 /* 0061_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera.fnt.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319571F99ECE2008883E4 /* 0061_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera.fnt.tmp */; };
-		7B231A581F99ECE3008883E4 /* 0062_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319581F99ECE2008883E4 /* 0062_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.png.tmp */; };
-		7B231A591F99ECE3008883E4 /* 0063_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319591F99ECE2008883E4 /* 0063_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.tmp */; };
-		7B231A5A1F99ECE3008883E4 /* 0064_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23195A1F99ECE2008883E4 /* 0064_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.png.tmp */; };
-		7B231A5B1F99ECE3008883E4 /* 0065_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23195B1F99ECE2008883E4 /* 0065_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.tmp */; };
-		7B231A5C1F99ECE3008883E4 /* 0066_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23195C1F99ECE2008883E4 /* 0066_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp */; };
-		7B231A5D1F99ECE3008883E4 /* 0067_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23195D1F99ECE2008883E4 /* 0067_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.tmp */; };
-		7B231A5E1F99ECE3008883E4 /* 0068_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23195E1F99ECE2008883E4 /* 0068_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp */; };
-		7B231A5F1F99ECE3008883E4 /* 0069_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3noztest.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23195F1F99ECE2008883E4 /* 0069_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3noztest.tmp */; };
-		7B231A601F99ECE3008883E4 /* 0070_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319601F99ECE2008883E4 /* 0070_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp */; };
-		7B231A611F99ECE3008883E4 /* 0071_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319611F99ECE2008883E4 /* 0071_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp */; };
-		7B231A621F99ECE3008883E4 /* 0072_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_userdata_vera.dat.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319621F99ECE2008883E4 /* 0072_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_userdata_vera.dat.tmp */; };
-		7B231A631F99ECE3008883E4 /* 0073_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_Fish_texture01.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319641F99ECE3008883E4 /* 0073_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_Fish_texture01.png.tmp */; };
-		7B231A641F99ECE3008883E4 /* 0074_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319651F99ECE3008883E4 /* 0074_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A651F99ECE3008883E4 /* 0075_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319661F99ECE3008883E4 /* 0075_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A661F99ECE3008883E4 /* 0076_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319671F99ECE3008883E4 /* 0076_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A671F99ECE3008883E4 /* 0077_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319681F99ECE3008883E4 /* 0077_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A681F99ECE3008883E4 /* 0078_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319691F99ECE3008883E4 /* 0078_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A691F99ECE3008883E4 /* 0079_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.dae.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23196A1F99ECE3008883E4 /* 0079_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.dae.tmp */; };
-		7B231A6A1F99ECE3008883E4 /* 0080_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23196B1F99ECE3008883E4 /* 0080_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A6B1F99ECE3008883E4 /* 0081_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23196C1F99ECE3008883E4 /* 0081_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A6C1F99ECE3008883E4 /* 0082_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23196D1F99ECE3008883E4 /* 0082_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A6D1F99ECE3008883E4 /* 0083_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23196E1F99ECE3008883E4 /* 0083_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A6E1F99ECE3008883E4 /* 0084_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23196F1F99ECE3008883E4 /* 0084_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A6F1F99ECE3008883E4 /* 0085_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319701F99ECE3008883E4 /* 0085_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A701F99ECE3008883E4 /* 0086_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319711F99ECE3008883E4 /* 0086_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A711F99ECE3008883E4 /* 0087_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319721F99ECE3008883E4 /* 0087_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A721F99ECE3008883E4 /* 0088_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319731F99ECE3008883E4 /* 0088_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A731F99ECE3008883E4 /* 0089_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319741F99ECE3008883E4 /* 0089_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */; };
-		7B231A741F99ECE3008883E4 /* 0090_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319751F99ECE3008883E4 /* 0090_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.png.tmp */; };
-		7B231A751F99ECE3008883E4 /* 0091_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319761F99ECE3008883E4 /* 0091_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.tmp */; };
-		7B231A761F99ECE3008883E4 /* 0092_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319771F99ECE3008883E4 /* 0092_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.png.tmp */; };
-		7B231A771F99ECE3008883E4 /* 0093_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319781F99ECE3008883E4 /* 0093_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.tmp */; };
-		7B231A781F99ECE3008883E4 /* 0094_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319791F99ECE3008883E4 /* 0094_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.png.tmp */; };
-		7B231A791F99ECE3008883E4 /* 0095_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23197A1F99ECE3008883E4 /* 0095_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.tmp */; };
-		7B231A7A1F99ECE3008883E4 /* 0096_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23197B1F99ECE3008883E4 /* 0096_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.png.tmp */; };
-		7B231A7B1F99ECE3008883E4 /* 0097_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23197C1F99ECE3008883E4 /* 0097_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.tmp */; };
-		7B231A7C1F99ECE3008883E4 /* 0098_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23197D1F99ECE3008883E4 /* 0098_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.png.tmp */; };
-		7B231A7D1F99ECE3008883E4 /* 0099_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23197E1F99ECE3008883E4 /* 0099_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.tmp */; };
-		7B231A7E1F99ECE3008883E4 /* 0100_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23197F1F99ECE3008883E4 /* 0100_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.png.tmp */; };
-		7B231A7F1F99ECE3008883E4 /* 0101_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319801F99ECE3008883E4 /* 0101_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.tmp */; };
-		7B231A801F99ECE3008883E4 /* 0102_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319811F99ECE3008883E4 /* 0102_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.png.tmp */; };
-		7B231A811F99ECE3008883E4 /* 0103_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319821F99ECE3008883E4 /* 0103_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.tmp */; };
-		7B231A821F99ECE3008883E4 /* 0104_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv0.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319831F99ECE3008883E4 /* 0104_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv0.png.tmp */; };
-		7B231A831F99ECE3008883E4 /* 0105_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv1.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319841F99ECE3008883E4 /* 0105_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv1.png.tmp */; };
-		7B231A841F99ECE3008883E4 /* 0106_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319851F99ECE3008883E4 /* 0106_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv.tmp */; };
-		7B231A851F99ECE3008883E4 /* 0107_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319861F99ECE3008883E4 /* 0107_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.png.tmp */; };
-		7B231A861F99ECE3008883E4 /* 0108_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319871F99ECE3008883E4 /* 0108_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */; };
-		7B231A871F99ECE3008883E4 /* 0109_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319881F99ECE3008883E4 /* 0109_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */; };
-		7B231A881F99ECE3008883E4 /* 0110_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319891F99ECE3008883E4 /* 0110_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */; };
-		7B231A891F99ECE3008883E4 /* 0111_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23198A1F99ECE3008883E4 /* 0111_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */; };
-		7B231A8A1F99ECE3008883E4 /* 0112_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23198B1F99ECE3008883E4 /* 0112_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */; };
-		7B231A8B1F99ECE3008883E4 /* 0113_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.dae.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23198C1F99ECE3008883E4 /* 0113_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.dae.tmp */; };
-		7B231A8C1F99ECE3008883E4 /* 0114_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23198D1F99ECE3008883E4 /* 0114_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */; };
-		7B231A8D1F99ECE3008883E4 /* 0115_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_Fish_texture01.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23198E1F99ECE3008883E4 /* 0115_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_Fish_texture01.png.tmp */; };
-		7B231A8E1F99ECE3008883E4 /* 0116_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23198F1F99ECE3008883E4 /* 0116_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A8F1F99ECE3008883E4 /* 0117_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319901F99ECE3008883E4 /* 0117_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A901F99ECE3008883E4 /* 0118_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319911F99ECE3008883E4 /* 0118_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A911F99ECE3008883E4 /* 0119_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319921F99ECE3008883E4 /* 0119_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A921F99ECE3008883E4 /* 0120_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319931F99ECE3008883E4 /* 0120_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A931F99ECE3008883E4 /* 0121_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.dae.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319941F99ECE3008883E4 /* 0121_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.dae.tmp */; };
-		7B231A941F99ECE3008883E4 /* 0122_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319951F99ECE3008883E4 /* 0122_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A951F99ECE3008883E4 /* 0123_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319961F99ECE3008883E4 /* 0123_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A961F99ECE3008883E4 /* 0124_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319971F99ECE3008883E4 /* 0124_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A971F99ECE3008883E4 /* 0125_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319981F99ECE3008883E4 /* 0125_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A981F99ECE3008883E4 /* 0126_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319991F99ECE3008883E4 /* 0126_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A991F99ECE3008883E4 /* 0127_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23199A1F99ECE3008883E4 /* 0127_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A9A1F99ECE3008883E4 /* 0128_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23199B1F99ECE3008883E4 /* 0128_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A9B1F99ECE3008883E4 /* 0129_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23199C1F99ECE3008883E4 /* 0129_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A9C1F99ECE3008883E4 /* 0130_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23199D1F99ECE3008883E4 /* 0130_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */; };
-		7B231A9D1F99ECE3008883E4 /* 0131_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_shaders_shader.osx.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23199E1F99ECE3008883E4 /* 0131_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_shaders_shader.osx.tmp */; };
-		7B231A9E1F99ECE3008883E4 /* 0132_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera_0.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B23199F1F99ECE3008883E4 /* 0132_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera_0.png.tmp */; };
-		7B231A9F1F99ECE3008883E4 /* 0133_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera.fnt.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319A01F99ECE3008883E4 /* 0133_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera.fnt.tmp */; };
-		7B231AA01F99ECE3008883E4 /* 0134_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319A11F99ECE3008883E4 /* 0134_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.png.tmp */; };
-		7B231AA11F99ECE3008883E4 /* 0135_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319A21F99ECE3008883E4 /* 0135_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.tmp */; };
-		7B231AA21F99ECE3008883E4 /* 0136_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319A31F99ECE3008883E4 /* 0136_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.png.tmp */; };
-		7B231AA31F99ECE3008883E4 /* 0137_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319A41F99ECE3008883E4 /* 0137_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.tmp */; };
-		7B231AA41F99ECE3008883E4 /* 0138_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319A51F99ECE3008883E4 /* 0138_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp */; };
-		7B231AA51F99ECE3008883E4 /* 0139_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319A61F99ECE3008883E4 /* 0139_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.tmp */; };
-		7B231AA61F99ECE3008883E4 /* 0140_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319A71F99ECE3008883E4 /* 0140_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp */; };
-		7B231AA71F99ECE3008883E4 /* 0141_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3noztest.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319A81F99ECE3008883E4 /* 0141_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3noztest.tmp */; };
-		7B231AA81F99ECE3008883E4 /* 0142_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319A91F99ECE3008883E4 /* 0142_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp */; };
-		7B231AA91F99ECE3008883E4 /* 0143_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319AA1F99ECE3008883E4 /* 0143_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp */; };
-		7B231AAA1F99ECE3008883E4 /* 0144_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_userdata_vera.dat.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319AB1F99ECE3008883E4 /* 0144_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_userdata_vera.dat.tmp */; };
-		7B231AAB1F99ECE3008883E4 /* 0145_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_fonts_vera_0.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319AC1F99ECE3008883E4 /* 0145_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_fonts_vera_0.png.tmp */; };
-		7B231AAC1F99ECE3008883E4 /* 0146_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_fonts_vera.fnt.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319AD1F99ECE3008883E4 /* 0146_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_fonts_vera.fnt.tmp */; };
-		7B231AAD1F99ECE3008883E4 /* 0147_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_back.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319AE1F99ECE3008883E4 /* 0147_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_back.png.tmp */; };
-		7B231AAE1F99ECE3008883E4 /* 0148_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_back.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319AF1F99ECE3008883E4 /* 0148_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_back.tmp */; };
-		7B231AAF1F99ECE3008883E4 /* 0149_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_front.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319B01F99ECE3008883E4 /* 0149_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_front.png.tmp */; };
-		7B231AB01F99ECE3008883E4 /* 0150_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_front.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319B11F99ECE3008883E4 /* 0150_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_front.tmp */; };
-		7B231AB11F99ECE3008883E4 /* 0151_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_left.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319B21F99ECE3008883E4 /* 0151_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_left.png.tmp */; };
-		7B231AB21F99ECE3008883E4 /* 0152_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_left.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319B31F99ECE3008883E4 /* 0152_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_left.tmp */; };
-		7B231AB31F99ECE3008883E4 /* 0153_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_right.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319B41F99ECE3008883E4 /* 0153_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_right.png.tmp */; };
-		7B231AB41F99ECE3008883E4 /* 0154_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_right.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319B51F99ECE3008883E4 /* 0154_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_right.tmp */; };
-		7B231AB51F99ECE3008883E4 /* 0155_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_up.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319B61F99ECE3008883E4 /* 0155_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_up.png.tmp */; };
-		7B231AB61F99ECE3008883E4 /* 0156_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_up.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319B71F99ECE3008883E4 /* 0156_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_up.tmp */; };
-		7B231AB71F99ECE3008883E4 /* 0157_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white2.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319B81F99ECE3008883E4 /* 0157_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white2.png.tmp */; };
-		7B231AB81F99ECE3008883E4 /* 0158_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white2.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319B91F99ECE3008883E4 /* 0158_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white2.tmp */; };
-		7B231AB91F99ECE3008883E4 /* 0159_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319BA1F99ECE3008883E4 /* 0159_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.png.tmp */; };
-		7B231ABA1F99ECE3008883E4 /* 0160_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319BB1F99ECE3008883E4 /* 0160_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.tmp */; };
-		7B231ABB1F99ECE3008883E4 /* 0161_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319BC1F99ECE3008883E4 /* 0161_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.png.tmp */; };
-		7B231ABC1F99ECE3008883E4 /* 0162_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3noztest.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319BD1F99ECE3008883E4 /* 0162_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3noztest.tmp */; };
-		7B231ABD1F99ECE3008883E4 /* 0163_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.png.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319BE1F99ECE3008883E4 /* 0163_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.png.tmp */; };
-		7B231ABE1F99ECE3008883E4 /* 0164_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319BF1F99ECE3008883E4 /* 0164_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */; };
-		7B231ABF1F99ECE3008883E4 /* 0165_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319C01F99ECE3008883E4 /* 0165_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */; };
-		7B231AC01F99ECE3008883E4 /* 0166_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319C11F99ECE3008883E4 /* 0166_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */; };
-		7B231AC11F99ECE3008883E4 /* 0167_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319C21F99ECE3008883E4 /* 0167_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */; };
-		7B231AC21F99ECE3008883E4 /* 0168_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319C31F99ECE3008883E4 /* 0168_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */; };
-		7B231AC31F99ECE3008883E4 /* 0169_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.dae.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319C41F99ECE3008883E4 /* 0169_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.dae.tmp */; };
-		7B231AC41F99ECE3008883E4 /* 0170_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319C51F99ECE3008883E4 /* 0170_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */; };
-		7B231AC51F99ECE3008883E4 /* 0171_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_shaders_shader.osx.tmp in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319C61F99ECE3008883E4 /* 0171_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_shaders_shader.osx.tmp */; };
-		7B231AC61F99ECE3008883E4 /* ResourceList.iOS in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319C71F99ECE3008883E4 /* ResourceList.iOS */; };
-		7B231AC71F99ECE3008883E4 /* ResourceList.OSX in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319C81F99ECE3008883E4 /* ResourceList.OSX */; };
-		7B231AC81F99ECE3008883E4 /* utility.iPhone in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319C91F99ECE3008883E4 /* utility.iPhone */; };
-		7B231AC91F99ECE3008883E4 /* utility.OSX in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319CA1F99ECE3008883E4 /* utility.OSX */; };
-		7B231ACA1F99ECE3008883E4 /* anim.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319CF1F99ECE3008883E4 /* anim.txt */; };
-		7B231ACB1F99ECE3008883E4 /* game.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319D01F99ECE3008883E4 /* game.txt */; };
-		7B231ACC1F99ECE3008883E4 /* utility.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319D11F99ECE3008883E4 /* utility.txt */; };
-		7B231ACD1F99ECE3008883E4 /* anim.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319D31F99ECE3008883E4 /* anim.txt */; };
-		7B231ACE1F99ECE3008883E4 /* game.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319D41F99ECE3008883E4 /* game.txt */; };
-		7B231ACF1F99ECE3008883E4 /* utility.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319D51F99ECE3008883E4 /* utility.txt */; };
 		7B231AD01F99ECE3008883E4 /* vera.bmfc in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319DB1F99ECE3008883E4 /* vera.bmfc */; };
 		7B231AD11F99ECE3008883E4 /* vera.fnt in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319DC1F99ECE3008883E4 /* vera.fnt */; };
 		7B231AD21F99ECE3008883E4 /* vera_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319DD1F99ECE3008883E4 /* vera_0.png */; };
@@ -290,13 +100,14 @@
 		7B231AEF1F99ECE3008883E4 /* shaderTexturedOSX.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319FD1F99ECE3008883E4 /* shaderTexturedOSX.frag */; };
 		7B231AF01F99ECE3008883E4 /* shaderTexturedOSX.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319FE1F99ECE3008883E4 /* shaderTexturedOSX.vert */; };
 		7B231AF11F99ECE3008883E4 /* vera.dat in Resources */ = {isa = PBXBuildFile; fileRef = 7B231A001F99ECE3008883E4 /* vera.dat */; };
-		7B231AF21F99ECE3008883E4 /* game.OSXz in Resources */ = {isa = PBXBuildFile; fileRef = 7B231A021F99ECE3008883E4 /* game.OSXz */; };
 		7B231AF31F99ECE3008883E4 /* ScCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A041F99ECE3008883E4 /* ScCamera.cpp */; };
 		7B231AF41F99ECE3008883E4 /* ScFrustum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A061F99ECE3008883E4 /* ScFrustum.cpp */; };
 		7B231AF51F99ECE3008883E4 /* ScMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A081F99ECE3008883E4 /* ScMain.cpp */; };
 		7B231AF61F99ECE3008883E4 /* ScModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A0A1F99ECE3008883E4 /* ScModel.cpp */; };
 		7B231AF71F99ECE3008883E4 /* ScRenderSkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A0C1F99ECE3008883E4 /* ScRenderSkybox.cpp */; };
 		7B25D3F41F8ED1A00004546A /* RsColourImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B25D3F31F8ED19F0004546A /* RsColourImpl.cpp */; };
+		7B3124901F9BB46400BD468D /* MadgwickAHRS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B31248E1F9BB46400BD468D /* MadgwickAHRS.cpp */; };
+		7B3124931F9BB4E400BD468D /* game.OSXz in Resources */ = {isa = PBXBuildFile; fileRef = 7B3124921F9BB4E400BD468D /* game.OSXz */; };
 		7B78DBA41AEE946E008E472D /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B78DBA31AEE946E008E472D /* OpenAL.framework */; };
 		7BAF25911F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF258A1F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.m */; };
 		7BAF25931F5EC6D900C59E53 /* GLEssentialsGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF258D1F5EC6D900C59E53 /* GLEssentialsGLView.mm */; };
@@ -545,196 +356,6 @@
 		7B23190D1F99ECE2008883E4 /* OpenGameData.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OpenGameData.bat; sourceTree = "<group>"; };
 		7B23190E1F99ECE2008883E4 /* Pack.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Pack.bat; sourceTree = "<group>"; };
 		7B23190F1F99ECE2008883E4 /* Publish.bat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Publish.bat; sourceTree = "<group>"; };
-		7B2319111F99ECE2008883E4 /* anim.iPhone */ = {isa = PBXFileReference; lastKnownFileType = file; path = anim.iPhone; sourceTree = "<group>"; };
-		7B2319121F99ECE2008883E4 /* anim.OSX */ = {isa = PBXFileReference; lastKnownFileType = file; path = anim.OSX; sourceTree = "<group>"; };
-		7B2319131F99ECE2008883E4 /* ArchiveTimes.iOS */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArchiveTimes.iOS; sourceTree = "<group>"; };
-		7B2319141F99ECE2008883E4 /* ArchiveTimes.OSX */ = {isa = PBXFileReference; lastKnownFileType = file; path = ArchiveTimes.OSX; sourceTree = "<group>"; };
-		7B2319151F99ECE2008883E4 /* AssetBuildList.iOS */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssetBuildList.iOS; sourceTree = "<group>"; };
-		7B2319161F99ECE2008883E4 /* AssetBuildList.OSX */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssetBuildList.OSX; sourceTree = "<group>"; };
-		7B2319171F99ECE2008883E4 /* game.iPhone */ = {isa = PBXFileReference; lastKnownFileType = file; path = game.iPhone; sourceTree = "<group>"; };
-		7B2319181F99ECE2008883E4 /* game.OSX */ = {isa = PBXFileReference; lastKnownFileType = file; path = game.OSX; sourceTree = "<group>"; };
-		7B2319191F99ECE2008883E4 /* globalID.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = globalID.dat; sourceTree = "<group>"; };
-		7B23191B1F99ECE2008883E4 /* 0001_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_Fish_texture01.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0001_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_Fish_texture01.png.tmp"; sourceTree = "<group>"; };
-		7B23191C1F99ECE2008883E4 /* 0002_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0002_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B23191D1F99ECE2008883E4 /* 0003_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0003_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B23191E1F99ECE2008883E4 /* 0004_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0004_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B23191F1F99ECE2008883E4 /* 0005_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0005_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319201F99ECE2008883E4 /* 0006_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0006_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319211F99ECE2008883E4 /* 0007_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.dae.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0007_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.dae.tmp"; sourceTree = "<group>"; };
-		7B2319221F99ECE2008883E4 /* 0008_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0008_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319231F99ECE2008883E4 /* 0009_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0009_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319241F99ECE2008883E4 /* 0010_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0010_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319251F99ECE2008883E4 /* 0011_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0011_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319261F99ECE2008883E4 /* 0012_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0012_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319271F99ECE2008883E4 /* 0013_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0013_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319281F99ECE2008883E4 /* 0014_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0014_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319291F99ECE2008883E4 /* 0015_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0015_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B23192A1F99ECE2008883E4 /* 0016_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0016_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B23192B1F99ECE2008883E4 /* 0017_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0017_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B23192C1F99ECE2008883E4 /* 0018_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0018_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.png.tmp"; sourceTree = "<group>"; };
-		7B23192D1F99ECE2008883E4 /* 0019_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0019_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.tmp"; sourceTree = "<group>"; };
-		7B23192E1F99ECE2008883E4 /* 0020_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0020_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.png.tmp"; sourceTree = "<group>"; };
-		7B23192F1F99ECE2008883E4 /* 0021_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0021_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.tmp"; sourceTree = "<group>"; };
-		7B2319301F99ECE2008883E4 /* 0022_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0022_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.png.tmp"; sourceTree = "<group>"; };
-		7B2319311F99ECE2008883E4 /* 0023_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0023_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.tmp"; sourceTree = "<group>"; };
-		7B2319321F99ECE2008883E4 /* 0024_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0024_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.png.tmp"; sourceTree = "<group>"; };
-		7B2319331F99ECE2008883E4 /* 0025_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0025_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.tmp"; sourceTree = "<group>"; };
-		7B2319341F99ECE2008883E4 /* 0026_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0026_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.png.tmp"; sourceTree = "<group>"; };
-		7B2319351F99ECE2008883E4 /* 0027_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0027_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.tmp"; sourceTree = "<group>"; };
-		7B2319361F99ECE2008883E4 /* 0028_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0028_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.png.tmp"; sourceTree = "<group>"; };
-		7B2319371F99ECE2008883E4 /* 0029_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0029_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.tmp"; sourceTree = "<group>"; };
-		7B2319381F99ECE2008883E4 /* 0030_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0030_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.png.tmp"; sourceTree = "<group>"; };
-		7B2319391F99ECE2008883E4 /* 0031_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0031_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.tmp"; sourceTree = "<group>"; };
-		7B23193A1F99ECE2008883E4 /* 0032_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv0.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0032_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv0.png.tmp"; sourceTree = "<group>"; };
-		7B23193B1F99ECE2008883E4 /* 0033_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv1.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0033_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv1.png.tmp"; sourceTree = "<group>"; };
-		7B23193C1F99ECE2008883E4 /* 0034_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0034_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv.tmp"; sourceTree = "<group>"; };
-		7B23193D1F99ECE2008883E4 /* 0035_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0035_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.png.tmp"; sourceTree = "<group>"; };
-		7B23193E1F99ECE2008883E4 /* 0036_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0036_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B23193F1F99ECE2008883E4 /* 0037_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0037_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B2319401F99ECE2008883E4 /* 0038_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0038_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B2319411F99ECE2008883E4 /* 0039_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0039_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B2319421F99ECE2008883E4 /* 0040_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0040_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B2319431F99ECE2008883E4 /* 0041_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.dae.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0041_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.dae.tmp"; sourceTree = "<group>"; };
-		7B2319441F99ECE2008883E4 /* 0042_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0042_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B2319451F99ECE2008883E4 /* 0043_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_Fish_texture01.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0043_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_Fish_texture01.png.tmp"; sourceTree = "<group>"; };
-		7B2319461F99ECE2008883E4 /* 0044_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0044_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319471F99ECE2008883E4 /* 0045_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0045_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319481F99ECE2008883E4 /* 0046_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0046_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319491F99ECE2008883E4 /* 0047_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0047_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B23194A1F99ECE2008883E4 /* 0048_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0048_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B23194B1F99ECE2008883E4 /* 0049_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.dae.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0049_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.dae.tmp"; sourceTree = "<group>"; };
-		7B23194C1F99ECE2008883E4 /* 0050_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0050_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B23194D1F99ECE2008883E4 /* 0051_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0051_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B23194E1F99ECE2008883E4 /* 0052_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0052_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B23194F1F99ECE2008883E4 /* 0053_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0053_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319501F99ECE2008883E4 /* 0054_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0054_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319511F99ECE2008883E4 /* 0055_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0055_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319521F99ECE2008883E4 /* 0056_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0056_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319531F99ECE2008883E4 /* 0057_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0057_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319541F99ECE2008883E4 /* 0058_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0058_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319551F99ECE2008883E4 /* 0059_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_shaders_shader.gles.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0059_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_shaders_shader.gles.tmp"; sourceTree = "<group>"; };
-		7B2319561F99ECE2008883E4 /* 0060_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera_0.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0060_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera_0.png.tmp"; sourceTree = "<group>"; };
-		7B2319571F99ECE2008883E4 /* 0061_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera.fnt.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0061_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera.fnt.tmp"; sourceTree = "<group>"; };
-		7B2319581F99ECE2008883E4 /* 0062_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0062_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.png.tmp"; sourceTree = "<group>"; };
-		7B2319591F99ECE2008883E4 /* 0063_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0063_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.tmp"; sourceTree = "<group>"; };
-		7B23195A1F99ECE2008883E4 /* 0064_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0064_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.png.tmp"; sourceTree = "<group>"; };
-		7B23195B1F99ECE2008883E4 /* 0065_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0065_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.tmp"; sourceTree = "<group>"; };
-		7B23195C1F99ECE2008883E4 /* 0066_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0066_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp"; sourceTree = "<group>"; };
-		7B23195D1F99ECE2008883E4 /* 0067_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0067_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.tmp"; sourceTree = "<group>"; };
-		7B23195E1F99ECE2008883E4 /* 0068_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0068_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp"; sourceTree = "<group>"; };
-		7B23195F1F99ECE2008883E4 /* 0069_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3noztest.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0069_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3noztest.tmp"; sourceTree = "<group>"; };
-		7B2319601F99ECE2008883E4 /* 0070_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0070_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp"; sourceTree = "<group>"; };
-		7B2319611F99ECE2008883E4 /* 0071_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0071_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp"; sourceTree = "<group>"; };
-		7B2319621F99ECE2008883E4 /* 0072_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_userdata_vera.dat.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0072_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_userdata_vera.dat.tmp"; sourceTree = "<group>"; };
-		7B2319641F99ECE3008883E4 /* 0073_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_Fish_texture01.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0073_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_Fish_texture01.png.tmp"; sourceTree = "<group>"; };
-		7B2319651F99ECE3008883E4 /* 0074_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0074_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319661F99ECE3008883E4 /* 0075_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0075_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319671F99ECE3008883E4 /* 0076_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0076_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319681F99ECE3008883E4 /* 0077_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0077_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319691F99ECE3008883E4 /* 0078_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0078_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B23196A1F99ECE3008883E4 /* 0079_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.dae.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0079_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.dae.tmp"; sourceTree = "<group>"; };
-		7B23196B1F99ECE3008883E4 /* 0080_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0080_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B23196C1F99ECE3008883E4 /* 0081_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0081_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B23196D1F99ECE3008883E4 /* 0082_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0082_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B23196E1F99ECE3008883E4 /* 0083_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0083_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B23196F1F99ECE3008883E4 /* 0084_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0084_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319701F99ECE3008883E4 /* 0085_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0085_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319711F99ECE3008883E4 /* 0086_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0086_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319721F99ECE3008883E4 /* 0087_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0087_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319731F99ECE3008883E4 /* 0088_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0088_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319741F99ECE3008883E4 /* 0089_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0089_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp"; sourceTree = "<group>"; };
-		7B2319751F99ECE3008883E4 /* 0090_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0090_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.png.tmp"; sourceTree = "<group>"; };
-		7B2319761F99ECE3008883E4 /* 0091_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0091_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.tmp"; sourceTree = "<group>"; };
-		7B2319771F99ECE3008883E4 /* 0092_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0092_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.png.tmp"; sourceTree = "<group>"; };
-		7B2319781F99ECE3008883E4 /* 0093_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0093_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.tmp"; sourceTree = "<group>"; };
-		7B2319791F99ECE3008883E4 /* 0094_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0094_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.png.tmp"; sourceTree = "<group>"; };
-		7B23197A1F99ECE3008883E4 /* 0095_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0095_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.tmp"; sourceTree = "<group>"; };
-		7B23197B1F99ECE3008883E4 /* 0096_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0096_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.png.tmp"; sourceTree = "<group>"; };
-		7B23197C1F99ECE3008883E4 /* 0097_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0097_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.tmp"; sourceTree = "<group>"; };
-		7B23197D1F99ECE3008883E4 /* 0098_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0098_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.png.tmp"; sourceTree = "<group>"; };
-		7B23197E1F99ECE3008883E4 /* 0099_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0099_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.tmp"; sourceTree = "<group>"; };
-		7B23197F1F99ECE3008883E4 /* 0100_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0100_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.png.tmp"; sourceTree = "<group>"; };
-		7B2319801F99ECE3008883E4 /* 0101_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0101_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.tmp"; sourceTree = "<group>"; };
-		7B2319811F99ECE3008883E4 /* 0102_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0102_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.png.tmp"; sourceTree = "<group>"; };
-		7B2319821F99ECE3008883E4 /* 0103_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0103_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.tmp"; sourceTree = "<group>"; };
-		7B2319831F99ECE3008883E4 /* 0104_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv0.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0104_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv0.png.tmp"; sourceTree = "<group>"; };
-		7B2319841F99ECE3008883E4 /* 0105_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv1.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0105_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv1.png.tmp"; sourceTree = "<group>"; };
-		7B2319851F99ECE3008883E4 /* 0106_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0106_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv.tmp"; sourceTree = "<group>"; };
-		7B2319861F99ECE3008883E4 /* 0107_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0107_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.png.tmp"; sourceTree = "<group>"; };
-		7B2319871F99ECE3008883E4 /* 0108_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0108_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B2319881F99ECE3008883E4 /* 0109_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0109_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B2319891F99ECE3008883E4 /* 0110_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0110_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B23198A1F99ECE3008883E4 /* 0111_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0111_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B23198B1F99ECE3008883E4 /* 0112_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0112_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B23198C1F99ECE3008883E4 /* 0113_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.dae.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0113_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.dae.tmp"; sourceTree = "<group>"; };
-		7B23198D1F99ECE3008883E4 /* 0114_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0114_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B23198E1F99ECE3008883E4 /* 0115_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_Fish_texture01.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0115_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_Fish_texture01.png.tmp"; sourceTree = "<group>"; };
-		7B23198F1F99ECE3008883E4 /* 0116_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0116_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319901F99ECE3008883E4 /* 0117_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0117_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319911F99ECE3008883E4 /* 0118_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0118_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319921F99ECE3008883E4 /* 0119_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0119_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319931F99ECE3008883E4 /* 0120_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0120_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319941F99ECE3008883E4 /* 0121_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.dae.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0121_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.dae.tmp"; sourceTree = "<group>"; };
-		7B2319951F99ECE3008883E4 /* 0122_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0122_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319961F99ECE3008883E4 /* 0123_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0123_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319971F99ECE3008883E4 /* 0124_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0124_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319981F99ECE3008883E4 /* 0125_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0125_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B2319991F99ECE3008883E4 /* 0126_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0126_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B23199A1F99ECE3008883E4 /* 0127_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0127_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B23199B1F99ECE3008883E4 /* 0128_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0128_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B23199C1F99ECE3008883E4 /* 0129_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0129_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B23199D1F99ECE3008883E4 /* 0130_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0130_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp"; sourceTree = "<group>"; };
-		7B23199E1F99ECE3008883E4 /* 0131_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_shaders_shader.osx.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0131_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_shaders_shader.osx.tmp"; sourceTree = "<group>"; };
-		7B23199F1F99ECE3008883E4 /* 0132_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera_0.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0132_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera_0.png.tmp"; sourceTree = "<group>"; };
-		7B2319A01F99ECE3008883E4 /* 0133_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera.fnt.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0133_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera.fnt.tmp"; sourceTree = "<group>"; };
-		7B2319A11F99ECE3008883E4 /* 0134_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0134_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.png.tmp"; sourceTree = "<group>"; };
-		7B2319A21F99ECE3008883E4 /* 0135_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0135_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.tmp"; sourceTree = "<group>"; };
-		7B2319A31F99ECE3008883E4 /* 0136_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0136_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.png.tmp"; sourceTree = "<group>"; };
-		7B2319A41F99ECE3008883E4 /* 0137_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0137_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.tmp"; sourceTree = "<group>"; };
-		7B2319A51F99ECE3008883E4 /* 0138_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0138_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp"; sourceTree = "<group>"; };
-		7B2319A61F99ECE3008883E4 /* 0139_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0139_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.tmp"; sourceTree = "<group>"; };
-		7B2319A71F99ECE3008883E4 /* 0140_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0140_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp"; sourceTree = "<group>"; };
-		7B2319A81F99ECE3008883E4 /* 0141_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3noztest.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0141_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3noztest.tmp"; sourceTree = "<group>"; };
-		7B2319A91F99ECE3008883E4 /* 0142_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0142_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp"; sourceTree = "<group>"; };
-		7B2319AA1F99ECE3008883E4 /* 0143_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0143_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp"; sourceTree = "<group>"; };
-		7B2319AB1F99ECE3008883E4 /* 0144_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_userdata_vera.dat.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0144_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_userdata_vera.dat.tmp"; sourceTree = "<group>"; };
-		7B2319AC1F99ECE3008883E4 /* 0145_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_fonts_vera_0.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0145_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_fonts_vera_0.png.tmp"; sourceTree = "<group>"; };
-		7B2319AD1F99ECE3008883E4 /* 0146_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_fonts_vera.fnt.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0146_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_fonts_vera.fnt.tmp"; sourceTree = "<group>"; };
-		7B2319AE1F99ECE3008883E4 /* 0147_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_back.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0147_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_back.png.tmp"; sourceTree = "<group>"; };
-		7B2319AF1F99ECE3008883E4 /* 0148_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_back.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0148_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_back.tmp"; sourceTree = "<group>"; };
-		7B2319B01F99ECE3008883E4 /* 0149_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_front.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0149_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_front.png.tmp"; sourceTree = "<group>"; };
-		7B2319B11F99ECE3008883E4 /* 0150_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_front.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0150_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_front.tmp"; sourceTree = "<group>"; };
-		7B2319B21F99ECE3008883E4 /* 0151_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_left.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0151_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_left.png.tmp"; sourceTree = "<group>"; };
-		7B2319B31F99ECE3008883E4 /* 0152_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_left.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0152_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_left.tmp"; sourceTree = "<group>"; };
-		7B2319B41F99ECE3008883E4 /* 0153_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_right.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0153_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_right.png.tmp"; sourceTree = "<group>"; };
-		7B2319B51F99ECE3008883E4 /* 0154_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_right.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0154_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_right.tmp"; sourceTree = "<group>"; };
-		7B2319B61F99ECE3008883E4 /* 0155_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_up.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0155_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_up.png.tmp"; sourceTree = "<group>"; };
-		7B2319B71F99ECE3008883E4 /* 0156_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_up.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0156_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_up.tmp"; sourceTree = "<group>"; };
-		7B2319B81F99ECE3008883E4 /* 0157_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white2.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0157_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white2.png.tmp"; sourceTree = "<group>"; };
-		7B2319B91F99ECE3008883E4 /* 0158_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white2.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0158_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white2.tmp"; sourceTree = "<group>"; };
-		7B2319BA1F99ECE3008883E4 /* 0159_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0159_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.png.tmp"; sourceTree = "<group>"; };
-		7B2319BB1F99ECE3008883E4 /* 0160_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0160_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.tmp"; sourceTree = "<group>"; };
-		7B2319BC1F99ECE3008883E4 /* 0161_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0161_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.png.tmp"; sourceTree = "<group>"; };
-		7B2319BD1F99ECE3008883E4 /* 0162_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3noztest.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0162_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3noztest.tmp"; sourceTree = "<group>"; };
-		7B2319BE1F99ECE3008883E4 /* 0163_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.png.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0163_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.png.tmp"; sourceTree = "<group>"; };
-		7B2319BF1F99ECE3008883E4 /* 0164_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0164_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B2319C01F99ECE3008883E4 /* 0165_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0165_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B2319C11F99ECE3008883E4 /* 0166_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0166_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B2319C21F99ECE3008883E4 /* 0167_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0167_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B2319C31F99ECE3008883E4 /* 0168_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0168_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B2319C41F99ECE3008883E4 /* 0169_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.dae.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0169_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.dae.tmp"; sourceTree = "<group>"; };
-		7B2319C51F99ECE3008883E4 /* 0170_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0170_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp"; sourceTree = "<group>"; };
-		7B2319C61F99ECE3008883E4 /* 0171_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_shaders_shader.osx.tmp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "0171_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_shaders_shader.osx.tmp"; sourceTree = "<group>"; };
-		7B2319C71F99ECE3008883E4 /* ResourceList.iOS */ = {isa = PBXFileReference; lastKnownFileType = file; path = ResourceList.iOS; sourceTree = "<group>"; };
-		7B2319C81F99ECE3008883E4 /* ResourceList.OSX */ = {isa = PBXFileReference; lastKnownFileType = file; path = ResourceList.OSX; sourceTree = "<group>"; };
-		7B2319C91F99ECE3008883E4 /* utility.iPhone */ = {isa = PBXFileReference; lastKnownFileType = file; path = utility.iPhone; sourceTree = "<group>"; };
-		7B2319CA1F99ECE3008883E4 /* utility.OSX */ = {isa = PBXFileReference; lastKnownFileType = file; path = utility.OSX; sourceTree = "<group>"; };
-		7B2319CF1F99ECE3008883E4 /* anim.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = anim.txt; sourceTree = "<group>"; };
-		7B2319D01F99ECE3008883E4 /* game.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = game.txt; sourceTree = "<group>"; };
-		7B2319D11F99ECE3008883E4 /* utility.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = utility.txt; sourceTree = "<group>"; };
-		7B2319D31F99ECE3008883E4 /* anim.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = anim.txt; sourceTree = "<group>"; };
-		7B2319D41F99ECE3008883E4 /* game.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = game.txt; sourceTree = "<group>"; };
-		7B2319D51F99ECE3008883E4 /* utility.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = utility.txt; sourceTree = "<group>"; };
 		7B2319DB1F99ECE3008883E4 /* vera.bmfc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vera.bmfc; sourceTree = "<group>"; };
 		7B2319DC1F99ECE3008883E4 /* vera.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vera.fnt; sourceTree = "<group>"; };
 		7B2319DD1F99ECE3008883E4 /* vera_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vera_0.png; sourceTree = "<group>"; };
@@ -769,7 +390,6 @@
 		7B2319FD1F99ECE3008883E4 /* shaderTexturedOSX.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shaderTexturedOSX.frag; sourceTree = "<group>"; };
 		7B2319FE1F99ECE3008883E4 /* shaderTexturedOSX.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shaderTexturedOSX.vert; sourceTree = "<group>"; };
 		7B231A001F99ECE3008883E4 /* vera.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = vera.dat; sourceTree = "<group>"; };
-		7B231A021F99ECE3008883E4 /* game.OSXz */ = {isa = PBXFileReference; lastKnownFileType = file; path = game.OSXz; sourceTree = "<group>"; };
 		7B231A041F99ECE3008883E4 /* ScCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScCamera.cpp; sourceTree = "<group>"; };
 		7B231A051F99ECE3008883E4 /* ScCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScCamera.h; sourceTree = "<group>"; };
 		7B231A061F99ECE3008883E4 /* ScFrustum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScFrustum.cpp; sourceTree = "<group>"; };
@@ -782,6 +402,9 @@
 		7B231A0D1F99ECE3008883E4 /* ScRenderSkybox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScRenderSkybox.h; sourceTree = "<group>"; };
 		7B231A0E1F99ECE3008883E4 /* ScWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScWorld.h; sourceTree = "<group>"; };
 		7B25D3F31F8ED19F0004546A /* RsColourImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RsColourImpl.cpp; path = ../../../GameFramework/ImplOSX/RsColourImpl.cpp; sourceTree = "<group>"; };
+		7B31248E1F9BB46400BD468D /* MadgwickAHRS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MadgwickAHRS.cpp; sourceTree = "<group>"; };
+		7B31248F1F9BB46400BD468D /* MadgwickAHRS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MadgwickAHRS.h; sourceTree = "<group>"; };
+		7B3124921F9BB4E400BD468D /* game.OSXz */ = {isa = PBXFileReference; lastKnownFileType = file; path = game.OSXz; sourceTree = "<group>"; };
 		7B78DBA31AEE946E008E472D /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		7BAF25891F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLEssentialsFullscreenWindow.h; sourceTree = "<group>"; };
 		7BAF258A1F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLEssentialsFullscreenWindow.m; sourceTree = "<group>"; };
@@ -1060,6 +683,7 @@
 				7BAF255D1F5EC4E100C59E53 /* Frameworks */,
 				7BAF255E1F5EC4EA00C59E53 /* GameFramework_ThirdParty */,
 				7BAF255F1F5EC4F900C59E53 /* GameFramework */,
+				7B31248C1F9BB43400BD468D /* ThirdParty */,
 				7B23190B1F99ECE2008883E4 /* PS-Move */,
 				7BAF25851F5EC60500C59E53 /* PSMoveOSX */,
 				7B1BDAA71F5F42660030E0D2 /* Products */,
@@ -1276,11 +900,9 @@
 		7B23190B1F99ECE2008883E4 /* PS-Move */ = {
 			isa = PBXGroup;
 			children = (
+				7B3124911F9BB4E400BD468D /* Release */,
 				7B23190C1F99ECE2008883E4 /* BatchFiles */,
-				7B2319101F99ECE2008883E4 /* BuildFiles */,
-				7B2319CD1F99ECE3008883E4 /* BuildNotes */,
 				7B2319D81F99ECE3008883E4 /* GameData */,
-				7B231A011F99ECE3008883E4 /* Release */,
 				7B231A031F99ECE3008883E4 /* SourceCode */,
 			);
 			name = "PS-Move";
@@ -1295,274 +917,6 @@
 				7B23190F1F99ECE2008883E4 /* Publish.bat */,
 			);
 			path = BatchFiles;
-			sourceTree = "<group>";
-		};
-		7B2319101F99ECE2008883E4 /* BuildFiles */ = {
-			isa = PBXGroup;
-			children = (
-				7B2319111F99ECE2008883E4 /* anim.iPhone */,
-				7B2319121F99ECE2008883E4 /* anim.OSX */,
-				7B2319131F99ECE2008883E4 /* ArchiveTimes.iOS */,
-				7B2319141F99ECE2008883E4 /* ArchiveTimes.OSX */,
-				7B2319151F99ECE2008883E4 /* AssetBuildList.iOS */,
-				7B2319161F99ECE2008883E4 /* AssetBuildList.OSX */,
-				7B2319171F99ECE2008883E4 /* game.iPhone */,
-				7B2319181F99ECE2008883E4 /* game.OSX */,
-				7B2319191F99ECE2008883E4 /* globalID.dat */,
-				7B23191A1F99ECE2008883E4 /* iPhone */,
-				7B2319631F99ECE2008883E4 /* OSX */,
-				7B2319C71F99ECE3008883E4 /* ResourceList.iOS */,
-				7B2319C81F99ECE3008883E4 /* ResourceList.OSX */,
-				7B2319C91F99ECE3008883E4 /* utility.iPhone */,
-				7B2319CA1F99ECE3008883E4 /* utility.OSX */,
-				7B2319CB1F99ECE3008883E4 /* Win32 */,
-				7B2319CC1F99ECE3008883E4 /* Win32GL */,
-			);
-			path = BuildFiles;
-			sourceTree = "<group>";
-		};
-		7B23191A1F99ECE2008883E4 /* iPhone */ = {
-			isa = PBXGroup;
-			children = (
-				7B23191B1F99ECE2008883E4 /* 0001_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_Fish_texture01.png.tmp */,
-				7B23191C1F99ECE2008883E4 /* 0002_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B23191D1F99ECE2008883E4 /* 0003_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B23191E1F99ECE2008883E4 /* 0004_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B23191F1F99ECE2008883E4 /* 0005_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319201F99ECE2008883E4 /* 0006_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319211F99ECE2008883E4 /* 0007_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.dae.tmp */,
-				7B2319221F99ECE2008883E4 /* 0008_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319231F99ECE2008883E4 /* 0009_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319241F99ECE2008883E4 /* 0010_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319251F99ECE2008883E4 /* 0011_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319261F99ECE2008883E4 /* 0012_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319271F99ECE2008883E4 /* 0013_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319281F99ECE2008883E4 /* 0014_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319291F99ECE2008883E4 /* 0015_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B23192A1F99ECE2008883E4 /* 0016_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B23192B1F99ECE2008883E4 /* 0017_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B23192C1F99ECE2008883E4 /* 0018_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.png.tmp */,
-				7B23192D1F99ECE2008883E4 /* 0019_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.tmp */,
-				7B23192E1F99ECE2008883E4 /* 0020_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.png.tmp */,
-				7B23192F1F99ECE2008883E4 /* 0021_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.tmp */,
-				7B2319301F99ECE2008883E4 /* 0022_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.png.tmp */,
-				7B2319311F99ECE2008883E4 /* 0023_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.tmp */,
-				7B2319321F99ECE2008883E4 /* 0024_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.png.tmp */,
-				7B2319331F99ECE2008883E4 /* 0025_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.tmp */,
-				7B2319341F99ECE2008883E4 /* 0026_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.png.tmp */,
-				7B2319351F99ECE2008883E4 /* 0027_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.tmp */,
-				7B2319361F99ECE2008883E4 /* 0028_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.png.tmp */,
-				7B2319371F99ECE2008883E4 /* 0029_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.tmp */,
-				7B2319381F99ECE2008883E4 /* 0030_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.png.tmp */,
-				7B2319391F99ECE2008883E4 /* 0031_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.tmp */,
-				7B23193A1F99ECE2008883E4 /* 0032_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv0.png.tmp */,
-				7B23193B1F99ECE2008883E4 /* 0033_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv1.png.tmp */,
-				7B23193C1F99ECE2008883E4 /* 0034_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv.tmp */,
-				7B23193D1F99ECE2008883E4 /* 0035_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.png.tmp */,
-				7B23193E1F99ECE2008883E4 /* 0036_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */,
-				7B23193F1F99ECE2008883E4 /* 0037_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */,
-				7B2319401F99ECE2008883E4 /* 0038_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */,
-				7B2319411F99ECE2008883E4 /* 0039_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */,
-				7B2319421F99ECE2008883E4 /* 0040_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */,
-				7B2319431F99ECE2008883E4 /* 0041_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.dae.tmp */,
-				7B2319441F99ECE2008883E4 /* 0042_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */,
-				7B2319451F99ECE2008883E4 /* 0043_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_Fish_texture01.png.tmp */,
-				7B2319461F99ECE2008883E4 /* 0044_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319471F99ECE2008883E4 /* 0045_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319481F99ECE2008883E4 /* 0046_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319491F99ECE2008883E4 /* 0047_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B23194A1F99ECE2008883E4 /* 0048_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B23194B1F99ECE2008883E4 /* 0049_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.dae.tmp */,
-				7B23194C1F99ECE2008883E4 /* 0050_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B23194D1F99ECE2008883E4 /* 0051_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B23194E1F99ECE2008883E4 /* 0052_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B23194F1F99ECE2008883E4 /* 0053_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319501F99ECE2008883E4 /* 0054_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319511F99ECE2008883E4 /* 0055_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319521F99ECE2008883E4 /* 0056_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319531F99ECE2008883E4 /* 0057_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319541F99ECE2008883E4 /* 0058_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319551F99ECE2008883E4 /* 0059_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_shaders_shader.gles.tmp */,
-				7B2319561F99ECE2008883E4 /* 0060_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera_0.png.tmp */,
-				7B2319571F99ECE2008883E4 /* 0061_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera.fnt.tmp */,
-				7B2319581F99ECE2008883E4 /* 0062_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.png.tmp */,
-				7B2319591F99ECE2008883E4 /* 0063_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.tmp */,
-				7B23195A1F99ECE2008883E4 /* 0064_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.png.tmp */,
-				7B23195B1F99ECE2008883E4 /* 0065_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.tmp */,
-				7B23195C1F99ECE2008883E4 /* 0066_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp */,
-				7B23195D1F99ECE2008883E4 /* 0067_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.tmp */,
-				7B23195E1F99ECE2008883E4 /* 0068_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp */,
-				7B23195F1F99ECE2008883E4 /* 0069_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3noztest.tmp */,
-				7B2319601F99ECE2008883E4 /* 0070_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp */,
-				7B2319611F99ECE2008883E4 /* 0071_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp */,
-				7B2319621F99ECE2008883E4 /* 0072_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_userdata_vera.dat.tmp */,
-			);
-			path = iPhone;
-			sourceTree = "<group>";
-		};
-		7B2319631F99ECE2008883E4 /* OSX */ = {
-			isa = PBXGroup;
-			children = (
-				7B2319641F99ECE3008883E4 /* 0073_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_Fish_texture01.png.tmp */,
-				7B2319651F99ECE3008883E4 /* 0074_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319661F99ECE3008883E4 /* 0075_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319671F99ECE3008883E4 /* 0076_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319681F99ECE3008883E4 /* 0077_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319691F99ECE3008883E4 /* 0078_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B23196A1F99ECE3008883E4 /* 0079_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.dae.tmp */,
-				7B23196B1F99ECE3008883E4 /* 0080_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B23196C1F99ECE3008883E4 /* 0081_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B23196D1F99ECE3008883E4 /* 0082_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B23196E1F99ECE3008883E4 /* 0083_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B23196F1F99ECE3008883E4 /* 0084_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319701F99ECE3008883E4 /* 0085_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319711F99ECE3008883E4 /* 0086_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319721F99ECE3008883E4 /* 0087_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319731F99ECE3008883E4 /* 0088_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319741F99ECE3008883E4 /* 0089_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp */,
-				7B2319751F99ECE3008883E4 /* 0090_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.png.tmp */,
-				7B2319761F99ECE3008883E4 /* 0091_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.tmp */,
-				7B2319771F99ECE3008883E4 /* 0092_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.png.tmp */,
-				7B2319781F99ECE3008883E4 /* 0093_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.tmp */,
-				7B2319791F99ECE3008883E4 /* 0094_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.png.tmp */,
-				7B23197A1F99ECE3008883E4 /* 0095_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.tmp */,
-				7B23197B1F99ECE3008883E4 /* 0096_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.png.tmp */,
-				7B23197C1F99ECE3008883E4 /* 0097_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.tmp */,
-				7B23197D1F99ECE3008883E4 /* 0098_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.png.tmp */,
-				7B23197E1F99ECE3008883E4 /* 0099_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.tmp */,
-				7B23197F1F99ECE3008883E4 /* 0100_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.png.tmp */,
-				7B2319801F99ECE3008883E4 /* 0101_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.tmp */,
-				7B2319811F99ECE3008883E4 /* 0102_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.png.tmp */,
-				7B2319821F99ECE3008883E4 /* 0103_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.tmp */,
-				7B2319831F99ECE3008883E4 /* 0104_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv0.png.tmp */,
-				7B2319841F99ECE3008883E4 /* 0105_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv1.png.tmp */,
-				7B2319851F99ECE3008883E4 /* 0106_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv.tmp */,
-				7B2319861F99ECE3008883E4 /* 0107_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.png.tmp */,
-				7B2319871F99ECE3008883E4 /* 0108_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */,
-				7B2319881F99ECE3008883E4 /* 0109_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */,
-				7B2319891F99ECE3008883E4 /* 0110_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */,
-				7B23198A1F99ECE3008883E4 /* 0111_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */,
-				7B23198B1F99ECE3008883E4 /* 0112_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */,
-				7B23198C1F99ECE3008883E4 /* 0113_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.dae.tmp */,
-				7B23198D1F99ECE3008883E4 /* 0114_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp */,
-				7B23198E1F99ECE3008883E4 /* 0115_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_Fish_texture01.png.tmp */,
-				7B23198F1F99ECE3008883E4 /* 0116_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319901F99ECE3008883E4 /* 0117_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319911F99ECE3008883E4 /* 0118_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319921F99ECE3008883E4 /* 0119_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319931F99ECE3008883E4 /* 0120_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319941F99ECE3008883E4 /* 0121_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.dae.tmp */,
-				7B2319951F99ECE3008883E4 /* 0122_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319961F99ECE3008883E4 /* 0123_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319971F99ECE3008883E4 /* 0124_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319981F99ECE3008883E4 /* 0125_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B2319991F99ECE3008883E4 /* 0126_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B23199A1F99ECE3008883E4 /* 0127_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B23199B1F99ECE3008883E4 /* 0128_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B23199C1F99ECE3008883E4 /* 0129_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B23199D1F99ECE3008883E4 /* 0130_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp */,
-				7B23199E1F99ECE3008883E4 /* 0131_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_shaders_shader.osx.tmp */,
-				7B23199F1F99ECE3008883E4 /* 0132_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera_0.png.tmp */,
-				7B2319A01F99ECE3008883E4 /* 0133_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera.fnt.tmp */,
-				7B2319A11F99ECE3008883E4 /* 0134_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.png.tmp */,
-				7B2319A21F99ECE3008883E4 /* 0135_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.tmp */,
-				7B2319A31F99ECE3008883E4 /* 0136_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.png.tmp */,
-				7B2319A41F99ECE3008883E4 /* 0137_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.tmp */,
-				7B2319A51F99ECE3008883E4 /* 0138_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp */,
-				7B2319A61F99ECE3008883E4 /* 0139_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.tmp */,
-				7B2319A71F99ECE3008883E4 /* 0140_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp */,
-				7B2319A81F99ECE3008883E4 /* 0141_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3noztest.tmp */,
-				7B2319A91F99ECE3008883E4 /* 0142_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp */,
-				7B2319AA1F99ECE3008883E4 /* 0143_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp */,
-				7B2319AB1F99ECE3008883E4 /* 0144_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_userdata_vera.dat.tmp */,
-				7B2319AC1F99ECE3008883E4 /* 0145_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_fonts_vera_0.png.tmp */,
-				7B2319AD1F99ECE3008883E4 /* 0146_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_fonts_vera.fnt.tmp */,
-				7B2319AE1F99ECE3008883E4 /* 0147_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_back.png.tmp */,
-				7B2319AF1F99ECE3008883E4 /* 0148_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_back.tmp */,
-				7B2319B01F99ECE3008883E4 /* 0149_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_front.png.tmp */,
-				7B2319B11F99ECE3008883E4 /* 0150_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_front.tmp */,
-				7B2319B21F99ECE3008883E4 /* 0151_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_left.png.tmp */,
-				7B2319B31F99ECE3008883E4 /* 0152_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_left.tmp */,
-				7B2319B41F99ECE3008883E4 /* 0153_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_right.png.tmp */,
-				7B2319B51F99ECE3008883E4 /* 0154_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_right.tmp */,
-				7B2319B61F99ECE3008883E4 /* 0155_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_up.png.tmp */,
-				7B2319B71F99ECE3008883E4 /* 0156_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_up.tmp */,
-				7B2319B81F99ECE3008883E4 /* 0157_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white2.png.tmp */,
-				7B2319B91F99ECE3008883E4 /* 0158_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white2.tmp */,
-				7B2319BA1F99ECE3008883E4 /* 0159_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.png.tmp */,
-				7B2319BB1F99ECE3008883E4 /* 0160_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.tmp */,
-				7B2319BC1F99ECE3008883E4 /* 0161_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.png.tmp */,
-				7B2319BD1F99ECE3008883E4 /* 0162_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3noztest.tmp */,
-				7B2319BE1F99ECE3008883E4 /* 0163_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.png.tmp */,
-				7B2319BF1F99ECE3008883E4 /* 0164_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */,
-				7B2319C01F99ECE3008883E4 /* 0165_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */,
-				7B2319C11F99ECE3008883E4 /* 0166_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */,
-				7B2319C21F99ECE3008883E4 /* 0167_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */,
-				7B2319C31F99ECE3008883E4 /* 0168_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */,
-				7B2319C41F99ECE3008883E4 /* 0169_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.dae.tmp */,
-				7B2319C51F99ECE3008883E4 /* 0170_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp */,
-				7B2319C61F99ECE3008883E4 /* 0171_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_shaders_shader.osx.tmp */,
-			);
-			path = OSX;
-			sourceTree = "<group>";
-		};
-		7B2319CB1F99ECE3008883E4 /* Win32 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Win32;
-			sourceTree = "<group>";
-		};
-		7B2319CC1F99ECE3008883E4 /* Win32GL */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Win32GL;
-			sourceTree = "<group>";
-		};
-		7B2319CD1F99ECE3008883E4 /* BuildNotes */ = {
-			isa = PBXGroup;
-			children = (
-				7B2319CE1F99ECE3008883E4 /* iPhone */,
-				7B2319D21F99ECE3008883E4 /* OSX */,
-				7B2319D61F99ECE3008883E4 /* Win32 */,
-				7B2319D71F99ECE3008883E4 /* Win32GL */,
-			);
-			path = BuildNotes;
-			sourceTree = "<group>";
-		};
-		7B2319CE1F99ECE3008883E4 /* iPhone */ = {
-			isa = PBXGroup;
-			children = (
-				7B2319CF1F99ECE3008883E4 /* anim.txt */,
-				7B2319D01F99ECE3008883E4 /* game.txt */,
-				7B2319D11F99ECE3008883E4 /* utility.txt */,
-			);
-			path = iPhone;
-			sourceTree = "<group>";
-		};
-		7B2319D21F99ECE3008883E4 /* OSX */ = {
-			isa = PBXGroup;
-			children = (
-				7B2319D31F99ECE3008883E4 /* anim.txt */,
-				7B2319D41F99ECE3008883E4 /* game.txt */,
-				7B2319D51F99ECE3008883E4 /* utility.txt */,
-			);
-			path = OSX;
-			sourceTree = "<group>";
-		};
-		7B2319D61F99ECE3008883E4 /* Win32 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Win32;
-			sourceTree = "<group>";
-		};
-		7B2319D71F99ECE3008883E4 /* Win32GL */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Win32GL;
 			sourceTree = "<group>";
 		};
 		7B2319D81F99ECE3008883E4 /* GameData */ = {
@@ -1654,14 +1008,6 @@
 			path = userdata;
 			sourceTree = "<group>";
 		};
-		7B231A011F99ECE3008883E4 /* Release */ = {
-			isa = PBXGroup;
-			children = (
-				7B231A021F99ECE3008883E4 /* game.OSXz */,
-			);
-			path = Release;
-			sourceTree = "<group>";
-		};
 		7B231A031F99ECE3008883E4 /* SourceCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -1678,6 +1024,32 @@
 				7B231A0E1F99ECE3008883E4 /* ScWorld.h */,
 			);
 			path = SourceCode;
+			sourceTree = "<group>";
+		};
+		7B31248C1F9BB43400BD468D /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				7B31248D1F9BB46400BD468D /* Madgwick */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		7B31248D1F9BB46400BD468D /* Madgwick */ = {
+			isa = PBXGroup;
+			children = (
+				7B31248E1F9BB46400BD468D /* MadgwickAHRS.cpp */,
+				7B31248F1F9BB46400BD468D /* MadgwickAHRS.h */,
+			);
+			name = Madgwick;
+			path = ../../ThirdParty/Madgwick;
+			sourceTree = "<group>";
+		};
+		7B3124911F9BB4E400BD468D /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				7B3124921F9BB4E400BD468D /* game.OSXz */,
+			);
+			path = Release;
 			sourceTree = "<group>";
 		};
 		7BAF255C1F5EC4C100C59E53 /* GitHub-Private */ = {
@@ -2333,264 +1705,74 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B231A6F1F99ECE3008883E4 /* 0085_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A3E1F99ECE3008883E4 /* 0036_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */,
 				7B231AD41F99ECE3008883E4 /* back.png in Resources */,
 				7B231AE21F99ECE3008883E4 /* cube.dae in Resources */,
-				7B231A411F99ECE3008883E4 /* 0039_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */,
-				7B231AC11F99ECE3008883E4 /* 0167_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp in Resources */,
-				7B231A441F99ECE3008883E4 /* 0042_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */,
-				7B231A231F99ECE3008883E4 /* 0009_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A8E1F99ECE3008883E4 /* 0116_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
 				7BE8B3C21F6285F500ABFF3C /* glew.png in Resources */,
-				7B231A501F99ECE3008883E4 /* 0054_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A6E1F99ECE3008883E4 /* 0084_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A431F99ECE3008883E4 /* 0041_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.dae.tmp in Resources */,
-				7B231A481F99ECE3008883E4 /* 0046_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
 				7B231AED1F99ECE3008883E4 /* shaderSkinOSX.frag in Resources */,
-				7B231AB11F99ECE3008883E4 /* 0151_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_left.png.tmp in Resources */,
-				7B231A661F99ECE3008883E4 /* 0076_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231AC01F99ECE3008883E4 /* 0166_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp in Resources */,
 				7B231AE61F99ECE3008883E4 /* shader.osx in Resources */,
-				7B231A761F99ECE3008883E4 /* 0092_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.png.tmp in Resources */,
-				7B231A2E1F99ECE3008883E4 /* 0020_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.png.tmp in Resources */,
-				7B231ACC1F99ECE3008883E4 /* utility.txt in Resources */,
-				7B231A771F99ECE3008883E4 /* 0093_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.tmp in Resources */,
-				7B231ABA1F99ECE3008883E4 /* 0160_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.tmp in Resources */,
-				7B231A181F99ECE3008883E4 /* game.iPhone in Resources */,
-				7B231AC71F99ECE3008883E4 /* ResourceList.OSX in Resources */,
 				7BE8B3C81F6285F500ABFF3C /* khronos.txt in Resources */,
 				7BE8B3D71F6285F500ABFF3C /* README.txt in Resources */,
-				7B231A621F99ECE3008883E4 /* 0072_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_userdata_vera.dat.tmp in Resources */,
-				7B231A5F1F99ECE3008883E4 /* 0069_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3noztest.tmp in Resources */,
-				7B231A351F99ECE3008883E4 /* 0027_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.tmp in Resources */,
-				7B231A471F99ECE3008883E4 /* 0045_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A991F99ECE3008883E4 /* 0127_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
 				7B231AD91F99ECE3008883E4 /* right.material in Resources */,
-				7B231A831F99ECE3008883E4 /* 0105_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv1.png.tmp in Resources */,
 				7B231AD31F99ECE3008883E4 /* back.material in Resources */,
-				7B231A801F99ECE3008883E4 /* 0102_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.png.tmp in Resources */,
-				7B231A281F99ECE3008883E4 /* 0014_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A741F99ECE3008883E4 /* 0090_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.png.tmp in Resources */,
-				7B231A451F99ECE3008883E4 /* 0043_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_Fish_texture01.png.tmp in Resources */,
 				7BE8B3C91F6285F500ABFF3C /* log.html in Resources */,
-				7B231A691F99ECE3008883E4 /* 0079_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.dae.tmp in Resources */,
-				7B231A7E1F99ECE3008883E4 /* 0100_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.png.tmp in Resources */,
-				7B231A901F99ECE3008883E4 /* 0118_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A941F99ECE3008883E4 /* 0122_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
 				7B231ADD1F99ECE3008883E4 /* white2.material in Resources */,
-				7B231A131F99ECE3008883E4 /* anim.OSX in Resources */,
-				7B231AA71F99ECE3008883E4 /* 0141_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3noztest.tmp in Resources */,
-				7B231ABE1F99ECE3008883E4 /* 0164_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp in Resources */,
-				7B231A341F99ECE3008883E4 /* 0026_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.png.tmp in Resources */,
-				7B231A931F99ECE3008883E4 /* 0121_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.dae.tmp in Resources */,
-				7B231ACF1F99ECE3008883E4 /* utility.txt in Resources */,
-				7B231A6D1F99ECE3008883E4 /* 0083_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A161F99ECE3008883E4 /* AssetBuildList.iOS in Resources */,
 				7BE8B3C61F6285F500ABFF3C /* index.html in Resources */,
-				7B231A531F99ECE3008883E4 /* 0057_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
 				7BE8B3C11F6285F500ABFF3C /* glew.html in Resources */,
-				7B231ABC1F99ECE3008883E4 /* 0162_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3noztest.tmp in Resources */,
-				7B231A821F99ECE3008883E4 /* 0104_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv0.png.tmp in Resources */,
-				7B231A211F99ECE3008883E4 /* 0007_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.dae.tmp in Resources */,
-				7B231A8D1F99ECE3008883E4 /* 0115_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_Fish_texture01.png.tmp in Resources */,
-				7B231A4B1F99ECE3008883E4 /* 0049_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.dae.tmp in Resources */,
-				7B231A601F99ECE3008883E4 /* 0070_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp in Resources */,
-				7B231A651F99ECE3008883E4 /* 0075_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A541F99ECE3008883E4 /* 0058_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A291F99ECE3008883E4 /* 0015_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
 				7B231AEE1F99ECE3008883E4 /* shaderSkinOSX.vert in Resources */,
-				7B231A241F99ECE3008883E4 /* 0010_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
 				7BE8B3C51F6285F500ABFF3C /* gpl.txt in Resources */,
-				7B231ACE1F99ECE3008883E4 /* game.txt in Resources */,
-				7B231A9E1F99ECE3008883E4 /* 0132_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera_0.png.tmp in Resources */,
-				7B231A701F99ECE3008883E4 /* 0086_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A781F99ECE3008883E4 /* 0094_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.png.tmp in Resources */,
 				7BE8B3BF1F6285F500ABFF3C /* credits.html in Resources */,
-				7B231A581F99ECE3008883E4 /* 0062_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.png.tmp in Resources */,
-				7B231AA81F99ECE3008883E4 /* 0142_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp in Resources */,
-				7B231A851F99ECE3008883E4 /* 0107_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.png.tmp in Resources */,
-				7B231A121F99ECE3008883E4 /* anim.iPhone in Resources */,
-				7B231A5D1F99ECE3008883E4 /* 0067_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.tmp in Resources */,
-				7B231A951F99ECE3008883E4 /* 0123_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
 				7BE8B3D61F6285F500ABFF3C /* LICENSE.txt in Resources */,
 				7BE8B3C41F6285F500ABFF3C /* glxew.html in Resources */,
-				7B231A461F99ECE3008883E4 /* 0044_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A371F99ECE3008883E4 /* 0029_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.tmp in Resources */,
-				7B231AB01F99ECE3008883E4 /* 0150_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_front.tmp in Resources */,
-				7B231A871F99ECE3008883E4 /* 0109_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */,
 				7BE8B3B81F6285F500ABFF3C /* glewinfo.exe in Resources */,
-				7B231A1D1F99ECE3008883E4 /* 0003_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
 				7B231ADC1F99ECE3008883E4 /* up.png in Resources */,
-				7B231A591F99ECE3008883E4 /* 0063_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.tmp in Resources */,
-				7B231A1A1F99ECE3008883E4 /* globalID.dat in Resources */,
-				7B231A731F99ECE3008883E4 /* 0089_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
 				7BE8B3BD1F6285F500ABFF3C /* basic.html in Resources */,
-				7B231AA31F99ECE3008883E4 /* 0137_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.tmp in Resources */,
 				7BE8B3BA1F6285F500ABFF3C /* glew32mx.dll in Resources */,
-				7B231A881F99ECE3008883E4 /* 0110_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */,
 				7B231AF01F99ECE3008883E4 /* shaderTexturedOSX.vert in Resources */,
-				7B231A491F99ECE3008883E4 /* 0047_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231ABB1F99ECE3008883E4 /* 0161_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.png.tmp in Resources */,
-				7B231AB21F99ECE3008883E4 /* 0152_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_left.tmp in Resources */,
-				7B231AC61F99ECE3008883E4 /* ResourceList.iOS in Resources */,
-				7B231AA01F99ECE3008883E4 /* 0134_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.png.tmp in Resources */,
-				7B231AA61F99ECE3008883E4 /* 0140_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp in Resources */,
-				7B231AB41F99ECE3008883E4 /* 0154_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_right.tmp in Resources */,
-				7B231A1B1F99ECE3008883E4 /* 0001_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_Fish_texture01.png.tmp in Resources */,
-				7B231AF21F99ECE3008883E4 /* game.OSXz in Resources */,
 				7BE8B3B91F6285F500ABFF3C /* visualinfo.exe in Resources */,
-				7B231A2D1F99ECE3008883E4 /* 0019_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.tmp in Resources */,
-				7B231AB31F99ECE3008883E4 /* 0153_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_right.png.tmp in Resources */,
-				7B231A891F99ECE3008883E4 /* 0111_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */,
-				7B231A3F1F99ECE3008883E4 /* 0037_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */,
-				7B231A911F99ECE3008883E4 /* 0119_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A361F99ECE3008883E4 /* 0028_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.png.tmp in Resources */,
-				7B231A331F99ECE3008883E4 /* 0025_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.tmp in Resources */,
 				7B231A101F99ECE3008883E4 /* Pack.bat in Resources */,
-				7B231A261F99ECE3008883E4 /* 0012_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
 				7BE8B3B41F6285F500ABFF3C /* glew32.dll in Resources */,
-				7B231ACB1F99ECE3008883E4 /* game.txt in Resources */,
-				7B231A1F1F99ECE3008883E4 /* 0005_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A141F99ECE3008883E4 /* ArchiveTimes.iOS in Resources */,
-				7B231AC41F99ECE3008883E4 /* 0170_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp in Resources */,
 				7B231AEA1F99ECE3008883E4 /* shaderLitTexturedOSX.vert in Resources */,
-				7B231A9A1F99ECE3008883E4 /* 0128_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A711F99ECE3008883E4 /* 0087_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A381F99ECE3008883E4 /* 0030_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.png.tmp in Resources */,
 				7B231AE71F99ECE3008883E4 /* shaderLitOSX.frag in Resources */,
-				7B231A151F99ECE3008883E4 /* ArchiveTimes.OSX in Resources */,
-				7B231A3A1F99ECE3008883E4 /* 0032_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv0.png.tmp in Resources */,
 				7B231AE51F99ECE3008883E4 /* projectedTextureOSX.vert in Resources */,
-				7B231AAF1F99ECE3008883E4 /* 0149_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_front.png.tmp in Resources */,
-				7B231AA41F99ECE3008883E4 /* 0138_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp in Resources */,
-				7B231A271F99ECE3008883E4 /* 0013_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A2F1F99ECE3008883E4 /* 0021_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_bubbles.tmp in Resources */,
-				7B231A681F99ECE3008883E4 /* 0078_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A171F99ECE3008883E4 /* AssetBuildList.OSX in Resources */,
-				7B231A7C1F99ECE3008883E4 /* 0098_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.png.tmp in Resources */,
 				7B231AD21F99ECE3008883E4 /* vera_0.png in Resources */,
-				7B231AB91F99ECE3008883E4 /* 0159_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white3.png.tmp in Resources */,
 				7B231AE41F99ECE3008883E4 /* projectedTextureOSX.frag in Resources */,
-				7B231A611F99ECE3008883E4 /* 0071_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp in Resources */,
-				7B231A4E1F99ECE3008883E4 /* 0052_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A521F99ECE3008883E4 /* 0056_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A311F99ECE3008883E4 /* 0023_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.tmp in Resources */,
 				7B231AE11F99ECE3008883E4 /* white3noztest.material in Resources */,
 				7BE8B3C01F6285F500ABFF3C /* glew.css in Resources */,
-				7B231ACD1F99ECE3008883E4 /* anim.txt in Resources */,
 				7B231AD01F99ECE3008883E4 /* vera.bmfc in Resources */,
 				7BE8B3B61F6285F500ABFF3C /* visualinfo.exe in Resources */,
 				7B231AD11F99ECE3008883E4 /* vera.fnt in Resources */,
-				7B231A2C1F99ECE3008883E4 /* 0018_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.png.tmp in Resources */,
-				7B231AB51F99ECE3008883E4 /* 0155_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_up.png.tmp in Resources */,
-				7B231A7D1F99ECE3008883E4 /* 0099_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_left.tmp in Resources */,
-				7B231AC91F99ECE3008883E4 /* utility.OSX in Resources */,
-				7B231A9C1F99ECE3008883E4 /* 0130_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A811F99ECE3008883E4 /* 0103_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.tmp in Resources */,
-				7B231A6B1F99ECE3008883E4 /* 0081_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231ABF1F99ECE3008883E4 /* 0165_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp in Resources */,
-				7B231A7A1F99ECE3008883E4 /* 0096_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.png.tmp in Resources */,
 				7BE8B3CC1F6285F500ABFF3C /* ogl_sm.jpg in Resources */,
 				7B231AEC1F99ECE3008883E4 /* shaderPassThroughOSX.vert in Resources */,
-				7B231A751F99ECE3008883E4 /* 0091_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_back.tmp in Resources */,
 				7B2278D61F9A1BC600CC4DCA /* PSMoveOSX-Info.plist in Resources */,
-				7B231A3B1F99ECE3008883E4 /* 0033_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv1.png.tmp in Resources */,
-				7B231ABD1F99ECE3008883E4 /* 0163_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.png.tmp in Resources */,
-				7B231A981F99ECE3008883E4 /* 0126_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
 				7BE8B3CB1F6285F500ABFF3C /* new.png in Resources */,
-				7B231A551F99ECE3008883E4 /* 0059_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_shaders_shader.gles.tmp in Resources */,
-				7B231ACA1F99ECE3008883E4 /* anim.txt in Resources */,
-				7B231AA11F99ECE3008883E4 /* 0135_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_font.tmp in Resources */,
-				7B231AC81F99ECE3008883E4 /* utility.iPhone in Resources */,
-				7B231A631F99ECE3008883E4 /* 0073_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_Fish_texture01.png.tmp in Resources */,
 				7B231ADB1F99ECE3008883E4 /* up.material in Resources */,
 				7B231AEF1F99ECE3008883E4 /* shaderTexturedOSX.frag in Resources */,
 				7BE8B3BC1F6285F500ABFF3C /* advanced.html in Resources */,
 				7BE8B3B51F6285F500ABFF3C /* glewinfo.exe in Resources */,
-				7B231A671F99ECE3008883E4 /* 0077_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A8A1F99ECE3008883E4 /* 0112_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */,
-				7B231A391F99ECE3008883E4 /* 0031_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_up.tmp in Resources */,
-				7B231A4C1F99ECE3008883E4 /* 0050_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
 				7B231AD51F99ECE3008883E4 /* front.material in Resources */,
 				7BE8B3D81F6285F500ABFF3C /* TODO.txt in Resources */,
-				7B231A5B1F99ECE3008883E4 /* 0065_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.tmp in Resources */,
-				7B231A5A1F99ECE3008883E4 /* 0064_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.png.tmp in Resources */,
-				7B231A511F99ECE3008883E4 /* 0055_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A971F99ECE3008883E4 /* 0125_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A561F99ECE3008883E4 /* 0060_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera_0.png.tmp in Resources */,
+				7B3124931F9BB4E400BD468D /* game.OSXz in Resources */,
 				7BE8B3CA1F6285F500ABFF3C /* mesa.txt in Resources */,
-				7B231A251F99ECE3008883E4 /* 0011_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231AB71F99ECE3008883E4 /* 0157_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white2.png.tmp in Resources */,
-				7B231A9D1F99ECE3008883E4 /* 0131_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_shaders_shader.osx.tmp in Resources */,
-				7B231A571F99ECE3008883E4 /* 0061_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera.fnt.tmp in Resources */,
 				7B231ADA1F99ECE3008883E4 /* right.png in Resources */,
-				7B231A841F99ECE3008883E4 /* 0106_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv.tmp in Resources */,
-				7B231A4A1F99ECE3008883E4 /* 0048_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A8F1F99ECE3008883E4 /* 0117_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A201F99ECE3008883E4 /* 0006_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231AC51F99ECE3008883E4 /* 0171_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_shaders_shader.osx.tmp in Resources */,
 				7B231AE91F99ECE3008883E4 /* shaderLitTexturedOSX.frag in Resources */,
-				7B231AAA1F99ECE3008883E4 /* 0144_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_userdata_vera.dat.tmp in Resources */,
-				7B231AB61F99ECE3008883E4 /* 0156_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_up.tmp in Resources */,
 				7B231AD71F99ECE3008883E4 /* left.material in Resources */,
 				7BE8B3BB1F6285F500ABFF3C /* glew32mx.dll in Resources */,
 				7B231AF11F99ECE3008883E4 /* vera.dat in Resources */,
 				7B231ADE1F99ECE3008883E4 /* white2.png in Resources */,
 				7BE8B3BE1F6285F500ABFF3C /* build.html in Resources */,
-				7B231A721F99ECE3008883E4 /* 0088_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A1C1F99ECE3008883E4 /* 0002_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
 				7B231ADF1F99ECE3008883E4 /* white3.material in Resources */,
-				7B231AA51F99ECE3008883E4 /* 0139_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.tmp in Resources */,
-				7B231A9B1F99ECE3008883E4 /* 0129_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A9F1F99ECE3008883E4 /* 0133_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_fonts_vera.fnt.tmp in Resources */,
-				7B231A2A1F99ECE3008883E4 /* 0016_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
 				7B231AE81F99ECE3008883E4 /* shaderLitOSX.vert in Resources */,
 				7BE8B3C31F6285F500ABFF3C /* glew.txt in Resources */,
-				7B231A8B1F99ECE3008883E4 /* 0113_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.dae.tmp in Resources */,
 				7B231AD61F99ECE3008883E4 /* front.png in Resources */,
-				7B231A7F1F99ECE3008883E4 /* 0101_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_right.tmp in Resources */,
-				7B231A921F99ECE3008883E4 /* 0120_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
-				7B231A5C1F99ECE3008883E4 /* 0066_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp in Resources */,
-				7B231A961F99ECE3008883E4 /* 0124_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
 				7B231AE31F99ECE3008883E4 /* cube.png in Resources */,
-				7B231A5E1F99ECE3008883E4 /* 0068_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white3.png.tmp in Resources */,
-				7B231A3D1F99ECE3008883E4 /* 0035_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.png.tmp in Resources */,
-				7B231AA21F99ECE3008883E4 /* 0136_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_materials_white2.png.tmp in Resources */,
 				7B231A0F1F99ECE3008883E4 /* OpenGameData.bat in Resources */,
-				7B231A8C1F99ECE3008883E4 /* 0114_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */,
-				7B231AC21F99ECE3008883E4 /* 0168_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.tmp in Resources */,
-				7B231A301F99ECE3008883E4 /* 0022_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.png.tmp in Resources */,
-				7B231A421F99ECE3008883E4 /* 0040_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */,
-				7B231AAD1F99ECE3008883E4 /* 0147_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_back.png.tmp in Resources */,
-				7B231AAE1F99ECE3008883E4 /* 0148_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_back.tmp in Resources */,
-				7B231AC31F99ECE3008883E4 /* 0169_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_models_cube.dae.tmp in Resources */,
-				7B231A2B1F99ECE3008883E4 /* 0017_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
 				7BE8B3C71F6285F500ABFF3C /* install.html in Resources */,
-				7B231AB81F99ECE3008883E4 /* 0158_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_materials_white2.tmp in Resources */,
-				7B231AAB1F99ECE3008883E4 /* 0145_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_fonts_vera_0.png.tmp in Resources */,
 				7BE8B3B71F6285F500ABFF3C /* glew32.dll in Resources */,
-				7B231A191F99ECE3008883E4 /* game.OSX in Resources */,
-				7B231A3C1F99ECE3008883E4 /* 0034_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_yuv.tmp in Resources */,
-				7B231AA91F99ECE3008883E4 /* 0143_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_utility.archive_sprites_mousepointers.png.tmp in Resources */,
-				7B231A7B1F99ECE3008883E4 /* 0097_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.tmp in Resources */,
-				7B231A861F99ECE3008883E4 /* 0108_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */,
-				7B231A221F99ECE3008883E4 /* 0008_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
 				7B231AEB1F99ECE3008883E4 /* shaderPassThroughOSX.frag in Resources */,
 				7BE8B3CD1F6285F500ABFF3C /* wglew.html in Resources */,
 				7B231AD81F99ECE3008883E4 /* left.png in Resources */,
-				7B231A6A1F99ECE3008883E4 /* 0080_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A6C1F99ECE3008883E4 /* 0082_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A791F99ECE3008883E4 /* 0095_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_front.tmp in Resources */,
-				7B231A401F99ECE3008883E4 /* 0038_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_cube.tmp in Resources */,
-				7B231A4F1F99ECE3008883E4 /* 0053_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
 				7B231AE01F99ECE3008883E4 /* white3.png in Resources */,
-				7B231A641F99ECE3008883E4 /* 0074_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
-				7B231A1E1F99ECE3008883E4 /* 0004_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_anim.archive_models_swim.tmp in Resources */,
 				7B1BDB0C1F5F4F370030E0D2 /* MainMenu.xib in Resources */,
-				7B231A321F99ECE3008883E4 /* 0024_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_materials_guirendertarget.png.tmp in Resources */,
-				7B231AAC1F99ECE3008883E4 /* 0146_users_localadmin_documents_doge-game-engine_3d-demos_ps-move_ps-move_gamedata_game.archive_fonts_vera.fnt.tmp in Resources */,
-				7B231A4D1F99ECE3008883E4 /* 0051_users_localadmin_documents_doge-game-engine_3d-demos_3dscene_3dscene_gamedata_game.archive_models_fish.tmp in Resources */,
 				7B231A111F99ECE3008883E4 /* Publish.bat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2648,6 +1830,7 @@
 				7BCB9B151F8771F1008EAFFF /* UiKeyboard.cpp in Sources */,
 				7BAF26BF1F5EC74F00C59E53 /* ShVibration.cpp in Sources */,
 				7BAF26A91F5EC74F00C59E53 /* HlJoysticks.cpp in Sources */,
+				7B3124901F9BB46400BD468D /* MadgwickAHRS.cpp in Sources */,
 				7BAF26AC1F5EC74F00C59E53 /* HlModel.cpp in Sources */,
 				7B1FBA961F86D42A004A5226 /* SgBoneImpl.cpp in Sources */,
 				7B1FBA9B1F86D42A004A5226 /* SgSkinImpl.cpp in Sources */,
