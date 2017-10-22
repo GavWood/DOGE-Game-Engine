@@ -7,6 +7,7 @@
 #include "RsCamera.h"
 #include "MtMatrix4.h"
 #include "MtSphere.h"
+#include "DyBody.h"
 
 class RsModel;
 class BaArchive;
@@ -20,6 +21,7 @@ public:
 	// Public functions
 	void							Init();
 	void							Setup( BaArchive *pArchive );
+	void							Reset();
 	void							Update( RsCamera &camera );
 	void							Render( RsCamera &camera );
 
@@ -32,7 +34,11 @@ private:
 	// Private members
 	SgNode						   *m_pLargeCube;
 	SgNode						   *m_pSmallCube;
+
+	DyBody							m_largeBody;
+	DyBody							m_smallBody;
+
 	BtFloat							m_time;
 	RsShader					   *m_pShader;
-    MtSphere                        m_sphere;
+    MtSphere                        m_sphere;	
 };

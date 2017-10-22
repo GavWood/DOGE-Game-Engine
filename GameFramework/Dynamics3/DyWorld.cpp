@@ -47,7 +47,7 @@ void DyWorld::Create()
 	m_pDynamicsWorld = new btDiscreteDynamicsWorld(dispatcher, overlappingPairCache, solver, collisionConfiguration);
 
 
-	Gravity( MtVector3( 0, 0, 0) );
+	SetGravity( MtVector3( 0, 0, 0) );
 
     if( ApConfig::GetDevice() == ApDevice_WIN )
     {
@@ -279,19 +279,19 @@ BtFloat DyWorld::MetersPerSecondToMph( BtFloat SpeedInMetersPerSecond )
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// Gravity
+// SetGravity
+
+void DyWorld::SetGravity(const MtVector3& v3Gravity)
+{
+	btVector3 gravity(v3Gravity.x, v3Gravity.y, v3Gravity.z);
+	m_pDynamicsWorld->setGravity(gravity);
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// GetGravity
 
 MtVector3 DyWorld::GetGravity() const
 {
 	btVector3 gravity = m_pDynamicsWorld->getGravity();
 	return MtVector3( gravity.getX(), gravity.getY(), gravity.getZ() );
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// Gravity
-
-void DyWorld::Gravity( const MtVector3& v3Gravity )
-{
-	btVector3 gravity( v3Gravity.x, v3Gravity.y, v3Gravity.z );
-	m_pDynamicsWorld->setGravity( gravity );
 }

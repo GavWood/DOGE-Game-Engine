@@ -94,7 +94,7 @@ public:
 	static BtFloat							MetersPerSecondToMph( BtFloat SpeedInMetersPerSecond );
 
 	MtVector3								GetGravity() const;
-	void									Gravity( const MtVector3& v3Gravity );
+	void									SetGravity( const MtVector3& v3Gravity );
 
 	BtFloat									GetSimulationSpeed() const;
 	void									SetSimulationSpeed( BtFloat speed );

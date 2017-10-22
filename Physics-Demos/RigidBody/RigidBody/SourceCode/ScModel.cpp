@@ -27,6 +27,8 @@
 #include "ScWorld.h"
 #include "HlFont.h"
 #include "HlModel.h"
+#include "DyImpl.h"
+#include "UiKeyboard.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 // Setup
@@ -35,7 +37,10 @@ void ScModel::Setup( BaArchive *pGameArchive )
 {
     m_pLargeCube = pGameArchive->GetNode("cube");
 	m_pSmallCube = pGameArchive->GetNode("cube")->GetDuplicate();
+	
 
+	m_largeBody.CreateBox(0.0f, MtVector3(1.0f, 1.0f, 1.0f));	// 1KG
+	m_smallBody.CreateBox(1.0f, MtVector3(0.5f, 0.5f, 0.5f));	// Infinite mass
 	HlModel::SetSortOrders(m_pLargeCube, ModelSortOrder);
 	HlModel::SetSortOrders(m_pSmallCube, ModelSortOrder);
 
@@ -44,27 +49,46 @@ void ScModel::Setup( BaArchive *pGameArchive )
 
 	m_time = 0;
 }
-	
+
+////////////////////////////////////////////////////////////////////////////////
+// Reset
+
+void ScModel::Reset()
+{
+	MtMatrix4 m4Transform;
+	m4Transform.SetTranslation(MtVector3(0, 0, 0));
+	m_largeBody.SetWorldTransform(m4Transform);
+
+	m4Transform.SetTranslation(MtVector3(0, 10.0f, 0));
+	m_smallBody.SetWorldTransform(m4Transform);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Update
 
 void ScModel::Update( RsCamera &camera )
 {
 	MtMatrix4 m4Transform;
-	m4Transform.SetIdentity();
 
 	if (m_pLargeCube)
 	{
-		m4Transform.SetTranslation(MtVector3(0, 0, 0));
+		m4Transform = m_largeBody.GetWorldTransform();
 		m_pLargeCube->SetLocalTransform(m4Transform);
 		m_pLargeCube->Update();
 
 		MtMatrix4 m4Scale;
 		m4Scale.SetScale(0.5f, 0.5f, 0.5f);
-		m4Transform.SetTranslation(MtVector3(0, 1, 0));
+		m4Transform = m_smallBody.GetWorldTransform();
 		m_pSmallCube->SetLocalTransform( m4Scale * m4Transform );
 		m_pSmallCube->Update();
 	}
+
+	if (UiKeyboard::pInstance()->IsPressed(UiKeyCode_R))
+	{
+		Reset();
+	}
+
+	DyImpl::Update();
 }
 
 ////////////////////////////////////////////////////////////////////////////////

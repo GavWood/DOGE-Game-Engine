@@ -19,6 +19,7 @@
 #include "HlDebug.h"
 #include "SgNode.h"
 #include "HlModel.h"
+#include "DyImpl.h"
 
 #include "ScMain.h"
 #include "ScCamera.h"
@@ -72,9 +73,12 @@ void ScMain::Create()
     
 	m_pWhite2 = m_utilityArchive.GetMaterial( "white2" );
 	m_pWhite3 = m_utilityArchive.GetMaterial( "white3" );
-	m_pShader = m_gameArchive.GetShader( "shader" );
-	 
-	m_skybox.Setup( &m_gameArchive );
+	m_pShader = m_gameArchive.GetShader( "shader" ); 
+
+	DyImpl::Create();
+	DyImpl::pWorld()->SetGravity(MtVector3(0.0f, -9.8f, 0.0f));
+
+	m_skybox.Setup(&m_gameArchive);
 	m_model.Setup( &m_gameArchive );
 	
 	RsMaterial *pMaterial2 = m_utilityArchive.GetMaterial("white2");
@@ -102,6 +106,7 @@ void ScMain::Reset()
 
 	m_camera.Init( v2Dimension );
 	m_camera.SetSpeed(10.0f);
+	m_model.Reset();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -254,4 +259,5 @@ void ScMain::PostRender()
 
 void ScMain::Destroy()
 {
+	DyImpl::Destroy();
 }
