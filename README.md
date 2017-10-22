@@ -1,4 +1,4 @@
-DOGE-Game-Engine (Digital Open/Outdoor/Other Game Engine)
+DOGE-Game-Engine
 
 Copyright (c) 2017, Gavin Wood 
 
