@@ -37,13 +37,6 @@ public:
 	void							PostRender();
 	void							Destroy();
  
-    void                            RenderIntoHMD( RsMaterial *pMaterial,
-                                                   const MtVector2 &v2Position,
-                                                   MtVector2 &v2Dimension,
-                                                   const MtVector2 &v2ScreenDimension,
-                                                   BtU32 sortOrder
-                                                 );
-    
 	// Accessors
 	void							SetClosing();
 	BtBool							IsClosed();
@@ -55,16 +48,9 @@ private:
 	void							RestoreRenderTarget();
 	void							Render2DScene();
 	void							Render3DScene();
-	void							Render2DInto3D( RsCamera &camera );
 
-	void							SetupRenderToTexture( RsTexture *pTexture, RsCamera camera );
-	void							SetupRender();
-	void							RenderFinal();
-	void							PlaySound();
 	void							UpdateTest();
 	void							RenderTests();
-	void							RenderFont();
-	void							DrawRenderTarget();
 	
 	// Private members
 	BaArchive						m_gameArchive;

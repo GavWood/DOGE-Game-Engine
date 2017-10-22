@@ -33,9 +33,12 @@
 
 void ScModel::Setup( BaArchive *pGameArchive )
 {
-    m_pCube = pGameArchive->GetNode("cube");
-	HlModel::SetSortOrders(m_pCube, ModelSortOrder);
-	
+    m_pLargeCube = pGameArchive->GetNode("cube");
+	m_pSmallCube = pGameArchive->GetNode("cube")->GetDuplicate();
+
+	HlModel::SetSortOrders(m_pLargeCube, ModelSortOrder);
+	HlModel::SetSortOrders(m_pSmallCube, ModelSortOrder);
+
 	// Cache the main shader
 	m_pShader = pGameArchive->GetShader( "shader" );
 
@@ -50,11 +53,17 @@ void ScModel::Update( RsCamera &camera )
 	MtMatrix4 m4Transform;
 	m4Transform.SetIdentity();
 
-	if (m_pCube)
+	if (m_pLargeCube)
 	{
-		m4Transform.SetTranslation(MtVector3(0, 0, 2));
-		m_pCube->SetLocalTransform(m4Transform);
-		m_pCube->Update();
+		m4Transform.SetTranslation(MtVector3(0, 0, 0));
+		m_pLargeCube->SetLocalTransform(m4Transform);
+		m_pLargeCube->Update();
+
+		MtMatrix4 m4Scale;
+		m4Scale.SetScale(0.5f, 0.5f, 0.5f);
+		m4Transform.SetTranslation(MtVector3(0, 1, 0));
+		m_pSmallCube->SetLocalTransform( m4Scale * m4Transform );
+		m_pSmallCube->Update();
 	}
 }
 
@@ -74,11 +83,15 @@ void ScModel::Render( RsCamera &camera )
 	// Apply the shader
 	m_pShader->Apply();
 
-	if (m_pCube)
+	if (m_pLargeCube)
 	{
-		m_pCube->Render();
+		m_pLargeCube->Render();
 	}
-    
+
+	if (m_pSmallCube)
+	{
+		m_pSmallCube->Render();
+	}
     //MtVector2 v2Position( 0, 0 );
     //MtVector3 v3Position = camera.GetRotation().Col2();
     //BtChar text[32];

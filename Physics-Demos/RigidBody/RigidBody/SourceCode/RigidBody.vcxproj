@@ -11,21 +11,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GaProject_3DScene.cpp" />
-    <ClCompile Include="ScBubbles.cpp" />
     <ClCompile Include="ScCamera.cpp" />
-    <ClCompile Include="ScFrustum.cpp" />
     <ClCompile Include="ScMain.cpp" />
     <ClCompile Include="ScModel.cpp" />
     <ClCompile Include="ScRenderSkybox.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ScBubbles.h" />
     <ClInclude Include="ScCamera.h" />
-    <ClInclude Include="ScFrustum.h" />
     <ClInclude Include="ScMain.h" />
     <ClInclude Include="ScModel.h" />
-    <ClInclude Include="ScParticle.h" />
     <ClInclude Include="ScRenderSkybox.h" />
     <ClInclude Include="ScWorld.h" />
   </ItemGroup>
@@ -79,7 +73,7 @@
     <ProjectGuid>{F07C200D-1AFA-42FF-9DDD-28308B3DC6F7}</ProjectGuid>
     <RootNamespace>Sandbox</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <ProjectName>3DScene</ProjectName>
+    <ProjectName>RigidBody</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">

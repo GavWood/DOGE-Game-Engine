@@ -4,15 +4,6 @@
     <ClCompile Include="ScCamera.cpp">
       <Filter>SourceCode\Camera</Filter>
     </ClCompile>
-    <ClCompile Include="ScFrustum.cpp">
-      <Filter>SourceCode\Camera</Filter>
-    </ClCompile>
-    <ClCompile Include="GaProject_3DScene.cpp">
-      <Filter>SourceCode\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="ScBubbles.cpp">
-      <Filter>SourceCode\ParticleEffects</Filter>
-    </ClCompile>
     <ClCompile Include="ScRenderSkybox.cpp">
       <Filter>SourceCode\Skybox</Filter>
     </ClCompile>
@@ -27,17 +18,8 @@
     <ClInclude Include="ScCamera.h">
       <Filter>SourceCode\Camera</Filter>
     </ClInclude>
-    <ClInclude Include="ScFrustum.h">
-      <Filter>SourceCode\Camera</Filter>
-    </ClInclude>
-    <ClInclude Include="ScBubbles.h">
-      <Filter>SourceCode\ParticleEffects</Filter>
-    </ClInclude>
     <ClInclude Include="ScRenderSkybox.h">
       <Filter>SourceCode\Skybox</Filter>
-    </ClInclude>
-    <ClInclude Include="ScParticle.h">
-      <Filter>SourceCode\ParticleEffects</Filter>
     </ClInclude>
     <ClInclude Include="ScMain.h">
       <Filter>SourceCode\Main</Filter>
@@ -70,9 +52,6 @@
     </Filter>
     <Filter Include="GameData\Shaders">
       <UniqueIdentifier>{2915798c-c4c7-4863-8cdd-fa082c7c2f71}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SourceCode\ParticleEffects">
-      <UniqueIdentifier>{c0425ed3-4c9d-41db-9e20-2d366cd0207b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -37,7 +37,7 @@ void ScMain::Init()
 	MtVector2 v2Dimension;
 
 	ApConfig::Init();
-	ApConfig::SetTitle( "3DScene" );
+	ApConfig::SetTitle( "RigidBody-Sandbox" );
 	//ApConfig::SetDebug( BtTrue );
 	ApConfig::SetDebug( BtFalse );
 	RdRandom::SetRandomSeed();
@@ -56,7 +56,7 @@ void ScMain::Init()
 
 	// Load the game archive
 #ifdef WIN32
-    ApConfig::SetResourcePath( "..\\3DScene\\release\\" );
+    ApConfig::SetResourcePath( "..\\RigidBody\\release\\" );
     ApConfig::CheckResourcePath( "game" );
     RsUtil::SetDimension(MtVector2(800.0f, 600.0f));
 #endif
@@ -154,64 +154,6 @@ void ScMain::Update()
 	}
 }
 
-//////////////////////////////////////////////////////////////////
-// SetupRender
-
-void ScMain::SetupRender()
-{
-	// Apply the shader
-	m_pShader->Apply();
-
-	// Make a new render target
-	RsRenderTarget *pRenderTarget = RsUtil::GetNewRenderTarget();
-
-	// Set the camera
-	pRenderTarget->SetCamera( m_camera.GetCamera() );
-
-	// Clear the render target
-    pRenderTarget->SetCleared( BtTrue );
-    
-	// Clear the z buffer
-	pRenderTarget->SetZCleared( BtTrue );
-
-	// Set a good clear colour
-	//pRenderTarget->SetClearColour( RsColour( 0.5f, 0.6f, 0.7f, 1.0f ) );
-	pRenderTarget->SetClearColour( RsColour::NoColour() );
-
-	// Apply this render target
-	pRenderTarget->Apply();
-}
-
-//////////////////////////////////////////////////////////////////
-// SetupRenderToTexture
-
-void ScMain::SetupRenderToTexture( RsTexture *pTexture, RsCamera camera )
-{
-	// Apply the shader
-	m_pShader->Apply();
-
-	// Make a new render target
-	RsRenderTarget *pRenderTarget = RsUtil::GetNewRenderTarget();
-
-	// Set the texture
-	pRenderTarget->SetTexture( pTexture );
-
-	// Set the camera
-	pRenderTarget->SetCamera( camera );
-
-	// Clear the render target
-	pRenderTarget->SetCleared( BtTrue );
-
-	// Clear the z buffer
-	pRenderTarget->SetZCleared( BtTrue );
-
-	// Set a good clear colour
-	pRenderTarget->SetClearColour( RsColour::NoColour() );
-
-	// Apply this render target
-	pRenderTarget->Apply();
-}
-
 ////////////////////////////////////////////////////////////////////////////////
 // RestoreRenderTarget
 
@@ -265,18 +207,7 @@ void ScMain::RenderTests()
 	// Empty the render targets at the start
 	RsUtil::EmptyRenderTargets();
 
-	// Render to the GUI
-    RsCamera camera;
-    camera.SetProjection(MtMatrix4::m_identity);
-    camera.SetDimension(MtVector2(1024.0f, 1024.0f));
-    camera.SetViewport(RsViewport(0, 0, 1024, 1024));
-    camera.SetAspect(1.0f);
-  //  camera.Update();
- //   SetupRenderToTexture( m_pGUIRenderTarget->GetTexture(0), camera );
-//    Render2DScene();
-
-	RestoreRenderTarget();
-   
+	RestoreRenderTarget();  
 	Render3DScene();
 
 	int a=0;

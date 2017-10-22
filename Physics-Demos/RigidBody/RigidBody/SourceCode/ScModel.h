@@ -30,7 +30,8 @@ private:
 	// Private functions
 	
 	// Private members
-	SgNode						   *m_pCube;
+	SgNode						   *m_pLargeCube;
+	SgNode						   *m_pSmallCube;
 	BtFloat							m_time;
 	RsShader					   *m_pShader;
     MtSphere                        m_sphere;
