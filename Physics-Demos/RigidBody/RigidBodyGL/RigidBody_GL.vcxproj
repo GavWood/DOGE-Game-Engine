@@ -48,7 +48,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\GameFrameWork\includes\;$(SolutionDir)\..\..\..\GameFrameWork\Base\Base;$(SolutionDir)\..\..\..\GameFrameWork\Base\Maths;$(SolutionDir)\..\..\..\GameFrameWork\Base\BinaryArchive;$(SolutionDir)\..\..\..\GameFrameWork\Base\RenderSystem;$(SolutionDir)\..\..\..\GameFrameWork\Base\RandomNumbers;$(SolutionDir)\..\..\..\GameFrameWork\Base\Sound;$(SolutionDir)\..\..\..\GameFrameWork\Base\SceneGrap;$(SolutionDir)\..\..\..\GameFrameWork\Base\Application;$(SolutionDir)\..\..\..\GameFrameWork\Base\Includes;$(SolutionDir)\..\..\..\GameFrameWork\Base\Dynamics;$(SolutionDir)\..\..\..\GameFrameWork\Base\UserInterface;$(SolutionDir)\..\..\..\GameFrameWork\Game;$(SolutionDir)\..\..\..\GameFrameWork\Helper;$(SolutionDir)\..\..\..\GameFrameWork\Shared;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\..\GameFrameWork\Dynamics;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\GLFW\include;$(SolutionDir)\..\..\..\CardBasedGames\CardTestBed\Tutorial1\SourceCode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\GameFrameWork\includes\;$(SolutionDir)\..\..\..\GameFrameWork\Base\Base;$(SolutionDir)\..\..\..\GameFrameWork\Base\Maths;$(SolutionDir)\..\..\..\GameFrameWork\Base\BinaryArchive;$(SolutionDir)\..\..\..\GameFrameWork\Base\RenderSystem;$(SolutionDir)\..\..\..\GameFrameWork\Base\RandomNumbers;$(SolutionDir)\..\..\..\GameFrameWork\Base\Sound;$(SolutionDir)\..\..\..\GameFrameWork\Base\SceneGrap;$(SolutionDir)\..\..\..\GameFrameWork\Base\Application;$(SolutionDir)\..\..\..\GameFrameWork\Base\Includes;$(SolutionDir)\..\..\..\GameFrameWork\Base\Dynamics;$(SolutionDir)\..\..\..\GameFrameWork\Base\UserInterface;$(SolutionDir)\..\..\..\GameFrameWork\Game;$(SolutionDir)\..\..\..\GameFrameWork\Helper;$(SolutionDir)\..\..\..\GameFrameWork\Shared;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\..\GameFrameWork\Dynamics;$(SolutionDir)\..\..\..\GameFramework_ThirdParty\GLFW\include;$(SolutionDir)\..\..\..\CardBasedGames\CardTestBed\Tutorial1\SourceCode;%(AdditionalIncludeDirectories);$(SolutionDir)\..\..\..\GameFrameWork\includes\;$(SolutionDir)\..\..\..\GameFrameWork\Base\Base;$(SolutionDir)\..\..\..\GameFrameWork\Base\Maths;$(SolutionDir)\..\..\..\GameFrameWork\Base\BinaryArchive;$(SolutionDir)\..\..\..\GameFrameWork\Base\RenderSystem;$(SolutionDir)\..\..\..\GameFrameWork\Base\RandomNumbers;$(SolutionDir)\..\..\..\GameFrameWork\Base\Sound;$(SolutionDir)\..\..\..\GameFrameWork\Base\Application;$(SolutionDir)\..\..\..\GameFrameWork\Base\Includes;$(SolutionDir)\..\..\..\GameFrameWork\Base\Dynamics;$(SolutionDir)\..\..\..\GameFrameWork\Base\UserInterface;$(SolutionDir)\..\..\..\GameFrameWork\Base\SceneGraph\;$(SolutionDir)\..\..\..\GameFrameWork\Game;$(SolutionDir)\..\..\..\GameFrameWork\Helper;$(SolutionDir)..\..\..\GameFramework\Dynamics\;$(SolutionDir)..\..\..\GameFrameWork\Shared;$(SolutionDir)..\..\..\GameFramework_ThirdParty\ZLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions);_WINDOWS;StruffyLiteWinGL</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -93,6 +93,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\GameFramework\Dynamics3\Dynamics.vcxproj">
+      <Project>{b4993acf-8cd9-43e3-a0f4-8f688c2edaf4}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\GameFramework\GameWinGL\GameWinGL.vcxproj">
       <Project>{1bc33b2e-5e35-4755-902f-8cfecfb6dfe1}</Project>
     </ProjectReference>
@@ -107,6 +110,9 @@
     </ProjectReference>
     <ProjectReference Include="..\..\..\GameFramework\Shared\Shared.vcxproj">
       <Project>{07b16539-9c37-4bd7-bfb1-2a8ad06c6f4e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GameFramework_ThirdParty\bullet\bullet.vcxproj">
+      <Project>{36e1ca06-059b-42b9-b559-5af7b90ff421}</Project>
     </ProjectReference>
     <ProjectReference Include="..\..\..\GameFramework_ThirdParty\enet\enet.vcxproj">
       <Project>{7472da5d-95df-4043-90a4-bf7143cea717}</Project>

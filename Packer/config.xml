@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
-  <project>10</project>
-  <platform>3</platform>
+  <project>11</project>
+  <platform>2</platform>
   <projects>
         <project>
             <id>1</id>
@@ -51,6 +51,11 @@
         <project>
             <id>10</id>
             <path>/Users/localadmin/Documents/DOGE-Game-Engine/Physics/RigidBody/RigidBody/</path>
+        </project>
+
+        <project>
+          <id>11</id>
+          <path>\github\DOGE-Game-Engine\Physics-Demos\RigidBody\RigidBody\</path>
         </project>
   </projects>
 </config>
