@@ -101,7 +101,6 @@
 		7B231AF01F99ECE3008883E4 /* shaderTexturedOSX.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B2319FE1F99ECE3008883E4 /* shaderTexturedOSX.vert */; };
 		7B231AF11F99ECE3008883E4 /* vera.dat in Resources */ = {isa = PBXBuildFile; fileRef = 7B231A001F99ECE3008883E4 /* vera.dat */; };
 		7B231AF31F99ECE3008883E4 /* ScCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A041F99ECE3008883E4 /* ScCamera.cpp */; };
-		7B231AF41F99ECE3008883E4 /* ScFrustum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A061F99ECE3008883E4 /* ScFrustum.cpp */; };
 		7B231AF51F99ECE3008883E4 /* ScMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A081F99ECE3008883E4 /* ScMain.cpp */; };
 		7B231AF61F99ECE3008883E4 /* ScModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A0A1F99ECE3008883E4 /* ScModel.cpp */; };
 		7B231AF71F99ECE3008883E4 /* ScRenderSkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A0C1F99ECE3008883E4 /* ScRenderSkybox.cpp */; };
@@ -392,8 +391,6 @@
 		7B231A001F99ECE3008883E4 /* vera.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = vera.dat; sourceTree = "<group>"; };
 		7B231A041F99ECE3008883E4 /* ScCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScCamera.cpp; sourceTree = "<group>"; };
 		7B231A051F99ECE3008883E4 /* ScCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScCamera.h; sourceTree = "<group>"; };
-		7B231A061F99ECE3008883E4 /* ScFrustum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScFrustum.cpp; sourceTree = "<group>"; };
-		7B231A071F99ECE3008883E4 /* ScFrustum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScFrustum.h; sourceTree = "<group>"; };
 		7B231A081F99ECE3008883E4 /* ScMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScMain.cpp; sourceTree = "<group>"; };
 		7B231A091F99ECE3008883E4 /* ScMain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScMain.h; sourceTree = "<group>"; };
 		7B231A0A1F99ECE3008883E4 /* ScModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScModel.cpp; sourceTree = "<group>"; };
@@ -1013,8 +1010,6 @@
 			children = (
 				7B231A041F99ECE3008883E4 /* ScCamera.cpp */,
 				7B231A051F99ECE3008883E4 /* ScCamera.h */,
-				7B231A061F99ECE3008883E4 /* ScFrustum.cpp */,
-				7B231A071F99ECE3008883E4 /* ScFrustum.h */,
 				7B231A081F99ECE3008883E4 /* ScMain.cpp */,
 				7B231A091F99ECE3008883E4 /* ScMain.h */,
 				7B231A0A1F99ECE3008883E4 /* ScModel.cpp */,
@@ -1811,7 +1806,6 @@
 				7BAF26B31F5EC74F00C59E53 /* ShAchievement.cpp in Sources */,
 				7B1BDAFF1F5F4E740030E0D2 /* infback.c in Sources */,
 				7BAF26B21F5EC74F00C59E53 /* HlView.cpp in Sources */,
-				7B231AF41F99ECE3008883E4 /* ScFrustum.cpp in Sources */,
 				7B1FBAB41F86D446004A5226 /* Ui360Impl.cpp in Sources */,
 				7B1BDAC41F5F4BC40030E0D2 /* fft.cpp in Sources */,
 				7BCB9B001F8771F1008EAFFF /* MtSphere.cpp in Sources */,

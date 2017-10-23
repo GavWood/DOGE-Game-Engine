@@ -14,7 +14,6 @@
 #include "HlJoysticks.h"
 
 #include "ScCamera.h"
-#include "ScFrustum.h"
 #include "ScRenderSkybox.h"
 #include "ScModel.h"
 
