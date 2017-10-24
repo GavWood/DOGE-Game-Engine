@@ -86,9 +86,6 @@ void SbCamera::Update()
             file.Close();
         }
         isLoaded = BtTrue;
-        
-        // Set the starting rotation
-        m3StartingRotation = m_cameraData.m_m3Rotation;
     }
     
     BtFloat speed = BtTime::GetTick() * m_speed;
@@ -138,12 +135,12 @@ void SbCamera::Update()
     }
     
     MtMatrix3 m3RotateY;
-    m3RotateY.SetRotationX(m_cameraData.m_pitch);
+    m3RotateY.SetRotationX( m_cameraData.m_pitch);
     MtMatrix3 m3RotateX;
-    m3RotateX.SetRotationY(m_cameraData.m_yaw);
+    m3RotateX.SetRotationY( m_cameraData.m_yaw);
     
-    m_cameraData.m_m3Rotation = m3StartingRotation * m3RotateX * m3RotateY;
-    
+	m_cameraData.m_m3Rotation = m3RotateX * m3RotateY;
+	
     if( UiKeyboard::pInstance()->IsPressed(SaveCameraKey) )
     {
         FsFile file;
@@ -152,7 +149,7 @@ void SbCamera::Update()
         file.Open( filename, FsMode_Write );
         if( file.IsOpen() )
         {
-            file.Write( m_cameraData );
+			file.Write( m_cameraData );
             file.Close();
         }
     }
