@@ -1,4 +1,3 @@
-..\..\..\..\Gameframework_Packer\StruffyPacker.exe 1 ..\
-..\..\..\..\Gameframework_Packer\StruffyPacker.exe 2 ..\
+..\..\..\..\Packer\BatchFiles\packer.exe 2 ..\
 pause
 
