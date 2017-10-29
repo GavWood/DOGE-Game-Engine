@@ -20,6 +20,7 @@
 #include "PaTopState.h"
 #include "FsFile.h"
 #include "FsFindFile.h"
+#include "BtCRC.h"
 
 // GAV TODO DIRTY STATE
 //BaResourceType gDirty[] = { BaRT_Scene, BaRT_VertexBuffer, BaRT_IndexBuffer };
@@ -30,6 +31,8 @@ BaResourceType gDirty[] = { BaRT_Max };
 ////BaResourceType gDirty[] = { BaRT_Scene, BaRT_CollisionAnalytical, BaRT_CollisionMesh };
 //BaResourceType gDirty[] = { BaRT_Sound };
 //BaResourceType gDirty[] = { BaRT_Material };
+
+const BtU32 PACKER_VERSION = 100;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Declarations
@@ -327,7 +330,7 @@ void PaPacker::FindArchivesAndFiles()
 			pArchive->m_file = fileInformation;
 
 			// Set the tile
-			BtStrCopy( pArchive->m_archiveHeader.m_szTitle, LMaxArchiveName, fileInformation.m_szTitle );
+			BtStrCopy( pArchive->m_archiveHeader.m_szTitle, MaxArchiveName, fileInformation.m_szTitle );
 
 			// Setup the archive filename
 			switch( PaTopState::Instance().GetPlatform() )
@@ -741,7 +744,7 @@ void PaPacker::Pack()
 	// Decide which files should be exported
 	FlagForExport();
 
-	if (m_nToExport)
+	if( BtTrue )	// We can check whether to export but we can't alter the structure if we do that.
 	{
 		// Loop through the archives
 		for (BtU32 i = 0; i < m_archiveCount; i++)
@@ -767,28 +770,24 @@ void PaPacker::Pack()
 			// Deflate each archive using zlib
 			DeflateArchive();
 		}
-
-		// Write the build times
-		WriteArchiveBuildTimes();
-
-		// Write the resource build times
-		WriteAssetBuildTimes();
-
-		// Write the resources
-		WriteResourceList();
-
-		//if( m_hasExported )
-		{
-			// Write the global id
-			WriteGlobalID();
-
-			// Delete the archives
-			DeleteArchives();
-		}
 	}
-	else
-	{
 
+	// Write the build times
+	WriteArchiveBuildTimes();
+
+	// Write the resource build times
+	WriteAssetBuildTimes();
+
+	// Write the resources
+	WriteResourceList();
+
+	//if( m_hasExported )
+	{
+		// Write the global id
+		WriteGlobalID();
+
+		// Delete the archives
+		DeleteArchives();
 	}
 }
 
@@ -822,9 +821,12 @@ void PaPacker::DeflateArchive()
 
 	// TO DO
 	BaArchiveHeader archiveHeader;
-	BtStrCopy( archiveHeader.m_szTitle, sizeof( archiveHeader.m_szTitle), "Hello World!" );
+	BtStrCopy( archiveHeader.m_szTitle, "New structure!" );
 	archiveHeader.m_nNumResources = m_pArchive->GetNumResources();
 	archiveHeader.m_nDataSize = m_pArchive->m_archiveSize;
+	BtStrCopy(archiveHeader.m_szTitle, "Archive");
+	archiveHeader.m_nPackerVersion = PACKER_VERSION;
+	archiveHeader.m_nHeaderCheckSum = BtCRC::GenerateHashCode((BtU8*)&archiveHeader, sizeof(BaArchiveHeader) - sizeof(BtU32));
 	fwrite( (void*)&archiveHeader, 1, sizeof(BaArchiveHeader), destStream );
 
     // Allocate deflate state
