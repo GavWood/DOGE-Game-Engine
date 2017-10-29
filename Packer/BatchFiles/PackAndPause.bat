@@ -1,2 +1,0 @@
-StruffyPacker.exe
-pause

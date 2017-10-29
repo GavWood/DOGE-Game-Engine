@@ -67,6 +67,7 @@ private:
 	BtU32							m_archiveCount;
 	BtU32							m_nResources;
 	BtU32							m_nFiles;
+	BtU32							m_nToExport;
 
 	DLLPackerProc					m_pPackerProc;
 

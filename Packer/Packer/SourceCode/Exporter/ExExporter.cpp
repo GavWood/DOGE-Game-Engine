@@ -65,7 +65,7 @@ BtBool ExExporter::SetResourceType( const PaFileDetails &file, BaResourceType& e
     // Pack some userdata
 	eResourceType = BaRT_NotSet;
     
-    printf ("extension = %s\n", file.m_szExtension );
+    //printf ("extension = %s\n", file.m_szExtension );
     
 	if( BtStrCompare( file.m_szFolder, "shaders" ) == BtTrue )
 	{

@@ -531,7 +531,7 @@ void PaPacker::BuildAssetList()
 
 void PaPacker::FlagForExport()
 {
-	BtU32 nExport = 0;
+	m_nToExport = 0;
 
 	// Loop through the file list and create a schedule item per resource
 	for( BtU32 i=0; i<m_archiveCount; i++ )
@@ -590,11 +590,11 @@ void PaPacker::FlagForExport()
 
 			if( pAsset->m_bExport == BtTrue )
 			{
-				nExport++;
+				m_nToExport++;
 			}
 		}
 	}
-	ErrorLog::Printf( "Found %d assets for export.\n", nExport );
+	ErrorLog::Printf( "Found %d assets for export.\n", m_nToExport);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -741,47 +741,54 @@ void PaPacker::Pack()
 	// Decide which files should be exported
 	FlagForExport();
 
-	// Loop through the archives
-	for( BtU32 i=0; i<m_archiveCount; i++ )
+	if (m_nToExport)
 	{
-		// Cache each archive
-		m_pArchive = m_archives[i];
+		// Loop through the archives
+		for (BtU32 i = 0; i < m_archiveCount; i++)
+		{
+			// Cache each archive
+			m_pArchive = m_archives[i];
 
-		// Compile the resources
-		CompileResources();
+			// Compile the resources
+			CompileResources();
 
-		// Load the resource headers
-		LoadResourceHeaders();
+			// Load the resource headers
+			LoadResourceHeaders();
 
-		// Setup the data offsets
-		SetDataOffsets();
+			// Setup the data offsets
+			SetDataOffsets();
 
-		// Write out the archive
-		m_pArchive->WriteArchive();
+			// Write out the archive
+			m_pArchive->WriteArchive();
 
-		// Write the resource sizes
-		m_pArchive->WriteResourceSizes();
+			// Write the resource sizes
+			m_pArchive->WriteResourceSizes();
 
-		// Deflate each archive using zlib
-		DeflateArchive();
+			// Deflate each archive using zlib
+			DeflateArchive();
+		}
+
+		// Write the build times
+		WriteArchiveBuildTimes();
+
+		// Write the resource build times
+		WriteAssetBuildTimes();
+
+		// Write the resources
+		WriteResourceList();
+
+		//if( m_hasExported )
+		{
+			// Write the global id
+			WriteGlobalID();
+
+			// Delete the archives
+			DeleteArchives();
+		}
 	}
-
-	// Write the build times
-	WriteArchiveBuildTimes();
-	
-	// Write the resource build times
-	WriteAssetBuildTimes();
-
-	// Write the resources
-	WriteResourceList();
-
-	//if( m_hasExported )
+	else
 	{
-		// Write the global id
-		WriteGlobalID();
 
-		// Delete the archives
-		DeleteArchives();
 	}
 }
 
