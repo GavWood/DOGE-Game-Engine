@@ -28,9 +28,6 @@
     <Filter Include="SourceCode\Rendering">
       <UniqueIdentifier>{50aa9833-80cc-4438-aefa-507a8164d690}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Config">
-      <UniqueIdentifier>{be844323-8b08-4cc1-9904-d53d9ad92e5b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="SourceCode\Utility">
       <UniqueIdentifier>{523afafd-693a-4e13-9aff-7afd39116e6e}</UniqueIdentifier>
     </Filter>
@@ -73,12 +70,18 @@
     <Filter Include="Metasequoia">
       <UniqueIdentifier>{3ff0d4e4-82e6-48f0-99e9-1f86c6d6fcb7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Config">
+      <UniqueIdentifier>{be844323-8b08-4cc1-9904-d53d9ad92e5b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\BatchFiles\UpdatePacker.bat">
       <Filter>BatchFiles</Filter>
     </None>
     <None Include="..\BatchFiles\OpenFolder.bat">
+      <Filter>BatchFiles</Filter>
+    </None>
+    <None Include="..\BatchFiles\PackAllAndPause.bat">
       <Filter>BatchFiles</Filter>
     </None>
   </ItemGroup>

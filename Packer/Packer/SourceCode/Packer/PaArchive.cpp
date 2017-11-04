@@ -475,9 +475,6 @@ void PaArchive::WriteArchive()
 	// Set the number of resources
 	archiveHeader.m_nNumResources = nArchiveResources;
 
-	// Set the title
-	BtStrCopy( archiveHeader.m_szTitle, LMaxArchiveName, m_file.m_szTitle );
-
 	// Write out the archive header
 	archiveFile.Write( (BtU8*) &archiveHeader, sizeof(BaArchiveHeader) );
 

@@ -7,7 +7,7 @@
 #include "BtLinkedList.h"
 #include "BaDuplicate.h"
 
-const BtU32 LMaxArchiveName  = 72;
+const BtU32 MaxArchiveName   = 32;
 const BtU32 LMaxResourceName = 68;
 
 //////////////////////////////////////////////////////////////////////////
@@ -44,9 +44,11 @@ enum BaResourceType
 
 struct BaArchiveHeader
 {
-	BtChar						m_szTitle[LMaxArchiveName];
+	BtChar						m_szTitle[MaxArchiveName];
+	BtU32						m_nPackerVersion;
 	BtU32						m_nNumResources;
 	BtU32						m_nDataSize;
+	BtU32						m_nHeaderCheckSum;
 };
 
 struct BaResourceHeader

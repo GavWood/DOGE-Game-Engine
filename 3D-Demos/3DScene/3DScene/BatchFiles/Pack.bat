@@ -1,3 +1,3 @@
-..\..\..\..\Gameframework_Packer\BatchFiles\packer.exe 2 ..\
+..\..\..\..\Packer\BatchFiles\packer.exe 2 ..\
 pause
 

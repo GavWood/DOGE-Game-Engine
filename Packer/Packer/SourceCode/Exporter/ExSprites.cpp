@@ -468,10 +468,10 @@ void ExSprites::Export()
             */
 		}
 
-		for( BtU32 i=0; i<nNumSprites; i++ )
-		{
-			ErrorLog::Printf( "Dimension %.2f %.2f\n", m_spriteFileData.m_sprites[i].m_width, m_spriteFileData.m_sprites[i].m_height );
-		}
+//		for( BtU32 i=0; i<nNumSprites; i++ )
+		//{
+			//ErrorLog::Printf( "Dimension %.2f %.2f\n", m_spriteFileData.m_sprites[i].m_width, m_spriteFileData.m_sprites[i].m_height );
+		//}
 
 		// Display the number of sprites
 		ErrorLog::Printf( "Number of sprites %d packed to %d %d\r\n", nNumSprites, m_resizedTexture.Width(0), m_resizedTexture.Height(0) );
