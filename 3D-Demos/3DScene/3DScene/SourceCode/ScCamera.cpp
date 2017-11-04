@@ -156,15 +156,33 @@ void SbCamera::Update()
 }
 
 void SbCamera::Render()
-{
-    // Set the rotation
-    m_camera.SetRotation(m_cameraData.m_m3Rotation);
-    
-    // Set the position
-    m_camera.SetPosition(m_cameraData.m_v3Position);
-    
-    // Update the camera
-    m_camera.Update();
+{ 
+	if( ApConfig::IsAR()  )
+    {
+        // Support a landscape quaternion
+        MtMatrix3 m_m3Rotation;
+        MtQuaternion quaternion = ShIMU::GetQuaternion(0);
+        quaternion.x =  quaternion.x;
+        quaternion.y =  quaternion.y;
+        quaternion.z = -quaternion.z;
+        m_m3Rotation = MtMatrix3(quaternion);
+        m_camera.SetRotation(m_m3Rotation);
+
+        // Set the position
+        MtVector3 v3Position = ShIMU::GetPosition(0); // m_cameraData.m_v3Position
+        m_camera.SetPosition( m_cameraData.m_v3Position + v3Position );
+    }
+    else
+    {
+	    // Set the rotation
+	    m_camera.SetRotation(m_cameraData.m_m3Rotation);
+	    
+	    // Set the position
+	    m_camera.SetPosition(m_cameraData.m_v3Position);
+	    
+	    // Update the camera
+	    m_camera.Update();
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////
