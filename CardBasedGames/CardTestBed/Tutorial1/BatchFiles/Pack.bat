@@ -1,3 +1,3 @@
-..\..\..\..\Packer\BatchFiles\packer.exe 2 ..\
+..\..\..\..\Packer\BatchFiles\Packer.exe 2 ..\
 pause
 

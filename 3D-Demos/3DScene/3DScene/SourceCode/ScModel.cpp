@@ -55,13 +55,22 @@ void ScModel::Setup( BaArchive *pGameArchive, BaArchive *pAnimArchive )
 	m_pShader = pGameArchive->GetShader( "shader" );
 
 	m_time = 0;
+    
+    m_m4Transform.SetIdentity();
 }
-	
+
+void ScModel::Move()
+{
+    
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // Update
 
 void ScModel::Update( RsCamera &camera )
 {
+    Move();
 	MtMatrix4 m4Transform;
 	m4Transform.SetIdentity();
 
@@ -80,24 +89,18 @@ void ScModel::Update( RsCamera &camera )
             
             // Move the fish in front of the camera
             MtMatrix3 m3Rotation = camera.GetRotation().GetInverse();
-            v3Position = v3Position + ( MtVector3( 0, 0, 0.20 ) * m3Rotation );
+            m_v3CentreOfWorld = v3Position + ( MtVector3( 0, 0, 0.20 ) * m3Rotation );
             
             // Set the matrix with this transform
-            m4Transform.SetTranslation( v3Position );
-            
-            // Rotate the fish so its always facing away from the camera
-            MtMatrix4 m4SpinFish;
-            m4SpinFish.SetRotationY( MtDegreesToRadians( 180.0f ) );
-            MtMatrix4 m4RotateFish( m3Rotation );
-            m4RotateFish = m4SpinFish * m4RotateFish;
+            m4Transform.SetTranslation( m_v3CentreOfWorld );
             
             // Scale the fish
             MtMatrix4 m4Scale;
             m4Scale.SetScale( 0.10f );  // Make the fish 10cm
             
             // Now face the fish toward the camera
-            m4Transform = m4Scale * m4RotateFish * m4Transform;
-            m_pFish->SetLocalTransform(m4Transform);
+            MtMatrix4 m4FinalTransform = m4Scale * m4Transform * m_m4Transform;
+            m_pFish->SetLocalTransform(m4FinalTransform);
         }
         m_pFish->Update();
 	}

@@ -25,25 +25,26 @@ struct MtVector2
 	operator const BtFloat* () const;
 
 	// Maths operators
-	MtVector2& operator += ( const MtVector2& );
-	MtVector2& operator -= ( const MtVector2& );
-	MtVector2& operator *= ( BtFloat );
-	MtVector2& operator /= ( BtFloat );
-	MtVector2  operator - () const;
-	MtVector2  operator *  ( BtFloat ) const;
-	MtVector2  operator /  ( BtFloat ) const;
-	MtVector2  operator *  ( const MtMatrix4& ) const;
-	MtVector2  operator *  ( const MtMatrix3& ) const;
-	MtVector2  operator *  ( const MtVector2& ) const;
-	MtVector2  operator +  ( const MtVector2& ) const;
-	MtVector2  operator -  ( const MtVector2& ) const;
+	MtVector2&					operator += ( const MtVector2& );
+	MtVector2&					operator -= ( const MtVector2& );
+	MtVector2&					operator *= ( BtFloat );
+	MtVector2&					operator /= ( BtFloat );
+	MtVector2					operator - () const;
+	MtVector2					operator *  ( BtFloat ) const;
+	MtVector2					operator /  ( BtFloat ) const;
+	MtVector2					operator *  ( const MtMatrix4& ) const;
+	MtVector2					operator *  ( const MtMatrix3& ) const;
+	MtVector2					operator *  ( const MtVector2& ) const;
+	MtVector2					operator +  ( const MtVector2& ) const;
+	MtVector2					operator -  ( const MtVector2& ) const;
 
+	// Operators on the current vector and a passed const vector
 	BtFloat						DotProduct( const MtVector2& v2 ) const;
+	BtFloat						CrossProduct( const MtVector2& v2) const;
 
 	// Static functions
 	static BtFloat				Dot(const MtVector2& v2A, const MtVector2& v2B);
 	static BtFloat				DotProduct(const MtVector2& v2A, const MtVector2& v2B);
-	BtFloat						CrossProduct( const MtVector2& v2 ) const;
 	static MtVector2			Reflect( const MtVector2& v2Velocity, const MtVector2& v2Normal );
 
 	BtFloat						GetLengthSquared();

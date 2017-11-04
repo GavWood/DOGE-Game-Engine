@@ -17,6 +17,7 @@
 #include "DyCollisionMesh.h"
 #include "DyCollisionAnalytical.h"
 #include "ErrorLog.h"
+#include "BtCRC.h"
 #include "BtString.h"
 #include <stdio.h>
 
@@ -74,7 +75,17 @@ void BaArchive::LoadFile( const BtChar* archiveName )
     //printf( "Filename=%s", filename );
 	if (f)
 	{
+		// Read the archive header
 		fread((void*)&archiveHeader, 1, sizeof(archiveHeader), f);
+
+		// Check the archive header
+		BtU32 version = archiveHeader.m_nPackerVersion;
+		(void)version;
+
+		BtU32 checksum = BtCRC::GenerateHashCode((BtU8*)&archiveHeader, sizeof(BaArchiveHeader) - sizeof(BtU32));
+
+		// Compare the checksum
+		BtAssert(checksum == archiveHeader.m_nHeaderCheckSum);
 
 		// Make the memory
 		m_pArchiveMemory = (BtU8*)BtMemory::Allocate(archiveHeader.m_nDataSize);
@@ -92,7 +103,7 @@ void BaArchive::LoadFile( const BtChar* archiveName )
 
 		// Load the compressed file
 		BtCompressedFile compressedFile;
-		compressedFile.Read(f, m_pArchiveMemory, archiveHeader.m_nDataSize);
+		compressedFile.Read(f, m_pArchiveMemory, archiveHeader.m_nDataSize );
 
 		fclose(f);
 		m_isLoaded = BtTrue;

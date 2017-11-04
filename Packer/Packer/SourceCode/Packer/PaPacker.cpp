@@ -20,6 +20,7 @@
 #include "PaTopState.h"
 #include "FsFile.h"
 #include "FsFindFile.h"
+#include "BtCRC.h"
 
 // GAV TODO DIRTY STATE
 //BaResourceType gDirty[] = { BaRT_Scene, BaRT_VertexBuffer, BaRT_IndexBuffer };
@@ -30,6 +31,8 @@ BaResourceType gDirty[] = { BaRT_Max };
 ////BaResourceType gDirty[] = { BaRT_Scene, BaRT_CollisionAnalytical, BaRT_CollisionMesh };
 //BaResourceType gDirty[] = { BaRT_Sound };
 //BaResourceType gDirty[] = { BaRT_Material };
+
+const BtU32 PACKER_VERSION = 100;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Declarations
@@ -327,7 +330,7 @@ void PaPacker::FindArchivesAndFiles()
 			pArchive->m_file = fileInformation;
 
 			// Set the tile
-			BtStrCopy( pArchive->m_archiveHeader.m_szTitle, LMaxArchiveName, fileInformation.m_szTitle );
+			BtStrCopy( pArchive->m_archiveHeader.m_szTitle, MaxArchiveName, fileInformation.m_szTitle );
 
 			// Setup the archive filename
 			switch( PaTopState::Instance().GetPlatform() )
@@ -531,7 +534,7 @@ void PaPacker::BuildAssetList()
 
 void PaPacker::FlagForExport()
 {
-	BtU32 nExport = 0;
+	m_nToExport = 0;
 
 	// Loop through the file list and create a schedule item per resource
 	for( BtU32 i=0; i<m_archiveCount; i++ )
@@ -590,11 +593,11 @@ void PaPacker::FlagForExport()
 
 			if( pAsset->m_bExport == BtTrue )
 			{
-				nExport++;
+				m_nToExport++;
 			}
 		}
 	}
-	ErrorLog::Printf( "Found %d assets for export.\n", nExport );
+	ErrorLog::Printf( "Found %d assets for export.\n", m_nToExport);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -741,34 +744,37 @@ void PaPacker::Pack()
 	// Decide which files should be exported
 	FlagForExport();
 
-	// Loop through the archives
-	for( BtU32 i=0; i<m_archiveCount; i++ )
+	if( BtTrue )	// We can check whether to export but we can't alter the structure if we do that.
 	{
-		// Cache each archive
-		m_pArchive = m_archives[i];
+		// Loop through the archives
+		for (BtU32 i = 0; i < m_archiveCount; i++)
+		{
+			// Cache each archive
+			m_pArchive = m_archives[i];
 
-		// Compile the resources
-		CompileResources();
+			// Compile the resources
+			CompileResources();
 
-		// Load the resource headers
-		LoadResourceHeaders();
+			// Load the resource headers
+			LoadResourceHeaders();
 
-		// Setup the data offsets
-		SetDataOffsets();
+			// Setup the data offsets
+			SetDataOffsets();
 
-		// Write out the archive
-		m_pArchive->WriteArchive();
+			// Write out the archive
+			m_pArchive->WriteArchive();
 
-		// Write the resource sizes
-		m_pArchive->WriteResourceSizes();
+			// Write the resource sizes
+			m_pArchive->WriteResourceSizes();
 
-		// Deflate each archive using zlib
-		DeflateArchive();
+			// Deflate each archive using zlib
+			DeflateArchive();
+		}
 	}
 
 	// Write the build times
 	WriteArchiveBuildTimes();
-	
+
 	// Write the resource build times
 	WriteAssetBuildTimes();
 
@@ -815,9 +821,12 @@ void PaPacker::DeflateArchive()
 
 	// TO DO
 	BaArchiveHeader archiveHeader;
-	BtStrCopy( archiveHeader.m_szTitle, sizeof( archiveHeader.m_szTitle), "Hello World!" );
+	BtStrCopy( archiveHeader.m_szTitle, "New structure!" );
 	archiveHeader.m_nNumResources = m_pArchive->GetNumResources();
 	archiveHeader.m_nDataSize = m_pArchive->m_archiveSize;
+	BtStrCopy(archiveHeader.m_szTitle, "Archive");
+	archiveHeader.m_nPackerVersion = PACKER_VERSION;
+	archiveHeader.m_nHeaderCheckSum = BtCRC::GenerateHashCode((BtU8*)&archiveHeader, sizeof(BaArchiveHeader) - sizeof(BtU32));
 	fwrite( (void*)&archiveHeader, 1, sizeof(BaArchiveHeader), destStream );
 
     // Allocate deflate state

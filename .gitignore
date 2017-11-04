@@ -32,9 +32,10 @@ CardBasedGames/SynchronisedPlay/SynchronisedPlay/BuildNotes/*
 3D-Demos/Murmurations/Murmuration/BuildNotes/*
 3D-Demos/Murmurations/Murmuration/Release/*
 
-Physics/RigidBody/RigidBody/BuildFiles/*
-Physics/RigidBody/RigidBody/BuildNotes/*
-Physics/RigidBody/RigidBody/Release/*
+
+Physics-Demos/RigidBody/RigidBody/BuildFiles/*
+Physics-Demos/RigidBody/RigidBody/BuildNotes/*
+Physics-Demos/RigidBody/RigidBody/Release/*
 
 3D-Demos/3DScene/3DScene/BuildFiles/*
 3D-Demos/3DScene/3DScene/BuildNotes/*
