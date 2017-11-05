@@ -29,7 +29,7 @@ void SbCamera::Init( MtVector2 v2Dimension )
     m_camera.SetDimension(MtVector2(width, height));
     m_camera.SetPerspective( BtTrue );
     
-    m_cameraData.m_v3Position = MtVector3( 0, 0, -2.0f );
+    m_cameraData.m_v3Position = MtVector3( 0, 0, -0.25f );
     m_cameraData.m_m3Rotation.SetIdentity();
     
     MtMatrix3 m3Rotation;
@@ -70,87 +70,90 @@ void SbCamera::SetSpeed( BtFloat speed )
 
 void SbCamera::Update()
 {
-    static MtMatrix3 m3StartingRotation;
-    
-    static BtBool isLoaded = BtFalse;
-    if( isLoaded == BtFalse )
+    if( !ApConfig::IsAR()  )
     {
-        // Load the camera
-        FsFile file;
-        BtChar filename[256];
-        sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "camera.txt");
-        file.Open( filename, FsMode_Read );
-        if(file.IsOpen())
+        static MtMatrix3 m3StartingRotation;
+        
+        static BtBool isLoaded = BtFalse;
+        if( isLoaded == BtFalse )
         {
-            file.Read(m_cameraData);
-            file.Close();
+            // Load the camera
+            FsFile file;
+            BtChar filename[256];
+            sprintf(filename, "%s%s", ApConfig::GetResourcePath(), "camera.txt");
+            file.Open( filename, FsMode_Read );
+            if(file.IsOpen())
+            {
+                //file.Read(m_cameraData);
+                file.Close();
+            }
+            isLoaded = BtTrue;
         }
-        isLoaded = BtTrue;
-    }
-    
-    BtFloat speed = BtTime::GetTick() * m_speed;
-    
-    if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LSHIFT))
-    {
-        speed = speed * 10.0f;
-    }
-    if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_W))
-    {
-        MoveForward(speed);
-    }
-    if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_S))
-    {
-        MoveBackward(speed);
-    }
-    if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_D))
-    {
-        MoveRight(speed);
-    }
-    if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_A))
-    {
-        MoveLeft(speed);
-    }
-    
-    // Rotate the camera
-    speed = BtTime::GetTick();
-    
-    if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LSHIFT))
-    {
-        if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LEFT))
+        
+        BtFloat speed = BtTime::GetTick() * m_speed;
+        
+        if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LSHIFT))
         {
-            m_cameraData.m_yaw += speed;
+            speed = speed * 10.0f;
         }
-        if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_RIGHT))
+        if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_W))
         {
-            m_cameraData.m_yaw -= speed;
+            MoveForward(speed);
         }
-        if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_UP))
+        if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_S))
         {
-            m_cameraData.m_pitch -= speed;
+            MoveBackward(speed);
         }
-        if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_DOWN))
+        if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_D))
         {
-            m_cameraData.m_pitch += speed;
+            MoveRight(speed);
         }
-    }
-    
-    MtMatrix3 m3RotateY;
-    m3RotateY.SetRotationX( m_cameraData.m_pitch);
-    MtMatrix3 m3RotateX;
-    m3RotateX.SetRotationY( m_cameraData.m_yaw);
-    
-	m_cameraData.m_m3Rotation = m3RotateX * m3RotateY;
-	
-    if( UiKeyboard::pInstance()->IsPressed(SaveCameraKey) )
-    {
-        FsFile file;
-        BtChar filename[256];
-        sprintf( filename, "%s%s", ApConfig::GetResourcePath(), "camera.txt" );
-        file.Open( filename, FsMode_Write );
-        if( file.IsOpen() )
+        if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_A))
         {
-			file.Write( m_cameraData );
-            file.Close();
+            MoveLeft(speed);
+        }
+        
+        // Rotate the camera
+        speed = BtTime::GetTick();
+        
+        if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LSHIFT))
+        {
+            if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_LEFT))
+            {
+                m_cameraData.m_yaw += speed;
+            }
+            if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_RIGHT))
+            {
+                m_cameraData.m_yaw -= speed;
+            }
+            if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_UP))
+            {
+                m_cameraData.m_pitch -= speed;
+            }
+            if (UiKeyboard::pInstance()->IsHeld(UiKeyCode_DOWN))
+            {
+                m_cameraData.m_pitch += speed;
+            }
+        }
+        
+        MtMatrix3 m3RotateY;
+        m3RotateY.SetRotationX( m_cameraData.m_pitch);
+        MtMatrix3 m3RotateX;
+        m3RotateX.SetRotationY( m_cameraData.m_yaw);
+        
+        m_cameraData.m_m3Rotation = m3RotateX * m3RotateY;
+        
+        if( UiKeyboard::pInstance()->IsPressed(SaveCameraKey) )
+        {
+            FsFile file;
+            BtChar filename[256];
+            sprintf( filename, "%s%s", ApConfig::GetResourcePath(), "camera.txt" );
+            file.Open( filename, FsMode_Write );
+            if( file.IsOpen() )
+            {
+                file.Write( m_cameraData );
+                file.Close();
+            }
         }
     }
 }
@@ -169,8 +172,11 @@ void SbCamera::Render()
         m_camera.SetRotation(m_m3Rotation);
 
         // Set the position
-        MtVector3 v3Position = ShIMU::GetPosition(0); // m_cameraData.m_v3Position
+        MtVector3 v3Position = ShIMU::GetPosition(0);
         m_camera.SetPosition( m_cameraData.m_v3Position + v3Position );
+        
+        // Update the camera
+        m_camera.Update();
     }
     else
     {

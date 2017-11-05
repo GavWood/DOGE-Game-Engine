@@ -28,10 +28,6 @@ public:
 private:
 
     // Private functions
-    void                            Move();
-    
-	// Private members
-    MtVector3                       m_v3CentreOfWorld;
     MtMatrix4                       m_m4Transform;
     
 	SgAnimator					   *m_pAnimator;

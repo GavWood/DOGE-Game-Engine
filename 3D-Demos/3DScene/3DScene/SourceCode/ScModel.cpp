@@ -59,18 +59,11 @@ void ScModel::Setup( BaArchive *pGameArchive, BaArchive *pAnimArchive )
     m_m4Transform.SetIdentity();
 }
 
-void ScModel::Move()
-{
-    
-}
-
-
 ////////////////////////////////////////////////////////////////////////////////
 // Update
 
 void ScModel::Update( RsCamera &camera )
 {
-    Move();
 	MtMatrix4 m4Transform;
 	m4Transform.SetIdentity();
 
@@ -82,26 +75,29 @@ void ScModel::Update( RsCamera &camera )
 	}
 	if (m_pFish)
 	{
-        if( ShTouch::IsPressed() )
+        static BtBool isFirstTime = BtTrue;
+        if( ShTouch::IsPressed() || isFirstTime )
         {
+            isFirstTime = BtFalse;
+            
             // Get the camera origin
             MtVector3 v3Position = camera.GetPosition();
             
             // Move the fish in front of the camera
             MtMatrix3 m3Rotation = camera.GetRotation().GetInverse();
-            m_v3CentreOfWorld = v3Position + ( MtVector3( 0, 0, 0.20 ) * m3Rotation );
+            MtVector3 v3CentreOfWorld = v3Position + ( MtVector3( 0, 0, 0.20 ) * m3Rotation );
             
             // Set the matrix with this transform
-            m4Transform.SetTranslation( m_v3CentreOfWorld );
+            m4Transform.SetTranslation( v3CentreOfWorld );
             
             // Scale the fish
             MtMatrix4 m4Scale;
             m4Scale.SetScale( 0.10f );  // Make the fish 10cm
             
             // Now face the fish toward the camera
-            MtMatrix4 m4FinalTransform = m4Scale * m4Transform * m_m4Transform;
-            m_pFish->SetLocalTransform(m4FinalTransform);
+            m_m4Transform = m4Scale * m4Transform;
         }
+        m_pFish->SetLocalTransform(m_m4Transform);
         m_pFish->Update();
 	}
 	if (m_pAnimator)
