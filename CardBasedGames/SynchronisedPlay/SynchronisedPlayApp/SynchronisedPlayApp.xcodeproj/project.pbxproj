@@ -504,11 +504,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7B1B404E1F5E95EB00A82475 /* GitHub */ = {
+		7B1B404E1F5E95EB00A82475 /* GitHub Public */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = GitHub;
+			name = "GitHub Public";
 			sourceTree = "<group>";
 		};
 		7B2E2ED31F8EC37900FF3B80 /* ImpliOS */ = {
@@ -968,7 +968,7 @@
 		7BF34B4F1C0601300048F1DF = {
 			isa = PBXGroup;
 			children = (
-				7B1B404E1F5E95EB00A82475 /* GitHub */,
+				7B1B404E1F5E95EB00A82475 /* GitHub Public */,
 				7BF8518D1E71E12A005D5C0D /* Frameworks */,
 				7BD1E7451EE0433800F50BFB /* GameFramework_ThirdParty */,
 				7BF844941E71DFC0005D5C0D /* GameFramework */,

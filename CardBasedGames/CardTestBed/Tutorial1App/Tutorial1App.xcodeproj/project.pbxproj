@@ -622,11 +622,11 @@
 			path = ZLib;
 			sourceTree = "<group>";
 		};
-		7B1B404D1F5E95DB00A82475 /* GitHub */ = {
+		7B1B404D1F5E95DB00A82475 /* GitHub Public */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = GitHub;
+			name = "GitHub Public";
 			sourceTree = "<group>";
 		};
 		7B2459A51F54D6EB002D4BC6 /* Card1 */ = {
@@ -1153,7 +1153,7 @@
 		7BF34B4F1C0601300048F1DF = {
 			isa = PBXGroup;
 			children = (
-				7B1B404D1F5E95DB00A82475 /* GitHub */,
+				7B1B404D1F5E95DB00A82475 /* GitHub Public */,
 				7BF8518D1E71E12A005D5C0D /* Frameworks */,
 				7B0D23821F5451E00076EF97 /* GameFramework_ThirdParty */,
 				7BF844941E71DFC0005D5C0D /* GameFramework */,

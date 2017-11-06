@@ -565,6 +565,7 @@
 		29B97314FDCFA39411CA2CEA /* OSXGLEssentials */ = {
 			isa = PBXGroup;
 			children = (
+				7B27845B1FB07F61006CA722 /* GitHub Public */,
 				7BAF255D1F5EC4E100C59E53 /* Frameworks */,
 				7BAF255E1F5EC4EA00C59E53 /* GameFramework_ThirdParty */,
 				7BAF255F1F5EC4F900C59E53 /* GameFramework */,
@@ -754,6 +755,13 @@
 			);
 			name = BinaryArchive;
 			path = ../../../GameFramework/Impl/BinaryArchive;
+			sourceTree = "<group>";
+		};
+		7B27845B1FB07F61006CA722 /* GitHub Public */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "GitHub Public";
 			sourceTree = "<group>";
 		};
 		7BAF255D1F5EC4E100C59E53 /* Frameworks */ = {

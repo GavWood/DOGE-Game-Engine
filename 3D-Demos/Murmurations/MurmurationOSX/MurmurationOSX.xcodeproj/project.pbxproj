@@ -493,7 +493,7 @@
 			isa = PBXGroup;
 			children = (
 				7B1B7A751F641F4800384862 /* OSX */,
-				7BAF255C1F5EC4C100C59E53 /* GitHub */,
+				7BAF255C1F5EC4C100C59E53 /* GitHub Public */,
 				7BAF255D1F5EC4E100C59E53 /* Frameworks */,
 				7BAF255E1F5EC4EA00C59E53 /* GameFramework_ThirdParty */,
 				7BAF255F1F5EC4F900C59E53 /* GameFramework */,
@@ -745,11 +745,11 @@
 			path = kdtree;
 			sourceTree = "<group>";
 		};
-		7BAF255C1F5EC4C100C59E53 /* GitHub */ = {
+		7BAF255C1F5EC4C100C59E53 /* GitHub Public */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = GitHub;
+			name = "GitHub Public";
 			sourceTree = "<group>";
 		};
 		7BAF255D1F5EC4E100C59E53 /* Frameworks */ = {
