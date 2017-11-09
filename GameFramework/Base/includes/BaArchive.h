@@ -161,6 +161,7 @@ private:
 	void						FixPointers();
 	void						ValidateResources();
 
+	BaArchiveHeader				m_header;
 	BaArchiveNode				m_archiveNode;
 	static BtLinkedList<BaArchiveNode>	m_archives;
 
