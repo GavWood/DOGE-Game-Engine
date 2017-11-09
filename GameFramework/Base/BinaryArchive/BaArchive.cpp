@@ -60,8 +60,6 @@ void BaArchive::LoadFile( const BtChar* archiveName )
 		ErrorLog::Printf("ApConfig is not initialised. This is needed for archive extensions and filenames.");
 	}
 
-	BaArchiveHeader archiveHeader;
-	
 	BtStrCopy(m_filename, archiveName);
 
 	// Load the file
@@ -76,21 +74,21 @@ void BaArchive::LoadFile( const BtChar* archiveName )
 	if (f)
 	{
 		// Read the archive header
-		fread((void*)&archiveHeader, 1, sizeof(archiveHeader), f);
+		fread((void*)&m_header, 1, sizeof(BaArchiveHeader), f);
 
 		// Check the archive header
-		BtU32 version = archiveHeader.m_nPackerVersion;
+		BtU32 version = m_header.m_nPackerVersion;
 		(void)version;
 
-		BtU32 checksum = BtCRC::GenerateHashCode((BtU8*)&archiveHeader, sizeof(BaArchiveHeader) - sizeof(BtU32));
+		BtU32 checksum = BtCRC::GenerateHashCode((BtU8*)&m_header, sizeof(BaArchiveHeader) - sizeof(BtU32));
 
-		// Compare the checksum
-		BtAssert(checksum == archiveHeader.m_nHeaderCheckSum);
+		// Compare the m_header
+		BtAssert(checksum == m_header.m_nHeaderCheckSum);
 
 		// Make the memory
-		m_pArchiveMemory = (BtU8*)BtMemory::Allocate(archiveHeader.m_nDataSize);
+		m_pArchiveMemory = (BtU8*)BtMemory::Allocate(m_header.m_nDataSize);
 
-		BtU32 kBytes = archiveHeader.m_nDataSize / 1024;
+		BtU32 kBytes = m_header.m_nDataSize / 1024;
 		BtU32 mBytes = kBytes / 1024;
 		(void)mBytes;
 
@@ -103,7 +101,7 @@ void BaArchive::LoadFile( const BtChar* archiveName )
 
 		// Load the compressed file
 		BtCompressedFile compressedFile;
-		compressedFile.Read(f, m_pArchiveMemory, archiveHeader.m_nDataSize );
+		compressedFile.Read(f, m_pArchiveMemory, m_header.m_nDataSize );
 
 		fclose(f);
 		m_isLoaded = BtTrue;
@@ -132,19 +130,13 @@ BtBool BaArchive::IsLoaded()
 
 void BaArchive::GetInstanceSizes()
 {
-	// Cache the archive header pointer
-	BaArchiveHeader* pArchiveHeader = (BaArchiveHeader*)m_pArchiveMemory;
-
-	// Validate the archive header
-	BtAssert(pArchiveHeader != BtNull);
-
 	// Cache each resource header
-	BaResourceHeader* pResourceHeader = (BaResourceHeader*)(m_pArchiveMemory + sizeof(BaArchiveHeader));
+	BaResourceHeader* pResourceHeader = (BaResourceHeader*)(m_pArchiveMemory);
 
 	BtU32 totalInstanceSize = 0;
 
 	// Loop through the resources and markup any pointers
-	for (BtU32 i = 0; i < pArchiveHeader->m_nNumResources; i++)
+	for (BtU32 i = 0; i < m_header.m_nNumResources; i++)
 	{
 		// Set the instance position
 		pResourceHeader->m_instancePosition = totalInstanceSize;
@@ -167,17 +159,11 @@ void BaArchive::GetInstanceSizes()
 
 void BaArchive::CreateResources()
 {
-	// Cache the archive header pointer
-	BaArchiveHeader* pArchiveHeader = (BaArchiveHeader* )m_pArchiveMemory;
-
-	// Validate the archive header
-	BtAssert( pArchiveHeader != BtNull );
-
 	// Cache each resource header
-	BaResourceHeader* pResourceHeader = (BaResourceHeader*)( m_pArchiveMemory + sizeof( BaArchiveHeader ) );
+	BaResourceHeader* pResourceHeader = (BaResourceHeader*)( m_pArchiveMemory );
 
 	// Loop through the resources and markup any pointers
-	for( BtU32 i=0; i<pArchiveHeader->m_nNumResources; i++ )
+	for( BtU32 i=0; i<m_header.m_nNumResources; i++ )
 	{
 		// Set the pointer to the instance
 		pResourceHeader->m_pResource = (BaResource*)(m_pInstanceMemory + pResourceHeader->m_instancePosition);
@@ -225,17 +211,11 @@ void BaArchive::Load( const BtChar* archiveName )
 
 void BaArchive::FixPointers()
 {
-	// Cache the archive header pointer
-	BaArchiveHeader* pArchiveHeader = (BaArchiveHeader*)m_pArchiveMemory;
-
 	// Cache each resource header
-	BaResourceHeader* pResourceHeader = (BaResourceHeader*)( m_pArchiveMemory + sizeof( BaArchiveHeader ) );
+	BaResourceHeader* pResourceHeader = (BaResourceHeader*)( m_pArchiveMemory );
 
-	// Cache each resource header
-	pResourceHeader = (BaResourceHeader*)( m_pArchiveMemory + sizeof( BaArchiveHeader ) );
-				
 	// Loop through the resources
-	for( BtU32 nResourceIndex=0; nResourceIndex<pArchiveHeader->m_nNumResources; nResourceIndex++ )
+	for( BtU32 nResourceIndex=0; nResourceIndex<m_header.m_nNumResources; nResourceIndex++ )
 	{		
 		// Cache each resource
 		BaResource* pResource = pResourceHeader->m_pResource;
@@ -317,17 +297,11 @@ void BaArchive::ValidateResources()
 {
 	RsSprite *pSprite;
 
-	// Cache the archive header pointer
-	BaArchiveHeader* pArchiveHeader = (BaArchiveHeader* ) m_pArchiveMemory;
-
 	// Cache each resource header
-	BaResourceHeader* pResourceHeader = (BaResourceHeader*)( m_pArchiveMemory + sizeof( BaArchiveHeader ) );
-
-	// Cache each resource header
-	pResourceHeader = (BaResourceHeader*)( m_pArchiveMemory + sizeof( BaArchiveHeader ) );
+	BaResourceHeader* pResourceHeader = (BaResourceHeader*)( m_pArchiveMemory );
 
 	// Loop through the resources
-	for( BtU32 nResourceIndex=0; nResourceIndex<pArchiveHeader->m_nNumResources; nResourceIndex++ )
+	for( BtU32 nResourceIndex=0; nResourceIndex<m_header.m_nNumResources; nResourceIndex++ )
 	{		
 		// Cache each resource
 		BaResource* pResource = pResourceHeader->m_pResource;
@@ -360,14 +334,11 @@ void BaArchive::Unload()
 {
 	if( m_isLoaded )
 	{
-		// Cache the archive header pointer
-		BaArchiveHeader* pArchiveHeader = (BaArchiveHeader* ) m_pArchiveMemory;
-
 		// Cache each resource header
-		BaResourceHeader* pResourceHeader = (BaResourceHeader*)( m_pArchiveMemory + sizeof( BaArchiveHeader ) );
+		BaResourceHeader* pResourceHeader = (BaResourceHeader*)( m_pArchiveMemory );
 
 		// Loop through the resources and markup any pointers
-		for( BtU32 i=0; i<pArchiveHeader->m_nNumResources; i++ )
+		for( BtU32 i=0; i<m_header.m_nNumResources; i++ )
 		{
 			// Get the instance address
 			BaResource* pResource = pResourceHeader->m_pResource;
@@ -411,18 +382,12 @@ BaResource* BaArchive::GetResource( BaResourceType eType, const BtChar* szTitle 
     {
         ErrorLog::Fatal_Printf( "Archive not loaded." );
     }
-    
-	// Get the archive header
-	BaArchiveHeader* pArchiveHeader = (BaArchiveHeader*) m_pArchiveMemory;
-
-	// Get the start of the resource headers
-    BtU8 *pData = (BtU8*) (m_pArchiveMemory + sizeof( BaArchiveHeader ) );
 
 	// Get the first resource header
-	BaResourceHeader* pResourceHeader = (BaResourceHeader*)pData;
+	BaResourceHeader* pResourceHeader = (BaResourceHeader*)m_pArchiveMemory;
 
 	// Loop through the resources
-	for( BtU32 nResourceIndex=0; nResourceIndex<pArchiveHeader->m_nNumResources; nResourceIndex++ )
+	for( BtU32 nResourceIndex=0; nResourceIndex<m_header.m_nNumResources; nResourceIndex++ )
 	{
 		// Is this the string resource?
 		if( pResourceHeader->m_type == eType )
@@ -451,17 +416,12 @@ BaResource* BaArchive::GetResource( BtU32 nResourceID ) const
 	{
 		return BtNull;
 	}
-	// Get the archive header
-	BaArchiveHeader* pArchiveHeader = (BaArchiveHeader*) m_pArchiveMemory;
-
-	// Get the start of the resource headers
-	BtU8 *pData = (BtU8*) (m_pArchiveMemory + sizeof( BaArchiveHeader ) );
 
 	// Get the first resource header
-	BaResourceHeader* pResourceHeader = (BaResourceHeader*)pData;
+	BaResourceHeader* pResourceHeader = (BaResourceHeader*)m_pArchiveMemory;
 
 	// Loop through the resources
-	for( BtU32 nResourceIndex=0; nResourceIndex<pArchiveHeader->m_nNumResources; nResourceIndex++ )
+	for( BtU32 nResourceIndex=0; nResourceIndex<m_header.m_nNumResources; nResourceIndex++ )
 	{
 		// Is this the string resource?
 		if( pResourceHeader->m_nResourceID == nResourceID )
