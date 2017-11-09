@@ -819,12 +819,11 @@ void PaPacker::DeflateArchive()
 	
 	destStream = fopen( m_pArchive->m_szPackedFilename, "wb" );
 
-	// TO DO
+	// Setup the archive header
 	BaArchiveHeader archiveHeader;
-	BtStrCopy( archiveHeader.m_szTitle, "New structure!" );
 	archiveHeader.m_nNumResources = m_pArchive->GetNumResources();
 	archiveHeader.m_nDataSize = m_pArchive->m_archiveSize;
-	BtStrCopy(archiveHeader.m_szTitle, "Archive");
+	BtStrCopy( archiveHeader.m_szTitle, "Archive");
 	archiveHeader.m_nPackerVersion = PACKER_VERSION;
 	archiveHeader.m_nHeaderCheckSum = BtCRC::GenerateHashCode((BtU8*)&archiveHeader, sizeof(BaArchiveHeader) - sizeof(BtU32));
 	fwrite( (void*)&archiveHeader, 1, sizeof(BaArchiveHeader), destStream );

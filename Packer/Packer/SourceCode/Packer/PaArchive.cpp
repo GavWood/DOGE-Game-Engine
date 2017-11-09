@@ -354,7 +354,7 @@ void PaArchive::WriteResourceSizes()
 	}
 
 	// Write out resource data
-	for( BtU32 i=0; i<m_archiveHeader.m_nNumResources; i++ )
+	for( BtU32 i=0; i<m_resources.size(); i++ )
 	{
 		// Cache each resource
 		PaResource* pResource = GetResource(i);
@@ -372,7 +372,7 @@ void PaArchive::WriteResourceSizes()
 	qsort( &resourceSizes[0], (BtU32)resourceSizes.size(), sizeof(ResourceSizes), ResourceSizeCompare );
 
 	// Write out resource data
-	for( BtU32 i=0; i<m_archiveHeader.m_nNumResources; i++ )
+	for( BtU32 i=0; i<m_resources.size(); i++ )
 	{
 		// Cache the resource header
 		BaResourceHeader* pHeader = resourceSizes[i].m_pHeader;
@@ -468,15 +468,6 @@ void PaArchive::WriteArchive()
 
 	// Display progress
 	ErrorLog::Printf( "Packing stage.\n" );
-
-	// Cache the archive header
-	BaArchiveHeader &archiveHeader = m_archiveHeader;
-
-	// Set the number of resources
-	archiveHeader.m_nNumResources = nArchiveResources;
-
-	// Write out the archive header
-	archiveFile.Write( (BtU8*) &archiveHeader, sizeof(BaArchiveHeader) );
 
 	// Write out the resource headers
 	for( BtU32 i=0; i<nArchiveResources; i++ )
