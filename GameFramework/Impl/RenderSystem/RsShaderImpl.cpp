@@ -608,8 +608,8 @@ void RsShaderImpl::Draw( const RsIndexedPrimitive *pPrimitive )
     // Draw vertex
 	glDrawElements( primType,
                    pPrimitives->m_numIndices,
-                   GL_UNSIGNED_SHORT,
-                   GL_BUFFER_OFFSET( pPrimitives->m_startIndex * 2 ) );
+				   indexType,
+                   GL_BUFFER_OFFSET( pPrimitives->m_startIndex * indexSize) );
 }
 
 ////////////////////////////////////////////////////////////////////////////////
