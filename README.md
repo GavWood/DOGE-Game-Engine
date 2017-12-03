@@ -1,5 +1,23 @@
 DOGE-Game-Engine
 
+DOGE is a game engine built to explore games in new contexts with an emphasis on keeping-it-simple. The acronym stands for Digital-Outdoor-Game-Engine. However, the O here is flexible - it can also mean Open, Outside and Other.
+
+It has current cross platform support for: Windows 8/10, iPhone, iOS and OSX.
+
+DOGE is designed for academic use, game jams, commercial games and for creating digital prototypes quickly.
+
+Visit [Wiki](https://github.com/GavWood/tutorials/wiki) for detailed information on this project.
+
+---
+
+The Game engine and the tutorials are published under Simplified BSD License as generated from https://soulsphere.org/hacks/bsd/.
+
+Third party code is licensed according to the original software.
+
+Fish model and animations were added for augmented reality experiences. These are included in the 3D scene demo are licensed under an attribution non-commercial license only.
+
+---
+
 Copyright (c) 2017, Gavin Wood 
 
 All rights reserved. 
@@ -25,15 +43,6 @@ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE. 
 
----
-
-Visit [Wiki](https://github.com/GavWood/tutorials/wiki) for information on this project.
-
-The Game engine and the tutorials are published under Simplified BSD License as generated from https://soulsphere.org/hacks/bsd/.
-
-Third party code is licensed according to the original software.
-
-Fish model and animations were added for augmented reality experiences. These are included in the 3D scene demo are licensed under an attribution non-commercial license only.
 
 
 
