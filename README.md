@@ -17,6 +17,7 @@ Third party code is licensed according to the original software.
 Fish model and animations were added for augmented reality experiences. These are included in the 3D scene demo are licensed under an attribution non-commercial license only.
 
 ---
+DOGE-Game-Engine license
 
 Copyright (c) 2017, Gavin Wood 
 
