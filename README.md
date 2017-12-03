@@ -1,6 +1,6 @@
 DOGE-Game-Engine
 
-DOGE is a game engine built to explore games in new contexts with an emphasis on keeping-it-simple. The acronym stands for Digital-Outdoor-Game-Engine. However, the O here is flexible - it can also mean Open, Outside and Other.
+DOGE is a game engine built to explore games in new contexts with an emphasis on keeping-it-simple. The acronym stands for Digital-Outdoor-Game-Engine. However, the O here is flexible - it also means Open.
 
 It has current cross platform support for: Windows 8/10, iPhone, iOS and OSX.
 
