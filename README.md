@@ -8,7 +8,7 @@ Visit [Wiki](https://github.com/GavWood/tutorials/wiki) for detailed information
 
 ---
 
-The Game engine and the tutorials are published under the BSD 2-Clause License.
+The Game engine and the tutorials are published under the BSD 2-Clause License. See LICENSE file.
 
 Third party code is licensed according to the original software.
 
