@@ -81,9 +81,6 @@
     <None Include="..\BatchFiles\OpenFolder.bat">
       <Filter>BatchFiles</Filter>
     </None>
-    <None Include="..\BatchFiles\PackAllAndPause.bat">
-      <Filter>BatchFiles</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Packer\SourceCode\FileSystem\Win32\FsFindFile.h">
