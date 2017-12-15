@@ -106,7 +106,7 @@
 		7B231AF71F99ECE3008883E4 /* ScRenderSkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A0C1F99ECE3008883E4 /* ScRenderSkybox.cpp */; };
 		7B25D3F41F8ED1A00004546A /* RsColourImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B25D3F31F8ED19F0004546A /* RsColourImpl.cpp */; };
 		7B3124901F9BB46400BD468D /* MadgwickAHRS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B31248E1F9BB46400BD468D /* MadgwickAHRS.cpp */; };
-		7B3124931F9BB4E400BD468D /* game.OSXz in Resources */ = {isa = PBXBuildFile; fileRef = 7B3124921F9BB4E400BD468D /* game.OSXz */; };
+		7B7288271FDD73AD00C16774 /* game.OSXz in Resources */ = {isa = PBXBuildFile; fileRef = 7B7288261FDD73AD00C16774 /* game.OSXz */; };
 		7B78DBA41AEE946E008E472D /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B78DBA31AEE946E008E472D /* OpenAL.framework */; };
 		7BAF25911F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF258A1F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.m */; };
 		7BAF25931F5EC6D900C59E53 /* GLEssentialsGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF258D1F5EC6D900C59E53 /* GLEssentialsGLView.mm */; };
@@ -401,7 +401,7 @@
 		7B25D3F31F8ED19F0004546A /* RsColourImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RsColourImpl.cpp; path = ../../../GameFramework/ImplOSX/RsColourImpl.cpp; sourceTree = "<group>"; };
 		7B31248E1F9BB46400BD468D /* MadgwickAHRS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MadgwickAHRS.cpp; sourceTree = "<group>"; };
 		7B31248F1F9BB46400BD468D /* MadgwickAHRS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MadgwickAHRS.h; sourceTree = "<group>"; };
-		7B3124921F9BB4E400BD468D /* game.OSXz */ = {isa = PBXFileReference; lastKnownFileType = file; path = game.OSXz; sourceTree = "<group>"; };
+		7B7288261FDD73AD00C16774 /* game.OSXz */ = {isa = PBXFileReference; lastKnownFileType = file; path = game.OSXz; sourceTree = "<group>"; };
 		7B78DBA31AEE946E008E472D /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		7BAF25891F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLEssentialsFullscreenWindow.h; sourceTree = "<group>"; };
 		7BAF258A1F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLEssentialsFullscreenWindow.m; sourceTree = "<group>"; };
@@ -897,7 +897,7 @@
 		7B23190B1F99ECE2008883E4 /* PS-Move */ = {
 			isa = PBXGroup;
 			children = (
-				7B3124911F9BB4E400BD468D /* Release */,
+				7B7288251FDD73AD00C16774 /* Release */,
 				7B23190C1F99ECE2008883E4 /* BatchFiles */,
 				7B2319D81F99ECE3008883E4 /* GameData */,
 				7B231A031F99ECE3008883E4 /* SourceCode */,
@@ -1039,10 +1039,10 @@
 			path = ../../ThirdParty/Madgwick;
 			sourceTree = "<group>";
 		};
-		7B3124911F9BB4E400BD468D /* Release */ = {
+		7B7288251FDD73AD00C16774 /* Release */ = {
 			isa = PBXGroup;
 			children = (
-				7B3124921F9BB4E400BD468D /* game.OSXz */,
+				7B7288261FDD73AD00C16774 /* game.OSXz */,
 			);
 			path = Release;
 			sourceTree = "<group>";
@@ -1746,7 +1746,7 @@
 				7BE8B3B51F6285F500ABFF3C /* glewinfo.exe in Resources */,
 				7B231AD51F99ECE3008883E4 /* front.material in Resources */,
 				7BE8B3D81F6285F500ABFF3C /* TODO.txt in Resources */,
-				7B3124931F9BB4E400BD468D /* game.OSXz in Resources */,
+				7B7288271FDD73AD00C16774 /* game.OSXz in Resources */,
 				7BE8B3CA1F6285F500ABFF3C /* mesa.txt in Resources */,
 				7B231ADA1F99ECE3008883E4 /* right.png in Resources */,
 				7B231AE91F99ECE3008883E4 /* shaderLitTexturedOSX.frag in Resources */,
@@ -1918,7 +1918,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = PSMoveOSX_Prefix.pch;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/PSMoveOSX-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
@@ -1938,7 +1938,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = PSMoveOSX_Prefix.pch;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "$(SRCROOT)/PSMoveOSX-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
