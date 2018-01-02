@@ -29,7 +29,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 Visit [Wiki](https://github.com/GavWood/tutorials/wiki) for information on this project.
 
-The Game engine and the tutorials are published under Simplified BSD License as generated from https://soulsphere.org/hacks/bsd/.
+The Game engine and the tutorials are published under the BSD 2-clause "Simplified" License - generated via the GitHub website - also held under the file LICENSE.
 
 Third party code is licensed according to the original software.
 
