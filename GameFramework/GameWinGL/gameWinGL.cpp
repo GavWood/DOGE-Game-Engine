@@ -182,7 +182,9 @@ UiKeyCode_DOWN,
 (BtU32)GLFW_KEY_LSHIFT,
 UiKeyCode_LSHIFT,
 (BtU32)GLFW_KEY_RSHIFT,
-UiKeyCode_RSHIFT
+UiKeyCode_RSHIFT,
+(BtU32)'=',
+UiKeyCode_EQUALS,
 };
 
 static void key_callback(int keyCode, int action)
@@ -200,6 +202,13 @@ static void key_callback(int keyCode, int action)
 			{
 				key = glfwKeys[i + 1];
 			}
+		}
+
+		if (key == 0)
+		{
+			// catch any unmapped keys here
+			int a = 0;
+			a++;
 		}
 		
 		if (keyCode == GLFW_KEY_LSHIFT)
@@ -393,6 +402,9 @@ void Game::Create(GaProject *pProject)
 		m_frameRemainder = BtClamp(m_frameRemainder, (BtFloat)0, 1.0f);
 
 		BtBool isExiting = BtFalse;
+
+		// Cap this at running the frame logic a maximum of three times to catch up i.e. 180 fps
+		m_frameRemainder = MtMax(m_frameRemainder, dt * 3);
 
 		while( m_frameRemainder >= dt )
 		{
