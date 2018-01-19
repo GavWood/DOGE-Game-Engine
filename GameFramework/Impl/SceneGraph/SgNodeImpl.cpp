@@ -47,7 +47,7 @@ BtU32 SgNodeImpl::GetInstanceSize(BaResourceHeader *pResourceHeader)
     specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgMeshWinGL));
     specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgSkinImpl));
     specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgCollisionWinGL));
-    specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgBoneOSX));
+    specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgBoneImpl));
     //specificInstanceSize = MtMax(specificInstanceSize, 0));// sizeof(SgCameraWin32));
     specificInstanceSize = MtMax(specificInstanceSize, sizeof(SgBlendShapeImpl));
     //specificInstanceSize = MtMax(specificInstanceSize, 0));// sizeof(SgLightWin32));
@@ -93,7 +93,7 @@ SgNode* SgNodeImpl::pFind( const BtChar* pName )
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-// Duplicate
+// GetDuplicate
 
 // virtual
 SgNode* SgNodeImpl::GetDuplicate()
@@ -126,6 +126,17 @@ SgNode* SgNodeImpl::GetDuplicate()
     
     // Add the duplicate
     m_pArchive->AddDuplicate( pSgNode );
+
+	// Is it a skin?
+	if( NodeType() & SgType_Skin)
+	{
+		// Duplicate the skin
+		SgSkin *pSkin1 = m_pSkin;
+		SgSkin *pSkin2 = pSgNode->m_pSkin;
+		(void)pSkin1;
+		(void)pSkin2;
+		pSgNode->m_pSkin->GetDuplicate();
+	}
     
     // Cache the first child
     SgNodeImpl** pChild = (SgNodeImpl**) &pSgNode->m_pFileData->m_pFirstChild;
@@ -134,6 +145,18 @@ SgNode* SgNodeImpl::GetDuplicate()
     while( *pChild != BtNull )
     {
         SgNodeImpl* pCurrent = *pChild;
+
+		if (pCurrent->NodeType() & SgType_Skin )
+		{
+			int a = 0;
+			a++;
+		}
+
+		if (pCurrent->NodeType() & SgType_Bone)
+		{
+			int a = 0;
+			a++;
+		}
         
         // Make the duplicate
         SgNodeImpl* pDuplicate = (SgNodeImpl*)pCurrent->GetDuplicate();
@@ -180,8 +203,8 @@ void SgNodeImpl::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
     {
         // Fix up the scene mesh
         m_pMesh = new( pInstanceMemory ) SgMeshWinGL;
-        m_pMesh->FixPointers( pArchive, pMemory );
-        m_pMesh->m_pNode = this;
+		m_pMesh->m_pNode = this;
+		m_pMesh->FixPointers(pArchive, pMemory);
         pMemory+=sizeof(BaSgMeshFileData);
         pInstanceMemory+=sizeof(SgMeshWinGL);
     }
@@ -192,8 +215,8 @@ void SgNodeImpl::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
         m_pSkin = new(pInstanceMemory) SgSkinImpl;
         
         // Fix up the skeleton root
-        m_pSkin->FixPointers(pArchive, pMemory);
-        m_pSkin->m_pNode = this;
+		m_pSkin->m_pSkinNode = this;
+		m_pSkin->FixPointers(pArchive, pMemory);
         pMemory += sizeof(BaSgSkinFileData);
         pInstanceMemory += sizeof(SgSkinImpl);
     }
@@ -219,11 +242,11 @@ void SgNodeImpl::FixPointers( BtU8 *pFileData, BaArchive *pArchive )
     
     if( NodeType() & SgType_Bone )
     {
-        m_pBone = new( pInstanceMemory ) SgBoneOSX;
+        m_pBone = new( pInstanceMemory ) SgBoneImpl;
         m_pBone->m_pNode = this;
         m_pBone->FixPointers( pMemory );
         pMemory+=sizeof(BaSgBoneFileData);
-        pInstanceMemory+=sizeof(SgBoneOSX);
+        pInstanceMemory+=sizeof(SgBoneImpl);
     }
     
     if( NodeType() & SgType_Camera )
@@ -329,8 +352,23 @@ BtU32 SgNodeImpl::GetNumJoints()
 
 SgNode* SgNodeImpl::GetJoint(BtU32 jointIndex) const
 {
-    SgSkinImpl *pSkin32 = (SgSkinImpl*)pSkin();
-    return pSkin32->m_pFileData->m_skeleton[jointIndex].m_pJoint;
+	// Cache the first child
+	SgNodeImpl* pChild = (SgNodeImpl*)this->pFirstChild();
+
+	// Loop through the children
+	while (pChild != BtNull)
+	{
+		if( pChild->NodeType() & SgType_Bone)
+		{
+			int a = 0;
+			a++;
+			return pChild;
+		}
+
+		// Move to the next child
+		pChild = (SgNodeImpl*)pChild->m_pFileData->m_pNextSibling;
+	}
+	return BtNull;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -368,7 +406,7 @@ void SgNodeImpl::Update()
         {
             SgNode *pNode = m_pSkin->m_pFileData->m_skeleton[i].m_pJoint;
             
-            SgBoneOSX *pBone = (SgBoneOSX*)pNode->pBone();
+            SgBoneImpl *pBone = (SgBoneImpl*)pNode->pBone();
             
             pBone->m_boneTransform = pBone->GetInverseBindPose() * pNode->GetWorldTransform();
         }

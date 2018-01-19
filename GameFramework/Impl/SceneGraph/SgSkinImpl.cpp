@@ -24,12 +24,24 @@
 void SgSkinImpl::FixPointers( BaArchive *pArchive, BtU8* pMemory )
 {
 	// Set the file data
-	m_pFileData = (BaSgSkinFileData*) pMemory;
+	m_pFileData = (BaSgSkinFileData*)pMemory;
 
 	// Mark up the skeleton
-	for( BtU32 i=0; i<m_pFileData->m_numJoints; i++ )
+	for (BtU32 i = 0; i < m_pFileData->m_numJoints; i++)
 	{
-		m_pFileData->m_skeleton[i].m_pJoint = (SgNodeImpl*)  pArchive->GetResource( m_pFileData->m_skeleton[i].m_nJoint );
+		m_pFileData->m_skeleton[i].m_pJoint = (SgNodeImpl*)pArchive->GetResource(m_pFileData->m_skeleton[i].m_nJoint);
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// GetDuplicate
+
+void SgSkinImpl::GetDuplicate()
+{
+	// Mark up the skeleton
+	for (BtU32 i = 0; i < m_pFileData->m_numJoints; i++)
+	{
+		m_pFileData->m_skeleton[i].m_pJoint = m_pFileData->m_skeleton[i].m_pJoint->GetDuplicate();
 	}
 }
 
@@ -39,7 +51,7 @@ void SgSkinImpl::FixPointers( BaArchive *pArchive, BtU8* pMemory )
 //virtual
 void SgSkinImpl::Render()
 {
-    m_pNode->m_pMaterials->Render();
+    m_pSkinNode->m_pMaterials->Render();
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -47,7 +59,7 @@ void SgSkinImpl::Render()
 
 void SgSkinImpl::Render( SgSkinRenderable* pRenderable )
 {
-	RsSceneImpl* pScene = (RsSceneImpl*)m_pNode->m_pFileData->m_pScene;
+	RsSceneImpl* pScene = (RsSceneImpl*)m_pSkinNode->m_pFileData->m_pScene;
 
 	// Cache each material block
 	BaMaterialBlockFileData* pMaterialBlock = pRenderable->m_pMaterialBlock;
@@ -65,9 +77,9 @@ void SgSkinImpl::Render( SgSkinRenderable* pRenderable )
 	RsShaderImpl* pShader = (RsShaderImpl*)pRenderable->m_pShader;
 
 	// Render the blend shape
-	if( m_pNode->pBlendShape() != BtNull )
+	if( m_pSkinNode->pBlendShape() != BtNull )
 	{
-		SgBlendShapeImpl* pBlendShape = (SgBlendShapeImpl*)  m_pNode->pBlendShape();
+		SgBlendShapeImpl* pBlendShape = (SgBlendShapeImpl*)  m_pSkinNode->pBlendShape();
 		(void)pBlendShape;
 	}
 
@@ -81,7 +93,7 @@ void SgSkinImpl::Render( SgSkinRenderable* pRenderable )
 	const RsCamera &camera = pRenderTarget->GetCamera();
 
 	const MtMatrix4& m4ViewScreen = pRenderTarget->GetCamera().GetViewProjection();
-	const MtMatrix4& m4World      = m_pNode->m_pFileData->m_m4World;
+	const MtMatrix4& m4World      = m_pSkinNode->m_pFileData->m_m4World;
 	const MtMatrix4& m4View	      = camera.GetView();
 	MtMatrix4 m4WorldViewScreen   = m4World * m4ViewScreen;
 	MtMatrix4 m4WorldView		  = m4World * m4View;
@@ -121,7 +133,7 @@ void SgSkinImpl::Render( SgSkinRenderable* pRenderable )
 			BtU32 iBoneIndex = pRenderBlock->m_bonePalette[iBone];
 
 			// Cache the node
-			SgBoneOSX* pBone = (SgBoneOSX*)m_pFileData->m_skeleton[iBoneIndex].m_pJoint->pBone();
+			SgBoneImpl* pBone = (SgBoneImpl*)m_pFileData->m_skeleton[iBoneIndex].m_pJoint->pBone();
 			
 			// Validate the node
 			BtAssert(pBone != BtNull);

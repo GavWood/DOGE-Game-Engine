@@ -15,7 +15,7 @@ class SgMeshWinGL;
 class SgMaterialsWinGL;
 
 class SgRigidBodyImpl;
-class SgBoneOSX;
+class SgBoneImpl;
 class SgCollisionWinGL;
 class SgCameraWin32;
 class SgBlendShapeImpl;
@@ -88,10 +88,10 @@ private:
 
 	// Instances in order
 	SgMeshWinGL*				m_pMesh;
-	SgSkinImpl*				m_pSkin;
+	SgSkinImpl*					m_pSkin;
 	SgRigidBodyImpl*			m_pRigidBody;
 	SgCollisionWinGL*			m_pCollision;
-	SgBoneOSX*                  m_pBone;
+	SgBoneImpl*					m_pBone;
 	SgCameraWin32*				m_pCamera;
 	SgBlendShapeImpl*			m_pBlendShape;
 	SgLightWin32*				m_pLight;

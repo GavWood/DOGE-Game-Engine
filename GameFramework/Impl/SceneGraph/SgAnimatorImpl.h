@@ -21,7 +21,7 @@ public:
 
 	SgAnimatorImpl();
 
-	SgAnimator					   *pDuplicate();
+	SgAnimator					   *GetDuplicate();
 
 	void							FixPointers( BtU8* pFileData, BaArchive* pArchive );
 	void							CreateOnDevice();

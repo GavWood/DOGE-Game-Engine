@@ -6,6 +6,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Murmuration\SourceCode\GaProject_Murmuration.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="..\Murmuration\BatchFiles\OpenGameData.bat">
       <Filter>BatchFiles</Filter>
     </None>
@@ -15,8 +18,5 @@
     <None Include="..\Murmuration\BatchFiles\Publish.bat">
       <Filter>BatchFiles</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\Murmuration\SourceCode\GaProject_Murmuration.cpp" />
   </ItemGroup>
 </Project>

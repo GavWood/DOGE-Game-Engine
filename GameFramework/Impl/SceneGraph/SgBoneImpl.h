@@ -10,7 +10,7 @@
 class SgNodeImpl;
 
 // Class Declaration
-class SgBoneOSX : public SgBone
+class SgBoneImpl : public SgBone
 {
 public:
 

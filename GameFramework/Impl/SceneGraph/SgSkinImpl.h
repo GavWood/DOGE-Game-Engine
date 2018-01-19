@@ -18,6 +18,7 @@ class SgSkinImpl : public SgSkin
 {
 public:
 
+	void						GetDuplicate();
 	void						Render();
 	void						Render( SgSkinRenderable *pRenderable );
 
@@ -29,10 +30,12 @@ private:
 
 	friend class SgNodeImpl;
 	friend class SgAnimatorImpl;
+	friend class ScModel;
 
 	void						FixPointers( BaArchive *pArchive, BtU8* pMemory );
 
-	SgNodeImpl*				m_pNode;
+	SgNodeImpl*					m_pSkinNode;
+	SgNodeImpl*					m_pBoneRoot;
 	BaSgSkinFileData*			m_pFileData;
 };
 

@@ -6,7 +6,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // FixPointers
 
-void SgBoneOSX::FixPointers( BtU8* pMemory )
+void SgBoneImpl::FixPointers( BtU8* pMemory )
 {
 	// Set the file data
 	m_pFileData = (BaSgBoneFileData*) pMemory;
@@ -15,7 +15,7 @@ void SgBoneOSX::FixPointers( BtU8* pMemory )
 ////////////////////////////////////////////////////////////////////////////////
 // GetInverseBindPose
 
-const MtMatrix4& SgBoneOSX::GetInverseBindPose() const
+const MtMatrix4& SgBoneImpl::GetInverseBindPose() const
 {
 	return m_pFileData->m_m4InverseBindPose;
 }

@@ -9,6 +9,7 @@
 #include "SgNodeImpl.h"
 #include "SgBoneImpl.h"
 #include "SgSkinImpl.h"
+#include "BtMemory.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 // Constructor
@@ -19,12 +20,27 @@ SgAnimatorImpl::SgAnimatorImpl()
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-// pDuplicate
+// GetDuplicate
 
-SgAnimator *SgAnimatorImpl::pDuplicate()
+SgAnimator *SgAnimatorImpl::GetDuplicate()
 {
 	// Allocate the memory
-	return BtNull;
+	BtU8* pMemory = BtMemory::Allocate(sizeof(SgAnimatorImpl));
+
+	// Create the class
+	SgAnimatorImpl* pAnimator = new(pMemory) SgAnimatorImpl;
+
+	// Copy the memory
+	BtMemory::Copy(pMemory, this, sizeof(SgAnimatorImpl));
+
+	// Flag as a duplicate
+	pAnimator->m_isDuplicate = BtTrue;
+
+	// Add the duplicate
+	m_pArchive->AddDuplicate(pAnimator);
+
+	// Return the memory
+	return pAnimator;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -39,6 +55,9 @@ void SgAnimatorImpl::Remove()
 
 void SgAnimatorImpl::FixPointers( BtU8* pFileData, BaArchive* pArchive )
 {
+	// Set the archive
+	m_pArchive = pArchive;
+
 	// Set the file data
 	m_pFileData = (BaSgAnimationFileData*) pFileData;
 
