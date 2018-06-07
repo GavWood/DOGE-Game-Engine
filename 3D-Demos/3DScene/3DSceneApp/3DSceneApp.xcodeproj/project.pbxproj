@@ -31,9 +31,9 @@
 		7B2AF14F1F839D8000BF3AF8 /* ScRenderSkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B2AF1451F839D8000BF3AF8 /* ScRenderSkybox.cpp */; };
 		7B2AF1501F839D8000BF3AF8 /* ScCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B2AF1461F839D8000BF3AF8 /* ScCamera.cpp */; };
 		7B2AF1511F839D8000BF3AF8 /* ScFrustum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B2AF1481F839D8000BF3AF8 /* ScFrustum.cpp */; };
-		7B3F4F0E1F8C0F1100CE6620 /* game.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B3F4F0B1F8C0F1100CE6620 /* game.iPhonez */; };
-		7B3F4F0F1F8C0F1100CE6620 /* utility.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B3F4F0C1F8C0F1100CE6620 /* utility.iPhonez */; };
-		7B3F4F101F8C0F1100CE6620 /* anim.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B3F4F0D1F8C0F1100CE6620 /* anim.iPhonez */; };
+		7B33E96920C6E1AC002B18DB /* anim.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B33E96620C6E1AC002B18DB /* anim.iPhonez */; };
+		7B33E96A20C6E1AC002B18DB /* game.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B33E96720C6E1AC002B18DB /* game.iPhonez */; };
+		7B33E96B20C6E1AC002B18DB /* utility.iPhonez in Resources */ = {isa = PBXBuildFile; fileRef = 7B33E96820C6E1AC002B18DB /* utility.iPhonez */; };
 		7B45A1141F642B05009ECFA2 /* shaderTextured.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A1071F642B05009ECFA2 /* shaderTextured.vert */; };
 		7B45A1151F642B05009ECFA2 /* shaderTextured.frag in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A1081F642B05009ECFA2 /* shaderTextured.frag */; };
 		7B45A1161F642B05009ECFA2 /* shaderSkin.vert in Resources */ = {isa = PBXBuildFile; fileRef = 7B45A1091F642B05009ECFA2 /* shaderSkin.vert */; };
@@ -229,9 +229,9 @@
 		7B2AF1491F839D8000BF3AF8 /* ScRenderSkybox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScRenderSkybox.h; sourceTree = "<group>"; };
 		7B2AF14A1F839D8000BF3AF8 /* ScModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScModel.h; sourceTree = "<group>"; };
 		7B2AF14B1F839D8000BF3AF8 /* ScParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScParticle.h; sourceTree = "<group>"; };
-		7B3F4F0B1F8C0F1100CE6620 /* game.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; name = game.iPhonez; path = ../3DScene/Release/game.iPhonez; sourceTree = "<group>"; };
-		7B3F4F0C1F8C0F1100CE6620 /* utility.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; name = utility.iPhonez; path = ../3DScene/Release/utility.iPhonez; sourceTree = "<group>"; };
-		7B3F4F0D1F8C0F1100CE6620 /* anim.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; name = anim.iPhonez; path = ../3DScene/Release/anim.iPhonez; sourceTree = "<group>"; };
+		7B33E96620C6E1AC002B18DB /* anim.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; name = anim.iPhonez; path = ../3DScene/Release/anim.iPhonez; sourceTree = "<group>"; };
+		7B33E96720C6E1AC002B18DB /* game.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; name = game.iPhonez; path = ../3DScene/Release/game.iPhonez; sourceTree = "<group>"; };
+		7B33E96820C6E1AC002B18DB /* utility.iPhonez */ = {isa = PBXFileReference; lastKnownFileType = file; name = utility.iPhonez; path = ../3DScene/Release/utility.iPhonez; sourceTree = "<group>"; };
 		7B45A1071F642B05009ECFA2 /* shaderTextured.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderTextured.vert; path = ../3DScene/GameData/Game.Archive/Shaders/shaderTextured.vert; sourceTree = "<group>"; };
 		7B45A1081F642B05009ECFA2 /* shaderTextured.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderTextured.frag; path = ../3DScene/GameData/Game.Archive/Shaders/shaderTextured.frag; sourceTree = "<group>"; };
 		7B45A1091F642B05009ECFA2 /* shaderSkin.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = shaderSkin.vert; path = ../3DScene/GameData/Game.Archive/Shaders/shaderSkin.vert; sourceTree = "<group>"; };
@@ -645,9 +645,9 @@
 		7B3F4F0A1F8C0EFD00CE6620 /* Release */ = {
 			isa = PBXGroup;
 			children = (
-				7B3F4F0D1F8C0F1100CE6620 /* anim.iPhonez */,
-				7B3F4F0B1F8C0F1100CE6620 /* game.iPhonez */,
-				7B3F4F0C1F8C0F1100CE6620 /* utility.iPhonez */,
+				7B33E96620C6E1AC002B18DB /* anim.iPhonez */,
+				7B33E96720C6E1AC002B18DB /* game.iPhonez */,
+				7B33E96820C6E1AC002B18DB /* utility.iPhonez */,
 			);
 			name = Release;
 			sourceTree = "<group>";
@@ -1288,18 +1288,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B45A1161F642B05009ECFA2 /* shaderSkin.vert in Resources */,
+				7B33E96A20C6E1AC002B18DB /* game.iPhonez in Resources */,
+				7B33E96B20C6E1AC002B18DB /* utility.iPhonez in Resources */,
 				7B45A1171F642B05009ECFA2 /* shaderSkin.frag in Resources */,
 				7B45A11E1F642B05009ECFA2 /* shader.gles in Resources */,
 				7B45A1201F642B05009ECFA2 /* projectedTexture.frag in Resources */,
+				7B33E96920C6E1AC002B18DB /* anim.iPhonez in Resources */,
 				7B45A1191F642B05009ECFA2 /* shaderPassThrough.frag in Resources */,
-				7B3F4F0F1F8C0F1100CE6620 /* utility.iPhonez in Resources */,
 				7B45A11A1F642B05009ECFA2 /* shaderLitTextured.vert in Resources */,
 				7BF34B6A1C0601300048F1DF /* Main.storyboard in Resources */,
-				7B3F4F0E1F8C0F1100CE6620 /* game.iPhonez in Resources */,
 				7B45A1181F642B05009ECFA2 /* shaderPassThrough.vert in Resources */,
 				7B45A1151F642B05009ECFA2 /* shaderTextured.frag in Resources */,
 				7B45A11B1F642B05009ECFA2 /* shaderLitTextured.frag in Resources */,
-				7B3F4F101F8C0F1100CE6620 /* anim.iPhonez in Resources */,
 				7BF34B6C1C0601300048F1DF /* Assets.xcassets in Resources */,
 				7BF34B6F1C0601300048F1DF /* LaunchScreen.storyboard in Resources */,
 				7B21F2741F7FDD0A008FF5F3 /* CbCrtoRGB.frag in Resources */,

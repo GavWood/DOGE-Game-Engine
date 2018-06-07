@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
-  <project>2</project>
-  <platform>2</platform>
+  <project>1</project>
+  <platform>1</platform>
   <projects>
         <project>
             <id>1</id>

@@ -105,9 +105,9 @@
 		7B231AF61F99ECE3008883E4 /* ScModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A0A1F99ECE3008883E4 /* ScModel.cpp */; };
 		7B231AF71F99ECE3008883E4 /* ScRenderSkybox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B231A0C1F99ECE3008883E4 /* ScRenderSkybox.cpp */; };
 		7B25D3F41F8ED1A00004546A /* RsColourImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B25D3F31F8ED19F0004546A /* RsColourImpl.cpp */; };
-		7B3124901F9BB46400BD468D /* MadgwickAHRS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B31248E1F9BB46400BD468D /* MadgwickAHRS.cpp */; };
-		7B7288271FDD73AD00C16774 /* game.OSXz in Resources */ = {isa = PBXBuildFile; fileRef = 7B7288261FDD73AD00C16774 /* game.OSXz */; };
+		7B3FE35120C942B000347EF8 /* itsabomb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B3FE34F20C942B000347EF8 /* itsabomb.cpp */; };
 		7B78DBA41AEE946E008E472D /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B78DBA31AEE946E008E472D /* OpenAL.framework */; };
+		7B81A93C20C95469002107F9 /* testcontrollers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B81A93B20C95469002107F9 /* testcontrollers.cpp */; };
 		7BAF25911F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF258A1F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.m */; };
 		7BAF25931F5EC6D900C59E53 /* GLEssentialsGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF258D1F5EC6D900C59E53 /* GLEssentialsGLView.mm */; };
 		7BAF25941F5EC6D900C59E53 /* GLEssentialsWindowController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF258F1F5EC6D900C59E53 /* GLEssentialsWindowController.mm */; };
@@ -223,6 +223,7 @@
 		7BE8B3D71F6285F500ABFF3C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7BE8B3B21F6285F500ABFF3C /* README.txt */; };
 		7BE8B3D81F6285F500ABFF3C /* TODO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7BE8B3B31F6285F500ABFF3C /* TODO.txt */; };
 		7BE8B3DC1F6286C600ABFF3C /* GLee.c in Sources */ = {isa = PBXBuildFile; fileRef = 7BE8B3DA1F6286C600ABFF3C /* GLee.c */; };
+		7BFCD19520C0A4F200A3FE8E /* game.OSXz in Resources */ = {isa = PBXBuildFile; fileRef = 7BFCD19420C0A4F100A3FE8E /* game.OSXz */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -399,10 +400,12 @@
 		7B231A0D1F99ECE3008883E4 /* ScRenderSkybox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScRenderSkybox.h; sourceTree = "<group>"; };
 		7B231A0E1F99ECE3008883E4 /* ScWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScWorld.h; sourceTree = "<group>"; };
 		7B25D3F31F8ED19F0004546A /* RsColourImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RsColourImpl.cpp; path = ../../../GameFramework/ImplOSX/RsColourImpl.cpp; sourceTree = "<group>"; };
-		7B31248E1F9BB46400BD468D /* MadgwickAHRS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MadgwickAHRS.cpp; sourceTree = "<group>"; };
-		7B31248F1F9BB46400BD468D /* MadgwickAHRS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MadgwickAHRS.h; sourceTree = "<group>"; };
-		7B7288261FDD73AD00C16774 /* game.OSXz */ = {isa = PBXFileReference; lastKnownFileType = file; path = game.OSXz; sourceTree = "<group>"; };
+		7B3FE34F20C942B000347EF8 /* itsabomb.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = itsabomb.cpp; sourceTree = "<group>"; };
+		7B3FE35020C942B000347EF8 /* itsabomb.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = itsabomb.hpp; sourceTree = "<group>"; };
 		7B78DBA31AEE946E008E472D /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		7B81A90020C944E2002107F9 /* movegame.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = movegame.hpp; sourceTree = "<group>"; };
+		7B81A90120C95082002107F9 /* testControllers.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = testControllers.hpp; sourceTree = "<group>"; };
+		7B81A93B20C95469002107F9 /* testcontrollers.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testcontrollers.cpp; sourceTree = "<group>"; };
 		7BAF25891F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLEssentialsFullscreenWindow.h; sourceTree = "<group>"; };
 		7BAF258A1F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLEssentialsFullscreenWindow.m; sourceTree = "<group>"; };
 		7BAF258B1F5EC6D900C59E53 /* GLEssentialsGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLEssentialsGLView.h; sourceTree = "<group>"; };
@@ -640,6 +643,7 @@
 		7BE8B3B31F6285F500ABFF3C /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		7BE8B3DA1F6286C600ABFF3C /* GLee.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GLee.c; sourceTree = "<group>"; };
 		7BE8B3DB1F6286C600ABFF3C /* GLee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLee.h; sourceTree = "<group>"; };
+		7BFCD19420C0A4F100A3FE8E /* game.OSXz */ = {isa = PBXFileReference; lastKnownFileType = file; path = game.OSXz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -680,7 +684,6 @@
 				7BAF255D1F5EC4E100C59E53 /* Frameworks */,
 				7BAF255E1F5EC4EA00C59E53 /* GameFramework_ThirdParty */,
 				7BAF255F1F5EC4F900C59E53 /* GameFramework */,
-				7B31248C1F9BB43400BD468D /* ThirdParty */,
 				7B23190B1F99ECE2008883E4 /* PS-Move */,
 				7BAF25851F5EC60500C59E53 /* PSMoveOSX */,
 				7B1BDAA71F5F42660030E0D2 /* Products */,
@@ -897,7 +900,7 @@
 		7B23190B1F99ECE2008883E4 /* PS-Move */ = {
 			isa = PBXGroup;
 			children = (
-				7B7288251FDD73AD00C16774 /* Release */,
+				7BFCD19320C0A4F100A3FE8E /* Release */,
 				7B23190C1F99ECE2008883E4 /* BatchFiles */,
 				7B2319D81F99ECE3008883E4 /* GameData */,
 				7B231A031F99ECE3008883E4 /* SourceCode */,
@@ -1021,32 +1024,6 @@
 			path = SourceCode;
 			sourceTree = "<group>";
 		};
-		7B31248C1F9BB43400BD468D /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-				7B31248D1F9BB46400BD468D /* Madgwick */,
-			);
-			path = ThirdParty;
-			sourceTree = "<group>";
-		};
-		7B31248D1F9BB46400BD468D /* Madgwick */ = {
-			isa = PBXGroup;
-			children = (
-				7B31248E1F9BB46400BD468D /* MadgwickAHRS.cpp */,
-				7B31248F1F9BB46400BD468D /* MadgwickAHRS.h */,
-			);
-			name = Madgwick;
-			path = ../../ThirdParty/Madgwick;
-			sourceTree = "<group>";
-		};
-		7B7288251FDD73AD00C16774 /* Release */ = {
-			isa = PBXGroup;
-			children = (
-				7B7288261FDD73AD00C16774 /* game.OSXz */,
-			);
-			path = Release;
-			sourceTree = "<group>";
-		};
 		7BAF255C1F5EC4C100C59E53 /* GitHub-Private */ = {
 			isa = PBXGroup;
 			children = (
@@ -1099,6 +1076,11 @@
 		7BAF25851F5EC60500C59E53 /* PSMoveOSX */ = {
 			isa = PBXGroup;
 			children = (
+				7B3FE34F20C942B000347EF8 /* itsabomb.cpp */,
+				7B3FE35020C942B000347EF8 /* itsabomb.hpp */,
+				7B81A93B20C95469002107F9 /* testcontrollers.cpp */,
+				7B81A90120C95082002107F9 /* testControllers.hpp */,
+				7B81A90020C944E2002107F9 /* movegame.hpp */,
 				7B1BDB081F5F4F370030E0D2 /* OSX */,
 				7BAF25891F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.h */,
 				7BAF258A1F5EC6D900C59E53 /* GLEssentialsFullscreenWindow.m */,
@@ -1644,6 +1626,14 @@
 			path = ../../../GameFramework_ThirdParty/GLee;
 			sourceTree = "<group>";
 		};
+		7BFCD19320C0A4F100A3FE8E /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				7BFCD19420C0A4F100A3FE8E /* game.OSXz */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1746,7 +1736,7 @@
 				7BE8B3B51F6285F500ABFF3C /* glewinfo.exe in Resources */,
 				7B231AD51F99ECE3008883E4 /* front.material in Resources */,
 				7BE8B3D81F6285F500ABFF3C /* TODO.txt in Resources */,
-				7B7288271FDD73AD00C16774 /* game.OSXz in Resources */,
+				7BFCD19520C0A4F200A3FE8E /* game.OSXz in Resources */,
 				7BE8B3CA1F6285F500ABFF3C /* mesa.txt in Resources */,
 				7B231ADA1F99ECE3008883E4 /* right.png in Resources */,
 				7B231AE91F99ECE3008883E4 /* shaderLitTexturedOSX.frag in Resources */,
@@ -1824,7 +1814,6 @@
 				7BCB9B151F8771F1008EAFFF /* UiKeyboard.cpp in Sources */,
 				7BAF26BF1F5EC74F00C59E53 /* ShVibration.cpp in Sources */,
 				7BAF26A91F5EC74F00C59E53 /* HlJoysticks.cpp in Sources */,
-				7B3124901F9BB46400BD468D /* MadgwickAHRS.cpp in Sources */,
 				7BAF26AC1F5EC74F00C59E53 /* HlModel.cpp in Sources */,
 				7B1FBA961F86D42A004A5226 /* SgBoneImpl.cpp in Sources */,
 				7B1FBA9B1F86D42A004A5226 /* SgSkinImpl.cpp in Sources */,
@@ -1856,6 +1845,7 @@
 				7BAF26B71F5EC74F00C59E53 /* ShHMD.cpp in Sources */,
 				7BCB9B071F8771F1008EAFFF /* RsColour.cpp in Sources */,
 				7BCB9AED1F8771F1008EAFFF /* LBtMemory.cpp in Sources */,
+				7B3FE35120C942B000347EF8 /* itsabomb.cpp in Sources */,
 				7BCB9B101F8771F1008EAFFF /* SgLightImpl.cpp in Sources */,
 				7BCB9B141F8771F1008EAFFF /* Ui360.cpp in Sources */,
 				7B1FBA9A1F86D42A004A5226 /* SgNodeImpl.cpp in Sources */,
@@ -1878,6 +1868,7 @@
 				7B1FBAA11F86D42A004A5226 /* RsFontImpl.cpp in Sources */,
 				7B1BDB001F5F4E740030E0D2 /* inffast.c in Sources */,
 				7BE8B3DC1F6286C600ABFF3C /* GLee.c in Sources */,
+				7B81A93C20C95469002107F9 /* testcontrollers.cpp in Sources */,
 				7B1FBAA91F86D42A004A5226 /* RsTextureImpl.cpp in Sources */,
 				7B1BDAFE1F5F4E740030E0D2 /* gzio.c in Sources */,
 				7B1FBAA01F86D42A004A5226 /* RsFlashImpl.cpp in Sources */,

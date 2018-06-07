@@ -68,7 +68,7 @@ private:
 	void							DrawRenderTarget();
 	
 	// Private members
-	BaArchive						m_gameArchive;
+	BaArchive		        		m_gameArchive;
 	
 	// Resources
 	RsShader					   *m_pShader;

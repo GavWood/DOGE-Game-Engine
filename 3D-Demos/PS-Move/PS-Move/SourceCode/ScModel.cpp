@@ -52,8 +52,8 @@ void ScModel::Update( RsCamera &camera )
         MtQuaternion quaternion = ShIMU::GetQuaternion(0);
         //quaternion.SetIdentity();
         MtMatrix4 m4Transform( quaternion );
-		m_pCube->SetLocalTransform(m4Transform);
-		m_pCube->Update();
+        //m_pCube->SetLocalTransform(m4Transform);
+		//m_pCube->Update();
 	}
 }
 

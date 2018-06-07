@@ -19,11 +19,11 @@ ALuint SdSoundImpl::m_buffer[MaxSamplesBuffered];
 
 ALfloat sourcePos[3] = { 0.0, 0.0, 0.0 };
 ALfloat sourceVel[3] = { 0.0, 0.0, 0.0 };
-ALfloat sourceOri[3] = { 0.0, 0.0, 0.0 }; 
+ALfloat sourceOri[3] = { 0.0, 0.0, 1.0 };
 
 ALfloat listenerPos[3] = { 0.0, 0.0, 0.0 };
 ALfloat listenerVel[3] = { 0.0, 0.0, 0.0 };
-ALfloat listenerOri[3] = { 0.0, 0.0, 0.0 };
+ALfloat listenerOri[3] = { 0.0, 0.0, 1.0 };
 
 //static
 BtBool SdSoundImpl::m_isEnabled = BtTrue;
@@ -163,11 +163,14 @@ void SdSoundImpl::CreateManager()
     {
 		// Initialise
 		m_pALDevice = alcOpenDevice( BtNull );
-
+        checkError( "alcOpenDevice");
+        
 		// Create the context
 		m_pALContext = alcCreateContext( m_pALDevice, NULL );
 		alcMakeContextCurrent( m_pALContext );
 
+        alListenerf(AL_GAIN, 1.0f );
+        
 		// Set the listeners for the device
 		alListenerfv( AL_POSITION,	  listenerPos ); 
 		alListenerfv( AL_VELOCITY,	  listenerVel ); 
@@ -260,6 +263,8 @@ void SdSoundImpl::CreateOnDevice()
 	m_bufferIndex = m_currentBuffer;
 
 	++m_currentBuffer;
+    
+    BtAssert( m_currentBuffer < MaxSamplesBuffered );
 
 	// Create a buffer
 	alBufferData( m_buffer[m_bufferIndex], format, data, size, freq );

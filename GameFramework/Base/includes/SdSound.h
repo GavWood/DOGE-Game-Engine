@@ -9,7 +9,7 @@
 #include "MtVector2.h"
 
 const BtU32 MaxSoundsPlaying = 8;
-const BtU32 MaxSamplesBuffered = 32;
+const BtU32 MaxSamplesBuffered = 64;
 
 // Class declaration
 class SdSound : public BaResource

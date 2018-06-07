@@ -5,34 +5,30 @@
 #import "RsImpl.h"
 #import "ApConfig.h"
 #import "SdSoundImpl.h"
+#import "SdSound.h"
 #import "UiKeyboard.h"
 #import "UiInputImpl.h"
 #import "ShIMU.h"
 #import "MtVector3.h"
 #import "HlKeyboard.h"
-#import <AudioToolbox/AudioToolbox.h>
-#import <AudioToolbox/AudioServices.h>
-#import <AudioToolbox/AudioToolbox.h>
-#import <AudioToolbox/AudioServices.h>
-#import <AVFoundation/AVFoundation.h>
-#include <iostream>
-#include <sys/time.h>                // for gettimeofday()
-#include "stdio.h"                   // for gettimeofday()
-#include "UiKeyboard.h"
-
 #import <queue>
 
-// Thomas Perl's PS-Move-API
-#import "psmove.h"
+#include <iostream>
+#include <sys/time.h>
+#include "stdio.h"
+#include "UiKeyboard.h"
 
-//#define MADGWICK
-#ifdef MADGWICK
-#include "madgwickAHRS.h"
-#endif
+// Bring in our game
+#include "itsabomb.hpp"
+#include "testControllers.hpp"
+
+// Define our games
+ItsABombGame itsABombGame;
+TestControllers testControllers;
+//MoveGame *pGame = &itsABombGame;
+MoveGame *pGame = &testControllers;
 
 #define SUPPORT_RETINA_RESOLUTION 1
-
-AVAudioPlayer* audioPlayer;
 
 @interface GLEssentialsGLView (PrivateMethods)
 - (void) initGL;
@@ -40,161 +36,6 @@ AVAudioPlayer* audioPlayer;
 @end
 
 @implementation GLEssentialsGLView
-
-//--------------------------------------------------------------------------------------------
-BtU32 numControllers;
-PSMove *moveArr[16];
-static int lastTrigger[16];
-
-#ifdef MADGWICK
-Madgwick madgwick[16];
-#endif
-
--(void)setupIdentity
-{
-    numControllers = psmove_count_connected();
-    
-    ShIMU::SetNumSensors( numControllers );
-    
-    printf("Connected PS Move controllers: %d\n", numControllers );
-    
-    // Connect all the controllers
-    for( int i=0; i<numControllers; i++)
-    {
-        lastTrigger[i] = 0;
-        
-        moveArr[i] = psmove_connect_by_id(i);
-        
-        // Set the rumble to 0
-        psmove_set_rumble( moveArr[i], 0 );
-        
-        // Set the lights to 0
-        psmove_set_leds( moveArr[i], 0, 0, 0 );
-    }
-    [self resetIdentity];
-}
-
--(void)resetIdentity
-{
-#ifdef MADGWICK
-    for( BtU32 i=0; i<numControllers; i++ )
-    {
-        Madgwick &madge = madgwick[i];
-        madge.q0 = 1.0f; madge.q1 = madge.q2 = madge.q3 = 0;
-
-        MtQuaternion quaternion = MtQuaternion( -madge.q1, -madge.q3, -madge.q2, madge.q0 );
-        ShIMU::SetQuaternion( i, quaternion );
-    }
-#endif
-}
-
--(void)updateIdentity
-{
-    for( BtU32 i=0; i<numControllers; i++ )
-    {
-        PSMove *move = moveArr[i];
-        
-        int res = psmove_poll( move );
-        if (res)
-        {
-#ifdef MADGWICK
-            MtQuaternion quaternion;
-            BtFloat fax, fay, faz;
-            BtFloat fgx, fgy, fgz;
-            
-            for( BtU32 j=0; j<2; j++ )
-            {
-                PSMove_Frame frame = (PSMove_Frame)j;
-                psmove_get_accelerometer_frame( move, frame, &fax, &fay, &faz );
-                psmove_get_gyroscope_frame( move, frame, &fgx, &fgy, &fgz );
-                
-                Madgwick &madge = madgwick[i];
-                madge.MadgwickAHRSupdateIMU( fgx, fgy, fgz, fax, fay, faz );
-            }
-            
-            // Works vertically with x, z, y
-            Madgwick &madge = madgwick[i];
-            quaternion = MtQuaternion( -madge.q1, -madge.q3, -madge.q2, madge.q0 );
-            ShIMU::SetQuaternion( 0, quaternion );
-#endif
-           
-            // Respond to the trigger
-            int trigger = psmove_get_trigger( move );
-            
-            if( trigger != lastTrigger[i] )//(128 + 64 + 32 + 16) )
-            {
-                psmove_set_leds( move, trigger, trigger, trigger );
-                lastTrigger[i] = trigger;
-            }
-                
-            // Respond to the buttons
-            unsigned int pressed, released;
-            psmove_get_button_events( move, &pressed, &released);
-            if( pressed == Btn_TRIANGLE )
-            {
-                psmove_set_leds( move, 0, 255, 0 );
-            }
-            if( pressed == Btn_CROSS )
-            {
-                psmove_set_leds( move, 0, 0, 255 );
-            }
-            if( pressed == Btn_CIRCLE )
-            {
-                psmove_set_leds( move, 255, 0, 0 );
-            }
-            if( pressed == Btn_TRIANGLE )
-            {
-                psmove_set_leds( move, 0, 255, 0 );
-            }
-            if( pressed == Btn_SQUARE )
-            {
-                psmove_set_leds( move, 0xFF, 0x69, 0xB4 );
-            }
-            if( pressed == Btn_MOVE )
-            {
-                // Integrate the battery level and set the colour from RED to WHITE
-                PSMove_Battery_Level batt = psmove_get_battery( move );
-                
-                switch( batt )
-                {
-                    case Batt_MIN :
-                        psmove_set_leds( move, 255, 0, 0 );
-                        break;
-                    case Batt_20Percent:
-                        psmove_set_leds( move, 128, 128, 0 );
-                        break;
-                    case Batt_40Percent:
-                        psmove_set_leds( move, 128, 200, 0 );
-                        break;
-                    case Batt_60Percent:
-                        psmove_set_leds( move, 0, 200, 0 );
-                        break;
-                    case Batt_80Percent :
-                        psmove_set_leds( move, 0, 220, 0 );
-                        break;
-                    case Batt_MAX:
-                        psmove_set_leds( move, 0, 255, 0 );
-                        break;
-                    case Batt_CHARGING:
-                        psmove_set_leds( move, 0, 0, 255 );
-                        break;
-                    case Batt_CHARGING_DONE:
-                        psmove_set_leds( move, 255, 255, 255 );
-                        break;
-                }
-            }
-            if( released )
-            {
-                psmove_set_leds( move, 0, 0, 0 );
-            }
-
-            // Update any changes to the lights
-            psmove_update_leds( move );
-        }
-    }
-}
-//--------------------------------------------------------------------------------------------
-
 
 
 ScMain myProject;
@@ -269,7 +110,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
 - (void) prepareOpenGL
 {
     [super prepareOpenGL];
-    
+
     // Make all the OpenGL calls to setup rendering
     //  and build the necessary rendering objects
     [self initGL];
@@ -392,7 +233,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
     myProject.Init();
     
     // Initialise the PS move controllers
-    [self setupIdentity];
+    pGame->setup();
 }
 
 - (void) reshape
@@ -489,11 +330,11 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
     
     if( UiKeyboard::pInstance()->IsPressed( UiKeyCode_R ) )
     {
-        [self resetIdentity];
+        pGame->reset();
     }
     
-    // Update identity
-    [self updateIdentity];
+    // Update our game
+    pGame->update();
     
     // Empty render targets
     RsImpl::pInstance()->EmptyRenderTargets();
@@ -521,5 +362,278 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink,
     
     [super dealloc];
 }
+
+/*
+-(void)updateIdentityGame
+{
+    if( UiKeyboard::pInstance()->IsHeld( UiKeyCode_R ) )
+    {
+        for( BtU32 i=0; i<numControllers; i++ )
+        {
+            //    Madgwick &madge = madgwick[i];
+            //    madge.q0 = 1.0f; madge.q1 = madge.q2 = madge.q3 = 0;
+        }
+    }
+    
+    // Get the current time
+    time_t timer;
+    long current = time(&timer);
+    
+    // How many elapsed seconds we have
+    long elapsed = current - gameStart;
+    
+    // Handle the transition of game states
+    if( gameState == GameState_Start )
+    {
+        // Generate the wolf
+        wolf = rand() % numControllers;
+        
+        // Display the wolf
+        printf("Starting the game with the wolf set to %d out of %d\n", wolf, numControllers);
+        
+        // Lets keep a timer
+        time_t timer;
+        gameStart = time( &timer );
+        
+        // Now turn the light to red
+        gameState = GameState_Red;
+    }
+    else if( elapsed < Red )
+    {
+        gameState = GameState_Red;
+    }
+    else if( elapsed < Green )
+    {
+        gameState = GameState_Amber;
+    }
+    else if( elapsed < Blue )
+    {
+        gameState = GameState_Green;
+    }
+    else if( gameState == GameState_Green )
+    {
+        gameState = GameState_Identify;
+    }
+    
+    // Do we turn rumble off
+    if( pRumble )            // We had a rumble
+    {
+        printf("Rumble off\n");
+        
+        // Set the rumble
+        psmove_set_rumble( pRumble, 0 );
+        
+        // Turned off
+        pRumble = NULL;
+    }
+    
+    // Shall we make some rumble
+    if( lastGameState != gameState )
+    {
+        if( gameState == GameState_Green )
+        {
+            printf("Rumble on\n");
+            
+            // Cache each controller
+            pRumble = moveArr[wolf];
+            
+            // Set the rumble
+            psmove_set_rumble( pRumble, RumbleAmount );
+        }
+    }
+    
+    for( BtU32 i=0; i<numControllers; i++ )
+    {
+        PSMove *move = moveArr[i];
+        
+        int res = psmove_poll( move );
+        if (res)
+        {
+            float fax, fay, faz;
+            float fgx, fgy, fgz;
+            
+            MtQuaternion quaternion;
+            
+            // Are we using madgwick
+#ifdef UseMadgwick
+            
+            Madgwick &madge = madgwick[i];
+            
+            for( BtU32 j=0; j<2; j++ )
+            {
+                PSMove_Frame frame = (PSMove_Frame)j;
+                psmove_get_accelerometer_frame( move, frame, &fax, &fay, &faz );
+                psmove_get_gyroscope_frame( move, frame, &fgx, &fgy, &fgz );
+                madge.MadgwickAHRSupdateIMU( fgx, fgy, fgz, fax, fay, faz );
+            }
+            
+            // Works vertically with x, z, y
+            quaternion = MtQuaternion( -madge.q1, -madge.q3, -madge.q2, madge.q0 );
+#else
+            
+            for( BtU32 j=0; j<2; j++ )
+            {
+                PSMove_Frame frame = (PSMove_Frame)j;
+                psmove_get_accelerometer_frame( move, frame, &fax, &fay, &faz );
+                psmove_get_gyroscope_frame( move, frame, &fgx, &fgy, &fgz );
+            }
+            
+            BtFloat w, x, y, z;
+            
+            psmove_get_orientation( move, &w, &z, &y, &x );
+            
+            quaternion = MtQuaternion( -x, -z, -y, w );
+#endif
+            
+            // Set the quaternion
+            ShIMU::SetQuaternion( i, quaternion );
+            
+            // Construct the acceleration vector
+            MtVector3 accel( fax, faz, fay );
+            
+            // Remove gravity
+            MtVector3 frame( 0, -1, 0 );
+            frame *= ShIMU::GetTransform(i).GetInverse();
+            accel += frame;
+            accel *= ShIMU::GetTransform(i);
+            
+            ShIMU::SetAccelerometer( i, accel );
+            
+            if( i == wolf )
+            {
+                moved = false;
+                
+#ifdef UseMadgwick
+                // Was this controller moved
+                if( ( MtAbs( accel.x ) > Sensitivity ) ||
+                   ( MtAbs( accel.y ) > Sensitivity ) ||
+                   ( MtAbs( accel.z ) > Sensitivity )
+                   )
+                {
+                    // Yes this controller has been moved
+                    moved = true;
+                }
+#endif
+                if( ( MtAbs( fgx ) > Sensitivity ) ||
+                   ( MtAbs( fgy ) > Sensitivity ) ||
+                   ( MtAbs( fgz ) > Sensitivity )
+                   )
+                {
+                    // Yes this controller has been moved
+                    moved = true;
+                }
+                
+                // Should we restart the game? - if it's not being restarted
+                if( gameState > GameState_Red )
+                {
+                    int trigger = psmove_get_trigger( move );
+                    
+                    if( trigger > 0 )//(128 + 64 + 32 + 16) )
+                    {
+                        gameState = GameState_Start;
+                    }
+                }
+                
+                // Check the battery level
+                unsigned int pressed, released;
+                psmove_get_button_events( move, &pressed, &released);
+                
+                if( pressed == Btn_MOVE )
+                {
+                    gameState = GameState_Battery;
+                }
+                else if( released == Btn_MOVE )
+                {
+                    gameState = GameState_Identify;
+                }
+            }
+        }
+    }
+    
+    // Lets only bother to change stuff if we have had a significant game change
+    //   if( ( lastMoved != moved ) ||            // Something moved?
+    //       ( lastGameState != gameState )       // Traffic lights changed colour
+    //    )
+    {
+        // Keep a track of the moved state for efficency
+        lastMoved = moved;
+        
+        // Set the new game state
+        lastGameState = gameState;
+        
+        // Change the controllers all at once for speed
+        for( int controllerIndex=0; controllerIndex<numControllers; controllerIndex++)
+        {
+            // Cache each controller
+            PSMove *move = moveArr[controllerIndex];
+            
+            // Handle the game state and set the lights at once
+            switch( gameState )
+            {
+                case GameState_Start:
+                case GameState_Red:
+                    psmove_set_leds( move, 255, 0, 0 );
+                    break;
+                    
+                case GameState_Amber:
+                    psmove_set_leds( move, 255, 100, 0 );
+                    break;
+                    
+                case GameState_Green:
+                    psmove_set_leds( move, 0, 255, 0 );
+                    break;
+                    
+                case GameState_Identify:
+                    
+                    if( moved == true )
+                    {
+                        psmove_set_leds( move, 68, 121, 113 );
+                    }
+                    else
+                    {
+                        psmove_set_leds( move, 0, 0, 0 );
+                    }
+                    break;
+                    
+                case GameState_Battery:
+                {
+                    PSMove_Battery_Level batt = psmove_get_battery( move );
+                    
+                    switch( batt )
+                    {
+                        case Batt_MIN :
+                            psmove_set_leds( move, 255, 0, 0 );
+                            break;
+                        case Batt_20Percent:
+                            psmove_set_leds( move, 128, 128, 0 );
+                            break;
+                        case Batt_40Percent:
+                            psmove_set_leds( move, 128, 200, 0 );
+                            break;
+                        case Batt_60Percent:
+                            psmove_set_leds( move, 0, 200, 0 );
+                            break;
+                        case Batt_80Percent :
+                            psmove_set_leds( move, 0, 220, 0 );
+                            break;
+                        case Batt_MAX:
+                            psmove_set_leds( move, 0, 255, 0 );
+                            break;
+                        case Batt_CHARGING:
+                            psmove_set_leds( move, 0, 0, 255 );
+                            break;
+                        case Batt_CHARGING_DONE:
+                            psmove_set_leds( move, 255, 255, 255 );
+                            break;
+                    }
+                    break;
+                }
+            }
+            
+            psmove_update_leds( move );
+        }
+    }
+}
+*/
 
 @end
