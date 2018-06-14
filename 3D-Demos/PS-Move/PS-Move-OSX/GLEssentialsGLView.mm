@@ -19,13 +19,10 @@
 #include "UiKeyboard.h"
 
 // Bring in our game
-#include "itsabomb.hpp"
 #include "testControllers.hpp"
 
 // Define our games
-ItsABombGame itsABombGame;
 TestControllers testControllers;
-//MoveGame *pGame = &itsABombGame;
 MoveGame *pGame = &testControllers;
 
 #define SUPPORT_RETINA_RESOLUTION 1

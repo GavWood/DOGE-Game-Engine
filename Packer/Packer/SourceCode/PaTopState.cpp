@@ -177,7 +177,7 @@ BtBool PaTopState::ReadConfig()
 #ifdef WIN32
 	cur = xml.Open("\\github\\DOGE-Game-Engine\\Packer\\config.xml", "config" );
 #else
-	cur = xml.Open("/Users/localadmin/Documents/DOGE-Game-Engine/Packer/config.xml", "config");
+	cur = xml.Open("/Users/gavinwood/Documents/GitHub/DOGE-Game-Engine/Packer/config.xml", "config");
 #endif
 	if (!cur)
 	{
