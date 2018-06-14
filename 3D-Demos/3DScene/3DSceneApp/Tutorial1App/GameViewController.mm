@@ -62,6 +62,7 @@ void interruptionListenerCallback (void *inUserData, UInt32 interruptionState )
     a++;
 }
 
+// Model                            Resolution
 // iPhone 1,3,3GS Standard Display  (320x480px)
 // iPhone 4,4S Retina Display 3.5"  (640x960px)
 // iPhone 5 Retina Display 4"       (640x1136px)
@@ -70,7 +71,7 @@ void interruptionListenerCallback (void *inUserData, UInt32 interruptionState )
 // iPad 3 Retina Display            (2048x1536px)
 // iPhone 6                         ()
 // iPhone 6 Plus                    (1280x1080px)
-// iPhone X
+// iPhone X                         (2436x1125)
 
 MtVector2 v2PixelResolution( 0, 0 );
 MtVector2 g_v2TouchScale( 0, 0 );
