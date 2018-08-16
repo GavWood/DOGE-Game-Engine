@@ -28,7 +28,7 @@
 #import "SbMain.h"
 #import "AppDelegate.h"
 #import "PeerToPeer.h"
-//#import "VideoCapture.h"
+#import <sys/utsname.h>
 
 // My globals
 SbMain myProject;
@@ -68,124 +68,96 @@ void interruptionListenerCallback (void   *inUserData, UInt32    interruptionSta
      */
 }
 
-enum {
-    UIDeviceResolution_Unknown          = 0,
-    UIDeviceResolution_iPhoneStandard   = 1,    // iPhone 1,3,3GS Standard Display  (320x480px)
-    UIDeviceResolution_iPhoneRetina35   = 2,    // iPhone 4,4S Retina Display 3.5"  (640x960px)
-    UIDeviceResolution_iPhoneRetina4    = 3,    // iPhone 5 Retina Display 4"       (640x1136px)
-    UIDeviceResolution_iPadStandard     = 4,    // iPad 1,2 Standard Display        (1024x768px)
-    UIDeviceResolution_iPhoneRetina5    = 5,    // iPhone 5
-    UIDeviceResolution_iPadRetina       = 6,    // iPad 3 Retina Display            (2048x1536px)
-    UIDeviceResolution_iPhone6          = 7,    // iPhone 6                         ()
-    UIDeviceResolution_iPhone65         = 8,    // iPhone 6 Plus                    (1280x1080px)
-}; typedef NSUInteger UIDeviceResolution;
+// Model                            Resolution
+// iPhone 1,3,3GS Standard Display  (320x480px)
+// iPhone 4,4S Retina Display 3.5"  (640x960px)
+// iPhone 5 Retina Display 4"       (640x1136px)
+// iPad 1,2 Standard Display        (1024x768px)
+// iPhone 5
+// iPad 3 Retina Display            (2048x1536px)
+// iPhone 6                         ()
+// iPhone 6 Plus                    (1280x1080px)
+// iPhone X                         (2436x1125)
 
-UIDeviceResolution deviceType;
+MtVector2 v2PixelResolution( 0, 0 );
+MtVector2 g_v2TouchScale( 0, 0 );
 
 - (void)resolution
 {
-    deviceType = UIDeviceResolution_Unknown;
     UIScreen *mainScreen = [UIScreen mainScreen];
     
-    RenderScale = ([mainScreen respondsToSelector:@selector(scale)] ? mainScreen.scale : 1.0f);;
+    RenderScale = ([mainScreen respondsToSelector:@selector(scale)] ? mainScreen.scale : 1.0f);
     
-    CGFloat height = CGRectGetHeight(mainScreen.bounds);
-    CGFloat pixelHeight = height * RenderScale;
+    CGFloat pixelWidth  = CGRectGetWidth(  mainScreen.nativeBounds );
+    CGFloat pointWidth  = CGRectGetWidth(  mainScreen.bounds );
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    CGFloat pixelHeight = CGRectGetHeight( mainScreen.nativeBounds );
+    CGFloat pointHeight = CGRectGetHeight( mainScreen.bounds );
+    
+    BtBool landscape = BtTrue;
+    if( landscape )
     {
-        if (RenderScale == 1.0f )
+        if( pixelWidth < pixelHeight )
         {
-            deviceType = UIDeviceResolution_iPhoneStandard;
+            BtSwap( pixelWidth, pixelHeight );
         }
-        else if( RenderScale == 2.0f)
+        if( pointWidth < pointHeight )
         {
-            if (pixelHeight == 960.0f)
-            {
-                deviceType = UIDeviceResolution_iPhoneRetina35;
-            }
-            else if (pixelHeight == 1136.0f)
-            {
-                deviceType = UIDeviceResolution_iPhoneRetina4;
-            }
-            else if (pixelHeight == 1136.0f)
-            {
-                deviceType = UIDeviceResolution_iPhoneRetina5;
-            }
-            else if (pixelHeight == 1334.0f )
-            {
-                deviceType = UIDeviceResolution_iPhone6;
-            }
+            BtSwap( pointWidth, pointHeight );
         }
-        else if( RenderScale == 3.0f )
-        {
-            deviceType = UIDeviceResolution_iPhone65;
-            
-            if( pixelHeight == 1242.0f )
-            {
-                deviceType = UIDeviceResolution_iPhone65;
-            }
-        }
+        
+        // Touch setup for landscape
+        g_v2TouchScale.x = pixelHeight / pointHeight;
+        g_v2TouchScale.y = pixelWidth  / pointWidth;
     }
     else
     {
-        if( RenderScale == 2.0f && pixelHeight == 2048.0f)
+        if( pixelWidth > pixelHeight )
         {
-            deviceType = UIDeviceResolution_iPadRetina;
+            BtSwap( pixelWidth, pixelHeight );
         }
-        else if( RenderScale == 1.0f && pixelHeight == 1024.0f)
+        if( pointWidth > pointHeight )
         {
-            deviceType = UIDeviceResolution_iPadStandard;
+            BtSwap( pointWidth, pointHeight );
         }
+        
+        // Touch setup for landscape
+        g_v2TouchScale.x = pixelHeight / pointHeight;
+        g_v2TouchScale.y = pixelWidth  / pointWidth;
     }
     
-    CGRect screenBounds = [[UIScreen mainScreen] bounds];
-    
-    MtVector2 v2Dimension( 0, 0 );
-    
-    switch( deviceType )
-    {
-        case UIDeviceResolution_Unknown:
-        {
-            // This is the fall back position
-            CGFloat width  = screenBounds.size.width;
-            CGFloat height = screenBounds.size.height;
-            v2Dimension = MtVector2( width * RenderScale, height * RenderScale );
-        }
-            break;
-        case UIDeviceResolution_iPhoneStandard:
-            v2Dimension = MtVector2( 480.0f, 320.0f );
-            ApConfig::SetDevice( ApDevice_iPhone );
-            break;
-        case UIDeviceResolution_iPhoneRetina35:
-            v2Dimension = MtVector2( 960.0f, 640.0f );
-            ApConfig::SetDevice( ApDevice_iPhone );
-            break;
-        case UIDeviceResolution_iPhoneRetina4:
-            v2Dimension = MtVector2( 1136.0f, 640.0f );
-            ApConfig::SetDevice( ApDevice_iPhone );
-            break;
-        case UIDeviceResolution_iPadStandard:
-            v2Dimension = MtVector2( 1024.0f, 768.0f );
-            ApConfig::SetDevice( ApDevice_iPad );
-            break;
-        case UIDeviceResolution_iPadRetina:
-            v2Dimension = MtVector2( 2048.0f, 1536.0f );
-            ApConfig::SetDevice( ApDevice_iPad );
-            break;
-        case UIDeviceResolution_iPhone6:
-            v2Dimension = MtVector2( 1334.0f, 750.0f );
-            ApConfig::SetDevice( ApDevice_iPhone );
-            break;
-        case UIDeviceResolution_iPhone65:
-            v2Dimension = MtVector2( 1920.0f, 1080.0f );          // Real phone
-            //v2Dimension = MtVector2( 2208.0f, 1242.0f );        // Simulator
-            ApConfig::SetDevice( ApDevice_iPhone );
-            break;
-    }
+    v2PixelResolution = MtVector2( pixelWidth, pixelHeight );
     
     // Set the device pixel dimension in our renderer
-    RsImpl::pInstance()->SetDimension( v2Dimension );
+    RsImpl::pInstance()->SetDimension( v2PixelResolution );
+}
+
+NSString* deviceFullName()
+{
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    
+    return [NSString stringWithCString:systemInfo.machine
+                              encoding:NSUTF8StringEncoding];
+}
+
+-(void)GetDeviceType
+{
+    NSString *iDeviceFullName = deviceFullName();
+    (void)iDeviceFullName;
+    
+    NSString *iDeviceType = [[UIDevice currentDevice] model];
+    if( [iDeviceType isEqual:@"iPhone"] )
+    {
+        ApConfig::SetDevice( ApDevice_iPhone );
+    }
+    else if( [iDeviceType isEqual:@"iPad"] )
+    {
+        ApConfig::SetDevice( ApDevice_iPad );
+    }
+    else{
+        ApConfig::SetDevice( ApDevice_iPhone );
+    }
 }
 
 - (NSUInteger)supportedInterfaceOrientations
@@ -373,18 +345,17 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     ApConfig::SetExtension( ".iPhonez" );
     
     // Set the platform
-    ApConfig::SetDevice( ApDevice_iPhone );
     ApConfig::SetPlatform( ApPlatform_GLES );
     
 #if TARGET_IPHONE_SIMULATOR
     ApConfig::SetSimulator( BtTrue );
 #endif
     
-    MtVector2 v2Dimension( 0, 0 );
-    RenderScale = 1;
-    
     // Get the resolution
     [self resolution];
+    
+    // Setup device
+    [self GetDeviceType];
     
     // Create the renderer implementation
     RsImpl::pInstance()->Create();
@@ -484,19 +455,10 @@ static void completionCallback (SystemSoundID  mySSID, void* myself)
     // Cache the current position
     CGPoint currentPosition = [touch locationInView:self.view];
     
-    MtVector2 v2Position;
-    
-    if( deviceType == UIDeviceResolution_iPhone65 )
-    {
-        v2Position.x = currentPosition.x / 2208.0f * 1920.0f * RenderScale;
-        v2Position.y = currentPosition.y / 1242.0f * 1080.0f * RenderScale;
-    }
-    else
-    {
-        v2Position.x = currentPosition.x * RenderScale;
-        v2Position.y = currentPosition.y * RenderScale;
-    }
-    return v2Position;
+    MtVector2 v2PixelPosition;
+    v2PixelPosition.x = currentPosition.x * g_v2TouchScale.x;
+    v2PixelPosition.y = currentPosition.y * g_v2TouchScale.y;
+    return v2PixelPosition;
 }
 
 -(void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event

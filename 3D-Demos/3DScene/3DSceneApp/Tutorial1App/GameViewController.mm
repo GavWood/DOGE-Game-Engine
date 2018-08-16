@@ -761,6 +761,9 @@ CVOpenGLESTextureRef createTexture( CVOpenGLESTextureCacheRef textureCache,
                     break;
                 case ARTrackingStateReasonInitializing:
                     break;
+                
+                default:
+                    break;
             }
             break;
             

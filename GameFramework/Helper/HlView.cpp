@@ -604,7 +604,7 @@ void HlView::UpdateMenu()
         }
 	}
 
-	if( ApConfig::IsPhone() )
+    if( ApConfig::IsPhone() || ApConfig::IsiPad() )
 	{
 		// Have any positions been touched?
 		for (BtU32 touch = 0; touch < MaxTouches; touch++)

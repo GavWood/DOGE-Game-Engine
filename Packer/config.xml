@@ -1,61 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
-  <project>9</project>
-  <platform>3</platform>
+  <project>1</project>
+  <platform>1</platform>
   <projects>
         <project>
             <id>1</id>
-            <path>/Users/localadmin/Documents/DOGE-Game-Engine/3D-Demos/3DScene/3DScene/</path>
-        </project>
-        
-        <project>
-            <id>2</id>
-            <path>c:\github\DOGE-Game-Engine\3D-Demos\3DScene\3DScene\</path>
+            <path>/Users/gavinwood/Documents/GitHub/DOGE-Game-Engine/CardBasedGames/CardTestBed/Tutorial1/</path>
         </project>
 
-        <project>
-            <id>3</id>
-            <path>c:\github\DOGE-Game-Engine\3D-Demos\Murmurations\Murmuration\</path>
-        </project>
-        
-        <project>
-            <id>4</id>
-            <path>/Users/localadmin/Documents/DOGE-Game-Engine/3D-Demos/Murmurations/Murmuration/</path>
-        </project>
-        
         <project>
             <id>5</id>
-            <path>\github\DOGE-Game-Engine\CardBasedGames\CardTestBed\Tutorial1\</path>
+            <path>/Users/gavinwood/Documents/GitHub/DOGE-Game-Engine/PlayingOutWithIOT/Video/Tutorial1</path>
         </project>
         
-        <project>
-            <id>6</id>
-            <path>/Users/localadmin/Documents/DOGE-Game-Engine/CardBasedGames/CardTestBed/Tutorial1/</path>
-        </project>
-        
-        <project>
-            <id>7</id>
-            <path>/Users/localadmin/Documents/DOGE-Game-Engine/CardBasedGames/SynchronisedPlay/SynchronisedPlay/</path>
-        </project>
-        
-        <project>
-            <id>8</id>
-            <path>/Users/localadmin/Documents/DOGE-Game-Engine/CardBasedGames/TurnTakingPlay/TurnTakingPlay/</path>
-        </project>
-        
-        <project>
-            <id>9</id>
-            <path>/Users/gavinwood/Documents/GitHub/DOGE-Game-Engine/3D-Demos/PS-Move/PS-Move/</path>
-        </project>
-        
-        <project>
-            <id>10</id>
-            <path>/Users/localadmin/Documents/DOGE-Game-Engine/Physics-Demos/RigidBody/RigidBody/</path>
-        </project>
-
-        <project>
-          <id>11</id>
-          <path>\github\DOGE-Game-Engine\Physics-Demos\RigidBody\RigidBody\</path>
-        </project>
   </projects>
 </config>

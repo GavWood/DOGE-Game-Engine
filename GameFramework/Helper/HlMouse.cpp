@@ -62,7 +62,8 @@ void HlMouse::Render( MtVector2 v2Dimension )
 	BtFloat width = RsUtil::GetDimension().x;
 	BtFloat height = RsUtil::GetDimension().y;
 
-    if( ApConfig::IsWin() )
+    BtBool showTouch = BtTrue;
+    if( showTouch )
 	{
 		static BtBool isReset = BtTrue;
 		if( isReset )

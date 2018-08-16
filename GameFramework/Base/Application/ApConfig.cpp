@@ -340,6 +340,18 @@ BtBool ApConfig::IsAppleTV()
 }
 
 ///////////////////////////////////////////////////////////////////////////////
+// IsiPad
+
+BtBool ApConfig::IsiPad()
+{
+    if (m_device == ApDevice_iPad )
+    {
+        return BtTrue;
+    }
+    return BtFalse;
+}
+
+///////////////////////////////////////////////////////////////////////////////
 // IsPhone
 
 BtBool ApConfig::IsPhone()

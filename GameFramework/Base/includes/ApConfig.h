@@ -44,6 +44,7 @@ public:
     static ApDevice             GetDevice();
 	
 	static BtBool				IsWin();
+    static BtBool               IsiPad();
 	static BtBool				IsPhone();
 	static BtBool				IsAppleTV();
     static BtBool               IsOSX();

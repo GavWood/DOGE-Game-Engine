@@ -1319,7 +1319,7 @@
 				TargetAttributes = {
 					7BF34B571C0601300048F1DF = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 85AF28B4Q9;
+						DevelopmentTeam = 3GGKXG76TC;
 					};
 					7BF34B741C0601300048F1DF = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -1661,7 +1661,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 85AF28B4Q9;
+				DEVELOPMENT_TEAM = 3GGKXG76TC;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj";
 				FRAMEWORK_SEARCH_PATHS = "/Users/localadmin/Documents/GameFramework/OpenLab_ThirdParty/**";
 				INFOPLIST_FILE = Tutorial1App/Info.plist;
@@ -1676,7 +1676,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 85AF28B4Q9;
+				DEVELOPMENT_TEAM = 3GGKXG76TC;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch *.xcode* *.xcassets (*) .DS_Store CVS .svn .git .hg *.pbproj *.pbxproj";
 				FRAMEWORK_SEARCH_PATHS = "/Users/localadmin/Documents/GameFramework/GameFramework_ThirdParty/**";
 				INFOPLIST_FILE = Tutorial1App/Info.plist;
