@@ -269,12 +269,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>NotSet</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -300,7 +300,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\GameFramework\Base\BinaryArchive;$(SolutionDir)\..\..\GameFramework\Base\Includes;$(SolutionDir)\..\..\GameFramework\Base\Dynamics;$(SolutionDir)\..\..\GameFramework\Base\Base;E:\GameFramework\GameFramework_ThirdParty\glew\glew-1.11.0\include\;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Program Files (x86)\Windows Kits\8.1\Include\um\gl;$(SolutionDir)\..\Packer\SourceCode\includes;$(SolutionDir)\..\Packer\SourceCode\;$(SolutionDir)\..\Packer\SourceCode\Exporter;$(SolutionDir)\..\Packer\SourceCode\Packer;$(SolutionDir)\..\Packer\SourceCode\Metasequoia;$(SolutionDir)\..\Packer\SourceCode\Sound;$(SolutionDir)\..\Packer\SourceCode\Texture;$(SolutionDir)\..\Packer\SourceCode\FileSystem;$(SolutionDir)\..\Packer\SourceCode\FileSystem\Win32;$(SolutionDir)\..\Packer\SourceCode\Rendering;$(SolutionDir)\..\..\BaaConvert;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\libpng-1.2.1;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\jpeg-6b;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\libungif-4.1.0;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\LibXML\include;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\LibXML;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FCDocument;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FMath;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FUtils;$(SolutionDir)\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\GameFramework_ThirdParty\JSON;$(SolutionDir)\..\..\GameFramework_ThirdParty\OpenAL</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\GameFramework\Base\BinaryArchive;$(SolutionDir)\..\..\GameFramework\Base\Includes;$(SolutionDir)\..\..\GameFramework\Base\Dynamics;$(SolutionDir)\..\..\GameFramework\GameFramework_ThirdParty\glew\glew-1.11.0\include\;$(SolutionDir)\..\..\GameFramework\Base\Base;$(SolutionDir)\..\Packer\SourceCode\includes;$(SolutionDir)\..\Packer\SourceCode\;$(SolutionDir)\..\Packer\SourceCode\Exporter;$(SolutionDir)\..\Packer\SourceCode\Packer;$(SolutionDir)\..\Packer\SourceCode\Metasequoia;$(SolutionDir)\..\Packer\SourceCode\Sound;$(SolutionDir)\..\Packer\SourceCode\Texture;$(SolutionDir)\..\Packer\SourceCode\FileSystem;$(SolutionDir)\..\Packer\SourceCode\FileSystem\Win32;$(SolutionDir)\..\Packer\SourceCode\Rendering;$(SolutionDir)\..\..\BaaConvert;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\libpng-1.2.1;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\jpeg-6b;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\libungif-4.1.0;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\LibXML\include;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\LibXML;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FCDocument;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FMath;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FUtils;$(SolutionDir)\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\GameFramework_ThirdParty\JSON;$(SolutionDir)\..\..\GameFramework_ThirdParty\OpenAL</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_WINDOWS;D3D_DEBUG_INFO;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -312,7 +312,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>d3d9.lib;d3dx9.lib;dinput8.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(TargetPath)</OutputFile>
       <AdditionalLibraryDirectories>..\..\Lib;C:\WINDDK\3790.1830\lib\wxp\i386;\Struffy\Struffy\lib;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
@@ -329,7 +329,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\GameFramework\Base\BinaryArchive;$(SolutionDir)\..\..\GameFramework\Base\Includes;$(SolutionDir)\..\..\GameFramework\Base\Dynamics;$(SolutionDir)\..\..\GameFramework\Base\Base;E:\GameFramework\GameFramework_ThirdParty\glew\glew-1.11.0\include\;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;C:\Program Files (x86)\Windows Kits\8.1\Include\um\gl;$(SolutionDir)\..\Packer\SourceCode\includes;$(SolutionDir)\..\Packer\SourceCode\;$(SolutionDir)\..\Packer\SourceCode\Exporter;$(SolutionDir)\..\Packer\SourceCode\Packer;$(SolutionDir)\..\Packer\SourceCode\Metasequoia;$(SolutionDir)\..\Packer\SourceCode\Sound;$(SolutionDir)\..\Packer\SourceCode\Texture;$(SolutionDir)\..\Packer\SourceCode\FileSystem;$(SolutionDir)\..\Packer\SourceCode\FileSystem\Win32;$(SolutionDir)\..\Packer\SourceCode\Rendering;$(SolutionDir)\..\..\BaaConvert;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\libpng-1.2.1;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\jpeg-6b;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\libungif-4.1.0;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\LibXML\include;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\LibXML;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FCDocument;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FMath;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FUtils;$(SolutionDir)\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\GameFramework_ThirdParty\JSON;$(SolutionDir)\..\..\GameFramework_ThirdParty\OpenAL</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\GameFramework\Base\BinaryArchive;$(SolutionDir)\..\..\GameFramework\Base\Includes;$(SolutionDir)\..\..\GameFramework\Base\Dynamics;$(SolutionDir)\..\..\GameFramework\GameFramework_ThirdParty\glew\glew-1.11.0\include\;$(SolutionDir)\..\..\GameFramework\Base\Base;$(SolutionDir)\..\Packer\SourceCode\includes;$(SolutionDir)\..\Packer\SourceCode\;$(SolutionDir)\..\Packer\SourceCode\Exporter;$(SolutionDir)\..\Packer\SourceCode\Packer;$(SolutionDir)\..\Packer\SourceCode\Metasequoia;$(SolutionDir)\..\Packer\SourceCode\Sound;$(SolutionDir)\..\Packer\SourceCode\Texture;$(SolutionDir)\..\Packer\SourceCode\FileSystem;$(SolutionDir)\..\Packer\SourceCode\FileSystem\Win32;$(SolutionDir)\..\Packer\SourceCode\Rendering;$(SolutionDir)\..\..\BaaConvert;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\libpng-1.2.1;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\jpeg-6b;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona\libungif-4.1.0;$(SolutionDir)\..\..\Gameframework_ThirdParty\Corona;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\LibXML\include;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\LibXML;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FCDocument;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FMath;$(SolutionDir)\..\..\GameFramework_ThirdParty\FCollada\FCollada\FUtils;$(SolutionDir)\..\..\GameFramework_ThirdParty\ZLib;$(SolutionDir)\..\..\GameFramework_ThirdParty\JSON;$(SolutionDir)\..\..\GameFramework_ThirdParty\OpenAL</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -338,7 +338,7 @@
       </DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>d3d9.lib;d3dx9.lib;dinput8.lib;xinput.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(TargetPath)</OutputFile>
       <AdditionalLibraryDirectories>..\..\Lib;C:\WINDDK\3790.1830\lib\wxp\i386;\Struffy\Struffy\lib;C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>

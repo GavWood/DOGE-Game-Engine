@@ -1,1 +1,137 @@
-﻿  Corona.vcxproj -> C:\github\DOGE-Game-Engine\Packer\Packer_Win32\Debug\Corona.lib
+﻿  Convert.cpp
+  Corona.cpp
+  Debug.cpp
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\Debug.cpp(30,14): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  DefaultFileSystem.cpp
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\DefaultFileSystem.cpp(46,18): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  MemoryFile.cpp
+  OpenBMP.cpp
+  OpenGIF.cpp
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\OpenGIF.cpp(44,9): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\OpenGIF.cpp(45,9): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\OpenGIF.cpp(47,11): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\OpenGIF.cpp(48,11): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  OpenJPEG.cpp
+  OpenPCX.cpp
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\OpenPCX.cpp(102,7): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\OpenPCX.cpp(104,7): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  OpenPNG.cpp
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\OpenPNG.cpp(65,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  OpenTGA.cpp
+  SavePNG.cpp
+  SaveTGA.cpp
+  Generating Code...
+  jcapimin.c
+  jcapistd.c
+  jccoefct.c
+  jccolor.c
+  jcdctmgr.c
+  jchuff.c
+  jcinit.c
+  jcmainct.c
+  jcmarker.c
+  jcmaster.c
+  jcomapi.c
+  jcparam.c
+  jcphuff.c
+  jcprepct.c
+  jcsample.c
+  jctrans.c
+  jdapimin.c
+  jdapistd.c
+  jdatadst.c
+  jdatasrc.c
+  Generating Code...
+  Compiling...
+  jdcoefct.c
+  jdcolor.c
+  jddctmgr.c
+  jdhuff.c
+  jdinput.c
+  jdmainct.c
+  jdmarker.c
+  jdmaster.c
+  jdmerge.c
+  jdphuff.c
+  jdpostct.c
+  jdsample.c
+  jdtrans.c
+  jerror.c
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\jpeg-6b\jerror.c(193,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\jpeg-6b\jerror.c(195,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  jfdctflt.c
+  jfdctfst.c
+  jfdctint.c
+  jidctflt.c
+  jidctfst.c
+  jidctint.c
+  Generating Code...
+  Compiling...
+  jidctred.c
+  jmemmgr.c
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\jpeg-6b\jmemmgr.c(1106,19): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\jpeg-6b\jmemmgr.c(1109,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  jmemnobs.c
+  jquant1.c
+  jquant2.c
+  jutils.c
+  png.c
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\png.c(156,1): warning C4133: 'initializing': incompatible types - from 'voidpf' to 'png_structp'
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\png.c(543,22): warning C4133: 'function': incompatible types - from 'png_structp' to 'voidpf'
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\png.c(543,41): warning C4133: 'function': incompatible types - from 'png_colorp' to 'voidpf'
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\png.c(672,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  pngerror.c
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngerror.c(149,7): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  pnggccrd.c
+  pngget.c
+  pngmem.c
+  pngpread.c
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngpread.c(1499,8): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  pngread.c
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngread.c(120,11): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngread.c(124,9): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngread.c(199,9): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngread.c(203,7): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  pngrio.c
+  pngrtran.c
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngrtran.c(1225,7): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  pngrutil.c
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngrutil.c(282,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngrutil.c(285,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngrutil.c(288,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngrutil.c(321,7): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngrutil.c(2183,8): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  pngset.c
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngset.c(691,4): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngset.c(977,9): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngset.c(1026,9): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  pngtest.c
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngtest.c(634,16): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngtest.c(645,17): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngtest.c(1014,10): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngtest.c(1154,10): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngtest.c(1219,16): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngtest.c(1230,17): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  pngtrans.c
+  pngvcrd.c
+  Generating Code...
+  Compiling...
+  pngwio.c
+  pngwrite.c
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngwrite.c(422,11): warning C4996: 'gmtime': This function or variable may be unsafe. Consider using gmtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngwrite.c(518,11): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngwrite.c(522,9): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngwrite.c(587,9): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngwrite.c(591,7): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  pngwtran.c
+  pngwutil.c
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngwutil.c(180,7): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngwutil.c(1211,10): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngwutil.c(1597,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libpng-1.2.1\pngwutil.c(1599,4): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  dgif_lib.c
+E:\DOGE-Game-Engine\GameFramework_ThirdParty\Corona\libungif-4.1.0\dgif_lib.c(114,9): warning C4996: '_fdopen': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _fdopen. See online help for details.
+  gifalloc.c
+  gif_err.c
+  Generating Code...
+  Corona.vcxproj -> E:\DOGE-Game-Engine\Packer\Packer_Win32\Debug\Corona.lib

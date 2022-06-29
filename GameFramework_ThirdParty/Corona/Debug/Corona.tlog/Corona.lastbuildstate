@@ -1,2 +1,2 @@
-#TargetFrameworkVersion=v4.0:PlatformToolSet=v140:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit:WindowsTargetPlatformVersion=8.1
-Debug|Win32|C:\github\DOGE-Game-Engine\Packer\Packer_Win32\|
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.29.30133:VCServicingVersionCrtHeaders=14.29.30136:TargetPlatformVersion=10.0.22000.0:
+Debug|Win32|E:\DOGE-Game-Engine\Packer\Packer_Win32\|

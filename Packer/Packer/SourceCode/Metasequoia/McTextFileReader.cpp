@@ -2,12 +2,12 @@
 // MCTextFileReader.cpp
 
 // Includes
+#include <stdio.h>
+#include <stdlib.h>
+#include <string>
 #include "BtArray.h"
 #include "McTextFileReader.h"
 #include "BtMemory.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include <string>
 
 ////////////////////////////////////////////////////////////////////////////////
 // IsNewLine

@@ -2,10 +2,10 @@
 // __MCTextFileReader_H__
 
 // Include guard
-#ifndef __MCTextFileReader_H__
-#define __MCTextFileReader_H__
+#pragma once
 
 // Includes
+#include <string>
 #include "BtBase.h"
 #include "BtTypes.h"
 #include "BtString.h"
@@ -66,5 +66,3 @@ inline BtU32 MCTextFileReader::GetNumLines() const
 {
 	return m_textLines.GetNumItems();
 }
-
-#endif // __MCTextFileReader_H__
